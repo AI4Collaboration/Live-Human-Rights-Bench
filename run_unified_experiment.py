@@ -301,6 +301,41 @@ def evaluate_cases_vllm_batch(cases: List[Dict], model_id: str, temperature: flo
     return ratings
 
 
+async def evaluate_case_with_sampling(
+    case_text: str,
+    article: str,
+    model_id: str,
+    api_key: str,
+    num_samples: int = 1,
+    temperature: float = 0.0,
+    use_openrouter: bool = False,
+) -> tuple[float, List[int]]:
+    """
+    Evaluate a case with optional sampling for uncertainty estimation.
+
+    Returns:
+        tuple: (average_rating, list_of_individual_ratings)
+    """
+    if num_samples == 1:
+        # Single evaluation (original behavior)
+        rating = await evaluate_case(case_text, article, model_id, api_key, temperature, use_openrouter)
+        return float(rating), [rating]
+
+    # Multiple samples in parallel
+    logger.debug(f"Sampling {num_samples} times at temperature {temperature}")
+    tasks = [
+        evaluate_case(case_text, article, model_id, api_key, temperature, use_openrouter)
+        for _ in range(num_samples)
+    ]
+    ratings = await asyncio.gather(*tasks)
+
+    # Calculate average
+    avg_rating = sum(ratings) / len(ratings)
+    logger.debug(f"Samples: {ratings}, Average: {avg_rating:.2f}")
+
+    return avg_rating, ratings
+
+
 async def evaluate_case(
     case_text: str,
     article: str,
@@ -441,6 +476,8 @@ async def run_scenario(
     temperature: float = 0.0,
     use_vllm: bool = False,
     use_openrouter: bool = False,
+    num_samples: int = 1,
+    sample_temperature: float = 1.0,
 ) -> tuple[List[Dict], Dict]:
     """Run a single scenario."""
 
@@ -533,24 +570,37 @@ async def run_scenario(
 
             last_request_time = time.time()
 
-            rating = await evaluate_case(
+            # Use appropriate temperature based on sampling mode
+            eval_temp = sample_temperature if num_samples > 1 else temperature
+
+            # Evaluate with sampling
+            avg_rating, sample_ratings = await evaluate_case_with_sampling(
                 case['text'],
                 case['article'],
                 model_id,
                 api_key,
-                temperature,
-                use_openrouter
+                num_samples=num_samples,
+                temperature=eval_temp,
+                use_openrouter=use_openrouter
             )
 
             is_violation = case['actual'] == 'violation'
-            distance_score = calculate_distance_score(rating, is_violation)
+            distance_score = calculate_distance_score(avg_rating, is_violation)
 
-            results.append({
+            # Build result dict with individual samples
+            result = {
                 'case_name': case['case_name'],
                 'actual': case['actual'],
-                'rating': rating,
+                'rating': avg_rating,
                 'distance_score': distance_score,
-            })
+            }
+
+            # Add individual sample columns if num_samples > 1
+            if num_samples > 1:
+                for sample_idx, sample_rating in enumerate(sample_ratings, 1):
+                    result[f'sample_{sample_idx}'] = sample_rating
+
+            results.append(result)
 
     # Calculate metrics
     logger.info("\nStep 3: Calculating metrics...")
@@ -717,6 +767,8 @@ async def run_all_scenarios(
     use_vllm: bool = False,
     use_openrouter: bool = False,
     parallel_scenarios: int = 1,
+    num_samples: int = 1,
+    sample_temperature: float = 1.0,
 ):
     """Run scenarios sequentially or in parallel."""
 
@@ -746,6 +798,8 @@ async def run_all_scenarios(
                     temperature=temperature,
                     use_vllm=use_vllm,
                     use_openrouter=use_openrouter,
+                    num_samples=num_samples,
+                    sample_temperature=sample_temperature,
                 )
                 tasks.append(task)
 
@@ -802,6 +856,8 @@ async def run_all_scenarios(
             temperature=temperature,
             use_vllm=use_vllm,
             use_openrouter=use_openrouter,
+            num_samples=num_samples,
+            sample_temperature=sample_temperature,
         )
 
         # Save results
@@ -858,7 +914,19 @@ def main():
         '--temperature',
         type=float,
         default=0.0,
-        help='Temperature for model'
+        help='Temperature for model (ignored if --num-samples > 1)'
+    )
+    parser.add_argument(
+        '--num-samples',
+        type=int,
+        default=1,
+        help='Number of samples to draw per case (default: 1). Use >1 for uncertainty estimation.'
+    )
+    parser.add_argument(
+        '--sample-temperature',
+        type=float,
+        default=1.0,
+        help='Temperature for sampling when --num-samples > 1 (default: 1.0)'
     )
     parser.add_argument(
         '--force',
@@ -892,6 +960,13 @@ def main():
     # Validate backend flags
     if args.use_vllm and args.use_openrouter:
         raise ValueError("Cannot use both --use-vllm and --use-openrouter flags. Choose one backend.")
+
+    # Validate sampling flags
+    if args.num_samples > 1 and args.use_vllm:
+        raise ValueError("Sampling (--num-samples > 1) is not compatible with vLLM batch mode. Use OpenAI or OpenRouter API instead.")
+
+    if args.num_samples < 1:
+        raise ValueError("--num-samples must be >= 1")
 
     # Load API key
     api_key = None
@@ -982,6 +1057,8 @@ def main():
             use_vllm=args.use_vllm,
             use_openrouter=args.use_openrouter,
             parallel_scenarios=args.parallel_scenarios,
+            num_samples=args.num_samples,
+            sample_temperature=args.sample_temperature,
         ))
 
     logger.info("\n" + "="*80)
