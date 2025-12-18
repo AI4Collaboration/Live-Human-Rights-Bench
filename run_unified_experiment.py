@@ -356,21 +356,13 @@ async def evaluate_case(
             return rating
 
         except openai.RateLimitError as e:
-            # Extract reset time from error if available
-            if hasattr(e, 'response') and e.response is not None:
-                retry_after = e.response.headers.get('retry-after')
-                if retry_after:
-                    wait_time = int(retry_after)
-                else:
-                    # Check for X-RateLimit-Reset header (Unix timestamp in milliseconds)
-                    reset_time = e.response.headers.get('x-ratelimit-reset')
-                    if reset_time:
-                        wait_time = max(1, int(int(reset_time) / 1000 - time.time()))
-                    else:
-                        # Exponential backoff: 3s, 6s, 12s, 24s, 48s
-                        wait_time = 3 * (2 ** attempt)
-            else:
-                wait_time = 3 * (2 ** attempt)
+            # For rate limits, use exponential backoff starting at 5 seconds
+            # OpenRouter free tier: 20 req/min means we need ~3s between requests
+            # After hitting limit, wait longer: 5s, 10s, 20s, 40s, 80s
+            wait_time = 5 * (2 ** attempt)
+
+            # Cap wait time at 60 seconds to avoid extremely long waits
+            wait_time = min(wait_time, 60)
 
             if attempt < max_retries - 1:
                 logger.warning(f"Rate limit hit. Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
