@@ -495,7 +495,7 @@ async def run_scenario(
         if ":free" in model_id:
             backend_label = "OpenRouter API (free tier: 18 req/min)"
         else:
-            backend_label = "OpenRouter API (paid tier: ~170 req/min)"
+            backend_label = "OpenRouter API (paid tier: unlimited)"
     else:
         backend_label = "OpenAI API"
 
@@ -549,16 +549,14 @@ async def run_scenario(
         # Use OpenAI API or OpenRouter API (async one-by-one)
         # Rate limiting:
         # - OpenRouter free tier (:free models): 20 req/min → 3.33s delay
-        # - OpenRouter paid tier: 200 req/min → 0.3s delay (conservative)
+        # - OpenRouter paid tier: No rate limiting (unlimited with paid credits)
         # - OpenAI: No client-side rate limiting needed
-        if use_openrouter:
-            # Check if using free model (has ":free" in model name)
-            if ":free" in model_id:
-                min_delay = 3.33  # 18 req/min for free tier
-            else:
-                min_delay = 0.35  # ~170 req/min for paid tier (leave buffer)
+        if use_openrouter and ":free" in model_id:
+            # Only rate limit for free models
+            min_delay = 3.33  # 18 req/min for free tier
         else:
-            min_delay = 0  # No rate limiting for OpenAI
+            # No rate limiting for paid models or OpenAI
+            min_delay = 0
 
         last_request_time = 0
 
