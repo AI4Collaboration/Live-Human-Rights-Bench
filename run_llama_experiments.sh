@@ -30,6 +30,11 @@ echo "Installing requirements..."
 # Install base requirements (skip opencv-python)
 pip install -q pandas numpy scipy matplotlib seaborn openai python-dotenv
 
+# Upgrade torch to a standard version that supports vLLM
+# The cluster's torch 2.9.0+computecanada lacks _inductor.config
+echo "Upgrading PyTorch to standard version..."
+pip install --no-cache-dir --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
 # Install Ray and vLLM (critical for batch inference)
 # Skip opencv-python-headless since we're using the opencv module
 echo "Installing Ray and vLLM..."
@@ -52,8 +57,11 @@ pip install --no-cache-dir \
 
 # Verify installations
 echo "Verifying installations..."
+python -c "import torch; print(f'Torch version: {torch.__version__}')"
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
+python -c "import torch; print(f'Torch _inductor.config exists: {hasattr(torch._inductor, \"config\")}')"
 python -c "import ray; print(f'Ray version: {ray.__version__}')" || echo "ERROR: Ray not installed"
-python -c "import vllm; print(f'vLLM installed')" || echo "ERROR: vLLM not installed"
+python -c "import vllm; print(f'vLLM version: {vllm.__version__}')" || echo "ERROR: vLLM not installed"
 
 # Create output directory
 mkdir -p slurm/output
