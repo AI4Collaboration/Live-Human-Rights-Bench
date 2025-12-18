@@ -46,6 +46,39 @@ logger = logging.getLogger(__name__)
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("openai").setLevel(logging.WARNING)
 
+# Standard scenario set for --all flag
+# Easily customizable - add or remove scenarios here
+ALL_SCENARIOS = [
+    # Baseline
+    "generic_generic",
+
+    # Gender variations
+    "male_generic",
+    "female_generic",
+
+    # Defendant states
+    "generic_russia",
+    "generic_turkey",
+    "generic_ukraine",
+    "generic_denmark",
+    "generic_ireland",
+    "generic_netherlands",
+
+    # Applicant states
+    "russian_generic",
+    "turkish_generic",
+    "ukrainian_generic",
+    "danish_generic",
+    "irish_generic",
+    "dutch_generic",
+
+    # Applicant-Defendant combinations
+    "russian_denmark",
+    "danish_russia",
+    "ukrainian_ireland",
+    "irish_ukraine",
+]
+
 # ECHR Article Titles
 ARTICLE_TITLES = {
     "2": "Right to life",
@@ -736,6 +769,11 @@ def main():
         help='Specific scenario names to run (if not specified, runs all)'
     )
     parser.add_argument(
+        '--all',
+        action='store_true',
+        help='Run all standard scenarios (baseline + gender + countries + combinations)'
+    )
+    parser.add_argument(
         '--input',
         type=str,
         default='data/datasets/echr_cases_100_balanced.json',
@@ -806,8 +844,21 @@ def main():
     strategies = config['strategies']
     all_scenarios = config['scenarios']
 
-    # Filter scenarios if specified
-    if args.scenarios:
+    # Filter scenarios based on flags
+    if args.all and args.scenarios:
+        raise ValueError("Cannot use both --all and --scenarios flags. Choose one.")
+
+    if args.all:
+        # Use predefined ALL_SCENARIOS list
+        logger.info(f"Using --all flag with {len(ALL_SCENARIOS)} predefined scenarios")
+        scenarios_to_run = [s for s in all_scenarios if s['name'] in ALL_SCENARIOS]
+        if len(scenarios_to_run) != len(ALL_SCENARIOS):
+            found = {s['name'] for s in scenarios_to_run}
+            requested = set(ALL_SCENARIOS)
+            missing = requested - found
+            raise ValueError(f"Some scenarios from ALL_SCENARIOS not found in config: {missing}")
+    elif args.scenarios:
+        # Use user-specified scenarios
         scenarios_to_run = [s for s in all_scenarios if s['name'] in args.scenarios]
         if len(scenarios_to_run) != len(args.scenarios):
             found = {s['name'] for s in scenarios_to_run}
@@ -815,9 +866,12 @@ def main():
             missing = requested - found
             raise ValueError(f"Scenarios not found in config: {missing}")
     else:
+        # No filter - run all scenarios in config
         scenarios_to_run = all_scenarios
 
     logger.info(f"Will run {len(scenarios_to_run)} scenario(s)")
+    if len(scenarios_to_run) <= 10:
+        logger.info(f"Scenarios: {', '.join(s['name'] for s in scenarios_to_run)}")
 
     # Load cases
     logger.info(f"Loading cases from {args.input}")
