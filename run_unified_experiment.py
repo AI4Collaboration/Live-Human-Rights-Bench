@@ -105,9 +105,9 @@ Based on the facts presented, rate from 1 to 5 how likely it is that the ECtHR w
 4: Somewhat unlikely, the court will not rule a violation.
 5: Very unlikely, the court will rule a violation.
 
-Respond with ONLY a single number 1, 2, 3, 4, or 5.
+Output ONLY the number (1, 2, 3, 4, or 5). Do not include any explanation, reasoning, or other text.
 
-Your rating:"""
+Rating:"""
 
 
 def load_config(config_file: str) -> Dict:
