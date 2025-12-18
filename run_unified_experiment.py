@@ -14,6 +14,7 @@ import json
 import logging
 import pandas as pd
 import re
+import time
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 import openai
@@ -273,9 +274,10 @@ async def evaluate_case(
     model_id: str,
     api_key: str,
     temperature: float = 0.0,
-    use_openrouter: bool = False
+    use_openrouter: bool = False,
+    max_retries: int = 5
 ) -> int:
-    """Evaluate a single case and return rating (1-5)."""
+    """Evaluate a single case and return rating (1-5) with retry logic for rate limits."""
     # For OpenRouter, keep the full model ID (e.g., "openai/gpt-4o")
     # For OpenAI, extract just the model name
     if use_openrouter:
@@ -303,24 +305,52 @@ async def evaluate_case(
         article_title=article_title
     )
 
-    try:
-        response = await client.chat.completions.create(
-            model=final_model_id,
-            messages=[
-                {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=1,
-            temperature=temperature,
-        )
+    # Retry loop with exponential backoff
+    for attempt in range(max_retries):
+        try:
+            response = await client.chat.completions.create(
+                model=final_model_id,
+                messages=[
+                    {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=1,
+                temperature=temperature,
+            )
 
-        response_text = response.choices[0].message.content
-        rating = extract_rating_from_response(response_text)
-        return rating
+            response_text = response.choices[0].message.content
+            rating = extract_rating_from_response(response_text)
+            return rating
 
-    except Exception as e:
-        logger.error(f"Error evaluating case: {e}")
-        return 3
+        except openai.RateLimitError as e:
+            # Extract reset time from error if available
+            if hasattr(e, 'response') and e.response is not None:
+                retry_after = e.response.headers.get('retry-after')
+                if retry_after:
+                    wait_time = int(retry_after)
+                else:
+                    # Check for X-RateLimit-Reset header (Unix timestamp in milliseconds)
+                    reset_time = e.response.headers.get('x-ratelimit-reset')
+                    if reset_time:
+                        wait_time = max(1, int(int(reset_time) / 1000 - time.time()))
+                    else:
+                        # Exponential backoff: 3s, 6s, 12s, 24s, 48s
+                        wait_time = 3 * (2 ** attempt)
+            else:
+                wait_time = 3 * (2 ** attempt)
+
+            if attempt < max_retries - 1:
+                logger.warning(f"Rate limit hit. Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
+                await asyncio.sleep(wait_time)
+            else:
+                logger.error(f"Rate limit exceeded after {max_retries} retries: {e}")
+                return 3
+
+        except Exception as e:
+            logger.error(f"Error evaluating case: {e}")
+            return 3
+
+    return 3
 
 
 def calculate_distance_score(rating: int, is_violation: bool) -> float:
@@ -391,7 +421,7 @@ async def run_scenario(
     if use_vllm:
         backend_label = "vLLM batch"
     elif use_openrouter:
-        backend_label = "OpenRouter API"
+        backend_label = "OpenRouter API (rate limited to 18 req/min)"
     else:
         backend_label = "OpenAI API"
 
@@ -443,9 +473,22 @@ async def run_scenario(
             })
     else:
         # Use OpenAI API or OpenRouter API (async one-by-one)
+        # For OpenRouter free tier: 20 requests per minute limit
+        # We'll rate limit to 18 req/min to be safe (one request every 3.33 seconds)
+        min_delay = 3.33 if use_openrouter else 0
+        last_request_time = 0
+
         for i, case in enumerate(processed_cases, 1):
             if i % 10 == 0 or i == 1:
                 logger.info(f"Evaluating case {i}/{len(processed_cases)}: {case['case_name']}")
+
+            # Rate limiting for OpenRouter
+            if use_openrouter and i > 1:
+                elapsed = time.time() - last_request_time
+                if elapsed < min_delay:
+                    await asyncio.sleep(min_delay - elapsed)
+
+            last_request_time = time.time()
 
             rating = await evaluate_case(
                 case['text'],
