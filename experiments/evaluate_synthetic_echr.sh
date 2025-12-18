@@ -3,7 +3,8 @@
 
 # Define run parameters
 models=(
-  "openrouter/qwen/qwen3-235b-a22b|together/fp8 deepinfra/fp8"
+  "openai/gpt-4o-mini"
+  #"openrouter/qwen/qwen3-235b-a22b|together/fp8 deepinfra/fp8"
   # "openrouter/qwen/qwen-2.5-72b-instruct|nebius/fp8"
 
   # "openrouter/meta-llama/llama-4-maverick|deepinfra/base novita/fp8"
