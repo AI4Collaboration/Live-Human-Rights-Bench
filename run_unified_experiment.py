@@ -2,7 +2,10 @@
 """
 Unified Experiment Runner
 Runs multiple scenarios defined in config file with efficient batching.
-Supports both OpenAI API and vLLM with Ray Data batch inference.
+Supports three backends:
+  - OpenAI API (default)
+  - OpenRouter API (--use-openrouter)
+  - vLLM with Ray Data batch inference (--use-vllm)
 """
 
 import asyncio
@@ -264,12 +267,32 @@ def evaluate_cases_vllm_batch(cases: List[Dict], model_id: str, temperature: flo
     return ratings
 
 
-async def evaluate_case(case_text: str, article: str, model_id: str, api_key: str, temperature: float = 0.0) -> int:
+async def evaluate_case(
+    case_text: str,
+    article: str,
+    model_id: str,
+    api_key: str,
+    temperature: float = 0.0,
+    use_openrouter: bool = False
+) -> int:
     """Evaluate a single case and return rating (1-5)."""
-    if '/' in model_id:
-        model_id = model_id.split('/')[-1]
-
-    client = openai.AsyncOpenAI(api_key=api_key)
+    # For OpenRouter, keep the full model ID (e.g., "openai/gpt-4o")
+    # For OpenAI, extract just the model name
+    if use_openrouter:
+        # OpenRouter expects full model IDs like "openai/gpt-4o" or "anthropic/claude-3-opus"
+        client = openai.AsyncOpenAI(
+            api_key=api_key,
+            base_url="https://openrouter.ai/api/v1",
+            default_headers={
+                "HTTP-Referer": "https://github.com/anthropics/llm-human-rights",
+                "X-Title": "LLM Human Rights Research"
+            }
+        )
+        final_model_id = model_id
+    else:
+        # OpenAI API - extract model name if it has a slash
+        client = openai.AsyncOpenAI(api_key=api_key)
+        final_model_id = model_id.split('/')[-1] if '/' in model_id else model_id
 
     # Get article title
     article_title = ARTICLE_TITLES.get(article, "Unknown")
@@ -282,7 +305,7 @@ async def evaluate_case(case_text: str, article: str, model_id: str, api_key: st
 
     try:
         response = await client.chat.completions.create(
-            model=model_id,
+            model=final_model_id,
             messages=[
                 {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
                 {"role": "user", "content": prompt}
@@ -357,17 +380,26 @@ async def run_scenario(
     api_key: Optional[str],
     temperature: float = 0.0,
     use_vllm: bool = False,
+    use_openrouter: bool = False,
 ) -> tuple[List[Dict], Dict]:
     """Run a single scenario."""
 
     scenario_name = scenario['name']
     keys = scenario['keys']
 
+    # Determine backend label
+    if use_vllm:
+        backend_label = "vLLM batch"
+    elif use_openrouter:
+        backend_label = "OpenRouter API"
+    else:
+        backend_label = "OpenAI API"
+
     logger.info(f"\n{'='*80}")
     logger.info(f"Running scenario: {scenario_name}")
     logger.info(f"Description: {scenario['description']}")
     logger.info(f"Strategy keys: {', '.join(keys)}")
-    logger.info(f"Model: {model_id} ({'vLLM batch' if use_vllm else 'OpenAI API'})")
+    logger.info(f"Model: {model_id} ({backend_label})")
     logger.info(f"{'='*80}")
 
     # Check for conflicts
@@ -410,12 +442,19 @@ async def run_scenario(
                 'distance_score': distance_score,
             })
     else:
-        # Use OpenAI API (async one-by-one)
+        # Use OpenAI API or OpenRouter API (async one-by-one)
         for i, case in enumerate(processed_cases, 1):
             if i % 10 == 0 or i == 1:
                 logger.info(f"Evaluating case {i}/{len(processed_cases)}: {case['case_name']}")
 
-            rating = await evaluate_case(case['text'], case['article'], model_id, api_key, temperature)
+            rating = await evaluate_case(
+                case['text'],
+                case['article'],
+                model_id,
+                api_key,
+                temperature,
+                use_openrouter
+            )
 
             is_violation = case['actual'] == 'violation'
             distance_score = calculate_distance_score(rating, is_violation)
@@ -590,6 +629,7 @@ async def run_all_scenarios(
     temperature: float = 0.0,
     skip_existing: bool = True,
     use_vllm: bool = False,
+    use_openrouter: bool = False,
 ):
     """Run all scenarios sequentially."""
 
@@ -622,6 +662,7 @@ async def run_all_scenarios(
             api_key=api_key,
             temperature=temperature,
             use_vllm=use_vllm,
+            use_openrouter=use_openrouter,
         )
 
         # Save results
@@ -690,15 +731,31 @@ def main():
         action='store_true',
         help='Use vLLM with Ray Data for batch inference instead of OpenAI API'
     )
+    parser.add_argument(
+        '--use-openrouter',
+        action='store_true',
+        help='Use OpenRouter API instead of OpenAI API'
+    )
 
     args = parser.parse_args()
 
-    # Load API key (only required for OpenAI)
+    # Validate backend flags
+    if args.use_vllm and args.use_openrouter:
+        raise ValueError("Cannot use both --use-vllm and --use-openrouter flags. Choose one backend.")
+
+    # Load API key
     api_key = None
     if not args.use_vllm:
-        api_key = os.environ.get('OPENAI_API_KEY')
-        if not api_key:
-            raise ValueError("OPENAI_API_KEY not found in environment. Set it or use --use-vllm flag.")
+        if args.use_openrouter:
+            # Use OpenRouter API key
+            api_key = os.environ.get('OPENROUTER_API_KEY')
+            if not api_key:
+                raise ValueError("OPENROUTER_API_KEY not found in environment. Set it in .env file or use --use-vllm flag.")
+        else:
+            # Use OpenAI API key
+            api_key = os.environ.get('OPENAI_API_KEY')
+            if not api_key:
+                raise ValueError("OPENAI_API_KEY not found in environment. Set it in .env file or use --use-vllm or --use-openrouter flag.")
 
     # Load config
     logger.info(f"Loading config from {args.config}")
@@ -733,6 +790,8 @@ def main():
     if args.parallel:
         if args.use_vllm:
             raise ValueError("Parallel mode (--parallel) is not compatible with vLLM batch mode (--use-vllm). vLLM already processes all cases in batch.")
+        if args.use_openrouter:
+            raise ValueError("Parallel mode (--parallel) is not yet supported with OpenRouter (--use-openrouter). Use sequential mode instead.")
 
         asyncio.run(run_all_scenarios_parallel(
             scenarios=scenarios_to_run,
@@ -755,6 +814,7 @@ def main():
             temperature=args.temperature,
             skip_existing=not args.force,
             use_vllm=args.use_vllm,
+            use_openrouter=args.use_openrouter,
         ))
 
     logger.info("\n" + "="*80)
