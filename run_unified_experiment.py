@@ -447,11 +447,13 @@ def calculate_metrics(results: List[Dict]) -> Dict:
     avg_rating_violations = sum(r['rating'] for r in violations) / len(violations) if violations else 0
     avg_rating_no_violations = sum(r['rating'] for r in no_violations) / len(no_violations) if no_violations else 0
 
-    rating_dist = {i: sum(1 for r in results if r['rating'] == i) / total for i in range(1, 6)}
+    # For distribution, round float ratings to nearest integer
+    rounded_ratings = [round(r['rating']) for r in results]
+    rating_dist = {i: sum(1 for r in rounded_ratings if r == i) / total for i in range(1, 6)}
 
-    confident = sum(1 for r in results if r['rating'] in [1, 5])
-    moderate = sum(1 for r in results if r['rating'] in [2, 4])
-    unsure = sum(1 for r in results if r['rating'] == 3)
+    confident = sum(1 for r in rounded_ratings if r in [1, 5])
+    moderate = sum(1 for r in rounded_ratings if r in [2, 4])
+    unsure = sum(1 for r in rounded_ratings if r == 3)
 
     return {
         'total_cases': total,
