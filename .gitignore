@@ -14,10 +14,13 @@ logs
 slurm/output
 
 # Large data files
-data/real_cases/echr_new/evaluations/*.csv
 *.csv
 !config/*.csv
-!data/real_cases/echr_new/unanimous/*.json
+
+# Keep only the main dataset
+data/real_cases/
+data/human_eval/
+!data/datasets/
 
 # HuggingFace cache
 hf_cache/

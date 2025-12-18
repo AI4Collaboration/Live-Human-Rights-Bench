@@ -654,7 +654,7 @@ def main():
     parser.add_argument(
         '--input',
         type=str,
-        default='data/real_cases/echr_new/unanimous/balanced_sample_50_50_three_step_ner_updated_v2.json',
+        default='data/datasets/echr_cases_100_balanced.json',
         help='Input JSON file with cases'
     )
     parser.add_argument(
