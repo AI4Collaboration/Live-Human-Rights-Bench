@@ -716,12 +716,65 @@ async def run_all_scenarios(
     skip_existing: bool = True,
     use_vllm: bool = False,
     use_openrouter: bool = False,
+    parallel_scenarios: int = 1,
 ):
-    """Run all scenarios sequentially."""
+    """Run scenarios sequentially or in parallel."""
 
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
+    # If parallel_scenarios > 1, run scenarios in batches
+    if parallel_scenarios > 1:
+        logger.info(f"Running scenarios in parallel (batch size: {parallel_scenarios})")
+
+        # Process scenarios in batches
+        for i in range(0, len(scenarios), parallel_scenarios):
+            batch = scenarios[i:i + parallel_scenarios]
+            logger.info(f"\n{'='*80}")
+            logger.info(f"Running batch {i//parallel_scenarios + 1}: {', '.join(s['name'] for s in batch)}")
+            logger.info(f"{'='*80}\n")
+
+            # Run batch scenarios in parallel
+            tasks = []
+            for scenario in batch:
+                task = run_scenario(
+                    scenario=scenario,
+                    cases=cases,
+                    strategies=strategies,
+                    model_id=model_id,
+                    api_key=api_key,
+                    temperature=temperature,
+                    use_vllm=use_vllm,
+                    use_openrouter=use_openrouter,
+                )
+                tasks.append(task)
+
+            # Wait for all tasks in batch to complete
+            batch_results = await asyncio.gather(*tasks)
+
+            # Save results for each scenario in batch
+            for scenario, (results, metrics) in zip(batch, batch_results):
+                scenario_name = scenario['name']
+                csv_file = output_path / f"{scenario_name}_results.csv"
+                metrics_file = output_path / f"{scenario_name}_metrics.json"
+
+                # Check if should skip
+                if skip_existing and csv_file.exists() and metrics_file.exists():
+                    logger.info(f"⏭️  Skipped (already exists): {scenario_name}")
+                    continue
+
+                # Save results
+                df = pd.DataFrame(results)
+                df.to_csv(csv_file, index=False)
+
+                with open(metrics_file, 'w') as f:
+                    json.dump(metrics, f, indent=2)
+
+                logger.info(f"✓ Saved: {scenario_name}")
+
+        return
+
+    # Original sequential processing
     for scenario in scenarios:
         scenario_name = scenario['name']
 
@@ -816,6 +869,12 @@ def main():
         '--parallel',
         action='store_true',
         help='Run scenarios in parallel (evaluate all scenarios for each case simultaneously)'
+    )
+    parser.add_argument(
+        '--parallel-scenarios',
+        type=int,
+        default=1,
+        help='Number of scenarios to run in parallel (default: 1). With OpenRouter paid tier (200 req/min), use 2 for optimal speed.'
     )
     parser.add_argument(
         '--use-vllm',
@@ -922,6 +981,7 @@ def main():
             skip_existing=not args.force,
             use_vllm=args.use_vllm,
             use_openrouter=args.use_openrouter,
+            parallel_scenarios=args.parallel_scenarios,
         ))
 
     logger.info("\n" + "="*80)
