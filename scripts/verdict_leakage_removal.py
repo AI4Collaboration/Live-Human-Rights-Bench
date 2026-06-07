@@ -303,39 +303,38 @@ def stage3_repair(case: CaseRecord, leaking_sentences: list[str]) -> CaseRecord:
 
 # ── Data loading ─────────────────────────────────────────────────────────────
 
-def load_from_db(db_url: str, country: str, cutoff_date: str = "") -> list[CaseRecord]:
+def load_from_db(db_url: str, country: str = "", cutoff_date: str = "", lang: str = "ENG") -> list[CaseRecord]:
     """Load ECtHR cases from PostgreSQL echr_cases table."""
     import psycopg2
 
     conn = psycopg2.connect(db_url)
     with conn.cursor() as cur:
+        conditions = ["full_text IS NOT NULL", "length(full_text) > 500", "conclusion IS NOT NULL"]
+        params = []
+
+        if country:
+            conditions.append("respondent = %s")
+            params.append(country)
         if cutoff_date:
-            cur.execute("""
-                SELECT item_id, doc_name, conclusion, full_text
-                FROM echr_cases
-                WHERE respondent = %s
-                  AND full_text IS NOT NULL
-                  AND length(full_text) > 500
-                  AND conclusion IS NOT NULL
-                  AND kp_date >= %s
-                ORDER BY kp_date DESC
-            """, (country, cutoff_date))
-        else:
-            cur.execute("""
-                SELECT item_id, doc_name, conclusion, full_text
-                FROM echr_cases
-                WHERE respondent = %s
-                  AND full_text IS NOT NULL
-                  AND length(full_text) > 500
-                  AND conclusion IS NOT NULL
-                ORDER BY item_id
-            """, (country,))
+            conditions.append("kp_date >= %s")
+            params.append(cutoff_date)
+        if lang:
+            conditions.append("language_iso = %s")
+            params.append(lang)
+
+        # Exclude translations
+        conditions.append("doc_name NOT ILIKE %s")
+        params.append("%Translation%")
+
+        query = f"SELECT item_id, doc_name, conclusion, full_text, respondent FROM echr_cases WHERE {' AND '.join(conditions)} ORDER BY item_id"
+        cur.execute(query, params if params else None)
         rows = cur.fetchall()
     conn.close()
 
     cases = []
-    for item_id, doc_name, conclusion, full_text in rows:
-        # Parse articles and violation from conclusion
+    for row in rows:
+        item_id, doc_name, conclusion, full_text = row[0], row[1], row[2], row[3]
+        respondent = row[4] if len(row) > 4 else ""
         articles_violations = parse_conclusion(conclusion or "")
         for article, label in articles_violations:
             cases.append(CaseRecord(
@@ -509,8 +508,9 @@ def main():
     parser = argparse.ArgumentParser(description="Verdict-leakage removal pipeline for ECtHR cases")
     parser.add_argument("--source", choices=["db", "json"], default="db")
     parser.add_argument("--db", default="dbname=secondlayer_prod user=secondlayer password=secondlayer host=172.18.0.13")
-    parser.add_argument("--country", default="UKR")
-    parser.add_argument("--cutoff-date", default="2024-08-01", help="Only include cases after this date")
+    parser.add_argument("--country", default="", help="Respondent country code (empty = all countries)")
+    parser.add_argument("--lang", default="ENG", help="Language ISO code filter (ENG, FRE, etc.)")
+    parser.add_argument("--cutoff-date", default="", help="Only include cases after this date")
     parser.add_argument("--input", help="Input JSON file (when --source json)")
     parser.add_argument("--output", default="data/processed/echr_cases_clean.json")
     parser.add_argument("--workers", type=int, default=5)
@@ -527,8 +527,8 @@ def main():
 
     # Load cases
     if args.source == "db":
-        print(f"Loading cases from database (country={args.country}, cutoff={args.cutoff_date})...")
-        cases = load_from_db(args.db, args.country, args.cutoff_date)
+        print(f"Loading cases from database (country={args.country or 'ALL'}, lang={args.lang}, cutoff={args.cutoff_date or 'none'})...")
+        cases = load_from_db(args.db, args.country, args.cutoff_date, args.lang)
     else:
         print(f"Loading cases from {args.input}...")
         cases = load_from_json(args.input)
