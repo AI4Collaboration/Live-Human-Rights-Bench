@@ -52,7 +52,7 @@ MODELS = {
         "output_cost_per_mtok": 15.0,
     },
     "deepseek": {
-        "display_name": "DeepSeek V3",
+        "display_name": "DeepSeek V4",
         "model_id": "deepseek-chat",
         "backend": "openai",
         "base_url": "https://api.deepseek.com",
@@ -70,21 +70,13 @@ MODELS = {
         "output_cost_per_mtok": 10.0,
     },
     "gemini": {
-        "display_name": "Gemini 2.5 Pro",
-        "model_id": "google/gemini-2.5-pro-preview",
+        "display_name": "Gemini 3.1 Flash",
+        "model_id": "google/gemini-3.1-flash",
         "backend": "openai",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key_env": "OPENROUTER_API_KEY",
-        "input_cost_per_mtok": 1.25,
-        "output_cost_per_mtok": 10.0,
-    },
-    "llama405b": {
-        "display_name": "Llama 3.1 405B",
-        "model_id": "meta-llama/Llama-3.1-405B-Instruct",
-        "backend": "vllm",
-        "vllm_url": "http://10.88.0.3:8000/v1",
-        "input_cost_per_mtok": 0.0,
-        "output_cost_per_mtok": 0.0,
+        "input_cost_per_mtok": 0.15,
+        "output_cost_per_mtok": 0.60,
     },
 }
 
@@ -652,7 +644,7 @@ def main():
         description="Full-scale perturbation experiment orchestrator.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Model keys: sonnet, deepseek, gpt4o, gemini, llama405b
+Model keys: sonnet, deepseek, gpt4o, gemini
 RQ keys:    baseline, rq1, rq2, rq3
 
 Examples:
