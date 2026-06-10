@@ -43,15 +43,6 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 MODELS = {
-    "opus": {
-        "display_name": "Claude Opus 4.8",
-        "model_id": "us.anthropic.claude-opus-4-8-20250515-v1:0",
-        "backend": "bedrock",
-        "region": "us-west-2",
-        # Cost per 1M tokens (input/output)
-        "input_cost_per_mtok": 15.0,
-        "output_cost_per_mtok": 75.0,
-    },
     "sonnet": {
         "display_name": "Claude Sonnet 4.6",
         "model_id": "us.anthropic.claude-sonnet-4-6-20250514-v1:0",
@@ -60,25 +51,36 @@ MODELS = {
         "input_cost_per_mtok": 3.0,
         "output_cost_per_mtok": 15.0,
     },
-    "nova": {
-        "display_name": "Amazon Nova Pro",
-        "model_id": "amazon.nova-pro-v1:0",
-        "backend": "bedrock",
-        "region": "us-east-1",
-        "input_cost_per_mtok": 0.80,
-        "output_cost_per_mtok": 3.20,
+    "deepseek": {
+        "display_name": "DeepSeek V3",
+        "model_id": "deepseek-chat",
+        "backend": "openai",
+        "base_url": "https://api.deepseek.com",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "input_cost_per_mtok": 0.27,
+        "output_cost_per_mtok": 1.10,
     },
-    "qwen": {
-        "display_name": "Qwen3-32B",
-        "model_id": "qwen.qwen3-32b-v1:0",
-        "backend": "bedrock",
-        "region": "us-east-1",
-        "input_cost_per_mtok": 0.35,
-        "output_cost_per_mtok": 0.40,
+    "gpt4o": {
+        "display_name": "GPT-4o",
+        "model_id": "openai/gpt-4o",
+        "backend": "openai",
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env": "OPENROUTER_API_KEY",
+        "input_cost_per_mtok": 2.50,
+        "output_cost_per_mtok": 10.0,
     },
-    "llama": {
-        "display_name": "Llama 3.3 70B",
-        "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "gemini": {
+        "display_name": "Gemini 2.5 Pro",
+        "model_id": "google/gemini-2.5-pro-preview",
+        "backend": "openai",
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env": "OPENROUTER_API_KEY",
+        "input_cost_per_mtok": 1.25,
+        "output_cost_per_mtok": 10.0,
+    },
+    "llama405b": {
+        "display_name": "Llama 3.1 405B",
+        "model_id": "meta-llama/Llama-3.1-405B-Instruct",
         "backend": "vllm",
         "vllm_url": "http://10.88.0.3:8000/v1",
         "input_cost_per_mtok": 0.0,
@@ -466,6 +468,123 @@ def run_vllm_model(model_key: str, cases: list, rqs: list, n_samples: int):
         print(f"  {model_key} finished in {elapsed / 60:.1f} min")
 
 
+def run_openai_model(model_key: str, cases: list, rqs: list, n_samples: int):
+    """Run experiments for an OpenAI-compatible API model (DeepSeek, OpenRouter, etc.)."""
+    import openai as openai_lib
+    import mlflow
+
+    model = MODELS[model_key]
+    api_key = os.environ.get(model["api_key_env"], "")
+    if not api_key:
+        print(f"  ERROR: Set {model['api_key_env']} environment variable")
+        return
+    client = openai_lib.OpenAI(base_url=model["base_url"], api_key=api_key)
+    exp_id = _setup_mlflow(model_key)
+
+    sys.path.insert(0, str(REPO_ROOT / "experiments"))
+    from run_perturbation_openai import (
+        run_baseline as oa_baseline,
+        run_summarization as oa_summarization,
+        run_framing as oa_framing,
+        run_reconsideration as oa_reconsideration,
+    )
+
+    model_dir = OUTPUT_ROOT / model_key
+    model_dir.mkdir(parents=True, exist_ok=True)
+
+    run_name = f"full_{model_key}_{len(cases)}pairs"
+    with mlflow.start_run(run_name=run_name):
+        mlflow.log_param("model", model["model_id"])
+        mlflow.log_param("model_display", model["display_name"])
+        mlflow.log_param("n_cases", len(cases))
+        mlflow.log_param("n_samples", n_samples)
+        mlflow.log_param("stages", ",".join(rqs))
+        mlflow.log_param("backend", "openai-api")
+        mlflow.log_param("base_url", model["base_url"])
+        mlflow.log_param("scale", "full")
+
+        start = time.time()
+        baseline_results = None
+        summaries = None
+
+        if "baseline" in rqs:
+            if is_done(model_key, "baseline"):
+                print(f"  [skip] {model_key}/baseline -- already done")
+                baseline_results = json.loads(result_path(model_key, "baseline").read_text())
+            else:
+                print(f"  [run]  {model_key}/baseline ...")
+                baseline_results = oa_baseline(client, model["model_id"], cases, n_samples)
+                result_path(model_key, "baseline").parent.mkdir(parents=True, exist_ok=True)
+                result_path(model_key, "baseline").write_text(
+                    json.dumps(baseline_results, ensure_ascii=False, indent=2)
+                )
+                mark_done(model_key, "baseline")
+        else:
+            bp = result_path(model_key, "baseline")
+            if bp.exists():
+                baseline_results = json.loads(bp.read_text())
+
+        if "rq1" in rqs:
+            if baseline_results is None:
+                print(f"  [skip] {model_key}/rq1 -- no baseline results available")
+            elif is_done(model_key, "rq1"):
+                print(f"  [skip] {model_key}/rq1 -- already done")
+                sp = summaries_path(model_key)
+                if sp.exists():
+                    summaries = json.loads(sp.read_text())
+            else:
+                print(f"  [run]  {model_key}/rq1 ...")
+                rq1_results, summaries = oa_summarization(
+                    client, model["model_id"], cases, n_samples, baseline_results
+                )
+                result_path(model_key, "rq1").write_text(
+                    json.dumps(rq1_results, ensure_ascii=False, indent=2)
+                )
+                summaries_path(model_key).write_text(
+                    json.dumps(summaries, ensure_ascii=False, indent=2)
+                )
+                mark_done(model_key, "rq1")
+        else:
+            sp = summaries_path(model_key)
+            if sp.exists():
+                summaries = json.loads(sp.read_text())
+
+        if "rq2" in rqs:
+            if baseline_results is None or summaries is None:
+                print(f"  [skip] {model_key}/rq2 -- missing baseline or summaries")
+            elif is_done(model_key, "rq2"):
+                print(f"  [skip] {model_key}/rq2 -- already done")
+            else:
+                print(f"  [run]  {model_key}/rq2 ...")
+                rq2_results = oa_framing(
+                    client, model["model_id"], cases, n_samples,
+                    summaries, baseline_results
+                )
+                result_path(model_key, "rq2").write_text(
+                    json.dumps(rq2_results, ensure_ascii=False, indent=2)
+                )
+                mark_done(model_key, "rq2")
+
+        if "rq3" in rqs:
+            if baseline_results is None:
+                print(f"  [skip] {model_key}/rq3 -- no baseline results available")
+            elif is_done(model_key, "rq3"):
+                print(f"  [skip] {model_key}/rq3 -- already done")
+            else:
+                print(f"  [run]  {model_key}/rq3 ...")
+                rq3_results = oa_reconsideration(
+                    client, model["model_id"], cases, n_samples, baseline_results
+                )
+                result_path(model_key, "rq3").write_text(
+                    json.dumps(rq3_results, ensure_ascii=False, indent=2)
+                )
+                mark_done(model_key, "rq3")
+
+        elapsed = time.time() - start
+        mlflow.log_metric("total_time_seconds", elapsed)
+        print(f"  {model_key} finished in {elapsed / 60:.1f} min")
+
+
 # ---------------------------------------------------------------------------
 # Cost summary
 # ---------------------------------------------------------------------------
@@ -533,14 +652,14 @@ def main():
         description="Full-scale perturbation experiment orchestrator.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Model keys: opus, sonnet, nova, qwen, llama
+Model keys: sonnet, deepseek, gpt4o, gemini, llama405b
 RQ keys:    baseline, rq1, rq2, rq3
 
 Examples:
   python scripts/run_full_experiment.py --dry-run
-  python scripts/run_full_experiment.py --model opus --rq baseline
-  python scripts/run_full_experiment.py --model llama
-  python scripts/run_full_experiment.py --reset-checkpoint opus baseline
+  python scripts/run_full_experiment.py --model deepseek --rq baseline
+  python scripts/run_full_experiment.py --model llama405b
+  python scripts/run_full_experiment.py --reset-checkpoint sonnet baseline
 """,
     )
     parser.add_argument(
@@ -657,6 +776,8 @@ Examples:
                 run_bedrock_model(mk, cases, rqs, args.samples)
             elif model["backend"] == "vllm":
                 run_vllm_model(mk, cases, rqs, args.samples)
+            elif model["backend"] == "openai":
+                run_openai_model(mk, cases, rqs, args.samples)
             else:
                 print(f"  Unknown backend '{model['backend']}' for {mk}, skipping")
         except KeyboardInterrupt:
