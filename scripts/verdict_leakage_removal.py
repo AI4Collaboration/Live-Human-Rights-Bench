@@ -52,6 +52,8 @@ try:
 except ImportError:
     boto3 = None
 
+from conclusion_scrub import scrub_text, SCRUB_MARKER
+
 # ── Stage 1: Pattern-based truncation ────────────────────────────────────────
 
 # Markers that introduce the Court's own assessment/conclusions.
@@ -451,6 +453,13 @@ def run_pipeline(cases: list[CaseRecord], args) -> list[CaseRecord]:
 
     for case in cases:
         truncated, method = stage1_truncate(case.full_case_text)
+        # Mandatory conclusion scrub: Stage 1 truncation misses per-article
+        # conclusion sentences inside the assessment (measured 2.8-7.3%
+        # own-article label leakage across published sets, 2026-07-03 audit).
+        clean, dropped = scrub_text(truncated)
+        if dropped:
+            truncated = clean
+            method += SCRUB_MARKER
         case.full_case_text_no_verdict = truncated
         case.verdict_removal_method = method
         case.verdict_free_length = len(truncated)
