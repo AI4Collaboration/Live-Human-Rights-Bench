@@ -70,7 +70,8 @@ letting procedural articles into the headline number drags substantive results
 around. Bucket on **`article_full`**:
 
 - **Substantive:** `2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18`,
-  `P1-1, P1-2, P1-3, P4-2, P4-4, P6-1, P7-1, P7-2, P7-3, P7-4, P12-1`
+  `P1-1, P1-2, P1-3, P4-2, P4-3, P4-4, P6-1, P7-1, P7-2, P7-3, P7-4, P12-1`,
+  plus the legacy bare `1` (unresolved P1-1 that fell back to `article`)
 - **Procedural / ancillary (separate bucket):** `34, 35, 38, 41, 46`
 
 ## Experiment → split map
@@ -119,8 +120,9 @@ ukr_pre  = temporal.filter(lambda r: r["bin"] == "pre_2022")
 ukr_post = temporal.filter(lambda r: r["bin"] == "post_2022")
 
 # Bucket on article_full (article is the lossy legacy field).
-SUBSTANTIVE = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "18",
-               "P1-1", "P1-2", "P1-3", "P4-2", "P4-4", "P6-1", "P7-1", "P7-2", "P7-3", "P7-4", "P12-1"}
+# "1" is included because unresolved P1-1 rows fall back to the legacy bare code.
+SUBSTANTIVE = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "18",
+               "P1-1", "P1-2", "P1-3", "P4-2", "P4-3", "P4-4", "P6-1", "P7-1", "P7-2", "P7-3", "P7-4", "P12-1"}
 PROCEDURAL  = {"34", "35", "38", "41", "46"}
 sub = static.filter(lambda r: r["article_full"] in SUBSTANTIVE)
 ```
