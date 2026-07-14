@@ -63,10 +63,14 @@ except ImportError:
 SCRIPTS_DIR = Path(__file__).parent.resolve()
 sys.path.insert(0, str(SCRIPTS_DIR))
 from hudoc_scraper import (  # noqa: E402
+    build_search_query,
     search_hudoc,
     parse_search_result,
     parse_conclusion_to_pairs,
 )
+
+HUDOC_OFFSET_CAP = 10000   # HUDOC stops serving results past this offset
+BULK_PAGE = 500            # max page size for the bulk search endpoint
 
 
 # ── Dataset I/O ──────────────────────────────────────────────────────────────
@@ -127,6 +131,63 @@ def fetch_conclusion_pairs(session, item_id: str) -> list:
              "article_full": p["article_full"],
              "violation_label": p["violation_label"]}
             for p in pairs if p.get("article")]
+
+
+def _pairs_from_meta(meta: dict) -> list:
+    return [{"article": p["article"],
+             "article_full": p["article_full"],
+             "violation_label": p["violation_label"]}
+            for p in parse_conclusion_to_pairs(
+                conclusion=meta.get("conclusion", ""),
+                item_id=meta.get("item_id", ""),
+                case_name=meta.get("case_name", ""),
+                decision_date=meta.get("decision_date", ""),
+                respondent=meta.get("respondent", ""),
+                full_text="")
+            if p.get("article")]
+
+
+def bulk_sweep(target_ids: set, cache: dict, map_path: str, delay: float,
+               since_year: int, until_year: int) -> tuple:
+    """Paged bulk sweep over per-year windows (JUDGMENTS collection).
+
+    Pulls itemid+conclusion ~500 at a time and keeps only target ids, so ~30-80
+    requests replace tens of thousands of per-item queries. Per-year windows keep
+    each result set under the 10K deep-pagination cap. 002-* Information Notes are
+    not in JUDGMENTS and stay in `remaining` for the per-item fallback.
+    """
+    session = requests.Session()
+    remaining = set(target_ids) - set(cache)
+    print(f"bulk sweep: {len(remaining)} target ids to find, years "
+          f"{since_year}..{until_year}")
+    for year in range(since_year, until_year + 1):
+        if not remaining:
+            break
+        query = build_search_query(since=f"{year}-01-01", until=f"{year + 1}-01-01",
+                                   language="ENG", doc_collection="JUDGMENTS")
+        start, hits = 0, 0
+        while True:
+            resp = search_hudoc(session, query, start=start, length=BULK_PAGE)
+            results = resp.get("results", [])
+            if not results:
+                break
+            for r in results:
+                meta = parse_search_result(r)
+                iid = meta.get("item_id")
+                if iid in remaining:
+                    cache[iid] = _pairs_from_meta(meta)
+                    remaining.discard(iid)
+                    hits += 1
+            start += len(results)
+            if start >= HUDOC_OFFSET_CAP or len(results) < BULK_PAGE:
+                break
+            time.sleep(delay)
+        if hits:
+            print(f"  {year}: +{hits} (remaining {len(remaining)})")
+            save_map(cache, map_path)
+        time.sleep(delay)
+    save_map(cache, map_path)
+    return cache, remaining
 
 
 def sweep(item_ids: list, cache: dict, map_path: str, delay: float,
@@ -219,6 +280,11 @@ def main() -> int:
                     help="Coverage report only; no HUDOC calls")
     ap.add_argument("--limit", type=int, default=0,
                     help="Fetch at most N new item_ids (small test batch)")
+    ap.add_argument("--bulk", action="store_true",
+                    help="Bulk paged sweep by year window (fast), then per-item "
+                         "fallback for uncovered ids (e.g. 002-* Info Notes)")
+    ap.add_argument("--since-year", type=int, default=1959,
+                    help="First year for the bulk sweep window (default 1959)")
     ap.add_argument("--delay", type=float, default=1.0,
                     help="Seconds between HUDOC requests (politeness)")
     ap.add_argument("--push-to-hf", default=None, help="HF repo to push enriched set")
@@ -234,11 +300,20 @@ def main() -> int:
 
     if not args.check_only:
         item_ids = list(dict.fromkeys(str(i) for i in df["item_id"]))
-        if args.limit:
-            uncached = [i for i in item_ids if i not in cache][:args.limit]
-            item_ids = [i for i in item_ids if i in cache] + uncached
-            print(f"--limit {args.limit}: fetching up to {len(uncached)} new item_ids")
-        cache = sweep(item_ids, cache, args.map_output, args.delay)
+        if args.bulk:
+            until_year = time.gmtime().tm_year
+            cache, remaining = bulk_sweep(set(item_ids), cache, args.map_output,
+                                          args.delay, args.since_year, until_year)
+            if remaining:
+                print(f"per-item fallback for {len(remaining)} uncovered ids "
+                      f"(002-* Info Notes etc.)")
+                cache = sweep(sorted(remaining), cache, args.map_output, args.delay)
+        else:
+            if args.limit:
+                uncached = [i for i in item_ids if i not in cache][:args.limit]
+                item_ids = [i for i in item_ids if i in cache] + uncached
+                print(f"--limit {args.limit}: fetching up to {len(uncached)} new item_ids")
+            cache = sweep(item_ids, cache, args.map_output, args.delay)
 
     enriched, stats = enrich(df, cache)
     print("\nCoverage:")
