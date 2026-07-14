@@ -141,6 +141,11 @@ def build_api_params(
         api_params["max_tokens"] = 4096
         api_params["temperature"] = temperature
 
+    # DeepSeek-V4 reasons by default; give it room so visible content isn't empty
+    elif "deepseek-v4" in model_id.lower():
+        api_params["max_tokens"] = 4096
+        api_params["temperature"] = temperature
+
     # Other models
     else:
         api_params["max_tokens"] = max_tokens
@@ -215,6 +220,13 @@ def prepare_request(
 
     # Gemini uses higher max_tokens for reasoning
     elif "gemini" in model_id.lower():
+        request['max_tokens'] = 4096
+        request['temperature'] = temperature
+
+    # DeepSeek-V4 reasons by default: a small max_tokens is consumed by hidden
+    # reasoning tokens, leaving empty visible content (86% empty at 100 tokens).
+    # Give it room so the final 1-5 answer surfaces in `content`.
+    elif "deepseek-v4" in model_id.lower():
         request['max_tokens'] = 4096
         request['temperature'] = temperature
 
