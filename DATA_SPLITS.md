@@ -33,7 +33,7 @@ per-dataset changelogs on the Hub.
 |-------|------|
 | `verdict_free_text` | **INPUT** — case text with the conclusion surgically removed (conclusion-scrubbed) |
 | `violation_label` | **GOLD** — binary target; score model calls against this |
-| `article` | target ECHR article (bucketing key) |
+| `article` | target ECHR article, **bare number with protocol prefixes collapsed** (see [Article field encoding](#article-field-encoding)); e.g. `1` = Article 1 of Protocol 1 (property), not Convention Article 1 |
 | `respondent` | respondent state (`UKRAINE` for the `ukr` / `ukr_temporal` groups) |
 | `group` | subset selector (see tables above) |
 | `bin` | temporal bin — year string \| `pre_2022` \| `post_2022` (temporal set only) |
@@ -41,20 +41,40 @@ per-dataset changelogs on the Hub.
 | `decision_date`, `importance` | metadata (100% date coverage) |
 | `verdict_removal_method`, `verdict_free_length`, `retention_percentage`, length fields | leakage-audit provenance; rows with `+conclusion_scrub` were patched in v1.1 |
 
-> **Verify on load:** the Hub Dataset Viewer was intermittently unavailable when
-> this doc was written, so confirm the encoding of `violation_label`
-> (`int 0/1` vs string `"violation"/"no-violation"`) with `ds.features` before
-> scoring.
+> **`violation_label` (confirmed from the parquet):** string, `"violation"` /
+> `"no_violation"`. The label split is the intended **natural base rate** (not
+> balanced): overall 83.2% violation; `regular` 72.5%, `ukr` 93.8%.
+
+## Article field encoding
+
+> ⚠️ **Read before keying any per-article logic.** The `article` field is a
+> **bare number with protocol prefixes collapsed** — full Convention/Protocol
+> codes (`P1-1`, `P4-2`, `P7-4`) are **not** preserved. This is inherited from
+> the source corpus's HUDOC parse (0 rows carry a `P`/protocol marker). Verified
+> on `echr-livehrb-static-2k`:
+
+- `article == "1"` is **Article 1 of Protocol 1 (property)** for ~95%+ of rows
+  (e.g. *R & L, s.r.o. v. Czech Republic*, *K.V. Mediterranean Tours v. Türkiye*),
+  **not** Convention Article 1.
+- `article == "4"` **conflates** Convention Article 4 (slavery / trafficking,
+  e.g. *V.C.L. and A.N. v. UK*) with Protocol 4 (freedom of movement / collective
+  expulsion, e.g. *Sharifi and Others v. Italy and Greece*).
+- `7`, `12`, `18` are the Convention articles in this set, but the field alone
+  cannot disambiguate protocol vs Convention — use `case_name` / text if needed.
+
+**Do not key per-article legal tests on this field assuming Convention numbering.**
+Planned fix: rebuild the sets preserving full codes (`P1-1`, `P4-2`, `P7-4`, …).
+Until then, treat `1` as P1-1 and split `4` by hand for any clean per-right test.
 
 ## Article buckets
 
 Report substantive and procedural articles as **separate downstream buckets** —
 all models collapse on Art. 41 (balanced acc 0.21–0.42 in the MFT baseline), and
 letting procedural articles into the headline number drags substantive results
-around.
+around. Values below are the field's actual (collapsed) codes, per the note above:
 
-- **Substantive:** `2, 3, 5, 6, 8, 9, 10, 11, 13, 14, P1-1`
-- **Procedural / ancillary (separate bucket):** `41, 34, 35, 38, 46`
+- **Substantive:** `1` (= P1-1, property), `2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18`
+- **Procedural / ancillary (separate bucket):** `34, 38, 41` (also `35, 46` when present)
 
 ## Experiment → split map
 
@@ -73,6 +93,8 @@ Isolates the **country prior** from the **temporal shift** that confounds the ra
 Ukraine effect (the UA caseload is mostly post-2022, when the base rate moves too).
 
 1. Base pool: `static-2k`, `group=="regular"`, substantive articles only.
+   (Consider dropping `article=="4"` here — it conflates two different rights;
+   see [Article field encoding](#article-field-encoding).)
 2. Hold `verdict_free_text` (the facts) **fixed**.
 3. Pass the respondent state to the model as a **separate prompt field**, and swap
    it `non-UA ↔ UKRAINE`. Do **not** string-edit the country into
@@ -99,8 +121,10 @@ y2024    = temporal.filter(lambda r: r["group"] == "regular_temporal" and r["bin
 ukr_pre  = temporal.filter(lambda r: r["bin"] == "pre_2022")
 ukr_post = temporal.filter(lambda r: r["bin"] == "post_2022")
 
-SUBSTANTIVE = {"2", "3", "5", "6", "8", "9", "10", "11", "13", "14", "P1-1"}
-PROCEDURAL  = {"41", "34", "35", "38", "46"}
+# NB: bare codes with protocol prefixes collapsed. "1" == P1-1 (property);
+# "4" conflates Convention Art 4 and Protocol 4 (see "Article field encoding").
+SUBSTANTIVE = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "18"}
+PROCEDURAL  = {"34", "35", "38", "41", "46"}
 ```
 
 ## Provenance
