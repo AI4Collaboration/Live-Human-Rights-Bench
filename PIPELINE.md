@@ -47,6 +47,7 @@ Builders that turn the verdict-free corpus into the evaluation sets documented i
 ```
 scripts/clean_respondent_names.py   # respondent normalization (fills UKRAINE, etc.)
 scripts/backfill_decision_dates.py  # HUDOC metadata sweep: item_id -> decision_date / appno
+scripts/backfill_article_full.py    # HUDOC sweep: item_id -> article_full (protocol-aware codes, e.g. P1-1); resumable, --push-to-hf
 scripts/build_stratified_sample.py  # k-per-state stratified sampling
 scripts/build_livehrb_static.py     # -> echr-livehrb-static-2k  (regular + ukr, 1K + 1K)
 scripts/build_temporal_split.py     # -> echr-livehrb-temporal-2k (year bins; UA pre/post 2022-02-24)
