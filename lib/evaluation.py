@@ -23,6 +23,12 @@ def extract_rating_from_response(response: str) -> int:
     Returns:
         Rating (1-5), defaults to 3 if cannot parse
     """
+    # Guard against empty / None responses (e.g. a model returns null content
+    # or an error payload) — re.search would otherwise crash on NoneType.
+    if not response:
+        logger.warning("Empty or None response, defaulting to 3 (abstention)")
+        return 3
+
     # Try to find first digit 1-5
     match = re.search(r'[1-5]', response)
     if match:
@@ -227,6 +233,16 @@ async def call_llm(
 # Queue-based evaluation functions for efficient parallel execution
 # ============================================================================
 
+def make_custom_id(case: Dict[str, Any], sample_idx: int) -> str:
+    """Row-unique request id. Keyed on (item_id, article, group) so case-article
+    pairs of the same case never collide. Single source of truth used at both
+    build time and read time."""
+    item_id = case.get('item_id', case.get('case_name', 'unknown'))
+    article = case.get('article', 'NA')
+    group = case.get('group', '')
+    return f"{item_id}::{article}::{group}::sample_{sample_idx}"
+
+
 def prepare_evaluation_requests(
     cases: List[Dict[str, Any]],
     model_id: str,
@@ -289,7 +305,7 @@ def prepare_evaluation_requests(
             messages = build_messages(system_prompt, user_prompt, model_id)
 
             # Prepare request
-            custom_id = f"{case.get('item_id', case.get('case_name', 'unknown'))}_sample_{sample_idx}"
+            custom_id = make_custom_id(case, sample_idx)
 
             request = prepare_request(
                 custom_id=custom_id,
@@ -395,12 +411,10 @@ def process_evaluation_results(
     case_results = []
 
     for case in cases:
-        item_id = case.get('item_id', case.get('case_name', 'unknown'))
-
         # Collect all sample ratings for this case
         sample_ratings = []
         for sample_idx in range(num_samples):
-            custom_id = f"{item_id}_sample_{sample_idx}"
+            custom_id = make_custom_id(case, sample_idx)
 
             if custom_id in results:
                 response = results[custom_id]
