@@ -31,7 +31,7 @@ this paper"). The CRediT role split below was proposed by V. Ovcharov
 | CRediT role | Contributor(s) |
 |---|---|
 | **Conceptualization** | Terry J. C. Zhang, Volodymyr Ovcharov, Zhijing Jin |
-| **Data Curation** | **Volodymyr Ovcharov** — ECtHR/HUDOC corpora ingestion (23,317-pair `echr-verdict-free`, 2,619-pair `echr-ukr-verdict-free`), verdict-leakage removal pipeline (truncation + LLM verification + conclusion scrub), the `echr-livehrb-static-2k` and `echr-livehrb-temporal-2k` evaluation sets, leakage audits (v1.1, 2026-07-03) |
+| **Data Curation** | **Volodymyr Ovcharov** — ECtHR/HUDOC corpora ingestion (23,204-pair `echr-verdict-free`, 2,619-pair `echr-ukr-verdict-free`), verdict-leakage removal pipeline (truncation + LLM verification + conclusion scrub), the `echr-livehrb-static-2k` and `echr-livehrb-temporal-2k` evaluation sets, leakage audits (v1.1, 2026-07-03) |
 | **Methodology** | **Volodymyr Ovcharov** — live (self-refreshing) benchmark design, contamination control (verdict-free construction, per-model pre/post-cutoff partitions), temporal axes (year bins 2017–2026; Ukraine pre/post 2022-02-24); **Terry J. C. Zhang** — perturbation-stability framework (summarization / framing / reconsideration) |
 | **Software** | **Volodymyr Ovcharov** (data & live-refresh pipeline, experiment runners), **Arian Khorasani** (perturbation experiments on top of the pipeline) |
 | **Investigation / Experiments & Evaluation** | **Arian Khorasani** and **Volodymyr Ovcharov** (shared) |
