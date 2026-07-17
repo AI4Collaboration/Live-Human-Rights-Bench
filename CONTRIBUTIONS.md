@@ -10,7 +10,7 @@ As posted by Terry J. C. Zhang (email, 2026-06-18) and confirmed by
 Zhijing Jin ("fully supportive of the author list", email, 2026-06-18):
 
 1. **Terry J. C. Zhang\*** (University of Toronto / ETH Zurich)
-2. **Arian Khorasani\*** (Mila — Quebec AI Institute)
+2. **Arian Khorasani\*** (University of Toronto / Vector Institute)
 3. **Volodymyr Ovcharov\*** (LEX AI / legal.org.ua)
 
 \* co-first authors, equal contribution — each may list their name first
