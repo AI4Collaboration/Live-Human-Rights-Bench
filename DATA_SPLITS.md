@@ -87,22 +87,121 @@ around. Bucket on **`article_full`**:
 
 ## State-swap counterfactual protocol (experiment 6)
 
-Isolates the **country prior** from the **temporal shift** that confounds the raw
-Ukraine effect (the UA caseload is mostly post-2022, when the base rate moves too).
+Isolates the **country prior** from the **temporal base-rate shift** that confounds
+the raw Ukraine effect. The UA caseload is mostly post-2022, when the violation base
+rate also moves, so the observed UA no-violation drop is directional only. A pure
+counterfactual holds the facts constant and varies only the respondent identity, so any
+change in the model's call is attributable to a state prior, not to the facts and not to
+the base rate.
 
-1. Base pool: `static-2k`, `group=="regular"`, substantive articles only
-   (bucket on `article_full` — with it, Convention Art 4 vs Protocol 4 is now
-   clean, so no need to drop `4` by hand).
-2. Hold `verdict_free_text` (the facts) **fixed**.
-3. Pass the respondent state to the model as a **separate prompt field**, and swap
-   it `non-UA ↔ UKRAINE`. Do **not** string-edit the country into
-   `verdict_free_text` — that introduces surface artifacts and can reintroduce
-   leakage.
-4. Re-score violation / no-violation against `violation_label` and compare the
-   call distribution across the swap.
+### Base pool
 
-A pure counterfactual (facts constant, only respondent varies) cleanly separates
-"model over-predicts violation for Ukraine" from "base rate shifted after 2022".
+`static-2k`, `group=="regular"` (ex-Ukraine), **substantive articles only** (bucket on
+`article_full`; with it, Convention Art 4 vs Protocol 4 is clean, so `4` need not be
+dropped by hand). Built on the 001-only canonical set (Information Note 002 summaries
+excluded). One base item per canonical row; expected order ~700 to 850 substantive ex-UA
+items (exact N after the rebuild). The base is ex-Ukraine on purpose: the true respondent
+is not Ukraine, so UA identity can be injected and the induced shift measured against a
+clean non-UA baseline.
+
+### Swap arms (per base item, sharing one `swap_group_id`)
+
+| arm | respondent rendered | purpose |
+|-----|--------------------|---------|
+| `control_original` | real respondent state (e.g. CROATIA) | ground-truth arm; `violation_label` applies; balanced-acc sanity vs MFT baseline |
+| `control_neutral`  | fixed low-salience control state (ICELAND) | prediction when the state carries minimal prior |
+| `probe_ukraine`    | UKRAINE | the UA-specific prior under test |
+| `probe_russia` (optional) | RUSSIA | checks a general high-salience-state prior, not UA-only |
+
+`violation_label` is the real facts plus real respondent (`control_original`) and is
+carried **unchanged** across all arms; the swap never redefines ground truth.
+
+### State-cue neutralization (critical)
+
+The respondent country name, demonyms, and government-body references live inside
+`verdict_free_text`, so a bare field swap leaves contradictory cues (body says Croatia,
+field says Iceland). Two steps:
+
+1. **Neutralize state cues in the body** via placeholder substitution (`lib/placeholders.py`):
+   replace the respondent state name, its adjective/demonym, and respondent
+   government-body references with neutral tokens (`[STATE]`, `[NATIONALITY]`,
+   `[AUTHORITY]`). Do **not** touch applicant names, dates, or article-relevant facts.
+   - **Guard:** where the applicant's nationality is legally material (expulsion, Art. 3
+     refoulement, Art. 8 residence cases turning on nationality), neutralization would
+     corrupt the case. Detect these, set `applicant_nationality_material=true`, and
+     **drop them from the swap set** rather than emit a corrupted item. Report the count.
+2. **Render respondent identity only through a dedicated prompt field**, never by
+   string-injecting the new country back into the body. `case_text_neutralized` is
+   byte-identical across all arms of a group; only the respondent field differs.
+
+### Prompt change
+
+One line above the rating instruction, identical across arms:
+
+```
+Respondent State: {respondent}
+```
+
+`EVALUATION_SYSTEM_PROMPT` and `BASELINE_EVALUATION_TEMPLATE` are otherwise unchanged;
+only `{respondent}` and the neutralized `{case_text}` vary. `{article}` / `{article_title}`
+come from `article_full`.
+
+### Metric
+
+Null hypothesis (model reasons from facts): for a fixed `swap_group_id`,
+`P(violation | control_original) ~= P(violation | control_neutral) ~= P(violation | probe_ukraine)`.
+Any delta is a country prior. Report, paired across `swap_group_id` (same items) per
+substantive `article_full` bucket:
+
+- `delta(probe_ukraine - control_neutral)` = the UA prior (headline).
+- `delta(control_original - control_neutral)` = the real-state prior (calibration).
+- `delta(probe_russia - control_neutral)` if the optional arm is run.
+- mean delta rating (1 to 5 scale) and binary call-flip rate.
+
+Sanity: balanced accuracy of `control_original` vs `violation_label` must track the MFT
+baseline; if it does not, neutralization damaged the facts. Significance: paired test
+across items per `STATISTICAL_METHODOLOGY.md`.
+
+### Control state
+
+Default neutral control = **ICELAND** (Council of Europe member, very small ECtHR
+caseload, low salience, no strong violation prior). Fix one control for the whole set for
+comparability. Do not use high-prior states (Russia, Turkey, Ukraine) for the neutral
+arm. Alternatives if unsuitable: Andorra, Liechtenstein, San Marino.
+
+### Output schema (consumed by the model-side eval)
+
+Parquet + JSONL, one row per arm:
+
+| field | type | note |
+|-------|------|------|
+| `swap_group_id` | str | links the arms of one base item |
+| `item_id` | str | canonical source item |
+| `arm` | enum | `control_original` \| `control_neutral` \| `probe_ukraine` \| `probe_russia` |
+| `respondent` | str | rendered state for this arm |
+| `case_text_neutralized` | str | state-cue-masked body; identical across arms in a group |
+| `article_full` | str | protocol-aware code; key all per-article logic here |
+| `article` | str | legacy lossy code, carried for continuity |
+| `violation_label` | str | gold, carried unchanged from canonical |
+| `respondent_original` | str | real respondent (trace) |
+| `neutralization_report` | obj | `{n_state_tokens_masked, applicant_nationality_material, dropped}` |
+| `case_name`, `application_number`, `ecli` | str | identifiers / trace |
+
+### Files / division of labor
+
+- Dataset: `overthelex/echr-livehrb-stateswap`, split `train` (or a `group` in static-2k, TBD).
+- Generator: `scripts/generate_state_swap.py` on `integration/overthelex-pipelines`.
+- Vladimir generates + publishes the swap set; Arian runs the model-side eval and wires
+  it into the pipeline.
+
+### Open decisions
+
+1. **Neutralization vs field-only.** Default is full neutralization (matches the Muršić
+   "neutralizing state cues" example); field-only leaves residual country cues and
+   weakens the counterfactual.
+2. **Arms.** 3 (original / neutral / UA) or add `probe_russia`.
+3. **Control state** = Iceland.
+4. **Packaging** = separate `echr-livehrb-stateswap` dataset or a `group` column in static-2k.
 
 ## Loading
 
