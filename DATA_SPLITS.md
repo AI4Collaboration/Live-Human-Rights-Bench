@@ -99,8 +99,8 @@ the base rate.
 `static-2k`, `group=="regular"` (ex-Ukraine), **substantive articles only** (bucket on
 `article_full`; with it, Convention Art 4 vs Protocol 4 is clean, so `4` need not be
 dropped by hand). Built on the 001-only canonical set (Information Note 002 summaries
-excluded). One base item per canonical row; expected order ~700 to 850 substantive ex-UA
-items (exact N after the rebuild). The base is ex-Ukraine on purpose: the true respondent
+excluded). One base item per canonical row; **N = 972 substantive ex-UA items** (from the
+001-only rebuild: 1000 `regular` minus 28 procedural). The base is ex-Ukraine on purpose: the true respondent
 is not Ukraine, so UA identity can be injected and the induced shift measured against a
 clean non-UA baseline.
 
