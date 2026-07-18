@@ -159,8 +159,13 @@ def main():
 
     dates = json.load(open(a.dates))
 
+    # 001-only (LSYC-42): drop 002 Information Note summaries; doctype is the
+    # itemid prefix (001-... full judgments/decisions vs 002-... summaries).
+    def is_full_judgment(r):
+        return str(r.get("item_id", "")).startswith("001-")
+
     # --- regular_temporal: ex-UA, binned by year ---
-    reg_all = load_hf("overthelex/echr-verdict-free")
+    reg_all = [r for r in load_hf("overthelex/echr-verdict-free") if is_full_judgment(r)]
     by_year = defaultdict(list)
     for r in reg_all:
         if "ukrain" in str(r.get("respondent", "")).lower():
@@ -176,7 +181,7 @@ def main():
         print(f"  regular {y}: pool={len(pool)} picked={len(picked)}")
 
     # --- ukr_temporal: pre/post invasion ---
-    ukr_all = load_hf("overthelex/echr-ukr-verdict-free")
+    ukr_all = [r for r in load_hf("overthelex/echr-ukr-verdict-free") if is_full_judgment(r)]
     pre, post = [], []
     for r in ukr_all:
         d = get_date(r, dates)
