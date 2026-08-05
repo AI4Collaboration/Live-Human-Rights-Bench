@@ -20,6 +20,7 @@ Reported per contrast:
 
 Run: python scripts/stateswap_analysis.py
 """
+import argparse
 import glob
 import math
 import os
@@ -34,6 +35,14 @@ ANALYSIS_DIR = RESULTS_DIR / "analysis"
 CONTROL = "control_neutral"
 PROBES = ["probe_ukraine", "probe_russia", "control_original"]
 ALPHA = 0.05
+
+# The eight codes that had a mapped heading before ARTICLE_TITLES was completed.
+# Runs made before that fix prompted everything else with a heading that merely
+# repeated the code ("Article 13 - Article 13"), i.e. those instances were scored
+# on a different prompt from the rest of the set. --mapped-articles-only restricts
+# the analysis to these codes, which tests whether the headline survives on the
+# rows that were never affected, without paying for a re-run.
+LEGACY_TITLED_ARTICLES = {"2", "3", "5", "6", "8", "10", "14", "P1-1"}
 
 
 def mcnemar_exact(b, c):
@@ -50,18 +59,57 @@ def mcnemar_exact(b, c):
     return min(1.0, 2 * tail)
 
 
-def paired_diff_ci(b, c, n, z=1.96):
+def _binom_cdf(k, n, p):
+    return sum(math.comb(n, i) * p ** i * (1 - p) ** (n - i) for i in range(0, k + 1))
+
+
+def _clopper_pearson(k, n, alpha=0.05, tol=1e-10):
+    """Exact CI for a binomial proportion, by bisection (no scipy)."""
+    if n == 0:
+        return 0.0, 1.0
+    lo = 0.0
+    if k > 0:                       # solve P(X >= k | p) = alpha/2
+        a, b_ = 0.0, 1.0
+        while b_ - a > tol:
+            mid = (a + b_) / 2
+            if 1 - _binom_cdf(k - 1, n, mid) < alpha / 2:
+                a = mid
+            else:
+                b_ = mid
+        lo = (a + b_) / 2
+    hi = 1.0
+    if k < n:                       # solve P(X <= k | p) = alpha/2
+        a, b_ = 0.0, 1.0
+        while b_ - a > tol:
+            mid = (a + b_) / 2
+            if _binom_cdf(k, n, mid) > alpha / 2:
+                a = mid
+            else:
+                b_ = mid
+        hi = (a + b_) / 2
+    return lo, hi
+
+
+def paired_diff_ci(b, c, n):
     """95% CI on (b - c)/n, the paired difference in violation rate.
 
-    Wald interval for correlated proportions. With discordant counts this small
-    it is the honest way to show how much of an effect the data still allows.
+    Conditional on the discordant pairs, which is the same view the exact
+    McNemar test takes: with m = b + c discordant pairs, the difference is
+    (m/n)(2p - 1) for p = P(into violation | discordant), so an exact
+    Clopper-Pearson interval on p carries straight over.
+
+    A Wald interval was used here first and is wrong in exactly the case that
+    matters most: with zero discordant pairs it collapses to [0, 0], which reads
+    as "the effect is provably nil" when the data merely never saw a flip. With
+    m = 0 the rule of three bounds the discordant rate by 3/n instead.
     """
     if n == 0:
         return float("nan"), float("nan")
-    d = (b - c) / n
-    var = ((b + c) - (b - c) ** 2 / n) / (n ** 2)
-    se = math.sqrt(max(var, 0.0))
-    return d - z * se, d + z * se
+    m = b + c
+    if m == 0:
+        return -3.0 / n, 3.0 / n
+    p_lo, p_hi = _clopper_pearson(b, m)
+    return (m / n) * (2 * p_lo - 1), (m / n) * (2 * p_hi - 1)
 
 
 def benjamini_hochberg(pvals):
@@ -124,16 +172,38 @@ def contrast(piv_r, piv_p, probe):
 
 
 def main():
-    files = sorted(glob.glob(str(RESULTS_DIR / "*_stateswap_samples*.csv")))
+    ap = argparse.ArgumentParser(description="State-swap contrast analysis")
+    ap.add_argument("--mapped-articles-only", action="store_true",
+                    help="restrict to articles that had a mapped prompt heading "
+                         "before ARTICLE_TITLES was completed (sensitivity check "
+                         "for runs made before that fix)")
+    ap.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
+    args = ap.parse_args()
+
+    results_dir = args.results_dir
+    analysis_dir = results_dir / "analysis"
+    files = sorted(glob.glob(str(results_dir / "*_stateswap_samples*.csv")))
     if not files:
-        print(f"No state-swap CSVs in {RESULTS_DIR}. Run stateswap_evaluation.py first.")
+        print(f"No state-swap CSVs in {results_dir}. Run stateswap_evaluation.py first.")
         sys.exit(1)
-    ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
+    analysis_dir.mkdir(parents=True, exist_ok=True)
+    if args.mapped_articles_only:
+        print(f"[--mapped-articles-only] restricted to {sorted(LEGACY_TITLED_ARTICLES)}\n")
 
     all_rows = []
     for f in files:
         name = os.path.basename(f).split("_stateswap")[0]
         df = pd.read_csv(f)
+        if args.mapped_articles_only:
+            before = df["swap_group_id"].nunique()
+            df = df[df["article"].astype(str).isin(LEGACY_TITLED_ARTICLES)]
+            after = df["swap_group_id"].nunique()
+            print(f"[{name}] kept {after} of {before} groups "
+                  f"({100 * (before - after) / max(1, before):.1f}% dropped as "
+                  f"degraded-prompt rows)")
+            if df.empty:
+                print(f"[{name}] nothing left after the restriction; skipped")
+                continue
         if "num_failed_calls" in df.columns and df["num_failed_calls"].sum():
             print(f"[{name}] {int(df['num_failed_calls'].sum())} failed calls in the "
                   f"source run; rows with no usable sample are dropped pairwise.")
@@ -180,7 +250,9 @@ def main():
          "out_of_violation_to_abstain", "net_into_violation", "net_rate",
          "ci95_low", "ci95_high", "mcnemar_p", "bh_q", "significant_bh"]
     ]
-    out.to_csv(ANALYSIS_DIR / "stateswap_contrasts.csv", index=False)
+    out_name = ("stateswap_contrasts_mapped_articles.csv" if args.mapped_articles_only
+                else "stateswap_contrasts.csv")
+    out.to_csv(analysis_dir / out_name, index=False)
 
     n_sig = int(out["significant_bh"].sum())
     print("=" * 112)
@@ -192,7 +264,11 @@ def main():
           f"at alpha={ALPHA}.")
     print("A non-significant contrast is not evidence of no effect: read the 95% CI, "
           "which bounds how\nlarge a country prior the data still permits.")
-    print(f"\nSaved {ANALYSIS_DIR / 'stateswap_contrasts.csv'}")
+    if args.mapped_articles_only:
+        print("Restricted run: these rows were never exposed to the degenerate prompt "
+              "heading, so a\nheadline that holds here does not depend on the article-title "
+              "fix and needs no re-run.")
+    print(f"\nSaved {analysis_dir / out_name}")
 
 
 if __name__ == "__main__":
