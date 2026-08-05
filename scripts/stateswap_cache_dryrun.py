@@ -17,17 +17,11 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
-from lib.prompts import EVALUATION_SYSTEM_PROMPT, BASELINE_EVALUATION_TEMPLATE
+from lib.prompts import (EVALUATION_SYSTEM_PROMPT, BASELINE_EVALUATION_TEMPLATE,
+                         get_article_title)
 
 INPUT = REPO / "data" / "processed" / "echr_stateswap.json"
 ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
-ARTICLE_TITLES = {
-    "2": "Right to life", "3": "Prohibition of torture",
-    "5": "Right to liberty and security", "6": "Right to a fair trial",
-    "8": "Right to respect for private and family life",
-    "10": "Freedom of expression", "14": "Prohibition of discrimination",
-    "P1-1": "Protection of property",
-}
 # rough list input $/M for the projection (edit if your rates differ)
 INPUT_PRICE = {"anthropic/claude-opus-4.8": 5.0, "anthropic/claude-sonnet-5": 2.0}
 
@@ -43,8 +37,7 @@ def split_prompt(case_text, article):
     """Cacheable block = intro + case text; uncached = the instruction."""
     pre, post = BASELINE_EVALUATION_TEMPLATE.split("{case_text}")
     cached = pre + case_text
-    title = ARTICLE_TITLES.get(str(article), f"Article {article}")
-    uncached = post.format(article=article, article_title=title)
+    uncached = post.format(article=article, article_title=get_article_title(article))
     return cached, uncached
 
 
