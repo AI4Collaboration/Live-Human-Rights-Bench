@@ -65,13 +65,20 @@ def main():
     a = ap.parse_args()
 
     dates = json.load(open(a.dates))
+    # 001-only (LSYC-42): keep full judgments/decisions, drop 002 Information Note
+    # summaries. HUDOC encodes the doctype in the itemid prefix (001-... vs 002-...).
+    def is_full_judgment(r):
+        return str(r.get("item_id", "")).startswith("001-")
     print("regular pool: overthelex/echr-verdict-free")
     reg_all = load_hf("overthelex/echr-verdict-free")
-    reg_pool = [r for r in reg_all if "ukrain" not in str(r.get("respondent", "")).lower()]
-    print(f"  {len(reg_all)} pairs, {len(reg_pool)} after excluding Ukraine")
+    reg_pool = [r for r in reg_all
+                if "ukrain" not in str(r.get("respondent", "")).lower()
+                and is_full_judgment(r)]
+    print(f"  {len(reg_all)} pairs, {len(reg_pool)} after excluding Ukraine + 002")
     print("ukr pool: overthelex/echr-ukr-verdict-free")
-    ukr_pool = load_hf("overthelex/echr-ukr-verdict-free")
-    print(f"  {len(ukr_pool)} pairs")
+    ukr_all = load_hf("overthelex/echr-ukr-verdict-free")
+    ukr_pool = [r for r in ukr_all if is_full_judgment(r)]
+    print(f"  {len(ukr_all)} pairs, {len(ukr_pool)} after dropping 002")
 
     reg = [enrich(r, dates) for r in round_robin(reg_pool, "respondent", a.target, a.seed)]
     ukr = [enrich(r, dates) for r in round_robin(ukr_pool, "article", a.target, a.seed)]
