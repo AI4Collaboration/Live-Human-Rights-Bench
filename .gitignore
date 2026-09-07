@@ -40,3 +40,8 @@ mlruns/
 
 # annotation sheets carry judgment text and the control key
 annotation/
+
+# The human validation artefact is tracked on purpose: it is what the annotation
+# figures in the paper are computed from. See docs/ANNOTATION.md.
+!data/annotation/
+!data/annotation/*.csv
