@@ -2,6 +2,10 @@
 
 This repository contains the code and data for evaluating how large language models (LLMs) judge real European Court of Human Rights (ECHR) cases.
 
+## Planned Adversarial Opinion Evaluation
+
+The [Section 5 protocol](docs/ADVERSARIAL_OPINION.md) specifies six challenge strategies, single-turn and multi-turn interaction, static and adaptive generation, and GPT-5.4 nano as the challenger. This is an experimental design, not an implemented runner or a completed result. The existing experiments below are unchanged.
+
 ## Research Questions
 
 **RQ1: Summarization Effects** - Does summarizing case text affect LLM judgment accuracy?
