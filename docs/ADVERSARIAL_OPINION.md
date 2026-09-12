@@ -55,6 +55,12 @@ Each independent attempt restarts from the same pre-challenge state. **T is the 
 - **Confidence (separate planned measure):** self-reported confidence requires its own elicitation contract before testing its association with stability. Neither violation likelihood nor the challenger's expressed certainty supplies this measure.
 - **Validity and cost:** malformed answers, refusals, API failures, rejected challenges, retries, token use, and latency. These are not substantive reversals. Retain raw conversations and per-turn judgments.
 
+### Metrics figure placeholder
+
+![Planned persuasion metrics: illustrative judgment trajectories and empty result panels.](figures/fig_persuasion_metrics.png)
+
+The trajectories explain the scoring rules; they are not observed responses. Rate and pass@k panels remain empty until validated results exist. [Editable draw.io source](figures/fig_persuasion_metrics.drawio) · [Vector PDF](figures/fig_persuasion_metrics.pdf).
+
 ## Output Convention
 
 For this planned extension, every target response, including the initial one, contains a **0-100 violation likelihood** and a **one-sentence explanation**. The score estimates how likely the Court is to find a violation of the resolved target provision:
