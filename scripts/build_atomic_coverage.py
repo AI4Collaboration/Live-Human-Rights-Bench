@@ -18,6 +18,12 @@ how wide the roster gets. The one hard constraint on `--model` is that it must n
 the summariser, for the same reason a judge must not read its own writing. Being in
 the judge roster is harmless here, since the metric never sees a judge's verdict.
 
+Who the summariser is comes from the summaries file, not from a flag. There are now
+two summary sets on `main`, built by different models, and a named default would let
+the guard compare `--model` against a summariser that wrote none of the text being
+scored: it would pass while measuring exactly the thing it exists to prevent. Use
+`--summarizer` only for a legacy file that records no summariser of its own.
+
 Claims are extracted per paragraph so each keeps the number it came from, which is
 what makes the headline possible: the Court's assessment back-references the
 paragraphs it rested on, so "relied upon" is read off the judgment rather than
@@ -164,8 +170,9 @@ def main():
     p.add_argument("--variant", required=True, help="a label, e.g. abstractive or extractive")
     p.add_argument("--model", default="google/gemini-3.5-flash",
                    help="extractor and verifier; must not be the summariser")
-    p.add_argument("--summarizer", default="x-ai/grok-4.6",
-                   help="named only so the run refuses to grade its own writing")
+    p.add_argument("--summarizer",
+                   help="override, for a legacy summaries file that records no "
+                        "summariser; otherwise it is read from the file")
     p.add_argument("--base-url", default="https://openrouter.ai/api/v1")
     p.add_argument("--api-key-env", default="OPENROUTER_API_KEY")
     p.add_argument("--out", required=True)
@@ -176,15 +183,25 @@ def main():
     p.add_argument("--max-claims", type=int, default=6, help="claims per paragraph")
     args = p.parse_args()
 
-    if args.model == args.summarizer:
-        sys.exit("--model is the summariser; coverage would be self-assessed")
+    summaries, meta = load_summaries(args.summaries)
+    recorded = meta.get("summarizer")
+    if recorded and args.summarizer and args.summarizer != recorded:
+        sys.exit("--summarizer says %s but %s was written by %s; the flag cannot rename "
+                 "the model that produced the text"
+                 % (args.summarizer, args.summaries, recorded))
+    summarizer = recorded or args.summarizer
+    if not summarizer:
+        sys.exit("%s records no summariser and --summarizer was not given; refusing to "
+                 "run a guard that cannot see what wrote these summaries" % args.summaries)
+    if args.model == summarizer:
+        sys.exit("--model is the summariser (%s); coverage would be self-assessed"
+                 % summarizer)
 
     key = os.environ.get(args.api_key_env)
     if not key:
         sys.exit("%s is not set" % args.api_key_env)
     client = OpenAI(base_url=args.base_url, api_key=key)
 
-    summaries, meta = load_summaries(args.summaries)
     rows = [r for r in csv.DictReader(open(args.full_texts)) if r.get("full_text")]
     rows = [r for r in rows if r["item_id"] in summaries]
     if args.limit:
@@ -195,7 +212,8 @@ def main():
     extract_ckpt = Checkpoint(out_dir / "claims.jsonl")
     result_ckpt = Checkpoint(out_dir / ("%s.jsonl" % args.variant))
 
-    print("%d judgments, model %s, variant %s" % (len(rows), args.model, args.variant))
+    print("%d judgments, model %s, summariser %s, variant %s"
+          % (len(rows), args.model, summarizer, args.variant))
 
     def one(row):
         item_id = row["item_id"]
