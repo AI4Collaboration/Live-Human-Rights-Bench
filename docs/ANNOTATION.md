@@ -35,6 +35,10 @@ Three of them were caught by annotators disagreeing with the key, not by us.
 cited range, and the written instructions tell the annotator to answer `unclear` in exactly
 that situation, so a `no` cannot be demanded.
 
+Those instructions are `docs/annotation/INSTRUCTIONS.md`, committed verbatim: it is the same
+file in every sheet that went out, and the rules it fixes are what the controls are scored
+against, so quoting it from memory is not good enough.
+
 That leaves **11 controls that test anything**, and only those are scored.
 
 ## What the exercise found
@@ -56,6 +60,13 @@ That leaves **11 controls that test anything**, and only those are scored.
 
 It reads `data/annotation/annotation_merged.csv` and nothing else. If a number in the paper
 disagrees with its output, the paper is wrong.
+
+The merged table itself comes from `scripts/merge_annotation.py`, which is committed for the
+rule it encodes rather than to be re-run: its inputs are the returned sheets and the control
+key, and those stay out of the repository because they identify the annotators. The rule worth
+reading there is `cite_class`, which decides from the reasoning text alone whether the shown
+paragraph is cited on its own or only inside a range, and therefore which controls are
+scoreable at all.
 
 ## What is deliberately not here
 
