@@ -45,3 +45,9 @@ annotation/
 # figures in the paper are computed from. See docs/ANNOTATION.md.
 !data/annotation/
 !data/annotation/*.csv
+
+# So is the brief the annotators worked from: the controls are scored against the
+# rules it fixes, so it has to be readable rather than quoted from memory. It holds
+# no judgment text and names nobody.
+!docs/annotation/
+!docs/annotation/*.md
