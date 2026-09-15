@@ -32,21 +32,18 @@ this release.
 
 ## Build one extractive control
 
-**Current format blocker:** the existing numbered-paragraph extractor directly
-supports 385/947 reviewed judgments. The other 562 have fewer than four parsed
-paragraphs (362) or duplicate paragraph numbers (200). This is a parsing/eligibility
-check, not a finding that their source facts are absent. The builder stops before
-any selector calls until segmentation is resolved; it must not silently evaluate
-only the compatible subset. No extractive results for this repaired release are
-claimed here.
+The current span-based parser passes the offline format preflight for all 947
+reviewed judgments. This confirms source compatibility only. It does not create
+the extractive summaries or constitute an extractive-control result.
 
 ```bash
 python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --out data/processed/summaries_extractive_leakchecked_20260915.json --check-only
 ```
 
-After resolving that blocker, the following command makes paid selector calls. It selects paragraphs from the
-reviewed, 50,000-character source input, assembles them in source order, and records
-selected and omitted paragraph numbers. Failed calls are not successful extracts.
+After the preflight passes, the following command makes paid selector calls. It
+selects paragraphs from the reviewed, 50,000-character source input, assembles
+them in source order, and records selected and omitted paragraph numbers. Failed
+calls are not successful extracts.
 
 ```bash
 python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY --out data/processed/summaries_extractive_leakchecked_20260915.json

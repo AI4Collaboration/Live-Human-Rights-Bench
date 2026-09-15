@@ -30,12 +30,12 @@ LOGS=${LOGS:-logs/unified_dsv41flash_leakchecked_20260915}
 # Run every model at 69 workers, the highest concurrency in the previous roster.
 # This is an explicit throughput choice and is kept identical across providers.
 MODELS=(
-  "qwen/qwen3.8-27b:69"
+  "qwen/qwen3-32b:69"
+  "qwen/qwen3-235b-a22b:69"
   "deepseek/deepseek-v4-pro:69"
-  "qwen/qwen3.8-flash:69"
   "deepseek/deepseek-v4-flash:69"
   "openai/gpt-5.6-sol:69"
-  "anthropic/claude-opus-4.6:69"
+  "anthropic/claude-opus-4.8:69"
 )
 
 : "${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY}"

@@ -134,10 +134,10 @@ def test_roster_matches_predeclared_family():
     assert roster == family["models"]
     assert workers == [69] * 6 and family["workers_per_model"] == 69
     assert len(roster) == 6 and family["expected_comparisons"] == 30
-    assert "openai/gpt-5.6-sol" in roster and "anthropic/claude-opus-4.6" in roster
+    assert "openai/gpt-5.6-sol" in roster and "anthropic/claude-opus-4.8" in roster
     qwen = [model for model in roster if model.startswith("qwen/")]
-    assert qwen == ["qwen/qwen3.8-27b", "qwen/qwen3.8-flash"]
-    assert all("max" not in model for model in qwen)
+    assert qwen == ["qwen/qwen3-32b", "qwen/qwen3-235b-a22b"]
+    assert "qwen/qwen3-8b" not in roster
     assert not any("gemini" in model for model in roster)
 
 
