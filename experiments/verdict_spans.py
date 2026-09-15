@@ -25,6 +25,7 @@ the stored text would measure something the models never saw. This says nothing 
 pretraining contamination.
 """
 
+import hashlib
 import json
 import re
 
@@ -32,19 +33,27 @@ import re
 # speaking, which is why this is asked of a model and not of a pattern.
 COURT_THIS_CASE = "court_conclusion_this_case"
 EARLIER_INSTANCE = "earlier_instance_same_case"
+ADMISSIBILITY_ONLY = "court_admissibility_only"
 PARTY_POSITION = "party_position"
 OTHER_AUTHORITY = "other_case_or_domestic_court"
 UNLABELLED = "unlabelled"
 
-CATEGORIES = (COURT_THIS_CASE, EARLIER_INSTANCE, PARTY_POSITION, OTHER_AUTHORITY)
+CATEGORIES = (COURT_THIS_CASE, EARLIER_INSTANCE, ADMISSIBILITY_ONLY,
+              PARTY_POSITION, OTHER_AUTHORITY)
 
-# Three tiers, because two of these are not the same finding and must not be pooled.
-# A Chamber judgment quoted in a Grand Chamber case is the same application decided
-# once already: not this Court's conclusion, yet it hands over the answer. A party's
-# position is usually noise, but a Government concession is not, and no detector can
-# tell those apart reliably -- that is what the human pass is for.
+# Three tiers, because these are not the same finding and must not be pooled. A
+# Chamber judgment quoted in a Grand Chamber case is the same application decided once
+# already: not this Court's conclusion, yet it hands over the answer. A party's position
+# is usually noise, but a Government concession is not, and no detector can tell those
+# apart reliably -- that is what the human pass is for.
+#
+# Admissibility is its own class because the first run without it scored "this part of
+# the application is manifestly ill-founded and must be rejected" as the Court's finding
+# on the merits. It is the Court, it is this case, and it still does not say how the
+# Article at issue came out, so pooling it inflated the leak tier.
 TIERS = {COURT_THIS_CASE: "leak", EARLIER_INSTANCE: "leak",
-         PARTY_POSITION: "review", OTHER_AUTHORITY: "clean", UNLABELLED: "review"}
+         ADMISSIBILITY_ONLY: "review", PARTY_POSITION: "review",
+         OTHER_AUTHORITY: "clean", UNLABELLED: "review"}
 
 SPAN_TEMPLATE = """Below is the text of an ECtHR case as it is shown to a model that \
 must predict whether Article {article} was violated. The operative part has been \
@@ -65,11 +74,16 @@ Rules:
 not paraphrase, do not shorten, do not use an ellipsis, do not add quotation marks \
 that are not in the text.
 2. Label each quote with one of:
-   - "court_conclusion_this_case": this Court stating its own finding on this \
-application, including indirect wording such as "the respondent State did not fail to \
-fulfil its positive obligations".
+   - "court_conclusion_this_case": this Court stating its own finding on the merits of \
+this application, including indirect wording such as "the respondent State did not fail \
+to fulfil its positive obligations", and including a Registry keyword line of the form \
+"Art 8 • Correspondence • ..." that summarises the outcome.
    - "earlier_instance_same_case": an earlier decision on this same application, such \
 as a Chamber judgment in a case now before the Grand Chamber.
+   - "court_admissibility_only": this Court ruling on admissibility alone, such as \
+"this part of the application is manifestly ill-founded and must be rejected" or "the \
+complaint must be declared admissible". Use this even though it is this Court and this \
+case, because it does not say how Article {article} came out on the merits.
    - "party_position": what the applicant or the Government alleged, submitted, \
 conceded or agreed.
    - "other_case_or_domestic_court": a finding in a different ECtHR case, including \
@@ -94,6 +108,17 @@ _TRANSLATE = {
     "–": "-", "—": "-", "−": "-", "­": "",
     " ": " ", " ": " ", " ": " ", " ": " ",
 }
+
+
+def prompt_digest(length=12):
+    """Identity of the question that was asked.
+
+    The checkpoint keys rows by it and the report filters on it, because the first run
+    had no admissibility class: resuming that file under the amended prompt would have
+    returned the old rows instantly and reported them as answers to the new question.
+    Every rule the repository has written about stale artifacts is this failure.
+    """
+    return hashlib.sha256(SPAN_TEMPLATE.encode("utf-8")).hexdigest()[:length]
 
 
 def _fold(text):
