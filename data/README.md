@@ -192,19 +192,42 @@ rq3_confidence/
 Output of `scripts/audit_verdict_spans.py` over the 1,000-instance pool. Each row is a
 case-article instance with the sentences that give its outcome away, quoted verbatim and
 carrying the character offsets at which they sit in `full_case_text_no_verdict`, so any
-positive can be checked against the source rather than taken on trust.
+positive can be checked against the source rather than taken on trust. A quote the model
+could not have found in the text is dropped and counted, never scored.
 
-- `dsv41flash.json` - current run, one row per instance, spans tiered `leak` / `review` /
-  `clean` by whose finding the sentence states.
-- `dsv41flash_run1_no_admissibility_class.json` - the first run, kept because its prompt
-  had no admissibility class and no mention of the Registry keyword line. It is what the
-  numbers in PR #17 refer to and it is not the current instrument.
+| file | corpus | leak | review | clean |
+|---|---|---|---|---|
+| `dsv41flash_postrepair.json` | released inputs, `d54b3bc` | **10** | 13 | 977 |
+| `dsv41flash.json` | pre-repair, `ecb5e60` | 549 | 72 | 379 |
+| `dsv41flash_run1_no_admissibility_class.json` | pre-repair, earlier prompt | 494 | 0 | 506 |
 
-These are **candidates with evidence, not an adjudicated leak rate**, which is what the
-`status` field in each file says. Turning them into a rate needs human adjudication of a
-stratified sample, and deciding whether the leakage is material needs an ablation that
-blanks the spans and rescores. The append-only `.jsonl` checkpoints beside each report
-are working files and are not tracked.
+**Read `dsv41flash_postrepair.json` for the state of the corpus.** It is the pass over the
+inputs the release approved: no row states this Court's own conclusion, and the Registry
+keyword line, which 251 instances carried before the repair, is gone from all 1,000. The
+two pre-repair files are kept because they are what PRs #17 and #19 report, and because
+the first of them predates both the admissibility class and the prompt's mention of the
+keyword line. Each file records its `run_identity`, a digest of the prompt and of the
+corpus, so a report can always be tied to the question it answered and the text it
+answered it about.
+
+- `adjudication_20260915.json` - every one of the 23 flagged rows read in context, with a
+  verdict and a reason. The leak tier holds 10 of 10; two review rows were upgraded. Note
+  the status field: one reader, who also wrote the detector, is not an independent
+  annotator pass, so this is not yet a rate for the paper.
+- `procedural_history_cuts.json` - the proposed repair for what survives, produced by
+  `scripts/cut_procedural_history.py`. Eleven judgments, twelve instances, 2,456
+  characters. **A dry run on purpose**: the corpus hash is pinned in
+  `configs/evaluation_dataset.json` and `experiments/input_gate.py` refuses inputs the
+  release has not approved, so applying it belongs in the release step.
+
+What survives the repair is one thing no structural rule reaches: a Grand Chamber judgment
+reciting what the Chamber decided on the same complaint, in PROCEDURE, above the facts. It
+is not a shortcut to the label - five of the ten agree with the final outcome and five are
+reversals - which is exactly why it has to go rather than be reasoned about.
+
+Deciding whether any of this changed a model's answer still needs the ablation: blank the
+spans, rescore, and see whether the gap moves. The append-only `.jsonl` checkpoints beside
+each report are working files and are not tracked.
 
 ## Scripts to Access Data
 
