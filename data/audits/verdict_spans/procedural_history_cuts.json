@@ -1,0 +1,100 @@
+{
+  "status": "DRY_RUN",
+  "cases": "data/processed/echr_unified.json",
+  "audit": "data/audits/verdict_spans/dsv41flash.json",
+  "dataset_sha256_lf_before": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
+  "judgments": 10,
+  "instances": 10,
+  "cuts": [
+    {
+      "item_id": "001-110164",
+      "quotes": [
+        "It held, by four votes to three, that there had been a violation of Article 6 of the Convention."
+      ],
+      "characters_removed": 97,
+      "length_before": 27733,
+      "length_after": 27636
+    },
+    {
+      "item_id": "001-122664",
+      "quotes": [
+        "The Chamber also held, by four votes to three, that there had been no violation of Article 3 in respect of each applicant."
+      ],
+      "characters_removed": 123,
+      "length_before": 39369,
+      "length_after": 39246
+    },
+    {
+      "item_id": "001-140235",
+      "quotes": [
+        "It also, unanimously, declared admissible the remaining complaints."
+      ],
+      "characters_removed": 68,
+      "length_before": 61034,
+      "length_after": 60966
+    },
+    {
+      "item_id": "001-145068",
+      "quotes": [
+        "On 15 May 2012 a Chamber of the Third Section composed of Josep Casadevall, President, Corneliu Bîrsan, Alvina Gyulumyan, Egbert Myjer, Ineta Ziemele, Mihai Poalelungi, judges, and Alejandro Saiz Arnaiz, ad hoc judge, and Santiago Quesada, Section Registrar, delivered a judgment in which it held, by six votes to one, that there had been no violation of Article 8 § 1 of the Convention."
+      ],
+      "characters_removed": 388,
+      "length_before": 57028,
+      "length_after": 56640
+    },
+    {
+      "item_id": "001-151051",
+      "quotes": [
+        "They unanimously declared the complaint under Article 7 of the Convention admissible and the remainder of the application inadmissible, and held that there had been no violation of Article 7."
+      ],
+      "characters_removed": 192,
+      "length_before": 31011,
+      "length_after": 30819
+    },
+    {
+      "item_id": "001-157670",
+      "quotes": [
+        "In a judgment delivered on 21 November 2013 a Chamber of that Section declared the application admissible in respect of the complaint under Article 3 of the Convention and the remainder inadmissible, and unanimously found that there had been no violation of Article 3."
+      ],
+      "characters_removed": 269,
+      "length_before": 38813,
+      "length_after": 38544
+    },
+    {
+      "item_id": "001-158279",
+      "quotes": [
+        "It decided unanimously to declare the application admissible and held, by five votes to two, that there had been no violation of Article 10 of the Convention."
+      ],
+      "characters_removed": 159,
+      "length_before": 40924,
+      "length_after": 40765
+    },
+    {
+      "item_id": "001-164515",
+      "quotes": [
+        "On 26 November 2013 a Chamber of the Second Section composed of Guido Raimondi, President, Danutė Jočienė, Peer Lorenzen, András Sajó, Işıl Karakaş, Nebojša Vučinić and Helen Keller, judges, and Stanley Naismith, Section Registrar, delivered a judgment finding, by a majority, that there had been a violation of Article 6 § 1 of the Convention."
+      ],
+      "characters_removed": 345,
+      "length_before": 58887,
+      "length_after": 58542
+    },
+    {
+      "item_id": "001-169662",
+      "quotes": [
+        "The Chamber unanimously declared the application admissible and held that the enforcement of the decision to remove the applicant to Georgia would not entail a violation of Articles 2 and 3 of the Convention."
+      ],
+      "characters_removed": 209,
+      "length_before": 74696,
+      "length_after": 74487
+    },
+    {
+      "item_id": "001-210078",
+      "quotes": [
+        "The Chamber unanimously declared the application admissible and held that there had been no violation of Article 8 of the Convention and that there was no need to examine separately the complaint under Article 13."
+      ],
+      "characters_removed": 214,
+      "length_before": 114543,
+      "length_after": 114329
+    }
+  ]
+}
