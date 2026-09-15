@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "dataset_id": "echr-unified-1000-leakchecked-single-v0-20260915",
+  "dataset_id": "echr-unified-1000-leakchecked-single-v1-20260916",
   "source_commit": "4a1ba1117a047dac7553ca2cfd3100a18171a841",
   "hash_policy": "SHA256 of file bytes after replacing CRLF with LF; no other normalization.",
   "selection": "Near-uniform annual case-article sampling; 2026 is a partial year.",
   "dataset": {
     "path": "data/processed/echr_unified.json",
-    "sha256_lf": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
+    "sha256_lf": "d02d317139865b85d9189142220eb1510e2ca15784c1b2a06b7197ef6eb35683",
     "instances": 1000,
     "judgments": 947,
     "instance_key": [
@@ -39,7 +39,7 @@
   },
   "summaries": {
     "path": "data/processed/summaries_dsv41flash.json",
-    "sha256_lf": "456ae13db47a0ef7e6ba21716869f45b9d7eb865df525a33708c3d77a9d203d6",
+    "sha256_lf": "d6970dc4facd6d2e890ae6aa72e2023d227d3c327e25d0d87c0e2c5946762920",
     "summarizer": "deepseek/deepseek-v4.1-flash",
     "versions": 1,
     "represented_judgments": 947,
@@ -54,10 +54,12 @@
     "This manifest verifies artifact identity and coverage, not factual fidelity or verdict leakage.",
     "The main experiment now uses original version index 0 only, selected without evaluator scores.",
     "Every selected source and summary is hash-bound to accepted leakage-review evidence.",
+    "Adjudicated earlier-instance and excluded-complaint outcomes were cut from 11 judgments and 12 case-article instances before this release.",
+    "The original DeepSeek V4.1 Flash summarizer regenerated all 11 summaries whose source changed in the final cut.",
     "Earlier results and the historical three-version summaries are not current-release results."
   ],
   "input_release": {
     "path": "data/processed/input_release.json",
-    "release_id": "echr-unified-1000-leakchecked-single-v0-20260915"
+    "release_id": "echr-unified-1000-leakchecked-single-v1-20260916"
   }
 }

@@ -197,33 +197,31 @@ could not have found in the text is dropped and counted, never scored.
 
 | file | corpus | leak | review | clean |
 |---|---|---|---|---|
+| `postcut_verification_20260916.json` | current release after adjudicated cuts | **0** | 12 | 988 |
 | `dsv41flash_postrepair.json` | released inputs, `d54b3bc` | **10** | 13 | 977 |
 | `dsv41flash.json` | pre-repair, `ecb5e60` | 549 | 72 | 379 |
 | `dsv41flash_run1_no_admissibility_class.json` | pre-repair, earlier prompt | 494 | 0 | 506 |
 
-**Read `dsv41flash_postrepair.json` for the state of the corpus.** It is the pass over the
-inputs the release approved: no row states this Court's own conclusion, and the Registry
-keyword line, which 251 instances carried before the repair, is gone from all 1,000. The
-two pre-repair files are kept because they are what PRs #17 and #19 report, and because
-the first of them predates both the admissibility class and the prompt's mention of the
-keyword line. Each file records its `run_identity`, a digest of the prompt and of the
-corpus, so a report can always be tied to the question it answered and the text it
-answered it about.
+**Read `dsv41flash_postrepair.json` together with
+`postcut_verification_20260916.json` for the current corpus.** The first is the fresh
+detector pass before the procedural-history cuts. The second relocates every verified
+quote after the cuts and records the direct review of all remaining review spans. It is
+not presented as another detector pass. The Registry keyword line, which 251 instances
+carried before the repair, is absent from all 1,000 current inputs.
 
 - `adjudication_20260915.json` - every one of the 23 flagged rows read in context, with a
   verdict and a reason. The leak tier holds 10 of 10; two review rows were upgraded. Note
   the status field: one reader, who also wrote the detector, is not an independent
   annotator pass, so this is not yet a rate for the paper.
-- `procedural_history_cuts.json` - the proposed repair for what survives, produced by
-  `scripts/cut_procedural_history.py`. Eleven judgments, twelve instances, 2,456
-  characters. **A dry run on purpose**: the corpus hash is pinned in
-  `configs/evaluation_dataset.json` and `experiments/input_gate.py` refuses inputs the
-  release has not approved, so applying it belongs in the release step.
+- `procedural_history_cuts.json` - the applied repair produced by
+  `scripts/cut_procedural_history.py`: eleven judgments, twelve instances and 2,456
+  characters, with every non-text field and untouched row unchanged.
+- `postcut_source_reviews.jsonl` - direct source approvals for the eleven changed
+  model-visible inputs after the cut and 50,000-character boundary review.
 
-What survives the repair is one thing no structural rule reaches: a Grand Chamber judgment
-reciting what the Chamber decided on the same complaint, in PROCEDURE, above the facts. It
-is not a shortcut to the label - five of the ten agree with the final outcome and five are
-reversals - which is exactly why it has to go rather than be reasoned about.
+What survived the first repair was one thing no structural rule reaches: a Grand Chamber
+judgment reciting what the Chamber decided on the same complaint, in PROCEDURE, above the
+facts. Those outcome sentences have now been removed from the current release.
 
 Deciding whether any of this changed a model's answer still needs the ablation: blank the
 spans, rescore, and see whether the gap moves. The append-only `.jsonl` checkpoints beside

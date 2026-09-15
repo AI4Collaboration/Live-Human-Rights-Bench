@@ -36,6 +36,7 @@ The adaptive challenger is not part of this target roster.
 | --- | --- | --- |
 | Release identity and coverage | `validate_eval_dataset.py --require-complete` verifies 947/947 usable summaries and coverage of all 1,000 instances. | PASS |
 | Current-judgment leakage review | All 947 selected summaries are bound to accepted conclusion, merits-reasoning, and sufficient-facts review records. | PASS |
+| Procedural-history leakage | The adjudicated cuts removed 2,456 characters from 11 judgments and 12 instances. Relocating every verified detector quote finds 0 leak rows; the remaining 12 review spans were read and found harmless. | PASS |
 | Extractive format preflight | The current span-based parser accepts 947/947 reviewed sources. | PASS, preflight only |
 | Extractive control artifact | No current-release extractive summary artifact has been generated and verified. | MISSING |
 | Atomic coverage | No abstractive or extractive atomic-coverage results exist. The required full-judgment source file is not included in the release. | MISSING |

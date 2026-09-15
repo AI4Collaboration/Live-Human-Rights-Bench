@@ -203,6 +203,9 @@ def main():
     current_summaries = json.loads((ROOT / "data/processed/summaries_dsv41flash.json").read_text(
         encoding="utf-8"))["summaries"]
     sources_review = read_reviews(args.source_reviews)
+    postcut_reviews = ROOT / "data/audits/verdict_spans/postcut_source_reviews.jsonl"
+    if postcut_reviews.exists():
+        sources_review.update(read_reviews(postcut_reviews))
     summaries_review = read_reviews(args.summary_reviews)
     blocked = {r["item_id"] for r in json.loads(args.provenance.read_text(encoding="utf-8"))["unresolved"]}
     forced = set(args.force_ids)

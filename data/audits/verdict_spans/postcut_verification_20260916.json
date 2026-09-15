@@ -1,0 +1,59 @@
+{
+  "status": "DIRECT_REVIEW_COMPLETE",
+  "date": "2026-09-16",
+  "scope": "The exact 50,000-character model-visible source inputs after applying the adjudicated procedural-history cuts.",
+  "detector_evidence": "data/audits/verdict_spans/dsv41flash_postrepair.json",
+  "adjudication": "data/audits/verdict_spans/adjudication_20260915.json",
+  "cut_report": "data/audits/verdict_spans/procedural_history_cuts.json",
+  "cut_application": {
+    "judgments": 11,
+    "instances": 12,
+    "characters_removed": 2456,
+    "non_text_fields_changed": 0,
+    "untouched_instances_changed": 0,
+    "removed_quotes_remaining": 0
+  },
+  "relocated_detector_evidence": {
+    "method": "Relocate every verified quote from the post-repair detector output in the cut corpus and recompute each row's strongest tier.",
+    "instances": 1000,
+    "clean": 988,
+    "review": 12,
+    "leak": 0,
+    "note": "This is relocation of existing detector evidence, not a new detector pass."
+  },
+  "remaining_review_disposition": {
+    "admissibility_rows_confirmed_harmless": 11,
+    "admissibility_reasons": "data/audits/verdict_spans/adjudication_20260915.json",
+    "additional_party_position": {
+      "item_id": "001-210078",
+      "article": "8",
+      "category": "party_position",
+      "verdict": "harmless",
+      "reason": "The sentence expressly reports what the applicant alleged, not a Chamber or Grand Chamber conclusion."
+    }
+  },
+  "model_input_boundary_review": {
+    "judgments_with_newly_visible_tail_text": 5,
+    "newly_visible_characters": 1375,
+    "result": "No current-case conclusion, earlier-instance outcome on the scored Article, or current-court merits reasoning."
+  },
+  "source_acceptance": {
+    "method": "Each prior source was approved. The cut script proved that only the adjudicated quotes were removed. All newly visible characters caused by the 50,000-character cap and all remaining review spans were read directly.",
+    "conclusion": false,
+    "reasoning": false,
+    "insufficient_facts": false,
+    "approved_judgments": [
+      "001-110164",
+      "001-122664",
+      "001-145068",
+      "001-151051",
+      "001-157670",
+      "001-158279",
+      "001-164515",
+      "001-169662",
+      "001-210078",
+      "001-229927",
+      "001-242521"
+    ]
+  }
+}

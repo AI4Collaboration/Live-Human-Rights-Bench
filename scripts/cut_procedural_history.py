@@ -21,7 +21,7 @@ rather than by a pattern, the text either side is asserted unchanged, and every 
 row in the corpus must come out byte-identical. Dry-run by default.
 
     python scripts/cut_procedural_history.py \
-      --audit data/audits/verdict_spans/dsv41flash.json \
+      --audit data/audits/verdict_spans/dsv41flash_postrepair.json \
       --cases data/processed/echr_unified.json --apply
 """
 

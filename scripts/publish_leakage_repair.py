@@ -25,8 +25,9 @@ from scripts.validate_eval_dataset import validate as validate_current_release
 BASE_COMMIT = "4a1ba1117a047dac7553ca2cfd3100a18171a841"
 FIELD = "full_case_text_no_verdict"
 MODEL = "deepseek/deepseek-v4.1-flash"
-RELEASE_ID = "echr-unified-1000-leakchecked-single-v0-20260915"
+RELEASE_ID = "echr-unified-1000-leakchecked-single-v1-20260916"
 AUDIT = ROOT / "data/audits/leakage_20260915"
+POSTCUT_AUDIT = ROOT / "data/audits/verdict_spans"
 DATA_PATH = "data/processed/echr_unified.json"
 SUMMARY_PATH = "data/processed/summaries_dsv41flash.json"
 MANIFEST_PATH = "configs/evaluation_dataset.json"
@@ -42,6 +43,10 @@ def file_hash(raw):
 
 def original(path):
     return json.loads(subprocess.check_output(["git", "show", f"{BASE_COMMIT}:{path}"], cwd=ROOT))
+
+
+def head_blob(path):
+    return subprocess.check_output(["git", "show", f"HEAD:{path}"], cwd=ROOT)
 
 
 def check(condition, message):
@@ -177,10 +182,20 @@ def main():
     if second_pass.exists():
         generation_paths.append(second_pass)
     current_blob = json.loads((ROOT / SUMMARY_PATH).read_text(encoding="utf-8"))
+    source_reviews = read_reviews(AUDIT / "proposed_source_reviews.jsonl")
+    source_reviews.update(read_reviews(POSTCUT_AUDIT / "postcut_source_reviews.jsonl"))
     blob, spec, report = assemble(old_rows, new_rows, old_blob,
-        read_reviews(AUDIT / "proposed_source_reviews.jsonl"),
+        source_reviews,
         read_reviews(AUDIT / "original_summary_reviews.jsonl"),
         accepted_generations(generation_paths), provenance, current_blob)
+    cuts = json.loads((POSTCUT_AUDIT / "procedural_history_cuts.json").read_text(encoding="utf-8"))
+    report["procedural_history_cuts"] = {
+        "status": cuts["status"],
+        "judgments": cuts["judgments"],
+        "instances": cuts["instances"],
+        "characters_removed": sum(row["characters_removed"] for row in cuts["cuts"]),
+        "verification": "data/audits/verdict_spans/postcut_verification_20260916.json",
+    }
     report["original_input_machine_review"] = before_review_counts(old_rows, read_reviews(AUDIT / "original_source_reviews.jsonl"))
     report["rate_interpretation"] = "Evidence-grounded machine-review positive rates, not fully human-adjudicated prevalence. Categories overlap."
     report["dataset_sha256_lf"] = spec["dataset_sha256_lf"]
@@ -205,6 +220,8 @@ def main():
     manifest["provenance_notes"].extend([
         "The main experiment now uses original version index 0 only, selected without evaluator scores.",
         "Every selected source and summary is hash-bound to accepted leakage-review evidence.",
+        "Adjudicated earlier-instance and excluded-complaint outcomes were cut from 11 judgments and 12 case-article instances before this release.",
+        "The original DeepSeek V4.1 Flash summarizer regenerated all 11 summaries whose source changed in the final cut.",
         "Earlier results and the historical three-version summaries are not current-release results."])
     # Refuse to overwrite any unrelated concurrent data edits. Each file must be
     # either the pinned original, the currently approved release, or this script's
@@ -215,11 +232,30 @@ def main():
         current_release_valid = True
     except ValueError:
         pass
+    previous_spec_raw = head_blob("data/processed/input_release.json")
+    previous_spec = json.loads(previous_spec_raw)
+    previous_manifest = json.loads(head_blob(MANIFEST_PATH))
+    previous_release_valid = (
+        previous_spec.get("status") == "APPROVED"
+        and file_hash(head_blob(DATA_PATH)) == previous_spec.get("dataset_sha256_lf")
+        and file_hash(head_blob(SUMMARY_PATH)) == previous_spec.get("summaries_sha256_lf")
+        and previous_manifest.get("dataset_id") == previous_spec.get("release_id")
+        and previous_manifest.get("input_release", {}).get("release_id") == previous_spec.get("release_id")
+    )
+    previous_outputs = {
+        DATA_PATH: json.loads(head_blob(DATA_PATH)),
+        SUMMARY_PATH: json.loads(head_blob(SUMMARY_PATH)),
+        MANIFEST_PATH: previous_manifest,
+    }
     outputs = {DATA_PATH:new_rows, SUMMARY_PATH:blob, MANIFEST_PATH:manifest}
     for path, value in outputs.items():
         current = json.loads((ROOT / path).read_text(encoding="utf-8"))
-        check(current == original(path) or current == value or current_release_valid,
+        check(current == original(path) or current == value or current_release_valid
+              or (previous_release_valid and current == previous_outputs[path]),
               f"Concurrent changes in {path}; publication refused")
+    current_spec = json.loads((ROOT / "data/processed/input_release.json").read_text(encoding="utf-8"))
+    check(current_spec == previous_spec or current_spec == spec,
+          "Concurrent changes in data/processed/input_release.json; publication refused")
     report["status"] = "APPROVED"
     (AUDIT / "repair_release_report.json").write_bytes(serialize(report))
     for path, value in outputs.items():

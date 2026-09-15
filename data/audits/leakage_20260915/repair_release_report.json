@@ -1,6 +1,6 @@
 {
   "status": "APPROVED",
-  "release_id": "echr-unified-1000-leakchecked-single-v0-20260915",
+  "release_id": "echr-unified-1000-leakchecked-single-v1-20260916",
   "original_commit": "4a1ba1117a047dac7553ca2cfd3100a18171a841",
   "instances": 1000,
   "judgments": 947,
@@ -348,8 +348,8 @@
       "original_version_index": 0
     },
     "001-242521": {
-      "source_input_sha256": "a69dc10de0820218a9c2d6bf6d201ad37322f57098f77b9b1c7bdf76a42652bd",
-      "summary_sha256": "6b0a083c141a73827eb32518ab01b424983e820515cde3fc3fc2b9f5e46fee81",
+      "source_input_sha256": "f89685a0bdb9d682a595aa5a10035e6092ef526e6f006d2faf6eebff659b324a",
+      "summary_sha256": "8662013cc92aa10e2240f1bb9594bc7cccda79b7c99489f528160c472e3f20f8",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -708,9 +708,9 @@
       "original_version_index": 0
     },
     "001-122664": {
-      "source_input_sha256": "0bb3c6bb757678b04436a9e2eccfa4fbe38d495dd75f2d9de64723b467e22f2f",
-      "summary_sha256": "aaa12b9781d21046ac34234cc2a17593a5fbdf991144e4167f255195d9e6221b",
-      "origin": "reviewed_original_version_0",
+      "source_input_sha256": "315169f3c56c487faab1eb0c0e312cac24bbad0db2bb19393e98aa667ab1b7b3",
+      "summary_sha256": "7c8015fda54d45ac17393deb71f3edbc08eca84c7815473c9b43c27ec3187208",
+      "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
     "001-119688": {
@@ -1056,9 +1056,9 @@
       "original_version_index": 0
     },
     "001-110164": {
-      "source_input_sha256": "85a4c5c3151f4b076956f9d8e91afe513918e4d0ec6ec997cf9b72d8bca714cc",
-      "summary_sha256": "7e42ebb8d5ae136757b92bdb1ad70cad223edfa9fb0e65da1ff94cf8b17a749d",
-      "origin": "reviewed_original_version_0",
+      "source_input_sha256": "3fdaa75f439185ac0f915ebbb2bd2125a97dc1c6a0893b7a8f927794b8f1e3ae",
+      "summary_sha256": "dad4d2569b3bad27f2658b630720a1fc89b3d0a232e2c6923b3bd55e9c03cebd",
+      "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
     "001-110486": {
@@ -1572,8 +1572,8 @@
       "original_version_index": 0
     },
     "001-229927": {
-      "source_input_sha256": "f3c33c8b7f5c4150aa0e1ec5a4606aeac4615448c8eb907e679a9d1c3d3ccf3e",
-      "summary_sha256": "b13db36bf22a0fb0116bc3c6921d75be5f8620cfc0f73e0bba50ea0809d4855d",
+      "source_input_sha256": "96a5cd83ddf9b24f4dc753d040540880be955567d980733727e40a444f0bf912",
+      "summary_sha256": "f0dbec57fcd95b3efed983c923205c678bb86cfdb825a0bfd496a96aa2f7329c",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -2844,8 +2844,8 @@
       "original_version_index": 0
     },
     "001-210078": {
-      "source_input_sha256": "7c7d4276406941613601ee9a06304aad55be8081b725f36b97acd510880d2c47",
-      "summary_sha256": "fa28e78a9805693f5f6b73e8f10ca89a7521ac119192d87656eb22a7f7745431",
+      "source_input_sha256": "ce5a1e53554a1958d7c051aaa2ff391ac7c3ae5f6894059bc7b54c65244c728b",
+      "summary_sha256": "1c00b49bbe0fcdac7868202b15a3c7293bab7c0e6dd5beba04f091f6be3c6a9f",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -3114,8 +3114,8 @@
       "original_version_index": 0
     },
     "001-145068": {
-      "source_input_sha256": "f1fc9f7b96f44d2e0c34018a2f828273556f34f41fa3f3a2424d3dc359fbbb35",
-      "summary_sha256": "d83e4e66a76315b70ab8454d3470a3fe25f96087cca4191027fe6be1fed6fa3c",
+      "source_input_sha256": "bea8d70aa93f1eb01cb65205dbaea99707728a94ceeea0d5bb49f467c7b51471",
+      "summary_sha256": "a1d26880b326cd198567aeec64a9198c4b2f06b9102e88bc1f9e98bf09f35bbc",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -4194,8 +4194,8 @@
       "original_version_index": 0
     },
     "001-158279": {
-      "source_input_sha256": "637e1e64e6f8aaef9825c2754a3feae3fe3a0ef91fe2fa0aa3a0531a2b78a0fd",
-      "summary_sha256": "4fa0a6ca95b8e09f464c6ba05a47c23be858bd82728707aecb973315d1c4ae5d",
+      "source_input_sha256": "08fe7c066115227e9701b2363c95e558c24663e2b95352edac19d039915490b9",
+      "summary_sha256": "307b7b35ec924f97ba06102401afd41027bb51dd5ef3c66909416b14ac947a11",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -4410,8 +4410,8 @@
       "original_version_index": 0
     },
     "001-151051": {
-      "source_input_sha256": "3ad4bfd36ee1405eab46a9649b4bb9799f4b98f1a8be473677783fb13f8fd78e",
-      "summary_sha256": "d590d297731b8d8f03028b3d515aeefa6ff2453ac0c0bafb4be9b8e20671a375",
+      "source_input_sha256": "c503a3f4073c553c4214fa8a582697c378265fe107a50a84940030876db7edfc",
+      "summary_sha256": "9f3ef5c650c7b14b4956fb22d3154eee562e852065a6a8bff640ba5e70c8b43c",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -4458,8 +4458,8 @@
       "original_version_index": 0
     },
     "001-157670": {
-      "source_input_sha256": "32410c50a1c2baed818783cf203ff43b957b9801b918377a07ddeab2c2db011c",
-      "summary_sha256": "e518d889e4381d4d5b3ae7a26d427c945e3a78e048d3f4085a1ad12b7da64c8d",
+      "source_input_sha256": "8cfe258dc86a7bc99262f0ec091c19425e9375f9a0ee0dc1080917079f35c93d",
+      "summary_sha256": "f0fa024550f94c4e6f238cd948089e626e19b8a156691ba8d0dd248bab580dd4",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -4584,9 +4584,9 @@
       "original_version_index": 0
     },
     "001-164515": {
-      "source_input_sha256": "957fd05acc31b042db8eb167ee51b881e17920875b36017fa6b6a92c49c52b90",
-      "summary_sha256": "e8816fee179251694a6bcfcc72b1245f8dae22a79a8d83070a8ccc582b020607",
-      "origin": "reviewed_original_version_0",
+      "source_input_sha256": "88568fbd4fee94ee494cd1afa6cdb1059b3e13614118e8fa9a15ca6d27638a35",
+      "summary_sha256": "deb506838858bf464897c209713d92b4555418853ba7c326631cf086763c98bb",
+      "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
     "001-165755": {
@@ -4800,8 +4800,8 @@
       "original_version_index": 0
     },
     "001-169662": {
-      "source_input_sha256": "c0c33146035119323235bc186bd8bc4b32259123575c0a7ce6341c6edfb9c41f",
-      "summary_sha256": "428484a30f02ea5b1c01cf094ffcda975d144ac25f351959e1706660cd611503",
+      "source_input_sha256": "48c2228c419e6a1eb82fc3696540daba4a716f759f04850d97696402062e9c10",
+      "summary_sha256": "cc4c89465e7f41cabbdcc144a1756d860ac93f7950c8c6ce1576c873a4b6b376",
       "origin": "regenerated_from_reviewed_source",
       "original_version_index": 0
     },
@@ -5718,6 +5718,13 @@
       "original_version_index": 0
     }
   },
+  "procedural_history_cuts": {
+    "status": "APPLIED",
+    "judgments": 11,
+    "instances": 12,
+    "characters_removed": 2456,
+    "verification": "data/audits/verdict_spans/postcut_verification_20260916.json"
+  },
   "original_input_machine_review": {
     "conclusion": {
       "judgments": 573,
@@ -5736,6 +5743,6 @@
     }
   },
   "rate_interpretation": "Evidence-grounded machine-review positive rates, not fully human-adjudicated prevalence. Categories overlap.",
-  "dataset_sha256_lf": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
-  "summaries_sha256_lf": "456ae13db47a0ef7e6ba21716869f45b9d7eb865df525a33708c3d77a9d203d6"
+  "dataset_sha256_lf": "d02d317139865b85d9189142220eb1510e2ca15784c1b2a06b7197ef6eb35683",
+  "summaries_sha256_lf": "d6970dc4facd6d2e890ae6aa72e2023d227d3c327e25d0d87c0e2c5946762920"
 }

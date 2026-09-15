@@ -1,5 +1,5 @@
 {
-  "status": "DRY_RUN",
+  "status": "APPLIED",
   "cases": "data/processed/echr_unified.json",
   "audit": "data/audits/verdict_spans/dsv41flash_postrepair.json",
   "dataset_sha256_lf_before": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
@@ -105,5 +105,6 @@
       "length_before": 95542,
       "length_after": 95323
     }
-  ]
+  ],
+  "dataset_sha256_lf_after": "d02d317139865b85d9189142220eb1510e2ca15784c1b2a06b7197ef6eb35683"
 }

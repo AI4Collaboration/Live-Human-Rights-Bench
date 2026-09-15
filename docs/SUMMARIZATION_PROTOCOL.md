@@ -37,7 +37,7 @@ reviewed judgments. This confirms source compatibility only. It does not create
 the extractive summaries or constitute an extractive-control result.
 
 ```bash
-python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --out data/processed/summaries_extractive_leakchecked_20260915.json --check-only
+python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --out data/processed/summaries_extractive_leakchecked_20260916.json --check-only
 ```
 
 After the preflight passes, the following command makes paid selector calls. It
@@ -46,7 +46,7 @@ them in source order, and records selected and omitted paragraph numbers. Failed
 calls are not successful extracts.
 
 ```bash
-python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY --out data/processed/summaries_extractive_leakchecked_20260915.json
+python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY --out data/processed/summaries_extractive_leakchecked_20260916.json
 ```
 
 Before evaluation, the input gate reassembles each selected extract from the
@@ -72,8 +72,8 @@ These commands make paid coverage-model calls. Use the same eligible judgment
 set and settings for both variants; incomplete extraction needs resolving first.
 
 ```bash
-python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_dsv41flash.json --variant abstractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260915
-python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_extractive_leakchecked_20260915.json --variant extractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260915
+python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_dsv41flash.json --variant abstractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260916
+python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_extractive_leakchecked_20260916.json --variant extractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260916
 ```
 
 On PowerShell, use `$env:COVERAGE_MODEL` and `$env:FULL_JUDGMENTS_CSV`.

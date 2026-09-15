@@ -17,7 +17,7 @@ set -uo pipefail
 CASES=${CASES:-data/processed/echr_unified.json}
 SUMMARIES=${SUMMARIES:-data/processed/summaries_dsv41flash.json}
 # Keep the unified/DeepSeek run separate from historical Grok checkpoints.
-OUT=${OUT:-data/experiments/unified_dsv41flash_leakchecked_20260915}
+OUT=${OUT:-data/experiments/unified_dsv41flash_leakchecked_20260916}
 SAMPLES=${SAMPLES:-3}
 CONC=${CONC:-6}   # all six at once; the gate exists for smaller reruns
 # Which arms to run. Defaulting to "all" wasted a run: pointing --summaries at the
@@ -25,7 +25,7 @@ CONC=${CONC:-6}   # all six at once; the gate exists for smaller reruns
 # full case text and not the summaries at all -- an exact duplicate of work already
 # paid for, and the most expensive arm of the four.
 RQ=${RQ:-all}
-LOGS=${LOGS:-logs/unified_dsv41flash_leakchecked_20260915}
+LOGS=${LOGS:-logs/unified_dsv41flash_leakchecked_20260916}
 
 # Run every model at 69 workers, the highest concurrency in the previous roster.
 # This is an explicit throughput choice and is kept identical across providers.

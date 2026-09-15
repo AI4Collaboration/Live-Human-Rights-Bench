@@ -25,12 +25,19 @@ The scope is the **actual model-visible text**, including the runner's first
 50,000 source characters and the complete summary. Remove the current ECtHR
 judgment's merits assessment, operative conclusions, and answer-revealing cover
 headnotes. Retain allegations, domestic procedural history, generic legal rules,
-and explicitly identified earlier judgments. This is an input-leakage check,
-not a test of proprietary pretraining overlap.
+and decisions from other cases. Remove an earlier-instance outcome from the same
+application when a Grand Chamber judgment recounts the Chamber decision on the
+scored complaint. This is an input-leakage check, not a test of proprietary
+pretraining overlap.
 
 Formal preambles that state how the current Court applies established case-law
 are removed too. Four such source prefixes were repaired and re-reviewed after
 the initial review, with their corresponding summaries regenerated.
+
+The final release step also removed adjudicated procedural-history outcomes from
+11 judgments and 12 case-article instances. The cut removed 2,456 characters and
+left every other field and every untouched row unchanged. The same summarizer
+then regenerated the 11 affected judgment-level summaries before publication.
 
 The old summary screen exempted an entire summary whenever the source mentioned
 any court's finding. A domestic finding could therefore exempt a new sentence
