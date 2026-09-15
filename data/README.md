@@ -187,6 +187,25 @@ rq3_confidence/
 4. **Sample size**: 141 case-article pairs (100 unique cases, some with multiple articles)
 5. **Samples per evaluation**: 10 independent samples with temperature=1.0
 
+## `audits/verdict_spans/` - Quoted evidence of verdict leakage
+
+Output of `scripts/audit_verdict_spans.py` over the 1,000-instance pool. Each row is a
+case-article instance with the sentences that give its outcome away, quoted verbatim and
+carrying the character offsets at which they sit in `full_case_text_no_verdict`, so any
+positive can be checked against the source rather than taken on trust.
+
+- `dsv41flash.json` - current run, one row per instance, spans tiered `leak` / `review` /
+  `clean` by whose finding the sentence states.
+- `dsv41flash_run1_no_admissibility_class.json` - the first run, kept because its prompt
+  had no admissibility class and no mention of the Registry keyword line. It is what the
+  numbers in PR #17 refer to and it is not the current instrument.
+
+These are **candidates with evidence, not an adjudicated leak rate**, which is what the
+`status` field in each file says. Turning them into a rate needs human adjudication of a
+stratified sample, and deciding whether the leakage is material needs an ablation that
+blanks the spans and rescores. The append-only `.jsonl` checkpoints beside each report
+are working files and are not tracked.
+
 ## Scripts to Access Data
 
 All analysis scripts are in the `scripts/` directory at the project root:
