@@ -53,12 +53,12 @@ def validate(content, text):
     return result
 
 
-def review(client, task):
+def review(client, task, model=MODEL):
     limit, attempts = 4000, []
     for attempt in range(2):
         try:
             response = client.chat.completions.create(
-                model=MODEL, temperature=0, max_tokens=limit,
+                model=model, temperature=0, max_tokens=limit,
                 messages=[{"role": "system", "content": SYSTEM},
                           {"role": "user", "content": PROMPT.format(text=task["text"])}],
                 response_format={"type": "json_object"},

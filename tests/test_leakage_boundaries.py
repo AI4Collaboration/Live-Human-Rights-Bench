@@ -83,3 +83,21 @@ def test_unknown_appendix_header_requires_review():
     html = "<table><tr><td>Application no.</td><td>Unknown conclusion field</td></tr><tr><td>123/20</td><td>x</td></tr></table>"
     with pytest.raises(ValueError, match="Unreviewed appendix headers"):
         extract(html, "123/20")
+
+
+def test_current_court_case_law_preview_is_removed_only_from_preamble():
+    text = ("In the case of X Having deliberated in private, "
+            "Having noted that the underlying legal issue is settled by case-law,\n"
+            "Delivers the following judgment: PROCEDURE 1. The application was lodged. "
+            "THE FACTS 2. Counsel cited well-established case-law.")
+    clean, spans = repair(text)
+    assert "Having noted" not in clean
+    assert "The application was lodged." in clean
+    assert "Counsel cited well-established case-law." in clean
+    assert spans[0]["reason"] == "current_court_case_law_preview"
+
+
+def test_case_law_preview_phrase_in_facts_is_not_removed():
+    text = ("In the case of X THE FACTS 1. Having noted that the underlying legal issue "
+            "was settled, the domestic court heard the appeal.")
+    assert repair(text) == (text, [])

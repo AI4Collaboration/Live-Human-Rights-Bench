@@ -16,6 +16,60 @@ case at 54 words each, so a ~500-word extract is roughly nine of them.
 import json
 import re
 
+SELECTION_SCHEMA = "verbatim-source-spans-v1"
+SPAN_SELECT_TEMPLATE = """Select verbatim passages needed to assess this ECtHR case.
+
+Case: {case_name}
+Provisions at issue: {article}
+
+{numbered}
+
+Choose approximately {target_words} words of the relevant facts. Return only a JSON
+array of passage IDs, for example [2, 5, 8]. Do not write or paraphrase any text."""
+
+
+def source_units(text):
+    """Partition every source into indexed verbatim spans without relying on
+    unique official paragraph numbers. Flattened text and factual tables use the
+    same rule. IDs are source-order indices, not claimed ECtHR paragraph numbers.
+    Every non-whitespace character belongs to exactly one unit.
+    """
+    starts = {0, len(text)}
+    # Blank lines, line-start numbered passages, and inline numbered paragraphs.
+    for pattern in (r"\n\s*\n", r"(?m)^[^\S\n]*\d{1,3}\.[^\S\n]+",
+                    r"(?<![\w/])\d{1,3}\.[^\S\n]+(?=[A-Z\u201c(])"):
+        starts.update(m.start() for m in re.finditer(pattern, text))
+    # Keep long flattened passages selectable without rewriting a word. Sentence
+    # boundaries are merely selection boundaries, not factual or legal labels.
+    coarse = sorted(starts)
+    for left, right in zip(coarse, coarse[1:]):
+        if len(text[left:right].split()) > 180:
+            starts.update(left + m.end() for m in re.finditer(r"[.!?][\"’”']?\s+(?=[A-Z\u201c(])", text[left:right]))
+    units = []
+    ordered = sorted(starts)
+    for left, right in zip(ordered, ordered[1:]):
+        while left < right and text[left].isspace():
+            left += 1
+        while right > left and text[right - 1].isspace():
+            right -= 1
+        if left < right:
+            units.append({"id": str(len(units) + 1), "start": left, "end": right,
+                          "text": text[left:right]})
+    return units
+
+
+def assemble_units(units, selected):
+    selected = set(selected)
+    return "\n\n".join(u["text"] for u in units if u["id"] in selected)
+
+
+def selection_record(units, selected):
+    selected = set(selected)
+    return {"selected_units": [u["id"] for u in units if u["id"] in selected],
+            "omitted_units": [u["id"] for u in units if u["id"] not in selected],
+            "selected_spans": [{k:u[k] for k in ("id", "start", "end")}
+                               for u in units if u["id"] in selected]}
+
 # HUDOC separates the paragraph number from its text with non-breaking spaces, not
 # ordinary ones, so [ \t] matches nothing on real judgments. [^\S\n] is "whitespace
 # that is not a newline", which covers \xa0 without letting the match span lines.

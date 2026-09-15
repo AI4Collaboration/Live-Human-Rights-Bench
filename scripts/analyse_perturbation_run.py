@@ -1,171 +1,210 @@
 #!/usr/bin/env python3
-"""Summarise a perturbation run and correct for multiplicity across it.
+"""Rescore-derived metrics with one complete, predeclared global BH family.
 
-Every (model, arm, variant) is compared against that model's own baseline with an
-exact McNemar test, and the whole family is then BH-corrected together. Correcting
-per arm would defeat the purpose: the multiplicity comes from running four arms over
-eight models, not from any one of them.
-
-Reports, per comparison: accuracy and balanced accuracy, abstention rate, unparsed
-calls, mean confidence, and the flip rate split by direction. The split matters --
-an aggregate flip rate cannot distinguish drift toward "violation" from drift away
-from it, and on the pilot those were 17-2 and 28-4 one way.
-
-    python scripts/analyse_perturbation_run.py --run-dir data/experiments/full_scale
+Never pool summary draws, reuse stale q-values, or correct a partial roster.
+The current family contains 6 summary, 18 framing and 6 reconsideration tests.
 """
+import argparse
+from collections import Counter
+import csv
+import hashlib
+import json
+import math
+from pathlib import Path
+import sys
 
-import argparse, csv, json, os, sys
-from collections import Counter, defaultdict
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "experiments"))
+from stats import balanced_accuracy, benjamini_hochberg, flip_direction, mcnemar_exact
+from scoring import majority_vote, mean_rating
+from run_protocol import SCORING, SUMMARY_PROTOCOL
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
-from stats import (balanced_accuracy, benjamini_hochberg, flip_direction,   # noqa: E402
-                   mcnemar_exact)
-
-ARMS = {"rq1": "summary_version", "rq2": "framing", "rq3": None}
+DEFAULT_FAMILY = ROOT / "configs/perturbation_analysis.json"
 
 
-def load(path):
-    if not os.path.exists(path):
-        return None
-    with open(path) as f:
-        return json.load(f)
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def key(row):
+    return row["item_id"], row["article"]
+
+
+def validate_summary_results(rows):
+    keys = [key(r) for r in rows]
+    if len(keys) != len(set(keys)) or any(r.get("summary_version", 0) != 0 for r in rows):
+        raise ValueError("RQ1 expects one summary result per case-article instance; historical multi-version results cannot be pooled")
+
+
+def validate_rows(rows, expected, label):
+    keys = [key(r) for r in rows]
+    if len(keys) != len(set(keys)) or set(keys) != set(expected):
+        raise ValueError(f"{label}: incomplete, duplicated or different case-article cohort")
+    for r in rows:
+        if r.get("violation_label") != expected[key(r)]:
+            raise ValueError(f"{label}: reference label mismatch")
+
+
+def prediction(row, samples, field="ratings"):
+    values = row.get(field)
+    if (not isinstance(values, list) or len(values) != samples
+            or any(isinstance(v, bool) or not isinstance(v, (int, float)) or not 0 <= v <= 100 for v in values)):
+        raise ValueError(f"Incomplete or malformed samples: {row.get('item_id')}/{field}")
+    return majority_vote(values)[0]
 
 
 def describe(rows):
-    """The per-condition numbers we agreed to report alongside accuracy."""
     n = len(rows)
-    confidences = [r["avg_rating"] for r in rows if r.get("avg_rating") is not None]
     directions = Counter(r["flip_direction"] for r in rows if r.get("flip_direction"))
     return {
-        "n": n,
-        "accuracy": sum(1 for r in rows if r.get("accurate")) / n if n else None,
-        "balanced_accuracy": balanced_accuracy(rows) if n else None,
-        "abstention_rate": sum(1 for r in rows if r.get("abstained")) / n if n else None,
-        "n_unparsed": sum(r.get("n_unparsed", 0) for r in rows),
-        "mean_confidence": sum(confidences) / len(confidences) if confidences else None,
-        "alignment_rate": (sum(1 for r in rows if r.get("aligned_now")) / n
-                           if n and "aligned_now" in rows[0] else None),
-        "flip_rate": sum(directions.values()) / n if n else None,
+        "n_instances": n,
+        "accuracy": sum(r["accurate"] for r in rows) / n,
+        "balanced_accuracy": balanced_accuracy(rows),
+        "alignment_rate": sum(r["aligned"] for r in rows) / n if "aligned" in rows[0] else None,
+        "abstention_rate": sum(r["prediction"] == "abstention" for r in rows) / n,
+        "mean_violation_likelihood": sum(r["avg_rating"] for r in rows) / n,
+        "flip_rate": sum(directions.values()) / n if "aligned" in rows[0] else None,
         "flips_to_violation": directions.get("no_violation->violation", 0),
         "flips_to_no_violation": directions.get("violation->no_violation", 0),
-        # A judgment that moves into the 40-60 band has not reversed, it has
-        # stopped committing. The 1-5 scale could not express this at all: it
-        # returned only two values in 555 samples, so every change looked like a
-        # reversal. On the pilot this is the most common thing summaries cause.
-        "flips_to_abstention": sum(v for k, v in directions.items()
-                                   if k.endswith("->abstention")),
-        "flips_out_of_abstention": sum(v for k, v in directions.items()
-                                       if k.startswith("abstention->")),
+        "flips_to_abstention": sum(v for k,v in directions.items() if k.endswith("->abstention")),
+        "flips_out_of_abstention": sum(v for k,v in directions.items() if k.startswith("abstention->")),
+        "n_unparsed": 0,
     }
 
 
-def paired(baseline, rows, key):
-    """Discordant counts of correctness against the baseline for the same unit."""
-    ref = {(r["item_id"], r["article"]): r for r in baseline}
-    n01 = n10 = 0
-    for r in rows:
-        b = ref.get((r["item_id"], r["article"]))
-        if b is None:
-            continue
-        if b.get("accurate") and not r.get("accurate"):
-            n10 += 1
-        elif not b.get("accurate") and r.get("accurate"):
-            n01 += 1
-    return n01, n10
+def apply_global_bh(comparisons, expected_count, alpha=0.05):
+    tested = [r for r in comparisons if r["arm"] != "baseline"]
+    if len(tested) != expected_count:
+        raise ValueError("Incomplete BH family; refusing partial-family q-values")
+    identities = [(r["model"], r["arm"], r["variant"]) for r in tested]
+    if len(set(identities)) != expected_count:
+        raise ValueError("Duplicated hypothesis in BH family")
+    if any(not isinstance(r.get("mcnemar_p"), (float, int)) or not math.isfinite(r["mcnemar_p"])
+           or not 0 <= r["mcnemar_p"] <= 1 for r in tested):
+        raise ValueError("Invalid p-value in BH family")
+    for row, q in zip(tested, benjamini_hochberg([r["mcnemar_p"] for r in tested])):
+        row.update(mcnemar_q=q, significant_bh=q < alpha, bh_family_size=expected_count)
+    for row in comparisons:
+        if row["arm"] == "baseline":
+            row.update(mcnemar_q=None, significant_bh=None, bh_family_size=expected_count)
+    return comparisons
+
+
+def analyze_family(run_dir, family, cases, release):
+    if release.get("status") != "APPROVED" or release.get("versions") != 1:
+        raise ValueError("A reviewed single-summary release is required")
+    expected = {key(r): r["violation_label"] for r in cases}
+    if len(expected) != len(cases):
+        raise ValueError("Ambiguous legacy article keys in the current cohort")
+    models = family["models"]
+    if len(models) != len(set(models)) or not models:
+        raise ValueError("Family model roster must be nonempty and unique")
+    variants_by_arm = {"rq1": ["single_summary"], "rq2": ["predictive", "normative", "factual"], "rq3": ["reconsideration"]}
+    if family["comparisons"] != variants_by_arm or family["expected_comparisons"] != len(models) * 5:
+        raise ValueError("Family must declare one summary, three framing and one reconsideration comparison per model")
+    if family["references"] != {"rq1": "baseline", "rq2": "baseline", "rq3": "same_trajectory_initial_response"}:
+        raise ValueError("Comparison references differ from this protocol")
+    comparisons, provenance, sample_counts, protocols = [], {}, set(), set()
+    for model in models:
+        directory = Path(run_dir) / model.replace("/", "_").replace(".", "_")
+        identity = read(directory / "input_identity.json")
+        if any(identity.get(k) != release[k] for k in ("release_id", "summaries_sha256_lf")) or identity.get("cases_sha256_lf") != release["dataset_sha256_lf"]:
+            raise ValueError(f"{model}: results are not a rescore of the approved inputs")
+        settings = read(directory / "run_config.json")
+        if (settings.get("model") != model or settings.get("summary_protocol") != SUMMARY_PROTOCOL
+                or settings.get("scoring") != SCORING or not settings.get("prompts_sha256")):
+            raise ValueError(f"{model}: missing single-summary run provenance")
+        protocols.add(json.dumps({k:v for k,v in settings.items() if k not in {"model", "base_url", "samples"}}, sort_keys=True))
+        samples = settings.get("samples")
+        if isinstance(samples, bool) or not isinstance(samples, int) or samples < 1:
+            raise ValueError("Missing target sample count")
+        sample_counts.add(samples)
+        results = {arm: read(directory / f"{arm}_results.json") for arm in ("baseline", "rq1", "rq2", "rq3")}
+        validate_rows(results["baseline"], expected, f"{model}/baseline")
+        baseline = {}
+        for r in results["baseline"]:
+            pred = prediction(r, samples)
+            baseline[key(r)] = {**r, "prediction": pred, "accurate": pred == expected[key(r)], "avg_rating": mean_rating(r["ratings"])}
+        comparisons.append({"model": model, "arm": "baseline", "variant": "", **describe(list(baseline.values())),
+                            "accuracy_delta": None, "mcnemar_p": None, "mcnemar_n": None})
+        validate_summary_results(results["rq1"])
+        for arm, variants in variants_by_arm.items():
+            if arm == "rq2" and {r.get("framing") for r in results[arm]} != set(variants):
+                raise ValueError(f"{model}/rq2: framing set differs from declared family")
+            for variant in variants:
+                subset = [r for r in results[arm] if arm != "rq2" or r["framing"] == variant]
+                validate_rows(subset, expected, f"{model}/{arm}/{variant}")
+                normalized, n01, n10, ref_correct = [], 0, 0, 0
+                for r in subset:
+                    gold = expected[key(r)]
+                    if arm == "rq3":
+                        reference = prediction(r, samples, "original_ratings")
+                        pred = prediction(r, samples, "challenged_ratings")
+                        values = r["challenged_ratings"]
+                    else:
+                        reference = baseline[key(r)]["prediction"]
+                        pred = prediction(r, samples)
+                        values = r["ratings"]
+                    a, b = reference == gold, pred == gold
+                    n01 += not a and b
+                    n10 += a and not b
+                    ref_correct += a
+                    normalized.append({**r, "prediction": pred, "accurate": b, "aligned": pred == reference,
+                        "avg_rating": mean_rating(values), "flip_direction": flip_direction(reference, pred)})
+                discordant, pval = mcnemar_exact(n01, n10)
+                metrics = describe(normalized)
+                comparisons.append({"model": model, "arm": arm, "variant": variant, **metrics,
+                    "accuracy_delta": metrics["accuracy"] - ref_correct / len(subset),
+                    "mcnemar_n": discordant, "mcnemar_p": pval,
+                    "better_than_reference": n01, "worse_than_reference": n10})
+        provenance[model] = {name: digest(directory / name) for name in
+            ["input_identity.json", "run_config.json", "baseline_results.json", "rq1_results.json", "rq2_results.json", "rq3_results.json"]}
+    if len(sample_counts) != 1:
+        raise ValueError("Target sample counts differ across models")
+    if len(protocols) != 1:
+        raise ValueError("Prompts or scoring settings differ across models")
+    apply_global_bh(comparisons, family["expected_comparisons"], family.get("alpha", .05))
+    return comparisons, {"status": "COMPLETE", "family_id": family["family_id"], "release_id": release["release_id"],
+        "models": len(models), "instances_per_comparison": len(cases), "samples_per_instance": next(iter(sample_counts)),
+        "comparisons_by_arm": {arm: len(models)*len(v) for arm,v in variants_by_arm.items()},
+        "bh_family_size": family["expected_comparisons"], "input_provenance": provenance}
 
 
 def main():
-    p = argparse.ArgumentParser(description="Summarise and BH-correct a perturbation run")
-    p.add_argument("--run-dir", required=True, help="directory of per-model result folders")
-    p.add_argument("--out", default="perturbation_summary.csv")
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--run-dir", required=True)
+    p.add_argument("--family", type=Path, default=DEFAULT_FAMILY)
+    p.add_argument("--out", type=Path)
     args = p.parse_args()
-
-    comparisons = []
-    for model_dir in sorted(os.listdir(args.run_dir)):
-        base_path = os.path.join(args.run_dir, model_dir, "baseline_results.json")
-        baseline = load(base_path)
-        if not baseline:
-            print(f"  {model_dir}: no baseline, skipped")
-            continue
-        row = {"model": model_dir, "arm": "baseline", "variant": "", **describe(baseline)}
-        row["mcnemar_n"], row["mcnemar_p"] = "", ""
-        comparisons.append(row)
-
-        for arm, variant_key in ARMS.items():
-            rows = load(os.path.join(args.run_dir, model_dir, f"{arm}_results.json"))
-            if not rows:
-                print(f"  {model_dir}: {arm} missing")
-                continue
-            groups = defaultdict(list)
-            for r in rows:
-                groups[str(r.get(variant_key, "")) if variant_key else ""].append(r)
-            for variant, subset in sorted(groups.items()):
-                if arm == "rq3":
-                    # RQ3's own control is the first answer, not the baseline arm.
-                    # Its rows name the two answers separately, so map them onto the
-                    # field names the shared helpers read -- otherwise balanced
-                    # accuracy reaches for `prediction` and finds nothing. That went
-                    # unnoticed once because the slice it ran on held a single class,
-                    # and balanced accuracy returns early before touching the field.
-                    for r in subset:
-                        r["prediction"] = r.get("challenged_prediction")
-                        r["abstained"] = r.get("challenged_abstained")
-                        r["accurate"] = r["prediction"] == r["violation_label"]
-                    ref = [{**r,
-                            "prediction": r.get("original_prediction"),
-                            "abstained": r.get("original_abstained"),
-                            "accurate": r.get("original_prediction") == r["violation_label"]}
-                           for r in subset]
-                    n01, n10 = paired(ref, subset, variant)
-                else:
-                    # `aligned` and `flip_direction` were computed when the row was
-                    # written, against the baseline prediction as it stood then. A
-                    # baseline unit that is later redone -- because a network failure
-                    # left it on one sample and prune_degraded removed it -- can vote
-                    # differently, and the snapshot in the arm goes stale. Six units
-                    # moved that way on the 27 Aug run. Derive both from the baseline
-                    # on disk instead of trusting what was recorded.
-                    ref = {(r["item_id"], r["article"]): r["prediction"] for r in baseline}
-                    for r in subset:
-                        bp = ref.get((r["item_id"], r["article"]))
-                        r["aligned_now"] = r["prediction"] == bp
-                        r["flip_direction"] = flip_direction(bp, r["prediction"])
-                    n01, n10 = paired(baseline, subset, variant)
-                n, pval = mcnemar_exact(n01, n10)
-                comparisons.append({
-                    "model": model_dir, "arm": arm, "variant": variant,
-                    **describe(subset),
-                    "mcnemar_n": n, "mcnemar_p": pval,
-                    "worse_than_reference": n10, "better_than_reference": n01,
-                })
-
-    tested = [c for c in comparisons if c["mcnemar_p"] != ""]
-    for c, q in zip(tested, benjamini_hochberg([c["mcnemar_p"] for c in tested])):
-        c["mcnemar_q"] = q
-        c["significant_bh"] = q < 0.05
-    for c in comparisons:
-        c.setdefault("mcnemar_q", "")
-        c.setdefault("significant_bh", "")
-
-    if not comparisons:
-        sys.exit("No results found. Check --run-dir.")
-    fields = list(dict.fromkeys(k for c in comparisons for k in c))
-    with open(args.out, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        w.writerows(comparisons)
-
-    print(f"\nWrote {args.out}: {len(comparisons)} conditions, {len(tested)} tests\n")
-    raw = sum(1 for c in tested if c["mcnemar_p"] < 0.05)
-    kept = sum(1 for c in tested if c["significant_bh"])
-    print(f"Significant at 0.05: {raw} raw, {kept} after BH across the family of {len(tested)}")
-    for c in tested:
-        if c["significant_bh"]:
-            print(f"  {c['model']:<28s} {c['arm']}/{c['variant']:<12s} "
-                  f"q={c['mcnemar_q']:.4f}  acc={c['accuracy']:.3f} "
-                  f"bal={c['balanced_accuracy'] or float('nan'):.3f}  "
-                  f"flips {c['flips_to_violation']}->viol / {c['flips_to_no_violation']}->no")
+    output = args.out or Path(args.run_dir) / "single_summary_statistics.csv"
+    try:
+        family = read(args.family)
+        manifest = read(ROOT / family["input_manifest"])
+        release = read(ROOT / manifest["input_release"]["path"])
+        case_path = ROOT / manifest["dataset"]["path"]
+        summary_path = ROOT / manifest["summaries"]["path"]
+        if digest(case_path) != release["dataset_sha256_lf"] or digest(summary_path) != release["summaries_sha256_lf"]:
+            raise ValueError("Current data files differ from the approved release")
+        cases = read(case_path)
+        rows, report = analyze_family(args.run_dir, family, cases, release)
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        print(f"No q-values produced: {error}", file=sys.stderr)
+        return 1
+    output.parent.mkdir(parents=True, exist_ok=True)
+    fields = list(dict.fromkeys(k for r in rows for k in r))
+    with output.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+    report.update(family_config_sha256=digest(args.family), statistics_sha256=digest(output))
+    output.with_suffix(".provenance.json").write_text(json.dumps(report, indent=2)+"\n", encoding="utf-8")
+    print(json.dumps({k:v for k,v in report.items() if k != "input_provenance"}, indent=2))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

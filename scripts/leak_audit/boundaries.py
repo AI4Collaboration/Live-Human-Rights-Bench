@@ -35,6 +35,17 @@ def repair(text):
     toc = TOC.search(text)
     body_anchor = re.search(r"\bIn the case of\b", text)
     body_start = body_anchor.start() if body_anchor else 0
+    # Repetitive-case preambles can preview the current Court's application of
+    # case-law. Remove that formal preview, not generic rules or party arguments.
+    preamble_end = re.search(r"\b(?:PROCEDURE|THE FACTS)\b", text[body_start:])
+    preamble_limit = body_start + preamble_end.start() if preamble_end else body_start
+    preview = re.search(
+        r"Having noted that the underlying legal issue\b.*?(?=Delivers the following judgment)",
+        text[body_start:preamble_limit], re.S)
+    if preview:
+        spans.append({"start": body_start + preview.start(),
+                      "end": body_start + preview.end(),
+                      "reason": "current_court_case_law_preview"})
     if toc:
         body = re.search(r"\bIn the case of\b", text[toc.end():])
         if body:

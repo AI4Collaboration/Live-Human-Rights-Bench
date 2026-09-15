@@ -16,12 +16,13 @@ class EvaluationDatasetTests(unittest.TestCase):
     def test_current_frozen_cohort(self):
         result = validate(self.config)
         self.assertEqual((result["instances"], result["judgments"]), (1000, 947))
+        self.assertEqual(result["versions"], 1)
         self.assertEqual(result["annual_counts"], self.config["dataset"]["annual_counts"])
-        self.assertEqual(result["instance_coverage_by_version"], [1000] * self.config["summaries"]["versions"])
+        self.assertEqual(result["instance_coverage_by_version"], [1000])
 
     def test_current_summaries_are_complete(self):
         result = validate(self.config)
-        self.assertEqual(result["usable_summaries"], 947 * self.config["summaries"]["versions"])
+        self.assertEqual(result["usable_summaries"], 947)
         self.assertEqual(result["complete_judgments"], 947)
         self.assertEqual(result["missing_slots_zero_based"], [])
         self.assertEqual(result["missing_judgments"], [])

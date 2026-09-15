@@ -8,7 +8,7 @@
 #
 #   OPENROUTER_API_KEY=... MLFLOW_TRACKING_PASSWORD=... ./scripts/run_roster.sh
 #
-# Env knobs: CONC (models at once, default 8), WORKERS_OVERRIDE (flat worker count,
+# Env knobs: CONC (models at once, default 6), WORKERS_OVERRIDE (flat worker count,
 # overriding the calibrated per-model values), RQ (arms, default all), SAMPLES,
 # OUT, CASES, SUMMARIES.
 set -uo pipefail
@@ -19,7 +19,7 @@ SUMMARIES=${SUMMARIES:-data/processed/summaries_dsv41flash.json}
 # Keep the unified/DeepSeek run separate from historical Grok checkpoints.
 OUT=${OUT:-data/experiments/unified_dsv41flash_leakchecked_20260915}
 SAMPLES=${SAMPLES:-3}
-CONC=${CONC:-8}   # all eight at once; the gate exists for smaller reruns
+CONC=${CONC:-6}   # all six at once; the gate exists for smaller reruns
 # Which arms to run. Defaulting to "all" wasted a run: pointing --summaries at the
 # extractive file and leaving this alone sent every model on to RQ3, which reads the
 # full case text and not the summaries at all -- an exact duplicate of work already
@@ -27,21 +27,15 @@ CONC=${CONC:-8}   # all eight at once; the gate exists for smaller reruns
 RQ=${RQ:-all}
 LOGS=${LOGS:-logs/unified_dsv41flash_leakchecked_20260915}
 
-# Workers per model, sized from measured single-call latency so every model finishes
-# at roughly the same time. A flat worker count would leave the roster waiting on
-# qwen3-32b, whose calls take 117s against 20s for Opus -- nearly six times longer.
-# Calibrated 26 Aug on 5 cases per model at 40 total concurrent workers:
-#   qwen3-32b 117s | qwen3-235b 47s | v4-pro 43s | qwen3-8b 39s
-#   v4-flash 27s | gpt-5.6-terra 24s | gemini-3.5-flash 21s | opus-4.8 20s
+# Run every model at 69 workers, the highest concurrency in the previous roster.
+# This is an explicit throughput choice and is kept identical across providers.
 MODELS=(
-  "qwen/qwen3-32b:69"
-  "qwen/qwen3-235b-a22b:28"
-  "deepseek/deepseek-v4-pro:25"
-  "qwen/qwen3-8b:23"
-  "deepseek/deepseek-v4-flash:16"
-  "openai/gpt-5.6-terra:14"
-  "google/gemini-3.5-flash:12"
-  "anthropic/claude-opus-4.8:12"
+  "qwen/qwen3.8-27b:69"
+  "deepseek/deepseek-v4-pro:69"
+  "qwen/qwen3.8-flash:69"
+  "deepseek/deepseek-v4-flash:69"
+  "openai/gpt-5.6-sol:69"
+  "anthropic/claude-opus-4.6:69"
 )
 
 : "${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY}"

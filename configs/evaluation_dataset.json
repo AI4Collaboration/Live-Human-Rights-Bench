@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "dataset_id": "echr_unified_1000_deepseek_v1",
-  "source_commit": "861233d409b88d2061e91a3e32c764a505687c77",
+  "dataset_id": "echr-unified-1000-leakchecked-single-v0-20260915",
+  "source_commit": "4a1ba1117a047dac7553ca2cfd3100a18171a841",
   "hash_policy": "SHA256 of file bytes after replacing CRLF with LF; no other normalization.",
   "selection": "Near-uniform annual case-article sampling; 2026 is a partial year.",
   "dataset": {
     "path": "data/processed/echr_unified.json",
-    "sha256_lf": "d44e0eecc9f167f6868e79665ded075834a827df05d9d0afe0f14938d3ba8e35",
+    "sha256_lf": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
     "instances": 1000,
     "judgments": 947,
     "instance_key": [
@@ -39,18 +39,25 @@
   },
   "summaries": {
     "path": "data/processed/summaries_dsv41flash.json",
-    "sha256_lf": "c4742b1cf8b3dfca847300ffcb265b7ee72a24e2cbc73a0803475cee794c697c",
+    "sha256_lf": "456ae13db47a0ef7e6ba21716869f45b9d7eb865df525a33708c3d77a9d203d6",
     "summarizer": "deepseek/deepseek-v4.1-flash",
-    "versions": 3,
+    "versions": 1,
     "represented_judgments": 947,
     "complete_judgments": 947,
-    "usable_summaries": 2841,
+    "usable_summaries": 947,
     "missing_slots_zero_based": []
   },
   "provenance_notes": [
     "Grok summaries and livehrb_1k.json are a separate historical cohort, not substitutes.",
     "pair_id is judgment-level; use item_id plus article_full for instance-level joins.",
     "Keep all 1000 instances fixed; do not silently drop missing summary slots or use another summarizer to fill them.",
-    "This manifest verifies artifact identity and coverage, not factual fidelity or verdict leakage."
-  ]
+    "This manifest verifies artifact identity and coverage, not factual fidelity or verdict leakage.",
+    "The main experiment now uses original version index 0 only, selected without evaluator scores.",
+    "Every selected source and summary is hash-bound to accepted leakage-review evidence.",
+    "Earlier results and the historical three-version summaries are not current-release results."
+  ],
+  "input_release": {
+    "path": "data/processed/input_release.json",
+    "release_id": "echr-unified-1000-leakchecked-single-v0-20260915"
+  }
 }

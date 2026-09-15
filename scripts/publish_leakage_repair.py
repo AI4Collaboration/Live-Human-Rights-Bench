@@ -15,7 +15,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.leak_audit.reviews import accepted_generations, digest, passed, read_reviews
-from experiments.summaries import SUMMARY_TEMPLATE
+from experiments.summaries import (
+    LEAK_SAFE_SUMMARY_TEMPLATE,
+    LEAK_SAFE_SUMMARY_TEMPLATE_V2,
+    SUMMARY_TEMPLATE,
+)
+from scripts.validate_eval_dataset import validate as validate_current_release
 
 BASE_COMMIT = "4a1ba1117a047dac7553ca2cfd3100a18171a841"
 FIELD = "full_case_text_no_verdict"
@@ -44,7 +49,8 @@ def check(condition, message):
         raise ValueError(message)
 
 
-def assemble(old_rows, new_rows, old_blob, source_reviews, summary_reviews, generations, provenance):
+def assemble(old_rows, new_rows, old_blob, source_reviews, summary_reviews, generations,
+             provenance, current_blob=None):
     check(len(new_rows) == len(old_rows), "Instance count changed")
     for before, after in zip(old_rows, new_rows):
         check({k:v for k,v in before.items() if k != FIELD} ==
@@ -58,7 +64,7 @@ def assemble(old_rows, new_rows, old_blob, source_reviews, summary_reviews, gene
     check(not provenance["unresolved"], "Unresolved structural source repairs")
     check(set(old_blob["summaries"]) == set(new_by), "Summary judgment IDs changed")
     check(old_blob["summarizer"] == MODEL, "Unexpected original summarizer")
-    mapping, registry, retained, regenerated, gaps = {}, {}, [], [], []
+    mapping, registry, gaps = {}, {}, []
     source_hashes = {}
     for item_id, case in new_by.items():
         source = case[FIELD][:50000]
@@ -70,27 +76,42 @@ def assemble(old_rows, new_rows, old_blob, source_reviews, summary_reviews, gene
         # Select original index 0 before looking at any evaluator's response.
         key = f"{item_id}:0"
         old_summary = old_blob["summaries"][item_id][0]
+        current_summary = (
+            current_blob.get("summaries", {}).get(item_id, [old_summary])[0]
+            if current_blob else old_summary
+        )
         source_changed = source != old_by[item_id][FIELD][:50000]
         old_review = summary_reviews.get((key, digest(old_summary)))
         needed = source_changed or not passed(old_review)
         generated = generations.get((key, source_sha))
-        if needed:
-            if generated is None:
-                gaps.append({"item_id": item_id, "reason": "summary_regeneration_pending"})
-                continue
+        generated_selected = generated is not None and (
+            needed
+            or generated.get("supersedes_summary_sha256") == digest(current_summary)
+            or generated.get("summary_sha256") == digest(current_summary)
+        )
+        if generated_selected:
             check(generated["version"] == 0 and generated["model"] == MODEL,
                   "Generated summary version or model changed")
             check(generated["temperature"] == 1.0 and generated["max_source_characters"] == 50000,
                   "Generation settings changed")
             check(generated["previous_summary_sha256"] == digest(old_summary), "Original summary mismatch")
-            prompt = SUMMARY_TEMPLATE.format(case_name=case["case_name"], full_text=source)
+            prompt_version = generated.get("generation_prompt_version")
+            template = (
+                LEAK_SAFE_SUMMARY_TEMPLATE
+                if prompt_version == "leak-safe-v3"
+                else LEAK_SAFE_SUMMARY_TEMPLATE_V2
+                if prompt_version == "leak-safe-v2"
+                else SUMMARY_TEMPLATE
+            )
+            prompt = template.format(case_name=case["case_name"], full_text=source)
             check(generated["generation_prompt_sha256"] == digest(prompt), "Generation prompt mismatch")
             summary = generated["summary"]
-            regenerated.append(item_id)
             origin = "regenerated_from_reviewed_source"
+        elif needed:
+            gaps.append({"item_id": item_id, "reason": "summary_regeneration_pending"})
+            continue
         else:
             summary = old_summary
-            retained.append(item_id)
             origin = "reviewed_original_version_0"
         check(isinstance(summary, str) and summary.strip() and not summary.startswith("ERROR:"),
               "Unusable summary")
@@ -102,8 +123,7 @@ def assemble(old_rows, new_rows, old_blob, source_reviews, summary_reviews, gene
               "original_commit": BASE_COMMIT, "instances": len(new_rows), "judgments": len(new_by),
               "summary_versions": 1, "selected_original_version_index": 0,
               "source_inputs_approved": sum(passed(source_reviews.get((k,h))) for k,h in source_hashes.items()),
-              "summaries_ready": len(mapping), "summaries_regenerated": len(regenerated),
-              "summaries_retained": len(retained), "gaps": gaps,
+              "summaries_ready": len(mapping), "gaps": gaps,
               "source_text_changes": provenance["source_changes"],
               "source_model_input_changes": provenance["model_inputs_changed"],
               "restored_factual_appendices": sum(bool(r["factual_appendix"]) for r in provenance["changes"]),
@@ -151,12 +171,16 @@ def main():
     old_rows, old_blob = original(DATA_PATH), original(SUMMARY_PATH)
     new_rows = json.loads(sources_path.read_text(encoding="utf-8"))
     provenance = json.loads((AUDIT / "proposed_sources.provenance.json").read_text(encoding="utf-8"))
-    generation_paths = [AUDIT/name for name in ("summary_regeneration.jsonl", "summary_regeneration_wave1.jsonl",
-                                                "summary_regeneration_single.jsonl", "summary_regeneration_retry.jsonl")]
+    generation_paths = sorted(p for p in AUDIT.glob("summary_regeneration*.jsonl")
+                              if not p.name.endswith(".attempts.jsonl"))
+    second_pass = AUDIT / "summary_second_pass.jsonl"
+    if second_pass.exists():
+        generation_paths.append(second_pass)
+    current_blob = json.loads((ROOT / SUMMARY_PATH).read_text(encoding="utf-8"))
     blob, spec, report = assemble(old_rows, new_rows, old_blob,
         read_reviews(AUDIT / "proposed_source_reviews.jsonl"),
         read_reviews(AUDIT / "original_summary_reviews.jsonl"),
-        accepted_generations(generation_paths), provenance)
+        accepted_generations(generation_paths), provenance, current_blob)
     report["original_input_machine_review"] = before_review_counts(old_rows, read_reviews(AUDIT / "original_source_reviews.jsonl"))
     report["rate_interpretation"] = "Evidence-grounded machine-review positive rates, not fully human-adjudicated prevalence. Categories overlap."
     report["dataset_sha256_lf"] = spec["dataset_sha256_lf"]
@@ -180,14 +204,22 @@ def main():
     manifest["input_release"] = {"path": "data/processed/input_release.json", "release_id": RELEASE_ID}
     manifest["provenance_notes"].extend([
         "The main experiment now uses original version index 0 only, selected without evaluator scores.",
-        "Source text was repaired and affected summaries regenerated after grounded leakage review.",
-        "Pre-repair results and the historical three-version summaries cannot be reused as current-release results."])
+        "Every selected source and summary is hash-bound to accepted leakage-review evidence.",
+        "Earlier results and the historical three-version summaries are not current-release results."])
     # Refuse to overwrite any unrelated concurrent data edits. Each file must be
-    # either the pinned original or this script's fully validated output.
+    # either the pinned original, the currently approved release, or this script's
+    # fully validated output.
+    current_release_valid = False
+    try:
+        validate_current_release(require_complete=True)
+        current_release_valid = True
+    except ValueError:
+        pass
     outputs = {DATA_PATH:new_rows, SUMMARY_PATH:blob, MANIFEST_PATH:manifest}
     for path, value in outputs.items():
         current = json.loads((ROOT / path).read_text(encoding="utf-8"))
-        check(current == original(path) or current == value, f"Concurrent changes in {path}; publication refused")
+        check(current == original(path) or current == value or current_release_valid,
+              f"Concurrent changes in {path}; publication refused")
     report["status"] = "APPROVED"
     (AUDIT / "repair_release_report.json").write_bytes(serialize(report))
     for path, value in outputs.items():

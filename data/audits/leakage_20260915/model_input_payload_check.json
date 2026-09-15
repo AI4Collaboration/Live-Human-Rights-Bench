@@ -1,0 +1,19 @@
+{
+  "status": "PASSED",
+  "mode": "offline_fake_transport_not_an_experiment",
+  "release_id": "echr-unified-1000-leakchecked-single-v0-20260915",
+  "dataset_sha256_lf": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
+  "summaries_sha256_lf": "de4f3082b68686c2272d8eb8dad4f2374ef779fe45db0e02911917ec6ecd46d2",
+  "instances": 1000,
+  "outgoing_message_checks": {
+    "baseline": 1000,
+    "summarization": 1000,
+    "framing": 3000,
+    "reconsideration": 2000
+  },
+  "total_checks": 7000,
+  "unique_message_hashes": 5000,
+  "gold_label_sentinel_hits": 0,
+  "unapproved_initial_prompts": 0,
+  "network_requests": 0
+}

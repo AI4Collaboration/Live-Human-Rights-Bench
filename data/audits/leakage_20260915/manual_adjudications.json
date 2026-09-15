@@ -1,0 +1,9 @@
+[
+  {
+    "item_id": "001-228840",
+    "input_sha256": "c2bf0663d992b53b56b4a9813bc9be3de402340ef7de0d9d56fd839d8f769ed9",
+    "decision": "allow_sparse_factual_record",
+    "evidence": "The applicants complained of the retrospective application of section 1(218) of Law no. 266/2005 of 23 December 2005 to pending proceedings.",
+    "explanation": "The model review correctly finds no current ECtHR conclusion or reasoning. Its insufficient-facts flag incorrectly says there are no concrete case facts: paragraph 5 specifies the impugned retroactive statute and its application to pending proceedings. Retain this sparse original factual record and the verified identity table, without inventing additional facts. This adjudication confirms absence of the flagged leakage, not comprehensive factual sufficiency for every legal issue."
+  }
+]

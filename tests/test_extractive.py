@@ -91,3 +91,32 @@ def test_omission_is_counted_exactly_not_estimated():
     paras = split_paragraphs(JUDGMENT)
     assert omitted(paras, ["3", "10", "11"]) == ["1", "2"]
     assert omitted(paras, []) == ["1", "2", "3", "10", "11"]
+
+
+def test_source_spans_cover_flattened_duplicate_and_table_text_without_rewriting():
+    from extractive import source_units, assemble_units, selection_record
+    examples = [JUDGMENT, "1. First fact. 2. Second fact. 1. Repeated heading. 3. Final fact.",
+                "FACTUAL TABLE\nApplicant: X\nDuration: 27 days\nCell area: 2.62 square metres.",
+                "A short unnumbered factual record."]
+    for source in examples:
+        units = source_units(source)
+        assert len({u["id"] for u in units}) == len(units)
+        assert "".join("".join(u["text"].split()) for u in units) == "".join(source.split())
+        for u in units:
+            assert source[u["start"]:u["end"]] == u["text"]
+        selected = [u["id"] for u in units[::2]]
+        assert is_verbatim(assemble_units(units, selected), source)
+        assert len(selection_record(units, selected)["selected_spans"]) == len(selected)
+
+
+def test_all_current_judgments_support_lossless_extractive_units():
+    import json
+    from pathlib import Path
+    from extractive import source_units, assemble_units
+    from scripts.build_extractive import preflight
+    rows = json.loads((Path(__file__).resolve().parents[1] / "data/processed/echr_unified.json").read_text(encoding="utf-8"))
+    unique = {r["item_id"]: r["full_case_text_no_verdict"][:50000] for r in rows}
+    assert preflight([{"item_id": k, "text": v} for k, v in unique.items()])["eligible"] == 947
+    for source in unique.values():
+        units = source_units(source)
+        assert is_verbatim(assemble_units(units, [u["id"] for u in units]), source)

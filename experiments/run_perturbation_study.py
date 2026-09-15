@@ -27,7 +27,7 @@ from collections import Counter
 from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
-from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
 from input_gate import case_input, verify_cases
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -88,7 +88,7 @@ range: intermediate values are expected whenever the case is close.
 
 Provide ONLY the number as your response."""
 
-# Summaries are built once by scripts/build_summaries.py with a fixed summariser and
+# Summaries are built once through scripts/resummarize.py with a fixed summariser and
 # passed in via --summaries. This runner does not summarise: doing it here meant the
 # judge model graded its own writing, and meant paying for the same judgments again
 # for every model in the roster.
@@ -195,6 +195,7 @@ def run_baseline(client, model, cases, n_samples, parent_run_id):
 
 def run_summarization(client, model, cases, n_samples, baseline_results, summaries):
     """RQ1: Summarization effect."""
+    validate_single_summaries(summaries)
     with mlflow.start_run(run_name="rq1_summarization", nested=True):
         mlflow.log_param("stage", "rq1_summarization")
 
@@ -202,42 +203,31 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
         summary_results = []
         for i, case in enumerate(cases):
             case_key = case["item_id"]
-            for v, summary_text in enumerate(summaries.get(case_key) or []):
-                if not is_usable(summary_text):
-                    skipped_no_summary += 1
-                    continue
-                ratings = predict_case(client, model, summary_text, case["article"], PREDICTIVE_TEMPLATE, n_samples)
-                pred, abstained = majority_vote(ratings)
-
-                # Find baseline prediction for alignment
-                baseline_pred = None
-                for br in baseline_results:
-                    if br["item_id"] == case["item_id"] and br["article"] == case["article"]:
-                        baseline_pred = br["prediction"]
-                        break
-
-                summary_results.append({
-                    "item_id": case["item_id"],
-                    "case_name": case["case_name"],
-                    "article": case["article"],
-                    "violation_label": case["violation_label"],
-                    "summary_version": v,
-                    "prediction": pred,
-                    "accurate": pred == case["violation_label"],
-                    "aligned": pred == baseline_pred,
-                    "abstained": abstained, "avg_rating": mean_rating(ratings),
-                    "flip_direction": flip_direction(baseline_pred, pred),
-                    "ratings": ratings, "n_unparsed": count_unparsed(ratings),
-                })
+            summary_text = summary_for(summaries, case_key)
+            if not is_usable(summary_text):
+                skipped_no_summary += 1
+                continue
+            ratings = predict_case(client, model, summary_text, case["article"], PREDICTIVE_TEMPLATE, n_samples)
+            pred, abstained = majority_vote(ratings)
+            baseline_pred = next((r["prediction"] for r in baseline_results
+                                  if r["item_id"] == case_key and r["article"] == case["article"]), None)
+            summary_results.append({
+                "item_id": case_key, "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "summary_version": 0,
+                "prediction": pred, "accurate": pred == case["violation_label"],
+                "aligned": pred == baseline_pred, "abstained": abstained,
+                "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(baseline_pred, pred),
+                "ratings": ratings, "n_unparsed": count_unparsed(ratings),
+            })
             print(f"\r  Summary eval: {i+1}/{len(cases)}", end="", flush=True)
 
-        accuracy = sum(r["accurate"] for r in summary_results) / len(summary_results)
         if skipped_no_summary:
             mlflow.log_metric("rq1_skipped_no_summary", skipped_no_summary)
-            print(f"\n  RQ1: skipped {skipped_no_summary} case-versions with no usable summary")
+            print(f"\n  RQ1: skipped {skipped_no_summary} instances with no usable summary")
         if not summary_results:
             print("\n  RQ1: nothing scored")
             return summary_results
+        accuracy = sum(r["accurate"] for r in summary_results) / len(summary_results)
         alignment = sum(r["aligned"] for r in summary_results) / len(summary_results)
         mlflow.log_metric("accuracy", accuracy)
         mlflow.log_metric("alignment_rate", alignment)
@@ -249,6 +239,7 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
 
 def run_framing(client, model, cases, n_samples, summaries, baseline_results):
     """RQ2: Decision-question framing effect."""
+    validate_single_summaries(summaries)
     with mlflow.start_run(run_name="rq2_framing", nested=True):
         mlflow.log_param("stage", "rq2_framing")
 

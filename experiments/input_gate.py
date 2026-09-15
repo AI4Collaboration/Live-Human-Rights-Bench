@@ -51,18 +51,54 @@ def case_input(case, approved=None):
     return text
 
 
-def verify_summaries(mapping, approved=None):
+def guard_candidate_output(path):
+    """Builders write candidates, never replace the approved canonical artifact."""
+    if Path(path).resolve() == (ROOT / "data/processed/summaries_dsv41flash.json").resolve():
+        raise ValueError("Write to a candidate file; canonical summaries are replaced only by the reviewed publication gate")
+
+
+def verify_summaries(mapping, approved=None, metadata=None):
+    try:
+        from .summaries import validate_single_summaries
+    except ImportError:
+        from summaries import validate_single_summaries
+    validate_single_summaries(mapping)
     spec = release() if approved is None else approved
+    metadata = metadata or {}
+    if metadata.get("versions", 1) != 1:
+        raise ValueError("Exactly one summary per judgment is required")
+    extractive = metadata.get("mode") == "extractive"
+    sources = None
     known_ids = set(spec["source_inputs"]) if spec else cohort_ids()
     for item_id, values in mapping.items():
         if item_id not in known_ids:
             continue
         if spec is None:
             raise ValueError("Current benchmark summaries have not passed the leakage-release gate")
+        if extractive:
+            if sources is None:
+                sources = {r["item_id"]: r for r in json.loads(CASES_PATH.read_text(encoding="utf-8"))}
+            source = case_input(sources[item_id], spec)
+            if metadata.get("source_inputs", {}).get(item_id) != text_digest(source):
+                raise ValueError(f"Stale extractive source identity for {item_id}")
+            try:
+                from .extractive import assemble_units, source_units, selection_record, SELECTION_SCHEMA
+            except ImportError:
+                from extractive import assemble_units, source_units, selection_record, SELECTION_SCHEMA
+            units = source_units(source)
+            ids = {u["id"] for u in units}
+            record = metadata.get("selections", {}).get(item_id, {})
+            chosen = record.get("selected_units")
+            if (metadata.get("selection_schema") != SELECTION_SCHEMA or not isinstance(chosen, list)
+                    or not chosen or len(set(chosen)) != len(chosen) or not set(chosen) <= ids
+                    or selection_record(units, chosen) != record
+                    or assemble_units(units, chosen) != values[0]):
+                raise ValueError(f"Extractive summary is not the recorded verbatim source-span selection for {item_id}")
+            continue
         expected = spec["summary_inputs"][item_id]
         actual = [text_digest(s) if isinstance(s, str) else None for s in values]
         if actual != expected:
-            raise ValueError(f"Stale or unreviewed summary versions for {item_id}")
+            raise ValueError(f"Stale or unreviewed summary for {item_id}")
 
 
 def verify_cases(cases):
@@ -77,9 +113,12 @@ def bind_run_inputs(directory, cases_path, summaries_path=None):
     identity = {"cases_sha256_lf": file_digest(cases_path)}
     if spec and identity["cases_sha256_lf"] == spec["dataset_sha256_lf"]:
         if summaries_path and file_digest(summaries_path) != spec["summaries_sha256_lf"]:
-            raise ValueError("Summary file does not match the approved input release")
+            blob = json.loads(Path(summaries_path).read_text(encoding="utf-8"))
+            if blob.get("mode") != "extractive":
+                raise ValueError("Summary file does not match the approved input release")
+            verify_summaries(blob["summaries"], spec, metadata=blob)
         identity.update({"release_id": spec["release_id"],
-                         "summaries_sha256_lf": spec["summaries_sha256_lf"]})
+                         "summaries_sha256_lf": file_digest(summaries_path) if summaries_path else spec["summaries_sha256_lf"]})
     elif summaries_path:
         identity["summaries_sha256_lf"] = file_digest(summaries_path)
     marker = directory / "input_identity.json"

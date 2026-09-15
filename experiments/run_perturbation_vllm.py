@@ -13,7 +13,7 @@ from run_perturbation_bedrock import (
 from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
-from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
 from input_gate import case_input, verify_cases
 
 
@@ -70,6 +70,7 @@ def run_baseline(client, model, cases, n_samples):
 
 
 def run_summarization(client, model, cases, n_samples, baseline_results, summaries):
+    validate_single_summaries(summaries)
     with mlflow.start_run(run_name="rq1_summarization", nested=True):
         mlflow.log_param("stage", "rq1_summarization")
         skipped_no_summary = 0
@@ -77,21 +78,21 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
         for i, case in enumerate(cases):
             key = case["item_id"]
             bp = next((r["prediction"] for r in baseline_results if r["item_id"]==case["item_id"] and r["article"]==case["article"]), None)
-            for v, summary_text in enumerate(summaries.get(key) or []):
-                if not is_usable(summary_text):
-                    skipped_no_summary += 1
-                    continue
-                at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
-                prompt = PREDICTIVE_TEMPLATE.format(case_text=summary_text, article=case["article"], article_title=at)
-                ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
-                pred, abstained = majority_vote(ratings)
-                results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
-                    "violation_label": case["violation_label"], "summary_version": v,
-                    "prediction": pred, "accurate": pred==case["violation_label"], "aligned": pred==bp, "abstained": abstained, "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(bp, pred), "ratings": ratings, "n_unparsed": count_unparsed(ratings)})
+            summary_text = summary_for(summaries, key)
+            if not is_usable(summary_text):
+                skipped_no_summary += 1
+                continue
+            at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+            prompt = PREDICTIVE_TEMPLATE.format(case_text=summary_text, article=case["article"], article_title=at)
+            ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
+            pred, abstained = majority_vote(ratings)
+            results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "summary_version": 0,
+                "prediction": pred, "accurate": pred==case["violation_label"], "aligned": pred==bp, "abstained": abstained, "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(bp, pred), "ratings": ratings, "n_unparsed": count_unparsed(ratings)})
             print(f"\r  Summary eval: {i+1}/{len(cases)}", end="", flush=True)
         if skipped_no_summary:
             mlflow.log_metric("rq1_skipped_no_summary", skipped_no_summary)
-            print(f"\n  RQ1: skipped {skipped_no_summary} case-versions with no usable summary")
+            print(f"\n  RQ1: skipped {skipped_no_summary} instances with no usable summary")
         if not results:
             print("\n  RQ1: nothing scored")
             return results
@@ -105,6 +106,7 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
 
 
 def run_framing(client, model, cases, n_samples, summaries, baseline_results):
+    validate_single_summaries(summaries)
     with mlflow.start_run(run_name="rq2_framing", nested=True):
         mlflow.log_param("stage", "rq2_framing")
         framings = {"predictive": PREDICTIVE_TEMPLATE, "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE}

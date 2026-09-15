@@ -31,13 +31,15 @@ class Checkpoint:
         # two threads appending to the same handle interleave partial lines, and a
         # torn line is a unit that was paid for and cannot be read back.
         self._lock = threading.Lock()
-        self.path = Path(path)
+        self.path = Path(path) if path is not None else None
         self.enabled = enabled
         self._rows = []
         self._done = set()
         if not enabled:
             self._handle = None
             return
+        if self.path is None:
+            raise ValueError("An enabled checkpoint needs a path")
         self.path.parent.mkdir(parents=True, exist_ok=True)
         if self.path.exists():
             for line in self.path.read_text().splitlines():

@@ -1,0 +1,2258 @@
+{
+  "judgments": 947,
+  "eligible": 385,
+  "blocked": 562,
+  "problems": [
+    {
+      "item_id": "001-245690",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244000",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-247556",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245686",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-244020",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-238800",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245447",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-246024",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245460",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-243081",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-241871",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-243781",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245279",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244592",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242059",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242762",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242534",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245810",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-242058",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244594",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-243997",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-243878",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-242857",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244728",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242788",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245463",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244894",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242757",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-244851",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-245246",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-245821",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242073",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242521",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-244588",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-238839",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245886",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-243562",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-238843",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-242855",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-120073",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-126636",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-126352",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-117132",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-115883",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-122434",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-120968",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-115854",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-127399",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-118383",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-115876",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-122429",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-122187",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-116827",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-119465",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-118737",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-127813",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-126918",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-118045",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-127809",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-115885",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-120067",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-127812",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-126635",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-138919",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-128204",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-127401",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-118592",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-119676",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-122664",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-119688",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-138558",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-115770",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-117134",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-115884",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-120969",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-118388",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-113328",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-112576",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-110949",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-109581",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114244",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-112588",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111369",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111666",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-115166",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-115165",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-108599",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-113819",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114473",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111394",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-113806",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-110702",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-108607",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-108859",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-115377",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111518",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-110936",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-114514",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-110942",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114085",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-108433",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114096",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-113432",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114439",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-110164",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-110486",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-112529",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-113648",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-114243",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-108580",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-114492",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111429",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-109572",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-111175",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-109072",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-110171",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-109565",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-114485",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-178700",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-177124",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-172459",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-178877",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-176969",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-174424",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-175667",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-173624",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-172463",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-173802",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-170648",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-174997",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-175658",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-172100",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-177228",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-170040",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-172091",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-173089",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-172460",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-178372",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-173498",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-172665",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-173103",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-174419",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-175121",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-177349",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-173091",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-229927",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-235692",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-231088",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233206",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-237290",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-237960",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-237435",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-234129",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-231871",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-231078",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-236132",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-230878",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233937",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-231333",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-237808",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-230739",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233381",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-233231",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-235034",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-238515",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-233378",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-238009",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-235470",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-231227",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-230729",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233652",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233236",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-234008",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-230725",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-230281",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-237504",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-233409",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-201139",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-205797",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200434",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200213",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-204995",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-202411",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-206516",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203976",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-206371",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203048",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-202750",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203931",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-206511",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203492",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200815",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-202991",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-205539",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-204194",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-201531",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-205140",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200709",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-206360",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-206525",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200209",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-202524",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-202222",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203559",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-203294",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-204660",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-204601",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-201641",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-206268",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-200214",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-200547",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-205141",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-192985",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-199173",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-195540",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-196149",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-193870",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-188997",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-198718",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-195869",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-194183",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-195909",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-198485",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-189786",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-189741",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-192892",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-191721",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-198884",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-191717",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-193251",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-189589",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-196879",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-192787",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-193469",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-190020",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-194303",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-194106",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-192995",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-196893",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-194188",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-199168",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-192983",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-190025",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-191359",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-188991",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-193994",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-189621",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-195861",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-198882",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-197215",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-196600",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-189740",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-189092",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-194001",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-196897",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-196682",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-191369",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-193083",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-208280",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-212150",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-207848",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-207474",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-209330",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-211138",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210304",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210413",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-212843",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-207806",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-207849",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210257",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-214047",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210078",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-213853",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-207695",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-213706",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210689",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-209152",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-212897",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-211795",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-213730",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-245708",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-211892",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-210322",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-208592",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-209035",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-209992",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-214048",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-211814",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-211020",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-207850",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-210680",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-210332",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-210537",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-141943",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-145349",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-145068",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-142082",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-146410",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-144672",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145466",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-142398",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-141644",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145779",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-142403",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-147037",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-146047",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145580",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-140769",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-140028",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145788",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-140239",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-146697",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-147274",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-146353",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145014",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-142185",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-145579",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-140020",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-141635",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-145575",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-142083",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-145581",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-145787",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-142305",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-148673",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-140782",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-142519",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-148636",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-140235",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-148263",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-225807",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-228167",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-228673",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222312",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-228151",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-225318",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-224365",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-228992",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-229134",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-224554",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222920",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-223259",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-229726",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-227718",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-222775",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-229125",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-228857",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-226474",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-228840",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-225900",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-224581",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-223379",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222917",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-224576",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-228683",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-227719",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-225772",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-227753",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-225678",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-229325",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-223278",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-229141",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222134",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222138",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-228861",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-222894",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249964",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248957",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249345",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248960",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248396",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248128",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-250111",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-249583",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248979",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-250035",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249236",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-247651",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249134",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248682",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248397",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249581",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249691",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-248392",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248201",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249586",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249587",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-250112",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248167",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-247822",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249251",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248220",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248594",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248961",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248395",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248953",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249527",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-247917",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249810",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-250034",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248592",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249525",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249234",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249530",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-247909",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248687",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249970",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-250036",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-249515",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248854",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-248198",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-156080",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-155102",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-154354",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-157967",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-155824",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-159732",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-155352",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-155006",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-150653",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-152597",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-158504",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-154344",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-156073",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-153910",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-156069",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-159211",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-158472",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-153349",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-153960",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-150234",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-159375",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-150788",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-155827",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-156265",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-151051",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-154347",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-156274",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-153906",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-157670",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-156275",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-152259",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-154527",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-153919",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-153767",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-150704",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-165250",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-160270",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-168377",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-165755",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-167797",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-159880",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-165750",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-168382",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-165230",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-168853",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-169957",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-165758",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-166689",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-169654",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-168864",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-160800",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-163909",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-163356",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-159882",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-162214",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-162179",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-161369",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-167806",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-159915",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-169662",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-161975",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-168380",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-166954",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-163911",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-163358",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-169210",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-168816",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-167110",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-161381",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-163054",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-221480",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219220",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-221637",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-219500",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215350",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-220890",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-216349",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219493",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-216463",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-216352",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-217605",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219293",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219506",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-220887",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-219490",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215170",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-216535",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-216720",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-218941",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219684",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-220556",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-220712",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-216686",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-216193",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219194",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-219309",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215132",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-214780",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-217415",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-218074",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-219988",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-220164",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215913",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-220010",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215735",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-215898",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187818",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181882",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-187200",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-181859",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187686",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183542",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-187251",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-187465",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-188374",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187195",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-184496",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-180843",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-180841",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181210",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-185031",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187931",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-183395",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-187474",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-181847",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183817",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-184651",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183546",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181850",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-188382",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181393",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-182853",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-180288",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-179853",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-186770",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181202",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-183206",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183373",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-183586",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187574",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183558",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181584",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-183337",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-179867",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-186126",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-181068",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-181877",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-187923",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-186048",
+      "reason": "duplicate_paragraph_numbers"
+    },
+    {
+      "item_id": "001-182605",
+      "reason": "fewer_than_four_numbered_paragraphs"
+    },
+    {
+      "item_id": "001-183338",
+      "reason": "duplicate_paragraph_numbers"
+    }
+  ],
+  "network_requests": 0,
+  "input_release": "echr-unified-1000-leakchecked-single-v0-20260915",
+  "status": "BLOCKED_FORMAT_NOT_FAITHFULNESS_RESULT"
+}

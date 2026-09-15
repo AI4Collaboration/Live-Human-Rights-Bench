@@ -33,8 +33,9 @@ from checkpoint import Checkpoint
 from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
-from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
 from input_gate import case_input, verify_cases, bind_run_inputs
+from run_protocol import bind_run_config, prompt_digest, complete_samples, SUMMARY_PROTOCOL, SCORING
 
 # ── Prompts (shared with bedrock runner) ──────────────────────────────────
 
@@ -79,7 +80,7 @@ range: intermediate values are expected whenever the case is close.
 
 Provide ONLY the number as your response."""
 
-# Summaries are built once by scripts/build_summaries.py with a fixed summariser and
+# Summaries are built once through scripts/resummarize.py with a fixed summariser and
 # passed in via --summaries. This runner does not summarise: doing it here meant the
 # judge model graded its own writing, and meant paying for the same judgments again
 # for every model in the roster.
@@ -178,7 +179,7 @@ def log_artifact(obj, name):
               f"results are on disk regardless")
 
 
-def _fan_out(units, work, ckpt, label, workers):
+def _fan_out(units, work, ckpt, label, workers, samples=None):
     """Run independent units concurrently, recording results as they land.
 
     Workers only call the API. Recording happens on this thread, so the checkpoint
@@ -186,12 +187,15 @@ def _fan_out(units, work, ckpt, label, workers):
     in the checkpoint are never resubmitted, which is what makes a resumed run cheap
     rather than merely correct.
     """
-    pending = [u for u in units if not ckpt.done(u["key"])]
+    pending = [u for u in units if not ckpt.done(u["key"])
+               or (samples is not None and not complete_samples(ckpt.get(u["key"]), samples))]
+    def latest():
+        return [row for u in units if (row := ckpt.get(u["key"])) is not None]
     if ckpt.resumed:
         print(f"  {label}: resuming, {ckpt.resumed} already recorded")
     if not pending:
         print(f"  {label}: nothing left to do")
-        return ckpt.rows()
+        return latest()
     done = 0
     recent = deque(maxlen=BREAKER_WINDOW)
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -201,7 +205,7 @@ def _fan_out(units, work, ckpt, label, workers):
             row = fut.result()
             if row is not None:
                 ckpt.record(unit["key"], row)
-                ratings = row.get("ratings") or []
+                ratings = row.get("ratings") or row.get("challenged_ratings") or []
                 recent.append(sum(1 for r in ratings if r is None) / len(ratings)
                               if ratings else 1.0)
             done += 1
@@ -219,7 +223,7 @@ def _fan_out(units, work, ckpt, label, workers):
                       f"network, then prune with scripts/prune_degraded.py and resume.")
                 break
     print()
-    return ckpt.rows()
+    return latest()
 
 
 def _score(client, model, prompt, n_samples):
@@ -262,7 +266,7 @@ def run_baseline(client, model, cases, n_samples, ckpt=None, workers=1):
                 "n_unparsed": count_unparsed(ratings),
             }
 
-        results = _fan_out(units, work, ckpt, "Baseline", workers)
+        results = _fan_out(units, work, ckpt, "Baseline", workers, samples=n_samples)
         accuracy = sum(r["accurate"] for r in results) / len(results)
         abstention = sum(r["abstained"] for r in results) / len(results)
         mlflow.log_metric("accuracy", accuracy)
@@ -274,34 +278,32 @@ def run_baseline(client, model, cases, n_samples, ckpt=None, workers=1):
 
 def run_summarization(client, model, cases, n_samples, baseline_results, summaries, ckpt=None, workers=1):
     ckpt = ckpt or Checkpoint(None, enabled=False)
-    n_versions = max((len(v) for v in summaries.values()), default=0)
+    validate_single_summaries(summaries)
     with mlflow.start_run(run_name="rq1_summarization", nested=True):
         mlflow.log_param("stage", "rq1_summarization")
-        mlflow.log_param("n_summary_versions", n_versions)
+        mlflow.log_param("summaries_per_judgment", 1)
         mlflow.log_param("workers", workers)
         skipped_no_summary = 0
         units = []
         for case in cases:
-            versions = summaries.get(case["item_id"]) or []
+            text = summary_for(summaries, case["item_id"])
             baseline_pred = next((r["prediction"] for r in baseline_results
                                   if r["item_id"] == case["item_id"] and r["article"] == case["article"]), None)
-            for v in range(n_versions):
-                text = versions[v] if v < len(versions) else None
-                if not is_usable(text):
-                    skipped_no_summary += 1
-                    continue
-                units.append({"key": ckpt.key("rq1", case["item_id"], case["article"], v),
-                              "case": case, "version": v, "text": text, "baseline": baseline_pred})
+            if not is_usable(text):
+                skipped_no_summary += 1
+                continue
+            units.append({"key": ckpt.key("rq1", case["item_id"], case["article"], 0),
+                          "case": case, "text": text, "baseline": baseline_pred})
 
         def work(unit):
-            case, v = unit["case"], unit["version"]
+            case = unit["case"]
             prompt = PREDICTIVE_TEMPLATE.format(case_text=unit["text"], article=case["article"],
                                                 article_title=article_title(case))
             ratings = _score(client, model, prompt, n_samples)
             pred, abstained = majority_vote(ratings)
             return {
                 "item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
-                "violation_label": case["violation_label"], "summary_version": v,
+                "violation_label": case["violation_label"], "summary_version": 0,
                 "prediction": pred, "accurate": pred == case["violation_label"],
                 "aligned": pred == unit["baseline"], "abstained": abstained,
                 "avg_rating": mean_rating(ratings),
@@ -309,10 +311,10 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
                 "ratings": ratings, "n_unparsed": count_unparsed(ratings),
             }
 
-        summary_results = _fan_out(units, work, ckpt, "RQ1", workers)
+        summary_results = _fan_out(units, work, ckpt, "RQ1", workers, samples=n_samples)
         if skipped_no_summary:
             mlflow.log_metric("rq1_skipped_no_summary", skipped_no_summary)
-            print(f"\n  RQ1: skipped {skipped_no_summary} case-versions with no usable summary")
+            print(f"\n  RQ1: skipped {skipped_no_summary} instances with no usable summary")
         if not summary_results:
             print("\n  RQ1: nothing scored")
             return summary_results
@@ -326,6 +328,7 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
 
 
 def run_framing(client, model, cases, n_samples, summaries, baseline_results, ckpt=None, workers=1):
+    validate_single_summaries(summaries)
     ckpt = ckpt or Checkpoint(None, enabled=False)
     with mlflow.start_run(run_name="rq2_framing", nested=True):
         mlflow.log_param("stage", "rq2_framing")
@@ -362,7 +365,7 @@ def run_framing(client, model, cases, n_samples, summaries, baseline_results, ck
                 "ratings": ratings, "n_unparsed": count_unparsed(ratings),
             }
 
-        results = _fan_out(units, work, ckpt, "RQ2", workers)
+        results = _fan_out(units, work, ckpt, "RQ2", workers, samples=n_samples)
         for fname in framings:
             fr = [r for r in results if r["framing"] == fname]
             if not fr:
@@ -420,7 +423,7 @@ def run_reconsideration(client, model, cases, n_samples, baseline_results, ckpt=
                 "n_unparsed": count_unparsed(orig_ratings + chal_ratings),
             }
 
-        results = _fan_out(units, work, ckpt, "RQ3", workers)
+        results = _fan_out(units, work, ckpt, "RQ3", workers, samples=n_samples)
         changed = sum(r["changed"] for r in results) / len(results)
         mlflow.log_metric("changed_rate", changed)
         log_artifact(results, "rq3_results.json")
@@ -446,6 +449,8 @@ def main():
     parser.add_argument("--no-resume", action="store_true",
                         help="ignore any checkpoint and score every case again")
     args = parser.parse_args()
+    if args.samples < 1 or args.workers < 1:
+        parser.error("--samples and --workers must be positive")
 
     api_key = os.environ.get(args.api_key_env, "")
     if not api_key:
@@ -474,6 +479,13 @@ def main():
     model_key = args.model.replace("/", "_").replace(".", "_")
     bind_run_inputs(f"{args.output_dir}/{model_key}", args.cases, args.summaries)
     os.makedirs(f"{args.output_dir}/{model_key}", exist_ok=True)
+    bind_run_config(f"{args.output_dir}/{model_key}", {
+        "model": args.model, "samples": args.samples, "base_url": args.base_url,
+        "summary_protocol": SUMMARY_PROTOCOL, "scoring": SCORING, "temperature": 1.0,
+        "max_case_chars": MAX_CASE_CHARS, "max_completion_tokens_initial": MAX_COMPLETION_TOKENS,
+        "prompts_sha256": prompt_digest({"system": SYSTEM_PROMPT, "predictive": PREDICTIVE_TEMPLATE,
+            "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE,
+            "reconsideration": RECONSIDERATION_PROMPT})})
 
     with mlflow.start_run(run_name=f"{model_key}_full"):
         mlflow.log_param("model", args.model)
@@ -501,7 +513,10 @@ def main():
                     baseline_results = json.load(f)
             else:
                 print("ERROR: Need baseline results first")
-                return
+                raise SystemExit(1)
+
+        if len(baseline_results) != len(cases) or not all(complete_samples(r, args.samples) for r in baseline_results):
+            raise SystemExit("Baseline incomplete; resume it before scoring perturbations")
 
         for stage, fn in (("rq1", run_summarization), ("rq2", run_framing), ("rq3", run_reconsideration)):
             if stage not in rqs:
@@ -517,6 +532,9 @@ def main():
             ckpt.close()
             with open(f"{args.output_dir}/{model_key}/{stage}_results.json", "w") as f:
                 json.dump(rows, f, indent=2)
+            expected = len(cases) * (3 if stage == "rq2" else 1)
+            if len(rows) != expected or not all(complete_samples(r, args.samples) for r in rows):
+                raise SystemExit(f"{stage} incomplete; results saved, resume this stage before analysis")
 
     if unparsed:
         total = sum(unparsed.values())

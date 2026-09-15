@@ -94,7 +94,7 @@ def test_every_arm_uses_the_same_cap():
         "run_perturbation_*.py"))
     assert runners, "no runners found"
     for path in runners:
-        source = path.read_text()
+        source = path.read_text(encoding="utf-8")
         assert "[:30000]" not in source, f"{path.name} still truncates one arm at 30k"
         assert "[:50000]" not in source, f"{path.name} still hard-codes a cap"
         assert "rate from 1 to 5" not in source, f"{path.name} still asks for a 1-5 rating"
@@ -120,7 +120,7 @@ def test_no_runner_averages_raw_ratings():
     # sum(ratings) / len(ratings) raises once parse_rating can return None
     for path in (Path(__file__).resolve().parent.parent / "experiments").glob(
             "run_perturbation_*.py"):
-        source = path.read_text().replace(" ", "")
+        source = path.read_text(encoding="utf-8").replace(" ", "")
         assert "sum(ratings)/len(ratings)" not in source, path.name
 
 
@@ -131,7 +131,7 @@ def test_article_titles_cover_the_published_codes():
     import re
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
     src = (Path(__file__).resolve().parent.parent
-           / "experiments" / "run_perturbation_bedrock.py").read_text()
+          / "experiments" / "run_perturbation_bedrock.py").read_text(encoding="utf-8")
     titles = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"',
                              re.search(r"ARTICLE_TITLES\s*=\s*\{(.*?)\n\}", src, re.S).group(1)))
     published = {"2", "3", "5", "6", "8", "10", "11", "13", "14", "34", "38", "41",
@@ -144,7 +144,7 @@ def test_convention_article_1_is_not_the_protocol_right():
     # the legacy lossy field collapses P1-1 to "1"; the title map must not repeat that
     import re
     src = (Path(__file__).resolve().parent.parent
-           / "experiments" / "run_perturbation_bedrock.py").read_text()
+          / "experiments" / "run_perturbation_bedrock.py").read_text(encoding="utf-8")
     titles = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"',
                              re.search(r"ARTICLE_TITLES\s*=\s*\{(.*?)\n\}", src, re.S).group(1)))
     assert titles["P1-1"] == "Protection of property"
@@ -156,7 +156,7 @@ def test_summaries_are_shared_across_instances_of_one_case():
     # would give two instances of one judgment two different summaries -- and bill twice
     for path in (Path(__file__).resolve().parent.parent / "experiments").glob(
             "run_perturbation_*.py"):
-        src = path.read_text()
+        src = path.read_text(encoding="utf-8")
         assert 'case["item_id"] + "_" + case["article"]' not in src, path.name
 
 
@@ -216,7 +216,7 @@ def test_every_result_row_carries_item_id():
     # without it, results join to the dataset only by case name -- which is not unique
     for path in (Path(__file__).resolve().parent.parent / "experiments").glob(
             "run_perturbation_*.py"):
-        src = path.read_text()
+        src = path.read_text(encoding="utf-8")
         for block in _stored_rows(src):
             assert '"item_id"' in block, f"{path.name}: row without item_id\n{block[:160]}"
 
@@ -225,7 +225,7 @@ def test_every_result_row_reports_its_failures():
     # `ratings` keeps None for a failed call; the count must not have to be inferred
     for path in (Path(__file__).resolve().parent.parent / "experiments").glob(
             "run_perturbation_*.py"):
-        src = path.read_text()
+        src = path.read_text(encoding="utf-8")
         for block in _stored_rows(src):
             assert '"n_unparsed"' in block, f"{path.name}: row without n_unparsed\n{block[:160]}"
 
@@ -250,7 +250,7 @@ def test_baseline_is_joined_by_item_id_not_case_name():
                      .glob("run_perturbation_*.py"))
     assert len(runners) >= 4
     for path in runners:
-        src = path.read_text()
+        src = path.read_text(encoding="utf-8")
         assert not re.search(r'\["case_name"\]\s*==\s*case\["case_name"\]', src), path.name
 
 
@@ -265,7 +265,7 @@ def test_every_result_row_keeps_its_abstentions_and_flip_direction():
     from pathlib import Path
     for path in sorted((Path(__file__).resolve().parent.parent / "experiments")
                        .glob("run_perturbation_*.py")):
-        src = path.read_text()
+        src = path.read_text(encoding="utf-8")
         for block in _stored_rows(src):
             if '"original_ratings"' in block or '"challenged_ratings"' in block:
                 assert '"original_abstained"' in block, f"{path.name}: rq3 row"

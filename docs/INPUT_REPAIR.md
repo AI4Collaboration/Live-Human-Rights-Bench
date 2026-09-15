@@ -14,10 +14,10 @@ alignment. These capabilities alone do not establish that a cross-version
 robustness analysis was completed. No such current-cohort result artifact was
 found in the GitHub snapshot `4a1ba11`.
 
-The one-version change does not change the number of repeated answers requested
-from a target model. Summary generation variability and repeated target answers
-are separate factors. Additional summaries would be an optional future
-robustness experiment, not additional independent cases.
+The one-summary protocol does not change the number of repeated answers requested
+from a target model. Repeated target answers are a separate factor. Multi-version
+generation and evaluation are removed. Faithfulness is investigated with the
+[extractive control and atomic coverage instrument](SUMMARIZATION_PROTOCOL.md).
 
 ## What is being removed
 
@@ -27,6 +27,10 @@ judgment's merits assessment, operative conclusions, and answer-revealing cover
 headnotes. Retain allegations, domestic procedural history, generic legal rules,
 and explicitly identified earlier judgments. This is an input-leakage check,
 not a test of proprietary pretraining overlap.
+
+Formal preambles that state how the current Court applies established case-law
+are removed too. Four such source prefixes were repaired and re-reviewed after
+the initial review, with their corresponding summaries regenerated.
 
 The old summary screen exempted an entire summary whenever the source mentioned
 any court's finding. A domestic finding could therefore exempt a new sentence

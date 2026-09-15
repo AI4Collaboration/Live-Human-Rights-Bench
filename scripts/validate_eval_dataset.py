@@ -45,7 +45,7 @@ def validate(manifest=None, require_complete=False):
     check(payload["summarizer"] == ss["summarizer"], "Summarizer mismatch")
     check(payload["versions"] == ss["versions"], "Summary version count mismatch")
     summaries, versions = payload["summaries"], ss["versions"]
-    check(isinstance(versions, int) and versions >= 1, "Summary versions must be a positive integer")
+    check(versions == 1, "Only one summary per judgment is supported")
     check(set(summaries) <= ids, "Summaries contain judgments outside the dataset")
     check(all(isinstance(v, list) and len(v) == versions for v in summaries.values()),
           f"Each represented judgment must have exactly {versions} summary slots")
@@ -67,6 +67,20 @@ def validate(manifest=None, require_complete=False):
     if missing:
         warnings.append(f"{len(missing)} missing summary slots; retain the frozen cohort and complete before full-coverage runs.")
         check(not require_complete, warnings[-1])
+    reviewed_release = None
+    if "input_release" in config:
+        spec = json.loads((REPO / config["input_release"]["path"]).read_text(encoding="utf-8"))
+        check(spec.get("status") == "APPROVED", "Input release is not approved")
+        check(spec["release_id"] == config["input_release"]["release_id"], "Input release ID mismatch")
+        check(spec["dataset_sha256_lf"] == ds["sha256_lf"] and spec["summaries_sha256_lf"] == ss["sha256_lf"],
+              "Input release file hashes mismatch")
+        text_hash = lambda value: hashlib.sha256(value.encode("utf-8")).hexdigest()
+        source_hashes = {r["item_id"]:text_hash(r["full_case_text_no_verdict"][:50000]) for r in rows}
+        summary_hashes = {k:[text_hash(value) for value in values] for k,values in summaries.items()}
+        check(source_hashes == spec["source_inputs"], "Unreviewed source inputs")
+        check(summary_hashes == spec["summary_inputs"], "Unreviewed summary inputs")
+        check(versions == spec["versions"], "Input release version count mismatch")
+        reviewed_release = spec["release_id"]
     return {
         "dataset_id": config["dataset_id"], "instances": len(rows), "judgments": len(ids),
         "annual_counts": years, "labels": labels, "date_range": [ds["date_min"], ds["date_max"]],
@@ -77,6 +91,7 @@ def validate(manifest=None, require_complete=False):
         "instance_coverage_by_version": [sum(usable(row["item_id"], v) for row in rows)
                                          for v in range(versions)],
         "warnings": warnings,
+        "reviewed_input_release": reviewed_release,
     }
 
 
@@ -84,7 +99,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=MANIFEST)
     parser.add_argument("--require-complete", action="store_true",
-                        help="fail if any case-summary version is missing")
+                        help="fail if any judgment summary is missing")
     args = parser.parse_args(argv)
     try:
         manifest = json.loads(args.manifest.read_text(encoding="utf-8"))

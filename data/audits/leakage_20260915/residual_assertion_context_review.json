@@ -1,0 +1,198 @@
+{
+  "scope": "Contextual review of all residual matches to this lexical candidate pattern, after the full source-input review. This is not a complete lexical definition of leakage.",
+  "pattern": "(?:the Court|ECtHR) (?:finds|holds|concludes|found|held|concluded|ruled)[^.]{0,150}(?:violation|breach)",
+  "matches": 21,
+  "judgments": 20,
+  "unresolved_current_case_assertions_in_these_matches": 0,
+  "records": [
+    {
+      "item_id": "001-244594",
+      "source_input_sha256": "5b86214470dddc87b95cbb2b567673d0322f7859df06bb1ae1025c183cb96af8",
+      "start": 15674,
+      "end": 15796,
+      "quote": "the court finds that the length of the proceedings [in question] was unreasonable and that there was therefore a violation",
+      "context": "part of the parties during the proceedings ...; (b) the complexity of the factual and legal issues raised; (c) the conduct of the relevant State authorities; and (d) what was at stake in the case for the claimant. 2. If the court finds that the length of the proceedings [in question] was unreasonable and that there was therefore a violation of the right to the prompt administration of justice, it shall decide whether the claimant should be afforded just sati",
+      "contextual_classification": "generic_statutory_rule"
+    },
+    {
+      "item_id": "001-243878",
+      "source_input_sha256": "82eb3d1162aad2e4b5d6c76c85b8a624b1e9daa52671265b8be5300d4e74009a",
+      "start": 18833,
+      "end": 18858,
+      "quote": "the court found no breach",
+      "context": "ggestion that the jury had been wrong to acquit on the evidence and on the standard of proof which they had to apply. The court therefore considered that there was no “undermining” of the acquittal. 20. As to Article 8, the court found no breach of the right to respect for private life. The judge delivering the court’s ruling summarised the justification for the ",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-245390",
+      "source_input_sha256": "df1e750ff279f70c037aaafe1b3bc482be498ade93d75e67e349287ff2a6d688",
+      "start": 12701,
+      "end": 12726,
+      "quote": "the Court found violation",
+      "context": "e within the meaning of the Istanbul Convention of the procedural safeguards guaranteed by it. They also drew parallels between their case and that of Iribarren Pinillos v. Spain (no. 36777/03, 8 January 2009), in which the Court found violations of Articles 3 and 6 of the Convention on account of what the applicants’ lawyer described as “scant judicial interest ",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-111044",
+      "source_input_sha256": "a882b3de5c70eb010db55a68d165b5715b7c088a3f5592a88cd1d5573bf07424",
+      "start": 9951,
+      "end": 9976,
+      "quote": "the Court found violation",
+      "context": "24 March 2003, the applicant lodged an application with the Court alleging, inter alia, that his life sentence had breached Articles 6 and 7 of the Convention. 30. In a judgment of 17 September 2009 the Grand Chamber of the Court found violations of those Articles (see Scoppola v. Italy (no. 2) [GC], no. 10249/03, 17 September 2009). 31. Ruling on Article 46 of t",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-114473",
+      "source_input_sha256": "e5ffe71fb48ed8c77ba7e3081eb871a96faddc1fa1b24d09f8d56e57ec56b5ea",
+      "start": 16533,
+      "end": 16587,
+      "quote": "The court found that the respondent acted in violation",
+      "context": "nt. The parties agreed that the case could be concluded by a new judge on the basis of the transcript and the documents. 34. On 10 March 2006 the High Court delivered its judgment. There was little dispute on the facts. The court found that the respondent acted in violation of Articles 2 and 8 by failing to discharge the positive obligation on the police to protect the life of Giles Van Coll",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-114514",
+      "source_input_sha256": "acc6714e541f7adb820050fa93da08bf6bf4f1425f932fbb6e7f50044eab6ff5",
+      "start": 19105,
+      "end": 19173,
+      "quote": "The court concluded that there was no causal link between the breach",
+      "context": "tion had been carried out as a life-saving intervention several days after the delivery, for reasons which were unrelated to the sterilisation. The operation had thus had no lasting consequences for the first applicant. The court concluded that there was no causal link between the breach of the first applicant’s rights in the context of her sterilisation and its alleged effect on her health, private and f",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-170349",
+      "source_input_sha256": "5ead7f55096227ef0f6ac993acf2db0e25500c5e3f9ccdc55d886656e0b035c4",
+      "start": 28966,
+      "end": 29011,
+      "quote": "The court concluded that the fact of a breach",
+      "context": "g the grounds used in it. Neither the representative of the Ministry of the Interior nor the police officers appeared. 57. On 2 March 2005 the Supreme Court dismissed an appeal on points of law lodged by the applicants. The court concluded that the fact of a breach of duty by the police, either intentionally or by negligence, had not been proven. II. RELEVANT DOMESTIC LAW\nA. Constit",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-233761",
+      "source_input_sha256": "15816ec4373390836333cb60f141ff5fc277b2ff576817dd8e22d6dc8b8e5edf",
+      "start": 30212,
+      "end": 30239,
+      "quote": "the Court found a violation",
+      "context": "რთშელაპარაკების ნიადაგზე ფიზიკური შეურაცხყოფა მიაყენეს მოქალაქეებს”), the Tbilisi City Court decided, on 5 September 2009, to release the four convicts on licence (ibid., §§ 204‑205). 38. In a judgment of 26 April 2011, the Court found a violation of the procedural limb of Article 2 of the Convention in a case brought by Sandro Girgvliani’s parents on account of th",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-234516",
+      "source_input_sha256": "43bd043c6e3c54f53485e2acb50e496159f4b2adcda278794cb318efe6da4197",
+      "start": 9463,
+      "end": 9564,
+      "quote": "The court concluded that, based on the above considerations, there was nothing to suggest a violation",
+      "context": "on into the applicant and had given specific reasons for detention. Alternatives to detention could not effectively achieve the aim of protecting national security in the light of the specific circumstances of the case. The court concluded that, based on the above considerations, there was nothing to suggest a violation of Article 5 of the Convention since the indications that the applicant matched the profile of a foreign fighter had be",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-200450",
+      "source_input_sha256": "30ba73f70eef3fba0bf1864267f08519fcc553dc858e2cd397a3b2c0e17042b9",
+      "start": 5005,
+      "end": 5032,
+      "quote": "the Court found a violation",
+      "context": "d Others v. Malta (no. 15091/06, §§ 5-37, 8 April 2008). B. Proceedings before this Court\n13. In 2006 proceedings were brought before this Court. By a judgment of 8 April 2008 (Bezzina Wettinger and Others, cited above) the Court found a violation of Article 6 of the Convention (in respect of the applicants in that case who were direct victims and party to the proc",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-213901",
+      "source_input_sha256": "041771ee1a1e372e5c32b4b265259c3ffa5a48c9024653acebc7301a738cf07c",
+      "start": 13292,
+      "end": 13445,
+      "quote": "the court concluded that the applicant’s actions – reporting negative side‑effects – had been unjustifiably qualified as a critical (dangerous) violation",
+      "context": "t giving reasons as to why they had rejected the applicant’s arguments. For the court, there was no evidence to help to reach a categorical conclusion that the arguments of the applicant had been unfounded. Accordingly, the court concluded that the applicant’s actions – reporting negative side‑effects – had been unjustifiably qualified as a critical (dangerous) violation. 22. Given its finding that the inspectors had incorrectly concluded that the applicant had committed two critical (dan",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-208589",
+      "source_input_sha256": "9702a3f805d16da06fc4b7c2bfdecae18ff5faf90b60cca5cf034977f7647cf7",
+      "start": 19915,
+      "end": 19942,
+      "quote": "The court found a violation",
+      "context": "id not keep records of who took vehicles and when. The keys were in the commanders’ offices and the officers would take keys as needed. 42. On 25 July 2017 the Constitutional Court ruled on M.M.’s constitutional appeal. The court found a violation of both the substantive and procedural aspects of Article 3 of the Convention. In particular, it found that M.M. had be",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-209035",
+      "source_input_sha256": "9bb2ce6355ee525561c817b4e304d00edca14e83239e794fbca39115fafe4fae",
+      "start": 7648,
+      "end": 7705,
+      "quote": "the court held that there could not have been a violation",
+      "context": "matter (no. 5 Ob 250/15y, judgment of 25 January 2016), which stated that a document submitted to the land register had to be complete. As regards Article 8 of the Convention and section 1(2) of the Data Protection Act, the court held that there could not have been a violation of these provisions, as there was a legal basis for the interference. 11. On 24 June 2016 the applicant filed an extrao",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-147045",
+      "source_input_sha256": "64fa401b25b719f7d4c98a88373a766903a5eeb300fd3890576dabeb5b9c46b4",
+      "start": 7960,
+      "end": 8007,
+      "quote": "the court found that the measure did not breach",
+      "context": "d maintained his refusal to reveal its location, the Court of Appeal found that there were extraordinary reasons to detain the applicant and that detention was proportionate to the aim pursued. In reaching its decision, the court found that the measure did not breach the Convention. Lastly, it noted that it should be informed as soon as the applicant had been detained in order to hold",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-150234",
+      "source_input_sha256": "92f4b55a20d54593796b9bf44ac6d4ae1d8c9715f7601785bc91b6e3962651bd",
+      "start": 16769,
+      "end": 16881,
+      "quote": "the court finds that the experts, by carrying out the tissue and organ removal from the deceased, did not breach",
+      "context": " right to object by refusing their consent, the court considers that a person cannot be punished for a failure to comply with an obligation which is not clearly laid down in a legislative instrument in force. Therefore, the court finds that the experts, by carrying out the tissue and organ removal from the deceased, did not breach ... the [Law].\n... The court finds that the experts’ actions did not constitute the elements of a crime proscribed by s",
+      "contextual_classification": "domestic_proceedings"
+    },
+    {
+      "item_id": "001-163438",
+      "source_input_sha256": "53c2832b5c8e6405cedba95b98b8fe6fea202d5e94f6bd9349b3f78c4ba7202a",
+      "start": 2465,
+      "end": 2492,
+      "quote": "the Court found a violation",
+      "context": "at issue the courts found that the pre-nationalisation owners were the true owners of the flat by virtue of restitution. Those proceedings were the subject of the applicant’s first application before the Court, in which the Court found a violation of Article 1 of Protocol No. 1, and also a violation of Article 6 § 1 of the Convention due to the length of the court ",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-164454",
+      "source_input_sha256": "5ace0c0368dbfb336a128e43cd7a272a01e39cea4d60b5893527f0c0d6b9c062",
+      "start": 4572,
+      "end": 4698,
+      "quote": "the Court found that the application of the rent-control scheme in respect of the applicants’ property constituted a violation",
+      "context": "ase of Bittó and Others v. Slovakia ((merits), no. 30255/09, §§ 7‑16, 32‑72, 28 January 2014). III. IMPLEMENTATION OF THE COURT’S JUDGMENT IN THE CASE OF BITTÓ AND OTHERS\n16. In Bittó and Others ((merits), cited above), the Court found that the application of the rent-control scheme in respect of the applicants’ property constituted a violation of Article 1 of Protocol No. 1 to the Convention. In the relevant part of its judgment under Article 46 of the Conventi",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-218132",
+      "source_input_sha256": "b2c27bca72d76ded6aa8e332cf399ee28a3af73cad97c1a61087ed5883f56784",
+      "start": 1205,
+      "end": 1232,
+      "quote": "the Court found a violation",
+      "context": "vations;\nHaving deliberated in private on 7 June 2022,\nDelivers the following judgment, which was adopted on that date:\nINTRODUCTION\n1. In its judgment in Jurišić v. Croatia ([Committee], no. 29419/17, 16 January 2020), the Court found a violation of Article 8 of the Convention on account of non-enforcement of judicial decisions granting the applicant contact right",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-218132",
+      "source_input_sha256": "b2c27bca72d76ded6aa8e332cf399ee28a3af73cad97c1a61087ed5883f56784",
+      "start": 1902,
+      "end": 1929,
+      "quote": "the Court found a violation",
+      "context": "lovar. 3. The Government were represented by their Agent, Ms Š. Stažnik. 4. The background to the case may be summarised as follows. 5. In its judgment in Jurišić v. Croatia ([Committee], no. 29419/17, 16 January 2020), the Court found a violation of Article 8 of the Convention on account of non-enforcement of judicial decisions granting the applicant contact right",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-219556",
+      "source_input_sha256": "8084d0fcbd6ef025fb07bd6f41753c690cb4cbf6b141d6ad0069bc9ea081983c",
+      "start": 29497,
+      "end": 29520,
+      "quote": "ECtHR found a violation",
+      "context": "[v. Switzerland] have not been able to convince me that the ECtHR has deviated from Saunders or [that it] intended to say something else with the Saunders judgment. It is true that in Funke and J.B. [v. Switzerland] the ECtHR found a violation of Article 6 ECHR due to the obligation to provide documents, but both cases appear to concern a disguised request to d",
+      "contextual_classification": "prior_judgment"
+    },
+    {
+      "item_id": "001-181882",
+      "source_input_sha256": "f6bdec767893d6f04003c4eaf95dd7e1d2ab33f52c124e8398f2a085ce194bc2",
+      "start": 14545,
+      "end": 14623,
+      "quote": "the court found that the applicants had a right to compensation for the breach",
+      "context": "atified it (Law no. 16/69) by not segregating the plaintiffs, who were being held on remand, from convicted persons and by not affording them different treatment appropriate to their status. Relying on Takis Yiallouros, the court found that the applicants had a right to compensation for the breach of their rights under the law and awarded them damages of 4,000 euros each. The plaintiffs had been detained on remand ",
+      "contextual_classification": "domestic_proceedings"
+    }
+  ]
+}

@@ -37,7 +37,9 @@ def test_complete_single_version_release(inputs):
     assert blob["versions"] == 1
     assert blob["summaries"] == {"one": ["A clean factual summary."], "two": ["retained zero"]}
     assert spec["status"] == "APPROVED"
-    assert report["summaries_regenerated"] == 1 and report["summaries_retained"] == 1
+    assert report["input_registry"]["one"]["origin"] == "regenerated_from_reviewed_source"
+    assert report["input_registry"]["two"]["origin"] == "reviewed_original_version_0"
+    assert "summaries_regenerated" not in report and "summaries_retained" not in report
 
 
 def test_never_fall_back_to_another_version(inputs):
@@ -82,6 +84,29 @@ def test_generation_must_match_original_summary(inputs):
         assemble(*inputs)
 
 
+def test_explicit_current_release_upgrade_is_selected(inputs):
+    old, new, blob, sources, summaries, generation, provenance = inputs
+    sources[("two", digest("Other facts."))] = clean_review()
+    summaries[("two:0", digest("retained zero"))] = clean_review()
+    replacement = "Safer direct-review replacement."
+    generation[("two:0", digest("Other facts."))] = {
+        "version": 0,
+        "model": MODEL,
+        "temperature": 1.0,
+        "max_source_characters": 50000,
+        "previous_summary_sha256": digest("retained zero"),
+        "supersedes_summary_sha256": digest("retained zero"),
+        "summary": replacement,
+        "summary_sha256": digest(replacement),
+        "generation_prompt_sha256": digest(
+            SUMMARY_TEMPLATE.format(case_name="C v D", full_text="Other facts.")
+        ),
+    }
+    current = {"summaries": {"one": ["old one"], "two": ["retained zero"]}}
+    result, _, _ = assemble(*inputs, current_blob=current)
+    assert result["summaries"]["two"] == [replacement]
+
+
 def test_review_flags_must_be_explicit_booleans():
     assert not passed({"status": "reviewed", "result": {"conclusion": 0, "reasoning": False, "insufficient_facts": False}})
 
@@ -96,3 +121,22 @@ def test_accepted_checkpoint_requires_matching_review(tmp_path):
     path.write_text(json.dumps(row)+"\n", encoding="utf-8")
     with pytest.raises(ValueError, match="matching clean review"):
         accepted_generations([path])
+
+
+def test_explicit_supersession_replaces_an_accepted_candidate(tmp_path):
+    import json
+    source_sha = digest("Facts.")
+    def row(text, supersedes=None):
+        value = {"status": "accepted", "key": "one:0", "source_sha256": source_sha,
+                 "summary": text, "summary_sha256": digest(text),
+                 "attempts": [{"status": "accepted", "text": text,
+                               "review": {**clean_review(), "input_sha256": digest(text)}}]}
+        if supersedes:
+            value["supersedes_summary_sha256"] = supersedes
+        return value
+    path = tmp_path / "checkpoint.jsonl"
+    first = row("First accepted candidate.")
+    second = row("Safer accepted candidate.", first["summary_sha256"])
+    path.write_text("\n".join(map(json.dumps, (first, second))) + "\n", encoding="utf-8")
+    accepted = accepted_generations([path])
+    assert accepted[("one:0", source_sha)]["summary"] == "Safer accepted candidate."

@@ -9,8 +9,8 @@
         --api-key-env OPENROUTER_API_KEY \
         --out data/experiments/coverage_atomic_dsv41flash
 
-Run it once per summary variant; the two runs share nothing but the source, so the
-abstractive and extractive numbers are comparable claim for claim.
+Run once per summary variant, sequentially in the same output directory. Both
+variants reuse the identical extracted claims; their support judgments are separate.
 
 The instrument is judge-independent: coverage is a property of a (source, summary)
 pair and never touches what the eight models answered, so it is paid once no matter
@@ -52,7 +52,8 @@ from atomic import (EXTRACT_TEMPLATE, VERIFY_TEMPLATE, coverage,  # noqa: E402
 from checkpoint import Checkpoint                                  # noqa: E402
 from build_annotation import BACKREF, LAW, fact_paragraphs, split_paragraphs, \
     is_heading_only, assessment_region                             # noqa: E402
-from summaries import load_summaries                               # noqa: E402
+from summaries import load_summaries, summary_for, is_usable          # noqa: E402
+from input_gate import verify_summaries, file_digest, case_input, CASES_PATH, text_digest  # noqa: E402
 
 csv.field_size_limit(10 ** 9)
 
@@ -120,12 +121,18 @@ def sample_paragraphs(facts, relied, per_side, seed):
     return sorted(keep, key=lambda n: int(n) if n.isdigit() else 0)
 
 
-def claims_for(client, model, full_text, item_id, ckpt, per_side, max_claims):
+def claims_for(client, model, full_text, item_id, ckpt, per_side, max_claims, source_input=None):
     """Atomic claims of the sampled fact paragraphs, tagged with relied-upon."""
     marks = list(LAW.finditer(full_text))
     if not marks:
         return []
     facts = fact_paragraphs(full_text[:marks[-1].start()])
+    if source_input is not None:
+        # Do not penalize a summary for paragraphs outside the input it received.
+        import re
+        normalize = lambda text: re.sub(r"\s+", " ", text).strip()
+        visible = normalize(source_input)
+        facts = {n: text for n, text in facts.items() if normalize(text) in visible}
     relied = relied_upon_numbers(full_text)
     chosen = sample_paragraphs(facts, relied, per_side, item_id)
     out = []
@@ -146,6 +153,8 @@ def claims_for(client, model, full_text, item_id, ckpt, per_side, max_claims):
 
 def verify(client, model, summary, claims):
     """Support decisions for one judgment's claims, in batches."""
+    if not is_usable(summary):
+        raise ValueError("Atomic coverage requires one usable summary string")
     verdicts = []
     for start in range(0, len(claims), BATCH):
         chunk = [c["claim"] for c in claims[start:start + BATCH]]
@@ -162,12 +171,41 @@ def verify(client, model, summary, claims):
     return verdicts
 
 
+def bind_instrument(directory, identity):
+    """Bind the shared claim set to its source and extraction settings."""
+    directory = Path(directory)
+    marker = directory / "instrument_identity.json"
+    if marker.exists():
+        if json.loads(marker.read_text(encoding="utf-8")) != identity:
+            raise ValueError("Atomic coverage inputs or settings changed; use a new output directory")
+        return
+    if directory.exists() and any(directory.iterdir()):
+        raise ValueError("Unversioned atomic coverage checkpoint; use a new output directory")
+    directory.mkdir(parents=True, exist_ok=True)
+    marker.write_text(json.dumps(identity, indent=2) + "\n", encoding="utf-8")
+
+
+def bind_variant(directory, variant, summary_sha):
+    if variant not in {"abstractive", "extractive"}:
+        raise ValueError("Coverage variant must be abstractive or extractive")
+    marker = Path(directory) / f"{variant}_identity.json"
+    identity = {"summaries_sha256_lf": summary_sha,
+                "verification_prompt_sha256": text_digest(VERIFY_TEMPLATE), "batch_size": BATCH}
+    if marker.exists():
+        if json.loads(marker.read_text(encoding="utf-8")) != identity:
+            raise ValueError("Atomic coverage summary changed; use a new output directory")
+    elif (Path(directory) / f"{variant}.jsonl").exists():
+        raise ValueError("Unversioned coverage results; use a new output directory")
+    else:
+        marker.write_text(json.dumps(identity, indent=2) + "\n", encoding="utf-8")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--full-texts", required=True)
     p.add_argument("--summaries", required=True)
-    p.add_argument("--variant", required=True, help="a label, e.g. abstractive or extractive")
+    p.add_argument("--variant", required=True, choices=("abstractive", "extractive"))
     p.add_argument("--model", default="google/gemini-3.5-flash",
                    help="extractor and verifier; must not be the summariser")
     p.add_argument("--summarizer",
@@ -184,6 +222,9 @@ def main():
     args = p.parse_args()
 
     summaries, meta = load_summaries(args.summaries)
+    verify_summaries(summaries, metadata=meta)
+    if (meta.get("mode") == "extractive") != (args.variant == "extractive"):
+        sys.exit("--variant must match the summary artifact's mode")
     recorded = meta.get("summarizer")
     if recorded and args.summarizer and args.summarizer != recorded:
         sys.exit("--summarizer says %s but %s was written by %s; the flag cannot rename "
@@ -202,13 +243,31 @@ def main():
         sys.exit("%s is not set" % args.api_key_env)
     client = OpenAI(base_url=args.base_url, api_key=key)
 
-    rows = [r for r in csv.DictReader(open(args.full_texts)) if r.get("full_text")]
-    rows = [r for r in rows if r["item_id"] in summaries]
+    with open(args.full_texts, encoding="utf-8") as source:
+        records = [r for r in csv.DictReader(source) if r.get("full_text") and r["item_id"] in summaries]
+    by_id = {}
+    for row in records:
+        previous = by_id.get(row["item_id"])
+        if previous and previous["full_text"] != row["full_text"]:
+            raise ValueError("Conflicting full judgments in atomic coverage source")
+        if not is_usable(summary_for(summaries, row["item_id"])):
+            raise ValueError("Missing single summary for atomic coverage")
+        by_id[row["item_id"]] = row
+    rows = list(by_id.values())
     if args.limit:
         rows = rows[:args.limit]
+    canonical = {r["item_id"]: r for r in json.loads(CASES_PATH.read_text(encoding="utf-8"))}
+    visible_sources = {r["item_id"]: case_input(canonical[r["item_id"]])
+                       for r in rows if r["item_id"] in canonical}
 
     out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    bind_instrument(out_dir, {"full_texts_sha256_lf": file_digest(args.full_texts),
+        "model": args.model,
+        "visible_source_inputs": {k: text_digest(v) for k, v in visible_sources.items()},
+        "extraction_prompt_sha256": text_digest(EXTRACT_TEMPLATE),
+        "per_side": args.per_side, "max_claims": args.max_claims,
+        "judgment_ids": [r["item_id"] for r in rows]})
+    bind_variant(out_dir, args.variant, file_digest(args.summaries))
     extract_ckpt = Checkpoint(out_dir / "claims.jsonl")
     result_ckpt = Checkpoint(out_dir / ("%s.jsonl" % args.variant))
 
@@ -218,10 +277,10 @@ def main():
     def one(row):
         item_id = row["item_id"]
         claims = claims_for(client, args.model, row["full_text"], item_id, extract_ckpt,
-                            args.per_side, args.max_claims)
+                            args.per_side, args.max_claims, visible_sources.get(item_id))
         if not claims:
             return item_id, None
-        verdicts = verify(client, args.model, summaries[item_id], claims)
+        verdicts = verify(client, args.model, summary_for(summaries, item_id), claims)
         if verdicts is None:
             return item_id, None
         for claim, supported in zip(claims, verdicts):
@@ -246,6 +305,8 @@ def main():
             })
 
     scored = result_ckpt.rows()
+    extract_ckpt.close()
+    result_ckpt.close()
     pooled = [c for row in scored for c in row["claims"]]
     overall, relied, n_all, n_relied = coverage(pooled)
     print("\n  judgments scored: %d, failed: %d" % (len(scored), len(failures)))

@@ -24,13 +24,16 @@ observed, without duplication or synthetic top-ups. Labels are 699 violation and
 
 The [manifest](configs/evaluation_dataset.json) freezes the file hashes and annual
 counts. `python scripts/validate_eval_dataset.py` checks this identity offline.
-This is an identity and coverage check, not a verdict-leakage or summary-quality audit.
+This checks artifact identity and coverage. The separate
+[input-release gate](docs/INPUT_REPAIR.md) binds the source and summary text to the
+completed leakage reviews; it does not establish comprehensive summary fidelity
+or absence from proprietary pretraining corpora.
 
 - Key instances by **`(item_id, article_full)`**. `pair_id` repeats across articles.
-- Summaries are generated once per judgment, with three versions reused across its
-  target articles. The current file contains 2,832 usable texts out of 2,841 expected.
-  Nine versions are missing, including all three for one judgment. Keep those cases
-  in the fixed pool; complete their summaries rather than rebalancing by deletion.
+- The main protocol uses one summary per judgment, reused across its target
+  articles: 947 selected summaries for 1,000 instances. Original version index 0
+  is selected in advance, not by evaluator performance. The two other historical
+  versions are not current inputs or additional independent cases.
 - Compare each summary arm with baseline on the same available instance IDs and
   report that denominator. Full-coverage runs must pass
   `python scripts/validate_eval_dataset.py --require-complete` first.

@@ -23,7 +23,7 @@ RUNNERS = sorted(f for f in os.listdir(EXPERIMENTS)
 
 
 def source(name):
-    with open(os.path.join(EXPERIMENTS, name)) as f:
+    with open(os.path.join(EXPERIMENTS, name), encoding="utf-8") as f:
         return f.read()
 
 
@@ -73,15 +73,28 @@ def test_failed_calls_are_not_mistaken_for_summaries():
 
 
 def test_load_accepts_the_wrapped_file():
-    blob = {"summarizer": "x-ai/grok-4.6", "versions": 3,
-            "summaries": {"001-1": ["a", "b", "c"]}}
+    blob = {"summarizer": "deepseek/deepseek-v4.1-flash", "versions": 1,
+            "summaries": {"001-1": ["a"]}}
     with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
         json.dump(blob, f)
     summaries, meta = load_summaries(f.name)
-    assert summaries == {"001-1": ["a", "b", "c"]}
-    assert meta["summarizer"] == "x-ai/grok-4.6"
+    assert summaries == {"001-1": ["a"]}
+    assert meta["summarizer"] == "deepseek/deepseek-v4.1-flash"
     assert "summaries" not in meta
     os.unlink(f.name)
+
+
+@pytest.mark.parametrize("blob", [
+    {"versions": 3, "summaries": {"x": ["a", "b", "c"]}},
+    {"versions": 1, "summaries": {"x": ["a", "b", "c"]}},
+    {"x": ["a", "b", "c"]},
+    {"x": "a"},
+])
+def test_load_rejects_multi_summary_or_malformed_artifacts(tmp_path, blob):
+    path = tmp_path / "summaries.json"
+    path.write_text(json.dumps(blob), encoding="utf-8")
+    with pytest.raises(ValueError, match="one summary"):
+        load_summaries(path)
 
 
 def test_load_accepts_a_bare_mapping():
@@ -124,6 +137,25 @@ def test_recalled_verdict_is_caught():
         "It therefore held that there had been no violation of Article 6.",
     ]:
         assert asserts_outcome(leaked, source), leaked
+
+
+def test_unqualified_outcome_and_current_court_prediction_are_caught():
+    from summaries import asserts_outcome, narrates_current_court_assessment
+    assert asserts_outcome("This failure constituted a violation of Article 6.", "Facts only.")
+    assert narrates_current_court_assessment(
+        "The Court's judgment likely addressed these issues and awarded compensation.")
+    assert narrates_current_court_assessment(
+        "The ECtHR examined the declarations and rejected the request as insufficient.")
+    assert narrates_current_court_assessment(
+        "The Government submitted a unilateral declaration admitting a breach.")
+    assert narrates_current_court_assessment(
+        "The complaint likely concerned Article 6 of the Convention.")
+
+
+def test_mid_sentence_summary_is_truncated():
+    from summaries import appears_truncated
+    assert appears_truncated("The domestic court heard three")
+    assert not appears_truncated("The domestic court heard three witnesses.")
 
 
 def test_an_outcome_the_source_reports_is_not_a_leak():

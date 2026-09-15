@@ -10,7 +10,7 @@ from experiments import input_gate as gate
 @pytest.fixture
 def approved(monkeypatch):
     source = "The applicant spent 27 days in detention."
-    summaries = ["Facts version one.", "Facts version two.", "Facts version three."]
+    summaries = ["One factual summary."]
     spec = {"status": "APPROVED", "release_id": "test-release",
             "dataset_sha256_lf": "dataset-hash", "summaries_sha256_lf": "summary-hash",
             "source_inputs": {"001-known": gate.text_digest(source)},
@@ -36,12 +36,37 @@ def test_missing_release_fails_closed(approved, monkeypatch):
         gate.case_input({"item_id": "001-known", "full_case_text_no_verdict": approved[1]})
 
 
-def test_summary_order_and_content_are_bound(approved):
+def test_single_summary_content_is_bound(approved):
     summaries = approved[2]
     gate.verify_summaries({"001-known": summaries})
-    for wrong in [summaries[::-1], summaries[:2], ["The Court found a violation.", *summaries[1:]]]:
-        with pytest.raises(ValueError, match="Stale or unreviewed"):
+    for wrong in [[], summaries * 3, ["The Court found a violation."]]:
+        with pytest.raises(ValueError):
             gate.verify_summaries({"001-known": wrong})
+
+
+def test_extractive_control_is_bound_to_source_and_selected_paragraphs(tmp_path, approved, monkeypatch):
+    source = "1. The applicant was detained.\n\n2. The domestic court dismissed the appeal."
+    path = tmp_path / "cases.json"
+    path.write_text(json.dumps([{"item_id": "001-known", "full_case_text_no_verdict": source}]), encoding="utf-8")
+    monkeypatch.setattr(gate, "CASES_PATH", path)
+    spec = {**approved[0], "source_inputs": {"001-known": gate.text_digest(source)}}
+    from experiments.extractive import source_units, selection_record, SELECTION_SCHEMA
+    record = selection_record(source_units(source), ["2"])
+    meta = {"mode": "extractive", "versions": 1, "source_inputs": spec["source_inputs"],
+            "selection_schema": SELECTION_SCHEMA, "selections": {"001-known": record}}
+    extract = {"001-known": ["2. The domestic court dismissed the appeal."]}
+    gate.verify_summaries(extract, spec, metadata=meta)
+    with pytest.raises(ValueError, match="verbatim"):
+        gate.verify_summaries({"001-known": ["The Court found a violation."]}, spec, metadata=meta)
+    with pytest.raises(ValueError, match="Stale extractive source"):
+        gate.verify_summaries(extract, spec, metadata={**meta, "source_inputs": {}})
+    with pytest.raises(ValueError, match="verbatim"):
+        gate.verify_summaries(extract, spec, metadata={**meta, "selections": {"001-known": selection_record(source_units(source), ["1"])}})
+
+
+def test_candidate_builder_cannot_overwrite_canonical_summary():
+    with pytest.raises(ValueError, match="publication gate"):
+        gate.guard_candidate_output(gate.ROOT / "data/processed/summaries_dsv41flash.json")
 
 
 def test_actual_50000_character_prefix_is_checked(approved):
