@@ -5,13 +5,15 @@ edit: the quote goes, everything either side of it stays, a quote that is not th
 refused rather than approximated, and spans of other kinds are never touched.
 """
 
+import json
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
 
-from cut_procedural_history import cuts_for, excise          # noqa: E402
+from cut_procedural_history import (adjudicated_extras, cuts_for,   # noqa: E402
+                                    excise)
 from verdict_spans import COURT_THIS_CASE, EARLIER_INSTANCE  # noqa: E402
 
 CHAMBER = "The Chamber held that there had been no violation of Article 3."
@@ -63,3 +65,18 @@ def test_one_text_per_judgment_however_many_articles_are_scored_from_it():
     rows = [row(), {**row(), "article": "6"}]
     found = cuts_for(rows, [audit_row(CHAMBER), {**audit_row(CHAMBER), "article": "6"}])
     assert found == {"001-1": [CHAMBER]}
+
+
+def test_a_readers_upgrade_is_cut_even_though_no_category_rule_finds_it(tmp_path):
+    """001-229927: admissibility wording that states the outcome for the scored Article."""
+    path = tmp_path / "adjudication.json"
+    path.write_text(json.dumps({"review_tier_upgraded": [
+        {"item_id": "001-9", "article": "34", "verdict": "leak", "quote": CHAMBER},
+        {"item_id": "001-9", "article": "38", "verdict": "leak", "quote": CHAMBER},
+        {"item_id": "001-9", "article": "5", "verdict": "harmless", "quote": "ignored"},
+    ]}))
+    assert adjudicated_extras(str(path)) == {"001-9": [CHAMBER]}
+
+
+def test_no_adjudication_file_is_not_an_error():
+    assert adjudicated_extras("/nonexistent/adjudication.json") == {}
