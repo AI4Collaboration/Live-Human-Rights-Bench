@@ -157,11 +157,9 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
         raise ValueError("word_budget must leave room for a body after the cue")
     values = dict(_case_fields(case), initial_judgment=initial_judgment(initial_score),
                   opposing_judgment=opposing_judgment(initial_score), strategy=strategy,
-                  cue_description=cue or "None; no identity or endorsement claim.",
+                  cue_description=cue or "None",
                   tone=pack["tone"][tone], certainty=pack["certainty"][certainty]["stance"],
                   turn=turn, body_word_budget=body_budget,
-                  cue_delivery="Software prepends this cue now." if prefix else
-                  "No introduction now; any assigned cue remains fixed in the transcript.",
                   conversation=json.dumps(_transcript(conversation, turn), ensure_ascii=False, indent=2))
     return {
         "messages": [{"role": "system", "content": pack["adaptive_system"].format(**values)},
