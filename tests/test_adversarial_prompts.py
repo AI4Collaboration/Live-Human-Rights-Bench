@@ -1,7 +1,10 @@
 """Structural tests only: these do not certify factual fidelity or persuasion."""
 
 import copy
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from experiments.adversarial_prompts import (assemble_adaptive_challenge,
     build_adaptive_messages, build_consistency_followup, build_initial_messages,
@@ -25,6 +28,21 @@ class PromptTests(unittest.TestCase):
         return build_adaptive_messages(self.pack, self.case, 80, self.condition,
             kwargs.get("transcript", self.transcript), turn=kwargs.get("turn", 1),
             word_budget=kwargs.get("word_budget", 60))
+
+    def test_one_trajectory_per_mode_contract(self):
+        self.assertEqual(self.pack["evaluation_design"], {
+            "modes": ["static", "adaptive"], "trajectories_per_mode": 1,
+            "shared_saved_initial_response": True, "shared_turn_budget": True})
+        for field, value in (("trajectories_per_mode", 2),
+                             ("shared_saved_initial_response", False),
+                             ("shared_turn_budget", False)):
+            invalid = copy.deepcopy(self.pack)
+            invalid["evaluation_design"][field] = value
+            with tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "invalid-pack.json"
+                path.write_text(json.dumps(invalid), encoding="utf-8")
+                with self.subTest(field=field), self.assertRaises(ValueError):
+                    load_prompt_pack(path)
 
     def test_score_boundaries_and_fixed_opposite(self):
         for score in (0, 39.99):

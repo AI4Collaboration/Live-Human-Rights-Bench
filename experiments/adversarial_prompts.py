@@ -13,6 +13,12 @@ from string import Formatter
 
 PACK_PATH = Path(__file__).resolve().parents[1] / "configs" / "adversarial_opinion_prompts.json"
 STRATEGIES = ("Baseline", "Authority", "Social proof", "Unity")
+EVALUATION_DESIGN = {
+    "modes": ["static", "adaptive"],
+    "trajectories_per_mode": 1,
+    "shared_saved_initial_response": True,
+    "shared_turn_budget": True,
+}
 
 
 def load_prompt_pack(path=PACK_PATH):
@@ -20,6 +26,8 @@ def load_prompt_pack(path=PACK_PATH):
         pack = json.load(handle)
     if pack.get("cue_schedule") != "FIRST_TURN_ONLY":
         raise ValueError("Only the shared first-turn-only cue schedule is supported")
+    if pack.get("evaluation_design") != EVALUATION_DESIGN:
+        raise ValueError("Use one static and one adaptive trajectory with a shared initial response and turn budget")
     return pack
 
 

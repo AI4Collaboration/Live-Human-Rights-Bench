@@ -33,6 +33,7 @@ def main():
         "explanation": "The described conditions suggest a violation."})}]
     print("OFFLINE TOY PREVIEW: score 80 and cue levels are illustrative, not selected experiment settings.")
     print("No model is called. Adaptive text below is challenger input, not a generated challenge.")
+    print("Protocol: one static trajectory and one adaptive trajectory per condition, sharing the saved initial response and T.")
     print(pack["validation_note"])
     for message in initial:
         print(f"\nINITIAL {message['role'].upper()}\n{message['content']}")
