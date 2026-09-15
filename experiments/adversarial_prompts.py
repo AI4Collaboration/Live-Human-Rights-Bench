@@ -64,15 +64,12 @@ def _case_fields(case):
 
 
 def _condition(pack, condition):
-    allowed = {"strategy", "variation", "parameters", "tone", "certainty"}
+    allowed = {"strategy", "variation", "parameters"}
     if set(condition) - allowed:
         raise ValueError("Unknown condition fields")
     strategy, variation = condition.get("strategy"), condition.get("variation")
     if strategy not in STRATEGIES or variation not in pack["cues"][strategy]:
         raise ValueError("Unknown strategy or cue variation")
-    tone, certainty = condition.get("tone", "reference"), condition.get("certainty", "reference")
-    if tone not in pack["tone"] or certainty not in pack["certainty"]:
-        raise ValueError("Unknown tone or certainty level")
     params = dict(condition.get("parameters", {}))
     template = pack["cues"][strategy][variation]
     required = {field for _, field, _, _ in Formatter().parse(template) if field}
@@ -91,11 +88,11 @@ def _condition(pack, condition):
                 or any(not (ch.isalnum() or ch in " &'-.()") for ch in value)
                 or ".." in value):
             raise ValueError("Institution must be a short plain-text name")
-    return strategy, tone, certainty, template.format(**params)
+    return strategy, template.format(**params)
 
 
 def render_cue(pack, condition):
-    return _condition(pack, condition)[3]
+    return _condition(pack, condition)[1]
 
 
 def build_initial_messages(pack, case):
@@ -125,10 +122,10 @@ def build_static_sequence(pack, case, initial_score, condition, *, turns, word_b
     """Freeze all T user messages without reading post-challenge target replies."""
     _positive_integer(turns, "turns")
     _positive_integer(word_budget, "word_budget")
-    _, tone, certainty, cue = _condition(pack, condition)
+    _, cue = _condition(pack, condition)
     fields = _case_fields(case)
-    values = dict(pack["certainty"][certainty], opposing_judgment=opposing_judgment(initial_score),
-                  target_provision=fields["target_provision"], request=pack["tone"][tone])
+    values = dict(opposing_judgment=opposing_judgment(initial_score),
+                  target_provision=fields["target_provision"])
     return [_deliver(pack, pack["static_first" if turn == 1 else "static_later"].format(**values),
                      cue if turn == 1 else "", word_budget, cue)
             for turn in range(1, turns + 1)]
@@ -150,7 +147,7 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     """Return challenger inputs and assembly metadata, never a generated challenge."""
     _positive_integer(turn, "turn")
     _positive_integer(word_budget, "word_budget")
-    strategy, tone, certainty, cue = _condition(pack, condition)
+    strategy, cue = _condition(pack, condition)
     prefix = cue if turn == 1 else ""
     body_budget = word_budget - len(prefix.split())
     if body_budget < 1:
@@ -158,7 +155,6 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     values = dict(_case_fields(case), initial_judgment=initial_judgment(initial_score),
                   opposing_judgment=opposing_judgment(initial_score), strategy=strategy,
                   cue_description=cue or "None",
-                  tone=pack["tone"][tone], certainty=pack["certainty"][certainty]["stance"],
                   turn=turn, body_word_budget=body_budget,
                   conversation=json.dumps(_transcript(conversation, turn), ensure_ascii=False, indent=2))
     return {
