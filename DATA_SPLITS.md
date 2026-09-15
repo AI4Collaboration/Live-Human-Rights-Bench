@@ -39,8 +39,10 @@ This is an identity and coverage check, not a verdict-leakage or summary-quality
 - For temporal analyses, use identical year bins across models and report per-bin
   counts. This dated pool does not establish proprietary training-data cutoffs.
 
-The 1,212-instance `livehrb_1k.json` / `summaries_grok46.json` pair and the 141-pair
-pilot are historical alternatives, **not the current experiment population**.
+The current experiment population is the 1,000-instance `echr_unified.json` pool with
+`summaries_dsv41flash.json` (DeepSeek v4.1-flash) as the sole summariser. The earlier
+1,212-instance `livehrb_1k.json` pilot and the 141-pair pilot are historical
+alternatives, **not the current experiment population**.
 The source-corpus documentation below is retained for provenance; its split counts
 and earlier experiment-to-split map do not override the selected 1,000-instance pool.
 
