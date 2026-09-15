@@ -17,17 +17,33 @@ class EvaluationDatasetTests(unittest.TestCase):
         result = validate(self.config)
         self.assertEqual((result["instances"], result["judgments"]), (1000, 947))
         self.assertEqual(result["annual_counts"], self.config["dataset"]["annual_counts"])
-        self.assertEqual(result["instance_coverage_by_version"], [995, 994, 998])
+        self.assertEqual(result["instance_coverage_by_version"], [1000, 1000, 1000])
 
-    def test_current_missing_slots_warn(self):
+    def test_current_summaries_are_complete(self):
         result = validate(self.config)
-        self.assertEqual(len(result["missing_slots_zero_based"]), 9)
-        self.assertEqual(result["missing_judgments"], ["001-219988"])
-        self.assertEqual(len(result["warnings"]), 1)
+        self.assertEqual(result["usable_summaries"], 2841)
+        self.assertEqual(result["complete_judgments"], 947)
+        self.assertEqual(result["missing_slots_zero_based"], [])
+        self.assertEqual(result["missing_judgments"], [])
+        self.assertEqual(result["warnings"], [])
 
-    def test_require_complete_fails(self):
-        with self.assertRaisesRegex(ValueError, "9 missing summary slots"):
-            validate(self.config, require_complete=True)
+    def test_require_complete_passes(self):
+        self.assertEqual(validate(self.config, require_complete=True)["warnings"], [])
+
+    def test_require_complete_rejects_missing_summary(self):
+        blob = json.loads((REPO / self.config["summaries"]["path"]).read_text(encoding="utf-8"))
+        item_id = sorted(blob["summaries"])[0]
+        blob["summaries"][item_id][0] = None
+        blob["n_complete"] -= 1
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "incomplete.json"
+            raw = json.dumps(blob).encode("utf-8")
+            path.write_bytes(raw)
+            self.config["summaries"].update(path=str(path), sha256_lf=sha256_lf(raw),
+                complete_judgments=946, usable_summaries=2840,
+                missing_slots_zero_based=[[item_id, 0]])
+            with self.assertRaisesRegex(ValueError, "1 missing summary slots"):
+                validate(self.config, require_complete=True)
 
     def test_wrong_dataset_hash_fails(self):
         self.config["dataset"]["sha256_lf"] = "0" * 64

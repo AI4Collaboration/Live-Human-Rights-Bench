@@ -12,7 +12,7 @@ The [dataset manifest](configs/evaluation_dataset.json) pins both input files an
 python scripts/validate_eval_dataset.py
 ```
 
-Keep the same case-article pool across models and perturbation arms. Identify instances by `(item_id, article_full)`; `pair_id` alone is not unique. The current summary artifact has **2,832 of 2,841 usable judgment-version summaries**. Complete the nine missing versions before claiming full coverage; do not drop or replace cases to hide missing summaries. Use `--require-complete` to enforce this check.
+Keep the same case-article pool across models and perturbation arms. Identify instances by `(item_id, article_full)`; `pair_id` alone is not unique. The current summary artifact has **all 2,841 judgment-version summaries**, covering all 1,000 instances in each of the three versions. The nine missing summaries were completed with the original DeepSeek model, prompt, input cap and rejection screen; all 2,832 existing summary strings and the source dataset are unchanged. Use `--require-complete` to enforce full coverage.
 
 `scripts/run_roster.sh` now defaults to this pair and a separate `data/experiments/unified_dsv41flash` output directory. The 1,212-instance `livehrb_1k.json` / Grok pair and the 141-instance pilot remain historical artifacts, not alternative defaults. Do not combine their results with this pool. [Full dataset contract and year counts](DATA_SPLITS.md#current-evaluation-pool-selected-2026-09-15).
 
@@ -316,9 +316,11 @@ the summariser inside the file, so results carry their own provenance. Runners f
 with a message rather than summarising for themselves when `--summaries` is missing.
 This build command makes paid API calls and resumes only from the matching `.jsonl`
 checkpoint, not from the tracked summary JSON. Without that checkpoint it regenerates
-the full set, so it is not a nine-missing-summary repair command. If the summary
-artifact changes, review and update its manifest hash before a new evaluation;
-never reuse old result checkpoints.
+the full set, so it is not a missing-summary repair command. The completed
+nine-slot repair is recorded in `data/processed/summaries_dsv41flash.fill_checkpoint.json`.
+Its bounded helper, `scripts/complete_missing_summaries.py`, defaults to a dry run
+and preserves all previously accepted texts. If the summary artifact changes,
+review and update its manifest hash before a new evaluation; never reuse old result checkpoints.
 
 ### 2. RQ1: Summarization Evaluation
 

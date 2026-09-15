@@ -9,30 +9,43 @@
     "sha256_lf": "d44e0eecc9f167f6868e79665ded075834a827df05d9d0afe0f14938d3ba8e35",
     "instances": 1000,
     "judgments": 947,
-    "instance_key": ["item_id", "article_full"],
-    "labels": {"violation": 699, "no_violation": 301},
+    "instance_key": [
+      "item_id",
+      "article_full"
+    ],
+    "labels": {
+      "violation": 699,
+      "no_violation": 301
+    },
     "annual_counts": {
-      "2012": 67, "2013": 67, "2014": 67, "2015": 68, "2016": 68,
-      "2017": 67, "2018": 68, "2019": 67, "2020": 67, "2021": 67,
-      "2022": 68, "2023": 68, "2024": 67, "2025": 67, "2026": 57
+      "2012": 67,
+      "2013": 67,
+      "2014": 67,
+      "2015": 68,
+      "2016": 68,
+      "2017": 67,
+      "2018": 68,
+      "2019": 67,
+      "2020": 67,
+      "2021": 67,
+      "2022": 68,
+      "2023": 68,
+      "2024": 67,
+      "2025": 67,
+      "2026": 57
     },
     "date_min": "2012-01-10",
     "date_max": "2026-05-21"
   },
   "summaries": {
     "path": "data/processed/summaries_dsv41flash.json",
-    "sha256_lf": "fbe0f38934a951e5dbefa386b3bb0d168f5b497a930b3cf78079f7cff6c30f73",
+    "sha256_lf": "c4742b1cf8b3dfca847300ffcb265b7ee72a24e2cbc73a0803475cee794c697c",
     "summarizer": "deepseek/deepseek-v4.1-flash",
     "versions": 3,
-    "represented_judgments": 946,
-    "complete_judgments": 941,
-    "usable_summaries": 2832,
-    "missing_slots_zero_based": [
-      ["001-166954", 2],
-      ["001-219988", 0], ["001-219988", 1], ["001-219988", 2],
-      ["001-223361", 1], ["001-229325", 0],
-      ["001-231078", 0], ["001-231078", 1], ["001-238072", 0]
-    ]
+    "represented_judgments": 947,
+    "complete_judgments": 947,
+    "usable_summaries": 2841,
+    "missing_slots_zero_based": []
   },
   "provenance_notes": [
     "Grok summaries and livehrb_1k.json are a separate historical cohort, not substitutes.",

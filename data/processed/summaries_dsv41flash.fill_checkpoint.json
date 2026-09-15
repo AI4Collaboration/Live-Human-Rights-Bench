@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-15T08:41:50.990886+00:00",
+  "base_summaries_sha256_lf": "fbe0f38934a951e5dbefa386b3bb0d168f5b497a930b3cf78079f7cff6c30f73",
+  "dataset_sha256_lf": "d44e0eecc9f167f6868e79665ded075834a827df05d9d0afe0f14938d3ba8e35",
+  "expected_missing_slots_zero_based": [
+    [
+      "001-166954",
+      2
+    ],
+    [
+      "001-219988",
+      0
+    ],
+    [
+      "001-219988",
+      1
+    ],
+    [
+      "001-219988",
+      2
+    ],
+    [
+      "001-223361",
+      1
+    ],
+    [
+      "001-229325",
+      0
+    ],
+    [
+      "001-231078",
+      0
+    ],
+    [
+      "001-231078",
+      1
+    ],
+    [
+      "001-238072",
+      0
+    ]
+  ],
+  "preserved_summaries_sha256": "3d7511d005bc2179ed966013d92108578d93d0c7d04ba7509c11eaa97f30a725",
+  "published_artifact_hashes": [
+    "fbe0f38934a951e5dbefa386b3bb0d168f5b497a930b3cf78079f7cff6c30f73",
+    "b7753bf04bd0dc7916d7b7ac3f2f468f851c6fcb533ac3850e2c50bff8ce5251",
+    "76281a019c07e1a1ec9f98533783f36117fe109833618640f02aa7690ff2a7d4",
+    "c4742b1cf8b3dfca847300ffcb265b7ee72a24e2cbc73a0803475cee794c697c"
+  ],
+  "generation": {
+    "summarizer": "deepseek/deepseek-v4.1-flash",
+    "base_url": "https://openrouter.ai/api/v1",
+    "temperature": 1.0,
+    "initial_max_tokens": 4000,
+    "attempts_per_call": 3,
+    "max_case_chars": 50000,
+    "prompt_template": "Summarize the following legal case to approximately 500 words, focusing on the key facts relevant to the alleged violation(s).\n\nCase Name: {case_name}\nFull Text:\n{full_text}\n\nSummary (approximately 500 words):"
+  },
+  "historical_token_metadata": {
+    "prompt_tokens": 749301,
+    "completion_tokens": 285319
+  },
+  "attempts": [
+    {
+      "item_id": "001-166954",
+      "version": 2,
+      "time_utc": "2026-09-15T08:46:58.156553+00:00",
+      "accepted": false,
+      "summary": "ERROR: summary asserted an outcome absent from the source",
+      "usage": {
+        "prompt": 10029,
+        "completion": 6691
+      },
+      "input_sha256": "cc209a1a6dd7a8833e59ff20ed59f98d061d7e90e041400f687ec7d292473048",
+      "prompt_sha256": "461e6f1081882f14250bffbbec187bd010aa09259aa38b9c921a55b70da09fa4"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 0,
+      "time_utc": "2026-09-15T08:47:41.981777+00:00",
+      "accepted": false,
+      "summary": "ERROR: summary asserted an outcome absent from the source",
+      "usage": {
+        "prompt": 31825,
+        "completion": 7137
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 1,
+      "time_utc": "2026-09-15T08:48:30.786710+00:00",
+      "accepted": false,
+      "summary": "ERROR: summary asserted an outcome absent from the source",
+      "usage": {
+        "prompt": 31824,
+        "completion": 7509
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 2,
+      "time_utc": "2026-09-15T08:49:28.088362+00:00",
+      "accepted": true,
+      "summary": "In *Mortier v. Belgium* (App. no. 78017/17, Third Section, 4 October 2022), the applicant, Tom Mortier, complained about the euthanasia of his mother, G.T., who had suffered from chronic depression and a personality/mood disorder for about forty years. She had been treated by several psychiatrists. In 2011–2012 she sought euthanasia under Belgium’s Euthanasia Act. Professor D. became her main doctor. Consulting psychiatrists included Dr V., Dr T. and Dr V.D. Dr V. initially considered her request premature and suggested further treatment. G.T. later said she did not want contact with her children, claiming her son was aggressive and she feared him. On 31 January 2012 she emailed her children about her euthanasia request; the applicant did not reply, while her daughter replied respecting her wishes. On 14 February 2012 G.T. lodged a formal written request. After further consultations, her doctors concluded that her mental suffering was intolerable and incurable. Professor D. performed euthanasia on 19 April 2012 in a public hospital. The applicant learned of his mother’s death the next day from the hospital; he had not been informed or involved beforehand.\n\nThe applicant invoked Articles 2, 8 and 13 ECHR. The key Article 2 issues concerned both substantive and procedural positive obligations. Substantively, he argued that Belgian law did not sufficiently protect his mother’s life, especially because euthanasia was allowed for mental suffering where death was not otherwise expected in the short term. The Court found the legislative framework capable in principle of ensuring the right to life, including additional safeguards for non-terminal mental suffering, and allowed a margin of appreciation. Procedurally, he complained about the post-death review. The Federal Euthanasia Monitoring and Assessment Board examined Professor D.’s registration document and found the euthanasia compliant. However, Professor D., who carried out the euthanasia, was co-chair of the Board. The Board also reviewed only the anonymous part of the registration document to preserve confidentiality. The Court found that allowing the doctor who performed the act to participate in reviewing its lawfulness, and reviewing only the anonymous part, did not satisfy Article 2’s procedural requirements. It also found the criminal investigation excessively long.\n\nUnder Article 8, the applicant complained that the doctors failed to involve him in the procedure leading to his mother’s death, depriving him of a chance to say goodbye and causing pathological mourning. The Court noted that G.T. had been encouraged to contact her children but had refused; she had only agreed to send an email, and the applicant did not reply. The law required respect for patient confidentiality and medical secrecy unless the patient wished otherwise. The Court found that the legislation struck a fair balance between the applicant’s private and family life interests and his mother’s autonomy, confidentiality and medical secrecy.\n\nThe applicant also requested the euthanasia registration document from the Board, but was refused on confidentiality grounds; he complained to the Medical Association and lodged a criminal complaint. The first investigation was discontinued in 2017, then reopened in 2019. An expert report found the substantive conditions complied with, and in 2020 the Pre-Trial Division closed the investigation. The Court’s main findings thus concerned the substantive and procedural protection of life under Article 2 and the family-life/confidentiality balance under Article 8.",
+      "usage": {
+        "prompt": 31824,
+        "completion": 10508
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-223361",
+      "version": 1,
+      "time_utc": "2026-09-15T08:50:33.671735+00:00",
+      "accepted": false,
+      "summary": "ERROR: summary asserted an outcome absent from the source",
+      "usage": {
+        "prompt": 5682,
+        "completion": 9468
+      },
+      "input_sha256": "76121af8ec9a1ee99832790a78f828d3b3345f032111834e718337de81696ddc",
+      "prompt_sha256": "06bba75e1c846a05eb4870b0518ffa58d025c440b4ea3653638f92414878eed6"
+    },
+    {
+      "item_id": "001-229325",
+      "version": 0,
+      "time_utc": "2026-09-15T08:51:07.046294+00:00",
+      "accepted": true,
+      "summary": "The case of *V v. the Czech Republic* (Application no. 26074/18) concerns the death of the applicant’s brother, P.Z., a 30-year-old man suffering from paranoid schizophrenia. The events began on the evening of 5 November 2015, when P.Z. was admitted to the acute care unit of a psychiatric clinic after a family emergency call reported him as aggressive and threatening. He initially calmed down and agreed to anti-psychotic medication.\n\nEarly the next morning, P.Z. became restless after realising staff were preparing an intensive care (seclusion) room for him. A verbal altercation with an orderly escalated into a physical confrontation, during which P.Z. knocked the orderly to the ground and beat him severely, causing the orderly to fear for his life. P.Z. then began destroying fixtures, including a washbasin and doors, and started ripping out ceiling tiles and electrical wires, spraying water onto them. After two unarmed security guards failed to subdue him, a nurse called the police at 4:53 a.m.\n\nFour police officers arrived at approximately 5:00 a.m. They briefly consulted a nurse who had not witnessed the attack and who provided limited information about P.Z.’s health status. The officers, using a mattress as a shield, forced P.Z. to the ground in a narrow corridor. Despite his physical strength, they were unable to restrain him or secure his hands. Officer T. fired his taser at P.Z.’s lower back after warning him. P.Z., however, continued to resist actively. At a colleague’s request, T. fired the taser two more times. The taser record showed three discharges lasting eight, eleven, and ten seconds, respectively. During the struggle, P.Z. was held in a prone position. Once his arm was partially immobilised, a nurse administered two injections of tranquilizers (Apaurin and Tisercin) as instructed by a doctor.\n\nShortly after the injections, at 5:05 a.m., P.Z. was turned onto his back and found to be cyanotic with no palpable pulse. Resuscitation efforts, including defibrillation and adrenaline, were unsuccessful, and P.Z. was pronounced dead at 6:08 a.m. The immediate cause of death was determined to be cardiac arrhythmia. A subsequent expert report noted that repeated tasering could be a possible contributory cause. The experts could not unequivocally determine the extent to which natural causes contributed, and they were not asked to comment on any possible interaction between the administered medication and the taser use.\n\nThe subsequent investigation by the General Inspectorate of the Security Forces (GISF) concluded that the police intervention had been lawful and that the use of the taser was justified and in compliance with regulations. This decision was upheld by the Regional Prosecutor’s Office, the High Prosecutor’s Office, and ultimately the Constitutional Court. However, a report by the Czech Public Defender of Rights was critical. It found that the use of a taser on a person already being restrained on the ground is generally unreasonable and unacceptable unless exceptional circumstances exist. It also highlighted systemic deficiencies, including inadequate training for police officers on the health risks of tasers, particularly concerning vulnerable persons, and the lack of a coordinated strategy between police and medical staff for intervening in psychiatric facilities. The report concluded that the police officers were not properly trained regarding the serious health risks associated with taser use, which contributed to the disproportionate force applied.",
+      "usage": {
+        "prompt": 10462,
+        "completion": 1106
+      },
+      "input_sha256": "8b4b94e57091c718da1a57e1cac486e5805a527a5f92f03c493a8666769e2fc2",
+      "prompt_sha256": "2ec820cfd4563c85a95d485b4d8f00c2b3cd47b7132c3ca3ffb5841d29b3078a"
+    },
+    {
+      "item_id": "001-231078",
+      "version": 0,
+      "time_utc": "2026-09-15T08:51:16.378923+00:00",
+      "accepted": true,
+      "summary": "The European Court of Human Rights case **Lypovchenko and Halabudenco v. the Republic of Moldova and Russia** concerned alleged human-rights violations in the self-proclaimed “Moldovan Republic of Transnistria” (“MRT”). The applicants were Oleksandr Lypovchenko, a Ukrainian national, and Oleg Halabudenco, a Moldovan national.\n\n**Mr Lypovchenko’s case (no. 40926/16).** On 7 July 2015, de facto “MRT” authorities arrested him and charged him with extremism based on critical social-media posts and an old diary note. He was detained on warrants issued by the de facto “Tiraspol City Court” from 9 July 2015 until 28 March 2016. During proceedings, the de facto court refused to allow him to choose his own lawyer or represent himself because of an alleged schizophrenia diagnosis; in January 2016 he was removed from the courtroom until sentencing. On 28 March 2016 he was convicted and sentenced to three years and six months’ imprisonment, upheld on appeal in May 2016.\n\nHe alleged inhuman detention conditions, including overcrowding, smoking, only one hour’s daily outdoor exercise, unfit food and water, and weekly showers. Although sentenced to a semi-open prison, he was later transferred to a closed-regime prison. He went on hunger strike several times to protest his arrest, alleged ill-treatment and detention conditions. Authorities forcibly hospitalised him for psychiatric assessment and administered psychotropic drugs without consent in 2015 and 2016. He also alleged inadequate medical care for hepatitis C, thrombophlebitis, pancreatitis and other conditions, and refusal of external consultations. In April 2016 he alleged ill-treatment after refusing to hand over a copy of his sentence, which he intended for his lawyer. Authorities confirmed he could not give documents to his mother, and requests for his medical file were refused, hindering his application to the Court. Moldova later investigated his kidnapping, and the Moldovan Supreme Court quashed the “MRT” judgments. His complaints concerned Articles 3, 5, 6, 13 and 34.\n\n**Mr Halabudenco’s case (no. 73942/17).** In April 2016, de facto “MRT” authorities arrested him, a part-time university lecturer in Tiraspol, on bribery charges. Bail was set at 18,400 Transnistrian roubles (about EUR 1,400). He paid and was released on 5 April 2016, after which he left for Chișinău. In December 2016 the case was sent to the de facto “Tiraspol City Court.” After he asked to be tried in absentia, in March 2017 the court revoked bail, ordered his preventive arrest, and issued a search-and-arrest warrant. In April 2017 the de facto “MRT Supreme Court” upheld that decision and forfeited his bail to the “MRT treasury.” Moldova opened a criminal investigation but suspended it; Russia replied that it had no jurisdiction. His complaints concerned Article 8, Article 13, Article 1 of Protocol No. 1, and Article 2 of Protocol No. 4.\n\nThe Court reaffirmed Russia’s jurisdiction and responsibility over the “MRT” due to its military presence and support, while Moldova had fulfilled its positive obligations. It found violations including unlawful arrest, detention and conviction by bodies not constituting a “tribunal established by law”; inhuman and degrading treatment; inadequate medical assistance; forced psychiatric hospitalisation; unlawful forfeiture of bail; and interference with freedom of movement. The judgment became final on 20 May 2024.",
+      "usage": {
+        "prompt": 10584,
+        "completion": 2402
+      },
+      "input_sha256": "478102b8cb19a611d286e6fb1785244f02b7929676d56757fa7fcdef75f54a04",
+      "prompt_sha256": "f3b8d22600b5e43ecf091985ad3894297afb806d80a168d0794c319475ae9d21"
+    },
+    {
+      "item_id": "001-231078",
+      "version": 1,
+      "time_utc": "2026-09-15T08:52:32.449465+00:00",
+      "accepted": true,
+      "summary": "The case concerns two applications against Moldova and Russia arising from acts of the de facto “Moldovan Republic of Transnistria” (“MRT”). The Court found Russia responsible for the MRT authorities’ acts because of its ongoing military presence, economic and political support, while Moldova had complied with its positive obligations.\n\n**Mr Lypovchenko (no. 40926/16)**, a Ukrainian national, was arrested on 7 July 2015 by de facto MRT authorities and charged with extremism based on social-media criticism of the MRT and an old diary note referring to UN forces. He was detained from 9 July 2015 until 28 March 2016 under warrants issued by the de facto “Tiraspol City Court.” During proceedings, he could not choose his own lawyer or represent himself because of an alleged schizophrenia diagnosis. In January 2016 he was removed from the courtroom until sentencing; on 28 March 2016 he was convicted and sentenced to three years and six months, upheld on appeal in May 2016.\n\nHe alleged inhuman and degrading detention conditions, including overcrowding, poor food and water, limited walks and showers, and exposure to smoking. Although sentenced to a semi-open prison, he was transferred to a closed-regime prison in 2016. He went on hunger strike several times and was forcibly hospitalised and psychiatrically assessed in 2015 and 2016, allegedly receiving psychotropic drugs without consent or information. He also alleged inadequate medical care for hepatitis C, thrombophlebitis and later other conditions. In April 2016 he was allegedly ill-treated for refusing to hand over a copy of his sentence; prison authorities also refused to let him pass documents to his mother for his application to the Court. Moldovan authorities investigated his kidnapping and the usurpation of powers by MRT officials, and in November 2016 the Moldovan Supreme Court quashed the MRT judgments as unconstitutional.\n\n**Mr Halabudenco (no. 73942/17)**, a Moldovan national, was a part-time university lecturer in Tiraspol. On 2 April 2016 MRT authorities arrested and detained him on a bribe charge. On 5 April 2016 the de facto “Tiraspol City Court” set bail at 18,400 Transnistrian roubles, which he paid, and he was released. He then left Transnistria and lived in Chișinău. In December 2016 the case was sent for trial. In March 2017 the de facto court rescinded bail, ordered his preventive arrest, and issued a search-and-arrest warrant; in April 2017 the de facto “MRT Supreme Court” upheld that decision and forfeited his bail to the “MRT treasury.” He alleged that this interfered with his professional activities, restricted his freedom of movement, unlawfully deprived him of his money, and left him without effective remedies. Complaints to Moldova led to a criminal investigation, later suspended; Russia replied that it did not exercise jurisdiction over the MRT.\n\nThe applicants alleged violations of Articles 3, 5, 6, 8, 13 and 34 of the Convention, Article 1 of Protocol No. 1, and Article 2 of Protocol No. 4. The Court examined jurisdiction, responsibility and the lawfulness of the MRT authorities’ actions, including detention conditions, forced psychiatric treatment, unlawful conviction, property forfeiture, movement restrictions, and lack of effective remedies.",
+      "usage": {
+        "prompt": 31749,
+        "completion": 6541
+      },
+      "input_sha256": "478102b8cb19a611d286e6fb1785244f02b7929676d56757fa7fcdef75f54a04",
+      "prompt_sha256": "f3b8d22600b5e43ecf091985ad3894297afb806d80a168d0794c319475ae9d21"
+    },
+    {
+      "item_id": "001-238072",
+      "version": 0,
+      "time_utc": "2026-09-15T08:54:37.331531+00:00",
+      "accepted": true,
+      "summary": "The case of *Souroullas Kay and Zannettos v. Cyprus* (Application no. 1618/18) is a judgment of the Third Section of the European Court of Human Rights, delivered on 26 November 2024 and becoming final on 28 April 2025. The applicants, Gregoris Souroullas Kay and Venizelos Zannettos, are Cypriot nationals. They lodged their application against the Republic of Cyprus on 3 January 2018, alleging violations of Article 6 of the European Convention on Human Rights in the context of criminal proceedings that resulted in their convictions. The first applicant was convicted of money laundering and the second of extortion. The central issue was whether their trial was fair under Article 6 § 1 and whether their defence rights, including those under Article 6 § 3 (d), were respected.\n\nThe alleged violations arose from two main aspects of the criminal proceedings. First, the applicants complained that their convictions were based to a “most decisive” extent on the testimony of an accomplice. The accomplice was not prompted by any formal deal with the prosecution, but he was spared prosecution. The applicants argued that reliance on such testimony rendered the trial unfair, because the accomplice had a strong incentive to testify against them in order to avoid criminal liability. This raised questions about the reliability of the evidence and the fairness of the proceedings under Article 6 § 1.\n\nSecond, the applicants complained about their inability to access material held by the prosecution. Specifically, the domestic courts refused to give the defence access to a disk image held by the prosecution. The applicants contended that this refusal violated their rights of defence and their entitlement to adequate facilities to prepare their case, as guaranteed by Article 6 § 1 and Article 6 § 3 (d). They argued that without access to the disk image, they could not properly challenge the prosecution’s case or examine the evidence against them, thereby undermining the equality of arms between the prosecution and the defence.\n\nThe European Court of Human Rights gave notice to the Cypriot Government of these two complaints—namely, the inability to access prosecution material and the use of accomplice testimony—and declared the remainder of the application inadmissible. The parties submitted observations, and the Court deliberated in private on 13 February 2024 and 15 October 2024.\n\nOn the merits, the Court examined whether the criminal trial could be considered fair within the meaning of Article 6 § 1 despite the conviction being based decisively on accomplice testimony. It noted that the accomplice had not been prompted by any deal but had been spared prosecution. The Court found that this did not, in itself, render the trial unfair. It also considered the refusal to grant the defence access to the prosecution’s disk image. The Court concluded that this refusal did not amount to a breach of Article 6 § 1 or Article 6 § 3 (d). Accordingly, the applicants’ complaints were rejected.\n\nThe judgment is significant because it confirms that a conviction based to a decisive extent on accomplice evidence does not automatically violate the right to a fair trial, particularly where the accomplice was not induced by a formal deal. It also clarifies that denial of defence access to prosecution material, such as a disk image, will not necessarily breach Article 6 if the domestic courts’ refusal is compatible with the overall fairness of the proceedings and the rights of the defence. The case thus reinforces the Court’s contextual approach to Article 6, assessing fairness as a whole rather than applying automatic rules.",
+      "usage": {
+        "prompt": 1260,
+        "completion": 6725
+      },
+      "input_sha256": "d55e7130c302b03a0eb2131ccfc1ee1b85792cd39678f1069c83162038c95f8d",
+      "prompt_sha256": "3968e260a8a546f6953566eb29afc2718513c6d4a5844f3c89eba4c77619aa5f"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 1,
+      "time_utc": "2026-09-15T08:56:38.744542+00:00",
+      "accepted": true,
+      "summary": "In *Mortier v. Belgium* (ECtHR, 4 October 2022), the applicant, Tom Mortier, complained about the euthanasia of his mother, G.T., without him or his sister being informed beforehand. G.T. had suffered from chronic depression and a serious personality and mood disorder for about forty years, receiving psychiatric treatment since she was nineteen. In 2011–2012 she sought euthanasia because of intolerable mental suffering. After her general practitioner declined to act as main doctor, she was referred to Professor D., who became her main doctor under Belgium’s 2002 Euthanasia Act. Several psychiatrists were consulted. One initially considered the request premature, but later consultants concluded that G.T. was legally capable, that her suffering was constant and intolerable, and that her condition was incurable with no prospect of improvement. G.T. was socially isolated, estranged from her son, and did not wish to contact her children. Doctors repeatedly encouraged her to inform them. On 31 January 2012 she emailed her son and daughter about her euthanasia request; her daughter replied that she respected her wishes, but the applicant did not reply. G.T. submitted a formal written request on 14 February 2012, and euthanasia was performed by Professor D. on 19 April 2012 in a public hospital. The applicant learned of his mother’s death the next day.\n\nAfter the euthanasia, Professor D. submitted the required registration document to the Federal Euthanasia Monitoring and Assessment Board. Professor D. was also co-chair of that Board. The Board reviewed the anonymous second part of the registration document and concluded that the euthanasia complied with the Euthanasia Act. The applicant’s requests for a copy of the document were refused on confidentiality grounds. His complaint to the Medical Association did not yield information, and his criminal complaint, lodged in April 2014, was initially discontinued in May 2017 for insufficient evidence. After the applicant brought his case to the European Court of Human Rights in November 2017, the criminal investigation was reopened in 2019. An expert report in 2020 found that G.T. had suffered intolerably, acted freely, and that the statutory waiting period had been respected; it noted that the applicant had learned of the death in an unfortunate way and that the file did not contain the Board’s assessment. In December 2020 the Pre-Trial Division closed the investigation with no grounds for prosecution, and no appeal was lodged.\n\nThe applicant alleged violations of Articles 2, 8, and 13 of the Convention. Under Article 2, he argued that Belgium had failed to protect his mother’s life and that the post-euthanasia review was inadequate. The Court found that the substantive legislative framework, including additional safeguards for euthanasia based on mental suffering where death is not expected in the short term, was in principle capable of protecting the right to life, and that Belgium enjoyed a wide margin of appreciation. However, it found a procedural violation of Article 2. The Board lacked independence because the doctor who had performed the euthanasia, Professor D., was its co-chair and could participate in reviewing the lawfulness of his own act; his discretion to remain silent was insufficient. The Court also held that review based solely on the anonymous part of the registration document did not satisfy Article 2, and that the criminal investigation was excessively long. Under Article 8, the doctors’ failure to involve the applicant in the procedure, absent his mother’s wish to do so, was consistent with confidentiality and medical secrecy and struck a fair balance between the interests at stake.",
+      "usage": {
+        "prompt": 10608,
+        "completion": 2311
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 0,
+      "time_utc": "2026-09-15T08:57:18.411202+00:00",
+      "accepted": false,
+      "summary": "ERROR: summary asserted an outcome absent from the source",
+      "usage": {
+        "prompt": 31824,
+        "completion": 9089
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-166954",
+      "version": 2,
+      "time_utc": "2026-09-15T08:57:20.944439+00:00",
+      "accepted": true,
+      "summary": "In *Goryayeva v. Ukraine* (App. no. 58656/10, 6 October 2016), the applicant, a Ukrainian national, complained under Article 2 of the Convention about her son A.G.’s death in a temporary detention centre (“ITT”) in Mykolayiv and the alleged failure to investigate it effectively.\n\nA.G., born in 1966, suffered from tuberculosis, AIDS, drug addiction, and an infected phlegmon on his right shin. He was arrested on suspicion of drug-related crimes on 4 May 2007 and placed in the ITT. On 7 May 2007, a district court ordered his pre-trial detention. While in detention, ambulance doctors treated him, and he was transferred to a local hospital for treatment of his phlegmon. After doctors considered him fit for detention, he was returned to the ITT.\n\nAt about 9:30 p.m. on 23 May 2007, an ITT officer heard moaning from A.G.’s cell. A.G. was alone, breathing heavily, and saying he felt bad and needed air. Officers removed him to the entrance area, gave first aid, and called an ambulance. It arrived at 9:43 p.m. and confirmed he was dead. The post-mortem report stated that A.G. died from ischaemic heart disease aggravated by acute heart failure. Linear strangulation bruises on his neck indicated interrupted asphyxiation about ten minutes before death, which could have aggravated his chronic illnesses.\n\nDomestically, between 2007 and 2012, investigators refused more than fifteen times to initiate criminal proceedings. Those decisions were repeatedly quashed as unsubstantiated by supervising prosecutors and courts, which ordered further pre-investigation inquiries. In December 2012, criminal proceedings were finally opened under the 2012 Code of Criminal Procedure. In March 2013, an investigator terminated the proceedings, finding no crime by ITT officers. A court quashed that decision as unfounded. In October 2013, the investigator again terminated the case, finding no evidence that ITT staff had caused A.G.’s death. He noted that key evidence could not be examined: bed linen and a rope made from it had been destroyed after the post-mortem; no reconstruction was possible; and a 24 May 2007 site inspection produced no video, sketches, or photographs.\n\nBased on available evidence, the investigator concluded that A.G. had attempted suicide by asphyxiating himself with a rope made from bed linen. The latest medical findings indicated death from interrupted mechanical asphyxiation, with neck injuries suggesting heart failure from the attempted strangulation. He found no acute condition requiring hospital admission during detention, noted that A.G. had been medically supervised, and considered that his serious illnesses would have worsened regardless. He concluded ITT officers could not have foreseen the fatal outcome.\n\nBefore the European Court, the applicant alleged that her son had been murdered in detention, that the authorities were responsible for his death, and that the investigation was ineffective. The Court accepted the domestic authorities’ explanation. It found A.G. had been alone, the medical evidence supported suicide-related asphyxiation and heart failure, and there was no evidence of murder. It dismissed the substantive complaints as manifestly ill-founded. It also found no operational failure: there was no psychiatric diagnosis or expressed suicidal intent, and officers responded promptly by giving first aid and calling an ambulance.\n\nHowever, the procedural complaint was admissible. The Court found the investigation ineffective: for over five years, authorities used only pre-investigation inquiries, repeatedly terminating and remitting the case. A full investigation began only in December 2012, by which time crucial evidence had been destroyed and initial steps had not been properly taken. The last termination came more than six years and five months after the death. The Court concluded that the domestic inquiries and investigations did not comply with Article 2’s procedural requirements.",
+      "usage": {
+        "prompt": 6686,
+        "completion": 4872
+      },
+      "input_sha256": "cc209a1a6dd7a8833e59ff20ed59f98d061d7e90e041400f687ec7d292473048",
+      "prompt_sha256": "461e6f1081882f14250bffbbec187bd010aa09259aa38b9c921a55b70da09fa4"
+    },
+    {
+      "item_id": "001-223361",
+      "version": 1,
+      "time_utc": "2026-09-15T08:58:07.163165+00:00",
+      "accepted": false,
+      "summary": "ERROR: empty content at max_tokens=4000",
+      "usage": {
+        "prompt": 5746,
+        "completion": 5314
+      },
+      "input_sha256": "76121af8ec9a1ee99832790a78f828d3b3345f032111834e718337de81696ddc",
+      "prompt_sha256": "06bba75e1c846a05eb4870b0518ffa58d025c440b4ea3653638f92414878eed6"
+    },
+    {
+      "item_id": "001-219988",
+      "version": 0,
+      "time_utc": "2026-09-15T08:59:03.079019+00:00",
+      "accepted": true,
+      "summary": "In *Mortier v. Belgium*, the European Court of Human Rights examined the euthanasia of the applicant’s mother, G.T., and the subsequent official reviews. G.T. had suffered from chronic depression since adolescence and had been treated for about forty years. In 2011 she sought euthanasia. Her general practitioner declined to act as main doctor and referred her to Professor D., who became her main doctor under Belgium’s 2002 Euthanasia Act. Several psychiatrists were consulted. Dr V initially considered the request premature; Dr T later found G.T. rational and suffering intolerably from an incurable condition; Dr V.D. also approved. G.T. lodged a formal handwritten request on 14 February 2012. She did not want direct contact with her children. On 31 January 2012 she emailed her son and daughter about her request. The daughter replied respecting her wishes; the applicant did not reply. Doctors repeatedly encouraged her to inform her children, but she refused telephone contact and insisted her wishes be respected. Professor D. performed euthanasia on 19 April 2012. The applicant was informed by the hospital the next day.\n\nAfterwards, the Federal Euthanasia Monitoring and Assessment Board received the registration document on 20 June 2012 and reviewed it on 26 June 2012. Professor D., who had performed the euthanasia, was co-chair of the Board and participated in the review, which concluded that the Act’s conditions had been met. The Board relied on the anonymous part of the registration document. The applicant’s requests for the document were refused on confidentiality grounds. His complaint to the Medical Association was confidential. A criminal complaint in April 2014 was discontinued in May 2017 for insufficient evidence. His first ECtHR application was declared inadmissible for non-exhaustion. In 2019 the criminal investigation was reopened. A medical expert report in 2020 found that G.T. had intolerable mental suffering, had requested euthanasia freely and consistently, and that the statutory waiting period and consultations had been respected. It noted, however, that the applicant learned of the death in a very unfortunate way and that the file did not contain the euthanasia declaration or the Board’s assessment. In December 2020 the Pre-Trial Division closed the investigation, finding no grounds for prosecution.\n\nThe applicant complained under Articles 2, 8 and 13. Under Article 2, he alleged the Belgian euthanasia framework did not adequately protect life, especially for mental suffering where death was not imminent, and that the procedural review was inadequate. Under Article 8, he alleged violation of private and family life because doctors did not involve him in the procedure. The Court found the substantive legislative framework capable in principle of protecting the right to life, with additional safeguards for mental suffering, and within Belgium’s margin of appreciation. However, it found procedural shortcomings: the Board was not sufficiently independent because the doctor who performed the euthanasia could take part in reviewing its lawfulness; review solely on the anonymous part and the doctor’s discretion over silence were insufficient; and the criminal investigation was excessively long. It found no Article 8 violation, holding that the law struck a fair balance between confidentiality, patient autonomy and family interests.",
+      "usage": {
+        "prompt": 10608,
+        "completion": 3342
+      },
+      "input_sha256": "ae623eb77574728eb1739dcb70bc1bf3300b2246a1e4845eb287bdaa0ade6e58",
+      "prompt_sha256": "31e3b1effea359c751ea881b50c4ee3cc255c5b5c55db37d0375f798f9391427"
+    },
+    {
+      "item_id": "001-223361",
+      "version": 1,
+      "time_utc": "2026-09-15T09:00:27.892501+00:00",
+      "accepted": true,
+      "summary": "The case *Mamasakhlisi and Others v. Georgia and Russia* (Applications nos. 29999/04 and 41424/04, judgment of 7 March 2023) concerned events in Abkhazia, a part of Georgia that was outside Georgia’s effective control at the relevant time. The applicants were Georgian citizens. The first applicant, Mr L. Mamasakhlisi, was arrested by the Abkhaz de facto authorities in connection with an explosion. During interrogation he was allegedly ill-treated, held in inadequate conditions, and denied adequate medical treatment. He was subsequently convicted and sentenced by an Abkhaz court, later released, medically examined, and his detention was investigated by Georgian authorities. The third applicant, Mr G. Nanava, was also detained and allegedly subjected to ill-treatment. The second applicant, Ms D. Mamasashkili, raised a related complaint, but the Court found she lacked victim status under Article 8. The applicants complained mainly of violations of Articles 3, 5 § 1, 6 § 1 and 6 § 3(c), and other Convention provisions.\n\nA central issue was jurisdiction under Article 1. The Court examined relations between the respondent Governments and the Abkhaz de facto authorities. It found that Russia exercised effective control and decisive influence over Abkhaz territory, relying on military involvement, including the Gudauta military base and general military support, as well as political connections and economic and financial support. This influence continued after the August 2008 conflict. Consequently, Russia was responsible for the acts of the Abkhaz authorities in relation to the detained applicants. By contrast, Georgia had no effective control over Abkhaz",
+      "usage": {
+        "prompt": 3788,
+        "completion": 6232
+      },
+      "input_sha256": "76121af8ec9a1ee99832790a78f828d3b3345f032111834e718337de81696ddc",
+      "prompt_sha256": "06bba75e1c846a05eb4870b0518ffa58d025c440b4ea3653638f92414878eed6"
+    }
+  ],
+  "remaining_missing_slots_zero_based": [],
+  "repair_usage": {
+    "prompt": 234499,
+    "completion": 89247
+  },
+  "updated_utc": "2026-09-15T09:00:28.074648+00:00"
+}
