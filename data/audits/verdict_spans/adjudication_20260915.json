@@ -1,0 +1,73 @@
+{
+  "status": "SINGLE_READER_ADJUDICATION_NOT_AN_INDEPENDENT_ANNOTATOR_PASS",
+  "reader": "Volodymyr Ovcharov",
+  "date": "2026-09-15",
+  "scope": "Every row the post-repair pass put in the leak or review tier, read in context.",
+  "source": "data/audits/verdict_spans/dsv41flash_postrepair.json",
+  "dataset": "data/processed/echr_unified.json",
+  "method": "Each span read with 320 characters before and 220 after. The question asked of it: does this sentence tell a reader how this Court resolved the Article this row is scored on? Chamber outcomes count, because for a case referred to the Grand Chamber the earlier instance decided the same complaint.",
+  "precision": {
+    "leak_tier": "10 of 10 confirmed",
+    "review_tier": "11 of 13 confirmed harmless, 2 upgraded to leak"
+  },
+  "leak_tier": [
+    {"item_id": "001-164515", "article": "6", "label": "violation", "verdict": "leak",
+     "chamber_outcome": "violation", "agrees_with_label": true,
+     "note": "Chamber of the Second Section found a violation of Article 6 § 1; the Grand Chamber agreed."},
+    {"item_id": "001-110164", "article": "6", "label": "no_violation", "verdict": "leak",
+     "chamber_outcome": "violation", "agrees_with_label": false,
+     "note": "Chamber held there had been a violation by four votes to three; the Grand Chamber reversed."},
+    {"item_id": "001-157670", "article": "3", "label": "violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": false,
+     "note": "Chamber unanimously found no violation; the Grand Chamber reversed."},
+    {"item_id": "001-210078", "article": "8", "label": "violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": false,
+     "note": "Chamber found no violation of Article 8; the Grand Chamber reversed."},
+    {"item_id": "001-145068", "article": "8", "label": "no_violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": true,
+     "note": "Chamber found no violation of Article 8 § 1 by six votes to one; upheld."},
+    {"item_id": "001-169662", "article": "3", "label": "violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": false,
+     "note": "Chamber held removal would not entail a violation of Articles 2 and 3; the Grand Chamber reversed."},
+    {"item_id": "001-158279", "article": "10", "label": "no_violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": true,
+     "note": "Chamber found no violation of Article 10 by five votes to two; upheld."},
+    {"item_id": "001-151051", "article": "7", "label": "no_violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": true,
+     "note": "Chamber unanimously found no violation of Article 7; upheld."},
+    {"item_id": "001-242521", "article": "13", "label": "no_violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": true,
+     "note": "Chamber found no violation of Article 13 in conjunction with Article 8, naming the scored Article outright."},
+    {"item_id": "001-122664", "article": "3", "label": "violation", "verdict": "leak",
+     "chamber_outcome": "no_violation", "agrees_with_label": false,
+     "note": "Chamber held there had been no violation of Article 3 by four votes to three; the Grand Chamber reversed."}
+  ],
+  "review_tier_upgraded": [
+    {"item_id": "001-229927", "article": "34", "label": "no_violation", "verdict": "leak",
+     "quote": "the decision to give notice of the complaints under Article 5 of the Convention to the Ukrainian Government (“the Government”), represented by their acting Agent, Ms O. Davydchuk, and to declare the remainder of the application inadmissible;",
+     "note": "The application was lodged under Articles 5, 34 and 38. Notice went to the Article 5 complaints and the remainder was declared inadmissible, so for a row scored on Article 34 the sentence says the complaint never reached the merits, which is the label."},
+    {"item_id": "001-229927", "article": "38", "label": "no_violation", "verdict": "leak",
+     "quote": "the decision to give notice of the complaints under Article 5 of the Convention to the Ukrainian Government (“the Government”), represented by their acting Agent, Ms O. Davydchuk, and to declare the remainder of the application inadmissible;",
+     "note": "Same sentence, same judgment, scored on Article 38. Identical reasoning."}
+  ],
+  "review_tier_confirmed_harmless": [
+    {"item_id": "001-214012", "article": "8", "note": "Notice of the private-life complaint, remainder inadmissible; the scored Article is the one communicated."},
+    {"item_id": "001-185308", "article": "6", "note": "Notice of the Article 6 complaint on one of four charges; no merits outcome."},
+    {"item_id": "001-208534", "article": "6", "note": "Notice of the Article 6 complaints, remainder inadmissible."},
+    {"item_id": "001-221637", "article": "6", "note": "Notice of Article 1 P1 and Article 6 § 1 complaints, remainder inadmissible."},
+    {"item_id": "001-150239", "article": "P1-1", "note": "“the Court declared the applications admissible” and nothing further."},
+    {"item_id": "001-140235", "article": "3", "note": "Remaining complaints declared admissible after a friendly settlement on other issues; no merits outcome."},
+    {"item_id": "001-206371", "article": "6", "note": "Notice of the length complaints; the separate impartiality complaint declared inadmissible is not the scored one."},
+    {"item_id": "001-233761", "article": "6", "note": "“the Court’s decision of 1 March 2022 declaring the case admissible”."},
+    {"item_id": "001-182853", "article": "6", "note": "Length complaint communicated; the inadmissible complaint concerns the outcome of the criminal proceedings, not the scored Article."},
+    {"item_id": "001-178372", "article": "6", "note": "Length complaint communicated, remainder inadmissible; the scored Article is the communicated one."},
+    {"item_id": "001-202619", "article": "5", "note": "Notice of the Article 5 § 3 complaint, remainder inadmissible; the scored Article is the communicated one."}
+  ],
+  "findings": [
+    "The leak tier holds at 10 of 10. Every one is a Grand Chamber judgment reciting what the Chamber decided on the same complaint, in PROCEDURE, above the facts.",
+    "The Chamber's outcome is not a reliable shortcut to the label: five of the ten agree with it and five are reversals. It is still leakage, because the model is handed the earlier decision either way, and on the five reversals it is handed a wrong answer confidently.",
+    "Admissibility wording is harmless only while the scored Article is among the complaints that went forward. Where the scored Article is inside the remainder declared inadmissible, the same sentence states the outcome, which is how 001-229927 reached the merits-free label no_violation on Articles 34 and 38.",
+    "That is a rule the tier assignment cannot make on wording alone: it needs the scored Article compared against the Articles named in the sentence."
+  ],
+  "limits": "One reader, the author of the detector, so this measures whether the flags survive a careful read, not inter-annotator agreement. A rate quoted in the paper still needs independent annotators and planted controls, as the annotation protocol already does elsewhere."
+}

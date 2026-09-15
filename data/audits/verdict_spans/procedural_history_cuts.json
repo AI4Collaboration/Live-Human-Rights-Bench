@@ -1,10 +1,10 @@
 {
   "status": "DRY_RUN",
   "cases": "data/processed/echr_unified.json",
-  "audit": "data/audits/verdict_spans/dsv41flash.json",
+  "audit": "data/audits/verdict_spans/dsv41flash_postrepair.json",
   "dataset_sha256_lf_before": "112dfdd6ed2d24ae7b7105697dc1417de99debfa99aeeb020b3ff8c315a0737e",
-  "judgments": 10,
-  "instances": 10,
+  "judgments": 11,
+  "instances": 12,
   "cuts": [
     {
       "item_id": "001-110164",
@@ -23,15 +23,6 @@
       "characters_removed": 123,
       "length_before": 39369,
       "length_after": 39246
-    },
-    {
-      "item_id": "001-140235",
-      "quotes": [
-        "It also, unanimously, declared admissible the remaining complaints."
-      ],
-      "characters_removed": 68,
-      "length_before": 61034,
-      "length_after": 60966
     },
     {
       "item_id": "001-145068",
@@ -95,6 +86,24 @@
       "characters_removed": 214,
       "length_before": 114543,
       "length_after": 114329
+    },
+    {
+      "item_id": "001-229927",
+      "quotes": [
+        "the decision to give notice of the complaints under Article 5 of the Convention to the Ukrainian Government (“the Government”), represented by their acting Agent, Ms O. Davydchuk, and to declare the remainder of the application inadmissible;"
+      ],
+      "characters_removed": 241,
+      "length_before": 4199,
+      "length_after": 3958
+    },
+    {
+      "item_id": "001-242521",
+      "quotes": [
+        "It further held, by four votes to three, that there had been no violation of Article 8 of the Convention and, unanimously, that there had been no violation of Article 13 of the Convention in conjunction with Article 8."
+      ],
+      "characters_removed": 219,
+      "length_before": 95542,
+      "length_after": 95323
     }
   ]
 }

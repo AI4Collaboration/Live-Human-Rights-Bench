@@ -2,9 +2,10 @@
 """Remove the earlier instance's outcome from the procedural history of a Grand Chamber case.
 
 The 15 September input repair cut the Court's law section and the Registry keyword line,
-and between them they account for 1,011 of the 1,021 leak spans in
-`data/audits/verdict_spans/dsv41flash.json`. Ten survive, all of one kind: a Grand
-Chamber judgment recounting what the Chamber held, in PROCEDURE, before the facts begin.
+and between them they account for almost every leak span in the pre-repair audit. Ten
+rows survive in `data/audits/verdict_spans/dsv41flash_postrepair.json`, all of one kind:
+a Grand Chamber judgment recounting what the Chamber held, in PROCEDURE, before the facts
+begin. Two more were upgraded by a reader, see `adjudicated_extras` below.
 
     In a judgment delivered on 21 November 2013 a Chamber of that Section ... held,
     by four votes to three, that there had been no violation of Article 3 ...
@@ -36,6 +37,27 @@ FIELD = "full_case_text_no_verdict"
 
 def file_digest(raw):
     return hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+
+
+def adjudicated_extras(path):
+    """Quotes a reader upgraded to leaks, which no category rule would have caught.
+
+    `001-229927` is the case: notice went to the Article 5 complaints and "the remainder
+    of the application" was declared inadmissible, while the rows scored from that text
+    are Articles 34 and 38. The wording is admissibility, so the detector tiered it for
+    review, and for those two rows it nonetheless states the outcome. Deciding that needs
+    the scored Article compared against the Articles named in the sentence, which is a
+    reader's call, so it arrives here as data rather than as a pattern.
+    """
+    if not path or not os.path.exists(path):
+        return {}
+    blob = json.load(open(path))
+    extras = defaultdict(list)
+    for entry in blob.get("review_tier_upgraded", []):
+        if entry.get("verdict") == "leak" and entry.get("quote"):
+            if entry["quote"] not in extras[entry["item_id"]]:
+                extras[entry["item_id"]].append(entry["quote"])
+    return extras
 
 
 def cuts_for(rows, audit_rows):
@@ -82,7 +104,11 @@ def excise(text, quote):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cases", default="data/processed/echr_unified.json")
-    parser.add_argument("--audit", default="data/audits/verdict_spans/dsv41flash.json")
+    parser.add_argument("--audit", default="data/audits/verdict_spans/dsv41flash_postrepair.json",
+                        help="the pass that describes the corpus being cut, not an earlier one")
+    parser.add_argument("--adjudication",
+                        default="data/audits/verdict_spans/adjudication_20260915.json",
+                        help="reader's verdicts; its upgraded rows are cut too")
     parser.add_argument("--report", default="data/audits/verdict_spans/procedural_history_cuts.json")
     parser.add_argument("--apply", action="store_true", help="write the corpus; default is a dry run")
     args = parser.parse_args()
@@ -91,6 +117,10 @@ def main():
     rows = json.loads(raw)
     audit = json.load(open(args.audit))
     wanted = cuts_for(rows, audit["rows"])
+    for item_id, quotes in adjudicated_extras(args.adjudication).items():
+        for quote in quotes:
+            if quote not in wanted[item_id]:
+                wanted[item_id].append(quote)
     if not wanted:
         print("Nothing to cut: no earlier-instance span still locates in this corpus.")
         return
