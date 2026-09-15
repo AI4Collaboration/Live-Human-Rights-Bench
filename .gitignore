@@ -56,3 +56,6 @@ annotation/
 # no judgment text and names nobody.
 !docs/annotation/
 !docs/annotation/*.md
+
+# Audit checkpoints are working files; the reports beside them are the artifact.
+data/audits/*/*.json.jsonl
