@@ -15,9 +15,10 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
 
-from verdict_spans import (CATEGORIES, COURT_THIS_CASE, OTHER_AUTHORITY,   # noqa: E402
-                           PARTY_POSITION, SPAN_TEMPLATE, UNLABELLED,
-                           locate, parse_spans, tier_of, verify)
+from verdict_spans import (ADMISSIBILITY_ONLY, CATEGORIES,                 # noqa: E402
+                           COURT_THIS_CASE, OTHER_AUTHORITY, PARTY_POSITION,
+                           SPAN_TEMPLATE, UNLABELLED, locate, parse_spans,
+                           prompt_digest, tier_of, verify)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SOURCE = ("35. The applicant complained under Article 3.\n\n36. Accordingly, there has "
@@ -79,7 +80,30 @@ def test_tiers_do_not_pool_a_party_position_with_the_courts_own_finding():
     assert tier_of([]) == "clean"
 
 
-def test_prompt_names_the_article_and_all_four_categories():
+def test_admissibility_is_not_scored_as_a_finding_on_the_merits():
+    """The first run had no such class and scored these as the Court's verdict."""
+    source = ("It follows that this part of the application is manifestly ill-founded "
+              "and must be rejected in accordance with Article 35 §§ 3 (a) and 4.")
+    kept, _ = verify([{"quote": source, "category": ADMISSIBILITY_ONLY}], source)
+    assert kept[0]["tier"] == "review"
+    assert tier_of(kept) != "leak"
+
+
+def test_a_changed_prompt_changes_the_checkpoint_identity():
+    """Rows answering an earlier question must not be resumed under a new one."""
+    import verdict_spans
+
+    before = prompt_digest()
+    original = verdict_spans.SPAN_TEMPLATE
+    try:
+        verdict_spans.SPAN_TEMPLATE = original + "\nOne more rule."
+        assert prompt_digest() != before
+    finally:
+        verdict_spans.SPAN_TEMPLATE = original
+    assert prompt_digest() == before
+
+
+def test_prompt_names_the_article_and_every_category():
     filled = SPAN_TEMPLATE.format(case_name="CASE OF X v. Y", article="6", text="...")
     assert filled.count("Article 6") >= 3
     for category in CATEGORIES:

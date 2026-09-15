@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from checkpoint import Checkpoint                                   # noqa: E402
 from scoring import MAX_CASE_CHARS                                  # noqa: E402
 from verdict_spans import (SPAN_TEMPLATE, TIERS, parse_spans,       # noqa: E402
-                           tier_of, verify)
+                           prompt_digest, tier_of, verify)
 
 ATTEMPTS = 3
 
@@ -68,7 +68,13 @@ def scan(client, model, case, max_tokens):
                 last = f"ERROR: unreadable reply: {reply[:80]}"
                 continue
             kept, dropped = verify(spans, case["text"])
-            return {"spans": kept, "unverifiable_quotes": dropped}, None, usage
+            return {"spans": kept, "unverifiable_quotes": dropped,
+                    # Recorded per row so a resumed run reports what the whole audit
+                    # cost rather than what the last process cost. Attempts that never
+                    # produced a row are not here: their tokens were spent and are not
+                    # recoverable from the checkpoint, which the report says outright.
+                    "prompt_tokens": usage["prompt"],
+                    "completion_tokens": usage["completion"]}, None, usage
         except Exception as error:
             last = f"ERROR: {error}"
             time.sleep(2 * (attempt + 1))
@@ -109,18 +115,25 @@ def main():
     if args.limit:
         cases = cases[:args.limit]
 
-    truncated = sum(1 for row in rows
-                    if len(row.get("full_case_text_no_verdict") or "") > MAX_CASE_CHARS)
+    # Judgments rather than instances: the same text is truncated once however many
+    # articles are scored from it, and counting rows would report 174 where 154 are.
+    truncated = len({row["item_id"] for row in rows
+                     if len(row.get("full_case_text_no_verdict") or "") > MAX_CASE_CHARS})
     print(f"Detector: {args.model}   instances: {len(cases)}   "
           f"prefix: {MAX_CASE_CHARS:,} characters ({truncated} judgments truncated)\n")
 
+    # Rows are keyed by the prompt as well as the case, so an amended question cannot
+    # resume rows that answered the earlier one. Changing the template changes the key,
+    # the old rows are simply not found, and the report below counts only this prompt's.
+    prompt = prompt_digest()
     checkpoint = Checkpoint(args.out + ".jsonl", enabled=not args.no_resume)
     if checkpoint.resumed:
         print(f"Resuming: {checkpoint.resumed} already recorded\n")
     client = OpenAI(base_url=args.base_url, api_key=api_key)
 
     pending = [case for case in cases
-               if not checkpoint.done(Checkpoint.key("spans", case["item_id"], case["article"]))]
+               if not checkpoint.done(Checkpoint.key("spans", case["item_id"],
+                                                     case["article"], prompt))]
     done = failed = 0
     totals = {"prompt": 0, "completion": 0}
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
@@ -137,21 +150,22 @@ def main():
                 print(f"\n  {case['case_name'][:40]} art {case['article']}: {error[:90]}")
             else:
                 checkpoint.record(
-                    Checkpoint.key("spans", case["item_id"], case["article"]),
+                    Checkpoint.key("spans", case["item_id"], case["article"], prompt),
                     {"item_id": case["item_id"], "case_name": case["case_name"],
                      "article": case["article"], "violation_label": case["violation_label"],
-                     "tier": tier_of(result["spans"]), **result})
+                     "prompt": prompt, "tier": tier_of(result["spans"]), **result})
             print(f"\r  {done}/{len(pending)} | failed {failed}", end="", flush=True)
     print()
     checkpoint.close()
 
-    recorded = checkpoint.rows()
+    recorded = [row for row in checkpoint.rows() if row.get("prompt") == prompt]
     tiers = Counter(row["tier"] for row in recorded)
     categories = Counter(span["category"] for row in recorded for span in row["spans"])
     report = {
         "scope": "Prompt-level verdict leakage in the evaluated prefix; not pretraining contamination",
         "status": "CANDIDATES_WITH_EVIDENCE_NOT_AN_ADJUDICATED_RATE",
         "detector": args.model,
+        "prompt_digest": prompt,
         "dataset": args.cases,
         "dataset_sha256_lf": digest(raw),
         "max_case_chars": MAX_CASE_CHARS,
@@ -163,7 +177,14 @@ def main():
         # because a detector that invents evidence is worth knowing about before its
         # output is read as a leak rate.
         "unverifiable_quotes": sum(len(row["unverifiable_quotes"]) for row in recorded),
-        "prompt_tokens": totals["prompt"], "completion_tokens": totals["completion"],
+        # Summed over the recorded rows rather than over this process, so a run that
+        # resumed or retried reports the whole audit. The first run said $0.63 after a
+        # retry pass that finished 80 rows of 1,000, which reads as the cost of the lot.
+        "prompt_tokens": sum(row.get("prompt_tokens", 0) for row in recorded),
+        "completion_tokens": sum(row.get("completion_tokens", 0) for row in recorded),
+        "tokens_note": "Recorded rows only; attempts that failed outright are not counted.",
+        "process_prompt_tokens": totals["prompt"],
+        "process_completion_tokens": totals["completion"],
         "tier_definitions": TIERS,
         "next_step": ("Human adjudication of a stratified sample against these spans, "
                       "then an ablation that blanks them and rescores, which is what "
