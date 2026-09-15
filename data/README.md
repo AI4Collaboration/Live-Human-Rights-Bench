@@ -197,17 +197,27 @@ could not have found in the text is dropped and counted, never scored.
 
 | file | corpus | leak | review | clean |
 |---|---|---|---|---|
-| `postcut_verification_20260916.json` | current release after adjudicated cuts | **0** | 12 | 988 |
+| `dsv41flash_postcuts.json` | current inputs, `8c43527`, detector pass 1 | **0** | 10 | 990 |
+| `dsv41flash_postcuts_pass2.json` | current inputs, detector pass 2 | **0** | 12 | 988 |
+| `postcut_verification_20260916.json` | current inputs, relocation and direct review | **0** | 12 | 988 |
 | `dsv41flash_postrepair.json` | released inputs, `d54b3bc` | **10** | 13 | 977 |
 | `dsv41flash.json` | pre-repair, `ecb5e60` | 549 | 72 | 379 |
 | `dsv41flash_run1_no_admissibility_class.json` | pre-repair, earlier prompt | 494 | 0 | 506 |
 
-**Read `dsv41flash_postrepair.json` together with
-`postcut_verification_20260916.json` for the current corpus.** The first is the fresh
-detector pass before the procedural-history cuts. The second relocates every verified
-quote after the cuts and records the direct review of all remaining review spans. It is
-not presented as another detector pass. The Registry keyword line, which 251 instances
-carried before the repair, is absent from all 1,000 current inputs.
+**For the current corpus read the three top rows together.** Two independent detector
+passes over the inputs as they stand after `8c43527` put nothing in the leak tier, and
+`postcut_verification_20260916.json` reaches the same place by relocating every verified
+quote after the cuts and reviewing what remained, which is a check rather than a third
+pass. No row states this Court's conclusion, none recites what an earlier instance
+decided, and the Registry keyword line that 251 instances carried before the repair is
+absent from all 1,000.
+
+There are two detector passes rather than one because a single pass does not bound what a
+detector misses, and the review tier shows why: the same corpus yields 10 rows in one pass
+and 12 in the other, agreeing on 6. At temperature 0 the provider still routes differently,
+and whether the model bothers to quote a boilerplate admissibility sentence moves with it.
+Read the union rather than either file alone, and say that two passes found nothing rather
+than that nothing is there.
 
 - `adjudication_20260915.json` - every one of the 23 flagged rows read in context, with a
   verdict and a reason. The leak tier holds 10 of 10; two review rows were upgraded. Note
