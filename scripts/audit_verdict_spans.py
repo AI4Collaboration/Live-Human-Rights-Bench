@@ -122,10 +122,12 @@ def main():
     print(f"Detector: {args.model}   instances: {len(cases)}   "
           f"prefix: {MAX_CASE_CHARS:,} characters ({truncated} judgments truncated)\n")
 
-    # Rows are keyed by the prompt as well as the case, so an amended question cannot
-    # resume rows that answered the earlier one. Changing the template changes the key,
-    # the old rows are simply not found, and the report below counts only this prompt's.
-    prompt = prompt_digest()
+    # Rows are keyed by the prompt and the input as well as the case, so neither an
+    # amended question nor a repaired corpus can resume rows that answered the earlier
+    # one. Both change the key, the old rows are simply not found, and the report below
+    # counts only rows that answer this prompt about this text. The corpus half is not
+    # hypothetical: 799 of these 1,000 rows changed under the 15 Sep input repair.
+    prompt = f"{prompt_digest()}:{digest(raw)[:12]}"
     checkpoint = Checkpoint(args.out + ".jsonl", enabled=not args.no_resume)
     if checkpoint.resumed:
         print(f"Resuming: {checkpoint.resumed} already recorded\n")
@@ -165,7 +167,8 @@ def main():
         "scope": "Prompt-level verdict leakage in the evaluated prefix; not pretraining contamination",
         "status": "CANDIDATES_WITH_EVIDENCE_NOT_AN_ADJUDICATED_RATE",
         "detector": args.model,
-        "prompt_digest": prompt,
+        "run_identity": prompt,
+        "prompt_digest": prompt_digest(),
         "dataset": args.cases,
         "dataset_sha256_lf": digest(raw),
         "max_case_chars": MAX_CASE_CHARS,
