@@ -1,5 +1,11 @@
 # PIPELINE.md — Live HUDOC ingestion and eval-set construction
 
+**Current evaluation selection:** use the frozen, year-balanced
+`data/processed/echr_unified.json` pool with `summaries_dsv41flash.json` for summary
+arms. [Dataset contract](DATA_SPLITS.md#current-evaluation-pool-selected-2026-09-15).
+The ingestion and source-corpus builds below do not automatically replace this
+selected pool; a refresh requires a new manifest and separate result checkpoints.
+
 The "Live" part of LiveHumanRightsBench: a self-refreshing, contamination-controlled
 data pipeline that turns the ECtHR's steady output into evaluation material. As new
 judgments are published on HUDOC, the pipeline ingests them, removes verdict leakage,

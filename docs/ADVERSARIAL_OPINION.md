@@ -2,6 +2,11 @@
 
 ## Adversarial Opinion Design (Section 5)
 
+**Evaluation pool:** use the same year-balanced `data/processed/echr_unified.json`
+instances as systematic perturbation, identified by `(item_id, article_full)`.
+The [dataset contract](../DATA_SPLITS.md#current-evaluation-pool-selected-2026-09-15)
+fixes the input population; no separate Grok-associated pool is used for Section 5.
+
 **Implementation status (2026-09-14): prompts can be previewed offline; the experiment runner is not implemented.** The versioned [prompt pack](../configs/adversarial_opinion_prompts.json) specifies single-turn and multi-turn messages. The runnable `--rq rq3` experiment remains fixed-prompt reconsideration, not this four-trigger, small-to-large evaluation. See the [README quickstart](../README.md#start-here-part-3-adversarial-opinion-and-sycophancy) for exact prompts, offline checks and launch prerequisites.
 
 Can a small model persuade a larger model to change its judgment without new evidence? We test this in case-review conversations, comparing a single challenge with repeated and response-dependent challenges. The target first judges the case under a common prompt. Challenges then arrive as user messages; the case record and target provision remain fixed.

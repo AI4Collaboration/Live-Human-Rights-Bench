@@ -11,14 +11,14 @@ Summaries are a property of the corpus and the summariser, not of the judge, so 
 are built once here and every runner consumes the file:
 
     python scripts/build_summaries.py \
-      --cases data/processed/livehrb_1k.json \
-      --summarizer x-ai/grok-4.6 \
+      --cases data/processed/echr_unified.json \
+      --summarizer deepseek/deepseek-v4.1-flash \
       --base-url https://openrouter.ai/api/v1 \
       --api-key-env OPENROUTER_API_KEY \
-      --out data/processed/summaries_grok46.json
+      --out data/processed/summaries_dsv41flash.json
 
-Work is deduplicated by judgment (19.6% of judgments appear under more than one
-article) and checkpointed per (judgment, version), so an interrupted build resumes.
+Work is deduplicated by judgment across case-article instances and checkpointed
+per (judgment, version), so an interrupted build resumes.
 Failed calls are deliberately not checkpointed: they produced nothing usable, so a
 rerun should retry them.
 """
@@ -103,9 +103,10 @@ def rescreen(path, judgments):
 
 def main():
     p = argparse.ArgumentParser(description="Build shared case summaries")
-    p.add_argument("--cases", required=True, help="cases JSON from build_livehrb_input.py")
+    p.add_argument("--cases", required=True,
+                   help="cases JSON, normally data/processed/echr_unified.json")
     p.add_argument("--summarizer", required=True,
-                   help="fully qualified slug, e.g. x-ai/grok-4.6. No default: a "
+                   help="fully qualified slug, e.g. deepseek/deepseek-v4.1-flash. No default: a "
                         "silent default is how the judge model ended up summarising.")
     p.add_argument("--base-url", default="https://openrouter.ai/api/v1")
     p.add_argument("--api-key-env", default="OPENROUTER_API_KEY")

@@ -6,9 +6,10 @@
 #SBATCH --mem=8G
 #SBATCH --output=resummarize_rescore_%j.log
 
-# Vladimir's summary fix: rebuild summaries with a non-roster summariser (grok-4.6) on the
-# re-cut evaluation set, then re-score the summary arm (rq1) for all 8 models.
+# Rebuild DeepSeek v4.1 Flash summaries on the selected year-balanced evaluation
+# set, then re-score baseline and the summary arm (rq1) for all 8 models.
 set -uo pipefail
+OUT=${OUT:-data/experiments/unified_dsv41flash_rescore}
 export PYTHONUNBUFFERED=1
 export MLFLOW_TRACKING_URI=file:./mlruns
 echo "=== START $(date) on $(hostname) ==="
@@ -42,12 +43,12 @@ for M in openai/gpt-5.6-sol anthropic/claude-opus-4.8 google/gemini-3.5-flash \
     --cases data/processed/echr_unified.json --model "$M" \
     --base-url https://openrouter.ai/api/v1 --api-key-env OPENROUTER_API_KEY \
     --summaries data/processed/summaries_dsv41flash.json \
-    --rq baseline --samples 10 || { echo "WARN: $M baseline failed, skipping rq1"; continue; }
+    --rq baseline --samples 10 --output-dir "$OUT" || { echo "WARN: $M baseline failed, skipping rq1"; continue; }
   echo "--- $M rq1 $(date) ---"
   python experiments/run_perturbation_openai.py \
     --cases data/processed/echr_unified.json --model "$M" \
     --base-url https://openrouter.ai/api/v1 --api-key-env OPENROUTER_API_KEY \
     --summaries data/processed/summaries_dsv41flash.json \
-    --rq rq1 --samples 10 || echo "WARN: $M rq1 non-zero exit"
+    --rq rq1 --samples 10 --output-dir "$OUT" || echo "WARN: $M rq1 non-zero exit"
 done
 echo "=== DONE $(date) ==="

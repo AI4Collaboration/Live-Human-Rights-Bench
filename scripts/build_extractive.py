@@ -5,9 +5,9 @@ Writes the same file shape as scripts/build_summaries.py, so every runner consum
 unchanged -- the arm is run by pointing --summaries at this file instead.
 
     python scripts/build_extractive.py \
-      --cases data/processed/livehrb_1k.json \
-      --summarizer x-ai/grok-4.6 --api-key-env OPENROUTER_API_KEY \
-      --out data/processed/summaries_extractive.json
+      --cases data/processed/echr_unified.json \
+      --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY \
+      --out data/processed/summaries_extractive_dsv41flash.json
 
 What it buys: the abstractive arm confounds omission with invention. Here the model
 may only choose paragraphs, so any effect is omission alone, and the omission is the

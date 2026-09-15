@@ -13,9 +13,11 @@
 # OUT, CASES, SUMMARIES.
 set -uo pipefail
 
-CASES=${CASES:-data/processed/livehrb_1k.json}
-SUMMARIES=${SUMMARIES:-data/processed/summaries_grok46.json}
-OUT=${OUT:-data/experiments/full_scale}
+# Canonical evaluation pool: approximately equal case counts across years.
+CASES=${CASES:-data/processed/echr_unified.json}
+SUMMARIES=${SUMMARIES:-data/processed/summaries_dsv41flash.json}
+# Keep the unified/DeepSeek run separate from historical Grok checkpoints.
+OUT=${OUT:-data/experiments/unified_dsv41flash}
 SAMPLES=${SAMPLES:-3}
 CONC=${CONC:-8}   # all eight at once; the gate exists for smaller reruns
 # Which arms to run. Defaulting to "all" wasted a run: pointing --summaries at the
@@ -23,7 +25,7 @@ CONC=${CONC:-8}   # all eight at once; the gate exists for smaller reruns
 # full case text and not the summaries at all -- an exact duplicate of work already
 # paid for, and the most expensive arm of the four.
 RQ=${RQ:-all}
-LOGS=${LOGS:-logs/roster}
+LOGS=${LOGS:-logs/unified_dsv41flash}
 
 # Workers per model, sized from measured single-call latency so every model finishes
 # at roughly the same time. A flat worker count would leave the roster waiting on

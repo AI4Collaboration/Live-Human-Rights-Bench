@@ -11,7 +11,7 @@ So each item shows one paragraph of the Court's reasoning and one fact paragraph
 cites, and asks only whether the reasoning really rests on that fact.
 
     python scripts/build_annotation.py --full-texts full_texts.csv \
-        --cases data/processed/livehrb_1k.json --out annotation
+        --cases data/processed/echr_unified.json --out annotation
 
 Writes annotation_sheet.csv, annotation_INSTRUCTIONS.md and annotation_key.csv.
 The key holds the control answers and must not go to the annotators.

@@ -3,11 +3,11 @@
 
     python scripts/build_atomic_coverage.py \
         --full-texts data/processed/annot_full_texts.csv \
-        --summaries data/processed/summaries_grok46.json \
+        --summaries data/processed/summaries_dsv41flash.json \
         --variant abstractive \
         --model google/gemini-3.5-flash \
         --api-key-env OPENROUTER_API_KEY \
-        --out data/experiments/coverage_atomic
+        --out data/experiments/coverage_atomic_dsv41flash
 
 Run it once per summary variant; the two runs share nothing but the source, so the
 abstractive and extractive numbers are comparable claim for claim.
