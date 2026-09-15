@@ -1,0 +1,5505 @@
+{
+  "scope": "Prompt-level verdict leakage in the evaluated prefix; not pretraining contamination",
+  "status": "CANDIDATES_WITH_EVIDENCE_NOT_AN_ADJUDICATED_RATE",
+  "detector": "deepseek/deepseek-v4.1-flash",
+  "run_identity": "0668476bcff9:2fbf2302d5e0",
+  "prompt_digest": "0668476bcff9",
+  "dataset": "../cases_static2k_cutrows.json",
+  "dataset_sha256_lf": "2fbf2302d5e008a8353d7ffa30c13330cf0ddc04911ca105945752956a49ade3",
+  "max_case_chars": 50000,
+  "instances_scanned": 311,
+  "instances_failed": 0,
+  "tiers": {
+    "clean": 238,
+    "review": 46,
+    "leak": 27
+  },
+  "categories": {
+    "court_admissibility_only": 161,
+    "party_position": 1,
+    "other_case_or_domestic_court": 1,
+    "court_conclusion_this_case": 73,
+    "earlier_instance_same_case": 1
+  },
+  "unverifiable_quotes": 0,
+  "prompt_tokens": 2570136,
+  "completion_tokens": 1025591,
+  "tokens_note": "Recorded rows only; attempts that failed outright are not counted.",
+  "process_prompt_tokens": 2570136,
+  "process_completion_tokens": 1025591,
+  "tier_definitions": {
+    "court_conclusion_this_case": "leak",
+    "earlier_instance_same_case": "leak",
+    "court_admissibility_only": "review",
+    "party_position": "review",
+    "other_case_or_domestic_court": "clean",
+    "unlabelled": "review"
+  },
+  "next_step": "Human adjudication of a stratified sample against these spans, then an ablation that blanks them and rescores, which is what decides whether the leak is material.",
+  "rows": [
+    {
+      "item_id": "001-199382",
+      "case_name": "CASE OF ABDI IBRAHIM v. NORWAY",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "Viewing the case a whole and adding to the other particular reasons that in the instant case militated in favour of maintaining the possibility of some contact between X and the applicant, notably relating to their cultural and religious background, the above considerations enable the Court to conclude that in the course of the case culminating in X’s adoption, insufficient weight was attached to the aim that the applicant and X enjoy family life.",
+          "category": "court_conclusion_this_case",
+          "start": 44293,
+          "end": 44744,
+          "tier": "leak"
+        },
+        {
+          "quote": "Emphasising the gravity of the interference and the seriousness of the interests at stake, the Court does not consider that the decision-making process leading to the impugned decision to withdraw the applicant’s parental responsibilities for X and authorise his adoption, was conducted so as to ensure that all views and interests of the applicant were duly taken into account.",
+          "category": "court_conclusion_this_case",
+          "start": 44745,
+          "end": 45123,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9683,
+      "completion_tokens": 7647
+    },
+    {
+      "item_id": "001-242436",
+      "case_name": "CASE OF BILYAVSKA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court further notes that this part of the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention. It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 29270,
+          "end": 29481,
+          "tier": "review"
+        },
+        {
+          "quote": "Having regard to the fact that the applicant’s initial eviction claim was submitted under the provisions of both the Housing Code and the Civil Code but was dismissed without any explanation as to why the Civil Code was not applied, and seeing that the applicant’s second attempt to obtain eviction has not resulted in a decision for more than four years, the applicant cannot be said to have failed to exhaust domestic remedies as argued by the Government.",
+          "category": "court_admissibility_only",
+          "start": 38207,
+          "end": 38664,
+          "tier": "review"
+        },
+        {
+          "quote": "While it is not the Court’s task to deal with isolated errors of fact or law in the domestic courts’ decisions, in the present case they appear manifestly unreasonable in the absence of even succinct reasoning on the above points.",
+          "category": "court_conclusion_this_case",
+          "start": 40478,
+          "end": 40708,
+          "tier": "leak"
+        },
+        {
+          "quote": "It is further noteworthy that by their decisions the domestic courts essentially validated a very heavy burden on the applicant despite her undisputed ownership rights and the evidence she submitted regarding her housing needs and the behaviour of the defendants and did so without any attempt to assess the balance to be found between the interests at stake.",
+          "category": "court_conclusion_this_case",
+          "start": 41645,
+          "end": 42004,
+          "tier": "leak"
+        },
+        {
+          "quote": "Having regard to the above, the Court finds it difficult to accept that in the present case the domestic courts complied with their positive duty under Article 1 of Protocol no. 1 to the Convention to adjudicate private property disputes in a manner that is not arbitrary or manifestly unreasonable.",
+          "category": "court_conclusion_this_case",
+          "start": 42008,
+          "end": 42307,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 19058,
+      "completion_tokens": 13497
+    },
+    {
+      "item_id": "001-242786",
+      "case_name": "CASE OF BOGDAN SHEVCHUK v. UKRAINE",
+      "article": "34",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "In the present case, having regard to the very specific facts and the parties’ submissions, the Court finds that there exist sufficient elements which all, taken together, render credible the applicant’s allegation about an “offer” having been made, and that there is sufficient indirect proof of undue pressure on the applicant in the exercise of his right of individual application, contrary to the requirements of Article 34 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 27413,
+          "end": 27859,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7651,
+      "completion_tokens": 3382
+    },
+    {
+      "item_id": "001-242786",
+      "case_name": "CASE OF BOGDAN SHEVCHUK v. UKRAINE",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that these complaints are neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 29165,
+          "end": 29315,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 29316,
+          "end": 29359,
+          "tier": "review"
+        },
+        {
+          "quote": "It is clear that after the Court of Appeal transferred the case to the Bilgorod-Dnistrovskyi Court of Odesa Region on 17 August 2016, the Kyivskyi District Court no longer had jurisdiction to continue dealing with the case.",
+          "category": "court_conclusion_this_case",
+          "start": 31781,
+          "end": 32004,
+          "tier": "leak"
+        },
+        {
+          "quote": "The foregoing considerations are sufficient to enable the Court to conclude that when the Kyivskyi District Court extended the applicant’s detention on 22 August 2016 it was acting in excess of jurisdiction and that the issue under consideration amounts to a “gross and obvious irregularity” which in the circumstances of the present case could not be remedied by the domestic appeal courts in the course of the judicial review proceedings.",
+          "category": "court_conclusion_this_case",
+          "start": 32350,
+          "end": 32790,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the circumstances of the case and in view of the Court’s earlier finding that the applicant’s detention on the basis of the court order of 22 August 2016 was not lawful, the Court does not consider it necessary to examine separately the applicant’s complaint under Article 5 § 4 of the Convention (see for example Roman Petrov v. Russia, no. 37311/08, § 60, 15 December 2015).",
+          "category": "court_conclusion_this_case",
+          "start": 32927,
+          "end": 33306,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7651,
+      "completion_tokens": 6417
+    },
+    {
+      "item_id": "001-210078",
+      "case_name": "CASE OF CENTRUM FÖR RÄTTVISA v. SWEDEN",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Chamber unanimously declared the application admissible and held that there had been no violation of Article 8 of the Convention and that there was no need to examine separately the complaint under Article 13.",
+          "category": "earlier_instance_same_case",
+          "start": 2214,
+          "end": 2427,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10571,
+      "completion_tokens": 1990
+    },
+    {
+      "item_id": "001-229322",
+      "case_name": "CASE OF CHEREMSKYY v. UKRAINE",
+      "article": "11",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court considers that the prohibition on the applicant’s holding the peaceful assembly he planned to hold for an indefinite period constituted an interference with his rights guaranteed by Article 11 of the Convention, regardless of whether he actually attempted to commence it or not on the day before the ban was imposed.",
+          "category": "court_conclusion_this_case",
+          "start": 22126,
+          "end": 22452,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court notes that no new legislation on freedom of assembly has been adopted in Ukraine since its above conclusions in Vyerentsov (ibid.) and, therefore, sees no reasons to depart from them in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 27868,
+          "end": 28081,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the light of the above, the Court considers the restriction of the applicant’s right to hold an assembly was not based on legal provisions that met the Convention requirements of quality of the law.",
+          "category": "court_conclusion_this_case",
+          "start": 32650,
+          "end": 32851,
+          "tier": "leak"
+        },
+        {
+          "quote": "Having reached this conclusion, the Court does not need to verify whether the other two requirements (legitimate aim and necessity of the interference) set forth in Article 11 § 2 have been complied with.",
+          "category": "court_conclusion_this_case",
+          "start": 32855,
+          "end": 33059,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 20505,
+          "end": 20652,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 14242,
+      "completion_tokens": 10166
+    },
+    {
+      "item_id": "001-225772",
+      "case_name": "CASE OF GOLOVIN v. UKRAINE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "However, it cannot agree with the Supreme Court’s characterisation of the issue.",
+          "category": "court_conclusion_this_case",
+          "start": 11030,
+          "end": 11110,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Supreme Court, while making a general statement about the Constitutional Court being primarily a political body, did not comment on how that applied specifically in the applicant’s case, given that he had been dismissed specifically for breach of his judicial oath.",
+          "category": "court_conclusion_this_case",
+          "start": 11111,
+          "end": 11380,
+          "tier": "leak"
+        },
+        {
+          "quote": "Nothing in the present case or in the domestic decisions allows the Court to reach a different conclusion from that which it reached in Ovcharenko and Kolos (cited above, §§ 101-10), namely that the framework in question lacked the requisite clarity and foreseeability and that the domestic decisions applying it in the applicant’s case were not sufficiently reasoned.",
+          "category": "court_conclusion_this_case",
+          "start": 12051,
+          "end": 12419,
+          "tier": "leak"
+        },
+        {
+          "quote": "While very detailed and clear analysis was normally needed to demonstrate, in such circumstances, that all relevant arguments were taken into consideration in the application of the Constitution and the law, no such analysis was provided by Parliament or the Supreme Court (ibid., § 103).",
+          "category": "court_conclusion_this_case",
+          "start": 13257,
+          "end": 13545,
+          "tier": "leak"
+        },
+        {
+          "quote": "Those considerations are also fully relevant in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 13549,
+          "end": 13614,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6830,
+      "completion_tokens": 16114
+    },
+    {
+      "item_id": "001-225772",
+      "case_name": "CASE OF GOLOVIN v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 10331,
+          "end": 10374,
+          "tier": "review"
+        },
+        {
+          "quote": "Nothing in the present case or in the domestic decisions allows the Court to reach a different conclusion from that which it reached in Ovcharenko and Kolos (cited above, §§ 101-10), namely that the framework in question lacked the requisite clarity and foreseeability and that the domestic decisions applying it in the applicant’s case were not sufficiently reasoned.",
+          "category": "court_conclusion_this_case",
+          "start": 12051,
+          "end": 12419,
+          "tier": "leak"
+        },
+        {
+          "quote": "While very detailed and clear analysis was normally needed to demonstrate, in such circumstances, that all relevant arguments were taken into consideration in the application of the Constitution and the law, no such analysis was provided by Parliament or the Supreme Court (ibid., § 103).",
+          "category": "court_conclusion_this_case",
+          "start": 13257,
+          "end": 13545,
+          "tier": "leak"
+        },
+        {
+          "quote": "Those considerations are also fully relevant in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 13549,
+          "end": 13614,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6830,
+      "completion_tokens": 18817
+    },
+    {
+      "item_id": "001-207408",
+      "case_name": "CASE OF GUSEV v. UKRAINE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 13316,
+          "end": 13463,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 13464,
+          "end": 13505,
+          "tier": "review"
+        },
+        {
+          "quote": "In view of the above, the Court considers that the lack of clear reasons for the requalification of the applicant’s claim by the Court of Appeal – which initially twice allowed that claim (see paragraph 10.   above) – and its resulting conclusion against him without providing him with a possibility to submit relevant evidence and arguments following that requalification cannot but be seen as fully unjustified and contrary to the Article 6 requirement of fairness of civil proceedings and to the principle of adversarial proceedings.",
+          "category": "court_conclusion_this_case",
+          "start": 22247,
+          "end": 22783,
+          "tier": "leak"
+        },
+        {
+          "quote": "Having examined all the materials submitted to it and having regard to the criteria established in its case-law on the subject (see, among many other authorities, Frydlender v. France [GC], no. 30979/96, § 43, ECHR 2000-VII), the Court considers that the above-mentioned length of the proceedings was not excessive or unreasonable, especially taking into account that during the above period the case was pending before the courts of three levels of jurisdiction.",
+          "category": "court_conclusion_this_case",
+          "start": 23856,
+          "end": 24319,
+          "tier": "leak"
+        },
+        {
+          "quote": "In view of the above, the Court considers that the complaint is manifestly ill-founded and must be rejected, in accordance with Article 35 §§ 3 (a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 24969,
+          "end": 25141,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6604,
+      "completion_tokens": 5172
+    },
+    {
+      "item_id": "001-245689",
+      "case_name": "CASE OF GUYVAN v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The foregoing considerations are sufficient to enable the Court to conclude that the applicant was denied State protection before a judicial body that would have determined whether the criteria in respect of the monitoring of his communications in the workplace had been met (see paragraphs 37 and 38 above).",
+          "category": "court_conclusion_this_case",
+          "start": 26181,
+          "end": 26489,
+          "tier": "leak"
+        },
+        {
+          "quote": "It follows that the State failed to fulfil its positive obligations under Article 8 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 26490,
+          "end": 26592,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5842,
+      "completion_tokens": 5980
+    },
+    {
+      "item_id": "001-242784",
+      "case_name": "CASE OF IVAN KARPENKO v. UKRAINE (No. 2)",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that this part of the application is not manifestly ill-founded within the meaning of Article 35 § 3 (a) of the Convention or inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 22472,
+          "end": 22648,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 13357,
+          "end": 13398,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court sees no reason to reach a different conclusion in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 27388,
+          "end": 27465,
+          "tier": "leak"
+        },
+        {
+          "quote": "It follows that the prison administration breached the legal ban on monitoring prisoners’ correspondence with domestic courts.",
+          "category": "court_conclusion_this_case",
+          "start": 27466,
+          "end": 27592,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6324,
+      "completion_tokens": 4082
+    },
+    {
+      "item_id": "001-222411",
+      "case_name": "CASE OF KOROTYUK v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "Therefore, the applicant had a “possession” within the meaning of Article 1 of Protocol No. 1 to the Convention and this provision applies.",
+          "category": "court_admissibility_only",
+          "start": 16238,
+          "end": 16377,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the complaint under examination is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 17159,
+          "end": 17331,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 17332,
+          "end": 17373,
+          "tier": "review"
+        },
+        {
+          "quote": "It follows from the foregoing that, although copyright disputes are in general of civil law nature, in the specific circumstances of the present case, which concerned an alleged criminal offence, the respondent State was under a positive duty under Article 1 of Protocol No. 1 to conduct an effective criminal investigation.",
+          "category": "court_conclusion_this_case",
+          "start": 24765,
+          "end": 25089,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court finds, in view of the combination of those circumstances, taken cumulatively, that the State failed to fulfil its positive obligations in respect of the applicant’s property on account of flagrant and serious deficiencies that characterised the criminal investigation.",
+          "category": "court_conclusion_this_case",
+          "start": 30526,
+          "end": 30804,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6919,
+      "completion_tokens": 6618
+    },
+    {
+      "item_id": "001-247354",
+      "case_name": "CASE OF KOSMATSKA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "Nevertheless, the Court considers it unnecessary to rule on those matters as the interference is in any case disproportionate for the reasons stated below (see, mutatis mutandis, Batkivska Turbota Foundation, cited above, §§ 57 and 62, and Drozdyk and Mikula, cited above, § 47).",
+          "category": "court_conclusion_this_case",
+          "start": 30800,
+          "end": 31079,
+          "tier": "leak"
+        },
+        {
+          "quote": "On the basis of the above, the Court does not consider it justified in terms of the requisite proportionality of the interference and the need to maintain a fair balance between the interests at stake, to require the applicant to sue the initial owners of the land in question in order to obtain compensation.",
+          "category": "court_conclusion_this_case",
+          "start": 36679,
+          "end": 36988,
+          "tier": "leak"
+        },
+        {
+          "quote": "It follows that the interference with the applicant’s property rights cannot be said to have been a proportionate measure.",
+          "category": "court_conclusion_this_case",
+          "start": 36989,
+          "end": 37111,
+          "tier": "leak"
+        },
+        {
+          "quote": "In view of the considerations above, the Court concludes that the interference with the applicant’s property rights, apart from raising doubts as to its lawfulness, imposed a disproportionate burden on her.",
+          "category": "court_conclusion_this_case",
+          "start": 38864,
+          "end": 39070,
+          "tier": "leak"
+        },
+        {
+          "quote": "There has, accordingly, been a violation of Article 1 of Protocol No. 1 to the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 39071,
+          "end": 39161,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8754,
+      "completion_tokens": 5482
+    },
+    {
+      "item_id": "001-212137",
+      "case_name": "CASE OF LYSYUK v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "It follows that this part of the application is manifestly ill-founded and must be rejected pursuant to Article 35 §§ 3 (a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 18090,
+          "end": 18238,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 22883,
+          "end": 22924,
+          "tier": "review"
+        },
+        {
+          "quote": "There has accordingly been an interference by public authorities with the applicant’s private life within the meaning of Article 8 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 23748,
+          "end": 23897,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court, therefore, has no choice but to accept that the recording was carried out by the police without judicial authorisation.",
+          "category": "court_conclusion_this_case",
+          "start": 24260,
+          "end": 24390,
+          "tier": "leak"
+        },
+        {
+          "quote": "The present case concerns the same domestic legal framework and the Court sees no reason to reach a different conclusion.",
+          "category": "court_conclusion_this_case",
+          "start": 24585,
+          "end": 24706,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5871,
+      "completion_tokens": 4283
+    },
+    {
+      "item_id": "001-238325",
+      "case_name": "CASE OF MARTINEZ ALVARADO v. THE NETHERLANDS",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court considers that in view of those facts and circumstances, it has been sufficiently demonstrated that the applicant’s disability incapacitated him to the extent that he was compelled to rely on his sisters’ care and support in his daily life, and concludes that “additional elements of dependency, other than normal emotional ties” have been shown to exist.",
+          "category": "court_conclusion_this_case",
+          "start": 46229,
+          "end": 46594,
+          "tier": "leak"
+        },
+        {
+          "quote": "In view of the foregoing, the Court finds that the relationship between the applicant and his sisters constituted “family life” within the meaning of Article 8, which provision is therefore applicable ratione materiae in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 46599,
+          "end": 46837,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court further notes that this complaint is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 46842,
+          "end": 46997,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 46998,
+          "end": 47039,
+          "tier": "review"
+        },
+        {
+          "quote": "Given the above considerations (see paragraphs 46-51 above), the Court finds that the analysis of applicability of Article 8 of the Convention – and, consequently, the assessment of whether the respondent State complied with a positive obligation under that provision – was not carried out at the domestic level in a manner consistent with the Convention and the Court’s case-law (see  L. v. the Netherlands, no. 45582/99, §§ 40-42, ECHR 2004-IV).",
+          "category": "court_conclusion_this_case",
+          "start": 48427,
+          "end": 48874,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10985,
+      "completion_tokens": 3910
+    },
+    {
+      "item_id": "001-229601",
+      "case_name": "CASE OF O.J. AND J.O. v. GEORGIA AND RUSSIA",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that these complaints are neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 38672,
+          "end": 38822,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 38823,
+          "end": 38866,
+          "tier": "review"
+        },
+        {
+          "quote": "The Georgian Government submitted that they did not contest that the applicants had been unlawfully arrested and had remained in unlawful detention between 15 March 2012 and 10 March 2016.",
+          "category": "party_position",
+          "start": 39562,
+          "end": 39750,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court held that the applicants’ arrest and detention had been unlawful for the purposes of that provision, in violation of Article 5 § 1 (a) and (c) of the Convention.",
+          "category": "other_case_or_domestic_court",
+          "start": 41107,
+          "end": 41278,
+          "tier": "clean"
+        },
+        {
+          "quote": "In the absence of any new and pertinent information to the contrary, the Court considers that the conclusion reached in Mamasakhlisi and Others (ibid.) is also valid in the present case.",
+          "category": "court_conclusion_this_case",
+          "start": 41283,
+          "end": 41469,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9351,
+      "completion_tokens": 7904
+    },
+    {
+      "item_id": "001-245120",
+      "case_name": "CASE OF RELIGIOUS COMMUNITY OF SVYATO-USPENSKYY PARISH OF RIVNE EPARCHY OF UKRAINIAN ORTHODOX CHURCH IN PTYCHA VILLAGE OF DUBENSKYY DISTRICT v. UKRAINE",
+      "article": "9",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court concludes that it has not been shown that the authorities took sufficient steps to ensure the peaceful enjoyment of the rights guaranteed by Article 9 of the Convention by the applicant community.",
+          "category": "court_conclusion_this_case",
+          "start": 48052,
+          "end": 48258,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11079,
+      "completion_tokens": 7281
+    },
+    {
+      "item_id": "001-212897",
+      "case_name": "CASE OF SHABELNIK v. UKRAINE (No. 3)",
+      "article": "7",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "Thus, the Court concludes that Article 7 is applicable in the present case and notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 33275,
+          "end": 33491,
+          "tier": "review"
+        },
+        {
+          "quote": "Therefore, it cannot be considered that the applicant’s life sentence had no legal basis following the quashing of the applicant’s conviction of K.’s murder: while this development undoubtedly resulted in the elimination of two of the aggravating factors, which concerned situations where the perpetrator had already committed a previous murder, three other aggravating factors remained.",
+          "category": "court_conclusion_this_case",
+          "start": 40876,
+          "end": 41263,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court considers that in the light of the above considerations, the Supreme Court cannot be said to have imposed a new punishment on the applicant and that, therefore, no issue arises as to the lawfulness of the applicant’s sentence for alleged failure by the Supreme Court to address, in 2018, the issue of the statute of limitation in respect of the criminal case against the applicant (see paragraph 30 above).",
+          "category": "court_conclusion_this_case",
+          "start": 43000,
+          "end": 43416,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9932,
+      "completion_tokens": 3518
+    },
+    {
+      "item_id": "001-201329",
+      "case_name": "CASE OF SIGRÍÐUR ELÍN SIGFÚSDÓTTIR v. ICELAND",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The foregoing considerations are sufficient to enable the Court to conclude that the participation of Justice V.M.M. in the case rendered the Supreme Court proceedings partial.",
+          "category": "court_conclusion_this_case",
+          "start": 42939,
+          "end": 43115,
+          "tier": "leak"
+        },
+        {
+          "quote": "Therefore, in the context of the present case, the impartiality of the Supreme Court could have been open to genuine doubt.",
+          "category": "court_conclusion_this_case",
+          "start": 43486,
+          "end": 43609,
+          "tier": "leak"
+        },
+        {
+          "quote": "It therefore concludes that this complaint is manifestly ill-founded and must be declared inadmissible pursuant to Article 35 §§ 3(a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 45666,
+          "end": 45824,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10591,
+      "completion_tokens": 6088
+    },
+    {
+      "item_id": "001-219195",
+      "case_name": "CASE OF STANISLAV LUTSENKO  v. UKRAINE (No. 2)",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that the present complaint is not manifestly ill‑founded within the meaning of Article 35 § 3 (a) of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 23473,
+          "end": 23605,
+          "tier": "review"
+        },
+        {
+          "quote": "It further notes that it is not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 23606,
+          "end": 23672,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 23673,
+          "end": 23714,
+          "tier": "review"
+        },
+        {
+          "quote": "In the Court’s view, the above is sufficient to conclude that the impugned disciplinary sanctions that led to the imposition of a stricter prison regime on the applicant as well as the impugned decisions to transfer the applicant repeatedly to other prisons had no legal basis.",
+          "category": "court_conclusion_this_case",
+          "start": 33367,
+          "end": 33644,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court thus finds that the interference complained of by the applicant was unlawful and, therefore, there is no need to determine whether the interference pursued a legitimate aim and, if so, whether it was proportionate to the aim pursued.",
+          "category": "court_conclusion_this_case",
+          "start": 33648,
+          "end": 33891,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8373,
+      "completion_tokens": 3186
+    },
+    {
+      "item_id": "001-223654",
+      "case_name": "CASE OF UDOVYCHENKO v. UKRAINE",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court further notes that this complaint is not manifestly ill‑founded within the meaning of Article 35 § 3 (a) of the Convention or inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 16681,
+          "end": 16851,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 16852,
+          "end": 16893,
+          "tier": "review"
+        },
+        {
+          "quote": "In the light of the material before it, the Court finds that in the absence of any allegation of bad faith on the applicant’s part, to require her to prove the truthfulness of her statement about the circumstances of the road accident she had witnessed – a requirement that would have been very difficult, if not impossible, to fulfil – was not consistent with the principles laid down in the Court’s case-law.",
+          "category": "court_conclusion_this_case",
+          "start": 32013,
+          "end": 32423,
+          "tier": "leak"
+        },
+        {
+          "quote": "As the domestic courts limited their analysis to the question whether the applicant had proved that B.’s son had come out of the driver’s seat after the accident occurred, the reasons they gave cannot be regarded as relevant and sufficient to justify the interference at issue.",
+          "category": "court_conclusion_this_case",
+          "start": 32424,
+          "end": 32701,
+          "tier": "leak"
+        },
+        {
+          "quote": "In sum, the Court concludes that the national authorities’ reaction to the applicant’s statement concerning the circumstances of the road accident she had witnessed was disproportionate to the legitimate aim pursued, and was therefore not necessary in a democratic society within the meaning of Article 10 § 2 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 33522,
+          "end": 33850,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 15170,
+      "completion_tokens": 12319
+    },
+    {
+      "item_id": "001-222898",
+      "case_name": "CASE OF UGULAVA v. GEORGIA",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court notes that these complaints are neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43997,
+          "end": 44147,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 44148,
+          "end": 44191,
+          "tier": "review"
+        },
+        {
+          "quote": "Nothing in that material appears to cast doubt on the reasonableness of the suspicion against the applicant, either on the facts or as a matter of criminal law (see Merabishvili, cited above, § 187, with further references therein).",
+          "category": "court_conclusion_this_case",
+          "start": 49707,
+          "end": 49939,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11134,
+      "completion_tokens": 5814
+    },
+    {
+      "item_id": "001-206511",
+      "case_name": "CASE OF YUKHYMOVYCH v. UKRAINE",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The case concerns the death of the applicant’s son during an arrest attempt and the domestic authorities’ failure to conduct a prompt and effective investigation into the matter in breach of Article 2 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 1082,
+          "end": 1301,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the light of the overall length of the criminal investigation and the shortcomings described above, in particular, the consistent failure of the investigative authorities to clarify the key question of the investigation as to whether the applicant’s son posed a threat that could have justified the use of force, the Court concludes that the investigation into the circumstances surrounding the death of the applicant’s son was not effective.",
+          "category": "court_conclusion_this_case",
+          "start": 35442,
+          "end": 35887,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8324,
+      "completion_tokens": 7828
+    },
+    {
+      "item_id": "001-247833",
+      "case_name": "CASE OF Z v. ICELAND",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court therefore considers that this complaint is neither manifestly ill-founded nor inadmissible on any other ground listed in Article 35 of the Convention and must be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 20099,
+          "end": 20291,
+          "tier": "review"
+        },
+        {
+          "quote": "In doing so, they failed to carefully assess, in line with the domestic emphasis on consent and the Court’s case-law on sexual autonomy, whether O. could in light of the circumstances have assumed that consent had been given.",
+          "category": "court_conclusion_this_case",
+          "start": 31965,
+          "end": 32190,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the present case, the authorities focused their analysis on whether O. had formed the requisite mental state, without attaching due significance to the question whether, in view of the sequence of events he had admitted, he had any reason to assume that the applicant consented to his touching her breasts.",
+          "category": "court_conclusion_this_case",
+          "start": 33411,
+          "end": 33720,
+          "tier": "leak"
+        },
+        {
+          "quote": "The crucial element was not whether O. stopped upon perceiving discomfort, but that he had initiated sexual contact without any prior indication of consent from the applicant who, while having reached the minimum age for sexual consent, was still a minor.",
+          "category": "court_conclusion_this_case",
+          "start": 34128,
+          "end": 34383,
+          "tier": "leak"
+        },
+        {
+          "quote": "The failure to evaluate the admitted touching against the consent-based standard articulated in both the domestic and international legal framework (see paragraphs 24-25 and 38-39 above) meant that the investigation was not geared towards establishing whether there had been non-consensual sexual contact and thus did not secure in practice the protection of the applicant’s physical and psychological integrity.",
+          "category": "court_conclusion_this_case",
+          "start": 34384,
+          "end": 34796,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7713,
+      "completion_tokens": 7844
+    },
+    {
+      "item_id": "001-245686",
+      "case_name": "CASE OF ZAKAIDZE v. GEORGIA",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court, accordingly, does not consider that the forensic examination in the present case was flawed so as to undermine the investigation’s ability to establish all the relevant circumstances of the assault.",
+          "category": "court_conclusion_this_case",
+          "start": 40614,
+          "end": 40823,
+          "tier": "leak"
+        },
+        {
+          "quote": "It does not consider, accordingly, that as a consequence of the above omission, albeit regrettable, the applicant was excluded from the proceedings to such a degree as would infringe the minimum standard under Article 3.",
+          "category": "court_conclusion_this_case",
+          "start": 43841,
+          "end": 44061,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Court notes that it is not within its remit to check whether the national courts properly assessed the interplay of mitigating and aggravating circumstances when determining the assailants’ sentences and finds no manifest disproportion between the gravity of the act and the results obtained at domestic level (see paragraph 42 above).",
+          "category": "court_conclusion_this_case",
+          "start": 45444,
+          "end": 45783,
+          "tier": "leak"
+        },
+        {
+          "quote": "That his claim was dismissed on formal grounds without examination on the merits, a conclusion which the Court, given its limited role in interpreting domestic legislation, does not consider manifestly unreasonable or arbitrary, does not raise any issue under Article 3 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 46801,
+          "end": 47089,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the light of all the above-mentioned considerations, and noting, in particular, that the Court did not identify significant flaws in the domestic authorities’ procedural response to the applicant’s arguable claim under Article 3 of the Convention capable of undermining the investigation’s capability of establishing the circumstances of the case or the persons responsible (see S.M. v. Croatia [GC], no.",
+          "category": "court_conclusion_this_case",
+          "start": 47094,
+          "end": 47501,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 20598,
+      "completion_tokens": 19910
+    },
+    {
+      "item_id": "001-247564",
+      "case_name": "CASE OF ČERNÝ AND OTHERS v. THE CZECH REPUBLIC",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "The Court has already found that the applicants did not have such a remedy at their disposal (see paragraphs 50-51 above).",
+          "category": "court_conclusion_this_case",
+          "start": 47232,
+          "end": 47354,
+          "tier": "leak"
+        },
+        {
+          "quote": "An application to the Brno Municipal Court did not meet the criteria of an effective remedy mainly because there was no clear and foreseeable legal procedure requiring data to be sifted and protected material to be removed (see paragraph 72 above).",
+          "category": "court_conclusion_this_case",
+          "start": 47355,
+          "end": 47603,
+          "tier": "leak"
+        },
+        {
+          "quote": "The Government did not point to any other potentially effective domestic remedy.",
+          "category": "court_conclusion_this_case",
+          "start": 47604,
+          "end": 47684,
+          "tier": "leak"
+        },
+        {
+          "quote": "In such circumstances, the Court considers that the applicants had no effective domestic remedy available to them at the material time.",
+          "category": "court_conclusion_this_case",
+          "start": 47689,
+          "end": 47824,
+          "tier": "leak"
+        },
+        {
+          "quote": "This consideration is sufficient for the Court to find a violation of Article 13 of the Convention, read in conjunction with Article 8.",
+          "category": "court_conclusion_this_case",
+          "start": 47829,
+          "end": 47964,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10810,
+      "completion_tokens": 7042
+    },
+    {
+      "item_id": "001-247564",
+      "case_name": "CASE OF ČERNÝ AND OTHERS v. THE CZECH REPUBLIC",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "leak",
+      "spans": [
+        {
+          "quote": "Turning to the circumstances of the present case, the Court finds that the law regulating the extraction of data from seized electronic devices was manifestly neither sufficiently clear and foreseeable to those to whom it was addressed, and nor did it contain sufficient safeguards and procedural guarantees to protect the confidentiality of lawyer-client communications.",
+          "category": "court_conclusion_this_case",
+          "start": 41690,
+          "end": 42061,
+          "tier": "leak"
+        },
+        {
+          "quote": "In the Court’s view, the law in the present case was not foreseeable because its framework was unclear and there were insufficient procedural guarantees for the protection of privileged data on seized electronic devices.",
+          "category": "court_conclusion_this_case",
+          "start": 44613,
+          "end": 44833,
+          "tier": "leak"
+        },
+        {
+          "quote": "The law therefore fell short of the requirements it would have had to fulfil in order to satisfy the criterion that an interference must be in accordance with the law within the meaning of Article 8 § 2 of the Convention.",
+          "category": "court_conclusion_this_case",
+          "start": 44834,
+          "end": 45055,
+          "tier": "leak"
+        },
+        {
+          "quote": "The foregoing considerations are sufficient to enable the Court to conclude that the interference with the applicants’ rights did not have a sufficient basis in domestic law.",
+          "category": "court_conclusion_this_case",
+          "start": 45060,
+          "end": 45234,
+          "tier": "leak"
+        },
+        {
+          "quote": "Having drawn that conclusion, it is not necessary for the Court to review the interference for compliance with the rest of that Article.",
+          "category": "court_conclusion_this_case",
+          "start": 45235,
+          "end": 45371,
+          "tier": "leak"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10810,
+      "completion_tokens": 3954
+    },
+    {
+      "item_id": "001-215716",
+      "case_name": "CASE OF A AND B v. GEORGIA",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9496,
+      "completion_tokens": 14156
+    },
+    {
+      "item_id": "001-220885",
+      "case_name": "CASE OF A AND OTHERS v. ICELAND",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court is satisfied that the applicants’ complaint concerning family life was sufficiently raised at domestic level to afford the national courts the opportunity to redress the alleged breach of Article 8.",
+          "category": "court_admissibility_only",
+          "start": 43205,
+          "end": 43413,
+          "tier": "review"
+        },
+        {
+          "quote": "The applicants’ complaint is therefore not inadmissible for failure to exhaust domestic remedies.",
+          "category": "court_admissibility_only",
+          "start": 43418,
+          "end": 43515,
+          "tier": "review"
+        },
+        {
+          "quote": "The complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43516,
+          "end": 43641,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43642,
+          "end": 43683,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10561,
+      "completion_tokens": 4905
+    },
+    {
+      "item_id": "001-233495",
+      "case_name": "CASE OF A.D. AND OTHERS v. SWEDEN",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9587,
+      "completion_tokens": 2228
+    },
+    {
+      "item_id": "001-245390",
+      "case_name": "CASE OF A.J. AND L.E. v. SPAIN",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5956,
+      "completion_tokens": 382
+    },
+    {
+      "item_id": "001-215177",
+      "case_name": "CASE OF A.L. AND OTHERS v. NORWAY",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6034,
+      "completion_tokens": 2702
+    },
+    {
+      "item_id": "001-216348",
+      "case_name": "CASE OF A.M. v. NORWAY",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10871,
+      "completion_tokens": 2150
+    },
+    {
+      "item_id": "001-228357",
+      "case_name": "CASE OF A.M.A. v. THE NETHERLANDS",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6372,
+      "completion_tokens": 2648
+    },
+    {
+      "item_id": "001-234259",
+      "case_name": "CASE OF A.P. v. ARMENIA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11777,
+      "completion_tokens": 1170
+    },
+    {
+      "item_id": "001-243878",
+      "case_name": "CASE OF A.R. v. THE UNITED KINGDOM",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10858,
+      "completion_tokens": 1032
+    },
+    {
+      "item_id": "001-240242",
+      "case_name": "CASE OF A.R.E. v. GREECE",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11554,
+      "completion_tokens": 405
+    },
+    {
+      "item_id": "001-199381",
+      "case_name": "CASE OF A.S. v. NORWAY",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7025,
+      "completion_tokens": 2640
+    },
+    {
+      "item_id": "001-224366",
+      "case_name": "CASE OF ABBASALIYEVA v. AZERBAIJAN",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 13556,
+          "end": 13703,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 13704,
+          "end": 13745,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7516,
+      "completion_tokens": 11468
+    },
+    {
+      "item_id": "001-211795",
+      "case_name": "CASE OF ABDI v. DENMARK",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3870,
+      "completion_tokens": 3421
+    },
+    {
+      "item_id": "001-204602",
+      "case_name": "CASE OF AGGERHOLM v. DENMARK",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11642,
+      "completion_tokens": 3618
+    },
+    {
+      "item_id": "001-237959",
+      "case_name": "CASE OF AL-HABEEB v. DENMARK",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6775,
+      "completion_tokens": 920
+    },
+    {
+      "item_id": "001-226195",
+      "case_name": "CASE OF AL-MASUDI v. DENMARK",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3715,
+      "completion_tokens": 4112
+    },
+    {
+      "item_id": "001-218022",
+      "case_name": "CASE OF ALLELEH AND OTHERS v. NORWAY",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10556,
+      "completion_tokens": 1112
+    },
+    {
+      "item_id": "001-219194",
+      "case_name": "CASE OF ANATOLIY YEREMENKO v. UKRAINE",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11145,
+      "completion_tokens": 308
+    },
+    {
+      "item_id": "001-210282",
+      "case_name": "CASE OF ANCIENT BALTIC RELIGIOUS ASSOCIATION “ROMUVA” v. LITHUANIA",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10516,
+      "completion_tokens": 371
+    },
+    {
+      "item_id": "001-217436",
+      "case_name": "CASE OF ARNAR HELGI LÁRUSSON v. ICELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4225,
+      "completion_tokens": 2123
+    },
+    {
+      "item_id": "001-243887",
+      "case_name": "CASE OF ARVANITIS AND PHILELEFTHEROS PUBLIC COMPANY LIMITED v. CYPRUS",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3845,
+      "completion_tokens": 1260
+    },
+    {
+      "item_id": "001-210046",
+      "case_name": "CASE OF ASANOVIĆ v. MONTENEGRO",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5012,
+      "completion_tokens": 242
+    },
+    {
+      "item_id": "001-215166",
+      "case_name": "CASE OF ATRISTAIN GOROSABEL v. SPAIN",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this application is not manifestly ill-founded within the meaning of Article 35 § 3 (a) of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37485,
+          "end": 37612,
+          "tier": "review"
+        },
+        {
+          "quote": "It furthermore notes that it is not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 37613,
+          "end": 37683,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 37684,
+          "end": 37725,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 18276,
+      "completion_tokens": 10341
+    },
+    {
+      "item_id": "001-213522",
+      "case_name": "CASE OF AVCI v. DENMARK",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7202,
+      "completion_tokens": 14179
+    },
+    {
+      "item_id": "001-222312",
+      "case_name": "CASE OF AXEL SPRINGER SE v. GERMANY",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5327,
+      "completion_tokens": 7049
+    },
+    {
+      "item_id": "001-245444",
+      "case_name": "CASE OF AYALA FLORES v. ITALY",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6512,
+      "completion_tokens": 1469
+    },
+    {
+      "item_id": "001-234516",
+      "case_name": "CASE OF B.A. v. CYPRUS",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention. It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 31732,
+          "end": 31921,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8600,
+      "completion_tokens": 5139
+    },
+    {
+      "item_id": "001-244593",
+      "case_name": "CASE OF B.A. v. ICELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7488,
+      "completion_tokens": 1519
+    },
+    {
+      "item_id": "001-244593",
+      "case_name": "CASE OF B.A. v. ICELAND",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "As regards the objection concerning the alleged manifestly ill-founded nature of the complaint, the Court considers that the arguments put forward in relation to this objection raise issues which require an examination on the merits of the complaint under Articles 3 and 8 of the Convention, rather than an assessment of its admissibility (see Mehmet Çiftci v. Turkey, no. 53208/19, § 26, 16 November 2021, and the authorities cited therein).",
+          "category": "court_admissibility_only",
+          "start": 26234,
+          "end": 26676,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court thus considers that this complaint is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 26681,
+          "end": 26837,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 26838,
+          "end": 26879,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7488,
+      "completion_tokens": 4760
+    },
+    {
+      "item_id": "001-225652",
+      "case_name": "CASE OF B.F. AND OTHERS v. SWITZERLAND",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10822,
+      "completion_tokens": 3175
+    },
+    {
+      "item_id": "001-237811",
+      "case_name": "CASE OF BAKRADZE v. GEORGIA",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10263,
+      "completion_tokens": 1198
+    },
+    {
+      "item_id": "001-197215",
+      "case_name": "CASE OF BARALIJA v. BOSNIA AND HERZEGOVINA",
+      "article": "P12-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7272,
+      "completion_tokens": 913
+    },
+    {
+      "item_id": "001-208589",
+      "case_name": "CASE OF BARANIN AND VUKČEVIĆ v. MONTENEGRO",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 21210,
+      "completion_tokens": 11049
+    },
+    {
+      "item_id": "001-211814",
+      "case_name": "CASE OF BARSEGHYAN v. ARMENIA",
+      "article": "11",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5054,
+      "completion_tokens": 562
+    },
+    {
+      "item_id": "001-248636",
+      "case_name": "CASE OF BEGIĆ v. BOSNIA AND HERZEGOVINA",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3395,
+      "completion_tokens": 242
+    },
+    {
+      "item_id": "001-238567",
+      "case_name": "CASE OF BELEY v. UKRAINE",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3113,
+      "completion_tokens": 1540
+    },
+    {
+      "item_id": "001-206266",
+      "case_name": "CASE OF BERKMAN v. RUSSIA",
+      "article": "11",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5776,
+      "completion_tokens": 669
+    },
+    {
+      "item_id": "001-210850",
+      "case_name": "CASE OF BERLIZEV v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court therefore dismisses the Government’s objection.",
+          "category": "court_admissibility_only",
+          "start": 17975,
+          "end": 18032,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 18033,
+          "end": 18188,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 18189,
+          "end": 18230,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4509,
+      "completion_tokens": 4207
+    },
+    {
+      "item_id": "001-230627",
+      "case_name": "CASE OF BERNOTAS v. LITHUANIA",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11291,
+      "completion_tokens": 3744
+    },
+    {
+      "item_id": "001-235470",
+      "case_name": "CASE OF BIELAU v. AUSTRIA",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 34348,
+          "end": 34496,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 34497,
+          "end": 34538,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8911,
+      "completion_tokens": 4804
+    },
+    {
+      "item_id": "001-228530",
+      "case_name": "CASE OF BILD GMBH & CO. KG v. GERMANY",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is not manifestly ill‑founded within the meaning of Article 35 § 3 (a) of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 12032,
+          "end": 12157,
+          "tier": "review"
+        },
+        {
+          "quote": "It further notes that it is not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 12158,
+          "end": 12224,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 12225,
+          "end": 12266,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3727,
+      "completion_tokens": 2055
+    },
+    {
+      "item_id": "001-242436",
+      "case_name": "CASE OF BILYAVSKA v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9519,
+      "completion_tokens": 1509
+    },
+    {
+      "item_id": "001-216184",
+      "case_name": "CASE OF BJARKI H. DIEGO v. ICELAND",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court finds that this complaint is not manifestly ill-founded.",
+          "category": "court_admissibility_only",
+          "start": 13230,
+          "end": 13296,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 13297,
+          "end": 13338,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3758,
+      "completion_tokens": 4122
+    },
+    {
+      "item_id": "001-231336",
+      "case_name": "CASE OF BOŠKOĆEVIĆ v. SERBIA",
+      "article": "34",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6115,
+      "completion_tokens": 825
+    },
+    {
+      "item_id": "001-214012",
+      "case_name": "CASE OF BUDIMIR v. CROATIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4432,
+      "completion_tokens": 2277
+    },
+    {
+      "item_id": "001-224734",
+      "case_name": "CASE OF BURANDO HOLDING B.V. AND PORT INVEST v. THE NETHERLANDS",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7162,
+      "completion_tokens": 673
+    },
+    {
+      "item_id": "001-204473",
+      "case_name": "CASE OF BİLAL AKYILDIZ v. TURKEY",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "In conclusion, the Court considers that, notwithstanding the payment of a sum by way of compensation for the pre-trial detention, the applicant can still claim to be a “victim”, within the meaning of Article 34 of the Convention, of a violation of Article 5 § 1.",
+          "category": "court_admissibility_only",
+          "start": 24074,
+          "end": 24336,
+          "tier": "review"
+        },
+        {
+          "quote": "It therefore rejects the Government’s objection in this regard.",
+          "category": "court_admissibility_only",
+          "start": 24337,
+          "end": 24400,
+          "tier": "review"
+        },
+        {
+          "quote": "Accordingly, this part of the application is manifestly ill-founded and must be rejected in accordance with Article 35 §§ 3 (a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 29389,
+          "end": 29541,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 29812,
+          "end": 29959,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 29960,
+          "end": 30001,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 13872,
+      "completion_tokens": 18543
+    },
+    {
+      "item_id": "001-210089",
+      "case_name": "CASE OF CAAMAÑO VALLE v. SPAIN",
+      "article": "P1-3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 39144,
+          "end": 39292,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 39293,
+          "end": 39334,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10542,
+      "completion_tokens": 2525
+    },
+    {
+      "item_id": "001-226093",
+      "case_name": "CASE OF CAMARA v. BELGIUM",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43753,
+          "end": 43900,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43901,
+          "end": 43942,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10917,
+      "completion_tokens": 4514
+    },
+    {
+      "item_id": "001-208764",
+      "case_name": "CASE OF CAUCHI v. MALTA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4281,
+      "completion_tokens": 1466
+    },
+    {
+      "item_id": "001-201896",
+      "case_name": "CASE OF CENTRE FOR DEMOCRACY AND THE RULE OF LAW v. UKRAINE",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9075,
+      "completion_tokens": 212
+    },
+    {
+      "item_id": "001-201896",
+      "case_name": "CASE OF CENTRE FOR DEMOCRACY AND THE RULE OF LAW v. UKRAINE",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9075,
+      "completion_tokens": 5336
+    },
+    {
+      "item_id": "001-201641",
+      "case_name": "CASE OF CHERNIKA v. UKRAINE",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5185,
+      "completion_tokens": 850
+    },
+    {
+      "item_id": "001-216463",
+      "case_name": "CASE OF COMMUNAUTÉ GENEVOISE D'ACTION SYNDICALE (CGAS) v. SWITZERLAND",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11273,
+      "completion_tokens": 209
+    },
+    {
+      "item_id": "001-216463",
+      "case_name": "CASE OF COMMUNAUTÉ GENEVOISE D'ACTION SYNDICALE (CGAS) v. SWITZERLAND",
+      "article": "11",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 22546,
+      "completion_tokens": 14582
+    },
+    {
+      "item_id": "001-245810",
+      "case_name": "CASE OF CONSTANTINOU AND OTHERS v. CYPRUS",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 12081,
+      "completion_tokens": 5682
+    },
+    {
+      "item_id": "001-216352",
+      "case_name": "CASE OF COSOVAN v. THE REPUBLIC OF MOLDOVA",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8067,
+      "completion_tokens": 901
+    },
+    {
+      "item_id": "001-236132",
+      "case_name": "CASE OF COSOVAN v. THE REPUBLIC OF MOLDOVA (No. 2)",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5459,
+      "completion_tokens": 3167
+    },
+    {
+      "item_id": "001-249223",
+      "case_name": "CASE OF D.M. v. SWEDEN",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10574,
+      "completion_tokens": 665
+    },
+    {
+      "item_id": "001-220887",
+      "case_name": "CASE OF DAHMAN BENDHIMAN v. SPAIN",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court does not have to address in detail the parties’ arguments as regards the exhaustion of domestic remedies because, both if the applicant had to or did not have to raise the complaint at issue in his amparo appeal, it is in any event inadmissible.",
+          "category": "court_admissibility_only",
+          "start": 41718,
+          "end": 41973,
+          "tier": "review"
+        },
+        {
+          "quote": "Accordingly, in any event, this complaint is inadmissible and must be rejected in accordance with Article 35 §§ 1 and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43316,
+          "end": 43454,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43506,
+          "end": 43653,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43654,
+          "end": 43695,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9807,
+      "completion_tokens": 5840
+    },
+    {
+      "item_id": "001-237294",
+      "case_name": "CASE OF DAUGAARD SORENSEN v. DENMARK",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6515,
+      "completion_tokens": 371
+    },
+    {
+      "item_id": "001-219556",
+      "case_name": "CASE OF DE LEGÉ v. THE NETHERLANDS",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11664,
+      "completion_tokens": 3167
+    },
+    {
+      "item_id": "001-196887",
+      "case_name": "CASE OF DELI v. THE REPUBLIC OF MOLDOVA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3327,
+      "completion_tokens": 1131
+    },
+    {
+      "item_id": "001-210363",
+      "case_name": "CASE OF DENIS AND IRVINE v. BELGIUM",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 22126,
+      "completion_tokens": 12373
+    },
+    {
+      "item_id": "001-228118",
+      "case_name": "CASE OF DIMAKSYAN v. ARMENIA",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6166,
+      "completion_tokens": 237
+    },
+    {
+      "item_id": "001-219946",
+      "case_name": "CASE OF DOLENC v. SLOVENIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4544,
+      "completion_tokens": 1392
+    },
+    {
+      "item_id": "001-233937",
+      "case_name": "CASE OF DOMENJOUD v. FRANCE",
+      "article": "P4-2",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11195,
+      "completion_tokens": 3694
+    },
+    {
+      "item_id": "001-219226",
+      "case_name": "CASE OF DRELON v. FRANCE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 44698,
+          "end": 44845,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 44846,
+          "end": 44887,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9878,
+      "completion_tokens": 1994
+    },
+    {
+      "item_id": "001-237618",
+      "case_name": "CASE OF DROZDYK AND MIKULA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4924,
+      "completion_tokens": 776
+    },
+    {
+      "item_id": "001-209373",
+      "case_name": "CASE OF E.G. v. THE REPUBLIC OF MOLDOVA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7340,
+      "completion_tokens": 11846
+    },
+    {
+      "item_id": "001-224091",
+      "case_name": "CASE OF E.K. v. LATVIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10970,
+      "completion_tokens": 473
+    },
+    {
+      "item_id": "001-215176",
+      "case_name": "CASE OF E.M. AND OTHERS v. NORWAY",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6228,
+      "completion_tokens": 1296
+    },
+    {
+      "item_id": "001-227718",
+      "case_name": "CASE OF EFGAN ÇETİN AND OTHERS v. TÜRKİYE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6412,
+      "completion_tokens": 5725
+    },
+    {
+      "item_id": "001-227719",
+      "case_name": "CASE OF EL-ASMAR v. DENMARK",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "It follows that the Government have failed to show that Article 63 of the Constitution would in the circumstances of the present case have been an effective remedy which the applicant should have made use of for the purposes of Article 35 § 1 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37027,
+          "end": 37288,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the application is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37289,
+          "end": 37445,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 37446,
+          "end": 37487,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 18040,
+      "completion_tokens": 21438
+    },
+    {
+      "item_id": "001-221503",
+      "case_name": "CASE OF ELMAZOVA AND OTHERS v. NORTH MACEDONIA",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7329,
+      "completion_tokens": 692
+    },
+    {
+      "item_id": "001-225807",
+      "case_name": "CASE OF EMIN HUSEYNOV v. AZERBAIJAN (No. 2)",
+      "article": "34",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7512,
+      "completion_tokens": 553
+    },
+    {
+      "item_id": "001-231227",
+      "case_name": "CASE OF EXECUTIEF VAN DE MOSLIMS VAN BELGIË AND OTHERS v. BELGIUM",
+      "article": "9",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10911,
+      "completion_tokens": 1412
+    },
+    {
+      "item_id": "001-241978",
+      "case_name": "CASE OF EZEOKE v. THE UNITED KINGDOM",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "However, the Court is of the opinion that the complaints raise sufficiently complex issues of fact and law, so that they cannot be rejected as manifestly ill-founded.",
+          "category": "court_admissibility_only",
+          "start": 19411,
+          "end": 19577,
+          "tier": "review"
+        },
+        {
+          "quote": "It is further satisfied that they are not inadmissible on any other ground.",
+          "category": "court_admissibility_only",
+          "start": 19578,
+          "end": 19653,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 19654,
+          "end": 19697,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4689,
+      "completion_tokens": 5280
+    },
+    {
+      "item_id": "001-249691",
+      "case_name": "CASE OF F.B. AND OTHERS v. THE NETHERLANDS",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11492,
+      "completion_tokens": 1011
+    },
+    {
+      "item_id": "001-219944",
+      "case_name": "CASE OF FABBRI AND OTHERS v. SAN MARINO",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4232,
+      "completion_tokens": 2648
+    },
+    {
+      "item_id": "001-237239",
+      "case_name": "CASE OF FABBRI AND OTHERS v. SAN MARINO",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1049,
+      "completion_tokens": 176
+    },
+    {
+      "item_id": "001-242768",
+      "case_name": "CASE OF FEDERICI v. FRANCE",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6735,
+      "completion_tokens": 1862
+    },
+    {
+      "item_id": "001-208447",
+      "case_name": "CASE OF FEILAZOO v. MALTA",
+      "article": "34",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8236,
+      "completion_tokens": 2143
+    },
+    {
+      "item_id": "001-218131",
+      "case_name": "CASE OF FERHATOVIĆ v. SLOVENIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "This suffices to render Article 1 of Protocol No. 1 applicable in the instant case (compare Rummi v. Estonia, no. 63362/09, § 105, 15 January 2015).",
+          "category": "court_admissibility_only",
+          "start": 23523,
+          "end": 23671,
+          "tier": "review"
+        },
+        {
+          "quote": "For the same reasons (and noting that only the applicant’s name was indicated on the certificate of seizure – see paragraph 6 above), the Court sees no reason to find that he could not claim to be the victim of the alleged violation.",
+          "category": "court_admissibility_only",
+          "start": 23672,
+          "end": 23905,
+          "tier": "review"
+        },
+        {
+          "quote": "The Government’s related objection (see paragraphs 30 and 31 above) should thus be dismissed.",
+          "category": "court_admissibility_only",
+          "start": 23906,
+          "end": 23999,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 27521,
+          "end": 27669,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 27670,
+          "end": 27711,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6685,
+      "completion_tokens": 6790
+    },
+    {
+      "item_id": "001-215708",
+      "case_name": "CASE OF FISCHER v. THE CZECH REPUBLIC",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4706,
+      "completion_tokens": 3212
+    },
+    {
+      "item_id": "001-244588",
+      "case_name": "CASE OF FTITI v. GREECE",
+      "article": "P7-2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2798,
+      "completion_tokens": 1934
+    },
+    {
+      "item_id": "001-216196",
+      "case_name": "CASE OF FU QUAN, S.R.O. v. THE CZECH REPUBLIC",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7806,
+      "completion_tokens": 450
+    },
+    {
+      "item_id": "001-208534",
+      "case_name": "CASE OF FİKRET KARAHAN v. TURKEY",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court observes that this complaint is not manifestly ill-founded within the meaning of Article 35 § 3 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 20412,
+          "end": 20536,
+          "tier": "review"
+        },
+        {
+          "quote": "It further notes that it is not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 20537,
+          "end": 20603,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 20604,
+          "end": 20645,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5484,
+      "completion_tokens": 3056
+    },
+    {
+      "item_id": "001-208280",
+      "case_name": "CASE OF GAWLIK v. LIECHTENSTEIN",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9002,
+      "completion_tokens": 6335
+    },
+    {
+      "item_id": "001-245104",
+      "case_name": "CASE OF GEORGIOS PAPADOPOULOS v. CYPRUS",
+      "article": "P1-3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11050,
+      "completion_tokens": 615
+    },
+    {
+      "item_id": "001-223435",
+      "case_name": "CASE OF GEORGIOU v. GREECE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 7202,
+          "end": 7349,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 7350,
+          "end": 7391,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2968,
+      "completion_tokens": 5434
+    },
+    {
+      "item_id": "001-221637",
+      "case_name": "CASE OF GHERARDI MARTIRI v. SAN MARINO",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9966,
+      "completion_tokens": 2253
+    },
+    {
+      "item_id": "001-221637",
+      "case_name": "CASE OF GHERARDI MARTIRI v. SAN MARINO",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9956,
+      "completion_tokens": 3599
+    },
+    {
+      "item_id": "001-238270",
+      "case_name": "CASE OF GIANNAKOPOULOS v. GREECE",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9096,
+      "completion_tokens": 662
+    },
+    {
+      "item_id": "001-203976",
+      "case_name": "CASE OF GLAVINIĆ AND MARKOVIĆ v. CROATIA",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11130,
+      "completion_tokens": 1132
+    },
+    {
+      "item_id": "001-216686",
+      "case_name": "CASE OF GLOVELI v. GEORGIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5965,
+      "completion_tokens": 795
+    },
+    {
+      "item_id": "001-242440",
+      "case_name": "CASE OF GOLOVCHUK v. UKRAINE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4674,
+      "completion_tokens": 3006
+    },
+    {
+      "item_id": "001-242440",
+      "case_name": "CASE OF GOLOVCHUK v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "Having regard to the nature and duration of those adverse repercussions, the Court considers that the disputed measures affected the applicant’s private life seriously enough to engage Article 8 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 18144,
+          "end": 18357,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the applicant’s complaints under Article 8 of the Convention are neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 18361,
+          "end": 18563,
+          "tier": "review"
+        },
+        {
+          "quote": "These complaints must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 18564,
+          "end": 18619,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4674,
+      "completion_tokens": 4987
+    },
+    {
+      "item_id": "001-204814",
+      "case_name": "CASE OF GORYAYNOVA v. UKRAINE",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8473,
+      "completion_tokens": 7688
+    },
+    {
+      "item_id": "001-218074",
+      "case_name": "CASE OF GOULANDRIS AND VARDINOGIANNI v. GREECE",
+      "article": "P7-4",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4786,
+      "completion_tokens": 1715
+    },
+    {
+      "item_id": "001-213901",
+      "case_name": "CASE OF GRAŽULEVIČIŪTĖ v. LITHUANIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10957,
+      "completion_tokens": 409
+    },
+    {
+      "item_id": "001-244000",
+      "case_name": "CASE OF GULLOTTI v. ITALY",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "It finds that the complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 11343,
+          "end": 11482,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 11483,
+          "end": 11524,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3372,
+      "completion_tokens": 6283
+    },
+    {
+      "item_id": "001-233111",
+      "case_name": "CASE OF GUÐMUNDUR GUNNARSSON AND MAGNÚS DAVÍÐ NORÐDAHL v. ICELAND",
+      "article": "P1-3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "Under these circumstances, the Court finds it unreasonable to expect that the applicants must have attempted to exhaust the remedy relied on by the Government.",
+          "category": "court_admissibility_only",
+          "start": 46894,
+          "end": 47053,
+          "tier": "review"
+        },
+        {
+          "quote": "Accordingly, in the Court’s opinion, the Government in the present case have not discharged their burden of proof in relation to the plea of non-exhaustion of a domestic judicial remedy, and have not conclusively demonstrated that such a remedy existed at the material time and was available to the applicant (see Mocanu and Others v. Romania [GC], nos. 10865/09 and 2 others, § 225, ECHR 2014 (extracts)).",
+          "category": "court_admissibility_only",
+          "start": 47058,
+          "end": 47464,
+          "tier": "review"
+        },
+        {
+          "quote": "Therefore, their plea of non-exhaustion must be dismissed.",
+          "category": "court_admissibility_only",
+          "start": 47465,
+          "end": 47523,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court is further satisfied that the applicants’ complaint are not manifestly ill-founded, nor are they inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 47528,
+          "end": 47708,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 47709,
+          "end": 47752,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10497,
+      "completion_tokens": 4570
+    },
+    {
+      "item_id": "001-237290",
+      "case_name": "CASE OF H.T. v. GERMANY AND GREECE",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10946,
+      "completion_tokens": 927
+    },
+    {
+      "item_id": "001-237290",
+      "case_name": "CASE OF H.T. v. GERMANY AND GREECE",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10946,
+      "completion_tokens": 1382
+    },
+    {
+      "item_id": "001-223259",
+      "case_name": "CASE OF HALET v. LUXEMBOURG",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1203,
+      "completion_tokens": 189
+    },
+    {
+      "item_id": "001-210131",
+      "case_name": "CASE OF HALET v. LUXEMBOURG",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2252,
+      "completion_tokens": 2006
+    },
+    {
+      "item_id": "001-230705",
+      "case_name": "CASE OF HAMZAYAN v. ARMENIA",
+      "article": "9",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 20169,
+          "end": 20316,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 20317,
+          "end": 20358,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5459,
+      "completion_tokens": 6595
+    },
+    {
+      "item_id": "001-237292",
+      "case_name": "CASE OF HAUGEN v. NORWAY",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10776,
+      "completion_tokens": 362
+    },
+    {
+      "item_id": "001-244851",
+      "case_name": "CASE OF HORA v. THE UNITED KINGDOM",
+      "article": "P1-3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10791,
+      "completion_tokens": 2369
+    },
+    {
+      "item_id": "001-220712",
+      "case_name": "CASE OF HOVHANNISYAN AND NAZARYAN v. ARMENIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11967,
+      "completion_tokens": 374
+    },
+    {
+      "item_id": "001-229726",
+      "case_name": "CASE OF HUMPERT AND OTHERS v. GERMANY",
+      "article": "11",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1330,
+      "completion_tokens": 827
+    },
+    {
+      "item_id": "001-241986",
+      "case_name": "CASE OF I.C. v. THE REPUBLIC OF MOLDOVA",
+      "article": "4",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11494,
+      "completion_tokens": 449
+    },
+    {
+      "item_id": "001-220890",
+      "case_name": "CASE OF ILYIN AND OTHERS v. UKRAINE",
+      "article": "9",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2309,
+      "completion_tokens": 193
+    },
+    {
+      "item_id": "001-224776",
+      "case_name": "CASE OF IRODOTOU v. CYPRUS",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4713,
+      "completion_tokens": 1323
+    },
+    {
+      "item_id": "001-224776",
+      "case_name": "CASE OF IRODOTOU v. CYPRUS",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4713,
+      "completion_tokens": 706
+    },
+    {
+      "item_id": "001-214037",
+      "case_name": "CASE OF IVAN KARPENKO v. UKRAINE",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2896,
+      "completion_tokens": 321
+    },
+    {
+      "item_id": "001-242784",
+      "case_name": "CASE OF IVAN KARPENKO v. UKRAINE (No. 2)",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6324,
+      "completion_tokens": 1248
+    },
+    {
+      "item_id": "001-223716",
+      "case_name": "CASE OF J.A. AND OTHERS v. ITALY",
+      "article": "P4-4",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10742,
+      "completion_tokens": 1264
+    },
+    {
+      "item_id": "001-237438",
+      "case_name": "CASE OF J.B. AND OTHERS v. MALTA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court finds no reason to alter the conclusions already reached in previous cases against Malta, it thus rejects the Government’s objection.",
+          "category": "court_admissibility_only",
+          "start": 42176,
+          "end": 42319,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further considers that this complaint is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 42324,
+          "end": 42483,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 42484,
+          "end": 42525,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10063,
+      "completion_tokens": 4413
+    },
+    {
+      "item_id": "001-196897",
+      "case_name": "CASE OF J.D. AND A v. THE UNITED KINGDOM",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9611,
+      "completion_tokens": 4890
+    },
+    {
+      "item_id": "001-213529",
+      "case_name": "CASE OF JALLOW v. NORWAY",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "In the light of these circumstances, the Court proceeds on the basis that Article 6 of the Convention was applicable in respect of the proceedings that are the subject of the complaint brought before the Court.",
+          "category": "court_admissibility_only",
+          "start": 26947,
+          "end": 27157,
+          "tier": "review"
+        },
+        {
+          "quote": "Furthermore, the Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 27162,
+          "end": 27322,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 27323,
+          "end": 27364,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7170,
+      "completion_tokens": 2124
+    },
+    {
+      "item_id": "001-222790",
+      "case_name": "CASE OF JANÁČEK v. THE CZECH REPUBLIC",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3994,
+      "completion_tokens": 2092
+    },
+    {
+      "item_id": "001-218132",
+      "case_name": "CASE OF JURIŠIĆ v. CROATIA (No. 2)",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5289,
+      "completion_tokens": 3387
+    },
+    {
+      "item_id": "001-240184",
+      "case_name": "CASE OF JÓHANNES BALDURSSON AND BIRKIR KRISTINSSON v. ICELAND\r\n\r\n",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court finds that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37565,
+          "end": 37712,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 37713,
+          "end": 37754,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8778,
+      "completion_tokens": 1038
+    },
+    {
+      "item_id": "001-250107",
+      "case_name": "CASE OF K.A. v. AUSTRIA",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10961,
+      "completion_tokens": 413
+    },
+    {
+      "item_id": "001-209520",
+      "case_name": "CASE OF K.I. v. FRANCE",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11439,
+      "completion_tokens": 1383
+    },
+    {
+      "item_id": "001-243553",
+      "case_name": "CASE OF K.V. MEDITERRANEAN TOURS LIMITED v. TÜRKİYE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5512,
+      "completion_tokens": 478
+    },
+    {
+      "item_id": "001-243781",
+      "case_name": "CASE OF KAROVIĆ AND OTHERS v. BOSNIA AND HERZEGOVINA",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1930,
+      "completion_tokens": 3794
+    },
+    {
+      "item_id": "001-232020",
+      "case_name": "CASE OF KARTER v. UKRAINE",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3439,
+      "completion_tokens": 248
+    },
+    {
+      "item_id": "001-238269",
+      "case_name": "CASE OF KASIM ÖZDEMİR AND MEHMET ÖZDEMİR v. TÜRKİYE",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "Accordingly, the Court concludes that the applicants’ complaints do not fall within the scope of Article 2 and must be examined only under Article 3 of the Convention, which is clearly applicable.",
+          "category": "court_admissibility_only",
+          "start": 33614,
+          "end": 33810,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court sees no reason to depart from those findings in the present case and dismisses the Government’s objection (see Namık Yüksel v. Türkiye, no. 28791/10, § 35, 27 August 2024).",
+          "category": "court_admissibility_only",
+          "start": 34871,
+          "end": 35053,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that these complaints are not manifestly ill‑founded within the meaning of Article 35 § 3 (a) of the Convention or inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 35058,
+          "end": 35231,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 35232,
+          "end": 35275,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8124,
+      "completion_tokens": 7247
+    },
+    {
+      "item_id": "001-222915",
+      "case_name": "CASE OF KATONA AND ZÁVARSKÝ v. SLOVAKIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Government’s objection is accordingly dismissed.",
+          "category": "court_admissibility_only",
+          "start": 19431,
+          "end": 19483,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that this part of the applications is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 19488,
+          "end": 19650,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 19651,
+          "end": 19692,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11818,
+      "completion_tokens": 11215
+    },
+    {
+      "item_id": "001-202411",
+      "case_name": "CASE OF KEANEY v. IRELAND",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10135,
+      "completion_tokens": 1072
+    },
+    {
+      "item_id": "001-202411",
+      "case_name": "CASE OF KEANEY v. IRELAND",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10135,
+      "completion_tokens": 4225
+    },
+    {
+      "item_id": "001-207136",
+      "case_name": "CASE OF KHAN v. DENMARK",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11207,
+      "completion_tokens": 2940
+    },
+    {
+      "item_id": "001-214758",
+      "case_name": "CASE OF KRAYEVA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6526,
+      "completion_tokens": 15566
+    },
+    {
+      "item_id": "001-220960",
+      "case_name": "CASE OF KUPINSKYY v. UKRAINE",
+      "article": "7",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 16852,
+      "completion_tokens": 11708
+    },
+    {
+      "item_id": "001-245701",
+      "case_name": "CASE OF KYRIAN v. THE CZECH REPUBLIC",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6631,
+      "completion_tokens": 630
+    },
+    {
+      "item_id": "001-207695",
+      "case_name": "CASE OF LACATUS v. SWITZERLAND",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11001,
+      "completion_tokens": 3523
+    },
+    {
+      "item_id": "001-228683",
+      "case_name": "CASE OF LANG v. UKRAINE",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2074,
+      "completion_tokens": 4996
+    },
+    {
+      "item_id": "001-203931",
+      "case_name": "CASE OF LEVCHUK v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37336,
+          "end": 37483,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 37484,
+          "end": 37525,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9487,
+      "completion_tokens": 4423
+    },
+    {
+      "item_id": "001-209035",
+      "case_name": "CASE OF LIEBSCHER v. AUSTRIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4581,
+      "completion_tokens": 1131
+    },
+    {
+      "item_id": "001-217039",
+      "case_name": "CASE OF LINGS v. DENMARK",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 13924,
+      "completion_tokens": 14432
+    },
+    {
+      "item_id": "001-228155",
+      "case_name": "CASE OF LOCASCIA AND OTHERS v. ITALY",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11145,
+      "completion_tokens": 616
+    },
+    {
+      "item_id": "001-228151",
+      "case_name": "CASE OF LUCA v. THE REPUBLIC OF MOLDOVA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 43753,
+          "end": 43900,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43901,
+          "end": 43942,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9894,
+      "completion_tokens": 3695
+    },
+    {
+      "item_id": "001-231078",
+      "case_name": "CASE OF LYPOVCHENKO AND HALABUDENCO v. THE REPUBLIC OF MOLDOVA AND RUSSIA",
+      "article": "34",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11058,
+      "completion_tokens": 521
+    },
+    {
+      "item_id": "001-231078",
+      "case_name": "CASE OF LYPOVCHENKO AND HALABUDENCO v. THE REPUBLIC OF MOLDOVA AND RUSSIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11068,
+      "completion_tokens": 387
+    },
+    {
+      "item_id": "001-201351",
+      "case_name": "CASE OF M.A. AND OTHERS v. BULGARIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7734,
+      "completion_tokens": 1538
+    },
+    {
+      "item_id": "001-233213",
+      "case_name": "CASE OF M.B. v. THE NETHERLANDS",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8460,
+      "completion_tokens": 2179
+    },
+    {
+      "item_id": "001-219198",
+      "case_name": "CASE OF M.K. v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "It follows that this complaint is manifestly ill-founded and must be rejected, in accordance with Article 35 §§ 3 (a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 26662,
+          "end": 26804,
+          "tier": "review"
+        },
+        {
+          "quote": "This part of the application must therefore be also rejected as manifestly ill-founded, pursuant to Article 35 §§ 3 (a) and 4 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 28188,
+          "end": 28332,
+          "tier": "review"
+        },
+        {
+          "quote": "As regards the applicant’s remaining complaints, the Court finds that they are not manifestly ill‑founded within the meaning of Article 35 § 3 of the Convention, nor are they inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 28336,
+          "end": 28545,
+          "tier": "review"
+        },
+        {
+          "quote": "They therefore must be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 28546,
+          "end": 28589,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7755,
+      "completion_tokens": 4345
+    },
+    {
+      "item_id": "001-243782",
+      "case_name": "CASE OF M.L. v. NORTH MACEDONIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3478,
+      "completion_tokens": 657
+    },
+    {
+      "item_id": "001-212150",
+      "case_name": "CASE OF M.L. v. SLOVAKIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "It is clear from the Court’s case-law (see Hadri-Vionnet v. Switzerland, no. 55525/00, § 51, 14 February 2008, with further references; Editions Plon v. France, no. 58148/00, § 46, ECHR 2004‑IV; and Putistin v. Ukraine, no. 16882/03, § 33, 21 November 2013), and the Government accepted, that dealing appropriately with the dead out of respect for the feelings of the deceased’s relatives falls within the scope of Article 8 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 15564,
+          "end": 16007,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further considers that the effect of the statements made in the articles in question about the applicant’s son rose above the “threshold of severity” required by the Court’s case-law (see Denisov v. Ukraine [GC], no. 76639/11, § 112, 25 September 2018); thus the applicant’s private life has been affected to a degree attracting the application of Article 8.",
+          "category": "court_admissibility_only",
+          "start": 16012,
+          "end": 16380,
+          "tier": "review"
+        },
+        {
+          "quote": "That provision is therefore applicable in the circumstances arising in the present case.",
+          "category": "court_admissibility_only",
+          "start": 16381,
+          "end": 16469,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the application is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 16474,
+          "end": 16630,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 16631,
+          "end": 16672,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5021,
+      "completion_tokens": 5961
+    },
+    {
+      "item_id": "001-202750",
+      "case_name": "CASE OF M.S. v. SLOVAKIA AND UKRAINE",
+      "article": "34",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10422,
+      "completion_tokens": 1722
+    },
+    {
+      "item_id": "001-202750",
+      "case_name": "CASE OF M.S. v. SLOVAKIA AND UKRAINE",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10422,
+      "completion_tokens": 1517
+    },
+    {
+      "item_id": "001-220013",
+      "case_name": "CASE OF M.T. AND OTHERS v. SWEDEN",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10990,
+      "completion_tokens": 5652
+    },
+    {
+      "item_id": "001-241743",
+      "case_name": "CASE OF MACHARIK v. THE CZECH REPUBLIC",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4546,
+      "completion_tokens": 242
+    },
+    {
+      "item_id": "001-206268",
+      "case_name": "CASE OF MAKHMUDOVA v. RUSSIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court considers that the application is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 23235,
+          "end": 23387,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 23388,
+          "end": 23429,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5695,
+      "completion_tokens": 6904
+    },
+    {
+      "item_id": "001-202524",
+      "case_name": "CASE OF MAKUCHYAN AND MINASYAN v. AZERBAIJAN AND HUNGARY",
+      "article": "2",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11161,
+      "completion_tokens": 375
+    },
+    {
+      "item_id": "001-202524",
+      "case_name": "CASE OF MAKUCHYAN AND MINASYAN v. AZERBAIJAN AND HUNGARY",
+      "article": "38",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11161,
+      "completion_tokens": 665
+    },
+    {
+      "item_id": "001-202524",
+      "case_name": "CASE OF MAKUCHYAN AND MINASYAN v. AZERBAIJAN AND HUNGARY",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11161,
+      "completion_tokens": 1517
+    },
+    {
+      "item_id": "001-223361",
+      "case_name": "CASE OF MAMASAKHLISI AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2039,
+      "completion_tokens": 462
+    },
+    {
+      "item_id": "001-223361",
+      "case_name": "CASE OF MAMASAKHLISI AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2039,
+      "completion_tokens": 1326
+    },
+    {
+      "item_id": "001-223361",
+      "case_name": "CASE OF MAMASAKHLISI AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2039,
+      "completion_tokens": 1242
+    },
+    {
+      "item_id": "001-220866",
+      "case_name": "CASE OF MARCINKEVIČIUS v. LITHUANIA",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9668,
+      "completion_tokens": 548
+    },
+    {
+      "item_id": "001-220665",
+      "case_name": "CASE OF MARINA AUCANADA GROUP S.L. v. SPAIN",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4541,
+      "completion_tokens": 459
+    },
+    {
+      "item_id": "001-224984",
+      "case_name": "CASE OF MAYMULAKHIN AND MARKIV v. UKRAINE",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8198,
+      "completion_tokens": 3605
+    },
+    {
+      "item_id": "001-235896",
+      "case_name": "CASE OF MELANDRI v. SAN MARINO",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7987,
+      "completion_tokens": 867
+    },
+    {
+      "item_id": "001-224963",
+      "case_name": "CASE OF MESIĆ v. CROATIA (No. 2)",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9623,
+      "completion_tokens": 225
+    },
+    {
+      "item_id": "001-216349",
+      "case_name": "CASE OF MICKOVSKI v. NORTH MACEDONIA",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4406,
+      "completion_tokens": 4059
+    },
+    {
+      "item_id": "001-213203",
+      "case_name": "CASE OF MIKELADZE AND OTHERS v. GEORGIA",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7621,
+      "completion_tokens": 265
+    },
+    {
+      "item_id": "001-211596",
+      "case_name": "CASE OF MILOŠEVIĆ v. CROATIA",
+      "article": "P7-4",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3368,
+      "completion_tokens": 7067
+    },
+    {
+      "item_id": "001-229894",
+      "case_name": "CASE OF MIRANDA MAGRO v. PORTUGAL",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9788,
+      "completion_tokens": 3011
+    },
+    {
+      "item_id": "001-229894",
+      "case_name": "CASE OF MIRANDA MAGRO v. PORTUGAL",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 45286,
+          "end": 45433,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 45434,
+          "end": 45475,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9788,
+      "completion_tokens": 6721
+    },
+    {
+      "item_id": "001-204584",
+      "case_name": "CASE OF MIRGADIROV v. AZERBAIJAN AND TURKEY",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3591,
+      "completion_tokens": 402
+    },
+    {
+      "item_id": "001-204584",
+      "case_name": "CASE OF MIRGADIROV v. AZERBAIJAN AND TURKEY",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3591,
+      "completion_tokens": 412
+    },
+    {
+      "item_id": "001-204584",
+      "case_name": "CASE OF MIRGADIROV v. AZERBAIJAN AND TURKEY",
+      "article": "18",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3591,
+      "completion_tokens": 345
+    },
+    {
+      "item_id": "001-204584",
+      "case_name": "CASE OF MIRGADIROV v. AZERBAIJAN AND TURKEY",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3591,
+      "completion_tokens": 1919
+    },
+    {
+      "item_id": "001-233686",
+      "case_name": "CASE OF MIRZOYAN v. THE CZECH REPUBLIC",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10737,
+      "completion_tokens": 356
+    },
+    {
+      "item_id": "001-210680",
+      "case_name": "CASE OF MONIR LOTFY v. CYPRUS",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11658,
+      "completion_tokens": 976
+    },
+    {
+      "item_id": "001-219988",
+      "case_name": "CASE OF MORTIER v. BELGIUM",
+      "article": "2",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10949,
+      "completion_tokens": 389
+    },
+    {
+      "item_id": "001-213853",
+      "case_name": "CASE OF MUCHA v. SLOVAKIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5928,
+      "completion_tokens": 482
+    },
+    {
+      "item_id": "001-203885",
+      "case_name": "CASE OF MUGEMANGANGO v. BELGIUM",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10740,
+      "completion_tokens": 609
+    },
+    {
+      "item_id": "001-203885",
+      "case_name": "CASE OF MUGEMANGANGO v. BELGIUM",
+      "article": "P1-3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that this complaint is not manifestly ill-founded within the meaning of Article 35 § 3 (a) of the Convention and is not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 41029,
+          "end": 41199,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 41200,
+          "end": 41241,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10750,
+      "completion_tokens": 1433
+    },
+    {
+      "item_id": "001-219984",
+      "case_name": "CASE OF MUHAMMAD v. SPAIN",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "Accordingly, Article 14 is applicable.",
+          "category": "court_admissibility_only",
+          "start": 40550,
+          "end": 40588,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the application is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 40593,
+          "end": 40749,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 40750,
+          "end": 40791,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10458,
+      "completion_tokens": 7577
+    },
+    {
+      "item_id": "001-235491",
+      "case_name": "CASE OF MUKHTARLI v. AZERBAIJAN AND GEORGIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11085,
+      "completion_tokens": 262
+    },
+    {
+      "item_id": "001-235491",
+      "case_name": "CASE OF MUKHTARLI v. AZERBAIJAN AND GEORGIA",
+      "article": "5",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11085,
+      "completion_tokens": 520
+    },
+    {
+      "item_id": "001-235491",
+      "case_name": "CASE OF MUKHTARLI v. AZERBAIJAN AND GEORGIA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11085,
+      "completion_tokens": 892
+    },
+    {
+      "item_id": "001-203645",
+      "case_name": "CASE OF N.H. AND OTHERS v. FRANCE",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11728,
+      "completion_tokens": 341
+    },
+    {
+      "item_id": "001-243885",
+      "case_name": "CASE OF N.T. v. CYPRUS",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10917,
+      "completion_tokens": 2238
+    },
+    {
+      "item_id": "001-243885",
+      "case_name": "CASE OF N.T. v. CYPRUS",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10917,
+      "completion_tokens": 857
+    },
+    {
+      "item_id": "001-220537",
+      "case_name": "CASE OF N.V. AND C.C. v. MALTA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4795,
+      "completion_tokens": 899
+    },
+    {
+      "item_id": "001-238102",
+      "case_name": "CASE OF NDI SOPOT S. A v. NORTH MACEDONIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11382,
+      "completion_tokens": 2539
+    },
+    {
+      "item_id": "001-200547",
+      "case_name": "CASE OF NICOLAOU v. CYPRUS",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11535,
+      "completion_tokens": 560
+    },
+    {
+      "item_id": "001-210332",
+      "case_name": "CASE OF NORWEGIAN CONFEDERATION OF TRADE UNIONS (LO) AND NORWEGIAN TRANSPORT WORKERS’ UNION (NTF) v. NORWAY",
+      "article": "11",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10620,
+      "completion_tokens": 5247
+    },
+    {
+      "item_id": "001-249531",
+      "case_name": "CASE OF NOVÁK v. THE CZECH REPUBLIC",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6480,
+      "completion_tokens": 356
+    },
+    {
+      "item_id": "001-229601",
+      "case_name": "CASE OF O.J. AND J.O. v. GEORGIA AND RUSSIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 18702,
+      "completion_tokens": 22287
+    },
+    {
+      "item_id": "001-234522",
+      "case_name": "CASE OF OGHLISHVILI v. GEORGIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5233,
+      "completion_tokens": 476
+    },
+    {
+      "item_id": "001-224365",
+      "case_name": "CASE OF OHANJANYAN v. ARMENIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10595,
+      "completion_tokens": 601
+    },
+    {
+      "item_id": "001-222138",
+      "case_name": "CASE OF OVCHARENKO AND KOLOS v. UKRAINE",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10232,
+      "completion_tokens": 615
+    },
+    {
+      "item_id": "001-222138",
+      "case_name": "CASE OF OVCHARENKO AND KOLOS v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10232,
+      "completion_tokens": 256
+    },
+    {
+      "item_id": "001-218941",
+      "case_name": "CASE OF P.C. v. IRELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2533,
+      "completion_tokens": 3557
+    },
+    {
+      "item_id": "001-219068",
+      "case_name": "CASE OF P.H. v. SLOVAKIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7334,
+      "completion_tokens": 1986
+    },
+    {
+      "item_id": "001-235475",
+      "case_name": "CASE OF PASQUINELLI AND OTHERS v. SAN MARINO",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10878,
+      "completion_tokens": 731
+    },
+    {
+      "item_id": "001-205166",
+      "case_name": "CASE OF PASQUINI v. SAN MARINO (No. 2)",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3230,
+      "completion_tokens": 5438
+    },
+    {
+      "item_id": "001-221266",
+      "case_name": "CASE OF PEJŘILOVÁ v. THE CZECH REPUBLIC",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court agrees, since “private life”, which is a broad term, encompasses, inter alia, elements such as the right to respect for the decisions both to have and not to have a child (see Evans v. the United Kingdom [GC], no. 6339/05, § 71, ECHR 2007‑IV; A, B and C v. Ireland [GC], no. 25579/05, § 212, 16 December 2010; and Paradiso and Campanelli v. Italy [GC], no. 25358/12, § 163, 24 January 2017).",
+          "category": "court_admissibility_only",
+          "start": 15724,
+          "end": 16125,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court will therefore examine the present case under Article 8, which guarantees the applicant’s right to respect for her private life.",
+          "category": "court_admissibility_only",
+          "start": 16464,
+          "end": 16602,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court further notes that the application is neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 16607,
+          "end": 16763,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 16764,
+          "end": 16805,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 13486,
+      "completion_tokens": 22571
+    },
+    {
+      "item_id": "001-238658",
+      "case_name": "CASE OF PETROSYAN v. ARMENIA",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11666,
+      "completion_tokens": 842
+    },
+    {
+      "item_id": "001-236065",
+      "case_name": "CASE OF PINDO MULLA v. SPAIN",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1379,
+      "completion_tokens": 1114
+    },
+    {
+      "item_id": "001-202622",
+      "case_name": "CASE OF POTOROC v. ROMANIA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4430,
+      "completion_tokens": 536
+    },
+    {
+      "item_id": "001-206159",
+      "case_name": "CASE OF PROJECT-TRADE D.O.O. v. CROATIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4010,
+      "completion_tokens": 585
+    },
+    {
+      "item_id": "001-247827",
+      "case_name": "CASE OF R.E. AND OTHERS v. ICELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10908,
+      "completion_tokens": 1752
+    },
+    {
+      "item_id": "001-247827",
+      "case_name": "CASE OF R.E. AND OTHERS v. ICELAND",
+      "article": "3",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court therefore considers that the applicants’ complaints are neither manifestly ill-founded nor inadmissible on any other ground listed in Article 35 of the Convention and must be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 46578,
+          "end": 46783,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10908,
+      "completion_tokens": 860
+    },
+    {
+      "item_id": "001-243081",
+      "case_name": "CASE OF RADELIĆ v. CROATIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7878,
+      "completion_tokens": 5756
+    },
+    {
+      "item_id": "001-198882",
+      "case_name": "CASE OF RADZEVIL v. UKRAINE",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2278,
+      "completion_tokens": 563
+    },
+    {
+      "item_id": "001-240192",
+      "case_name": "CASE OF REZNIK v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11129,
+      "completion_tokens": 6329
+    },
+    {
+      "item_id": "001-230260",
+      "case_name": "CASE OF RIZZO AND OTHERS v. MALTA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4175,
+      "completion_tokens": 6396
+    },
+    {
+      "item_id": "001-198885",
+      "case_name": "CASE OF ROMEVA v. NORTH MACEDONIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6955,
+      "completion_tokens": 6965
+    },
+    {
+      "item_id": "001-213788",
+      "case_name": "CASE OF ROVSHAN HAJIYEV v. AZERBAIJAN",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4135,
+      "completion_tokens": 330
+    },
+    {
+      "item_id": "001-237808",
+      "case_name": "CASE OF RYBÁŘSTVÍ TŘEBOŇ A.S. AND RYBÁŘSTVÍ TŘEBOŇ HLD. A.S. v. THE CZECH REPUBLIC\r\n\r\nv. THE CZECH REPUBLIC\r\n",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9183,
+      "completion_tokens": 911
+    },
+    {
+      "item_id": "001-236140",
+      "case_name": "CASE OF S.F. v. FINLAND",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 21563,
+          "end": 21711,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 21712,
+          "end": 21753,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5089,
+      "completion_tokens": 3302
+    },
+    {
+      "item_id": "001-233761",
+      "case_name": "CASE OF SAAKASHVILI v. GEORGIA",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11183,
+      "completion_tokens": 2667
+    },
+    {
+      "item_id": "001-233215",
+      "case_name": "CASE OF SACHARUK v. LITHUANIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11260,
+      "completion_tokens": 751
+    },
+    {
+      "item_id": "001-212148",
+      "case_name": "CASE OF SAMSIN v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2893,
+      "completion_tokens": 3462
+    },
+    {
+      "item_id": "001-211777",
+      "case_name": "CASE OF SANCHEZ v. FRANCE",
+      "article": "10",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11049,
+      "completion_tokens": 2163
+    },
+    {
+      "item_id": "001-230628",
+      "case_name": "CASE OF SARDAR BABAYEV v. AZERBAIJAN",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3763,
+      "completion_tokens": 242
+    },
+    {
+      "item_id": "001-208882",
+      "case_name": "CASE OF SEDLETSKA v. UKRAINE",
+      "article": "10",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6991,
+      "completion_tokens": 4702
+    },
+    {
+      "item_id": "001-243363",
+      "case_name": "CASE OF SELIMI AND KRASNIĆI v. SERBIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10699,
+      "completion_tokens": 617
+    },
+    {
+      "item_id": "001-212439",
+      "case_name": "CASE OF SELYGENENKO AND OTHERS v. UKRAINE",
+      "article": "P12-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2015,
+      "completion_tokens": 748
+    },
+    {
+      "item_id": "001-226011",
+      "case_name": "CASE OF SEMENYA v. SWITZERLAND",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1476,
+      "completion_tokens": 169
+    },
+    {
+      "item_id": "001-237958",
+      "case_name": "CASE OF SHARAFANE v. DENMARK",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6414,
+      "completion_tokens": 2615
+    },
+    {
+      "item_id": "001-242521",
+      "case_name": "CASE OF SHIPS WASTE OIL COLLECTOR B.V. AND OTHERS v. THE NETHERLANDS\r\n\r\n",
+      "article": "13",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 1383,
+      "completion_tokens": 177
+    },
+    {
+      "item_id": "001-224732",
+      "case_name": "CASE OF SHIPS WASTE OIL COLLECTOR B.V. v. THE NETHERLANDS",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 28310,
+          "end": 28456,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 28457,
+          "end": 28498,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 15444,
+      "completion_tokens": 14359
+    },
+    {
+      "item_id": "001-230878",
+      "case_name": "CASE OF SHYLINA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that these complaints are neither manifestly ill‑founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 17513,
+          "end": 17663,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 17664,
+          "end": 17707,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5228,
+      "completion_tokens": 1121
+    },
+    {
+      "item_id": "001-248598",
+      "case_name": "CASE OF SIMONCINI v. SAN MARINO",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11282,
+      "completion_tokens": 1648
+    },
+    {
+      "item_id": "001-248598",
+      "case_name": "CASE OF SIMONCINI v. SAN MARINO",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11282,
+      "completion_tokens": 1323
+    },
+    {
+      "item_id": "001-204812",
+      "case_name": "CASE OF SMBAT AYVAZYAN v. ARMENIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7186,
+      "completion_tokens": 2157
+    },
+    {
+      "item_id": "001-250111",
+      "case_name": "CASE OF SOBCZYŃSKA AND OTHERS v. POLAND",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10908,
+      "completion_tokens": 746
+    },
+    {
+      "item_id": "001-238072",
+      "case_name": "CASE OF SOUROULLAS KAY AND ZANNETTOS v. CYPRUS",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 950,
+      "completion_tokens": 848
+    },
+    {
+      "item_id": "001-216454",
+      "case_name": "CASE OF STARKEVIČ v. LITHUANIA",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6481,
+      "completion_tokens": 1844
+    },
+    {
+      "item_id": "001-203165",
+      "case_name": "CASE OF STAVROPOULOS AND OTHERS v. GREECE",
+      "article": "9",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 3121,
+      "completion_tokens": 1470
+    },
+    {
+      "item_id": "001-224505",
+      "case_name": "CASE OF STRASSENMEYER v. GERMANY",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4927,
+      "completion_tokens": 379
+    },
+    {
+      "item_id": "001-207667",
+      "case_name": "CASE OF STRØBYE AND ROSENLIND v. DENMARK",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10772,
+      "completion_tokens": 4967
+    },
+    {
+      "item_id": "001-205170",
+      "case_name": "CASE OF SUUR v. ESTONIA",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the complaint is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 37107,
+          "end": 37253,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 37254,
+          "end": 37295,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9960,
+      "completion_tokens": 1993
+    },
+    {
+      "item_id": "001-234129",
+      "case_name": "CASE OF T.V. v. CROATIA",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 7176,
+      "completion_tokens": 2521
+    },
+    {
+      "item_id": "001-238515",
+      "case_name": "CASE OF TAGANOVA AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 12162,
+      "completion_tokens": 465
+    },
+    {
+      "item_id": "001-238515",
+      "case_name": "CASE OF TAGANOVA AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 12172,
+      "completion_tokens": 575
+    },
+    {
+      "item_id": "001-238515",
+      "case_name": "CASE OF TAGANOVA AND OTHERS v. GEORGIA AND RUSSIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 12162,
+      "completion_tokens": 549
+    },
+    {
+      "item_id": "001-233381",
+      "case_name": "CASE OF THE J. PAUL GETTY TRUST AND OTHERS v. ITALY",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11161,
+      "completion_tokens": 850
+    },
+    {
+      "item_id": "001-219641",
+      "case_name": "CASE OF THEO NATIONAL CONSTRUCT S.R.L. v. THE REPUBLIC OF MOLDOVA",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6766,
+      "completion_tokens": 397
+    },
+    {
+      "item_id": "001-244007",
+      "case_name": "CASE OF TOMENKO v. UKRAINE",
+      "article": "P1-3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10915,
+      "completion_tokens": 4937
+    },
+    {
+      "item_id": "001-233412",
+      "case_name": "CASE OF TSAAVA AND OTHERS v. GEORGIA",
+      "article": "3",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10865,
+      "completion_tokens": 568
+    },
+    {
+      "item_id": "001-245246",
+      "case_name": "CASE OF TSATANI v. GREECE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9063,
+      "completion_tokens": 1440
+    },
+    {
+      "item_id": "001-235473",
+      "case_name": "CASE OF TSULUKIDZE AND RUSULASHVILI v. GEORGIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5177,
+      "completion_tokens": 2050
+    },
+    {
+      "item_id": "001-238800",
+      "case_name": "CASE OF TVERDOKHLEBOVA v. UKRAINE",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2591,
+      "completion_tokens": 194
+    },
+    {
+      "item_id": "001-249370",
+      "case_name": "CASE OF UKRAYINSKYY AND OTHERS v. UKRAINE",
+      "article": "34",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4747,
+      "completion_tokens": 2431
+    },
+    {
+      "item_id": "001-229325",
+      "case_name": "CASE OF V v. THE CZECH REPUBLIC",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10890,
+      "completion_tokens": 670
+    },
+    {
+      "item_id": "001-245684",
+      "case_name": "CASE OF VAINIK AND OTHERS v. ESTONIA",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10668,
+      "completion_tokens": 1635
+    },
+    {
+      "item_id": "001-245684",
+      "case_name": "CASE OF VAINIK AND OTHERS v. ESTONIA",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10668,
+      "completion_tokens": 397
+    },
+    {
+      "item_id": "001-209992",
+      "case_name": "CASE OF VALDÍS FJÖLNISDÓTTIR AND OTHERS v. ICELAND",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 16546,
+      "completion_tokens": 9597
+    },
+    {
+      "item_id": "001-220415",
+      "case_name": "CASE OF VEGOTEX INTERNATIONAL S.A. v. BELGIUM",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9724,
+      "completion_tokens": 1447
+    },
+    {
+      "item_id": "001-206214",
+      "case_name": "CASE OF VEGOTEX INTERNATIONAL S.A. v. BELGIUM",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8136,
+      "completion_tokens": 397
+    },
+    {
+      "item_id": "001-233206",
+      "case_name": "CASE OF VEREIN KLIMASENIORINNEN SCHWEIZ AND OTHERS v. SWITZERLAND",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 2646,
+      "completion_tokens": 331
+    },
+    {
+      "item_id": "001-244594",
+      "case_name": "CASE OF VERVELE v. GREECE",
+      "article": "13",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court finds that the question of exhaustion of domestic remedies is closely linked to the merits of the applicant’s complaint under Article 13 of the Convention that she did not have an effective remedy at her disposal for the alleged violation of her right to a trial within a reasonable time.",
+          "category": "court_admissibility_only",
+          "start": 42388,
+          "end": 42686,
+          "tier": "review"
+        },
+        {
+          "quote": "Therefore, the Court joins the Government’s objection to the merits of that complaint (see, for example, Altius Insurance LTD v. Cyprus, no. 41151/20, § 67, 24 October 2023, with further references, and Ananyev and Others v. Russia, nos. 42525/07 and 60800/08, § 70, 10 January 2012).",
+          "category": "court_admissibility_only",
+          "start": 42687,
+          "end": 42971,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that the complaints about the length of the proceedings and the lack of an effective domestic remedy are not manifestly ill-founded within the meaning of Article 35 § 3 (a) of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 42976,
+          "end": 43183,
+          "tier": "review"
+        },
+        {
+          "quote": "It also notes that they are not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 43184,
+          "end": 43250,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43251,
+          "end": 43294,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11752,
+      "completion_tokens": 3391
+    },
+    {
+      "item_id": "001-244594",
+      "case_name": "CASE OF VERVELE v. GREECE",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the complaints about the length of the proceedings and the lack of an effective domestic remedy are not manifestly ill-founded within the meaning of Article 35 § 3 (a) of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 42976,
+          "end": 43183,
+          "tier": "review"
+        },
+        {
+          "quote": "It also notes that they are not inadmissible on any other grounds.",
+          "category": "court_admissibility_only",
+          "start": 43184,
+          "end": 43250,
+          "tier": "review"
+        },
+        {
+          "quote": "They must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 43251,
+          "end": 43294,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11752,
+      "completion_tokens": 2081
+    },
+    {
+      "item_id": "001-231088",
+      "case_name": "CASE OF VLAHOVIĆ v. MONTENEGRO",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5322,
+      "completion_tokens": 3378
+    },
+    {
+      "item_id": "001-231088",
+      "case_name": "CASE OF VLAHOVIĆ v. MONTENEGRO",
+      "article": "P1-1",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5332,
+      "completion_tokens": 1796
+    },
+    {
+      "item_id": "001-216464",
+      "case_name": "CASE OF VOOL AND TOOMIK v. ESTONIA",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8185,
+      "completion_tokens": 2393
+    },
+    {
+      "item_id": "001-242505",
+      "case_name": "CASE OF VYACHESLAVOVA AND OTHERS v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11788,
+      "completion_tokens": 810
+    },
+    {
+      "item_id": "001-242505",
+      "case_name": "CASE OF VYACHESLAVOVA AND OTHERS v. UKRAINE",
+      "article": "2",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 11788,
+      "completion_tokens": 278
+    },
+    {
+      "item_id": "001-212829",
+      "case_name": "CASE OF W.A. v. SWITZERLAND",
+      "article": "P7-4",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4104,
+      "completion_tokens": 3861
+    },
+    {
+      "item_id": "001-235346",
+      "case_name": "CASE OF W.R. v. THE NETHERLANDS",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8486,
+      "completion_tokens": 2703
+    },
+    {
+      "item_id": "001-231331",
+      "case_name": "CASE OF WA BAILE v. SWITZERLAND",
+      "article": "14",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10835,
+      "completion_tokens": 1217
+    },
+    {
+      "item_id": "001-237954",
+      "case_name": "CASE OF WINTHER v. DENMARK",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court notes that the application is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 19102,
+          "end": 19250,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 19251,
+          "end": 19292,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 5101,
+      "completion_tokens": 1048
+    },
+    {
+      "item_id": "001-225329",
+      "case_name": "CASE OF X AND OTHERS v. IRELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8376,
+      "completion_tokens": 2231
+    },
+    {
+      "item_id": "001-223027",
+      "case_name": "CASE OF Y v. FRANCE",
+      "article": "8",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 10766,
+      "completion_tokens": 5020
+    },
+    {
+      "item_id": "001-244727",
+      "case_name": "CASE OF YAKYMCHUK v. UKRAINE",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "review",
+      "spans": [
+        {
+          "quote": "The Court finds that the applicant was not required to bring compensation proceedings, as she did not receive a ruling or a court decision declaring that the covert surveillance measures had been unlawful.",
+          "category": "court_admissibility_only",
+          "start": 24492,
+          "end": 24697,
+          "tier": "review"
+        },
+        {
+          "quote": "As to the alleged waiver, while the facts regarding it may be relevant in respect of the merits of the applicant’s Article 8 complaint, it does not concern the question of exhaustion of domestic remedies or other aspects of the admissibility of that complaint.",
+          "category": "court_admissibility_only",
+          "start": 24698,
+          "end": 24958,
+          "tier": "review"
+        },
+        {
+          "quote": "Accordingly, the Court dismisses the Government’s objections in respect of non-exhaustion of domestic remedies.",
+          "category": "court_admissibility_only",
+          "start": 24962,
+          "end": 25073,
+          "tier": "review"
+        },
+        {
+          "quote": "The Court notes that the complaint under Article 8 is neither manifestly ill-founded nor inadmissible on any other grounds listed in Article 35 of the Convention.",
+          "category": "court_admissibility_only",
+          "start": 25077,
+          "end": 25239,
+          "tier": "review"
+        },
+        {
+          "quote": "It must therefore be declared admissible.",
+          "category": "court_admissibility_only",
+          "start": 25240,
+          "end": 25281,
+          "tier": "review"
+        }
+      ],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6194,
+      "completion_tokens": 5835
+    },
+    {
+      "item_id": "001-213789",
+      "case_name": "CASE OF YAREMIYCHUK AND OTHERS  v. UKRAINE",
+      "article": "41",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4386,
+      "completion_tokens": 778
+    },
+    {
+      "item_id": "001-238661",
+      "case_name": "CASE OF ZAFFERANI AND OTHERS v. SAN MARINO",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4262,
+      "completion_tokens": 2401
+    },
+    {
+      "item_id": "001-224580",
+      "case_name": "CASE OF ZAGHINI v. SAN MARINO",
+      "article": "P1-1",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8785,
+      "completion_tokens": 660
+    },
+    {
+      "item_id": "001-237797",
+      "case_name": "CASE OF ZAHARIEV v. NORTH MACEDONIA",
+      "article": "6",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4335,
+      "completion_tokens": 1453
+    },
+    {
+      "item_id": "001-236179",
+      "case_name": "CASE OF ZAVRIDOU v. CYPRUS",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 6966,
+      "completion_tokens": 531
+    },
+    {
+      "item_id": "001-207806",
+      "case_name": "CASE OF ZOHLANDT v. THE NETHERLANDS",
+      "article": "5",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 4981,
+      "completion_tokens": 1050
+    },
+    {
+      "item_id": "001-243562",
+      "case_name": "CASE OF Á.F.L. v. ICELAND",
+      "article": "14",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 9935,
+      "completion_tokens": 880
+    },
+    {
+      "item_id": "001-204601",
+      "case_name": "CASE OF ČIVINSKAITĖ v. LITHUANIA",
+      "article": "6",
+      "violation_label": "no_violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 19992,
+      "completion_tokens": 8806
+    },
+    {
+      "item_id": "001-212970",
+      "case_name": "CASE OF ŠPADIJER v. MONTENEGRO",
+      "article": "8",
+      "violation_label": "violation",
+      "prompt": "0668476bcff9:2fbf2302d5e0",
+      "tier": "clean",
+      "spans": [],
+      "unverifiable_quotes": [],
+      "prompt_tokens": 8059,
+      "completion_tokens": 1003
+    }
+  ]
+}

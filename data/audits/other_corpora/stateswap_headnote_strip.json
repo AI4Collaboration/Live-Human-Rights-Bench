@@ -1,0 +1,1294 @@
+{
+  "status": "APPLIED",
+  "cases": "../cases_stateswap.json",
+  "field": "full_case_text_no_verdict",
+  "sha256_lf_before": "ff6782fa7c02a777f240d13a0b01f770b26d4aaba21c8d0dbede095f067d8d19",
+  "rows": 816,
+  "rows_cut": 183,
+  "characters_removed": 132260,
+  "cuts": [
+    {
+      "index": 9,
+      "item_id": "001-224776",
+      "article": "13",
+      "characters_removed": 233,
+      "removed_head": "\n \nArt 6 (criminal) • Reasonable time • Excessive length of private criminal proceedings against the applicant discontinued by a decision of the Attorney General (nolle prosequi)\nArt 13 (+ Art 6 § 1) "
+    },
+    {
+      "index": 10,
+      "item_id": "001-249531",
+      "article": "8",
+      "characters_removed": 604,
+      "removed_head": "\n \nArt 8 • Family life • Domestic courts’ failure to strike a fair balance between the interests of all the parties in custody proceedings after the mother of the applicant’s children unilaterally and"
+    },
+    {
+      "index": 11,
+      "item_id": "001-237294",
+      "article": "3",
+      "characters_removed": 576,
+      "removed_head": "\n \nArt 3 and Art 8 • Positive obligations • Withdrawal of charges against an alleged perpetrator of rape, in view of at least three consecutive errors committed by the Danish Prosecution Service, in p"
+    },
+    {
+      "index": 16,
+      "item_id": "001-222312",
+      "article": "10",
+      "characters_removed": 339,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Justified and proportionate court order for applicant company, a publishing house, to publish a reply by a political official concerned to its newspaper article wit"
+    },
+    {
+      "index": 21,
+      "item_id": "001-208280",
+      "article": "10",
+      "characters_removed": 442,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Dismissal of doctor for lodging good faith but unfounded criminal complaint accusing colleague of active euthanasia, without verification to the extent permitted by"
+    },
+    {
+      "index": 29,
+      "item_id": "001-237292",
+      "article": "2",
+      "characters_removed": 1764,
+      "removed_head": "\n \nArt 35 § 1 • Lack of effective remedies at the time of lodging the application, offering the applicant reasonable prospects of obtaining non-pecuniary damages for his son’s death • Civil claim unde"
+    },
+    {
+      "index": 34,
+      "item_id": "001-212150",
+      "article": "8",
+      "characters_removed": 514,
+      "removed_head": "\n \nArt 8 • Respect for private life • Dismissal of action against tabloids, which published unverified tawdry statements on, and pictures of, applicant’s son, a priest convicted of sexual offences, ye"
+    },
+    {
+      "index": 40,
+      "item_id": "001-238658",
+      "article": "13",
+      "characters_removed": 1296,
+      "removed_head": "\n \nArt 37 • Striking out applications • Unilateral declaration not containing an undertaking to reopen the investigation concerning the death in detention of the applicant’s son who had mental health "
+    },
+    {
+      "index": 46,
+      "item_id": "001-214012",
+      "article": "8",
+      "characters_removed": 613,
+      "removed_head": "\n \nArt 8 • Private life • Positive obligations • Protracted withdrawal of applicant’s professional licence and consequent inability to work as certified motor vehicle inspector entailing serious reper"
+    },
+    {
+      "index": 47,
+      "item_id": "001-238072",
+      "article": "6",
+      "characters_removed": 503,
+      "removed_head": "\n \nArt 6 § 1 (criminal) • Fair hearing • Applicants’ convictions for money laundering and extortion respectively based on the “most decisive” extent on testimony of accomplice, who was not prompted by"
+    },
+    {
+      "index": 53,
+      "item_id": "001-233761",
+      "article": "6",
+      "characters_removed": 2682,
+      "removed_head": "\n(Merits)\n \nArt 6 § 1 (criminal) and Art 6 § 3 (d) • Fair hearing • Independent and impartial tribunal • Examination of witnesses • Conviction of former president of Georgia in two separate sets of cr"
+    },
+    {
+      "index": 54,
+      "item_id": "001-228530",
+      "article": "10",
+      "characters_removed": 1553,
+      "removed_head": "\nArt 10 • Freedom of expression • Injunction ordering news website company to cease publication of CCTV footage of a police arrest without blurring one of the faces of the police officers • Injunction"
+    },
+    {
+      "index": 59,
+      "item_id": "001-224091",
+      "article": "8",
+      "characters_removed": 282,
+      "removed_head": "\n \nArt 8 • Positive obligations • Family life • Failure of domestic authorities to take necessary and timely steps to enforce the applicants’ contact rights with his daughter seeking to overcome the m"
+    },
+    {
+      "index": 63,
+      "item_id": "001-230260",
+      "article": "P1-1",
+      "characters_removed": 990,
+      "removed_head": "\nArt 13 (+ Art 1 P1) • Effective remedy • Appeal to Constitutional Court as of 2021 an accessible remedy, capable of providing redress and offering reasonable prospect of success in relation to claims"
+    },
+    {
+      "index": 66,
+      "item_id": "001-235346",
+      "article": "6",
+      "characters_removed": 393,
+      "removed_head": "\n \n \nArt 6 § 1 (criminal) and Art 6 § 3 (c) • Fair hearing • Defence through legal assistance • Overall fairness of proceedings not irretrievably prejudiced in case-circumstances, despite restriction "
+    },
+    {
+      "index": 67,
+      "item_id": "001-238102",
+      "article": "6",
+      "characters_removed": 594,
+      "removed_head": "\nArt 6 § 1 (civil) • Impartial tribunal • Fair hearing • Domestic courts’ refusal to allow the recognition of a final arbitration award by the International Chamber of Commerce of the International Co"
+    },
+    {
+      "index": 71,
+      "item_id": "001-221637",
+      "article": "P1-1",
+      "characters_removed": 344,
+      "removed_head": "\n \nArt 1 P1 • Positive obligations • Peaceful enjoyment of possessions • Adequate criminal and civil remedies at applicant’s disposal for the protection of her property rights in relation to organised"
+    },
+    {
+      "index": 77,
+      "item_id": "001-244851",
+      "article": "P1-3",
+      "characters_removed": 954,
+      "removed_head": "\n \nArt 3 P1 • Ineligibility of prisoner serving an indeterminate sentence of imprisonment to vote in 2019 general (parliamentary) election • Clear guidance in the Court’s case-law on whether the disen"
+    },
+    {
+      "index": 80,
+      "item_id": "001-209035",
+      "article": "8",
+      "characters_removed": 440,
+      "removed_head": "\n \nArt 8 • Respect for private life • Positive obligations • Requirement to enter full divorce settlement containing personal data into the public land register for property transfer within the ambit "
+    },
+    {
+      "index": 84,
+      "item_id": "001-234129",
+      "article": "2",
+      "characters_removed": 1036,
+      "removed_head": "\n \nThis version was rectified on 2 July 2024\n under Rule 81 of the Rules of Court\nArt 2 (substantive and procedural) • Use of force • Positive obligations • Failure to protect life of applicant’s part"
+    },
+    {
+      "index": 92,
+      "item_id": "001-218074",
+      "article": "P7-4",
+      "characters_removed": 527,
+      "removed_head": "\n \nArt 4 P7 • Right not to be tried or punished twice • Duplication of proceedings, through administrative fine and criminal proceedings for constructing stone walls in breach of building permit, not "
+    },
+    {
+      "index": 94,
+      "item_id": "001-202411",
+      "article": "6",
+      "characters_removed": 286,
+      "removed_head": "\n \nArt 6 § 1 • Reasonable time • Excessive length of civil proceedings\nArt 13 and Art 6 § 1 • Effective remedy in respect of Length of proceedings cases • Effectiveness of compensatory action for brea"
+    },
+    {
+      "index": 103,
+      "item_id": "001-243782",
+      "article": "8",
+      "characters_removed": 864,
+      "removed_head": "\n \nArt 8 • Family life • Barring order prohibiting the applicant from approaching his nine-year-old daughter in the context of criminal proceedings against him concerning alleged violence and threats "
+    },
+    {
+      "index": 113,
+      "item_id": "001-216463",
+      "article": "11",
+      "characters_removed": 601,
+      "removed_head": "\n \nArticle 11 • Freedom of peaceful assembly • General ban on public gatherings, for two and a half months at the beginning of the COVID-19 pandemic, to which criminal sanctions were attached and with"
+    },
+    {
+      "index": 124,
+      "item_id": "001-236179",
+      "article": "8",
+      "characters_removed": 470,
+      "removed_head": "\nArt 8 • Positive obligations • Family life • Domestic authorities’ failure to secure a mother’s custodial rights and to enforce the relevant domestic court orders resulting in the alienation of her c"
+    },
+    {
+      "index": 129,
+      "item_id": "001-223027",
+      "article": "8",
+      "characters_removed": 573,
+      "removed_head": "\n \nArt 8 • Positive obligations • Refusal by national authorities to insert sex marker “neutral” or “intersex” instead of “male” on birth certificate of intersex individual • Discordance between appli"
+    },
+    {
+      "index": 132,
+      "item_id": "001-244594",
+      "article": "13",
+      "characters_removed": 1340,
+      "removed_head": "\n \nArt 13 (+ Art 6 § 1) • Lack of effective remedy in respect of excessive length of civil proceedings • Existing compensatory remedy did not afford appropriate redress and was not effective • Fragmen"
+    },
+    {
+      "index": 138,
+      "item_id": "001-228151",
+      "article": "3",
+      "characters_removed": 1322,
+      "removed_head": "\n \nArt 3 (substantive and procedural) • Positive obligations • Domestic authorities’ failure to protect applicant from domestic violence • Failure to conduct autonomous, proactive and comprehensive ri"
+    },
+    {
+      "index": 140,
+      "item_id": "001-219556",
+      "article": "6",
+      "characters_removed": 746,
+      "removed_head": "\n \nArt 6 § 1 (criminal) • Fair hearing • Use of bank documents for recalculation of tax fine – obtained from applicant by judicial order for disclosure, on pain of penalty payments – not within scope "
+    },
+    {
+      "index": 150,
+      "item_id": "001-236065",
+      "article": "8",
+      "characters_removed": 2291,
+      "removed_head": "\n \nArt 8 read in light of Art 9 • Private life • Medical treatment in the form of blood transfusions administered to a Jehovah’s Witness, during emergency surgery, despite her expressed refusal to und"
+    },
+    {
+      "index": 152,
+      "item_id": "001-226011",
+      "article": "14",
+      "characters_removed": 1755,
+      "removed_head": "\n \nArt 14 (+ Art 8) • Private life • Lack of sufficient institutional and procedural safeguards in respect of discrimination against professional athlete with differences of sex development (DSD) requ"
+    },
+    {
+      "index": 156,
+      "item_id": "001-204812",
+      "article": "6",
+      "characters_removed": 977,
+      "removed_head": "\nArt 11 • Freedom of peaceful assembly • Arbitrary prosecution and conviction of opposition supporter, linked to his participation in a protest movement • Repetitive pattern of artificial and politica"
+    },
+    {
+      "index": 157,
+      "item_id": "001-235470",
+      "article": "10",
+      "characters_removed": 334,
+      "removed_head": "\nArt 10 • Freedom of expression • Suspended disciplinary fine imposed on practising doctor for making scientifically untenable statements about ineffectiveness of vaccines • Relevant and sufficient re"
+    },
+    {
+      "index": 159,
+      "item_id": "001-231227",
+      "article": "9",
+      "characters_removed": 1426,
+      "removed_head": "\n \nArt 9 • Freedom of religion • Manifest religion or belief • Decrees in Belgian and Belgian regions prohibiting slaughter of animals without prior stunning, while providing for reversible stunning i"
+    },
+    {
+      "index": 163,
+      "item_id": "001-200547",
+      "article": "2",
+      "characters_removed": 143,
+      "removed_head": "\n \n \nArt 2 • Effective investigation • Investigation into death of a conscript undermined by serious initial omissions and passage of time\n \n \n"
+    },
+    {
+      "index": 164,
+      "item_id": "001-222790",
+      "article": "6",
+      "characters_removed": 187,
+      "removed_head": "\nArt 6 § 1 (civil) • Fair hearing • Czech Constitutional Court’s failure to communicate written observations of the general courts resulting in applicant’s inability to comment on them\n \n"
+    },
+    {
+      "index": 168,
+      "item_id": "001-245686",
+      "article": "3",
+      "characters_removed": 176,
+      "removed_head": "\n \nArt 3 (procedural) • Effective criminal investigation into the physical assault of the applicant by private individuals\n \nPrepared by the Registry. Does not bind the Court. "
+    },
+    {
+      "index": 172,
+      "item_id": "001-218941",
+      "article": "14",
+      "characters_removed": 1025,
+      "removed_head": "\n \nArt 1 P1 • Ratione materiae • Withheld old-age pension payment, due to statutory disqualification while incarcerated, not a “possession”\nArt 14 (+ Art 1 P1) • Discrimination • Peaceful enjoyment of"
+    },
+    {
+      "index": 178,
+      "item_id": "001-237438",
+      "article": "3",
+      "characters_removed": 1625,
+      "removed_head": "\nArt 3 (substantive) • Conditions of detention in immigration centres of the first applicant, not considered a presumed minor, not sufficient to reach required Art 3 threshold • Cumulative conditions "
+    },
+    {
+      "index": 179,
+      "item_id": "001-236132",
+      "article": "6",
+      "characters_removed": 953,
+      "removed_head": "\n \nArt 6 § 2 • Presumption of innocence • Special confiscation of a sum of money because of its undisputed unlawful origin, after the discontinuance of the criminal proceedings as time-barred • Under "
+    },
+    {
+      "index": 203,
+      "item_id": "001-216196",
+      "article": "P1-1",
+      "characters_removed": 243,
+      "removed_head": "\n \nArt 1 P1 • Control of the use of property • Unlawful retention of applicant company’s merchandise, for almost a year and a half, after acquittal of director and associate in criminal proceedings in"
+    },
+    {
+      "index": 204,
+      "item_id": "001-213522",
+      "article": "8",
+      "characters_removed": 446,
+      "removed_head": "\n \nArt 8 • Expulsion • Private life • Expulsion order with a permanent re-entry ban • Existence of very serious reasons for expelling settled migrant, born in Denmark and living there for twenty-five "
+    },
+    {
+      "index": 205,
+      "item_id": "001-216464",
+      "article": "14",
+      "characters_removed": 349,
+      "removed_head": "\n \nArt 14 (+ Art 8) • Discrimination • Family life • Domestic court’s failure to reasonably justify prohibition of applicants receiving long-term visits while in detention on remand, even after all ot"
+    },
+    {
+      "index": 209,
+      "item_id": "001-245246",
+      "article": "6",
+      "characters_removed": 1214,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Independent and impartial tribunal • Disciplinary proceedings against a prosecutor, leading to a sanction, brought by the Greek Court of Cassation (CC) President, after she cond"
+    },
+    {
+      "index": 216,
+      "item_id": "001-210131",
+      "article": "10",
+      "characters_removed": 434,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Criminal fine of EUR 1,000 for disclosing to the media confidential documents from a private-sector employer (“Luxleaks”), of insufficient public interest to counte"
+    },
+    {
+      "index": 219,
+      "item_id": "001-231088",
+      "article": "6",
+      "characters_removed": 606,
+      "removed_head": "\n \nArt 37 § 1 • New unilateral declaration submitted after restoration of application to Court’s list for failure to fulfil undertaking in previous declaration did not provide appropriate redress • Re"
+    },
+    {
+      "index": 220,
+      "item_id": "001-249691",
+      "article": "3",
+      "characters_removed": 1609,
+      "removed_head": "\n \nArt 3 (substantive) • Inhuman or degrading punishment • Life sentences reducible de jure under the new mandatory ex officio mechanism of executive review of life-sentences after twenty-eight years "
+    },
+    {
+      "index": 222,
+      "item_id": "001-199382",
+      "article": "8",
+      "characters_removed": 226,
+      "removed_head": "\n \n \nArt 8 • Respect for family life • Severing parent-child ties without adequate decision-making process • Cultural and religious background of mother and child militating in favour of maintaining p"
+    },
+    {
+      "index": 226,
+      "item_id": "001-219944",
+      "article": "6",
+      "characters_removed": 350,
+      "removed_head": "\n \nThis version was rectified on 30 January 2023\nunder Rule 81 of the Rules of Court. Art 6 § 1 (civil) • Access to court • Inability of applicants, injured parties to criminal proceedings, to have th"
+    },
+    {
+      "index": 228,
+      "item_id": "001-219068",
+      "article": "2",
+      "characters_removed": 392,
+      "removed_head": "\n \nArt 2 (procedural and substantive) • Life • Positive obligations • Ineffective investigation into incident involving applicant falling out of second-floor window at a police station, where she was "
+    },
+    {
+      "index": 229,
+      "item_id": "001-218131",
+      "article": "P1-1",
+      "characters_removed": 462,
+      "removed_head": "\nArt 1 P1 • Control of the use of property • Seizure of copper wire bags from the applicant, charges against whom were eventually withdrawn, and handover to the company from which the wire had alleged"
+    },
+    {
+      "index": 234,
+      "item_id": "001-228118",
+      "article": "13",
+      "characters_removed": 892,
+      "removed_head": "\n \nArt 2 (substantive and procedural) • Life • Positive obligations • Death of applicant’s son during compulsory military service following accidental shooting by a fellow serviceman • Domestic author"
+    },
+    {
+      "index": 240,
+      "item_id": "001-245104",
+      "article": "P1-3",
+      "characters_removed": 706,
+      "removed_head": "\nArt 3 P1 • Choice of the legislature • Electoral decisions annulling the applicant’s declaration as an elected member of parliament on three occasions after his appointment as the first runner-up to "
+    },
+    {
+      "index": 251,
+      "item_id": "001-219641",
+      "article": "P1-1",
+      "characters_removed": 604,
+      "removed_head": "\n(Merits)\nArt 1 P1 • Peaceful enjoyment of possessions • Exclusion of applicant company from list of partners of different company leading to a loss of its 50 % shareholding therein and participation "
+    },
+    {
+      "index": 259,
+      "item_id": "001-205166",
+      "article": "6",
+      "characters_removed": 410,
+      "removed_head": "\n \n \nArt 6 § 2 • Presumption of innocence • Sammarinese Judge of Criminal Appeals’ remarks while deciding compensation to the victim after having discontinued charges as time-barred • Statements not m"
+    },
+    {
+      "index": 263,
+      "item_id": "001-210089",
+      "article": "P1-3",
+      "characters_removed": 526,
+      "removed_head": "\n \nArt 3 P1 • Vote • Justified disenfranchisement of person with intellectual disability, based on thorough, individualised assessment by domestic courts • Free expression of the opinion of the people"
+    },
+    {
+      "index": 270,
+      "item_id": "001-213788",
+      "article": "10",
+      "characters_removed": 381,
+      "removed_head": "\n \nArt 10 • Freedom to receive and impart information • Journalist refused access to information of public interest concerning environmental and health impact of former military radar station • Failur"
+    },
+    {
+      "index": 273,
+      "item_id": "001-243885",
+      "article": "14",
+      "characters_removed": 1151,
+      "removed_head": "\nArt 3 and Art 8 • Positive obligations • Authorities’ response to applicant’s rape allegations in breach of the State’s procedural positive obligations to apply the relevant criminal provisions in pr"
+    },
+    {
+      "index": 274,
+      "item_id": "001-247564",
+      "article": "13",
+      "characters_removed": 607,
+      "removed_head": "\n \nArt 8 • Private life • Correspondence • Privileged communications between the applicant criminal defence lawyers and their client seized from the latter’s electronic devices and put in the criminal"
+    },
+    {
+      "index": 275,
+      "item_id": "001-217039",
+      "article": "10",
+      "characters_removed": 290,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Justified and proportionate conviction and suspended prison sentence imposed on pro-euthanasia physician for assistance and advice to specific persons on how to com"
+    },
+    {
+      "index": 285,
+      "item_id": "001-233215",
+      "article": "6",
+      "characters_removed": 1649,
+      "removed_head": "\n \nArt 6 § 1 (criminal) • Impartial tribunal • Conviction of Parliamentarian after the end of his term of office for voting for another parliamentarian who was absent with the latter’s identity card •"
+    },
+    {
+      "index": 299,
+      "item_id": "001-215166",
+      "article": "6",
+      "characters_removed": 288,
+      "removed_head": "\n \nArt 6 § 1 (criminal) and Art 6 § 3 (c) • Fair hearing • Use at trial of initial confession by terrorist suspect held incommunicado and denied, without individualised reasons, access to lawyer of ow"
+    },
+    {
+      "index": 300,
+      "item_id": "001-231331",
+      "article": "14",
+      "characters_removed": 702,
+      "removed_head": "\nArt 14 (+ Art 8) • Domestic courts’ failure to ascertain whether discriminatory motives were behind identity check of dark-skinned man alleging racial profiling in railway station • Art 14 (+ Art 8) "
+    },
+    {
+      "index": 301,
+      "item_id": "001-238269",
+      "article": "3",
+      "characters_removed": 560,
+      "removed_head": "\n \nArt 3 (procedural and substantive) • Effective investigation into the shooting of a father and his son by a gendarmerie officer, during an incident in their village, resulting in serious injuries t"
+    },
+    {
+      "index": 302,
+      "item_id": "001-196897",
+      "article": "14",
+      "characters_removed": 402,
+      "removed_head": "\n \n \nArt 14 (+ Art 1 P1) • Discrimination • Possessions • Reduction of benefit in order to incentivise social housing tenants to move into smaller accommodation • No distinction made in favour of cert"
+    },
+    {
+      "index": 306,
+      "item_id": "001-197215",
+      "article": "P12-1",
+      "characters_removed": 398,
+      "removed_head": "\n \nArt 1 P12 • General prohibition of discrimination • Impossibility to vote and stand in local elections for prolonged period of time • Difference of treatment depending on residence • No sufficient,"
+    },
+    {
+      "index": 308,
+      "item_id": "001-211596",
+      "article": "P7-4",
+      "characters_removed": 354,
+      "removed_head": "\n \nArt 4 P7 • Right not to be tried or punished twice • Disproportionate prejudice suffered through subjection to minor-offence and administrative (tax) proceedings for using prohibited oil as fuel • "
+    },
+    {
+      "index": 329,
+      "item_id": "001-213853",
+      "article": "6",
+      "characters_removed": 385,
+      "removed_head": "\n \nArt 6 § 1 (criminal) • Impartial tribunal • Objectively justified doubts as to impartiality of applicant’s trial court which had also previously convicted his co-perpetrators on the basis of plea-b"
+    },
+    {
+      "index": 331,
+      "item_id": "001-245390",
+      "article": "8",
+      "characters_removed": 490,
+      "removed_head": "\n \nArt 3 and Art 8 (procedural) • Positive obligations • Authorities’ failure to conduct an effective investigation into applicants’ complaints of sexual assault involving chemical submission • System"
+    },
+    {
+      "index": 334,
+      "item_id": "001-241978",
+      "article": "6",
+      "characters_removed": 594,
+      "removed_head": "\n \nArt 6 § 1 (criminal) • Reasonable time • Applicant’s conviction by a jury of two counts of murder after standing trial five times • One-year delays between the third and fourth trial and between th"
+    },
+    {
+      "index": 339,
+      "item_id": "001-226093",
+      "article": "6",
+      "characters_removed": 921,
+      "removed_head": "\nArt 6 (civil) • Right to a court • National authorities’ refusal to enforce immediately enforceable decision requiring State to provide accommodation and material support to applicant for internation"
+    },
+    {
+      "index": 345,
+      "item_id": "001-204602",
+      "article": "3",
+      "characters_removed": 763,
+      "removed_head": "\n \nArt 3 • Inhuman and degrading treatment • Applicant’s strapping to a restraint bed for almost twenty-three hours in a psychiatric hospital not strictly necessary and not respectful of his human dig"
+    },
+    {
+      "index": 349,
+      "item_id": "001-213203",
+      "article": "14",
+      "characters_removed": 652,
+      "removed_head": "\n \nArt 3 (procedural) • Art 14 • Discrimination on the basis of religion • Ineffective investigation into the complaints of the four applicants – belonging to the Muslim minority – concerning excessiv"
+    },
+    {
+      "index": 360,
+      "item_id": "001-224732",
+      "article": "8",
+      "characters_removed": 641,
+      "removed_head": "\n \nArt 8 • Correspondence • Transmission and use in competition law proceedings of data lawfully obtained through telephone tapping in criminal investigations • Impugned data transmission sufficiently"
+    },
+    {
+      "index": 364,
+      "item_id": "001-202622",
+      "article": "3",
+      "characters_removed": 585,
+      "removed_head": "\nArt 3 (substantive) • Inhuman and degrading treatment • Inadequate medical care and assistance during the detention for two years and seven months of a seriously ill person confined to a wheelchair •"
+    },
+    {
+      "index": 375,
+      "item_id": "001-211814",
+      "article": "11",
+      "characters_removed": 418,
+      "removed_head": "\n \nArt 15 • State of emergency and derogation in State capital inapplicable ratione loci to events taking place in another city  \nArt 11 • Freedom of peaceful assembly • Failure to provide relevant an"
+    },
+    {
+      "index": 379,
+      "item_id": "001-245810",
+      "article": "P1-1",
+      "characters_removed": 693,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Fair hearing • No divergence in the Supreme Court’s case-law concerning State interference with the pensions and salaries of officials and employees in the civil service at a ti"
+    },
+    {
+      "index": 380,
+      "item_id": "001-207667",
+      "article": "14",
+      "characters_removed": 765,
+      "removed_head": "\n \nArt 3 P1 • Vote • Disenfranchisement of persons divested of legal capacity affecting only a small group and subject to thorough parliamentary and judicial review • Measure not amounting to automati"
+    },
+    {
+      "index": 385,
+      "item_id": "001-229726",
+      "article": "11",
+      "characters_removed": 1729,
+      "removed_head": "\n \nArt 11 • Freedom of association • Proportionate disciplinary sanctions on teachers with civil-servant status for participating during their working hours in strikes organised by their trade union, "
+    },
+    {
+      "index": 386,
+      "item_id": "001-223435",
+      "article": "6",
+      "characters_removed": 346,
+      "removed_head": "\nArt 6 § 1 (criminal) • Fair hearing • Greek Court of Cassation’s failure to examine, without giving reasons, applicant’s request to seek a preliminary ruling from the Court of Justice of the European"
+    },
+    {
+      "index": 394,
+      "item_id": "001-208589",
+      "article": "3",
+      "characters_removed": 454,
+      "removed_head": "\n \nArt 3 (procedural) • Continuing ineffectiveness of investigation into police brutality after finding of Art 3 substantive and procedural violations by Montenegrin Constitutional Court • Investigati"
+    },
+    {
+      "index": 402,
+      "item_id": "001-222915",
+      "article": "P1-1",
+      "characters_removed": 400,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Deprivation of property • Impossibility of pursuing in legal proceedings claims against bankrupt debtor for payment of money owed on the basis of prom"
+    },
+    {
+      "index": 406,
+      "item_id": "001-208534",
+      "article": "6",
+      "characters_removed": 578,
+      "removed_head": "\nArt 6 §§ 1 (criminal) and 3 (d) • Trial leading to conviction for membership of illegal armed organisation unfair, due to applicant’s inability to confront witness against him, and despite his lawyer"
+    },
+    {
+      "index": 408,
+      "item_id": "001-224365",
+      "article": "2",
+      "characters_removed": 226,
+      "removed_head": "\n \nArt 2 (procedural and substantive) • Ineffective investigation into the death of the applicant’s son during his compulsory military service • Failure to discharge obligation to provide plausible ex"
+    },
+    {
+      "index": 417,
+      "item_id": "001-245684",
+      "article": "8",
+      "characters_removed": 1004,
+      "removed_head": "\n \nArt 8 • Private life • Introduction of total ban on smoking in prisons affecting the applicants, serving prisoners who were long-term smokers • Choice to smoke and the provision of treatment to cou"
+    },
+    {
+      "index": 422,
+      "item_id": "001-238270",
+      "article": "8",
+      "characters_removed": 466,
+      "removed_head": "\n \nArt 8 • Family life • Dismissal by the domestic courts of the applicant’s application for custody of his children for want of jurisdiction, ruling that they were habitually resident in Germany • No"
+    },
+    {
+      "index": 431,
+      "item_id": "001-242521",
+      "article": "13",
+      "characters_removed": 2116,
+      "removed_head": "\nArt 8 • Correspondence • Transmission and use in competition law proceedings of data lawfully obtained through telephone tapping in criminal investigations • Transmission of intercept data for furthe"
+    },
+    {
+      "index": 432,
+      "item_id": "001-221503",
+      "article": "14",
+      "characters_removed": 680,
+      "removed_head": "\nArt 14 (+ Art 2 P1) • Right to education • Discrimination of Roma pupils on account of their segregation in two State-run primary schools attended predominantly by Roma children and with Roma-only cl"
+    },
+    {
+      "index": 433,
+      "item_id": "001-215177",
+      "article": "8",
+      "characters_removed": 266,
+      "removed_head": "\nArt 8 • Family life • Severe limitations on parents’ contact rights, following their child’s placement in foster care, at variance with aim of family reunification • Failure to examine existence of a"
+    },
+    {
+      "index": 436,
+      "item_id": "001-235896",
+      "article": "P1-1",
+      "characters_removed": 352,
+      "removed_head": "\n \nArt 1 P1 • Confiscation of sum of money derived from crime and applicant’s inability to recover it, following his conviction for money laundering • Measure proportionate to legitimate aim of fighti"
+    },
+    {
+      "index": 441,
+      "item_id": "001-233206",
+      "article": "6",
+      "characters_removed": 3469,
+      "removed_head": "\n \nArt 34 • Victim • Locus standi • Separate key criteria set out for establishing victim status of individual applicants and locus standi (representation) of associations in climate-change context • "
+    },
+    {
+      "index": 445,
+      "item_id": "001-220712",
+      "article": "2",
+      "characters_removed": 537,
+      "removed_head": "\nArt 2 (substantive) • Life • Positive obligations • Failure to take appropriate and effective measures to protect life of contractual military officer who allegedly committed suicide, against backdro"
+    },
+    {
+      "index": 452,
+      "item_id": "001-224776",
+      "article": "6",
+      "characters_removed": 233,
+      "removed_head": "\n \nArt 6 (criminal) • Reasonable time • Excessive length of private criminal proceedings against the applicant discontinued by a decision of the Attorney General (nolle prosequi)\nArt 13 (+ Art 6 § 1) "
+    },
+    {
+      "index": 453,
+      "item_id": "001-247564",
+      "article": "8",
+      "characters_removed": 607,
+      "removed_head": "\n \nArt 8 • Private life • Correspondence • Privileged communications between the applicant criminal defence lawyers and their client seized from the latter’s electronic devices and put in the criminal"
+    },
+    {
+      "index": 454,
+      "item_id": "001-227719",
+      "article": "3",
+      "characters_removed": 308,
+      "removed_head": "\n \nArt 3 (substantive and procedural) • Inhuman or degrading treatment • Ineffective investigation into deployment of pepper spray against an aggressive prisoner in an observation cell without prior w"
+    },
+    {
+      "index": 458,
+      "item_id": "001-233412",
+      "article": "3",
+      "characters_removed": 717,
+      "removed_head": "\n \nArt 3 (procedural) • Ineffective criminal investigation, still ongoing for more than four and half years, into injuries sustained by demonstrators and journalists from rubber bullets fired by the p"
+    },
+    {
+      "index": 462,
+      "item_id": "001-225329",
+      "article": "14",
+      "characters_removed": 1082,
+      "removed_head": "\nArt 14 (+ Art 1 P1) • Discrimination • Peaceful enjoyment of possessions • Non-discriminatory denial of universal statutory child benefit to two mothers, lawfully present in Ireland, for non-fulfilme"
+    },
+    {
+      "index": 471,
+      "item_id": "001-215176",
+      "article": "8",
+      "characters_removed": 643,
+      "removed_head": "\nArt 34 • Locus standi • Mother’s lack of standing to act on her two children’s behalf • Conflicting interests due to serious joint parental child neglect and issuance of care order on account of conc"
+    },
+    {
+      "index": 479,
+      "item_id": "001-220665",
+      "article": "6",
+      "characters_removed": 421,
+      "removed_head": "\nArt 6 § 1 (administrative) • Access to court • Lack of personal summoning of applicant company in context of judicial proceedings concerning annulment of a decision announcing a public tender • Publi"
+    },
+    {
+      "index": 483,
+      "item_id": "001-230705",
+      "article": "9",
+      "characters_removed": 296,
+      "removed_head": "\nArt 9 • Freedom of religion • Administrative penalty imposed on a Jehovah’s Witness for discussing the Bible with a third person in the latter’s home • Lack of clear and foreseeable legal basis • Int"
+    },
+    {
+      "index": 487,
+      "item_id": "001-243781",
+      "article": "P1-1",
+      "characters_removed": 342,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Access to court • Art 1 P1 • Peaceful enjoyment of possessions • Non-enforcement of domestic court decisions against the Bosnian Canton • Acceptable enforcement plan adopted by "
+    },
+    {
+      "index": 490,
+      "item_id": "001-243887",
+      "article": "10",
+      "characters_removed": 737,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Civil sanctioning of journalist and newspaper publisher for publishing defamatory article on well-known lawyer in the context of general-interest issue of restituti"
+    },
+    {
+      "index": 491,
+      "item_id": "001-245701",
+      "article": "8",
+      "characters_removed": 820,
+      "removed_head": "\nArt 8 • Private life • Refusal to grant applicant contact rights in respect of his son, of whom he is not the legal father, and to have information provided about him • Domestic courts took adequate "
+    },
+    {
+      "index": 493,
+      "item_id": "001-242768",
+      "article": "6",
+      "characters_removed": 1177,
+      "removed_head": "\n \nArt 6 § 1 (criminal) and Art 6 § 3 (b) • Fair trial • Rights of the defence • Refusal of an accused’s request to be questioned outside the glass dock in which he was appearing at his criminal trial"
+    },
+    {
+      "index": 494,
+      "item_id": "001-234522",
+      "article": "2",
+      "characters_removed": 730,
+      "removed_head": "\n \nArt 2 (procedural) • Lack of effective investigation into the alleged suicide of the applicant’s daughter in a domestic violence context • Failure to explore adequately all credible lines of inquir"
+    },
+    {
+      "index": 501,
+      "item_id": "001-204601",
+      "article": "6",
+      "characters_removed": 786,
+      "removed_head": "\nArt 6 § 1 (civil) • Fair hearing • Disciplinary proceedings against a prosecutor for allegedly improperly carrying out her duties in a high‑profile criminal case • Applicant demoted to a lower positi"
+    },
+    {
+      "index": 505,
+      "item_id": "001-233213",
+      "article": "5",
+      "characters_removed": 856,
+      "removed_head": "\nArt 5 § 1 (f) • Arbitrary, and thus unlawful, immigration detention of applicant pending assessment of his asylum application on public order grounds following (pre-trial) criminal detention on terro"
+    },
+    {
+      "index": 509,
+      "item_id": "001-229894",
+      "article": "5",
+      "characters_removed": 948,
+      "removed_head": "\n \nArt 3 (substantive) • Inhuman treatment • Degrading treatment • Art 5 § 1 (e) • Persons of unsound mind • Preventive detention of a mentally ill person, exempted from criminal responsibility, at a "
+    },
+    {
+      "index": 511,
+      "item_id": "001-221637",
+      "article": "6",
+      "characters_removed": 344,
+      "removed_head": "\n \nArt 1 P1 • Positive obligations • Peaceful enjoyment of possessions • Adequate criminal and civil remedies at applicant’s disposal for the protection of her property rights in relation to organised"
+    },
+    {
+      "index": 514,
+      "item_id": "001-219946",
+      "article": "6",
+      "characters_removed": 377,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Fair hearing • Recognition by Slovenian courts of judgments delivered in Israel, finding applicant liable for significant medical damages, without duly satisfying themselves of "
+    },
+    {
+      "index": 521,
+      "item_id": "001-250107",
+      "article": "5",
+      "characters_removed": 728,
+      "removed_head": "\n \nArt 5 § 1 (e) • Persons of unsound mind • Art 5 § 4 • Review of lawfulness of detention • Applicant’s confinement in a “forensic therapeutic centre” (formerly known as an institution for mentally i"
+    },
+    {
+      "index": 522,
+      "item_id": "001-224366",
+      "article": "8",
+      "characters_removed": 394,
+      "removed_head": "\nArt 8 • Positive obligations • Private life • Failure by domestic courts to protect the applicant’s reputation in civil proceedings against a newspaper for publication of articles containing disparag"
+    },
+    {
+      "index": 525,
+      "item_id": "001-243081",
+      "article": "P1-1",
+      "characters_removed": 710,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Proceeds of crime acquired by a company, which went bankrupt and ceased to exist, confiscated from its director and sole shareholder found guilty of t"
+    },
+    {
+      "index": 526,
+      "item_id": "001-234516",
+      "article": "5",
+      "characters_removed": 821,
+      "removed_head": "\n \nArt 5 § 1 (f) • Lawful arrest or detention • Arbitrary detention of asylum-seeker, for over two years and nine months, based solely on national security grounds • Lack of sufficiently close connect"
+    },
+    {
+      "index": 530,
+      "item_id": "001-219226",
+      "article": "8",
+      "characters_removed": 523,
+      "removed_head": "\n \nArt 8 • Private life • Collection of data on sexual behaviour of potential blood donor based on speculation, and excessive length of data retention by public body • Applicant deferred from blood do"
+    },
+    {
+      "index": 531,
+      "item_id": "001-237811",
+      "article": "14",
+      "characters_removed": 1128,
+      "removed_head": "\nArt 14 (+ Art 10 and Art 11) • Insufficient judicial review of alleged discrimination of a former judge by the the High Council of Justice (HCJ) in judicial competitions on account of her role as fou"
+    },
+    {
+      "index": 540,
+      "item_id": "001-196887",
+      "article": "6",
+      "characters_removed": 272,
+      "removed_head": "\n \n \nArt 6 § 1 • Impartial tribunal • Applicant fined for contempt of court by the same judge before whom the contempt had taken place • Domestic courts’ failure to examine allegations of bias • Fair "
+    },
+    {
+      "index": 542,
+      "item_id": "001-207806",
+      "article": "5",
+      "characters_removed": 308,
+      "removed_head": "\nArt 5 § 3 • Reasonableness of pre-trial detention • Relevant but insufficient reasons provided by domestic courts in justifying continued pre-trial detention of applicant • Depth of courtroom discuss"
+    },
+    {
+      "index": 543,
+      "item_id": "001-216349",
+      "article": "P1-1",
+      "characters_removed": 250,
+      "removed_head": "\n \nArt 1 P1 • Control of the use of property • Applicant’s failure to demonstrate that the temporary suspension of his bailiff’s practice in connection with a criminal investigation against him result"
+    },
+    {
+      "index": 548,
+      "item_id": "001-237239",
+      "article": "6",
+      "characters_removed": 2766,
+      "removed_head": "\n \nArt 6 (civil) • Civil rights and obligations • Ratione materiae • Complaint by victims of alleged offences participating in criminal proceedings that the investigating judge’s inaction led to the t"
+    },
+    {
+      "index": 552,
+      "item_id": "001-207695",
+      "article": "8",
+      "characters_removed": 810,
+      "removed_head": "\n \nArt. 8 • Private life • Fine imposed on a poor and vulnerable Roma woman for unintrusive begging, and subsequent imprisonment for five days for non-payment • Art. 8 applicable to right to call on o"
+    },
+    {
+      "index": 553,
+      "item_id": "001-204473",
+      "article": "5",
+      "characters_removed": 697,
+      "removed_head": "\n \nArt 5 § 1 • Arrest and detention of the applicant on reasonable suspicion of a series of sexual assaults and attempts to abduct minors • Arrest on the basis of his physical resemblance to the perpe"
+    },
+    {
+      "index": 555,
+      "item_id": "001-234259",
+      "article": "3",
+      "characters_removed": 1316,
+      "removed_head": "\n \nArt 3 (substantive) • Positive obligations • State’s failure to protect fourteen-year old pupil with an intellectual disability from sexual abuse in her State school by a teacher, also a public off"
+    },
+    {
+      "index": 558,
+      "item_id": "001-203885",
+      "article": "13",
+      "characters_removed": 882,
+      "removed_head": "\n \nArt 3 P1 • Stand for election • Complaint calling for recount of ballot papers examined by body lacking impartiality, through procedure lacking adequate and sufficient safeguards • Not being ruled "
+    },
+    {
+      "index": 569,
+      "item_id": "001-203165",
+      "article": "9",
+      "characters_removed": 425,
+      "removed_head": "\n \nArt 9 • Manifest religion or belief (negative aspect) • Birth registration act revealing parents’ choice not to christen their child • Disclosure of religious beliefs in frequently used public docu"
+    },
+    {
+      "index": 580,
+      "item_id": "001-213529",
+      "article": "6",
+      "characters_removed": 237,
+      "removed_head": "\nArt 6 (civil) • Fair hearing • No substantial disadvantage or inequality of arms for appearance through video-link in proceedings for parental responsibility, where applicant was not able to enter th"
+    },
+    {
+      "index": 600,
+      "item_id": "001-203976",
+      "article": "13",
+      "characters_removed": 230,
+      "removed_head": "\n \n \nArt 6 § 1 (civil) • Reasonable time • Excessive length of civil proceedings\nArt 13 (+ Art 6) • Lack of effective remedy in respect of length of proceedings cases (constitutional complaint and pur"
+    },
+    {
+      "index": 607,
+      "item_id": "001-215716",
+      "article": "14",
+      "characters_removed": 352,
+      "removed_head": "\n \nArt 2 (substantive and procedural) (+ Art 14) • Discrimination • Positive obligations • Failure to prevent gender-based violence culminating in murder by a police officer and to investigate the res"
+    },
+    {
+      "index": 614,
+      "item_id": "001-213901",
+      "article": "6",
+      "characters_removed": 372,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Fair hearing • Failure of Lithuanian Supreme Administrative Court to respect res judicata effect of a final court decision annulling the applicant’s suspension as a clinical res"
+    },
+    {
+      "index": 616,
+      "item_id": "001-209373",
+      "article": "3",
+      "characters_removed": 694,
+      "removed_head": "\n \nArts 3 and 8 • Authorities breaching procedural positive obligations as to enforcement of sentence for sexual assault after offender’s amnesty granted then revoked • Amnesty and pardon lying within"
+    },
+    {
+      "index": 623,
+      "item_id": "001-224580",
+      "article": "P1-1",
+      "characters_removed": 541,
+      "removed_head": "\n \nArt 1 P1 • Confiscation of sum of money and applicant’s inability to recover it, following criminal proceedings against third parties for money laundering • Confiscation measure proportionate to le"
+    },
+    {
+      "index": 624,
+      "item_id": "001-243363",
+      "article": "6",
+      "characters_removed": 458,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Failure to resume payment of pensions pro futuro, after its suspension, to the applicants by the a Serbian territory branch office of the Serbian Pens"
+    },
+    {
+      "index": 633,
+      "item_id": "001-230628",
+      "article": "3",
+      "characters_removed": 778,
+      "removed_head": "\n \nArt 9 • Freedom of religion • Manifest religion or belief • Worship • Teaching • Criminal conviction of a local clergyman for preaching and conducting Friday prayers solely based on blanket ban on "
+    },
+    {
+      "index": 634,
+      "item_id": "001-203885",
+      "article": "P1-3",
+      "characters_removed": 882,
+      "removed_head": "\n \nArt 3 P1 • Stand for election • Complaint calling for recount of ballot papers examined by body lacking impartiality, through procedure lacking adequate and sufficient safeguards • Not being ruled "
+    },
+    {
+      "index": 637,
+      "item_id": "001-224963",
+      "article": "8",
+      "characters_removed": 605,
+      "removed_head": "\n \nArt 8 • Positive obligations • Private life • Dismissal of civil defamation action of a former President of Croatia about an article published on an Internet news portal suggesting his involvement "
+    },
+    {
+      "index": 639,
+      "item_id": "001-215708",
+      "article": "6",
+      "characters_removed": 447,
+      "removed_head": "\nArt 6 § 1 (civil) • Access to court • Genuine examination of merits and preliminary determination of dispute on unlawfulness of a resolution to increase company’s share capital, despite dismissal, fo"
+    },
+    {
+      "index": 644,
+      "item_id": "001-235473",
+      "article": "6",
+      "characters_removed": 695,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Impartial tribunal • Objective test • Participation of judge on Supreme Court three-member panels rejecting applicants’ respective claims, his judicial assistant being the daugh"
+    },
+    {
+      "index": 646,
+      "item_id": "001-244594",
+      "article": "6",
+      "characters_removed": 1340,
+      "removed_head": "\n \nArt 13 (+ Art 6 § 1) • Lack of effective remedy in respect of excessive length of civil proceedings • Existing compensatory remedy did not afford appropriate redress and was not effective • Fragmen"
+    },
+    {
+      "index": 651,
+      "item_id": "001-230627",
+      "article": "P1-1",
+      "characters_removed": 813,
+      "removed_head": "\nArt 1 P1 • Peaceful enjoyment of possessions • Obligation to reimburse the social security authorities for the lost working capacity pension paid to a person whom the applicant had accidently injured"
+    },
+    {
+      "index": 653,
+      "item_id": "001-241986",
+      "article": "4",
+      "characters_removed": 1959,
+      "removed_head": "\nArt 4 • Positive obligations • Respondent State’s failure to fulfil substantive and procedural obligations to protect an intellectually disabled woman from trafficking and servitude after her removal"
+    },
+    {
+      "index": 655,
+      "item_id": "001-224734",
+      "article": "8",
+      "characters_removed": 639,
+      "removed_head": "\nArt 8 • Correspondence • Transmission and use in competition law proceedings of data lawfully obtained through telephone tapping in criminal investigations • Impugned data transmission sufficiently f"
+    },
+    {
+      "index": 656,
+      "item_id": "001-198885",
+      "article": "P1-1",
+      "characters_removed": 353,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Applicant retroactively divested of retirement pension constituting her sole source of income and required to reimburse amounts paid for seven years •"
+    },
+    {
+      "index": 659,
+      "item_id": "001-238661",
+      "article": "6",
+      "characters_removed": 503,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Fair hearing • Legislative intervention through the enactment and immediate retrospective application of a new law to pending proceedings, regarding the applicants’ career recon"
+    },
+    {
+      "index": 664,
+      "item_id": "001-220013",
+      "article": "14",
+      "characters_removed": 1018,
+      "removed_head": "\nArt 8 • Positive obligations • Family life • Justified temporary statutory three-year suspension period for family reunification of persons with subsidiary protection status, gradually reduced and al"
+    },
+    {
+      "index": 673,
+      "item_id": "001-206159",
+      "article": "6",
+      "characters_removed": 514,
+      "removed_head": "\n \nArt 1 P1 • Control of the use of property • Art 6 § 1 (civil) • Access to court • Cancellation and revocation of applicant company’s shares in private bank directly affecting their right to protect"
+    },
+    {
+      "index": 674,
+      "item_id": "001-237808",
+      "article": "P1-1",
+      "characters_removed": 924,
+      "removed_head": "\n \nArt 1 P1 • Deprivation of property • Annulment of applicant companies’ ownership titles to privatised immovable property (fishponds and land) after over twenty years without compensation • Impugned"
+    },
+    {
+      "index": 675,
+      "item_id": "001-205170",
+      "article": "8",
+      "characters_removed": 652,
+      "removed_head": "\n \nArt 8 • Respect for family life • Ending of applicant’s joint custody of child and restrictions on contact • Domestic decision-making processes guided by aim of finding amicable solution in the bes"
+    },
+    {
+      "index": 677,
+      "item_id": "001-216686",
+      "article": "6",
+      "characters_removed": 794,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Access to court • Inability of judicial candidate to seek judicial review of decision refusing to appoint her to a judicial post • Art 6 applicable • Genuine and serious dispute"
+    },
+    {
+      "index": 682,
+      "item_id": "001-245444",
+      "article": "8",
+      "characters_removed": 613,
+      "removed_head": "\n \nArt 8 • Home • Enforcement of a demolition order imposed on the applicant’s home after her conviction for unlawful construction in breach of a building ban owing to a risk of seismic activity and t"
+    },
+    {
+      "index": 684,
+      "item_id": "001-220537",
+      "article": "8",
+      "characters_removed": 444,
+      "removed_head": "\n \nArt 8 • Positive obligations • Family life • Disproportionate order by family court de facto preventing couple in stable relationship from living together to safeguard interests of child from mothe"
+    },
+    {
+      "index": 685,
+      "item_id": "001-216352",
+      "article": "5",
+      "characters_removed": 752,
+      "removed_head": "\n \nArt 3 (substantive) • Positive obligations • Degrading treatment • Inadequate medical treatment to applicant with a serious illness in its terminal stage • Detention extended despite terminal condi"
+    },
+    {
+      "index": 686,
+      "item_id": "001-210046",
+      "article": "5",
+      "characters_removed": 112,
+      "removed_head": "\n \nArt 5 § 1 • Detention on suspicion of committing a criminal offence in breach of domestic law requirements\n \n"
+    },
+    {
+      "index": 689,
+      "item_id": "001-199381",
+      "article": "8",
+      "characters_removed": 111,
+      "removed_head": "\n \n \nArt 8 • Respect for family life • Severing parent-child ties without adequate decision-making process\n \n \n"
+    },
+    {
+      "index": 690,
+      "item_id": "001-250111",
+      "article": "6",
+      "characters_removed": 1455,
+      "removed_head": "\nArt 6 § 1 (civil) • Access to court • Lack of judicial review of President of the Poland’s refusal to appoint junior judges to vacant district court judge posts despite their successful participation"
+    },
+    {
+      "index": 697,
+      "item_id": "001-219984",
+      "article": "14",
+      "characters_removed": 445,
+      "removed_head": "\nArt 14 (+ Art 8) • Discrimination • Private life • Allegations of racial profiling by police during identity check on street duly examined and found unsubstantiated by administrative courts • Identit"
+    },
+    {
+      "index": 700,
+      "item_id": "001-227718",
+      "article": "6",
+      "characters_removed": 556,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Inability to challenge an administrative decision not requiring commissioning of an environmental impact assessment in respect of a geothermal plant in the vicinity of the appli"
+    },
+    {
+      "index": 706,
+      "item_id": "001-210363",
+      "article": "5",
+      "characters_removed": 802,
+      "removed_head": "\nArt 5 § 1 • Lawful arrest or detention • Refusal to discharge offenders with persisting mental disorders from compulsory confinement after new law reserving its use for most serious offences • Domest"
+    },
+    {
+      "index": 709,
+      "item_id": "001-218132",
+      "article": "8",
+      "characters_removed": 476,
+      "removed_head": "\nArt 8 • Positive obligations • Family life • Continued non-enforcement of judicial decisions granting applicant contact rights with son, not due to authorities’ lack of diligence • Number of steps ta"
+    },
+    {
+      "index": 710,
+      "item_id": "001-243885",
+      "article": "3",
+      "characters_removed": 1151,
+      "removed_head": "\nArt 3 and Art 8 • Positive obligations • Authorities’ response to applicant’s rape allegations in breach of the State’s procedural positive obligations to apply the relevant criminal provisions in pr"
+    },
+    {
+      "index": 714,
+      "item_id": "001-211777",
+      "article": "10",
+      "characters_removed": 383,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Local councillor convicted for not promptly deleting illegal comments by third parties on public Facebook page used in election campaign • Incitement to hatred or v"
+    },
+    {
+      "index": 730,
+      "item_id": "001-229894",
+      "article": "3",
+      "characters_removed": 948,
+      "removed_head": "\n \nArt 3 (substantive) • Inhuman treatment • Degrading treatment • Art 5 § 1 (e) • Persons of unsound mind • Preventive detention of a mentally ill person, exempted from criminal responsibility, at a "
+    },
+    {
+      "index": 732,
+      "item_id": "001-235475",
+      "article": "8",
+      "characters_removed": 813,
+      "removed_head": "\n \nArt 8 • Private life • Employment-related measures imposed on healthcare and social health workers for refusing to be vaccinated against COVID-19 • Vaccination under impugned legislation not compul"
+    },
+    {
+      "index": 736,
+      "item_id": "001-220887",
+      "article": "6",
+      "characters_removed": 423,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Domestic law requirement for tenant to pay rent debt as ordered in first-instance summary proceedings prior to lodging an appeal, not impairing very essence of right of access t"
+    },
+    {
+      "index": 744,
+      "item_id": "001-219988",
+      "article": "2",
+      "characters_removed": 1205,
+      "removed_head": "\n \nArt 2 (substantive) • Positive obligations • Life • Death by euthanasia of applicant’s mother, who suffered from depression for about forty years, as authorised by law • Legislative framework capab"
+    },
+    {
+      "index": 749,
+      "item_id": "001-229325",
+      "article": "2",
+      "characters_removed": 516,
+      "removed_head": "\nArt 2 (substantive) • Life • Positive obligations • Use of force • Patient admitted for acute care in psychiatric hospital, unsuccessfully restrained in prone position by police, dead following repea"
+    },
+    {
+      "index": 759,
+      "item_id": "001-220866",
+      "article": "10",
+      "characters_removed": 370,
+      "removed_head": "\n \nArt 10 • Freedom of expression • Domestic courts’ decision ordering applicant, a public figure and influential businessman, to retract statement made in an interview, not “necessary in a democratic"
+    },
+    {
+      "index": 760,
+      "item_id": "001-208764",
+      "article": "P1-1",
+      "characters_removed": 252,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Disproportionate burden on applicant due to inadequate rent imposed by law • Insufficient domestic redress\nArt 13 (+ Art 1 P1) • Effective remedy • Ag"
+    },
+    {
+      "index": 762,
+      "item_id": "001-212970",
+      "article": "8",
+      "characters_removed": 265,
+      "removed_head": "\n \nArt 8 • Positive obligations • Authorities’ failure to protect the applicant from bullying by colleagues • Art 8 applicable • Flawed implementation of civil and criminal law • Failure to take accou"
+    },
+    {
+      "index": 764,
+      "item_id": "001-237797",
+      "article": "6",
+      "characters_removed": 307,
+      "removed_head": "\nArt 6 § 1 (criminal) • Fair hearing • Domestic courts’ failure to address applicant’s argument related to his alleged immunity from prosecution under the 1961 Vienna Convention on Diplomatic Relation"
+    },
+    {
+      "index": 774,
+      "item_id": "001-212829",
+      "article": "P7-4",
+      "characters_removed": 595,
+      "removed_head": "\nArt 5 § 1 • Lawful detention • No causal link between conviction for violent offences and subsequent preventive detention on account of applicant’s mental health condition and recidivism risk • Preve"
+    },
+    {
+      "index": 785,
+      "item_id": "001-221266",
+      "article": "8",
+      "characters_removed": 425,
+      "removed_head": "\n \nArt 8 • Private life • Dismissal of a widow’s request to be fertilised with deceased husband’s frozen sperm, domestic law allowing such fertilisation only for couples and inter vivos • Legislature’"
+    },
+    {
+      "index": 790,
+      "item_id": "001-222898",
+      "article": "5",
+      "characters_removed": 987,
+      "removed_head": "\nArt 5 § 1 • Lawful arrest and first pre-trial detention of applicant, a former high-ranking State official, in connection to criminal proceedings against him • Lack of fixed period of detention in de"
+    },
+    {
+      "index": 791,
+      "item_id": "001-224505",
+      "article": "6",
+      "characters_removed": 833,
+      "removed_head": "\n \nArt 6 § 1 (criminal) and Art 6 § 3 (d) • Fair hearing • Rights of defence • Inability to examine co-accused who refused to testify in court and whose incriminating pre-trial statements carried sign"
+    },
+    {
+      "index": 795,
+      "item_id": "001-244000",
+      "article": "8",
+      "characters_removed": 332,
+      "removed_head": "\n \n \nArt 8 • Correspondence • Additional limitation of applicant’s right to correspondence during special regime detention • Lack of any explicit reference to specific circumstances justifying the imp"
+    },
+    {
+      "index": 797,
+      "item_id": "001-216454",
+      "article": "8",
+      "characters_removed": 797,
+      "removed_head": "\n \nArt 6 § 1 (civil) • Art 8 • Fair hearing • Private life • Interception of electronic communications and use of criminal conduct simulation model during criminal investigation against police officer"
+    },
+    {
+      "index": 800,
+      "item_id": "001-231088",
+      "article": "P1-1",
+      "characters_removed": 606,
+      "removed_head": "\n \nArt 37 § 1 • New unilateral declaration submitted after restoration of application to Court’s list for failure to fulfil undertaking in previous declaration did not provide appropriate redress • Re"
+    },
+    {
+      "index": 808,
+      "item_id": "001-233381",
+      "article": "P1-1",
+      "characters_removed": 1864,
+      "removed_head": "\n \nArt 1 P1 • Peaceful enjoyment of possessions • Proportionate confiscation order issued by Italian authorities aimed at recovering from the Getty Museum in the US a bronze statue from the classical "
+    },
+    {
+      "index": 810,
+      "item_id": "001-202411",
+      "article": "13",
+      "characters_removed": 286,
+      "removed_head": "\n \nArt 6 § 1 • Reasonable time • Excessive length of civil proceedings\nArt 13 and Art 6 § 1 • Effective remedy in respect of Length of proceedings cases • Effectiveness of compensatory action for brea"
+    },
+    {
+      "index": 811,
+      "item_id": "001-203645",
+      "article": "3",
+      "characters_removed": 849,
+      "removed_head": "\n \nArt 3 (substantive) • Degrading treatment • Asylum‑seekers living rough for several months without resources on account of administrative delays preventing access to reception conditions required b"
+    },
+    {
+      "index": 812,
+      "item_id": "001-210078",
+      "article": "8",
+      "characters_removed": 919,
+      "removed_head": "\n \nArt 8 • Private life • Convention compliance of secret surveillance regime including bulk interception of communications and intelligence sharing • Need to develop case-law in light of important di"
+    },
+    {
+      "index": 813,
+      "item_id": "001-233937",
+      "article": "P4-2",
+      "characters_removed": 1359,
+      "removed_head": "\n \nArt 2 P4 • Freedom of movement • Preventive residence restrictions imposed on two applicants – under state-of-emergency legislation enacted following terrorist attacks – on suspicion of possible vi"
+    },
+    {
+      "index": 814,
+      "item_id": "001-210282",
+      "article": "13",
+      "characters_removed": 394,
+      "removed_head": "\nArt 14 (+ Art 9) • Discrimination • Denial of State recognition to a pagan religious association meeting eligibility criteria, on grounds incompatible with the State’s duty of neutrality and impartia"
+    },
+    {
+      "index": 815,
+      "item_id": "001-210332",
+      "article": "11",
+      "characters_removed": 807,
+      "removed_head": "\nArt 11 • Freedom of association • Well-founded decision to declare unlawful announced trade union boycott to pressure foreign company into collective agreement in breach of EEA freedom of establishme"
+    }
+  ],
+  "sha256_lf_after": "5c3e7120cbf1df48ab2e343850b58449c3b986dcbd6249c7b29b5b6ed9d6a34e",
+  "out": "../cases_stateswap_nohead.json"
+}
