@@ -26,6 +26,11 @@ data/human_eval/
 hf_cache/
 .cache/
 
+# The reviewed source proposal becomes the canonical dataset on publication.
+# Keep evidence and the publication manifest, not a duplicate full corpus.
+data/audits/leakage_20260915/proposed_sources.json
+data/audits/leakage_20260915/PAUSE_REGENERATION
+
 # Python cache
 *.pyc
 *.pyo

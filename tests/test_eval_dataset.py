@@ -17,11 +17,11 @@ class EvaluationDatasetTests(unittest.TestCase):
         result = validate(self.config)
         self.assertEqual((result["instances"], result["judgments"]), (1000, 947))
         self.assertEqual(result["annual_counts"], self.config["dataset"]["annual_counts"])
-        self.assertEqual(result["instance_coverage_by_version"], [1000, 1000, 1000])
+        self.assertEqual(result["instance_coverage_by_version"], [1000] * self.config["summaries"]["versions"])
 
     def test_current_summaries_are_complete(self):
         result = validate(self.config)
-        self.assertEqual(result["usable_summaries"], 2841)
+        self.assertEqual(result["usable_summaries"], 947 * self.config["summaries"]["versions"])
         self.assertEqual(result["complete_judgments"], 947)
         self.assertEqual(result["missing_slots_zero_based"], [])
         self.assertEqual(result["missing_judgments"], [])
@@ -40,7 +40,7 @@ class EvaluationDatasetTests(unittest.TestCase):
             raw = json.dumps(blob).encode("utf-8")
             path.write_bytes(raw)
             self.config["summaries"].update(path=str(path), sha256_lf=sha256_lf(raw),
-                complete_judgments=946, usable_summaries=2840,
+                complete_judgments=946, usable_summaries=947 * self.config["summaries"]["versions"] - 1,
                 missing_slots_zero_based=[[item_id, 0]])
             with self.assertRaisesRegex(ValueError, "1 missing summary slots"):
                 validate(self.config, require_complete=True)

@@ -101,3 +101,5 @@ def test_checkpoint_hands_back_what_it_recorded():
         assert reopened.done(key)
         assert reopened.get(key) == {"claims": ["a", "b"]}
         assert reopened.get(ckpt.key("extract", "001-1", "19")) is None
+        reopened.close()
+        ckpt.close()

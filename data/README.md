@@ -2,6 +2,12 @@
 
 This directory contains all data for the LLM Human Rights Research project.
 
+**The descriptions below document the historical 141-pair pilot.** The current
+1,000-instance, year-balanced evaluation pool is specified in the repository
+[README](../README.md#current-evaluation-dataset-year-balanced-deepseek-summaries)
+and [dataset contract](../DATA_SPLITS.md). Do not use historical summary versions
+or result files as substitutes for the current input release.
+
 ## Directory Overview
 
 ```

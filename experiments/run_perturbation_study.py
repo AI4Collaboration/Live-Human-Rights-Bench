@@ -28,6 +28,7 @@ from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
 from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from input_gate import case_input, verify_cases
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import mlflow
@@ -163,7 +164,7 @@ def run_baseline(client, model, cases, n_samples, parent_run_id):
         mlflow.log_param("n_samples", n_samples)
 
         for i, case in enumerate(cases):
-            text = case.get("full_case_text_no_verdict", case.get("full_case_text", ""))
+            text = case_input(case)
             ratings = predict_case(client, model, text, case["article"], PREDICTIVE_TEMPLATE, n_samples)
             pred, abstained = majority_vote(ratings)
             accurate = pred == case["violation_label"]
@@ -314,7 +315,7 @@ def run_reconsideration(client, model, cases, n_samples, baseline_results):
 
         recon_results = []
         for i, case in enumerate(cases):
-            text = case.get("full_case_text_no_verdict", case.get("full_case_text", ""))
+            text = case_input(case)
             article_title = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
             prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=article_title)
 
@@ -400,6 +401,7 @@ def main():
     args = parser.parse_args()
 
     cases = json.load(open(args.cases))
+    verify_cases(cases)
     print(f"Loaded {len(cases)} cases")
 
     client = create_client(args.vllm_url)

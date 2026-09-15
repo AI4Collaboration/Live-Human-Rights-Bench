@@ -61,21 +61,17 @@ _STATES_OUTCOME = re.compile(
     r"|there (has|had) been (a|no) violation"
     r"|(was|were) found to (have )?violat)", re.I)
 
-# Deliberately looser than the summary pattern: if the source discusses an outcome
-# at all, the summary repeating one is reportage rather than recall, and rejecting
-# a good summary costs a few cents while keeping a leaking one costs the arm.
-_SOURCE_DISCUSSES_OUTCOME = re.compile(
-    r"(found|held|concluded|ruled)[^.]{0,80}(violation|no violation)"
-    r"|there (has|had) been (a|no) violation", re.I)
-
-
 def asserts_outcome(summary, source_text):
-    """True when the summary states a conclusion its source never mentions."""
+    """Flag outcome-wording candidates for rejection or contextual review.
+
+    An unrelated domestic finding in the source must not exempt a summary that
+    states the current ECtHR verdict. This screen is deliberately conservative;
+    approved benchmark inputs additionally require evidence-grounded review.
+    The source argument remains for compatibility with existing generators.
+    """
     if not summary or not isinstance(summary, str):
         return False
-    if not _STATES_OUTCOME.search(summary):
-        return False
-    return not _SOURCE_DISCUSSES_OUTCOME.search(source_text or "")
+    return bool(_STATES_OUTCOME.search(summary))
 
 
 def file_digest(path, length=12):
@@ -110,6 +106,8 @@ def load_summaries_for(args, stages, mlflow=None):
     if not os.path.exists(path):
         sys.exit(f"ERROR: no such summaries file: {path}")
     summaries, meta = load_summaries(path)
+    from input_gate import verify_summaries
+    verify_summaries(summaries)
     if mlflow is not None:
         mlflow.log_param("summarizer", meta.get("summarizer", "unknown"))
         mlflow.log_param("summaries_file", os.path.basename(path))

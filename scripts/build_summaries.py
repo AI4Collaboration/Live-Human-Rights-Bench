@@ -111,7 +111,7 @@ def main():
     p.add_argument("--base-url", default="https://openrouter.ai/api/v1")
     p.add_argument("--api-key-env", default="OPENROUTER_API_KEY")
     p.add_argument("--out", required=True)
-    p.add_argument("--versions", type=int, default=3, help="summaries per judgment")
+    p.add_argument("--versions", type=int, default=1, help="summaries per judgment; current main experiment uses one")
     p.add_argument("--workers", type=int, default=20)
     p.add_argument("--max-tokens", type=int, default=4000)
     p.add_argument("--limit", type=int, help="first N judgments, for a dry run")

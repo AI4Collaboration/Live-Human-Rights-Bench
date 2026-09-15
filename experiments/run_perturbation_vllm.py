@@ -14,6 +14,7 @@ from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
 from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from input_gate import case_input, verify_cases
 
 
 def call_vllm(client, model, system, user, temperature=1.0, max_tokens=100):
@@ -48,7 +49,7 @@ def run_baseline(client, model, cases, n_samples):
         mlflow.log_param("stage", "baseline")
         mlflow.log_param("n_cases", len(cases))
         for i, case in enumerate(cases):
-            text = case.get("full_case_text_no_verdict", case.get("full_case_text", ""))[:MAX_CASE_CHARS]
+            text = case_input(case)
             at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
             prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=at)
             ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
@@ -156,7 +157,7 @@ def run_reconsideration(client, model, cases, n_samples, baseline_results):
         mlflow.log_param("stage", "rq3_reconsideration")
         results = []
         for i, case in enumerate(cases):
-            text = case.get("full_case_text_no_verdict", case.get("full_case_text", ""))[:MAX_CASE_CHARS]
+            text = case_input(case)
             at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
             prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=at)
             case_label = f"{case['case_name'][:40]}|Art{case['article']}"
@@ -213,6 +214,7 @@ def main():
     args = parser.parse_args()
 
     cases = json.load(open(args.cases))
+    verify_cases(cases)
     print(f"Loaded {len(cases)} cases")
 
     client = openai.OpenAI(base_url=args.vllm_url, api_key="dummy")

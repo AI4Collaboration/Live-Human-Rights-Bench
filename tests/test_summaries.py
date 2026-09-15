@@ -143,6 +143,18 @@ def test_an_ordinary_summary_is_left_alone():
     assert not asserts_outcome(summary, source)
 
 
+def test_domestic_source_outcome_does_not_exempt_current_ecthr_verdict():
+    from summaries import asserts_outcome
+    source = "The Constitutional Court found no violation and dismissed the appeal."
+    assert asserts_outcome("The Court found a violation of Article 6.", source)
+
+
+def test_a_leaking_source_does_not_exempt_a_leaking_summary():
+    from summaries import asserts_outcome
+    text = "The Court found a violation of Article 6."
+    assert asserts_outcome(text, text)
+
+
 def test_missing_input_is_handled_the_safe_way():
     from summaries import asserts_outcome
     assert not asserts_outcome(None, "text")

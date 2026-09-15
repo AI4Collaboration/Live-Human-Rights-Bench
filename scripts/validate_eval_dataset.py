@@ -45,9 +45,10 @@ def validate(manifest=None, require_complete=False):
     check(payload["summarizer"] == ss["summarizer"], "Summarizer mismatch")
     check(payload["versions"] == ss["versions"], "Summary version count mismatch")
     summaries, versions = payload["summaries"], ss["versions"]
+    check(isinstance(versions, int) and versions >= 1, "Summary versions must be a positive integer")
     check(set(summaries) <= ids, "Summaries contain judgments outside the dataset")
     check(all(isinstance(v, list) and len(v) == versions for v in summaries.values()),
-          "Each represented judgment must have exactly three summary slots")
+          f"Each represented judgment must have exactly {versions} summary slots")
 
     def usable(item_id, version):
         value = summaries.get(item_id, [None] * versions)[version]

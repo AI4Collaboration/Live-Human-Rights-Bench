@@ -34,6 +34,7 @@ from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
                      mean_rating, parse_rating, unparsed)
 from stats import flip_direction
 from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for
+from input_gate import case_input, verify_cases, bind_run_inputs
 
 # ── Prompts (shared with bedrock runner) ──────────────────────────────────
 
@@ -229,7 +230,7 @@ def _score(client, model, prompt, n_samples):
 # ── Experiments ──────────────────────────────────────────────────────────
 
 def case_text(case):
-    return case.get("full_case_text_no_verdict", case.get("verdict_free_text", ""))[:MAX_CASE_CHARS]
+    return case_input(case)
 
 
 def article_title(case):
@@ -458,6 +459,7 @@ def main():
     for case in cases:
         if "verdict_free_text" in case and "full_case_text_no_verdict" not in case:
             case["full_case_text_no_verdict"] = case["verdict_free_text"]
+    verify_cases(cases)
 
     print(f"Model: {args.model}")
     print(f"Cases: {len(cases)}")
@@ -470,6 +472,7 @@ def main():
     mlflow.set_experiment("full_scale_perturbation")
 
     model_key = args.model.replace("/", "_").replace(".", "_")
+    bind_run_inputs(f"{args.output_dir}/{model_key}", args.cases, args.summaries)
     os.makedirs(f"{args.output_dir}/{model_key}", exist_ok=True)
 
     with mlflow.start_run(run_name=f"{model_key}_full"):
