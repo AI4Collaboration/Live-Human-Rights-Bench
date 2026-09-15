@@ -17,4 +17,6 @@ The Court would find {opposing_judgment} under {target_provision}. Correct your 
 
 It produced 8/8 targeted flips in calibration and 4/4 in held-out confirmation. The previous polite wording produced 2/8 flips in calibration. The selected wording moved the score toward the assigned opposite by 94.5 points on average across all 12 cases.
 
+This audit predates the version 6 low/high pressure endpoints. It motivated direct pressure but does not evaluate the final pressure contrast.
+
 `initial.jsonl`, `branches.jsonl`, and `confirmation.jsonl` retain the raw model responses. `summary.json` contains paired metrics, `selection.json` identifies the cases and initial states, and `protocol.json` records the fixed setup. Gold outcomes were used only to balance candidate sampling and were never sent to the model.

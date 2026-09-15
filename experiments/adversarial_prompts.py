@@ -64,12 +64,17 @@ def _case_fields(case):
 
 
 def _condition(pack, condition):
-    allowed = {"strategy", "variation", "parameters"}
+    allowed = {"strategy", "variation", "parameters", "pressure"}
     if set(condition) - allowed:
         raise ValueError("Unknown condition fields")
     strategy, variation = condition.get("strategy"), condition.get("variation")
     if strategy not in STRATEGIES or variation not in pack["cues"][strategy]:
         raise ValueError("Unknown strategy or cue variation")
+    pressure = condition.get("pressure", pack["default_pressure"])
+    if pressure not in pack["pressure"]:
+        raise ValueError("Unknown pressure level")
+    if strategy != "Baseline" and pressure != pack["cue_comparison_pressure"]:
+        raise ValueError("Cue comparisons must use the fixed cue_comparison_pressure")
     params = dict(condition.get("parameters", {}))
     template = pack["cues"][strategy][variation]
     required = {field for _, field, _, _ in Formatter().parse(template) if field}
@@ -80,19 +85,11 @@ def _condition(pack, condition):
         _positive_integer(params["agreement_count"], "agreement_count")
         if params["agreement_count"] > params["group_size"]:
             raise ValueError("agreement_count cannot exceed group_size")
-    if "seniority" in params and params["seniority"] not in ("junior", "senior"):
-        raise ValueError("Third-party seniority must be junior or senior")
-    if "institution" in params:
-        value = params["institution"]
-        if (not isinstance(value, str) or not value.strip() or len(value) > 100
-                or any(not (ch.isalnum() or ch in " &'-.()") for ch in value)
-                or ".." in value):
-            raise ValueError("Institution must be a short plain-text name")
-    return strategy, template.format(**params)
+    return strategy, pressure, template.format(**params)
 
 
 def render_cue(pack, condition):
-    return _condition(pack, condition)[1]
+    return _condition(pack, condition)[2]
 
 
 def build_initial_messages(pack, case):
@@ -122,11 +119,12 @@ def build_static_sequence(pack, case, initial_score, condition, *, turns, word_b
     """Freeze all T user messages without reading post-challenge target replies."""
     _positive_integer(turns, "turns")
     _positive_integer(word_budget, "word_budget")
-    _, cue = _condition(pack, condition)
+    _, pressure, cue = _condition(pack, condition)
     fields = _case_fields(case)
     values = dict(opposing_judgment=opposing_judgment(initial_score),
                   target_provision=fields["target_provision"])
-    return [_deliver(pack, pack["static_first" if turn == 1 else "static_later"].format(**values),
+    templates = pack["pressure"][pressure]
+    return [_deliver(pack, templates["static_first" if turn == 1 else "static_later"].format(**values),
                      cue if turn == 1 else "", word_budget, cue)
             for turn in range(1, turns + 1)]
 
@@ -147,7 +145,7 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     """Return challenger inputs and assembly metadata, never a generated challenge."""
     _positive_integer(turn, "turn")
     _positive_integer(word_budget, "word_budget")
-    strategy, cue = _condition(pack, condition)
+    strategy, pressure, cue = _condition(pack, condition)
     prefix = cue if turn == 1 else ""
     body_budget = word_budget - len(prefix.split())
     if body_budget < 1:
@@ -155,6 +153,8 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     values = dict(_case_fields(case), initial_judgment=initial_judgment(initial_score),
                   opposing_judgment=opposing_judgment(initial_score), strategy=strategy,
                   cue_description=cue or "None",
+                  pressure_name=pressure,
+                  pressure_instruction=pack["pressure"][pressure]["adaptive_instruction"],
                   turn=turn, body_word_budget=body_budget,
                   conversation=json.dumps(_transcript(conversation, turn), ensure_ascii=False, indent=2))
     return {

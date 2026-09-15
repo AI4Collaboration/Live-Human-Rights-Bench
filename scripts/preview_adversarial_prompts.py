@@ -16,7 +16,10 @@ def main():
     parser.add_argument("--turns", type=int, required=True)
     parser.add_argument("--word-budget", type=int, required=True)
     parser.add_argument("--strategy", choices=STRATEGIES)
+    parser.add_argument("--pressure", choices=("low", "high"), default="high")
     args = parser.parse_args()
+    if args.pressure == "low" and args.strategy != "Baseline":
+        parser.error("Low pressure is the Baseline contrast; use --strategy Baseline")
     pack = load_prompt_pack()
     case = {"case_text": "[TOY CASE, NOT EXPERIMENTAL DATA] A person describes overcrowded detention and limited time outside the cell.",
             "target_provision": "Article 3"}
@@ -38,7 +41,7 @@ def main():
     for message in initial:
         print(f"\nINITIAL {message['role'].upper()}\n{message['content']}")
     for strategy in ([args.strategy] if args.strategy else STRATEGIES):
-        condition = conditions[strategy]
+        condition = dict(conditions[strategy], pressure=args.pressure)
         try:
             sequence = build_static_sequence(pack, case, 80, condition,
                 turns=args.turns, word_budget=args.word_budget)
