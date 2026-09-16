@@ -1,0 +1,68 @@
+{
+  "001-127812|6": {
+    "holding_index": 0,
+    "target_respondent_code": "GRC",
+    "reason": "The operative judgment and Registry release attribute the Article 6 violation to Greece and declare the complaints against Poland inadmissible.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/pdf/?id=003-4560392-5508738&library=ECHR"
+  },
+  "001-173802|34": {
+    "holding_index": 6,
+    "target_respondent_code": "MDA",
+    "reason": "The operative judgment records a single no-violation finding under Article 34 applicable to the respondent States.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/pdf/?id=003-5731768-7280105&library=ECHR"
+  },
+  "001-231078|34": {
+    "holding_index": 12,
+    "target_respondent_code": "MDA",
+    "reason": "Operative point 12 states that the respondent States did not fail to comply with Article 34.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/docx/html/body?id=001-231078&library=ECHR"
+  },
+  "001-235491|8": {
+    "holding_index": 4,
+    "target_respondent_code": "AZE",
+    "reason": "The Registry release expressly places the Article 8 violation under the findings concerning Azerbaijan.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/pdf/?id=003-8028218-11213741&library=ECHR"
+  },
+  "001-168382|6": {
+    "holding_index": 0,
+    "target_respondent_code": "LTU",
+    "reason": "The operative judgment declares the complaint against Lithuania admissible and finds the Article 6 violation; the remainder is inadmissible.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/docx/pdf?id=001-168382&library=ECHR"
+  },
+  "001-109072|8": {
+    "holding_index": 0,
+    "target_respondent_code": "GBR",
+    "target_issue": "the assessment and disclosure of environmental risks from liquefied natural gas terminals",
+    "target_aspect": "unspecified",
+    "reason": "The judgment and Registry release identify the Article 8 complaint as the assessment and disclosure of risks from the Milford Haven LNG terminals.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/pdf/?id=003-3844446-4417085&library=ECHR"
+  },
+  "001-235470|10": {
+    "holding_index": 0,
+    "target_respondent_code": "AUT",
+    "target_issue": "the disciplinary sanction imposed on a doctor for statements on his website about vaccine effectiveness",
+    "target_aspect": "unspecified",
+    "reason": "The judgment introduction defines this as the Article 10 complaint examined by the Court.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/docx/html/body?id=001-235470&library=ECHR"
+  },
+  "001-140782|8": {
+    "replace_with_same_year_atomic_target": true,
+    "reason": "HUDOC labels the joined judgment under Article 8 without identifying the applicant or complaint, and the verdict-free input does not contain an Article 8 claim. A same-year verified unused sub-conclusion replaces this unscoped target."
+  },
+  "001-156263|P4-4": {
+    "holding_index": 4,
+    "target_respondent_code": "CYP",
+    "target_issue": "the applicant's proposed deportation to Syria as an alleged collective expulsion",
+    "target_aspect": "unspecified",
+    "reason": "The judgment introduction identifies this as the applicant's complaint under Article 4 of Protocol No. 4.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/pdf/?id=001-156263&library=ECHR"
+  },
+  "001-211017|13": {
+    "holding_index": 6,
+    "target_respondent_code": "MDA",
+    "target_issue": "the availability of effective remedies for the second applicant's complaints about his detention, detention conditions, and seizure of property",
+    "target_aspect": "unspecified",
+    "reason": "The judgment introduction identifies the Article 13 complaint as the second applicant's lack-of-remedy complaint concerning his other pleaded violations; the operative holding assigns the no-violation conclusion to the Republic of Moldova.",
+    "source": "https://hudoc.echr.coe.int/app/conversion/docx/html/body?id=001-211017&library=ECHR"
+  }
+}

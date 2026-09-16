@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""Thin wrapper: run perturbation study against a vLLM endpoint via OpenAI-compatible API."""
+import argparse, json, os, sys, time
+from collections import Counter
+import mlflow, openai
+
+# Reuse all logic from bedrock runner
+sys.path.insert(0, os.path.dirname(__file__))
+from run_perturbation_bedrock import (
+    SYSTEM_PROMPT, ARTICLE_TITLES, PREDICTIVE_TEMPLATE, NORMATIVE_TEMPLATE,
+    FACTUAL_TEMPLATE, RECONSIDERATION_PROMPT,
+)
+from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
+                     mean_rating, parse_rating, unparsed)
+from stats import flip_direction
+from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
+from input_gate import case_input, verify_cases
+
+
+def call_vllm(client, model, system, user, temperature=1.0, max_tokens=100):
+    try:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            temperature=temperature, max_tokens=max_tokens,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        return f"ERROR: {e}"
+
+
+def call_vllm_multiturn(client, model, system, messages, temperature=1.0, max_tokens=100):
+    try:
+        msgs = [{"role": "system", "content": system}] + messages
+        resp = client.chat.completions.create(
+            model=model, messages=msgs, temperature=temperature, max_tokens=max_tokens,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        return f"ERROR: {e}"
+
+
+def run_baseline(client, model, cases, n_samples):
+    results = []
+    with mlflow.start_run(run_name="baseline", nested=True):
+        mlflow.log_param("stage", "baseline")
+        mlflow.log_param("n_cases", len(cases))
+        for i, case in enumerate(cases):
+            text = case_input(case)
+            at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+            prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=at)
+            ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
+            pred, abstained = majority_vote(ratings)
+            results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "prediction": pred,
+                "accurate": pred == case["violation_label"], "abstained": abstained,
+                "ratings": ratings, "avg_rating": mean_rating(ratings),
+                "n_unparsed": count_unparsed(ratings)})
+            print(f"\r  Baseline: {i+1}/{len(cases)} | acc={sum(r['accurate'] for r in results)/len(results):.2f}", end="", flush=True)
+        accuracy = sum(r["accurate"] for r in results) / len(results)
+        abstention = sum(r["abstained"] for r in results) / len(results)
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("abstention_rate", abstention)
+        mlflow.log_dict(results, "baseline_results.json")
+        print(f"\n  Baseline: acc={accuracy:.3f}, abstention={abstention:.3f}")
+    return results
+
+
+def run_summarization(client, model, cases, n_samples, baseline_results, summaries):
+    validate_single_summaries(summaries)
+    with mlflow.start_run(run_name="rq1_summarization", nested=True):
+        mlflow.log_param("stage", "rq1_summarization")
+        skipped_no_summary = 0
+        results = []
+        for i, case in enumerate(cases):
+            key = case["item_id"]
+            bp = next((r["prediction"] for r in baseline_results if r["item_id"]==case["item_id"] and r["article"]==case["article"]), None)
+            summary_text = summary_for(summaries, key)
+            if not is_usable(summary_text):
+                skipped_no_summary += 1
+                continue
+            at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+            prompt = PREDICTIVE_TEMPLATE.format(case_text=summary_text, article=case["article"], article_title=at)
+            ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
+            pred, abstained = majority_vote(ratings)
+            results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "summary_version": 0,
+                "prediction": pred, "accurate": pred==case["violation_label"], "aligned": pred==bp, "abstained": abstained, "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(bp, pred), "ratings": ratings, "n_unparsed": count_unparsed(ratings)})
+            print(f"\r  Summary eval: {i+1}/{len(cases)}", end="", flush=True)
+        if skipped_no_summary:
+            mlflow.log_metric("rq1_skipped_no_summary", skipped_no_summary)
+            print(f"\n  RQ1: skipped {skipped_no_summary} instances with no usable summary")
+        if not results:
+            print("\n  RQ1: nothing scored")
+            return results
+        accuracy = sum(r["accurate"] for r in results) / len(results)
+        alignment = sum(r["aligned"] for r in results) / len(results)
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("alignment_rate", alignment)
+        mlflow.log_dict(results, "rq1_results.json")
+        print(f"\n  RQ1: acc={accuracy:.3f}, alignment={alignment:.3f}")
+    return results
+
+
+def run_framing(client, model, cases, n_samples, summaries, baseline_results):
+    validate_single_summaries(summaries)
+    with mlflow.start_run(run_name="rq2_framing", nested=True):
+        mlflow.log_param("stage", "rq2_framing")
+        framings = {"predictive": PREDICTIVE_TEMPLATE, "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE}
+        results = []
+        skipped_no_summary = 0
+        for i, case in enumerate(cases):
+            key = case["item_id"]
+            text = (summaries.get(key) or [None])[0]
+            if not is_usable(text):
+                # Falling back to raw case text here silently mixed conditions:
+                # a failed summarisation was scored as if it were a summary.
+                skipped_no_summary += 1
+                continue
+            bp = next((r["prediction"] for r in baseline_results if r["item_id"]==case["item_id"] and r["article"]==case["article"]), None)
+            case_label = f"{case['case_name'][:40]}|Art{case['article']}"
+
+            with mlflow.start_span(name=f"framing|{case_label}") as case_span:
+                case_span.set_attributes({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                    "violation_label": case["violation_label"], "baseline_prediction": str(bp)})
+                framing_preds = {}
+                for fname, tmpl in framings.items():
+                    at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+                    prompt = tmpl.format(case_text=text, article=case["article"], article_title=at)
+                    with mlflow.start_span(name=f"{fname}") as fs:
+                        fs.set_inputs({"framing": fname, "prompt_snippet": prompt[:200] + "..."})
+                        ratings = [parse_rating(call_vllm(client, model, SYSTEM_PROMPT, prompt)) for _ in range(n_samples)]
+                        pred, abstained = majority_vote(ratings)
+                        framing_preds[fname] = pred
+                        fs.set_outputs({"prediction": pred, "abstained": abstained, "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(bp, pred), "ratings": ratings,
+                            "accurate": pred==case["violation_label"], "aligned": pred==bp})
+                    results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                        "violation_label": case["violation_label"], "framing": fname,
+                        "prediction": pred, "accurate": pred==case["violation_label"], "aligned_with_baseline": pred==bp, "abstained": abstained, "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(bp, pred), "ratings": ratings, "n_unparsed": count_unparsed(ratings)})
+                case_span.set_outputs({"predictions": framing_preds, "any_disagreement": len(set(framing_preds.values()))>1})
+            print(f"\r  Framing: {i+1}/{len(cases)}", end="", flush=True)
+        for fn in framings:
+            fr = [r for r in results if r["framing"]==fn]
+            mlflow.log_metric(f"accuracy_{fn}", sum(r["accurate"] for r in fr)/len(fr))
+            mlflow.log_metric(f"alignment_{fn}", sum(r["aligned_with_baseline"] for r in fr)/len(fr))
+        if skipped_no_summary:
+            mlflow.log_metric("rq2_skipped_no_summary", skipped_no_summary)
+            print(f"\n  RQ2: skipped {skipped_no_summary} cases with no summary")
+        mlflow.log_dict(results, "rq2_results.json")
+        print(f"\n  RQ2 done")
+    return results
+
+
+def run_reconsideration(client, model, cases, n_samples, baseline_results):
+    with mlflow.start_run(run_name="rq3_reconsideration", nested=True):
+        mlflow.log_param("stage", "rq3_reconsideration")
+        results = []
+        for i, case in enumerate(cases):
+            text = case_input(case)
+            at = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+            prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=at)
+            case_label = f"{case['case_name'][:40]}|Art{case['article']}"
+            orig, chal = [], []
+
+            with mlflow.start_span(name=f"recon|{case_label}") as case_span:
+                case_span.set_attributes({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                    "violation_label": case["violation_label"]})
+                for s in range(n_samples):
+                    with mlflow.start_span(name=f"sample_{s}") as ss:
+                        r1_text = call_vllm(client, model, SYSTEM_PROMPT, prompt)
+                        r1 = parse_rating(r1_text)
+                        orig.append(r1)
+                        msgs = [{"role":"user","content":prompt},{"role":"assistant","content":r1_text},{"role":"user","content":RECONSIDERATION_PROMPT}]
+                        r2_text = call_vllm_multiturn(client, model, SYSTEM_PROMPT, msgs)
+                        r2 = parse_rating(r2_text)
+                        chal.append(r2)
+                        direction = "toward_violation" if r2 < r1 else ("away_from_violation" if r2 > r1 else "unchanged")
+                        ss.set_inputs({"original_response": r1_text, "challenge": RECONSIDERATION_PROMPT})
+                        ss.set_outputs({"challenged_response": r2_text, "original_rating": r1,
+                            "challenged_rating": r2, "changed": r1!=r2, "direction": direction})
+                op, op_abst = majority_vote(orig)
+                cp, cp_abst = majority_vote(chal)
+                changes = sum(1 for o,c in zip(orig,chal) if o!=c)
+                case_span.set_outputs({"original_prediction": op, "challenged_prediction": cp,
+                    "prediction_changed": op!=cp, "individual_change_rate": changes/n_samples})
+            results.append({"item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "original_prediction": op,
+                "challenged_prediction": cp, "original_accurate": op==case["violation_label"],
+                "challenged_accurate": cp==case["violation_label"], "prediction_changed": op!=cp,
+                "change_rate": changes/n_samples, "original_abstained": op_abst, "challenged_abstained": cp_abst, "avg_rating": mean_rating(orig), "avg_rating_challenged": mean_rating(chal), "flip_direction": flip_direction(op, cp), "original_ratings": orig, "challenged_ratings": chal})
+            print(f"\r  Reconsideration: {i+1}/{len(cases)}", end="", flush=True)
+        oa = sum(r["original_accurate"] for r in results)/len(results)
+        ca = sum(r["challenged_accurate"] for r in results)/len(results)
+        cr = sum(r["prediction_changed"] for r in results)/len(results)
+        mlflow.log_metric("original_accuracy", oa)
+        mlflow.log_metric("challenged_accuracy", ca)
+        mlflow.log_metric("prediction_change_rate", cr)
+        mlflow.log_dict(results, "rq3_results.json")
+        print(f"\n  RQ3: orig_acc={oa:.3f}, chal_acc={ca:.3f}, changed={cr:.3f}")
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cases", required=True)
+    parser.add_argument("--vllm-url", default="http://10.88.0.3:8000/v1")
+    parser.add_argument("--model", default="meta-llama/Llama-3.3-70B-Instruct")
+    parser.add_argument("--mlflow-url", default="https://mlflow.lex")
+    parser.add_argument("--experiment-id", default="23")
+    parser.add_argument("--samples", type=int, default=10)
+    parser.add_argument("--stages", default="all")
+    add_summaries_argument(parser)
+    args = parser.parse_args()
+
+    cases = json.load(open(args.cases))
+    verify_cases(cases)
+    print(f"Loaded {len(cases)} cases")
+
+    client = openai.OpenAI(base_url=args.vllm_url, api_key="dummy")
+    mlflow.set_tracking_uri(args.mlflow_url)
+    mlflow.set_experiment(experiment_id=args.experiment_id)
+
+    stages = args.stages.split(",") if args.stages != "all" else ["baseline","rq1","rq2","rq3"]
+    model_short = args.model.split("/")[-1]
+
+    with mlflow.start_run(run_name=f"{model_short}_{len(cases)}cases"):
+        mlflow.log_param("model", args.model)
+        mlflow.log_param("n_cases", len(cases))
+        mlflow.log_param("n_samples", args.samples)
+        mlflow.log_param("stages", ",".join(stages))
+        mlflow.log_param("backend", "vllm-brev")
+        start = time.time()
+        bl = sm = None
+        if "baseline" in stages: bl = run_baseline(client, args.model, cases, args.samples)
+        sm = load_summaries_for(args, stages, mlflow)
+        if "rq1" in stages and bl: run_summarization(client, args.model, cases, args.samples, bl, sm)
+        if "rq2" in stages and bl: run_framing(client, args.model, cases, args.samples, sm, bl)
+        if "rq3" in stages and bl: run_reconsideration(client, args.model, cases, args.samples, bl)
+        elapsed = time.time() - start
+        mlflow.log_metric("total_time_seconds", elapsed)
+        if unparsed:
+            total = sum(unparsed.values())
+            mlflow.log_metric("unparsed_responses", total)
+            print(f"  {total} responses carried no rating and were dropped, "
+                  f"not counted as abstentions")
+        print(f"\nDone in {elapsed/60:.1f} minutes")
+
+
+if __name__ == "__main__":
+    main()

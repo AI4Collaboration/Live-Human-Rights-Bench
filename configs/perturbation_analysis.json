@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "family_id": "single-summary-global-bh-v1",
+  "family_id": "atomic-target-single-summary-global-bh-v2",
   "input_manifest": "configs/evaluation_dataset.json",
   "models": [
     "qwen/qwen3-32b",
@@ -30,6 +30,7 @@
     "The two Qwen evaluators are from the same Qwen3 generation: Qwen3-32B and Qwen3-235B-A22B. Qwen3-8B is excluded.",
     "All six evaluators run at 69 workers, matching the highest concurrency used by the previous roster.",
     "The model roster matches scripts/run_roster.sh. Any roster change must be explicit before rescoring.",
+    "All 1,000 atomic targets are validated; Articles 34 and 38 are reported separately and excluded from headline hypothesis tests.",
     "Extractive and atomic coverage checks are separate diagnostics, not additional tests silently inserted into this family."
   ]
 }

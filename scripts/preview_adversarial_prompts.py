@@ -22,7 +22,9 @@ def main():
         parser.error("Low pressure is the Baseline contrast; use --strategy Baseline")
     pack = load_prompt_pack()
     case = {"case_text": "[TOY CASE, NOT EXPERIMENTAL DATA] A person describes overcrowded detention and limited time outside the cell.",
-            "target_provision": "Article 3"}
+            "target_question": "whether the Court finds a violation by State A of Article 3 concerning overcrowded detention conditions in this case",
+            "target_respondent": "State A", "target_provision": "Article 3",
+            "target_issue": "overcrowded detention conditions"}
     conditions = {
         "Baseline": {"strategy": "Baseline", "variation": "none"},
         "Authority": {"strategy": "Authority", "variation": "senior_lawyer"},
@@ -55,7 +57,7 @@ def main():
         print("\nADAPTIVE TURN 1 INPUT (later inputs require actual preceding replies)")
         for message in adaptive["messages"]:
             print(f"\nCHALLENGER {message['role'].upper()}\n{message['content']}")
-        print(f"\nSoftware prefix: {adaptive['cue_prefix']!r}")
+        print(f"\nSoftware fixed prefix: {adaptive['fixed_prefix']!r}")
         print(f"Generated-body allowance: {adaptive['body_word_budget']} words")
         print(f"Identical software suffix:\n{pack['response_request']}")
 

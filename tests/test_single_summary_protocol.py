@@ -11,9 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 @pytest.mark.parametrize("script,removed_flag", [
-    ("scripts/resummarize.py", "--versions"),
     ("scripts/build_extractive.py", "--versions"),
-    ("scripts/resummarize.py", "--version-indices"),
 ])
 def test_builders_do_not_expose_multiple_draws(script, removed_flag):
     result = subprocess.run([sys.executable, "-X", "utf8", script, "--help"],
@@ -44,7 +42,9 @@ def test_no_runner_enumerates_summary_draws():
 
 def test_analysis_does_not_pool_old_draws():
     from scripts.analyse_perturbation_run import validate_summary_results
-    row = {"item_id": "x", "article": "3", "summary_version": 0}
+    row = {"item_id": "x", "target_respondent_code": "AAA",
+           "article_full": "3", "target_issue": "detention conditions",
+           "summary_version": 0}
     validate_summary_results([row])
     for wrong in [[row, row], [{**row, "summary_version": 1}]]:
         with pytest.raises(ValueError, match="one summary result"):
@@ -68,11 +68,11 @@ def test_atomic_verifier_receives_a_string(monkeypatch):
 def test_atomic_checkpoint_rejects_stale_summary(tmp_path):
     from scripts.build_atomic_coverage import bind_instrument, bind_variant
     output = tmp_path / "coverage"
-    identity = {"summaries_sha256_lf": "one"}
+    identity = {"dataset_id": "atomic-v1", "judgments": ["one"]}
     bind_instrument(output, identity)
     bind_instrument(output, identity)
     with pytest.raises(ValueError, match="inputs or settings changed"):
-        bind_instrument(output, {"summaries_sha256_lf": "different"})
+        bind_instrument(output, {"dataset_id": "atomic-v2", "judgments": ["one"]})
     bind_variant(output, "abstractive", "one-summary")
     bind_variant(output, "extractive", "verbatim-control")
     bind_variant(output, "abstractive", "one-summary")

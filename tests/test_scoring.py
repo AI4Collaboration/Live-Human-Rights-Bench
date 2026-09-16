@@ -6,6 +6,8 @@ Run: python -m pytest tests/test_scoring.py -q
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
 
 from scoring import (MAX_CASE_CHARS, NO_VIOLATION_BELOW, VIOLATION_ABOVE,  # noqa: E402
@@ -127,28 +129,18 @@ def test_no_runner_averages_raw_ratings():
 # --- the runners must agree with the published set -----------------------------
 
 def test_article_titles_cover_the_published_codes():
-    # a code without a title renders as "Article 7 - Article 7" in the prompt
-    import re
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
-    src = (Path(__file__).resolve().parent.parent
-          / "experiments" / "run_perturbation_bedrock.py").read_text(encoding="utf-8")
-    titles = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"',
-                             re.search(r"ARTICLE_TITLES\s*=\s*\{(.*?)\n\}", src, re.S).group(1)))
-    published = {"2", "3", "5", "6", "8", "10", "11", "13", "14", "34", "38", "41",
-                 "4", "7", "9", "18", "P1-1", "P1-2", "P1-3", "P4-2", "P4-4",
-                 "P7-2", "P7-4", "P12-1"}
-    assert not published - set(titles), f"no title for {published - set(titles)}"
+    import json
+    from targets import ARTICLE_TITLES
+    path = Path(__file__).resolve().parent.parent / "data/processed/echr_unified.json"
+    published = {row["article_full"] for row in json.loads(path.read_text(encoding="utf-8"))}
+    assert not published - set(ARTICLE_TITLES), f"no title for {published - set(ARTICLE_TITLES)}"
 
 
 def test_convention_article_1_is_not_the_protocol_right():
-    # the legacy lossy field collapses P1-1 to "1"; the title map must not repeat that
-    import re
-    src = (Path(__file__).resolve().parent.parent
-          / "experiments" / "run_perturbation_bedrock.py").read_text(encoding="utf-8")
-    titles = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"',
-                             re.search(r"ARTICLE_TITLES\s*=\s*\{(.*?)\n\}", src, re.S).group(1)))
-    assert titles["P1-1"] == "Protection of property"
-    assert titles["1"] != titles["P1-1"], "Convention Article 1 is not Article 1 of Protocol 1"
+    from targets import provision_name
+    assert provision_name("P1-1") == "Article 1 of Protocol No. 1 (Protection of property)"
+    with pytest.raises(ValueError, match="No title"):
+        provision_name("1")
 
 
 def test_summaries_are_shared_across_instances_of_one_case():
@@ -218,7 +210,9 @@ def test_every_result_row_carries_item_id():
             "run_perturbation_*.py"):
         src = path.read_text(encoding="utf-8")
         for block in _stored_rows(src):
-            assert '"item_id"' in block, f"{path.name}: row without item_id\n{block[:160]}"
+            assert ('"item_id"' in block or
+                    ("**result_target(case)" in block and '"item_id": case["item_id"]' in src)), \
+                f"{path.name}: row without item_id\n{block[:160]}"
 
 
 def test_every_result_row_reports_its_failures():
@@ -248,7 +242,7 @@ def test_baseline_is_joined_by_item_id_not_case_name():
     from pathlib import Path
     runners = sorted((Path(__file__).resolve().parent.parent / "experiments")
                      .glob("run_perturbation_*.py"))
-    assert len(runners) >= 4
+    assert [path.name for path in runners] == ["run_perturbation_openai.py"]
     for path in runners:
         src = path.read_text(encoding="utf-8")
         assert not re.search(r'\["case_name"\]\s*==\s*case\["case_name"\]', src), path.name

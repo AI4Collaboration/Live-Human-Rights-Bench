@@ -8,8 +8,11 @@ import sys
 
 import pytest
 
-from scripts.analyse_perturbation_run import analyze_family, apply_global_bh
+from scripts.analyse_perturbation_run import (
+    analyze_family, apply_global_bh, expected_input_identity,
+)
 from experiments.run_protocol import SCORING, SUMMARY_PROTOCOL, bind_run_config
+from experiments.targets import provision_name, target_question
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,15 +25,25 @@ def write(path, value):
 def fixture(root, count=7):
     family = json.loads((ROOT / "configs/perturbation_analysis.json").read_text(encoding="utf-8"))
     family.update(models=[f"provider/model-{i}" for i in range(count)], expected_comparisons=5*count)
-    cases = [{"item_id": "a", "article": "3", "violation_label": "violation"},
-             {"item_id": "b", "article": "8", "violation_label": "no_violation"}]
-    release = {"status": "APPROVED", "versions": 1, "release_id": "clean",
-               "summaries_sha256_lf": "one-summary", "dataset_sha256_lf": "repaired"}
+    def case(item_id, article, code, respondent, issue, label):
+        return {"item_id": item_id, "article": article, "article_full": article,
+                "target_respondent_code": code, "target_respondent": respondent,
+                "target_provision": provision_name(article), "target_issue": issue,
+                "target_aspect": "unspecified",
+                "target_question": target_question(respondent, article, issue),
+                "target_status": "verified", "violation_label": label}
+    cases = [case("a", "3", "AAA", "State A", "detention conditions", "violation"),
+             case("b", "8", "BBB", "State B", "private life", "no_violation")]
+    manifest = {"dataset_id": "fixture-atomic-v1",
+        "dataset": {"target_contract": {"unit": "one judgment, one respondent State, one provision, one sub-conclusion"}},
+        "summaries": {"summarizer": "fixture/summarizer", "versions": 1,
+                      "represented_judgments": 2}}
+    identity = expected_input_identity(manifest, cases)
     for model in family["models"]:
         directory = root / model.replace("/", "_")
-        write(directory / "input_identity.json", {"release_id": "clean", "cases_sha256_lf": "repaired", "summaries_sha256_lf": "one-summary"})
+        write(directory / "input_identity.json", identity)
         config = {"model": model, "samples": 3, "summary_protocol": SUMMARY_PROTOCOL,
-                  "scoring": SCORING, "prompts_sha256": "frozen-prompts", "temperature": 1.0}
+                  "scoring": SCORING, "prompt_version": "atomic-target-prompts-v1", "temperature": 1.0}
         write(directory / "run_config.json", config)
         baseline = [{**r, "ratings": [90, 90, 90]} for r in cases]
         # Deliberately wrong stored predictions/metrics must not influence analysis.
@@ -41,7 +54,7 @@ def fixture(root, count=7):
         write(directory / "rq1_results.json", changed)
         write(directory / "rq2_results.json", [{**r, "framing": frame} for frame in family["comparisons"]["rq2"] for r in changed])
         write(directory / "rq3_results.json", [{**r, "original_ratings": [10]*3, "challenged_ratings": [90]*3} for r in cases])
-    return family, cases, release
+    return family, cases, manifest
 
 
 @pytest.mark.parametrize("models,expected", [(6, {"rq1": 6, "rq2": 18, "rq3": 6}), (8, {"rq1": 8, "rq2": 24, "rq3": 8})])
@@ -73,19 +86,19 @@ def test_removing_sixteen_summary_comparisons_recomputes_every_arm():
     assert changed_arms == {"rq1", "rq2", "rq3"}
 
 
-@pytest.mark.parametrize("problem", ["missing_model", "missing_arm", "missing_instance", "three_draws", "nonzero_version", "wrong_release", "incomplete_samples", "different_samples", "changed_prompt"])
+@pytest.mark.parametrize("problem", ["missing_model", "missing_arm", "missing_instance", "three_draws", "nonzero_version", "wrong_identity", "incomplete_samples", "different_samples", "changed_prompt"])
 def test_incomplete_or_mixed_release_never_produces_q_values(tmp_path, problem):
-    family, cases, release = fixture(tmp_path)
+    family, cases, manifest = fixture(tmp_path)
     directory = tmp_path / "provider_model-0"
     if problem == "missing_model":
         family["models"][-1] = "provider/absent"
     elif problem == "missing_arm":
         (directory / "rq2_results.json").unlink()
-    elif problem == "wrong_release":
-        write(directory / "input_identity.json", {"release_id": "old"})
+    elif problem == "wrong_identity":
+        write(directory / "input_identity.json", {"dataset_id": "old"})
     elif problem in {"different_samples", "changed_prompt"}:
         config = json.loads((directory / "run_config.json").read_text())
-        config["samples" if problem == "different_samples" else "prompts_sha256"] = 10 if problem == "different_samples" else "other"
+        config["samples" if problem == "different_samples" else "prompt_version"] = 10 if problem == "different_samples" else "other"
         write(directory / "run_config.json", config)
     else:
         path = directory / "rq1_results.json"
@@ -100,7 +113,7 @@ def test_incomplete_or_mixed_release_never_produces_q_values(tmp_path, problem):
             rows[0]["ratings"][0] = None
         write(path, rows)
     with pytest.raises((ValueError, FileNotFoundError)):
-        analyze_family(tmp_path, family, cases, release)
+        analyze_family(tmp_path, family, cases, manifest)
 
 
 def test_missing_real_results_does_not_write_statistics(tmp_path):

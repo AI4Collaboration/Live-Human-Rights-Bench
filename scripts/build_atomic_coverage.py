@@ -53,7 +53,7 @@ from checkpoint import Checkpoint                                  # noqa: E402
 from build_annotation import BACKREF, LAW, fact_paragraphs, split_paragraphs, \
     is_heading_only, assessment_region                             # noqa: E402
 from summaries import load_summaries, summary_for, is_usable          # noqa: E402
-from input_gate import verify_summaries, file_digest, case_input, CASES_PATH, text_digest  # noqa: E402
+from input_gate import verify_summaries, case_input, CASES_PATH, manifest  # noqa: E402
 
 csv.field_size_limit(10 ** 9)
 
@@ -185,12 +185,12 @@ def bind_instrument(directory, identity):
     marker.write_text(json.dumps(identity, indent=2) + "\n", encoding="utf-8")
 
 
-def bind_variant(directory, variant, summary_sha):
+def bind_variant(directory, variant, summary_identity):
     if variant not in {"abstractive", "extractive"}:
         raise ValueError("Coverage variant must be abstractive or extractive")
     marker = Path(directory) / f"{variant}_identity.json"
-    identity = {"summaries_sha256_lf": summary_sha,
-                "verification_prompt_sha256": text_digest(VERIFY_TEMPLATE), "batch_size": BATCH}
+    identity = {"summary_identity": summary_identity,
+                "verification_protocol": "atomic-support-v1", "batch_size": BATCH}
     if marker.exists():
         if json.loads(marker.read_text(encoding="utf-8")) != identity:
             raise ValueError("Atomic coverage summary changed; use a new output directory")
@@ -261,13 +261,20 @@ def main():
                        for r in rows if r["item_id"] in canonical}
 
     out_dir = Path(args.out)
-    bind_instrument(out_dir, {"full_texts_sha256_lf": file_digest(args.full_texts),
+    bind_instrument(out_dir, {"dataset_id": manifest()["dataset_id"],
+        "full_texts_file": str(Path(args.full_texts).resolve()),
         "model": args.model,
-        "visible_source_inputs": {k: text_digest(v) for k, v in visible_sources.items()},
-        "extraction_prompt_sha256": text_digest(EXTRACT_TEMPLATE),
+        "visible_source_characters": {k: len(v) for k, v in visible_sources.items()},
+        "extraction_protocol": "atomic-claims-v1",
         "per_side": args.per_side, "max_claims": args.max_claims,
         "judgment_ids": [r["item_id"] for r in rows]})
-    bind_variant(out_dir, args.variant, file_digest(args.summaries))
+    bind_variant(out_dir, args.variant, {
+        "dataset_id": meta.get("dataset_id"),
+        "summarizer": summarizer,
+        "mode": meta.get("mode", "abstractive"),
+        "versions": meta.get("versions", 1),
+        "judgments": len(summaries),
+    })
     extract_ckpt = Checkpoint(out_dir / "claims.jsonl")
     result_ckpt = Checkpoint(out_dir / ("%s.jsonl" % args.variant))
 
@@ -322,8 +329,6 @@ def main():
         print("  difference:                         %+.3f" % (relied - other))
     print("  coverage, pooled:                   %s over %d claims"
           % ("%.3f" % overall if overall is not None else "n/a", n_all))
-    if meta.get("digest"):
-        print("  summaries digest: %s" % meta["digest"])
 
 
 if __name__ == "__main__":

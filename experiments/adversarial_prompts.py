@@ -1,4 +1,4 @@
-"""Offline Section 5 prompt assembly, not an experiment runner.
+"""Prompt assembly and validation for the Section 5 experiment runner.
 
 Checks cover structure and budgets, not semantic validity or elicitation efficacy.
 No model clients, network calls, or changes to historical rq3 are involved.
@@ -8,6 +8,7 @@ import json
 import math
 from numbers import Real
 from pathlib import Path
+import re
 from string import Formatter
 
 
@@ -55,7 +56,10 @@ def opposing_judgment(initial_score):
 
 def _case_fields(case):
     fields = {}
-    for key in ("case_text", "target_provision"):
+    for key in (
+        "case_text", "target_question", "target_respondent",
+        "target_provision", "target_issue",
+    ):
         value = case.get(key)
         if not isinstance(value, str) or not value.strip():
             raise ValueError(f"{key} must be a nonempty string")
@@ -122,7 +126,7 @@ def build_static_sequence(pack, case, initial_score, condition, *, turns, word_b
     _, pressure, cue = _condition(pack, condition)
     fields = _case_fields(case)
     values = dict(opposing_judgment=opposing_judgment(initial_score),
-                  target_provision=fields["target_provision"])
+                  target_question=fields["target_question"])
     templates = pack["pressure"][pressure]
     return [_deliver(pack, templates["static_first" if turn == 1 else "static_later"].format(**values),
                      cue if turn == 1 else "", word_budget, cue)
@@ -146,12 +150,20 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     _positive_integer(turn, "turn")
     _positive_integer(word_budget, "word_budget")
     strategy, pressure, cue = _condition(pack, condition)
-    prefix = cue if turn == 1 else ""
-    body_budget = word_budget - len(prefix.split())
+    fields = _case_fields(case)
+    opposing = opposing_judgment(initial_score)
+    template = pack["pressure"][pressure]["static_first" if turn == 1 else "static_later"]
+    anchor = template.format(
+        opposing_judgment=opposing,
+        target_question=fields["target_question"],
+    )
+    cue_prefix = cue if turn == 1 else ""
+    fixed_prefix = " ".join(part for part in (cue_prefix, anchor) if part)
+    body_budget = word_budget - len(fixed_prefix.split())
     if body_budget < 1:
         raise ValueError("word_budget must leave room for a body after the cue")
-    values = dict(_case_fields(case), initial_judgment=initial_judgment(initial_score),
-                  opposing_judgment=opposing_judgment(initial_score), strategy=strategy,
+    values = dict(fields, initial_judgment=initial_judgment(initial_score),
+                  opposing_judgment=opposing, strategy=strategy,
                   cue_description=cue or "None",
                   pressure_name=pressure,
                   pressure_instruction=pack["pressure"][pressure]["adaptive_instruction"],
@@ -160,13 +172,37 @@ def build_adaptive_messages(pack, case, initial_score, condition, conversation, 
     return {
         "messages": [{"role": "system", "content": pack["adaptive_system"].format(**values)},
                      {"role": "user", "content": pack["adaptive_user"].format(**values)}],
-        "cue_prefix": prefix, "fixed_cue": cue,
+        "cue_prefix": cue_prefix, "fixed_prefix": fixed_prefix, "fixed_cue": cue,
+        "expected_target": {
+            "target_respondent": fields["target_respondent"],
+            "target_provision": fields["target_provision"],
+            "target_issue": fields["target_issue"],
+        },
         "body_word_budget": body_budget, "word_budget": word_budget,
     }
 
 
 def assemble_adaptive_challenge(pack, adaptive_input, body):
-    return _deliver(pack, body, adaptive_input["cue_prefix"],
+    if not isinstance(body, str):
+        raise ValueError("Adaptive challenger output must be JSON text")
+    value = body.strip()
+    if value.startswith("```"):
+        value = re.sub(r"^```(?:json)?\s*|\s*```$", "", value, flags=re.IGNORECASE)
+    try:
+        payload = json.loads(value)
+    except json.JSONDecodeError as exc:
+        raise ValueError("Adaptive challenger output must be one JSON object") from exc
+    if not isinstance(payload, dict) or set(payload) != {
+        "target_respondent", "target_provision", "target_issue", "reason"
+    }:
+        raise ValueError("Adaptive challenger output has the wrong fields")
+    for field, expected in adaptive_input["expected_target"].items():
+        if payload[field] != expected:
+            raise ValueError(f"Adaptive challenger changed {field}")
+    reason = payload["reason"]
+    if not isinstance(reason, str) or not reason.strip():
+        raise ValueError("Adaptive challenger reason must be nonempty text")
+    return _deliver(pack, reason, adaptive_input["fixed_prefix"],
                     adaptive_input["word_budget"], adaptive_input["fixed_cue"])
 
 

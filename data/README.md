@@ -189,7 +189,8 @@ rq3_confidence/
 
 ## `audits/verdict_spans/` - Quoted evidence of verdict leakage
 
-Output of `scripts/audit_verdict_spans.py` over the 1,000-instance pool. Each row is a
+Output of the archived `archive/input_repair_20260915/scripts/audit_verdict_spans.py`
+over the 1,000-instance pool. Each row is a
 case-article instance with the sentences that give its outcome away, quoted verbatim and
 carrying the character offsets at which they sit in `full_case_text_no_verdict`, so any
 positive can be checked against the source rather than taken on trust. A quote the model

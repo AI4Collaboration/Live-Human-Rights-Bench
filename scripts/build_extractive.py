@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the extractive control arm: summaries that are verbatim source paragraphs.
 
-Writes the same file shape as scripts/resummarize.py, so every runner consumes it
+Writes the canonical single-summary file shape, so every runner consumes it
 unchanged -- the arm is run by pointing --summaries at this file instead.
 
     python scripts/build_extractive.py \
@@ -23,7 +23,7 @@ from openai import OpenAI
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
 from checkpoint import Checkpoint          # noqa: E402
 from scoring import MAX_CASE_CHARS         # noqa: E402
-from input_gate import case_input, text_digest, guard_candidate_output  # noqa: E402
+from input_gate import case_input, guard_candidate_output, manifest  # noqa: E402
 from extractive import (SPAN_SELECT_TEMPLATE, assemble_units, is_verbatim,  # noqa: E402
                         parse_selection, source_units, selection_record, SELECTION_SCHEMA)
 
@@ -97,7 +97,8 @@ def main():
     args = p.parse_args()
     guard_candidate_output(args.out)
 
-    instances = json.load(open(args.cases))
+    with open(args.cases, encoding="utf-8") as handle:
+        instances = json.load(handle)
     judgments, article_of = {}, {}
     for c in instances:
         article_of.setdefault(c["item_id"], set()).add(c.get("article_full") or c["article"])
@@ -125,10 +126,12 @@ def main():
           f"one extract per judgment   target: {args.target_words} words\n")
 
     ckpt = Checkpoint(args.out + ".jsonl", enabled=not args.no_resume)
+    dataset_id = manifest()["dataset_id"]
     for row in ckpt.rows():
         expected = judgments.get(row["item_id"])
         if (row.get("version") != 0 or expected is None
-                or row.get("source_input_sha256") != text_digest(expected["text"])
+                or row.get("dataset_id") != dataset_id
+                or row.get("source_characters") != len(expected["text"])
                 or row.get("summarizer") != args.summarizer
                 or row.get("selection_schema") != SELECTION_SCHEMA
                 or row.get("target_words") != args.target_words
@@ -157,7 +160,8 @@ def main():
                              "version": 0, "summary": text, **drop,
                              "selection_schema": SELECTION_SCHEMA, "target_words": args.target_words,
                              "provisions": article_of[case["item_id"]], "summarizer": args.summarizer,
-                             "source_input_sha256": text_digest(case["text"])})
+                             "dataset_id": dataset_id,
+                             "source_characters": len(case["text"])})
             else:
                 failed += 1
                 print(f"\n  {case['case_name'][:40]}: {err[:90]}")
@@ -172,14 +176,14 @@ def main():
                   for k, r in by_case.items()}
     complete = len(summaries)
 
-    json.dump({"summarizer": args.summarizer, "versions": 1,
+    json.dump({"dataset_id": dataset_id, "summarizer": args.summarizer, "versions": 1,
                "mode": "extractive", "target_words": args.target_words,
                "n_judgments": len(cases), "n_complete": complete,
                "prompt_tokens": tot["prompt"], "completion_tokens": tot["completion"],
-               "source_inputs": {c["item_id"]: text_digest(c["text"]) for c in cases},
+               "source_characters": {c["item_id"]: len(c["text"]) for c in cases},
                "selection_schema": SELECTION_SCHEMA, "selections": selections,
                "provisions": article_of, "summaries": summaries},
-              open(args.out, "w"), indent=2, ensure_ascii=False)
+              open(args.out, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
     print(f"\nWrote {args.out}")
     print(f"  {complete}/{len(cases)} judgments complete")
     print(f"  tokens: {tot['prompt']:,} in, {tot['completion']:,} out")

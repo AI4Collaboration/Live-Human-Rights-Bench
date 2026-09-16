@@ -20,10 +20,8 @@ SUMMARIES=${SUMMARIES:-data/processed/summaries_dsv41flash.json}
 OUT=${OUT:-data/experiments/unified_dsv41flash_leakchecked_20260916}
 SAMPLES=${SAMPLES:-3}
 CONC=${CONC:-6}   # all six at once; the gate exists for smaller reruns
-# Which arms to run. Defaulting to "all" wasted a run: pointing --summaries at the
-# extractive file and leaving this alone sent every model on to RQ3, which reads the
-# full case text and not the summaries at all -- an exact duplicate of work already
-# paid for, and the most expensive arm of the four.
+# Which arms to run. All summary-based arms, including RQ3, use the supplied
+# canonical summary artifact.
 RQ=${RQ:-all}
 LOGS=${LOGS:-logs/unified_dsv41flash_leakchecked_20260916}
 

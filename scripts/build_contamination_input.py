@@ -177,7 +177,6 @@ def main():
     with open(args.output, "w") as f:
         json.dump(cases, f, indent=2, ensure_ascii=False)
     print(f"\nSaved {len(cases)} cases to {args.output}")
-    print("Next: python experiments/generate_mft.py")
 
 
 if __name__ == "__main__":

@@ -1,9 +1,4 @@
-"""Summaries are a shared artifact, and the runners must not make their own.
-
-The invariants below are asserted against the runner sources rather than checked by
-reading them. Reading missed a fourth runner once, and missed two files' worth of
-unpatched result rows another time.
-"""
+"""Summaries are a shared artifact, and the canonical runner must not make its own."""
 
 import json
 import os
@@ -28,8 +23,7 @@ def source(name):
 
 
 def test_there_are_runners_to_check():
-    # Guards against the invariants below passing vacuously on an empty list.
-    assert len(RUNNERS) >= 4
+    assert RUNNERS == ["run_perturbation_openai.py"]
 
 
 @pytest.mark.parametrize("runner", RUNNERS)
@@ -113,15 +107,18 @@ def test_coverage_counts_failures_as_missing():
     assert coverage(summaries, cases) == (1, 3)
 
 
-def test_digest_identifies_the_file_not_its_name():
-    from summaries import file_digest
-    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as a:
-        json.dump({"summaries": {"x": ["one"]}}, a)
-    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as b:
-        json.dump({"summaries": {"x": ["two"]}}, b)
-    assert file_digest(a.name) != file_digest(b.name)
-    assert file_digest(a.name) == file_digest(a.name)
-    os.unlink(a.name); os.unlink(b.name)
+def test_semantic_metadata_identifies_the_summary_dataset(tmp_path):
+    path = tmp_path / "summaries.json"
+    path.write_text(json.dumps({
+        "dataset_id": "atomic-v1",
+        "summarizer": "fixture/model",
+        "versions": 1,
+        "summaries": {"x": ["one"]},
+    }), encoding="utf-8")
+    summaries, meta = load_summaries(path)
+    assert summaries == {"x": ["one"]}
+    assert meta["dataset_id"] == "atomic-v1"
+    assert meta["summarizer"] == "fixture/model"
 
 
 # --- the summariser can recognise a case and supply the verdict -----------------

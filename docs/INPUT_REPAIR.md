@@ -2,7 +2,7 @@
 
 The main summarization experiment uses **one summary per judgment**, selected as
 original version index 0 before looking at any evaluator's response. That means
-947 summary texts covering the unchanged 1,000 case-article instances. The two
+947 summary texts covering 1,000 atomic targets. The two
 other historical versions are not current experimental inputs.
 
 ## What three versions previously meant
@@ -48,20 +48,22 @@ defeated the earlier structural checks.
 Source repair uses structural boundaries plus grounded review. Factual appendix
 columns are recovered from official HUDOC documents when the retained source
 refers to a missing table; the current ECtHR's awards and finding columns are
-excluded. No new factual narrative is generated during source repair. Every
-case ID, target article, label, date, and annual count remains unchanged.
+excluded. No new factual narrative is generated during source repair. The final
+target audit then resolves every row to one respondent State, one
+provision, and one sub-conclusion. Former Article 41 rows are retargeted to verified
+merits sub-conclusions. The cohort remains 1,000 rows with the same annual counts.
 
 ## Acceptance and provenance
 
-1. Review each distinct source at its exact model-visible hash. Positive flags
-   must quote text that actually occurs in the input.
+1. Review each distinct model-visible source. Positive flags must quote text that
+   actually occurs in the input.
 2. Keep original version 0 only when its source input is unchanged and its own
    review is clean. If the source changed or its summary failed, regenerate
    version 0 using the original model, prompt, temperature and input cap.
 3. Review each generated candidate. A rejected candidate is not an accepted
    summary. Preserve attempts and raw outputs in the audit checkpoints.
 4. Publish only when all 947 sources and 947 selected summaries are accounted for.
-   The release gate binds every permitted source and summary to its content hash.
+   The semantic gate requires exact canonical text and all 1,000 registered atomic targets.
 5. Exercise the real runner with a fake transport to verify the exact outgoing
    messages and that the reference label is never inserted into a prompt.
 
@@ -81,21 +83,18 @@ repair outputs remain audit history, not inputs to the one-version release.
 
 ```bash
 python scripts/validate_eval_dataset.py --require-complete
-python scripts/publish_leakage_repair.py
 python scripts/verify_model_input_payloads.py
 ```
 
-The publication script is a dry-run unless `--publish` is supplied. It refuses
-publication if any selected summary is pending or an unrelated data edit would
-be overwritten. The payload verifier uses an in-memory fake transport and makes
-no model calls. It imports `openai` because the real runner does, but needs no key.
+The payload verifier uses an in-memory fake transport and makes no model calls. It
+imports `openai` because the real runner does, but needs no key.
 
 ## Re-running experiments
 
 Use a new output directory for the approved release. Never resume pre-repair
 checkpoints, mix old baseline predictions with repaired summary inputs, or
 relabel existing metrics as results of the cleaned corpus. The runner rejects
-known benchmark text that does not match the release and refuses to resume an
+benchmark text that does not match the active semantic cohort and refuses to resume an
 unversioned result directory. Historical alternative datasets are not covered by
 this release and must not be presented as having passed its review.
 

@@ -1,0 +1,455 @@
+#!/usr/bin/env python3
+"""
+LiveLegalBench Perturbation Study Runner with MLflow tracking.
+
+Runs all 3 RQs (summarization, framing, reconsideration) on verdict-free
+ECtHR cases using a vLLM-served model. Logs everything to MLflow.
+
+Usage:
+  # Start vLLM server first:
+  # vllm serve Qwen/Qwen3-32B --tensor-parallel-size 4 --port 8000
+
+  python experiments/run_perturbation_study.py \
+    --cases data/processed/test_20_cases.json \
+    --vllm-url http://localhost:8000/v1 \
+    --model Qwen/Qwen3-32B \
+    --mlflow-url http://35.84.222.41:5000 \
+    --experiment-id 23 \
+    --samples 10
+"""
+
+import argparse
+import json
+import os
+import time
+from collections import Counter
+
+from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
+                     mean_rating, parse_rating, unparsed)
+from stats import flip_direction
+from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
+from input_gate import case_input, verify_cases
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import mlflow
+import openai
+
+# ── Prompts (from paper) ──────────────────────────────────────────────────
+
+SYSTEM_PROMPT = (
+    "The European Court of Human Rights (ECtHR) is an international court of the "
+    "Council of Europe that interprets the European Convention on Human Rights (ECHR). "
+    "The court hears applications alleging that a contracting state has breached one "
+    "or more of the human rights enumerated in the convention. You are a legal "
+    "assistant specialised on the European Convention on Human Rights (ECHR)."
+)
+
+ARTICLE_TITLES = {
+    "1": "Protection of property",
+    "2": "Right to life",
+    "3": "Prohibition of torture",
+    "4": "Prohibition of slavery and forced labour",
+    "5": "Right to liberty and security",
+    "6": "Right to a fair trial",
+    "7": "No punishment without law",
+    "8": "Right to respect for private and family life",
+    "9": "Freedom of thought, conscience and religion",
+    "10": "Freedom of expression",
+    "11": "Freedom of assembly and association",
+    "12": "Right to marry",
+    "13": "Right to an effective remedy",
+    "14": "Prohibition of discrimination",
+    "34": "Individual applications",
+    "41": "Just satisfaction",
+    "P1-1": "Protection of property",
+}
+
+PREDICTIVE_TEMPLATE = """Below is a summary of the facts for an upcoming ECtHR case:
+
+{case_text}
+
+Based on the facts presented, state as a percentage from 0 to 100 how likely it is that the ECtHR will rule a violation of Article {article} - {article_title}.
+
+0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
+range: intermediate values are expected whenever the case is close.
+
+Provide ONLY the number as your response."""
+
+NORMATIVE_TEMPLATE = PREDICTIVE_TEMPLATE.replace("will rule", "should rule")
+
+FACTUAL_TEMPLATE = """Below is a summary of the facts for an upcoming ECtHR case:
+
+{case_text}
+
+Based on the facts presented, state as a percentage from 0 to 100 how likely it is that a violation of Article {article} - {article_title} occurred.
+
+0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
+range: intermediate values are expected whenever the case is close.
+
+Provide ONLY the number as your response."""
+
+# Summaries are built once through scripts/resummarize.py with a fixed summariser and
+# passed in via --summaries. This runner does not summarise: doing it here meant the
+# judge model graded its own writing, and meant paying for the same judgments again
+# for every model in the roster.
+
+# The challenge has to be posed on the same scale as the question. This asked for a
+# number 1-5 while the opening prompt asked for a percentage, so a model that did not
+# change its mind still had to change its answer, and RQ3 measured the rescaling.
+RECONSIDERATION_PROMPT = (
+    "Are you sure? Stick with your answer or provide a new percentage from 0 to 100. "
+    "ONLY provide the number."
+)
+
+
+# ── LLM Client ────────────────────────────────────────────────────────────
+
+def create_client(vllm_url: str) -> openai.OpenAI:
+    return openai.OpenAI(base_url=vllm_url, api_key="dummy")
+
+
+def call_llm(client: openai.OpenAI, model: str, system: str, user: str,
+             temperature: float = 1.0, max_tokens: int = 100) -> str:
+    try:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        return f"ERROR: {e}"
+
+
+def call_llm_multiturn(client: openai.OpenAI, model: str, messages: list,
+                       temperature: float = 1.0, max_tokens: int = 100) -> str:
+    try:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        return f"ERROR: {e}"
+
+
+def predict_case(client, model, case_text, article, template, n_samples=10):
+    """Run N predictions for a case-article pair."""
+    article_title = ARTICLE_TITLES.get(article, f"Article {article}")
+    prompt = template.format(case_text=case_text, article=article, article_title=article_title)
+
+    ratings = []
+    for _ in range(n_samples):
+        resp = call_llm(client, model, SYSTEM_PROMPT, prompt)
+        ratings.append(parse_rating(resp))
+
+    return ratings
+
+
+# ── Experiments ───────────────────────────────────────────────────────────
+
+def run_baseline(client, model, cases, n_samples, parent_run_id):
+    """RQ0: Baseline evaluation on full verdict-free text."""
+    results = []
+
+    with mlflow.start_run(run_name="baseline", nested=True):
+        mlflow.log_param("stage", "baseline")
+        mlflow.log_param("n_cases", len(cases))
+        mlflow.log_param("n_samples", n_samples)
+
+        for i, case in enumerate(cases):
+            text = case_input(case)
+            ratings = predict_case(client, model, text, case["article"], PREDICTIVE_TEMPLATE, n_samples)
+            pred, abstained = majority_vote(ratings)
+            accurate = pred == case["violation_label"]
+
+            results.append({
+                "item_id": case["item_id"],
+                "case_name": case["case_name"],
+                "article": case["article"],
+                "violation_label": case["violation_label"],
+                "prediction": pred,
+                "accurate": accurate,
+                "abstained": abstained,
+                "ratings": ratings,
+                "n_unparsed": count_unparsed(ratings),
+                "avg_rating": mean_rating(ratings),
+            })
+            print(f"\r  Baseline: {i+1}/{len(cases)} | acc={sum(r['accurate'] for r in results)/len(results):.2f}", end="", flush=True)
+
+        accuracy = sum(r["accurate"] for r in results) / len(results)
+        abstention_rate = sum(r["abstained"] for r in results) / len(results)
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("abstention_rate", abstention_rate)
+        mlflow.log_dict(results, "baseline_results.json")
+        print(f"\n  Baseline: acc={accuracy:.3f}, abstention={abstention_rate:.3f}")
+
+    return results
+
+
+def run_summarization(client, model, cases, n_samples, baseline_results, summaries):
+    """RQ1: Summarization effect."""
+    validate_single_summaries(summaries)
+    with mlflow.start_run(run_name="rq1_summarization", nested=True):
+        mlflow.log_param("stage", "rq1_summarization")
+
+        skipped_no_summary = 0
+        summary_results = []
+        for i, case in enumerate(cases):
+            case_key = case["item_id"]
+            summary_text = summary_for(summaries, case_key)
+            if not is_usable(summary_text):
+                skipped_no_summary += 1
+                continue
+            ratings = predict_case(client, model, summary_text, case["article"], PREDICTIVE_TEMPLATE, n_samples)
+            pred, abstained = majority_vote(ratings)
+            baseline_pred = next((r["prediction"] for r in baseline_results
+                                  if r["item_id"] == case_key and r["article"] == case["article"]), None)
+            summary_results.append({
+                "item_id": case_key, "case_name": case["case_name"], "article": case["article"],
+                "violation_label": case["violation_label"], "summary_version": 0,
+                "prediction": pred, "accurate": pred == case["violation_label"],
+                "aligned": pred == baseline_pred, "abstained": abstained,
+                "avg_rating": mean_rating(ratings), "flip_direction": flip_direction(baseline_pred, pred),
+                "ratings": ratings, "n_unparsed": count_unparsed(ratings),
+            })
+            print(f"\r  Summary eval: {i+1}/{len(cases)}", end="", flush=True)
+
+        if skipped_no_summary:
+            mlflow.log_metric("rq1_skipped_no_summary", skipped_no_summary)
+            print(f"\n  RQ1: skipped {skipped_no_summary} instances with no usable summary")
+        if not summary_results:
+            print("\n  RQ1: nothing scored")
+            return summary_results
+        accuracy = sum(r["accurate"] for r in summary_results) / len(summary_results)
+        alignment = sum(r["aligned"] for r in summary_results) / len(summary_results)
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("alignment_rate", alignment)
+        mlflow.log_dict(summary_results, "rq1_results.json")
+        print(f"\n  RQ1: acc={accuracy:.3f}, alignment={alignment:.3f}")
+
+    return summary_results
+
+
+def run_framing(client, model, cases, n_samples, summaries, baseline_results):
+    """RQ2: Decision-question framing effect."""
+    validate_single_summaries(summaries)
+    with mlflow.start_run(run_name="rq2_framing", nested=True):
+        mlflow.log_param("stage", "rq2_framing")
+
+        framings = {
+            "predictive": PREDICTIVE_TEMPLATE,
+            "normative": NORMATIVE_TEMPLATE,
+            "factual": FACTUAL_TEMPLATE,
+        }
+
+        framing_results = []
+        skipped_no_summary = 0
+        for i, case in enumerate(cases):
+            case_key = case["item_id"]
+            # Use first summary version
+            summary_text = (summaries.get(case_key) or [None])[0]
+            if not is_usable(summary_text):
+                # Falling back to raw case text here silently mixed conditions:
+                # a failed summarisation was scored as if it were a summary.
+                skipped_no_summary += 1
+                continue
+
+            baseline_pred = None
+            for br in baseline_results:
+                if br["item_id"] == case["item_id"] and br["article"] == case["article"]:
+                    baseline_pred = br["prediction"]
+                    break
+
+            for framing_name, template in framings.items():
+                ratings = predict_case(client, model, summary_text, case["article"], template, n_samples)
+                pred, abstained = majority_vote(ratings)
+
+                framing_results.append({
+                    "item_id": case["item_id"],
+                    "case_name": case["case_name"],
+                    "article": case["article"],
+                    "violation_label": case["violation_label"],
+                    "framing": framing_name,
+                    "prediction": pred,
+                    "accurate": pred == case["violation_label"],
+                    "aligned_with_baseline": pred == baseline_pred,
+                    "abstained": abstained, "avg_rating": mean_rating(ratings),
+                    "flip_direction": flip_direction(baseline_pred, pred),
+                    "ratings": ratings, "n_unparsed": count_unparsed(ratings),
+                })
+            print(f"\r  Framing: {i+1}/{len(cases)}", end="", flush=True)
+
+        for framing_name in framings:
+            fr = [r for r in framing_results if r["framing"] == framing_name]
+            acc = sum(r["accurate"] for r in fr) / len(fr)
+            align = sum(r["aligned_with_baseline"] for r in fr) / len(fr)
+            mlflow.log_metric(f"accuracy_{framing_name}", acc)
+            mlflow.log_metric(f"alignment_{framing_name}", align)
+
+        mlflow.log_dict(framing_results, "rq2_results.json")
+        print(f"\n  RQ2 done")
+
+    return framing_results
+
+
+def run_reconsideration(client, model, cases, n_samples, baseline_results):
+    """RQ3: Reconsideration effect ('Are you sure?')."""
+    with mlflow.start_run(run_name="rq3_reconsideration", nested=True):
+        mlflow.log_param("stage", "rq3_reconsideration")
+
+        recon_results = []
+        for i, case in enumerate(cases):
+            text = case_input(case)
+            article_title = ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+            prompt = PREDICTIVE_TEMPLATE.format(case_text=text, article=case["article"], article_title=article_title)
+
+            original_ratings = []
+            challenged_ratings = []
+
+            for _ in range(n_samples):
+                # Turn 1: original prediction
+                messages = [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ]
+                resp1 = call_llm_multiturn(client, model, messages)
+                r1 = parse_rating(resp1)
+                original_ratings.append(r1)
+
+                # Turn 2: reconsideration
+                messages.append({"role": "assistant", "content": resp1})
+                messages.append({"role": "user", "content": RECONSIDERATION_PROMPT})
+                resp2 = call_llm_multiturn(client, model, messages)
+                r2 = parse_rating(resp2)
+                challenged_ratings.append(r2)
+
+            orig_pred, orig_pred_abst = majority_vote(original_ratings)
+            chal_pred, chal_pred_abst = majority_vote(challenged_ratings)
+
+            baseline_pred = None
+            for br in baseline_results:
+                if br["item_id"] == case["item_id"] and br["article"] == case["article"]:
+                    baseline_pred = br["prediction"]
+                    break
+
+            # Categorize changes
+            changes = sum(1 for o, c in zip(original_ratings, challenged_ratings) if o != c)
+
+            recon_results.append({
+                "item_id": case["item_id"],
+                "case_name": case["case_name"],
+                "article": case["article"],
+                "violation_label": case["violation_label"],
+                "original_prediction": orig_pred,
+                "challenged_prediction": chal_pred,
+                "original_accurate": orig_pred == case["violation_label"],
+                "challenged_accurate": chal_pred == case["violation_label"],
+                "prediction_changed": orig_pred != chal_pred,
+                "individual_changes": changes,
+                "change_rate": changes / n_samples,
+                "original_abstained": orig_pred_abst, "challenged_abstained": chal_pred_abst,
+                "avg_rating": mean_rating(original_ratings), "avg_rating_challenged": mean_rating(challenged_ratings),
+                "flip_direction": flip_direction(orig_pred, chal_pred),
+                "original_ratings": original_ratings,
+                "challenged_ratings": challenged_ratings,
+            })
+            print(f"\r  Reconsideration: {i+1}/{len(cases)}", end="", flush=True)
+
+        orig_acc = sum(r["original_accurate"] for r in recon_results) / len(recon_results)
+        chal_acc = sum(r["challenged_accurate"] for r in recon_results) / len(recon_results)
+        change_rate = sum(r["prediction_changed"] for r in recon_results) / len(recon_results)
+        avg_individual_change = sum(r["change_rate"] for r in recon_results) / len(recon_results)
+
+        mlflow.log_metric("original_accuracy", orig_acc)
+        mlflow.log_metric("challenged_accuracy", chal_acc)
+        mlflow.log_metric("prediction_change_rate", change_rate)
+        mlflow.log_metric("avg_individual_change_rate", avg_individual_change)
+        mlflow.log_dict(recon_results, "rq3_results.json")
+        print(f"\n  RQ3: orig_acc={orig_acc:.3f}, chal_acc={chal_acc:.3f}, changed={change_rate:.3f}")
+
+    return recon_results
+
+
+# ── Main ──────────────────────────────────────────────────────────────────
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cases", required=True, help="Path to cases JSON")
+    parser.add_argument("--vllm-url", default="http://localhost:8000/v1")
+    parser.add_argument("--model", default="Qwen/Qwen3-32B")
+    parser.add_argument("--mlflow-url", default="http://35.84.222.41:5000")
+    parser.add_argument("--experiment-id", default="23")
+    parser.add_argument("--samples", type=int, default=10)
+    parser.add_argument("--stages", default="all", help="Comma-separated: baseline,rq1,rq2,rq3 or all")
+    add_summaries_argument(parser)
+    args = parser.parse_args()
+
+    cases = json.load(open(args.cases))
+    verify_cases(cases)
+    print(f"Loaded {len(cases)} cases")
+
+    client = create_client(args.vllm_url)
+
+    os.environ["MLFLOW_TRACKING_URI"] = args.mlflow_url
+    if os.environ.get("MLFLOW_TRACKING_USERNAME") is None:
+        os.environ["MLFLOW_TRACKING_USERNAME"] = "admin"
+    if os.environ.get("MLFLOW_TRACKING_PASSWORD") is None:
+        raise SystemExit("Set MLFLOW_TRACKING_PASSWORD in the environment")
+
+    mlflow.set_tracking_uri(args.mlflow_url)
+    mlflow.set_experiment(experiment_id=args.experiment_id)
+
+    stages = args.stages.split(",") if args.stages != "all" else ["baseline", "rq1", "rq2", "rq3"]
+
+    model_short = args.model.split("/")[-1]
+
+    with mlflow.start_run(run_name=f"{model_short}_{len(cases)}cases") as parent_run:
+        mlflow.log_param("model", args.model)
+        mlflow.log_param("n_cases", len(cases))
+        mlflow.log_param("n_samples", args.samples)
+        mlflow.log_param("stages", ",".join(stages))
+        mlflow.log_param("vllm_url", args.vllm_url)
+
+        violation_count = sum(1 for c in cases if c["violation_label"] == "violation")
+        mlflow.log_param("violation_rate", f"{violation_count}/{len(cases)}")
+
+        start = time.time()
+
+        baseline_results = None
+        summaries = load_summaries_for(args, stages, mlflow)
+
+        if "baseline" in stages:
+            baseline_results = run_baseline(client, args.model, cases, args.samples, parent_run.info.run_id)
+
+        if "rq1" in stages:
+            if baseline_results is None:
+                print("ERROR: baseline required before rq1")
+                return
+            run_summarization(client, args.model, cases, args.samples, baseline_results, summaries)
+
+        if "rq2" in stages:
+            if baseline_results is None:
+                print("ERROR: baseline required before rq2")
+                return
+            run_framing(client, args.model, cases, args.samples, summaries, baseline_results)
+
+        if "rq3" in stages:
+            if baseline_results is None:
+                print("ERROR: baseline required before rq3")
+                return
+            run_reconsideration(client, args.model, cases, args.samples, baseline_results)
+
+        elapsed = time.time() - start
+        mlflow.log_metric("total_time_seconds", elapsed)
+        print(f"\nDone in {elapsed/60:.1f} minutes")
+
+
+if __name__ == "__main__":
+    main()

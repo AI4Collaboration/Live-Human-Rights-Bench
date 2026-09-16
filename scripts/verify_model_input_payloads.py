@@ -1,12 +1,13 @@
-"""Exercise the real runner with a fake transport, inspecting every outgoing message.
+"""Exercise every perturbation arm with a fake transport and inspect its messages.
 
-No credentials, HTTP requests, model outputs, or MLflow services are used. Gold
-labels are replaced with a sentinel that must never occur in any model message.
+This is a semantic payload check. It makes no network requests and does not use
+file or prompt hashes. A sentinel replaces the gold label and must never appear in
+any model-visible message.
 """
+
 import argparse
 from collections import Counter
 import contextlib
-import hashlib
 import io
 import json
 from pathlib import Path
@@ -14,81 +15,124 @@ from types import SimpleNamespace
 import sys
 from unittest.mock import MagicMock
 
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "experiments"))
-# The runner's logging side effects are disabled before it is imported.
 sys.modules["mlflow"] = MagicMock()
+import input_gate as gate
 import run_perturbation_openai as runner
-from input_gate import release, verify_cases, verify_summaries, file_digest
 from checkpoint import Checkpoint
+
 
 SENTINEL = "GOLD_LABEL_MUST_NEVER_REACH_MODEL_7e93c43a"
 
 
+def _configure_gate():
+    gate.MANIFEST_PATH = ROOT / "configs/evaluation_dataset.json"
+    gate.CASES_PATH = ROOT / "data/processed/echr_unified.json"
+    gate.SUMMARIES_PATH = ROOT / "data/processed/summaries_dsv41flash.json"
+    gate.manifest.cache_clear()
+    gate.canonical_cases.cache_clear()
+    gate.canonical_summaries.cache_clear()
+
+
 def verify():
-    spec = release()
-    if not spec:
-        raise ValueError("No approved input release")
-    cases_path = ROOT / "data/processed/echr_unified.json"
-    summaries_path = ROOT / "data/processed/summaries_dsv41flash.json"
-    if file_digest(cases_path) != spec["dataset_sha256_lf"] or file_digest(summaries_path) != spec["summaries_sha256_lf"]:
-        raise ValueError("Canonical file identity does not match the approved release")
-    cases = json.loads(cases_path.read_text(encoding="utf-8"))
-    summaries = json.loads(summaries_path.read_text(encoding="utf-8"))["summaries"]
-    verify_cases(cases)
-    verify_summaries(summaries)
+    _configure_gate()
+    cases = json.loads(gate.CASES_PATH.read_text(encoding="utf-8"))
+    summary_payload = json.loads(gate.SUMMARIES_PATH.read_text(encoding="utf-8"))
+    summaries = summary_payload["summaries"]
+    gate.verify_cases(cases)
+    gate.verify_summaries(summaries, metadata=summary_payload)
+
     expected_prompts = set()
     for case in cases:
-        texts = [runner.case_text(case), *summaries[case["item_id"]]]
-        for text in texts:
-            for template in (runner.PREDICTIVE_TEMPLATE, runner.NORMATIVE_TEMPLATE, runner.FACTUAL_TEMPLATE):
-                expected_prompts.add(template.format(case_text=text, article=case["article"],
-                                                    article_title=runner.article_title(case)))
-    cases = [{**row, "violation_label": SENTINEL} for row in cases]
-    calls, history_hashes, stage = Counter(), set(), "baseline"
+        expected_prompts.add(
+            runner.prompt_for(runner.PREDICTIVE_TEMPLATE, case, runner.case_text(case))
+        )
+        summary = summaries[case["item_id"]][0]
+        for template in (
+            runner.PREDICTIVE_TEMPLATE,
+            runner.NORMATIVE_TEMPLATE,
+            runner.FACTUAL_TEMPLATE,
+        ):
+            expected_prompts.add(runner.prompt_for(template, case, summary))
+
+    cases = [{**row, "gold_sentinel": SENTINEL} for row in cases]
+    calls, unique_messages, stage = Counter(), set(), "baseline"
 
     def complete(**kwargs):
         messages = kwargs["messages"]
-        raw = json.dumps(messages, ensure_ascii=False)
-        if SENTINEL in raw or "violation_label" in raw:
+        serialized = json.dumps(messages, ensure_ascii=False, sort_keys=True)
+        if SENTINEL in serialized or "violation_label" in serialized:
             raise AssertionError("Gold-label field leaked into model messages")
         if messages[0] != {"role": "system", "content": runner.SYSTEM_PROMPT}:
             raise AssertionError("Unexpected system message")
-        if messages[1]["role"] != "user" or messages[1]["content"] not in expected_prompts:
-            raise AssertionError("The actual model prompt contains unapproved or altered text")
+        if messages[1].get("role") != "user" or messages[1].get("content") not in expected_prompts:
+            raise AssertionError("The model prompt contains unapproved or altered text")
         if len(messages) > 2 and messages[2:] != [
             {"role": "assistant", "content": "80"},
-            {"role": "user", "content": runner.RECONSIDERATION_PROMPT}]:
+            {"role": "user", "content": runner.RECONSIDERATION_PROMPT},
+        ]:
             raise AssertionError("Unexpected reconsideration history")
         calls[stage] += 1
-        history_hashes.add(hashlib.sha256(raw.encode("utf-8")).hexdigest())
-        return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content="80"))])
+        unique_messages.add(serialized)
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content="80"))]
+        )
 
-    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=complete)))
+    client = SimpleNamespace(
+        chat=SimpleNamespace(completions=SimpleNamespace(create=complete))
+    )
+    disabled = lambda: Checkpoint(None, enabled=False)
     with contextlib.redirect_stdout(io.StringIO()):
-        baseline = runner.run_baseline(client, "offline-no-model", cases, 1,
-                                       ckpt=Checkpoint("offline-disabled", enabled=False), workers=1)
+        baseline = runner.run_baseline(
+            client, "offline-no-model", cases, 1, ckpt=disabled(), workers=1
+        )
         stage = "summarization"
-        summary_results = runner.run_summarization(client, "offline-no-model", cases, 1, baseline, summaries,
-                                                  ckpt=Checkpoint("offline-disabled", enabled=False), workers=1)
+        summary_results = runner.run_summarization(
+            client, "offline-no-model", cases, 1, baseline, summaries,
+            ckpt=disabled(), workers=1,
+        )
         stage = "framing"
-        framing = runner.run_framing(client, "offline-no-model", cases, 1, summaries, baseline,
-                                    ckpt=Checkpoint("offline-disabled", enabled=False), workers=1)
+        framing = runner.run_framing(
+            client, "offline-no-model", cases, 1, summaries, baseline,
+            ckpt=disabled(), workers=1,
+        )
         stage = "reconsideration"
-        reconsideration = runner.run_reconsideration(client, "offline-no-model", cases, 1, baseline,
-                                                    ckpt=Checkpoint("offline-disabled", enabled=False), workers=1)
+        reconsideration = runner.run_reconsideration(
+            client, "offline-no-model", cases, 1, baseline, summaries,
+            ckpt=disabled(), workers=1,
+        )
+
     n = len(cases)
-    expected_calls = {"baseline": n, "summarization": n*spec["versions"], "framing": 3*n, "reconsideration": 2*n}
+    expected_calls = {
+        "baseline": n,
+        "summarization": n,
+        "framing": 3 * n,
+        "reconsideration": 2 * n,
+    }
     if dict(calls) != expected_calls:
         raise AssertionError(f"Unexpected transport coverage: {dict(calls)}")
-    if [len(baseline), len(summary_results), len(framing), len(reconsideration)] != [n, n*spec["versions"], 3*n, n]:
-        raise AssertionError("A runner silently skipped an instance")
-    return {"status": "PASSED", "mode": "offline_fake_transport_not_an_experiment",
-            "release_id": spec["release_id"], "dataset_sha256_lf": spec["dataset_sha256_lf"],
-            "summaries_sha256_lf": spec["summaries_sha256_lf"], "instances": n,
-            "outgoing_message_checks": dict(calls), "total_checks": sum(calls.values()),
-            "unique_message_hashes": len(history_hashes), "gold_label_sentinel_hits": 0,
-            "unapproved_initial_prompts": 0, "network_requests": 0}
+    if [len(baseline), len(summary_results), len(framing), len(reconsideration)] != [
+        n, n, 3 * n, n,
+    ]:
+        raise AssertionError("A runner silently skipped an atomic target")
+
+    manifest = gate.manifest()
+    return {
+        "status": "PASSED",
+        "mode": "offline_fake_transport_not_an_experiment",
+        "dataset_id": manifest["dataset_id"],
+        "target_unit": manifest["dataset"]["target_contract"]["unit"],
+        "instances": n,
+        "judgments": len({row["item_id"] for row in cases}),
+        "outgoing_message_checks": dict(calls),
+        "total_checks": sum(calls.values()),
+        "unique_outgoing_messages": len(unique_messages),
+        "gold_label_sentinel_hits": 0,
+        "unapproved_initial_prompts": 0,
+        "network_requests": 0,
+    }
 
 
 def main():
@@ -97,7 +141,7 @@ def main():
     args = parser.parse_args()
     result = verify()
     if args.out:
-        args.out.write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+        args.out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
 
 

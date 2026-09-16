@@ -1,21 +1,20 @@
 {
-  "schema_version": 1,
-  "dataset_id": "echr-unified-1000-leakchecked-single-v1-20260916",
-  "source_commit": "4a1ba1117a047dac7553ca2cfd3100a18171a841",
-  "hash_policy": "SHA256 of file bytes after replacing CRLF with LF; no other normalization.",
-  "selection": "Near-uniform annual case-article sampling; 2026 is a partial year.",
+  "schema_version": 2,
+  "dataset_id": "echr-unified-atomic-targets-20260916",
+  "selection": "The fixed 1,000-row cohort with one verified atomic sub-conclusion per row.",
   "dataset": {
     "path": "data/processed/echr_unified.json",
-    "sha256_lf": "d02d317139865b85d9189142220eb1510e2ca15784c1b2a06b7197ef6eb35683",
     "instances": 1000,
     "judgments": 947,
     "instance_key": [
       "item_id",
-      "article_full"
+      "target_respondent_code",
+      "article_full",
+      "target_issue"
     ],
     "labels": {
-      "violation": 699,
-      "no_violation": 301
+      "violation": 700,
+      "no_violation": 300
     },
     "annual_counts": {
       "2012": 67,
@@ -35,11 +34,23 @@
       "2026": 57
     },
     "date_min": "2012-01-10",
-    "date_max": "2026-05-21"
+    "date_max": "2026-05-21",
+    "target_contract": {
+      "unit": "one judgment, one respondent State, one provision, one sub-conclusion",
+      "required_fields": [
+        "target_respondent_code",
+        "target_respondent",
+        "target_provision",
+        "target_issue",
+        "target_aspect",
+        "target_question",
+        "target_status"
+      ],
+      "audit": "data/audits/target_scope_audit.json"
+    }
   },
   "summaries": {
     "path": "data/processed/summaries_dsv41flash.json",
-    "sha256_lf": "d6970dc4facd6d2e890ae6aa72e2023d227d3c327e25d0d87c0e2c5946762920",
     "summarizer": "deepseek/deepseek-v4.1-flash",
     "versions": 1,
     "represented_judgments": 947,
@@ -48,18 +59,9 @@
     "missing_slots_zero_based": []
   },
   "provenance_notes": [
-    "Grok summaries and livehrb_1k.json are a separate historical cohort, not substitutes.",
-    "pair_id is judgment-level; use item_id plus article_full for instance-level joins.",
-    "Keep all 1000 instances fixed; do not silently drop missing summary slots or use another summarizer to fill them.",
-    "This manifest verifies artifact identity and coverage, not factual fidelity or verdict leakage.",
-    "The main experiment now uses original version index 0 only, selected without evaluator scores.",
-    "Every selected source and summary is hash-bound to accepted leakage-review evidence.",
-    "Adjudicated earlier-instance and excluded-complaint outcomes were cut from 11 judgments and 12 case-article instances before this release.",
-    "The original DeepSeek V4.1 Flash summarizer regenerated all 11 summaries whose source changed in the final cut.",
-    "Earlier results and the historical three-version summaries are not current-release results."
-  ],
-  "input_release": {
-    "path": "data/processed/input_release.json",
-    "release_id": "echr-unified-1000-leakchecked-single-v1-20260916"
-  }
+    "All 1,000 rows are retained and have one explicit atomic target.",
+    "Multi-respondent and mixed-outcome judgments select one official sub-conclusion.",
+    "Former Article 41 rows target an unused merits sub-conclusion in the same judgment.",
+    "Outcome-bearing evidence is stored only in the audit artifact, never in prompts."
+  ]
 }

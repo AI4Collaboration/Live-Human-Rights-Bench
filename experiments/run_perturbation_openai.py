@@ -22,7 +22,7 @@ Usage:
     --samples 5
 """
 
-import argparse, json, os, random, time
+import argparse, json, os, random, sys, time
 from collections import Counter, deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -35,7 +35,7 @@ from scoring import (MAX_CASE_CHARS, count_unparsed, majority_vote,
 from stats import flip_direction
 from summaries import add_argument as add_summaries_argument, is_usable, load_summaries_for, summary_for, validate_single_summaries
 from input_gate import case_input, verify_cases, bind_run_inputs
-from run_protocol import bind_run_config, prompt_digest, complete_samples, SUMMARY_PROTOCOL, SCORING
+from run_protocol import bind_run_config, complete_samples, SUMMARY_PROTOCOL, SCORING
 
 # ── Prompts (shared with bedrock runner) ──────────────────────────────────
 
@@ -47,41 +47,47 @@ SYSTEM_PROMPT = (
     "assistant specialised on the European Convention on Human Rights (ECHR)."
 )
 
-ARTICLE_TITLES = {
-    "1": "Protection of property", "2": "Right to life",
-    "3": "Prohibition of torture", "5": "Right to liberty and security",
-    "6": "Right to a fair trial", "8": "Right to respect for private and family life",
-    "10": "Freedom of expression", "11": "Freedom of assembly and association",
-    "13": "Right to an effective remedy", "14": "Prohibition of discrimination",
-    "34": "Individual applications", "41": "Just satisfaction", "P1-1": "Protection of property",
-}
-
 PREDICTIVE_TEMPLATE = """Below is a summary of the facts for an upcoming ECtHR case:
 
 {case_text}
 
-Based on the facts presented, state as a percentage from 0 to 100 how likely it is that the ECtHR will rule a violation of Article {article} - {article_title}.
+Target question: {target_question}?
+
+Based on the facts presented, state as a percentage from 0 to 100 how likely it is that the answer is yes.
 
 0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
 range: intermediate values are expected whenever the case is close.
 
 Provide ONLY the number as your response."""
 
-NORMATIVE_TEMPLATE = PREDICTIVE_TEMPLATE.replace("will rule", "should rule")
+NORMATIVE_TEMPLATE = """Below is a summary of the facts for an ECtHR case:
+
+{case_text}
+
+Target: {target_question}.
+
+State as a percentage from 0 to 100 how strongly the Court should find a violation for this exact target.
+
+0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
+range: intermediate values are expected whenever the case is close.
+
+Provide ONLY the number as your response."""
 
 FACTUAL_TEMPLATE = """Below is a summary of the facts for an upcoming ECtHR case:
 
 {case_text}
 
-Based on the facts presented, state as a percentage from 0 to 100 how likely it is that a violation of Article {article} - {article_title} occurred.
+Target: {target_question}.
+
+Based on the facts presented, state as a percentage from 0 to 100 how likely it is that the conduct specified by this exact target constituted a violation.
 
 0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
 range: intermediate values are expected whenever the case is close.
 
 Provide ONLY the number as your response."""
 
-# Summaries are built once through scripts/resummarize.py with a fixed summariser and
-# passed in via --summaries. This runner does not summarise: doing it here meant the
+# Summaries are built once with a fixed summariser and passed in via --summaries.
+# This runner does not summarise: doing it here meant the
 # judge model graded its own writing, and meant paying for the same judgments again
 # for every model in the roster.
 
@@ -237,8 +243,36 @@ def case_text(case):
     return case_input(case)
 
 
-def article_title(case):
-    return ARTICLE_TITLES.get(case["article"], f"Article {case['article']}")
+def target_id(case):
+    return "::".join((
+        case["item_id"], case["target_respondent_code"], case["article_full"],
+        case["target_issue"],
+    ))
+
+
+def checkpoint_key(ckpt, stage, case, variant=""):
+    scope = f"{case['article_full']}::{case['target_issue']}::{variant}"
+    return ckpt.key(stage, case["item_id"], case["target_respondent_code"], scope)
+
+
+def prompt_for(template, case, text):
+    return template.format(case_text=text, target_question=case["target_question"])
+
+
+def result_target(case):
+    return {
+        "target_id": target_id(case),
+        "item_id": case["item_id"],
+        "case_name": case["case_name"],
+        "article": case["article_full"],
+        "article_full": case["article_full"],
+        "target_respondent_code": case["target_respondent_code"],
+        "target_respondent": case["target_respondent"],
+        "target_provision": case["target_provision"],
+        "target_issue": case["target_issue"],
+        "target_aspect": case["target_aspect"],
+        "target_question": case["target_question"],
+    }
 
 
 def run_baseline(client, model, cases, n_samples, ckpt=None, workers=1):
@@ -248,18 +282,16 @@ def run_baseline(client, model, cases, n_samples, ckpt=None, workers=1):
         mlflow.log_param("n_cases", len(cases))
         mlflow.log_param("workers", workers)
 
-        units = [{"key": ckpt.key("baseline", c["item_id"], c["article"]), "case": c}
+        units = [{"key": checkpoint_key(ckpt, "baseline", c), "case": c}
                  for c in cases]
 
         def work(unit):
             case = unit["case"]
-            prompt = PREDICTIVE_TEMPLATE.format(case_text=case_text(case),
-                                                article=case["article"],
-                                                article_title=article_title(case))
+            prompt = prompt_for(PREDICTIVE_TEMPLATE, case, case_text(case))
             ratings = _score(client, model, prompt, n_samples)
             pred, abstained = majority_vote(ratings)
             return {
-                "item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                **result_target(case),
                 "violation_label": case["violation_label"], "prediction": pred,
                 "accurate": pred == case["violation_label"], "abstained": abstained,
                 "ratings": ratings, "avg_rating": mean_rating(ratings),
@@ -279,6 +311,7 @@ def run_baseline(client, model, cases, n_samples, ckpt=None, workers=1):
 def run_summarization(client, model, cases, n_samples, baseline_results, summaries, ckpt=None, workers=1):
     ckpt = ckpt or Checkpoint(None, enabled=False)
     validate_single_summaries(summaries)
+    baseline_by_target = {row["target_id"]: row["prediction"] for row in baseline_results}
     with mlflow.start_run(run_name="rq1_summarization", nested=True):
         mlflow.log_param("stage", "rq1_summarization")
         mlflow.log_param("summaries_per_judgment", 1)
@@ -287,22 +320,20 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
         units = []
         for case in cases:
             text = summary_for(summaries, case["item_id"])
-            baseline_pred = next((r["prediction"] for r in baseline_results
-                                  if r["item_id"] == case["item_id"] and r["article"] == case["article"]), None)
+            baseline_pred = baseline_by_target.get(target_id(case))
             if not is_usable(text):
                 skipped_no_summary += 1
                 continue
-            units.append({"key": ckpt.key("rq1", case["item_id"], case["article"], 0),
+            units.append({"key": checkpoint_key(ckpt, "rq1", case, 0),
                           "case": case, "text": text, "baseline": baseline_pred})
 
         def work(unit):
             case = unit["case"]
-            prompt = PREDICTIVE_TEMPLATE.format(case_text=unit["text"], article=case["article"],
-                                                article_title=article_title(case))
+            prompt = prompt_for(PREDICTIVE_TEMPLATE, case, unit["text"])
             ratings = _score(client, model, prompt, n_samples)
             pred, abstained = majority_vote(ratings)
             return {
-                "item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                **result_target(case),
                 "violation_label": case["violation_label"], "summary_version": 0,
                 "prediction": pred, "accurate": pred == case["violation_label"],
                 "aligned": pred == unit["baseline"], "abstained": abstained,
@@ -330,6 +361,7 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
 def run_framing(client, model, cases, n_samples, summaries, baseline_results, ckpt=None, workers=1):
     validate_single_summaries(summaries)
     ckpt = ckpt or Checkpoint(None, enabled=False)
+    baseline_by_target = {row["target_id"]: row["prediction"] for row in baseline_results}
     with mlflow.start_run(run_name="rq2_framing", nested=True):
         mlflow.log_param("stage", "rq2_framing")
         framings = {"predictive": PREDICTIVE_TEMPLATE, "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE}
@@ -343,20 +375,18 @@ def run_framing(client, model, cases, n_samples, summaries, baseline_results, ck
                 # a failed summarisation was scored as if it were a summary.
                 skipped_no_summary += 1
                 continue
-            baseline_pred = next((r["prediction"] for r in baseline_results
-                                  if r["item_id"] == case["item_id"] and r["article"] == case["article"]), None)
+            baseline_pred = baseline_by_target.get(target_id(case))
             for fname in framings:
-                units.append({"key": ckpt.key("rq2", case["item_id"], case["article"], fname),
+                units.append({"key": checkpoint_key(ckpt, "rq2", case, fname),
                               "case": case, "framing": fname, "text": text, "baseline": baseline_pred})
 
         def work(unit):
             case, fname = unit["case"], unit["framing"]
-            prompt = framings[fname].format(case_text=unit["text"], article=case["article"],
-                                            article_title=article_title(case))
+            prompt = prompt_for(framings[fname], case, unit["text"])
             ratings = _score(client, model, prompt, n_samples)
             pred, abstained = majority_vote(ratings)
             return {
-                "item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                **result_target(case),
                 "violation_label": case["violation_label"], "framing": fname,
                 "prediction": pred, "accurate": pred == case["violation_label"],
                 "aligned_with_baseline": pred == unit["baseline"], "abstained": abstained,
@@ -380,17 +410,27 @@ def run_framing(client, model, cases, n_samples, summaries, baseline_results, ck
     return results
 
 
-def run_reconsideration(client, model, cases, n_samples, baseline_results, ckpt=None, workers=1):
+def run_reconsideration(client, model, cases, n_samples, baseline_results, summaries,
+                        ckpt=None, workers=1):
     ckpt = ckpt or Checkpoint(None, enabled=False)
+    validate_single_summaries(summaries)
+    baseline_by_target = {row["target_id"]: row["prediction"] for row in baseline_results}
     with mlflow.start_run(run_name="rq3_reconsideration", nested=True):
         mlflow.log_param("stage", "rq3_reconsideration")
         mlflow.log_param("workers", workers)
-        units = [{"key": ckpt.key("rq3", c["item_id"], c["article"]), "case": c} for c in cases]
+        units = []
+        for case in cases:
+            text = summary_for(summaries, case["item_id"])
+            if is_usable(text):
+                units.append({
+                    "key": checkpoint_key(ckpt, "rq3", case),
+                    "case": case,
+                    "text": text,
+                })
 
         def work(unit):
             case = unit["case"]
-            prompt = PREDICTIVE_TEMPLATE.format(case_text=case_text(case), article=case["article"],
-                                                article_title=article_title(case))
+            prompt = prompt_for(PREDICTIVE_TEMPLATE, case, unit["text"])
             orig_ratings, chal_ratings = [], []
             for _ in range(n_samples):
                 # The challenge has to follow this sample's own answer, so the two
@@ -406,11 +446,10 @@ def run_reconsideration(client, model, cases, n_samples, baseline_results, ckpt=
                     call_openai_multiturn(client, model, SYSTEM_PROMPT, messages)))
             orig_pred, orig_abstained = majority_vote(orig_ratings)
             chal_pred, chal_abstained = majority_vote(chal_ratings)
-            baseline_pred = next((r["prediction"] for r in baseline_results
-                                  if r["item_id"] == case["item_id"] and r["article"] == case["article"]), None)
+            baseline_pred = baseline_by_target.get(target_id(case))
             changed_samples = sum(1 for o, c in zip(orig_ratings, chal_ratings) if o != c)
             return {
-                "item_id": case["item_id"], "case_name": case["case_name"], "article": case["article"],
+                **result_target(case),
                 "violation_label": case["violation_label"], "baseline_prediction": baseline_pred,
                 "original_prediction": orig_pred, "challenged_prediction": chal_pred,
                 "changed": orig_pred != chal_pred, "change_pct": changed_samples / n_samples,
@@ -483,9 +522,7 @@ def main():
         "model": args.model, "samples": args.samples, "base_url": args.base_url,
         "summary_protocol": SUMMARY_PROTOCOL, "scoring": SCORING, "temperature": 1.0,
         "max_case_chars": MAX_CASE_CHARS, "max_completion_tokens_initial": MAX_COMPLETION_TOKENS,
-        "prompts_sha256": prompt_digest({"system": SYSTEM_PROMPT, "predictive": PREDICTIVE_TEMPLATE,
-            "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE,
-            "reconsideration": RECONSIDERATION_PROMPT})})
+        "prompt_version": "atomic-target-prompts-v1"})
 
     with mlflow.start_run(run_name=f"{model_key}_full"):
         mlflow.log_param("model", args.model)
@@ -528,7 +565,8 @@ def main():
             elif stage == "rq2":
                 rows = fn(client, args.model, cases, args.samples, summaries, baseline_results, ckpt, args.workers)
             else:
-                rows = fn(client, args.model, cases, args.samples, baseline_results, ckpt, args.workers)
+                rows = fn(client, args.model, cases, args.samples, baseline_results,
+                          summaries, ckpt, args.workers)
             ckpt.close()
             with open(f"{args.output_dir}/{model_key}/{stage}_results.json", "w") as f:
                 json.dump(rows, f, indent=2)

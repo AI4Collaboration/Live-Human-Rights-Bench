@@ -1,10 +1,10 @@
 # One summary, two faithfulness checks
 
 The main experiment uses **one fixed DeepSeek summary per judgment**: 947 texts
-for the unchanged 1,000 case-article instances. The same text is reused across
-target models and articles. There is no best-of-three selection or cross-version
-pooling. The generation CLI does not accept a version count; loaders and current
-analysis reject multi-summary files and repeated case-article rows.
+for 1,000 atomic targets. The same text is reused across target models and every
+target sharing the judgment's `item_id`. There is no best-of-three selection or
+cross-version pooling. Loaders and analysis reject multi-summary files and repeated
+atomic target keys.
 
 | Component | Input and output | Question |
 | --- | --- | --- |
@@ -26,9 +26,9 @@ python scripts/validate_eval_dataset.py --require-complete
 
 Pass `data/processed/summaries_dsv41flash.json` to the evaluation runner's
 `--summaries` argument. Use a fresh result directory and rerun the matched
-baseline. Every approved summary and source is hash-bound to its review evidence.
-Target-model results and faithfulness measurements have not yet been produced for
-this release.
+baseline. The semantic input gate requires the exact active target cohort and the
+reviewed canonical summary text. Target-model results and faithfulness measurements
+have not yet been produced for this release.
 
 ## Build one extractive control
 
@@ -50,8 +50,8 @@ python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.j
 ```
 
 Before evaluation, the input gate reassembles each selected extract from the
-current source and checks exact equality. Old extracts without matching source
-hashes and selection records are rejected. Evaluate the control with the same
+current source and checks exact equality. Extracts without matching selection
+records are rejected. Evaluate the control with the same
 runner and cohort, passing this file to `--summaries` in a separate output
 directory. Check and report extraction coverage before comparing arms.
 
@@ -81,18 +81,10 @@ The verifier receives the single summary string and atomic claims, not a list of
 alternative summaries, the reference outcome, or a target model's predictions.
 Results record overall and Court-referenced fact coverage with their denominators.
 
-## Candidate generation and audit history
+## Audit history
 
-`scripts/resummarize.py` creates one candidate per judgment. Write to a new
-candidate path; it cannot overwrite the approved canonical summary file. Retries
-replace failed or rejected candidates, not accepted summaries. Candidate text
-must pass both the deterministic screen and direct semantic review before it can
-become benchmark input. Put `OPENROUTER_API_KEY` in the ignored project `.env` file
-or export it in the process environment.
-
-The old multi-version generator, cross-version evaluator, nine-slot repair and
-per-model summary-generation launcher have been deleted. Use the current
-`experiments/run_perturbation_openai.py` or `scripts/run_roster.sh` for evaluations.
-Original data and obsolete versions remain retrievable
-from Git commit `4a1ba1117a047dac7553ca2cfd3100a18171a841`. Historical repair logs
-are audit evidence only and cannot be loaded as current evaluation inputs.
+The old multi-version generator, cross-version evaluator, and one-off leakage
+repair programs are not current entry points. Historical repair tooling is under
+`archive/input_repair_20260915/`; its logs remain audit evidence and cannot be
+loaded as current evaluation inputs. Use `experiments/run_perturbation_openai.py`
+or `experiments/run_adversarial_opinion.py` for current evaluations.

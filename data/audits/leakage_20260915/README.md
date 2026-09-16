@@ -1,6 +1,6 @@
 # Evidence for the one-summary input release
 
-The final status, counts and content hashes are recorded in
+The final status and counts are recorded in
 [`repair_release_report.json`](repair_release_report.json). This folder contains
 review and repair evidence, not new target-model evaluation results.
 
@@ -46,15 +46,13 @@ work was not completed during a controlled pause; they are not accepted outputs
 or model failures. A failed attempt is never counted as an accepted summary.
 
 The original corpus and all three historical summary versions remain in Git
-commit `4a1ba1117a047dac7553ca2cfd3100a18171a841`. The source proposal itself is not
-duplicated in Git: the publication gate verifies it before it becomes the canonical
-dataset. The archive-based source reconstruction was checked to reproduce the
-proposal exactly.
+history. The source proposal itself is not duplicated in the active tree. The
+archive-based source reconstruction was checked to reproduce the proposal
+exactly.
 
-```bash
-python scripts/publish_leakage_repair.py
-python scripts/validate_eval_dataset.py --require-complete
-python scripts/verify_model_input_payloads.py
-```
+The historical publication utility is now under
+`archive/input_repair_20260915/` and is not an active pipeline entry point. Use
+the current semantic validator and payload verifier documented in the top-level
+README for release checks.
 
 Do not reuse pre-repair target-model results or checkpoints for this input release.

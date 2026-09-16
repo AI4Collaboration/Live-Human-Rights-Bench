@@ -5,7 +5,6 @@ target models and articles. This keeps generation independent of the evaluator.
 The JSON array has exactly one slot; historical multi-draw files are rejected.
 """
 
-import hashlib
 import json
 import re
 import os
@@ -143,18 +142,9 @@ def narrates_current_court_assessment(summary):
     )
 
 
-def file_digest(path, length=12):
-    """Short content digest, so results name the summaries they were scored against."""
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            h.update(chunk)
-    return h.hexdigest()[:length]
-
-
 def add_argument(parser):
     """The --summaries flag, identical in every runner."""
-    parser.add_argument("--summaries", help="approved summaries JSON produced through scripts/resummarize.py; "
+    parser.add_argument("--summaries", help="approved single-summary JSON artifact; "
                                             "required for rq1 and rq2")
 
 
@@ -164,12 +154,12 @@ def load_summaries_for(args, stages, mlflow=None):
     Exits rather than falling back. A runner that quietly summarises for itself when
     the file is missing is how the judge model came to be grading its own writing.
     """
-    if not {"rq1", "rq2"} & set(stages):
+    if not {"rq1", "rq2", "rq3"} & set(stages):
         return {}
     path = getattr(args, "summaries", None)
     if not path:
-        sys.exit("ERROR: --summaries is required for rq1/rq2. Build it once with "
-                 "scripts/resummarize.py; the runners no longer summarise, because "
+        sys.exit("ERROR: --summaries is required for rq1/rq2/rq3. Supply the reviewed "
+                 "single-summary artifact; the runners do not summarise, because "
                  "summarising with the judge model both cost 8x and had each model "
                  "grade its own writing.")
     if not os.path.exists(path):
@@ -180,9 +170,7 @@ def load_summaries_for(args, stages, mlflow=None):
     if mlflow is not None:
         mlflow.log_param("summarizer", meta.get("summarizer", "unknown"))
         mlflow.log_param("summaries_file", os.path.basename(path))
-        # A file name is not an identity: two builds can share one. The digest says
-        # which summaries these results were actually scored against.
-        mlflow.log_param("summaries_sha", file_digest(path))
+        mlflow.log_param("summary_dataset_id", meta.get("dataset_id", "unrecorded"))
     print(f"Summaries: {len(summaries)} judgments from "
           f"{meta.get('summarizer', 'an unrecorded summariser')}\n")
     return summaries

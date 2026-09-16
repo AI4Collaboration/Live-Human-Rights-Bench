@@ -1,15 +1,10 @@
 """Immutable run settings for matched, single-summary perturbation rescoring."""
-import hashlib
 import json
 from pathlib import Path
 
 SUMMARY_PROTOCOL = "one-summary-per-judgment"
 SCORING = {"scale": [0, 100], "violation_above": 60, "no_violation_below": 40,
            "aggregation": "most-frequent-category; ties abstain"}
-
-
-def prompt_digest(prompts):
-    return hashlib.sha256(json.dumps(prompts, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
 def bind_run_config(directory, config):
