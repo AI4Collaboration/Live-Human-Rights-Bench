@@ -10,9 +10,10 @@ unchanged -- the arm is run by pointing --summaries at this file instead.
       --out data/processed/summaries_extractive_dsv41flash.json
 
 What it buys: the abstractive arm confounds omission with invention. Here the model
-may only choose paragraphs, so any effect is omission alone, and the omission is the
-exact list of paragraph numbers left out rather than something an entailment judge
-estimated.
+may only choose source spans, so any effect is omission alone, and the omission is the
+exact list of spans left out rather than something an entailment judge estimated.
+The selector keeps every span it considers necessary; no arbitrary word budget is
+imposed.
 """
 
 import argparse, json, os, sys, time
@@ -25,7 +26,8 @@ from checkpoint import Checkpoint          # noqa: E402
 from scoring import MAX_CASE_CHARS         # noqa: E402
 from input_gate import case_input, guard_candidate_output, manifest  # noqa: E402
 from extractive import (SPAN_SELECT_TEMPLATE, assemble_units, is_verbatim,  # noqa: E402
-                        parse_selection, source_units, selection_record, SELECTION_SCHEMA)
+                        parse_selection, source_units, selection_record,
+                        SELECTION_SCHEMA)
 
 ATTEMPTS = 3
 
@@ -45,21 +47,26 @@ def preflight(cases):
     return {"judgments": len(cases), "eligible": eligible, "blocked": len(problems), "problems": problems}
 
 
-def extract(client, model, case, article, target_words, max_tokens):
+def extract(client, model, case, max_tokens,
+            reasoning_effort, temperature):
     units = source_units(case["text"])
     if not units:
         return None, "ERROR: empty source", None, {"prompt": 0, "completion": 0}
     numbered = "\n\n".join(f"[{u['id']}] {u['text']}" for u in units)
-    prompt = SPAN_SELECT_TEMPLATE.format(case_name=case["case_name"], numbered=numbered,
-                                    article=article, target_words=target_words)
+    prompt = SPAN_SELECT_TEMPLATE.format(case_name=case["case_name"], numbered=numbered)
     valid = {u["id"] for u in units}
     usage = {"prompt": 0, "completion": 0}
     last = "ERROR: no attempt made"
     for attempt in range(ATTEMPTS):
         try:
+            request = {
+                "model": model, "messages": [{"role": "user", "content": prompt}],
+                "temperature": temperature, "max_tokens": max_tokens,
+            }
+            if reasoning_effort != "provider_default":
+                request["extra_body"] = {"reasoning": {"effort": reasoning_effort}}
             resp = client.chat.completions.create(
-                model=model, messages=[{"role": "user", "content": prompt}],
-                temperature=1.0, max_tokens=max_tokens)
+                **request)
             if resp.usage:
                 usage["prompt"] += resp.usage.prompt_tokens or 0
                 usage["completion"] += resp.usage.completion_tokens or 0
@@ -88,9 +95,12 @@ def main():
     p.add_argument("--base-url", default="https://openrouter.ai/api/v1")
     p.add_argument("--api-key-env", default="OPENROUTER_API_KEY")
     p.add_argument("--out", required=True)
-    p.add_argument("--target-words", type=int, default=500)
     p.add_argument("--workers", type=int, default=20)
     p.add_argument("--max-tokens", type=int, default=4000)
+    p.add_argument("--reasoning-effort", default="none",
+                   choices=("provider_default", "none", "minimal", "low", "medium", "high"),
+                   help="selector reasoning effort; none is sufficient for span selection")
+    p.add_argument("--temperature", type=float, default=0.0)
     p.add_argument("--limit", type=int)
     p.add_argument("--no-resume", action="store_true")
     p.add_argument("--check-only", action="store_true", help="offline source-format preflight; no model calls")
@@ -123,7 +133,7 @@ def main():
         sys.exit(f"ERROR: set {args.api_key_env}")
 
     print(f"Selector: {args.summarizer}   judgments: {len(cases)}   "
-          f"one extract per judgment   target: {args.target_words} words\n")
+          "one unbounded extract per judgment\n")
 
     ckpt = Checkpoint(args.out + ".jsonl", enabled=not args.no_resume)
     dataset_id = manifest()["dataset_id"]
@@ -134,7 +144,8 @@ def main():
                 or row.get("source_characters") != len(expected["text"])
                 or row.get("summarizer") != args.summarizer
                 or row.get("selection_schema") != SELECTION_SCHEMA
-                or row.get("target_words") != args.target_words
+                or row.get("reasoning_effort") != args.reasoning_effort
+                or row.get("temperature") != args.temperature
                 or row.get("provisions") != article_of[row["item_id"]]):
             ckpt.close()
             sys.exit("Stale or multi-version extract checkpoint; choose a new output path")
@@ -146,8 +157,8 @@ def main():
     done = failed = 0
     tot = {"prompt": 0, "completion": 0}
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futs = {pool.submit(extract, client, args.summarizer, c,
-                            article_of[c["item_id"]], args.target_words, args.max_tokens): c
+        futs = {pool.submit(extract, client, args.summarizer, c, args.max_tokens,
+                            args.reasoning_effort, args.temperature): c
                 for c in units}
         for fut in as_completed(futs):
             case = futs[fut]
@@ -158,8 +169,10 @@ def main():
                 ckpt.record(Checkpoint.key("extract", case["item_id"], "", 0),
                             {"item_id": case["item_id"], "case_name": case["case_name"],
                              "version": 0, "summary": text, **drop,
-                             "selection_schema": SELECTION_SCHEMA, "target_words": args.target_words,
+                             "selection_schema": SELECTION_SCHEMA,
                              "provisions": article_of[case["item_id"]], "summarizer": args.summarizer,
+                             "reasoning_effort": args.reasoning_effort,
+                             "temperature": args.temperature,
                              "dataset_id": dataset_id,
                              "source_characters": len(case["text"])})
             else:
@@ -172,12 +185,15 @@ def main():
     requested = {c["item_id"] for c in cases}
     by_case = {r["item_id"]: r for r in ckpt.rows() if r["item_id"] in requested}
     summaries = {k: [r["summary"]] for k, r in by_case.items()}
-    selections = {k: {field: r[field] for field in ("selected_units", "omitted_units", "selected_spans")}
+    selections = {k: {field: r[field] for field in
+                  ("selected_units", "omitted_units", "selected_spans", "selected_words")}
                   for k, r in by_case.items()}
     complete = len(summaries)
 
     json.dump({"dataset_id": dataset_id, "summarizer": args.summarizer, "versions": 1,
-               "mode": "extractive", "target_words": args.target_words,
+               "mode": "extractive",
+               "selection_rule": "all source spans material to any alleged violation, with no length constraint",
+               "reasoning_effort": args.reasoning_effort, "temperature": args.temperature,
                "n_judgments": len(cases), "n_complete": complete,
                "prompt_tokens": tot["prompt"], "completion_tokens": tot["completion"],
                "source_characters": {c["item_id"]: len(c["text"]) for c in cases},

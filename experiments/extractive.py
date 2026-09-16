@@ -9,23 +9,29 @@ Here the summariser may only *choose* paragraphs, never write them. Hallucinatio
 impossible by construction, so any effect is attributable to omission alone -- and the
 omission is not judged by a model, it is the exact set of paragraphs left out.
 
-ECtHR judgments number their paragraphs, which gives a natural unit: median 37 per
-case at 54 words each, so a ~500-word extract is roughly nine of them.
+ECtHR judgments supply natural source boundaries. The selector keeps every passage
+it judges materially necessary, with no target length or maximum length.
 """
 
 import json
 import re
 
-SELECTION_SCHEMA = "verbatim-source-spans-v1"
-SPAN_SELECT_TEMPLATE = """Select verbatim passages needed to assess this ECtHR case.
+SELECTION_SCHEMA = "verbatim-source-spans-v4-all-complaints-unbounded"
+SPAN_SELECT_TEMPLATE = """Produce a complete extractive factual summary of this ECtHR case.
 
 Case: {case_name}
-Provisions at issue: {article}
 
 {numbered}
 
-Choose approximately {target_words} words of the relevant facts. Return only a JSON
-array of passage IDs, for example [2, 5, 8]. Do not write or paraphrase any text."""
+Select every passage containing facts materially relevant to assessing any alleged
+Convention violation in the case. This includes concrete events and conditions, dates, durations,
+measurements, relevant domestic proceedings and decisions, the parties' conduct or
+arguments, and relevant rows of factual tables. A sentence that merely names a
+complaint is not a substitute for the underlying facts. Exclude boilerplate,
+unrelated material, and legal background that does not add a case-specific fact.
+
+There is no target length or maximum length. Return only a JSON array of passage IDs,
+for example [2, 5, 8]. Do not write or paraphrase any text."""
 
 
 def source_units(text):
@@ -68,25 +74,14 @@ def selection_record(units, selected):
     return {"selected_units": [u["id"] for u in units if u["id"] in selected],
             "omitted_units": [u["id"] for u in units if u["id"] not in selected],
             "selected_spans": [{k:u[k] for k in ("id", "start", "end")}
-                               for u in units if u["id"] in selected]}
+                               for u in units if u["id"] in selected],
+            "selected_words": sum(len(u["text"].split()) for u in units
+                                  if u["id"] in selected)}
 
 # HUDOC separates the paragraph number from its text with non-breaking spaces, not
 # ordinary ones, so [ \t] matches nothing on real judgments. [^\S\n] is "whitespace
 # that is not a newline", which covers \xa0 without letting the match span lines.
 PARA = re.compile(r"(?m)^[^\S\n]*(\d{1,3})\.[^\S\n]+")
-
-SELECT_TEMPLATE = """Below is an ECtHR case with numbered paragraphs.
-
-Case Name: {case_name}
-
-{numbered}
-
-Select the paragraphs that a reader would need in order to judge whether Article \
-{article} was violated. Choose approximately {target_words} words in total.
-
-Reply with ONLY a JSON array of the paragraph numbers you select, in ascending order.
-Example: [3, 7, 8, 15]"""
-
 
 def split_paragraphs(text):
     """Return [(number, text)] for the numbered paragraphs of a judgment."""
@@ -118,7 +113,7 @@ def parse_selection(reply, valid):
         except json.JSONDecodeError:
             picked = []
     if not picked:                      # a bare list of numbers is common enough
-        picked = re.findall(r"\d{1,3}", body)
+        picked = re.findall(r"\d+", body)
     seen, out = set(), []
     for p in picked:
         s = str(p).strip()

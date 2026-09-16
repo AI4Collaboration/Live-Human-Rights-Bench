@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
 
 from extractive import (assemble, is_verbatim, omitted,   # noqa: E402
-                        parse_selection, split_paragraphs)
+                        parse_selection, split_paragraphs, SPAN_SELECT_TEMPLATE)
 
 JUDGMENT = """PROCEDURE
 
@@ -69,6 +69,14 @@ def test_selection_rejects_numbers_that_are_not_paragraphs():
 def test_selection_of_a_failed_call_is_empty():
     assert parse_selection("ERROR: 429 rate limited", {"1", "2"}) == []
     assert parse_selection("", {"1", "2"}) == []
+
+
+def test_selector_requires_complete_facts_without_a_length_budget():
+    prompt = SPAN_SELECT_TEMPLATE.format(
+        case_name="Example", numbered="[1] Facts")
+    assert "complaint is not a substitute for the underlying facts" in prompt
+    assert "There is no target length or maximum length" in prompt
+    assert "any alleged" in prompt
 
 
 def test_assembled_extract_is_verbatim_and_in_source_order():
