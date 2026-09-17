@@ -1,86 +1,81 @@
-# PIPELINE.md — Live HUDOC ingestion and eval-set construction
+# Live HUDOC ingestion and benchmark construction
 
-**Current evaluation selection:** use the frozen, year-balanced
-`data/processed/echr_unified.json` pool with `summaries_dsv41flash.json` for summary
-arms. [Dataset contract](DATA_SPLITS.md#current-evaluation-pool-selected-2026-09-15).
-The ingestion and source-corpus builds below do not automatically replace this
-selected pool; a refresh requires a new manifest and separate result checkpoints.
+LiveHumanRightsBench turns public ECtHR judgments into versioned evaluation sets.
+Researchers can configure the sampling window and sample size, then apply the same
+input transformations and conversational challenges to each frozen release.
+The paper's 1,000-target sample is one use of this pipeline.
 
-The "Live" part of LiveHumanRightsBench: a self-refreshing, contamination-controlled
-data pipeline that turns the ECtHR's steady output into evaluation material. As new
-judgments are published on HUDOC, the pipeline ingests them, removes verdict leakage,
-and extends the benchmark, so metrics can be recomputed on guaranteed post-cutoff cases
-rather than a frozen snapshot.
+## Refresh the source corpus
 
-All outputs are public and redistributable (HUDOC sources only, `seed=42`).
+`scripts/hudoc_live_refresh.py` detects the latest decision date in an existing
+local or Hugging Face corpus, fetches newer HUDOC judgments, processes their
+text, and appends the new records. Publication to Hugging Face is optional.
 
-## Auto-refresh chain
-
-```
-scripts/hudoc_live_refresh.py       # orchestrator: detect latest date -> fetch new -> scrub -> append -> (optional) push
-  ├── scripts/hudoc_scraper.py          # HUDOC bulk ingestion (search + full texts)
-  └── scripts/verdict_leakage_removal.py# 3-stage verdict removal (pattern truncation -> dual-model verify -> repair)
-        └── scripts/conclusion_scrub.py # mandatory conclusion-scrub stage (regex), marks rows with `+conclusion_scrub`
+```text
+scripts/hudoc_live_refresh.py
+  -> scripts/hudoc_scraper.py
+  -> scripts/verdict_leakage_removal.py
+  -> scripts/conclusion_scrub.py
+  -> updated source corpus
 ```
 
-`hudoc_live_refresh.py`:
-1. determines the latest `decision_date` in the current dataset (local JSON or an HF dataset),
-2. downloads judgments published since that date from HUDOC,
-3. runs verdict-leakage removal on the new judgments,
-4. appends the clean rows to the dataset,
-5. optionally pushes the updated dataset to Hugging Face.
-
-Designed to run as a cron job:
+For example, build a refreshed source file using the full verdict-removal pipeline:
 
 ```bash
-# daily at 06:00, refresh the verdict-free corpus in place and push
-0 6 * * * cd /path/to/repo && python scripts/hudoc_live_refresh.py \
+python scripts/hudoc_live_refresh.py \
   --hf-dataset overthelex/echr-verdict-free \
-  --output data/processed/echr_live.json \
-  --full-pipeline \
-  --push-to-hf overthelex/echr-verdict-free \
-  --quiet
+  --output data/processed/echr_live_new.json \
+  --full-pipeline
 ```
 
-Run `python scripts/hudoc_live_refresh.py --help` for the full flag set
-(`--country`, `--since-override`, `--workers`, `--keep-temp`, etc.).
+`--since-override`, `--country` and `--workers` control the refresh. The full
+pipeline includes model verification; its credentials and dependencies are
+listed in the script and `requirements.txt`.
 
-## Eval-set construction
+## Construct and freeze an evaluation release
 
-Builders that turn the verdict-free corpus into the evaluation sets documented in
-[`DATA_SPLITS.md`](DATA_SPLITS.md):
+1. Normalize respondent names, decision dates and provision identifiers with
+   `clean_respondent_names.py`, `backfill_decision_dates.py` and
+   `backfill_article_full.py` under `scripts/`.
+2. Select a candidate cohort. `scripts/build_unified_set.py` supports
+   `--min-year`, `--max-year`, `--cap`, `--target`, `--include-ukraine` and
+   `--out`. Its source is the local `echr_livehrb_static_2k.json` corpus.
+3. Resolve each target's respondent, provision and sub-conclusion against the
+   public judgment. Record the target audit and review retained case text.
+4. Freeze the approved cohort, summary selection and counts in
+   `configs/evaluation_dataset.json`, then validate the release.
+5. Save evaluations in new output directories with their input and prompt
+   identities. A source-corpus refresh creates candidates for a new release.
 
+The candidate sampler precedes atomic target resolution and input review. The
+current approved release is recorded in [DATA_SPLITS.md](DATA_SPLITS.md), with
+preparation evidence in [docs/INPUT_REPAIR.md](docs/INPUT_REPAIR.md) and
+`data/audits/target_scope_audit.json`.
+
+```bash
+python scripts/validate_eval_dataset.py --require-complete
 ```
-scripts/clean_respondent_names.py   # respondent normalization (fills UKRAINE, etc.)
-scripts/backfill_decision_dates.py  # HUDOC metadata sweep: item_id -> decision_date / appno
-scripts/backfill_article_full.py    # HUDOC sweep: item_id -> article_full (protocol-aware codes, e.g. P1-1); resumable, --push-to-hf
-scripts/build_stratified_sample.py  # k-per-state stratified sampling
-scripts/build_livehrb_static.py     # -> echr-livehrb-static-2k  (regular + ukr, 1K + 1K)
-scripts/build_temporal_split.py     # -> echr-livehrb-temporal-2k (year bins; UA pre/post 2022-02-24)
-scripts/build_cutoff_partitions.py  # per-model matched pre/post training-cutoff partitions (contamination control)
-scripts/enrich_and_push.py          # attach HUDOC metadata + push to Hugging Face
-```
 
-Per-model training cutoffs used by `build_cutoff_partitions.py` live in
-[`configs/model_cutoffs.json`](configs/model_cutoffs.json) (extend as new models are added).
+The validation command checks the existing frozen release without calling models.
 
-## Outputs
+## Evaluate the frozen release
 
-| Dataset | Built by |
-|---------|----------|
-| [`overthelex/echr-verdict-free`](https://huggingface.co/datasets/overthelex/echr-verdict-free) (23K pairs, 112 states) | live refresh + leakage removal |
-| [`overthelex/echr-ukr-verdict-free`](https://huggingface.co/datasets/overthelex/echr-ukr-verdict-free) (2.6K, cross-family verified) | live refresh + leakage removal |
-| [`overthelex/echr-livehrb-static-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-static-2k) | `build_livehrb_static.py` |
-| [`overthelex/echr-livehrb-temporal-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-2k) | `build_temporal_split.py` |
+| Evaluation | Current entry point | Reference |
+| --- | --- | --- |
+| Full record and shared summary | `experiments/run_perturbation_fullcase.py` | Matched full-record arm |
+| Case-body paraphrases | `experiments/paraphrase_run.py` | Original arm under the same prompt |
+| Three-turn persuasion | `experiments/syco_run.py` | Shared initial response |
+| Extractive control and fact retention | `scripts/build_extractive.py`, `scripts/build_atomic_coverage.py` | Identical source claims across summary variants |
 
-## Dependencies
+[README.md](README.md) provides model identifiers, execution commands and the
+current run inventory. [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md)
+defines scoring and comparisons. State Swap supplies the respondent-identity
+intervention; its updated result is the remaining manuscript Results entry.
 
-Standard library plus `requests` (HUDOC), `datasets` + `huggingface_hub` (HF I/O),
-and, for the LLM verification stage, `openai` and/or `boto3` (AWS Bedrock). See
-`requirements.txt`. The LLM-backed verification imports are optional at import time
-(guarded), so ingestion and the regex conclusion-scrub run without cloud credentials.
+## Earlier source-set builders
 
-## Not yet wired
-
-The domestic-to-Strasbourg linkage layer (matching national-court decisions in EDRSR
-to their ECtHR follow-on) is planned but not part of this PR.
+`build_livehrb_static.py`, `build_temporal_split.py` and
+`build_cutoff_partitions.py` remain available under `scripts/` for the earlier
+source-set designs. Their 2k splits and model-cutoff configuration describe those
+designs. Current manuscript results use the frozen cohort and experiment-specific
+references above.

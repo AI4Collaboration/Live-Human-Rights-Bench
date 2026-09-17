@@ -1,4 +1,9 @@
-# Verdict leak in the released evaluation sets
+# Historical leakage audit: August 2026 source sets
+
+The counts and comparisons below refer to the source-set versions audited in
+August 2026. Current inputs and completed experiments are described in
+[DATA_SPLITS.md](../DATA_SPLITS.md) and [README.md](../README.md).
+The subsequent repair is recorded in [INPUT_REPAIR.md](INPUT_REPAIR.md).
 
 Audited 2026-08-25/26 against the published parquet exports. Reproduce with:
 

@@ -1,161 +1,93 @@
-# Statistical Testing Methodology
+# Statistical methodology for the current manuscript
 
-## Overview
+This document describes the completed experiments in GitHub revision `78b775f`
+and the manuscript analysis of those records.
 
-We employ paired statistical tests to evaluate whether experimental manipulations (summarization, framing, confidence challenges) significantly affect model accuracy in judging ECHR human rights violations.
+## Scores and predictions
 
-## Test Selection Rationale
+Every score is a violation likelihood on the **0-100** scale:
 
-### Why Paired Tests?
+| Score | Prediction |
+| --- | --- |
+| Below 40 | No violation |
+| 40 through 60, inclusive | Abstention |
+| Above 60 | Violation |
 
-Our experimental design involves **paired predictions**: each model evaluates the same case-article pairs under different conditions (e.g., original text vs. summary). This repeated-measures structure violates the independence assumption of unpaired tests, making paired tests the appropriate choice.
+Section 4 requests ten scores per input and classifies their valid-score mean.
+Full-record and summary checkpoints retain individual scores; paraphrase
+checkpoints retain `avg_rating`, a prediction and the unparsed count. An input
+with no parsed score is a failed prediction.
 
-### McNemar's Exact Test
+The saved full-record/summary `prediction` fields instead use category plurality.
+They remain unchanged in the raw data. The manuscript recomputes its primary
+predictions from scores and reports plurality, with ties assigned to abstention,
+as a sensitivity analysis. Section 5 applies the thresholds to each response's
+single score.
 
-**Purpose**: Test whether the proportion of correct predictions differs significantly between two conditions.
+## Correctness and paired comparisons
 
-**Method**:
-- Construct a 2×2 contingency table of paired predictions
-- Count discordant pairs:
-  - `n01`: Cases where condition B correct, condition A wrong (improvement)
-  - `n10`: Cases where condition A correct, condition B wrong (decline)
-- Apply exact binomial test: `p-value = 2 × min(P(X ≤ k), 1 - P(X ≤ k - 1))` where `X ~ Binomial(n01 + n10, 0.5)` and `k = min(n01, n10)`
+Accuracy is the proportion of all evaluated targets that match the Court outcome.
+Abstentions and failures remain in the denominator. Balanced accuracy is the
+mean recall of the violation and no-violation classes.
 
-**Advantages**:
-- Exact test (no large-sample approximation required)
-- Appropriate for binary outcomes (correct/incorrect)
-- Robust with moderate sample sizes (n=141 case-article pairs)
+- **Summarization:** 1,000 full-record/summary pairs per model, six models.
+- **Paraphrasing:** 1,000 pairs per model and rewriting level, each compared with
+  its original arm under the paraphrase prompt. The six four-arm checkpoints
+  contain 24,000 rows.
+- **Temporal performance:** stratify the frozen cohort by decision year or era
+  and report the outcome mix alongside accuracy and balanced accuracy.
 
-### Paired Bootstrap Confidence Intervals
+A strict reversal crosses between violation and no violation. Abstention
+transitions are counted separately. Accuracy differences are reported in
+percentage points, using each experiment's matched reference.
 
-**Purpose**: Estimate the uncertainty in accuracy differences between conditions.
+## Three-turn persuasion
 
-**Method**:
-1. Calculate paired differences: `diff[i] = correct_B[i] - correct_A[i]` for each case-article pair
-2. Resample with replacement from the paired differences (10,000 iterations)
-3. Calculate mean difference for each bootstrap sample
-4. Extract 2.5th and 97.5th percentiles as 95% confidence interval bounds
+The 6,000 initial records contain 5,373 decided responses, 310 abstentions and
+317 missing or invalid scores. Eleven conditions and two modes produce 118,206
+saved branch records, including 105,780 complete three-turn trajectories.
 
-**Advantages**:
-- Non-parametric (no distributional assumptions)
-- Accounts for paired structure of data
-- Provides interpretable effect size estimates
+Matching static and adaptive trajectories yields 47,033 complete pairs. The
+primary analysis retains **44,476 provision-consistent pairs**, excluding
+2,557 pairs associated with 53 targets from 49 judgments whose follow-up question
+uses a different provision. The full matched cohort is a sensitivity analysis.
 
-**Implementation**:
-```python
-diffs = comparison_correct - baseline_correct  # Element-wise
-bootstrap_means = []
-for _ in range(10000):
-    sample_diffs = np.random.choice(diffs, size=n, replace=True)
-    bootstrap_means.append(np.mean(sample_diffs))
-ci_lower, ci_upper = np.percentile(bootstrap_means, [2.5, 97.5])
-```
+For every model, use this same primary cohort for turn-specific reversal,
+any-turn reversal, final-turn reversal and correctness decomposition. Earlier-only
+reversal is any-turn minus final-turn reversal. Correct-to-wrong rates divide by
+initially correct responses; wrong-to-correct rates divide by initially wrong
+responses. Overall accuracy uses all matched conditions, including abstentions.
 
-## Research Questions
+Pressure interactions require complete low/high branches in both modes.
+Cue contrasts match the relevant conditions on common targets. Their denominators
+therefore differ from the pooled model comparison.
 
-### RQ1: Summarization Effect
+## Confidence intervals
 
-**Comparison**: Original case text vs. case summary for each evaluator model
+The manuscript uses **2,000 bootstrap draws clustered by judgment**, with
+**seed 731**. A sampled judgment brings all associated target observations into
+the draw; paired arms, conditions and turns remain together. Conditional metrics
+recompute their denominators in each draw. Report the 2.5th and 97.5th percentiles
+as the 95% interval.
 
-**Null Hypothesis (H0)**: Summarization does not affect accuracy
+Complete-sample sensitivity requires every requested rating in both compared
+arms to parse. The primary accuracy analysis retains all targets. This keeps
+sampling failures distinct from predicted abstention and strict reversal.
 
-**Tests Conducted**: 48 comparisons (4 evaluators × 12 summary versions)
+## Fact-retention analysis
 
-**Significance Threshold**: α = 0.05
+The selected coverage checkpoints compare both summary variants against the
+same **51,347 sampled claims**, including **19,646 Court-referenced claims from
+659 judgments**. Retention is supported claims divided by sampled claims in the
+specified group.
 
-### RQ2: Framing Effect
+To relate retention to prediction changes, average target/model change indicators
+within each judgment, then compute Spearman correlation with that judgment's
+Court-referenced retention. Resample judgments for its interval. Coverage
+measures information retained; the paired prediction analysis measures judgment
+changes.
 
-**Comparison**: Predictive framing ("will rule") vs. normative ("should rule") and factual ("occurred") framings for each evaluator
-
-**Null Hypothesis (H0)**: Framing does not affect accuracy
-
-**Tests Conducted**: 8 comparisons (4 evaluators × 2 alternative framings)
-
-**Significance Threshold**: α = 0.05
-
-### RQ3: Confidence Challenge Effect
-
-**Comparison**: Original rating vs. rating after challenge ("Are you sure?") for each evaluator
-
-**Null Hypothesis (H0)**: Confidence challenges do not affect ratings
-
-**Analysis**: Directional change analysis (not significance testing, as changes are rare)
-
-## Accuracy Calculation
-
-For each case-article pair:
-- **Ground truth**: Actual ECHR Court verdict (violation/no violation)
-- **Model prediction**: Determined by average rating across 10 samples
-  - Rating > 2.5 → "violation"
-  - Rating ≤ 2.5 → "no violation"
-- **Accuracy**: Proportion of predictions matching ground truth
-
-## Alignment Calculation
-
-Alignment measures consistency of a model's predictions across conditions:
-
-```
-Alignment = (# of case-article pairs with same prediction) / (total pairs)
-```
-
-For example, if a model predicts "violation" for Case X + Article 8 when evaluating both the original text and a summary, this contributes to alignment.
-
-**Key distinction**: Accuracy measures correctness against ground truth; alignment measures self-consistency across conditions.
-
-## Data Structure
-
-- **Sample size**: 141 case-article pairs (100 unique cases, some with multiple articles)
-- **Predictions per condition**: 10 independent samples per case-article pair
-- **Averaging**: Ratings averaged across 10 samples before thresholding to binary prediction
-- **Pairing key**: `(case_name, article)` tuple ensures proper alignment of paired observations
-
-## Implementation Details
-
-**Software**: Python 3.10
-- `scipy.stats.binom` for exact McNemar's test
-- `numpy` for bootstrap resampling (seed=42 for reproducibility)
-- `pandas` for data manipulation
-
-**Reproducibility**: All statistical test scripts are available in `scripts/`:
-- `scripts/comprehensive_statistical_tests.py` (RQ1)
-- `scripts/statistical_tests.py` (RQ2)
-- `scripts/analyze_directional_changes.py` (RQ3)
-
-## Interpretation Guidelines
-
-### P-values
-- **p < 0.05**: Statistically significant difference (reject H0)
-- **p ≥ 0.05**: No significant difference (fail to reject H0)
-
-### Confidence Intervals
-- **95% CI excludes 0**: Effect is statistically significant
-- **95% CI includes 0**: Effect is not statistically significant
-- **Width of CI**: Indicates precision of estimate (wider = more uncertainty)
-
-### Effect Sizes
-- **Accuracy Δ**: Difference in proportion correct (range: -1 to +1)
-  - |Δ| < 0.05: Small effect
-  - 0.05 ≤ |Δ| < 0.10: Moderate effect
-  - |Δ| ≥ 0.10: Large effect
-
-## Limitations
-
-1. **Sample Size**: With 141 case-article pairs, we have ~80% power to detect effects of |Δ| ≥ 0.15 at α = 0.05. Smaller effects may not reach significance.
-
-2. **Multiple Comparisons**: We conduct 48 tests for RQ1. While we report raw p-values, researchers should be cautious about inflated Type I error rates. A Bonferroni correction (α = 0.05/48 ≈ 0.001) would make significance harder to achieve.
-
-3. **Binary Threshold**: Converting 5-point ratings to binary predictions (at 2.5 threshold) may lose information about rating magnitudes.
-
-4. **Independence of Samples**: The 10 samples per case-article pair are drawn independently, but temperature sampling may introduce slight dependencies.
-
-## Reporting Standards
-
-All results tables include:
-- Model name
-- Condition comparison
-- Accuracy difference (Δ) with sign and 3 decimal places
-- McNemar's p-value (4 decimal places)
-- 95% bootstrap confidence interval [lower, upper]
-- Significance marker (*** for p < 0.05, ns otherwise)
-
-This ensures transparent reporting of both statistical significance and practical effect sizes.
+The selected claim-level checkpoints are local analysis artifacts awaiting
+publication. [README.md](README.md) records current data availability and runner
+paths. The Overleaf manuscript's source manifests and aggregate tables pin the
+reported estimates.

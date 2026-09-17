@@ -1,90 +1,87 @@
-# One summary, two faithfulness checks
+# Shared summaries and factual coverage
 
-The main experiment uses **one fixed DeepSeek summary per judgment**: 947 texts
-for 1,000 atomic targets. The same text is reused across target models and every
-target sharing the judgment's `item_id`. There is no best-of-three selection or
-cross-version pooling. Loaders and analysis reject multi-summary files and repeated
-atomic target keys.
+The main experiment uses **one fixed DeepSeek v4.1 Flash summary per judgment**:
+947 texts for 1,000 targets. Every evaluating model receives the same selected
+text, including all targets sharing a judgment. Original version index 0 was
+selected before model evaluation.
 
-| Component | Input and output | Question |
+| Component | Input and output | Reported measure |
 | --- | --- | --- |
-| Main abstractive arm | Reviewed source → one approximately 500-word summary | How does summarization change judgment? |
-| Extractive control | Same source → selected verbatim paragraphs | Does the effect remain without newly generated factual assertions? |
-| Atomic coverage | Source facts → atomic claims → support in each summary | Which factual claims survive, including those from paragraphs cited by the Court? |
+| Abstractive summary | Reviewed source to an approximately 500-word summary | Matched prediction accuracy and factual retention |
+| Extractive control | Same source to selected verbatim passages | Factual retention and input length |
+| Atomic coverage | Shared source claims checked against each summary | Overall and Court-referenced claim retention |
 
-The two controls address different aspects of faithfulness. Verbatim extraction
-prevents invented text but can omit context. Atomic coverage estimates fact
-retention; a high score is not a proof that every legally material fact survived.
-Neither is replaced by repeated stochastic summaries. The input-leakage gate
-separately excludes the current Court's conclusions and merits reasoning.
+## Completed results
 
-## Use the approved summary
+The full-record and abstractive-summary checkpoints cover six models and 1,000
+targets per model under `data/experiments/unified_fullcase_latest/`. At a median
+24.0% of the original input length, summaries reduce accuracy by 0.9-2.4 percentage
+points under the manuscript's mean-score rule.
+
+The released extractive artifact,
+`data/processed/summaries_extractive_leakchecked_20260916.json`, contains 947
+extracts matching their selected source spans. Its median within-judgment length
+ratio is 89.5%. It supplies the retention control in the current manuscript.
+
+The selected claim-level analysis tests both variants against **51,347 identical
+claims**, including **19,646 Court-referenced claims from 659 judgments**.
+Abstractive summaries retain **12,851 (65.4%)** of the Court-referenced claims;
+extractive summaries retain **18,717 (95.3%)**. Qwen3-235B extracts the claims and
+checks their support. These checkpoints are completed local analysis artifacts
+awaiting publication. The manuscript's source manifest pins their hashes.
+
+## Use the selected summary
 
 ```bash
 python scripts/validate_eval_dataset.py --require-complete
 ```
 
-Pass `data/processed/summaries_dsv41flash.json` to the evaluation runner's
-`--summaries` argument. Use a fresh result directory and rerun the matched
-baseline. The semantic input gate requires the exact active target cohort and the
-reviewed canonical summary text. Target-model results and faithfulness measurements
-have not yet been produced for this release.
+Pass `data/processed/summaries_dsv41flash.json` to the full-case runner's
+`--summaries` argument. Use fresh result directories for changed inputs and
+compare each summary arm with its matched full-record arm. The current execution
+commands are in [README.md](../README.md#setup-and-execution), and the aggregation
+rule is in [STATISTICAL_METHODOLOGY.md](../STATISTICAL_METHODOLOGY.md).
 
-## Build one extractive control
+## Generate an extractive control for a new run
 
-The current span-based parser passes the offline format preflight for all 947
-reviewed judgments. This confirms source compatibility only. It does not create
-the extractive summaries or constitute an extractive-control result.
+The span selector takes the reviewed, 50,000-character source input, selects
+passages, assembles them in source order and records their paragraph numbers.
+Run the format check before making selector calls:
 
 ```bash
-python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --out data/processed/summaries_extractive_leakchecked_20260916.json --check-only
+python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --out data/processed/summaries_extractive_new.json --check-only
+python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY --out data/processed/summaries_extractive_new.json
 ```
 
-After the preflight passes, the following command makes paid selector calls. It
-selects paragraphs from the reviewed, 50,000-character source input, assembles
-them in source order, and records selected and omitted paragraph numbers. Failed
-calls are not successful extracts.
+The second command makes model calls. Verify each assembled extract against its
+selected source spans and record extraction coverage before analysis.
+
+## Measure atomic coverage for a new run
+
+Set `COVERAGE_MODEL` to the coverage model's provider identifier; the reported
+analysis uses `qwen/qwen3-235b-a22b`. Set `FULL_JUDGMENTS_CSV` to the full-judgment
+corpus with `item_id` and `full_text` columns. Full judgments identify references
+from the Court's reasoning to factual passages. Target models receive the
+reviewed factual record or summary.
+
+Run the variants sequentially in the **same new output directory**. The second
+variant reuses the first variant's extracted claims, giving a claim-for-claim
+comparison. Both commands make model calls.
 
 ```bash
-python -X utf8 scripts/build_extractive.py --cases data/processed/echr_unified.json --summarizer deepseek/deepseek-v4.1-flash --api-key-env OPENROUTER_API_KEY --out data/processed/summaries_extractive_leakchecked_20260916.json
-```
-
-Before evaluation, the input gate reassembles each selected extract from the
-current source and checks exact equality. Extracts without matching selection
-records are rejected. Evaluate the control with the same
-runner and cohort, passing this file to `--summaries` in a separate output
-directory. Check and report extraction coverage before comparing arms.
-
-## Measure atomic coverage
-
-Choose an independent coverage model, different from the summarizer. Set
-`COVERAGE_MODEL` to its provider identifier. Supply `FULL_JUDGMENTS_CSV`, a file
-with `item_id` and `full_text` columns, from the full-judgment source corpus; this
-file is not bundled with the repaired benchmark release. These full judgments are used
-**only by the coverage instrument** to locate Court-to-fact back-references,
-never as inputs to the benchmark target. Sampled fact paragraphs must also occur
-in the exact source input available to the summarizer.
-
-Run the two commands sequentially in the **same output directory**. The second
-run reuses the first run's extracted claims, so support is compared claim-for-claim.
-Source, claim-extraction settings and summary identities are checked on resume.
-These commands make paid coverage-model calls. Use the same eligible judgment
-set and settings for both variants; incomplete extraction needs resolving first.
-
-```bash
-python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_dsv41flash.json --variant abstractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260916
-python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_extractive_leakchecked_20260916.json --variant extractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_leakchecked_20260916
+python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_dsv41flash.json --variant abstractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_coverage_new
+python -X utf8 scripts/build_atomic_coverage.py --full-texts "$FULL_JUDGMENTS_CSV" --summaries data/processed/summaries_extractive_new.json --variant extractive --model "$COVERAGE_MODEL" --api-key-env OPENROUTER_API_KEY --out data/experiments/atomic_coverage_new
 ```
 
 On PowerShell, use `$env:COVERAGE_MODEL` and `$env:FULL_JUDGMENTS_CSV`.
-The verifier receives the single summary string and atomic claims, not a list of
-alternative summaries, the reference outcome, or a target model's predictions.
-Results record overall and Court-referenced fact coverage with their denominators.
+Each support check receives the selected summary and source claims. Results
+record overall and Court-referenced retention with their denominators. Newly
+generated outputs define a new analysis version.
 
-## Audit history
+## Preparation history
 
-The old multi-version generator, cross-version evaluator, and one-off leakage
-repair programs are not current entry points. Historical repair tooling is under
-`archive/input_repair_20260915/`; its logs remain audit evidence and cannot be
-loaded as current evaluation inputs. Use `experiments/run_perturbation_openai.py`
-or `experiments/run_adversarial_opinion.py` for current evaluations.
+[INPUT_REPAIR.md](INPUT_REPAIR.md) records the transition to the shared-summary
+release. Earlier multi-version generators and repair utilities are retained in
+`archive/input_repair_20260915/`. The reported experiments use
+`experiments/run_perturbation_fullcase.py`, `experiments/paraphrase_run.py` and
+`experiments/syco_run.py`.

@@ -1,4 +1,9 @@
-# Adversarial opinion and sycophancy protocol
+# Earlier atomic-question persuasion protocol
+
+This document describes `experiments/run_adversarial_opinion.py` and its
+nine-condition design. The reported syco results use the eleven-condition,
+60-word protocol in `experiments/syco_run.py`, documented in
+[README.md](../README.md#three-turn-persuasion-sycophancy).
 
 ## Evaluation unit
 

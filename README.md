@@ -156,6 +156,11 @@ added when available. Existing files under `data/experiments/stateswap/` and
 
 ## Scoring and manuscript analysis
 
+The current [dataset contract](DATA_SPLITS.md),
+[pipeline](PIPELINE.md), and
+[statistical methodology](STATISTICAL_METHODOLOGY.md) describe the reported
+release and comparisons.
+
 Scores represent the likelihood of a violation:
 
 | Score | Decision |
@@ -260,9 +265,9 @@ The following remain as earlier protocols or historical artifacts:
 - `docs/ADVERSARIAL_OPINION.md` and
   `configs/adversarial_opinion_conditions.json` describe the earlier
   nine-condition, 55-word protocol. The current syco grid is in `syco_run.py`.
-- `STATISTICAL_METHODOLOGY.md` and `STATISTICAL_TEST_EVALUATION.md` describe
-  the 141-pair pilot. `configs/perturbation_analysis.json` and
+- `configs/perturbation_analysis.json` and
   `scripts/analyse_perturbation_run.py` specify an earlier comparison family.
+  The superseded 141-pair statistical notes remain available in Git history.
 - `metadata/data/eval/`, `paraphrase/data/eval/`,
   `time_bin_contamination/data/eval/`, and `data/experiments/stateswap/`
   contain earlier results.

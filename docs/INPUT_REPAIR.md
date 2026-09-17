@@ -1,5 +1,9 @@
 # Input leakage repair and one-summary protocol
 
+This records the September 2026 input repair and its atomic-question runner
+checks. The completed full-case, paraphrase and syco experiments use the entry
+points and scoring rules in [README.md](../README.md).
+
 The main summarization experiment uses **one summary per judgment**, selected as
 original version index 0 before looking at any evaluator's response. That means
 947 summary texts covering 1,000 atomic targets. The two
@@ -86,16 +90,18 @@ python scripts/validate_eval_dataset.py --require-complete
 python scripts/verify_model_input_payloads.py
 ```
 
-The payload verifier uses an in-memory fake transport and makes no model calls. It
-imports `openai` because the real runner does, but needs no key.
+The payload verifier checks the earlier atomic-question entry points using an
+in-memory fake transport and makes no model calls. It imports `openai` because
+those runners do, but needs no key.
 
 ## Re-running experiments
 
 Use a new output directory for the approved release. Never resume pre-repair
 checkpoints, mix old baseline predictions with repaired summary inputs, or
-relabel existing metrics as results of the cleaned corpus. The runner rejects
-benchmark text that does not match the active semantic cohort and refuses to resume an
-unversioned result directory. Historical alternative datasets are not covered by
+relabel existing metrics as results of the cleaned corpus. The atomic-question
+runners used for this repair reject benchmark text that does not match the active
+semantic cohort and refuse to resume an unversioned result directory.
+Historical alternative datasets are not covered by
 this release and must not be presented as having passed its review.
 
 The manuscript and its protected Section 3 are not edited by this repair.
