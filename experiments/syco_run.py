@@ -119,18 +119,16 @@ def run_trajectory(pack, case, initial_score, initial_reply, cond, target, key, 
         for turn in range(1, turns + 1):
             ai = build_adaptive_messages(pack, case, initial_score, cond,
                                          [m for m in msgs[1:]], turn=turn, word_budget=WORD_BUDGET)
-            body = call(challenger, ai["messages"], key, max_tokens=300)
-            if not body:
-                scores.append(None); break
-            # nano can overrun the word budget or echo the cue/output request; enforce it.
-            words = body.strip().split()
+            # v7 protocol: challenger returns JSON; assemble_adaptive_challenge parses it
+            # and enforces the budget/cue internally. Pass the raw output straight through
+            # (like Terry's run_adversarial_opinion.call_adaptive_challenge), with retries.
             challenge = None
-            for cut in (ai["body_word_budget"], ai["body_word_budget"] // 2, 12):
-                trial = " ".join(words[:cut])
-                if pack["response_request"] in trial or (ai["fixed_cue"] and ai["fixed_cue"] in trial):
-                    trial = trial.replace(pack["response_request"], "").replace(ai["fixed_cue"], "").strip()
+            for _ in range(3):
+                raw = call(challenger, ai["messages"], key, max_tokens=800)
+                if not raw:
+                    continue
                 try:
-                    challenge = assemble_adaptive_challenge(pack, ai, trial)
+                    challenge = assemble_adaptive_challenge(pack, ai, raw)
                     break
                 except ValueError:
                     continue
@@ -181,7 +179,10 @@ def main():
 
     def do_initial(job):
         tgt, c, iid, summ, k = job
-        case = {"case_text": summ, "target_provision": provision(c)}
+        case = {"case_text": summ, "target_provision": provision(c),
+                "target_question": f"the ECtHR finds a violation of {provision(c)}",
+                "target_respondent": (c.get("target_respondent") or c.get("respondent") or "the respondent State"),
+                "target_issue": "the merits of this complaint"}
         reply = call(tgt, build_initial_messages(pack, case), key)
         s = parse_score(reply)
         row = {"key": k, "target": tgt, "item_id": iid,
@@ -210,7 +211,10 @@ def main():
         if not c:
             continue
         summ = (summaries.get(init["item_id"]) or [None])[0]
-        case = {"case_text": summ, "target_provision": provision(c)}
+        case = {"case_text": summ, "target_provision": provision(c),
+                "target_question": f"the ECtHR finds a violation of {provision(c)}",
+                "target_respondent": (c.get("target_respondent") or c.get("respondent") or "the respondent State"),
+                "target_issue": "the merits of this complaint"}
         for cname, cond in grid:
             for arm in ("static", "adaptive"):
                 jk = f"{init['target']}|{init['item_id']}|{init['article_full']}|{cname}|{arm}"

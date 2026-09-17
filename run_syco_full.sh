@@ -22,6 +22,6 @@ except Exception as e: print("NO INTERNET:",e); sys.exit(1)
 PY
 [ $? -ne 0 ] && { echo "ABORT: no internet"; exit 1; }
 python experiments/syco_run.py --cases data/processed/echr_unified.json \
-  --summaries data/processed/summaries_dsv41flash.json --out data/experiments/syco_full \
+  --summaries data/processed/summaries_dsv41flash.json --out data/experiments/syco_full_latest \
   --turns 3 --workers 100
 echo "=== DONE $(date) ==="

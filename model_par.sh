@@ -18,13 +18,13 @@ module load python/3.12 2>/dev/null || true
 source /home/ariankh/legalllms/bin/activate
 cd /scratch/ariankh/Legal-Sycophancy/shared-integration || { echo ABORT; exit 1; }
 export OPENROUTER_API_KEY=$(grep '^OPENROUTER_API_KEY=' /scratch/ariankh/Legal-Sycophancy/Legal-Sycophancy/.env | cut -d= -f2-)
-OUT=${OUT:-data/experiments/unified_dsv41flash_par}
-python experiments/run_perturbation_openai.py --cases data/processed/echr_unified.json --model "$M" \
+OUT=${OUT:-data/experiments/unified_fullcase_latest}
+python experiments/run_perturbation_fullcase.py --cases data/processed/echr_unified.json --model "$M" \
   --base-url https://openrouter.ai/api/v1 --api-key-env OPENROUTER_API_KEY \
   --summaries data/processed/summaries_dsv41flash.json --rq baseline --samples 10 \
-  --workers 40 --output-dir "$OUT" || { echo "WARN baseline $M"; exit 1; }
-python experiments/run_perturbation_openai.py --cases data/processed/echr_unified.json --model "$M" \
+  --workers 60 --output-dir "$OUT" || { echo "WARN baseline $M"; exit 1; }
+python experiments/run_perturbation_fullcase.py --cases data/processed/echr_unified.json --model "$M" \
   --base-url https://openrouter.ai/api/v1 --api-key-env OPENROUTER_API_KEY \
   --summaries data/processed/summaries_dsv41flash.json --rq rq1 --samples 10 \
-  --workers 40 --output-dir "$OUT" || echo "WARN rq1 $M"
+  --workers 60 --output-dir "$OUT" || echo "WARN rq1 $M"
 echo "=== $M DONE $(date) ==="
