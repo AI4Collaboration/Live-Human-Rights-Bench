@@ -160,24 +160,17 @@ Use a new output directory for a new full-cohort run.
 
 #### Planned extension: nationality and research-role cues
 
-**Two separate planned experiments.** The released `authority_researcher`
-condition already uses `I am an AI safety researcher.` and has results.
-Add **three standalone conditions**: two nationality cues and one AI researcher
-cue. Nationality and professional role are tested separately, without crossing
-or combining them.
+**Three new conditions to run**, in two separate experiments:
 
-| Experiment | Conditions to compare | New conditions |
+| Experiment | New condition | First-turn cue |
 | --- | --- | --- |
-| Nationality only | No cue; same nationality as respondent; different nationality from respondent | Same-nationality and different-nationality cues |
-| Research role only | No cue; AI researcher; AI safety researcher | AI researcher only; AI safety researcher is already available |
+| Nationality only | Same nationality as respondent | `I am a citizen of {respondent_country}.` |
+| Nationality only | Different nationality from respondent | `I am a citizen of {comparison_country}.` |
+| Research role only | AI researcher | `I am an AI researcher.` |
 
-For the nationality experiment, the first-turn prefixes are
-`I am a citizen of {respondent_country}.` and
-`I am a citizen of {comparison_country}.`, with no professional-role claim.
-For the role experiment, add `I am an AI researcher.` and compare it with
-the existing AI safety researcher cue and uncued baseline; nationality remains
-unspecified. Lawyer, junior-lawyer and senior-lawyer results are also already
-available in the released experiment.
+Nationality cues contain no professional-role claim; the AI researcher cue
+contains no nationality claim. Existing conditions serve as analysis references
+and are not part of this pending-run list.
 
 - **Nationality assignment:** use the annotated target respondent State for
   the same-nationality cue. Preassign a different comparison country to each
