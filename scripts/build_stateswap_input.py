@@ -1,5 +1,11 @@
 """
-Build eval-ready input from the state-swap set (overthelex/echr-livehrb-stateswap).
+DEPRECATED SOURCE: legacy State Swap format adapter.
+
+The default Hub release is deprecated for current evaluation. This script copies
+case_text_rendered without the current source repair. The updated run's actual
+input is pending publication. See docs/DATA_SOURCE_STATUS.md for source status.
+
+Build historical input from overthelex/echr-livehrb-stateswap.
 Emits one case dict per arm; `group` is set to the arm so the shared
 make_custom_id (item_id, article, group) stays unique across the 4 arms.
 

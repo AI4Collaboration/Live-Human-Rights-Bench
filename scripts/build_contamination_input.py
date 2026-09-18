@@ -1,5 +1,9 @@
 """
-Step 0 — Build the contamination input file from the v1.1 leak-scrubbed 2K set.
+DEPRECATED SOURCE: legacy static-2k format adapter.
+
+The default Hub release is deprecated for current evaluation. Field renaming
+does not apply the current source repair or target review. Use the current
+GitHub release listed in docs/DATA_SOURCE_STATUS.md for reported experiments.
 
 Loads the LiveHumanRightsBench static-2k dataset (from the Hugging Face Hub by
 default, or from a local JSON/Parquet file) and rewrites it into the case format

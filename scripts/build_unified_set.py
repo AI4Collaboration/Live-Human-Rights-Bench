@@ -1,4 +1,8 @@
 """
+HISTORICAL CANDIDATE SAMPLER: its static-2k source is deprecated for evaluation.
+Use a separate --out path. Sampling does not reproduce the current reviewed
+echr_unified.json release; see docs/DATA_SOURCE_STATUS.md for release status.
+
 Build the ONE unified evaluation set (Terry: one set, ~800-1000 cases, spanning a
 time window relatively evenly; recent is fine because we pick a model whose cutoff
 sits mid-window for the contamination split).

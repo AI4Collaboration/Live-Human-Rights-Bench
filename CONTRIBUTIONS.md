@@ -42,6 +42,10 @@ this paper"). The CRediT role split below was proposed by V. Ovcharov
 
 ## Data & code pointers
 
+The dataset pointers below record historical contributions. Those source
+releases are now **deprecated as evaluation inputs**; current replacements and
+exact versions are listed in [docs/DATA_SOURCE_STATUS.md](docs/DATA_SOURCE_STATUS.md).
+
 - Datasets (HF, public, cc-by-4.0): `overthelex/echr-verdict-free`,
   `overthelex/echr-ukr-verdict-free`, `overthelex/echr-livehrb-static-2k`,
   `overthelex/echr-livehrb-temporal-2k` — all v1.1

@@ -7,8 +7,15 @@ susceptibility to social pressure across multiple turns.
 
 ## Current release
 
-Updated **17 September 2026**, against the data and code in
+Data and code from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
+
+**Source status updated 18 September 2026:** the six legacy Hugging Face sources
+are **deprecated as evaluation inputs**, including the old State Swap release.
+Use the GitHub inputs below. See the
+[source-status register](docs/DATA_SOURCE_STATUS.md) for exact Hub revisions,
+deprecated local files, replacements and pending inputs; the same inventory is
+available as [JSON](configs/data_source_status.json).
 
 | Component | Current contents | Location |
 | --- | --- | --- |
@@ -153,6 +160,10 @@ alone; a new full-cohort run needs the lookup changed to
 State Swap is the current metadata experiment. Its updated results will be
 added when available. Existing files under `data/experiments/stateswap/` and
 `metadata/data/eval/` belong to earlier experiments.
+The old Hub State Swap input is **deprecated**. The updated run's actual input,
+`data/processed/echr_stateswap.json`, is not committed, so its cohort and input
+revision remain pending publication. The historical 816-base-group count does
+not establish the updated run's cohort.
 
 ## Scoring and manuscript analysis
 
@@ -272,8 +283,8 @@ The following remain as earlier protocols or historical artifacts:
   `time_bin_contamination/data/eval/`, and `data/experiments/stateswap/`
   contain earlier results.
 - `echr_cases_final_clean.json`, `livehrb_1k.json`, and
-  `test_20_cases.json` are older inputs or test samples. The current cohort
-  is `data/processed/echr_unified.json`.
+  `test_20_cases.json` are **deprecated evaluation inputs** retained for
+  historical reproduction. The current cohort is `data/processed/echr_unified.json`.
 - The payload verifier and runner inventory tests still target the earlier
   entry points.
 

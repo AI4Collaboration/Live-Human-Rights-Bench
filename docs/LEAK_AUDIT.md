@@ -5,6 +5,11 @@ August 2026. Current inputs and completed experiments are described in
 [DATA_SPLITS.md](../DATA_SPLITS.md) and [README.md](../README.md).
 The subsequent repair is recorded in [INPUT_REPAIR.md](INPUT_REPAIR.md).
 
+**These source-set releases are deprecated as evaluation inputs.** Consult the
+[source-status register](DATA_SOURCE_STATUS.md) for pinned Hub versions and
+current replacements. Historical post-cut structural checks below do not certify
+the current contents of a Hub repository or every later derivative.
+
 Audited 2026-08-25/26 against the published parquet exports. Reproduce with:
 
 ```bash

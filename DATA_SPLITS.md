@@ -66,11 +66,14 @@ rules are in [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md).
 
 ## State Swap and earlier cohorts
 
-State Swap uses a separate cohort: 816 base cases rendered with the original
-respondent, Iceland, Ukraine and Russia, giving 3,264 inputs. Updated results
-will fill the manuscript's Metadata heading.
+The **deprecated** State Swap release contains 816 case-article base groups
+rendered with the original respondent, Iceland, Ukraine and Russia, giving
+3,264 inputs. These counts describe the old release. The updated run's actual
+input and cohort are pending publication in GitHub, together with its results.
 
-The earlier static-2k and temporal-2k source sets, `livehrb_1k.json` pilot and
-141-pair pilot remain historical artifacts. Their original sampling plans and
-statistics are recoverable from Git history. Current counts and reported
+The earlier static-2k, temporal-2k and temporal-1k source sets, `livehrb_1k.json`
+pilot and 141-pair pilot are **deprecated as evaluation inputs**. Exact versions,
+replacements and importer status are listed in the
+[source-status register](docs/DATA_SOURCE_STATUS.md). Their original sampling
+plans and statistics remain historical records. Current counts and reported
 comparisons are defined by the manifest and experiments above.

@@ -29,10 +29,13 @@ The scope is the **actual model-visible text**, including the runner's first
 50,000 source characters and the complete summary. Remove the current ECtHR
 judgment's merits assessment, operative conclusions, and answer-revealing cover
 headnotes. Retain allegations, domestic procedural history, generic legal rules,
-and decisions from other cases. Remove an earlier-instance outcome from the same
-application when a Grand Chamber judgment recounts the Chamber decision on the
-scored complaint. This is an input-leakage check, not a test of proprietary
-pretraining overlap.
+and decisions from other cases. The September repair also used a stricter
+exclusion rule for earlier-instance outcomes from the same application when a
+Grand Chamber judgment recounted the Chamber decision on the scored complaint.
+This records the historical removal policy. An earlier decision is not by itself
+disclosure of the later judgment's answer and can be legitimate pre-decision
+information; see the [source-status clarification](DATA_SOURCE_STATUS.md#what-the-historical-leakage-records-mean).
+This repair concerns model inputs, not proprietary pretraining overlap.
 
 Formal preambles that state how the current Court applies established case-law
 are removed too. Four such source prefixes were repaired and re-reviewed after
@@ -103,5 +106,8 @@ runners used for this repair reject benchmark text that does not match the activ
 semantic cohort and refuse to resume an unversioned result directory.
 Historical alternative datasets are not covered by
 this release and must not be presented as having passed its review.
+The old Hub sources and local pilot inputs are explicitly **deprecated** in
+[DATA_SOURCE_STATUS.md](DATA_SOURCE_STATUS.md), with exact revisions and
+replacement paths in [`data_source_status.json`](../configs/data_source_status.json).
 
 The manuscript and its protected Section 3 are not edited by this repair.

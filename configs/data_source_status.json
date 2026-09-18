@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-18",
+  "repository_inspection_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+  "current_dataset_id": "echr-unified-atomic-targets-20260916",
+  "documentation": "docs/DATA_SOURCE_STATUS.md",
+  "status_definitions": {
+    "current": "Designated input of the reported GitHub release; not a fresh semantic audit.",
+    "deprecated": "Retained for provenance or historical reproduction; superseded or unapproved as current evaluation input.",
+    "pending_publication": "Actual experiment input absent from the inspected GitHub revision.",
+    "historical": "Evidence or output from an earlier experiment; not the current result release."
+  },
+  "hash_convention": "sha256_git_blob hashes committed bytes, unaffected by checkout CRLF conversion; historical audit sha256_lf values are copied from those audits.",
+  "hf_deprecation_scope": "Pinned legacy revisions and old evaluation releases. Upstream pools may provide candidates for review. Future rebuilt Hub releases require a separately recorded revision and acceptance. Hub repositories were not modified.",
+  "current_hf_mirror": null,
+  "current_inputs": [
+    {
+      "path": "data/processed/echr_unified.json",
+      "status": "current",
+      "role": "Canonical full-case input",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "records": 1000,
+      "record_unit": "target"
+    },
+    {
+      "path": "data/processed/summaries_dsv41flash.json",
+      "status": "current",
+      "role": "Selected abstractive summaries for summary and sycophancy evaluation",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "records": 947,
+      "record_unit": "judgment_summary"
+    },
+    {
+      "path": "data/processed/summaries_extractive_leakchecked_20260916.json",
+      "status": "current",
+      "role": "Extractive controls",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "ab0a2a19bb6284653075870b2e7b27b0397d4a32668cb3d26dd41a03d6844d93",
+      "records": 947,
+      "record_unit": "judgment_summary"
+    }
+  ],
+  "deprecated_hf_sources": [
+    {
+      "repo_id": "overthelex/echr-verdict-free",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "f897bd6b1897b522d89540c53cecc2e8df06daa8",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-07-14T14:03:22.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-verdict-free",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-verdict-free/tree/f897bd6b1897b522d89540c53cecc2e8df06daa8",
+      "historical_role": "General source pool",
+      "replacement": "data/processed/echr_unified.json",
+      "reason": "Superseded source or evaluation design; not the current reviewed GitHub input release.",
+      "legacy_entrypoints": [
+        "scripts/hudoc_live_refresh.py",
+        "scripts/build_stratified_sample.py"
+      ]
+    },
+    {
+      "repo_id": "overthelex/echr-ukr-verdict-free",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "3d388078c3627814b11cf6dbd87de0def8d032b9",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-07-14T14:10:43.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-ukr-verdict-free",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-ukr-verdict-free/tree/3d388078c3627814b11cf6dbd87de0def8d032b9",
+      "historical_role": "Ukraine source pool",
+      "replacement": "data/processed/echr_unified.json",
+      "reason": "Superseded source or evaluation design; not the current reviewed GitHub input release.",
+      "legacy_entrypoints": [
+        "scripts/build_livehrb_static.py",
+        "scripts/build_temporal_split.py"
+      ]
+    },
+    {
+      "repo_id": "overthelex/echr-livehrb-static-2k",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "ee9cb87f74c6843bec44f4eb33bc4151bbcfea49",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-08-26T08:35:13.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-livehrb-static-2k",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-livehrb-static-2k/tree/ee9cb87f74c6843bec44f4eb33bc4151bbcfea49",
+      "historical_role": "Historical static source set",
+      "replacement": "data/processed/echr_unified.json",
+      "reason": "Superseded source or evaluation design; not the current reviewed GitHub input release.",
+      "legacy_entrypoints": [
+        "scripts/build_contamination_input.py",
+        "scripts/generate_state_swap.py"
+      ]
+    },
+    {
+      "repo_id": "overthelex/echr-livehrb-temporal-2k",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "24dff82a53c61fa298c0ee39841c67ea9ed0fd44",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-08-26T08:35:22.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-livehrb-temporal-2k",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-2k/tree/24dff82a53c61fa298c0ee39841c67ea9ed0fd44",
+      "historical_role": "Historical temporal source set",
+      "replacement": "data/processed/echr_unified.json",
+      "reason": "Superseded source or evaluation design; not the current reviewed GitHub input release.",
+      "legacy_entrypoints": [
+        "scripts/build_temporal_split.py"
+      ]
+    },
+    {
+      "repo_id": "overthelex/echr-livehrb-temporal-1k",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "b7cc10be36c0a8be879217c8c6b0bb9791bd5fb7",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-08-26T21:36:08.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-livehrb-temporal-1k",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-1k/tree/b7cc10be36c0a8be879217c8c6b0bb9791bd5fb7",
+      "historical_role": "Historical temporal input imported as livehrb_1k.json",
+      "replacement": "data/processed/echr_unified.json",
+      "reason": "Superseded source or evaluation design; not the current reviewed GitHub input release.",
+      "legacy_entrypoints": [
+        "scripts/build_livehrb_input.py"
+      ]
+    },
+    {
+      "repo_id": "overthelex/echr-livehrb-stateswap",
+      "status": "deprecated",
+      "scope": "evaluation_input",
+      "observed_revision": "4360866441dc7da39df442d16de2fbc46d29119e",
+      "observed_on": "2026-09-18",
+      "hub_last_modified": "2026-09-10T09:00:21.000Z",
+      "metadata_url": "https://huggingface.co/api/datasets/overthelex/echr-livehrb-stateswap",
+      "pinned_url": "https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e",
+      "historical_role": "Historical State Swap: 816 base groups, four arms",
+      "replacement": null,
+      "reason": "Legacy State Swap input; updated input and its review evidence are pending publication.",
+      "legacy_entrypoints": [
+        "scripts/build_stateswap_input.py",
+        "scripts/generate_state_swap.py",
+        "scripts/push_stateswap.py",
+        "scripts/recut_stateswap.py",
+        "scripts/build_human_validation_subset.py"
+      ]
+    }
+  ],
+  "deprecated_local_inputs": [
+    {
+      "path": "data/processed/livehrb_1k.json",
+      "status": "deprecated",
+      "role": "Historical 1,212-row input",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "9d35fdf169a45300152c1b43f3aa098e8edf684ef64cbcdc8bc81a6ba2370075",
+      "records": 1212,
+      "record_unit": "target",
+      "replacement": "data/processed/echr_unified.json"
+    },
+    {
+      "path": "data/processed/echr_cases_final_clean.json",
+      "status": "deprecated",
+      "role": "Historical 141-row pilot",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "b4aec448ae90502985a47aac68596a50e74970207e1ab8069f4d005a8aba9415",
+      "records": 141,
+      "record_unit": "target",
+      "replacement": "data/processed/echr_unified.json"
+    },
+    {
+      "path": "data/processed/test_20_cases.json",
+      "status": "deprecated",
+      "role": "Historical 20-row test fixture",
+      "git_revision": "d5b2879be6dce821e5de0124ceab4997aff41c33",
+      "sha256_git_blob": "2afd8bc6f5df8604cce3424ebf409a5de469c0f6ec1e4e24241487e9153e9514",
+      "records": 20,
+      "record_unit": "target",
+      "replacement": "data/processed/echr_unified.json"
+    }
+  ],
+  "deprecated_pre_repair_inputs": {
+    "status": "deprecated",
+    "git_revision": "4a1ba1117a047dac7553ca2cfd3100a18171a841",
+    "paths": [
+      "data/processed/echr_unified.json",
+      "data/processed/summaries_dsv41flash.json"
+    ],
+    "replacements": [
+      "data/processed/echr_unified.json",
+      "data/processed/summaries_dsv41flash.json"
+    ]
+  },
+  "pending_inputs": [
+    {
+      "path": "data/processed/echr_stateswap.json",
+      "status": "pending_publication",
+      "kind": "updated_stateswap_input",
+      "approved_replacement_for_legacy_hf": null
+    },
+    {
+      "path": "data/processed/paraphrase_pairs.json",
+      "status": "pending_publication",
+      "kind": "generated_inputs_for_published_paraphrase_results"
+    }
+  ],
+  "historical_result_paths": [
+    "data/experiments/stateswap/",
+    "metadata/data/eval/",
+    "paraphrase/data/eval/",
+    "time_bin_contamination/data/eval/"
+  ],
+  "historical_audit_counts": [
+    {
+      "name": "stateswap",
+      "status": "CANDIDATES_WITH_EVIDENCE_NOT_AN_ADJUDICATED_RATE",
+      "scope": "historical_local_export",
+      "before_file": "data/audits/other_corpora/stateswap_spans_before.json",
+      "after_subset_file": "data/audits/other_corpora/stateswap_spans_after_strip.json",
+      "input_sha256_lf_before": "ff6782fa7c02a777f240d13a0b01f770b26d4aaba21c8d0dbede095f067d8d19",
+      "input_sha256_lf_after": "012de6f29120000c10011a435603bad44c7c0bc97bf8300cbee8b9093ff8723a",
+      "rows": 816,
+      "rows_rechecked": 183,
+      "detector_leak_flags_before": 458,
+      "detector_leak_flags_in_rechecked_subset_before": 177,
+      "detector_leak_flags_in_rechecked_subset_after": 5,
+      "detector_leak_flags_remaining": 286,
+      "adjudicated_leakage_rate": null,
+      "bound_hub_revision": null
+    },
+    {
+      "name": "static2k",
+      "status": "CANDIDATES_WITH_EVIDENCE_NOT_AN_ADJUDICATED_RATE",
+      "scope": "historical_local_export",
+      "before_file": "data/audits/other_corpora/static2k_spans_before.json",
+      "after_subset_file": "data/audits/other_corpora/static2k_spans_after_strip.json",
+      "input_sha256_lf_before": "e3fe10b01f723b9e714b7d5aa65fc32af82c42fbb83db2d425b8524b8fa4e874",
+      "input_sha256_lf_after": "2fbf2302d5e008a8353d7ffa30c13330cf0ddc04911ca105945752956a49ade3",
+      "rows": 2000,
+      "rows_rechecked": 311,
+      "detector_leak_flags_before": 1143,
+      "detector_leak_flags_in_rechecked_subset_before": 286,
+      "detector_leak_flags_in_rechecked_subset_after": 27,
+      "detector_leak_flags_remaining": 884,
+      "adjudicated_leakage_rate": null,
+      "bound_hub_revision": null
+    }
+  ],
+  "interpretation": "Deprecation is a release designation, not a claim that every row leaks. Earlier decisions and procedural history do not automatically reveal the judgment being predicted. Historical detector flags are not adjudicated leakage rates."
+}

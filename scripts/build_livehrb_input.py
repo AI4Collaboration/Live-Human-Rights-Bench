@@ -1,4 +1,8 @@
-"""Turn the published 1k evaluation set into the cases JSON the runners expect.
+"""DEPRECATED SOURCE: legacy temporal-1k importer.
+
+The default Hub source and livehrb_1k.json output are deprecated for current
+evaluation. This script does not rebuild the reviewed echr_unified.json release.
+See docs/DATA_SOURCE_STATUS.md for exact versions and replacements.
 
     python scripts/build_livehrb_input.py --out data/processed/livehrb_1k.json
     python scripts/build_livehrb_input.py --limit 20 --out data/processed/dry_run.json

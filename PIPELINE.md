@@ -19,11 +19,11 @@ scripts/hudoc_live_refresh.py
   -> updated source corpus
 ```
 
-For example, build a refreshed source file using the full verdict-removal pipeline:
+For example, refresh an explicitly selected local candidate corpus:
 
 ```bash
 python scripts/hudoc_live_refresh.py \
-  --hf-dataset overthelex/echr-verdict-free \
+  --dataset path/to/pinned_candidate_corpus.json \
   --output data/processed/echr_live_new.json \
   --full-pipeline
 ```
@@ -32,6 +32,12 @@ python scripts/hudoc_live_refresh.py \
 pipeline includes model verification; its credentials and dependencies are
 listed in the script and `requirements.txt`.
 
+The legacy Hugging Face pools are **deprecated as evaluation inputs**; their
+versions and historical roles are in [DATA_SOURCE_STATUS.md](docs/DATA_SOURCE_STATUS.md).
+They may supply candidates for a new release. The refresh processes newly
+fetched judgments and retains existing rows, so `--full-pipeline` does not repair
+an older corpus retroactively. Review the complete proposed release before use.
+
 ## Construct and freeze an evaluation release
 
 1. Normalize respondent names, decision dates and provision identifiers with
@@ -39,7 +45,9 @@ listed in the script and `requirements.txt`.
    `backfill_article_full.py` under `scripts/`.
 2. Select a candidate cohort. `scripts/build_unified_set.py` supports
    `--min-year`, `--max-year`, `--cap`, `--target`, `--include-ukraine` and
-   `--out`. Its source is the local `echr_livehrb_static_2k.json` corpus.
+   `--out`. This historical sampler reads the local `echr_livehrb_static_2k.json`
+   corpus. Write candidates to a separate `--out` path; sampling the deprecated
+   static source does not reconstruct the current reviewed release.
 3. Resolve each target's respondent, provision and sub-conclusion against the
    public judgment. Record the target audit and review retained case text.
 4. Freeze the approved cohort, summary selection and counts in
@@ -76,6 +84,6 @@ intervention; its updated result is the remaining manuscript Results entry.
 
 `build_livehrb_static.py`, `build_temporal_split.py` and
 `build_cutoff_partitions.py` remain available under `scripts/` for the earlier
-source-set designs. Their 2k splits and model-cutoff configuration describe those
-designs. Current manuscript results use the frozen cohort and experiment-specific
-references above.
+source-set designs. Their outputs and the older Hub importers are catalogued as
+deprecated in the [source-status register](docs/DATA_SOURCE_STATUS.md). Current
+manuscript results use the frozen cohort and experiment-specific references above.
