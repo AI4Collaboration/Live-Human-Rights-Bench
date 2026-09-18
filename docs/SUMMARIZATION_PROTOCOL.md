@@ -78,10 +78,8 @@ Each support check receives the selected summary and source claims. Results
 record overall and Court-referenced retention with their denominators. Newly
 generated outputs define a new analysis version.
 
-## Preparation history
+## Input provenance
 
-[INPUT_REPAIR.md](INPUT_REPAIR.md) records the transition to the shared-summary
-release. Earlier multi-version generators and repair utilities are retained in
-`archive/input_repair_20260915/`. The reported experiments use
-`experiments/run_perturbation_fullcase.py`, `experiments/paraphrase_run.py` and
-`experiments/syco_run.py`.
+[INPUT_REPAIR.md](INPUT_REPAIR.md) defines source review and shared-summary
+selection. The reported experiments use `experiments/run_perturbation_fullcase.py`,
+`experiments/paraphrase_run.py` and `experiments/syco_run.py`.

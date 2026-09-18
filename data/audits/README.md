@@ -1,14 +1,13 @@
-# Input audit records
+# Current input audit evidence
 
-Use [`leakage_20260915/`](leakage_20260915/) for the reviewed one-summary input
-release and its acceptance evidence.
+- [`target_scope_audit.json`](target_scope_audit.json): verified respondent,
+  provision and target scope for the current dataset.
+- [`leakage_20260915/`](leakage_20260915/): source provenance, selected-summary
+  review and acceptance evidence underlying the current inputs.
+- [`verdict_spans/`](verdict_spans/): located review evidence and source-cut records
+  used in preparing those inputs.
 
-The two JSON files at this directory level are **earlier diagnostic snapshots**:
-
-- `summary_leakage_triage_20260915.json` records what the old lexical screen missed.
-  Its candidate counts are not verified contamination rates.
-- `source_repair_plan_20260915.json` is an initial structural proposal, superseded
-  by the reviewed source provenance inside `leakage_20260915/`.
-
-Neither snapshot approves model inputs. The content-bound release manifest and
-final repair report determine which texts may be used by the current experiment.
+These files document the inputs actually used. The
+[current source inventory](../../docs/DATA_SOURCE_STATUS.md) identifies the
+published versions and their hashes. Obsolete alternative-corpus audits and
+superseded diagnostic snapshots have been removed.

@@ -1,113 +1,57 @@
-# Input leakage repair and one-summary protocol
+# Input review and shared-summary protocol
 
-This records the September 2026 input repair and its atomic-question runner
-checks. The completed full-case, paraphrase and syco experiments use the entry
-points and scoring rules in [README.md](../README.md).
+## Current inputs
 
-The main summarization experiment uses **one summary per judgment**, selected as
-original version index 0 before looking at any evaluator's response. That means
-947 summary texts covering 1,000 atomic targets. The two
-other historical versions are not current experimental inputs.
+The release contains **1,000 targets from 947 judgments**, with one selected
+DeepSeek v4.1 Flash abstractive summary per judgment. All targets sharing a
+judgment use the same summary. Original version index 0 was fixed before target
+model evaluation; summaries are not selected using evaluator scores.
 
-## What three versions previously meant
+The [source inventory](DATA_SOURCE_STATUS.md) identifies the current files,
+exact hashes, deprecated sources and pending inputs. Current execution commands
+are in the [README](../README.md#setup-and-execution).
 
-The builder made three independent draws with the same summarizer and prompt at
-temperature 1.0. They were not three distinct summarization methods. The main
-runner evaluated each draw, and analysis scripts support per-version accuracy and
-alignment. These capabilities alone do not establish that a cross-version
-robustness analysis was completed. No such current-cohort result artifact was
-found in the GitHub snapshot `4a1ba11`.
+## Review scope
 
-The one-summary protocol does not change the number of repeated answers requested
-from a target model. Repeated target answers are a separate factor. Multi-version
-generation and evaluation are removed. Faithfulness is investigated with the
-[extractive control and atomic coverage instrument](SUMMARIZATION_PROTOCOL.md).
+Review the actual model-visible source and summary. Source review covers the
+runner's first 50,000 characters; summary review covers the complete selected
+summary. Exclude the predicted judgment's merits reasoning, final conclusions
+and answer-revealing headnotes.
 
-## What is being removed
+Earlier decisions, domestic proceedings, allegations and general legal rules
+can be legitimate pre-decision information. An earlier Chamber outcome is not
+by itself disclosure of a later Grand Chamber answer. Attribute each flagged
+passage to the judgment being predicted before deciding whether to remove it.
 
-The scope is the **actual model-visible text**, including the runner's first
-50,000 source characters and the complete summary. Remove the current ECtHR
-judgment's merits assessment, operative conclusions, and answer-revealing cover
-headnotes. Retain allegations, domestic procedural history, generic legal rules,
-and decisions from other cases. The September repair also used a stricter
-exclusion rule for earlier-instance outcomes from the same application when a
-Grand Chamber judgment recounted the Chamber decision on the scored complaint.
-This records the historical removal policy. An earlier decision is not by itself
-disclosure of the later judgment's answer and can be legitimate pre-decision
-information; see the [source-status clarification](DATA_SOURCE_STATUS.md#what-the-historical-leakage-records-mean).
-This repair concerns model inputs, not proprietary pretraining overlap.
-
-Formal preambles that state how the current Court applies established case-law
-are removed too. Four such source prefixes were repaired and re-reviewed after
-the initial review, with their corresponding summaries regenerated.
-
-The final release step also removed adjudicated procedural-history outcomes from
-11 judgments and 12 case-article instances. The cut removed 2,456 characters and
-left every other field and every untouched row unchanged. The same summarizer
-then regenerated the 11 affected judgment-level summaries before publication.
-
-The old summary screen exempted an entire summary whenever the source mentioned
-any court's finding. A domestic finding could therefore exempt a new sentence
-asserting the current ECtHR verdict. This source-wide exemption has been removed.
-Flattened headings, short judgments, headnotes, and tables of contents also
-defeated the earlier structural checks.
-
-Source repair uses structural boundaries plus grounded review. Factual appendix
-columns are recovered from official HUDOC documents when the retained source
-refers to a missing table; the current ECtHR's awards and finding columns are
-excluded. No new factual narrative is generated during source repair. The final
-target audit then resolves every row to one respondent State, one
-provision, and one sub-conclusion. Former Article 41 rows are retargeted to verified
-merits sub-conclusions. The cohort remains 1,000 rows with the same annual counts.
+Resolve every target to its respondent, provision and sub-conclusion. Article 41
+is not a binary violation target. The dataset retains the verified target identity;
+the runner's actual prompt determines the question seen by the model.
 
 ## Acceptance and provenance
 
-1. Review each distinct model-visible source. Positive flags must quote text that
-   actually occurs in the input.
-2. Keep original version 0 only when its source input is unchanged and its own
-   review is clean. If the source changed or its summary failed, regenerate
-   version 0 using the original model, prompt, temperature and input cap.
-3. Review each generated candidate. A rejected candidate is not an accepted
-   summary. Preserve attempts and raw outputs in the audit checkpoints.
-4. Publish only when all 947 sources and 947 selected summaries are accounted for.
-   The semantic gate requires exact canonical text and all 1,000 registered atomic targets.
-5. Exercise the real runner with a fake transport to verify the exact outgoing
-   messages and that the reference label is never inserted into a prompt.
+1. Record source text hashes and review evidence for each judgment. Positive
+   flags must quote text that occurs in the model input.
+2. Retain a selected summary only when its source and its own review pass.
+   Regenerate affected summaries using the same model and generation settings.
+3. Record generation attempts and reviews separately from accepted outputs.
+4. Verify all 947 source texts and selected summaries against the released files.
+   Check the 1,000 target identities against the target audit.
+5. Verify extractive summaries against their selected verbatim source spans.
 
-The original input review flagged current-case conclusions or merits reasoning
-in **647/1,000 instances (64.7%)**, representing 606/947 judgments. Conclusion
-flags cover 612 instances and reasoning flags 600, with overlap. These are
-evidence-grounded machine-review positive counts, not fully human-adjudicated
-prevalence estimates. The source-change count is different: benign boundary
-cleanup and restoration of missing facts also change source text.
+The input evidence is in [`data/audits/`](../data/audits/), including
+[source provenance and review records](../data/audits/leakage_20260915/),
+[located span evidence](../data/audits/verdict_spans/) and the
+[target audit](../data/audits/target_scope_audit.json).
+[SUMMARIZATION_PROTOCOL.md](SUMMARIZATION_PROTOCOL.md) describes the summary
+comparison and factual-coverage analysis.
 
-Audit evidence lives under `data/audits/leakage_20260915/`. The pinned original
-dataset and three-version summaries remain retrievable from Git commit
-`4a1ba1117a047dac7553ca2cfd3100a18171a841`. Previously accepted nonzero-version
-repair outputs remain audit history, not inputs to the one-version release.
-
-## Offline verification
+## Release checks and evaluation
 
 ```bash
 python scripts/validate_eval_dataset.py --require-complete
-python scripts/verify_model_input_payloads.py
 ```
 
-The payload verifier checks the earlier atomic-question entry points using an
-in-memory fake transport and makes no model calls. It imports `openai` because
-those runners do, but needs no key.
-
-## Re-running experiments
-
-Use a new output directory for the approved release. Never resume pre-repair
-checkpoints, mix old baseline predictions with repaired summary inputs, or
-relabel existing metrics as results of the cleaned corpus. The atomic-question
-runners used for this repair reject benchmark text that does not match the active
-semantic cohort and refuse to resume an unversioned result directory.
-Historical alternative datasets are not covered by
-this release and must not be presented as having passed its review.
-The old Hub sources and local pilot inputs are explicitly **deprecated** in
-[DATA_SOURCE_STATUS.md](DATA_SOURCE_STATUS.md), with exact revisions and
-replacement paths in [`data_source_status.json`](../configs/data_source_status.json).
-
-The manuscript and its protected Section 3 are not edited by this repair.
+The validator checks the cohort, target identities and summary coverage without
+calling models. Semantic review uses the source and summary evidence above.
+Run evaluations in new output directories whenever inputs or prompts change,
+with the input identity recorded alongside each result.

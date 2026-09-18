@@ -157,13 +157,10 @@ alone; a new full-cohort run needs the lookup changed to
 
 ### Metadata robustness: State Swap
 
-State Swap is the current metadata experiment. Its updated results will be
-added when available. Existing files under `data/experiments/stateswap/` and
-`metadata/data/eval/` belong to earlier experiments.
-The old Hub State Swap input is **deprecated**. The updated run's actual input,
-`data/processed/echr_stateswap.json`, is not committed, so its cohort and input
-revision remain pending publication. The historical 816-base-group count does
-not establish the updated run's cohort.
+State Swap is the metadata experiment. Its updated input, review evidence and
+results are pending publication. The previous Hub release is **deprecated**;
+its repository results have been removed. Use the actual published input and
+cohort identity when the updated run is released.
 
 ## Scoring and manuscript analysis
 
@@ -262,31 +259,15 @@ SLURM launchers (`model_par.sh`, `paraphrase_eval.sh`, and
 `run_syco_full.sh`) contain cluster-specific paths; the Python entry points
 above expose the current experiments directly.
 
-## Provenance and earlier experiments
+## Input provenance and deprecated sources
 
-The [target audit](data/audits/target_scope_audit.json),
-[input repair record](docs/INPUT_REPAIR.md), and
-[leakage audit](docs/LEAK_AUDIT.md) document how the current inputs were prepared.
+The [target audit](data/audits/target_scope_audit.json) and
+[input-review protocol](docs/INPUT_REPAIR.md) document the current inputs.
 
-The following remain as earlier protocols or historical artifacts:
-
-- `run_perturbation_openai.py` and `run_adversarial_opinion.py` implement
-  separate atomic-question protocols. They did not generate the current
-  full-case and syco results listed above.
-- `docs/ADVERSARIAL_OPINION.md` and
-  `configs/adversarial_opinion_conditions.json` describe the earlier
-  nine-condition, 55-word protocol. The current syco grid is in `syco_run.py`.
-- `configs/perturbation_analysis.json` and
-  `scripts/analyse_perturbation_run.py` specify an earlier comparison family.
-  The superseded 141-pair statistical notes remain available in Git history.
-- `metadata/data/eval/`, `paraphrase/data/eval/`,
-  `time_bin_contamination/data/eval/`, and `data/experiments/stateswap/`
-  contain earlier results.
-- `echr_cases_final_clean.json`, `livehrb_1k.json`, and
-  `test_20_cases.json` are **deprecated evaluation inputs** retained for
-  historical reproduction. The current cohort is `data/processed/echr_unified.json`.
-- The payload verifier and runner inventory tests still target the earlier
-  entry points.
+**Deprecated sources must not be used for current evaluations.** The
+[source-status register](docs/DATA_SOURCE_STATUS.md) lists the six deprecated
+Hub releases and their replacements. Superseded local inputs, old results,
+alternative-corpus audits and archived trial programs have been removed.
 
 The repository's ignore rules cover new experiment outputs, CSV files, and
 figures. Publishing new artifacts therefore requires explicitly selecting the

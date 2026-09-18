@@ -80,10 +80,8 @@ current run inventory. [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md)
 defines scoring and comparisons. State Swap supplies the respondent-identity
 intervention; its updated result is the remaining manuscript Results entry.
 
-## Earlier source-set builders
+## Deprecated sources
 
-`build_livehrb_static.py`, `build_temporal_split.py` and
-`build_cutoff_partitions.py` remain available under `scripts/` for the earlier
-source-set designs. Their outputs and the older Hub importers are catalogued as
-deprecated in the [source-status register](docs/DATA_SOURCE_STATUS.md). Current
-manuscript results use the frozen cohort and experiment-specific references above.
+Use the [source-status register](docs/DATA_SOURCE_STATUS.md) to check any source
+before evaluation. The six superseded Hub releases are deprecated as evaluation
+inputs. Their importers do not reconstruct the current reviewed release.

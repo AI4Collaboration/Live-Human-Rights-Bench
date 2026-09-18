@@ -64,16 +64,11 @@ paraphrases use their own original-input arm. Persuasion pairs static and
 adaptive branches from the same decided initial response. The current analysis
 rules are in [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md).
 
-## State Swap and earlier cohorts
+## State Swap and deprecated sources
 
-The **deprecated** State Swap release contains 816 case-article base groups
-rendered with the original respondent, Iceland, Ukraine and Russia, giving
-3,264 inputs. These counts describe the old release. The updated run's actual
-input and cohort are pending publication in GitHub, together with its results.
+The updated State Swap input, cohort identity and results are pending
+publication. Its previous Hub release is deprecated for current evaluation.
 
-The earlier static-2k, temporal-2k and temporal-1k source sets, `livehrb_1k.json`
-pilot and 141-pair pilot are **deprecated as evaluation inputs**. Exact versions,
-replacements and importer status are listed in the
-[source-status register](docs/DATA_SOURCE_STATUS.md). Their original sampling
-plans and statistics remain historical records. Current counts and reported
-comparisons are defined by the manifest and experiments above.
+The [source-status register](docs/DATA_SOURCE_STATUS.md) lists all deprecated
+releases and their replacements. Superseded local input files and results have
+been removed. Current counts and comparisons are defined by the manifest above.
