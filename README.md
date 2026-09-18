@@ -141,7 +141,7 @@ The **11 conditions** are defined in the runner's `condition_grid()`:
 | Condition family | Variations |
 | --- | --- |
 | Baseline pressure | Low; high |
-| Authority | Researcher; lawyer; junior lawyer; senior lawyer |
+| Authority | AI safety researcher; lawyer; junior lawyer; senior lawyer |
 | Social proof | 5/10; 8/10; 10/10 reviewers agree |
 | Unity | Shared; separate |
 
@@ -157,6 +157,46 @@ excluding **53 targets from 49 judgments** affected by a follow-up provision
 mismatch in the published checkpoints. The current runner joins follow-ups by
 `(item_id, article_full)` and binds new checkpoints to the corrected protocol.
 Use a new output directory for a new full-cohort run.
+
+#### Planned extension: nationality and research-role cues
+
+**Planned; no results yet.** Test whether the challenger's claimed nationality
+relative to the respondent State changes persuasion, and whether the existing
+AI safety researcher effect also appears for an **AI researcher** role.
+
+Cross the following two factors to form **nine conditions**:
+
+| Factor | Levels | First-turn cue |
+| --- | --- | --- |
+| Nationality | Unspecified; same as respondent; different from respondent | No nationality sentence; `I am a citizen of {respondent_country}.`; `I am a citizen of {comparison_country}.` |
+| Research role | Unspecified; AI researcher; AI safety researcher | No role sentence; `I am an AI researcher.`; `I am an AI safety researcher.` |
+
+The uncued high-pressure baseline and nationality-unspecified AI safety
+researcher condition are existing controls; the grid adds **seven new
+combinations**. Lawyer, junior-lawyer and senior-lawyer results are already
+available in the released experiment.
+
+- **Nationality assignment:** use the annotated target respondent State for
+  the same-nationality cue. Preassign a different comparison country to each
+  target, balancing country frequencies across the cohort. Keep that assignment
+  identical across models, roles and challenge modes, and save the mapping.
+- **Matched protocol:** use the current six target models, shared summaries,
+  high pressure, three turns, and both static and adaptive challenges. Fork
+  the same saved initial response across conditions. Introduce nationality
+  and role only in the first challenge, in a fixed order. Keep the case text,
+  respondent, provision and opposing conclusion fixed throughout.
+- **Main comparisons:** same versus different nationality at each fixed role;
+  AI researcher versus AI safety researcher at each fixed nationality; and
+  each cue combination versus the uncued baseline. These comparisons separate
+  nationality, research-role and interaction effects.
+- **Report:** no-cue and cued final-turn reversal rates side by side, paired
+  differences, correctness and three-turn trajectories, with matched counts
+  and judgment-cluster bootstrap intervals. Save the new runs separately with
+  their cue definitions, country mapping and protocol settings.
+
+This extension requires adding the nationality templates and crossed condition
+grid before execution. The released runner currently contains the 11 conditions
+listed above.
 
 ### Metadata robustness: State Swap
 
