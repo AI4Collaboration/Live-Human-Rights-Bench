@@ -9,6 +9,8 @@ susceptibility to social pressure across multiple turns.
 
 Published evaluation snapshot from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
+Summary-based State Swap results were added on **18 September 2026** in
+[`cc59734`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/cc59734).
 
 **Code and source status updated 18 September 2026:** the six legacy Hugging Face sources
 are **deprecated as evaluation inputs**, including the old State Swap release.
@@ -25,7 +27,7 @@ available as [JSON](configs/data_source_status.json).
 | Three-turn persuasion (sycophancy) | Six models; 11 conditions; static and adaptive arms; 6,000 initial records and 118,206 trajectory records | [Current results](data/experiments/syco_full_latest/) |
 | Extractive summaries | One source-extractive control for each of the 947 judgments | [Released artifact](data/processed/summaries_extractive_leakchecked_20260916.json) |
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
-| Metadata robustness: State Swap | Updated results pending | Historical State Swap files are not the new run |
+| Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
 
 The manuscript analysis and figure sources are maintained with the paper and
 await a corresponding release here. The experiment paths above identify the
@@ -67,7 +69,7 @@ directory; the question text is the same as in the published full-case run.
 
 ## Models and roles
 
-All three released evaluation suites use these six target models:
+All four released evaluation suites use these six target models:
 
 | Target model | API identifier |
 | --- | --- |
@@ -158,10 +160,16 @@ Use a new output directory for a new full-cohort run.
 
 ### Metadata robustness: State Swap
 
-State Swap is the metadata experiment. Its updated input, execution code,
-review evidence and results are pending publication. The previous Hub release
-is **deprecated**. Use the actual input and cohort identity when the updated
-run is published.
+[`experiments/stateswap_summary_run.py`](experiments/stateswap_summary_run.py)
+applies literal country-name and demonym replacements to the shared abstractive
+summary. It compares the original summary with US, Russia and Ukraine arms,
+requesting ten ratings per target and arm. The six model directories contain
+4,000 records each. Inputs are derived from the canonical cohort and summaries;
+the previous Hub State Swap release remains **deprecated**.
+
+The released transformation changes the text for 891 US, 859 Russia and 725
+Ukraine targets. The [State Swap protocol and input review](docs/STATESWAP.md)
+record unchanged inputs and missing scores for analysis.
 
 ## Scoring and manuscript analysis
 
@@ -259,6 +267,17 @@ python experiments/syco_run.py \
   --turns 3 --workers 24 \
   --out data/experiments/syco_new
 ```
+
+### Summary-based State Swap
+
+```bash
+python experiments/stateswap_summary_run.py \
+  --model openai/gpt-5.6-sol --samples 10 --workers 60 \
+  --out data/experiments/stateswap_summary_new
+```
+
+New runs record whether each arm changes the input, individual ratings and raw
+responses. Checkpoint settings and canonical input identities are validated.
 
 Repeat evaluation with the other target identifiers in the model table. For
 syco, use a separate output directory per model or pass all target identifiers

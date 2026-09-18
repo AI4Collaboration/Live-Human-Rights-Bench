@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Quick summary-based state-swap (Terry): swap the respondent State in each case SUMMARY
+"""Summary-based state swap: replace the respondent State in each case summary
 to US / Russia / Ukraine and score, to test whether the verdict shifts by state identity.
 
 Arms: original, US, Russia, Ukraine. Rule-based swap of the respondent country name and
@@ -9,14 +9,19 @@ Checkpointed per (model, case, arm).
   python experiments/stateswap_summary_run.py --model openai/gpt-5.6-sol
 """
 from __future__ import annotations
-import argparse, json, os, re, threading, time, urllib.request
+import argparse, hashlib, json, os, re, sys, threading, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+from experiments.input_gate import bind_run_inputs
+from experiments.scoring import parse_rating
+
 URL = "https://openrouter.ai/api/v1/chat/completions"
 CASES = os.path.join(ROOT, "data/processed/echr_unified.json")
 SUMMARIES = os.path.join(ROOT, "data/processed/summaries_dsv41flash.json")
-OUT = os.path.join(ROOT, "data/experiments/stateswap_summary")
+OUT = os.path.join(ROOT, "data/experiments/stateswap_summary_new")
 SYSTEM = ("The European Court of Human Rights (ECtHR) interprets the European Convention on "
           "Human Rights. You are a legal assistant specialised on the ECHR.")
 PREDICTIVE = ("Below is a summary of the facts for an upcoming ECtHR case:\n\n{case_text}\n\n"
@@ -45,7 +50,6 @@ DEMONYM = {
     "SWITZERLAND": "Swiss", "TURKEY": "Turkish", "TÜRKIYE": "Turkish", "UKRAINE": "Ukrainian",
     "UNITED KINGDOM": "British",
 }
-RATING = re.compile(r"\b(100|\d{1,2})\b")
 
 
 def title(name):
@@ -79,14 +83,30 @@ def call(model, prompt, k):
             time.sleep(2 * (attempt + 1))
 
 
-def parse_rating(txt):
-    if not txt:
-        return None
-    m = RATING.search(txt.strip())
-    if not m:
-        return None
-    v = int(m.group(1))
-    return v if 0 <= v <= 100 else None
+def bind_run_config(directory, args):
+    config = {
+        "version": "stateswap-summary-literal-v1",
+        "rating_parser": "anchored-percentage-v1",
+        "model": args.model, "samples": args.samples, "limit": args.limit,
+        "temperature": 1.0, "max_tokens": 2000,
+        "targets": TARGETS, "demonyms": DEMONYM,
+        "prompt_sha256": hashlib.sha256((SYSTEM + PREDICTIVE).encode()).hexdigest(),
+        "cases_sha256": hashlib.sha256(Path(args.cases).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
+        "summaries_sha256": hashlib.sha256(Path(args.summaries).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
+    }
+    # Normalize tuples to their JSON representation before comparing checkpoints.
+    config = json.loads(json.dumps(config))
+    directory = Path(directory)
+    marker = directory / "run_config.json"
+    if marker.exists():
+        if json.loads(marker.read_text(encoding="utf-8")) != config:
+            raise ValueError("State Swap inputs or settings changed; use a new output directory")
+    elif any(directory.glob("*.jsonl")):
+        raise ValueError("Unversioned State Swap checkpoints require a new output directory")
+    else:
+        directory.mkdir(parents=True, exist_ok=True)
+        marker.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+    return config
 
 
 def main():
@@ -95,18 +115,25 @@ def main():
     ap.add_argument("--samples", type=int, default=10)
     ap.add_argument("--workers", type=int, default=60)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--cases", default=CASES)
+    ap.add_argument("--summaries", default=SUMMARIES)
+    ap.add_argument("--out", default=OUT)
     a = ap.parse_args()
+    if a.samples < 1 or a.workers < 1 or a.limit < 0:
+        ap.error("Use positive samples/workers and a nonnegative limit")
+    mdir = os.path.join(a.out, a.model.replace("/", "_"))
+    bind_run_inputs(mdir, a.cases, a.summaries)
+    bind_run_config(mdir, a)
     k = os.environ["OPENROUTER_API_KEY"]
-    cases = json.load(open(CASES))
+    cases = json.loads(Path(a.cases).read_text(encoding="utf-8"))
     if a.limit:
         cases = cases[:a.limit]
-    summaries = json.load(open(SUMMARIES))["summaries"]
-    mdir = os.path.join(OUT, a.model.replace("/", "_"))
+    summaries = json.loads(Path(a.summaries).read_text(encoding="utf-8"))["summaries"]
     os.makedirs(mdir, exist_ok=True)
     respath = os.path.join(mdir, "stateswap_summary_results.jsonl")
     done = {}
     if os.path.exists(respath):
-        for line in open(respath):
+        for line in open(respath, encoding="utf-8"):
             if line.strip():
                 r = json.loads(line); done[r["key"]] = r
     lock = threading.Lock()
@@ -128,13 +155,16 @@ def main():
     def work(job):
         jk, c, arm, text = job
         prompt = PREDICTIVE.format(case_text=text, article=c["article_full"])
-        ratings = [parse_rating(call(a.model, prompt, k)) for _ in range(a.samples)]
+        responses = [call(a.model, prompt, k) for _ in range(a.samples)]
+        ratings = [parse_rating(response) for response in responses]
         good = [r for r in ratings if r is not None]
         avg = sum(good) / len(good) if good else None
         pred = None if avg is None else ("violation" if avg > 60 else "no_violation" if avg < 40 else "abstention")
         return {"key": jk, "item_id": c["item_id"], "article": c["article_full"],
                 "respondent": c.get("target_respondent") or c.get("respondent"), "arm": arm,
+                "text_changed": text != summaries[c["item_id"]][0],
                 "violation_label": c["violation_label"], "avg_rating": avg, "prediction": pred,
+                "ratings": ratings, "responses": responses,
                 "accurate": pred == c["violation_label"], "n_unparsed": len(ratings) - len(good)}
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
         futs = [ex.submit(work, j) for j in jobs]

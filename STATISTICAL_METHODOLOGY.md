@@ -1,7 +1,8 @@
 # Statistical methodology for the current manuscript
 
-This document describes the completed experiments in GitHub revision `78b775f`
-and the manuscript analysis of those records.
+This document describes the experiments in GitHub revision `78b775f` and the
+manuscript analysis of those records. State Swap results were added in `cc59734`;
+their input review is recorded below.
 
 ## Scores and predictions
 
@@ -14,7 +15,8 @@ Every score is a violation likelihood on the **0-100** scale:
 | Above 60 | Violation |
 
 Section 4 requests ten scores per input and classifies their valid-score mean.
-Full-record and summary checkpoints retain individual scores; paraphrase
+Full-record and summary checkpoints retain individual scores; published paraphrase
+and State Swap
 checkpoints retain `avg_rating`, a prediction and the unparsed count. An input
 with no parsed score is a failed prediction.
 
@@ -34,12 +36,22 @@ mean recall of the violation and no-violation classes.
 - **Paraphrasing:** 1,000 pairs per model and rewriting level, each compared with
   its original arm under the paraphrase prompt. The six four-arm checkpoints
   contain 24,000 rows.
-- **Temporal performance:** stratify the frozen cohort by decision year or era
-  and report the outcome mix alongside accuracy and balanced accuracy.
+- **State Swap:** compare each country arm with the same target's original
+  summary. The six four-arm checkpoints contain 24,000 rows.
 
 A strict reversal crosses between violation and no violation. Abstention
 transitions are counted separately. Accuracy differences are reported in
 percentage points, using each experiment's matched reference.
+
+## State Swap input review
+
+The released replacement rule changes 891 US, 859 Russia and 725 Ukraine inputs
+out of 1,000 targets per arm. Report actual text changes separately from
+unchanged inputs, including original respondents already equal to the swap
+destination. Pair comparisons within the State Swap experiment's own original
+arm. Missing scores remain failures rather than abstentions or reversals.
+The [protocol and input review](docs/STATESWAP.md) provide the counts and
+published scoring convention.
 
 ## Three-turn persuasion
 

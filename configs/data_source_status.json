@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "as_of": "2026-09-18",
   "documentation": "docs/DATA_SOURCE_STATUS.md",
   "current_dataset_id": "echr-unified-atomic-targets-20260916",
@@ -92,8 +92,12 @@
       "scope": "evaluation_input",
       "revision": "4360866441dc7da39df442d16de2fbc46d29119e",
       "pinned_url": "https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e",
-      "replacement": null,
-      "replacement_status": "pending_publication"
+      "replacement": "experiments/stateswap_summary_run.py",
+      "replacement_status": "current",
+      "replacement_input_paths": [
+        "data/processed/echr_unified.json",
+        "data/processed/summaries_dsv41flash.json"
+      ]
     }
   ],
   "removed_inputs": [
@@ -115,15 +119,37 @@
   ],
   "pending_inputs": [
     {
-      "path": "data/processed/echr_stateswap.json",
-      "status": "pending_publication",
-      "kind": "updated_stateswap_input",
-      "approved_replacement_for_legacy_hf": null
-    },
-    {
       "path": "data/processed/paraphrase_pairs.json",
       "status": "pending_publication",
       "kind": "generated_inputs_for_published_paraphrase_results"
+    }
+  ],
+  "current_transformations": [
+    {
+      "name": "summary_based_stateswap",
+      "status": "current",
+      "runner": "experiments/stateswap_summary_run.py",
+      "published_revision": "cc59734",
+      "inputs": [
+        "data/processed/echr_unified.json",
+        "data/processed/summaries_dsv41flash.json"
+      ],
+      "results": "data/experiments/stateswap_summary/",
+      "documentation": "docs/STATESWAP.md",
+      "arms": [
+        "original",
+        "US",
+        "Russia",
+        "Ukraine"
+      ],
+      "targets_per_arm": 1000,
+      "models": 6,
+      "result_records": 24000,
+      "changed_inputs": {
+        "US": 891,
+        "Russia": 859,
+        "Ukraine": 725
+      }
     }
   ]
 }

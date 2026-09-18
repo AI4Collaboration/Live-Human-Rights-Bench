@@ -72,12 +72,14 @@ The validation command checks the existing frozen release without calling models
 | Full record and shared summary | `experiments/run_perturbation_fullcase.py` | Matched full-record arm |
 | Case-body paraphrases | `experiments/paraphrase_run.py` | Original arm under the same prompt |
 | Three-turn persuasion | `experiments/syco_run.py` | Shared initial response |
+| Summary-based State Swap | `experiments/stateswap_summary_run.py` | Original summary under the same prompt |
 | Extractive control and fact retention | `scripts/build_extractive.py`, `scripts/build_atomic_coverage.py` | Identical source claims across summary variants |
 
 [README.md](README.md) provides model identifiers, execution commands and the
 current run inventory. [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md)
 defines scoring and comparisons. State Swap supplies the respondent-identity
-intervention; its updated result is the remaining manuscript Results entry.
+intervention. Its released inputs and results are described in
+[docs/STATESWAP.md](docs/STATESWAP.md).
 
 ## Deprecated sources
 

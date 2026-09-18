@@ -2,7 +2,7 @@
 
 ## Current evaluation pool
 
-The reported full-record, summary, paraphrase and persuasion experiments use
+The full-record, summary, paraphrase, State Swap and persuasion experiments use
 **1,000 target instances from 947 judgments** in
 [`data/processed/echr_unified.json`](data/processed/echr_unified.json).
 This is the paper's selected sample; the pipeline supports other release sizes
@@ -66,8 +66,11 @@ rules are in [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md).
 
 ## State Swap and deprecated sources
 
-The updated State Swap input, cohort identity and results are pending
-publication. Its previous Hub release is deprecated for current evaluation.
+The current State Swap experiment derives original, US, Russia and Ukraine arms
+from the same 1,000 targets and their shared summaries. Its six model checkpoints
+are in `data/experiments/stateswap_summary/`. The
+[input review](docs/STATESWAP.md) records which replacements actually change the
+summary text. Its previous Hub release remains deprecated for current evaluation.
 
 The [source-status register](docs/DATA_SOURCE_STATUS.md) lists all deprecated
 releases and their replacements. Superseded local input files and results have

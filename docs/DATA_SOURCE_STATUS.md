@@ -28,7 +28,7 @@ Hub revisions; they do not designate future releases from the same repository.
 | [`overthelex/echr-livehrb-static-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-static-2k/tree/ee9cb87f74c6843bec44f4eb33bc4151bbcfea49) | `ee9cb87` | `data/processed/echr_unified.json` |
 | [`overthelex/echr-livehrb-temporal-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-2k/tree/24dff82a53c61fa298c0ee39841c67ea9ed0fd44) | `24dff82` | `data/processed/echr_unified.json` |
 | [`overthelex/echr-livehrb-temporal-1k`](https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-1k/tree/b7cc10be36c0a8be879217c8c6b0bb9791bd5fb7) | `b7cc10b` | `data/processed/echr_unified.json` |
-| [`overthelex/echr-livehrb-stateswap`](https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e) | `4360866` | **Pending:** updated State Swap input and review evidence |
+| [`overthelex/echr-livehrb-stateswap`](https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e) | `4360866` | Canonical summaries and the [current State Swap transformation](STATESWAP.md) |
 
 The source pools may supply candidates for a new benchmark release. Those
 candidates require source review and target resolution before evaluation.
@@ -47,19 +47,25 @@ Obsolete result directories, audit snapshots and archived trial programs have
 also been removed. The repository no longer distributes them as supporting
 records for the current release. The current result directories are
 `data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`
-and `data/experiments/syco_full_latest/`.
+`data/experiments/syco_full_latest/` and `data/experiments/stateswap_summary/`.
 
 The deprecated input adapters and experiment runners have been removed.
 Use the current entry points in the [README](../README.md#setup-and-execution).
 New candidate corpora require source review before evaluation.
 
+## Current State Swap transformation
+
+The 18 September release uses `experiments/stateswap_summary_run.py` to derive
+country arms directly from the canonical cohort and shared abstractive summaries.
+It does not require a separate `echr_stateswap.json` file. The
+[protocol and input review](STATESWAP.md) identify the released transformation,
+24,000 results, actual text changes and missing scores.
+
 ## Pending inputs
 
 | Artifact | Status |
 | --- | --- |
-| `data/processed/echr_stateswap.json` | Updated State Swap input and review evidence pending publication; no current replacement for the deprecated Hub release is designated |
 | `data/processed/paraphrase_pairs.json` | Generated inputs for the published paraphrase results pending publication |
 
 Publish updated inputs with their exact source revision, text hashes and review
-evidence. Updated State Swap execution code is also pending publication; its
-results must identify the actual base groups and arms used.
+evidence.

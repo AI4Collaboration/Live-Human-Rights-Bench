@@ -7,6 +7,7 @@ import pytest
 
 from experiments import paraphrase_run as paraphrase
 from experiments import syco_run as syco
+from experiments import stateswap_summary_run as stateswap
 
 
 def test_syco_followups_keep_each_initial_provision(tmp_path, monkeypatch):
@@ -83,6 +84,31 @@ def test_paraphrase_does_not_score_an_article_number_as_the_answer():
     assert paraphrase.parse_rating("Under Article 8, the likelihood is 80") == 80
     assert paraphrase.parse_rating("Article 8") is None
     assert paraphrase.parse_rating("ERROR: 429 Too Many Requests") is None
+
+
+def test_stateswap_does_not_score_an_article_number_as_the_answer():
+    assert stateswap.parse_rating("Under Article 8, the likelihood is 80") == 80
+    assert stateswap.parse_rating("Article 8") is None
+
+
+def test_stateswap_rejects_changed_and_unversioned_checkpoints(tmp_path):
+    cases, summaries = tmp_path / "cases.json", tmp_path / "summaries.json"
+    cases.write_text("[]", encoding="utf-8")
+    summaries.write_text("{}", encoding="utf-8")
+    args = SimpleNamespace(model="offline", samples=10, limit=0,
+        cases=str(cases), summaries=str(summaries))
+    output = tmp_path / "run"
+    output.mkdir()
+    checkpoint = output / "stateswap_summary_results.jsonl"
+    checkpoint.write_text("{}\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="Unversioned"):
+        stateswap.bind_run_config(output, args)
+    checkpoint.unlink()
+    first = stateswap.bind_run_config(output, args)
+    assert stateswap.bind_run_config(output, args) == first
+    args.samples = 5
+    with pytest.raises(ValueError, match="settings changed"):
+        stateswap.bind_run_config(output, args)
 
 
 def test_paraphrase_missing_arm_cannot_be_scored_as_original(tmp_path):
