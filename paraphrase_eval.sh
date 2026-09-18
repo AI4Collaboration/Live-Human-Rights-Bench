@@ -5,13 +5,13 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --output=para_eval_%j.log
-set -uo pipefail
+
+set -euo pipefail
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+cd "$ROOT"
 export PYTHONUNBUFFERED=1
-M="$1"
-echo "=== para EVAL $M START $(date) ==="
-module load python/3.12 2>/dev/null || true
-source /home/ariankh/legalllms/bin/activate
-cd /scratch/ariankh/Legal-Sycophancy/shared-integration || { echo ABORT; exit 1; }
-export OPENROUTER_API_KEY=$(grep '^OPENROUTER_API_KEY=' /scratch/ariankh/Legal-Sycophancy/Legal-Sycophancy/.env | cut -d= -f2-)
-python experiments/paraphrase_run.py eval --model "$M" --samples 10 --workers 60
-echo "=== para EVAL $M DONE $(date) ==="
+: "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
+MODEL=${1:?Usage: paraphrase_eval.sh MODEL_ID}
+exec python experiments/paraphrase_run.py eval --model "$MODEL" \
+  --pairs "${PAIRS:-data/processed/paraphrase_pairs_new.json}" \
+  --out "${OUT:-data/experiments/paraphrase_new}" --samples 10 --workers "${WORKERS:-60}"

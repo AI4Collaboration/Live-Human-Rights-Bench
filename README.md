@@ -7,10 +7,10 @@ susceptibility to social pressure across multiple turns.
 
 ## Current release
 
-Data and code from **17 September 2026**,
+Published evaluation snapshot from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
 
-**Source status updated 18 September 2026:** the six legacy Hugging Face sources
+**Code and source status updated 18 September 2026:** the six legacy Hugging Face sources
 are **deprecated as evaluation inputs**, including the old State Swap release.
 Use the GitHub inputs below. See the
 [source-status register](docs/DATA_SOURCE_STATUS.md) for exact Hub revisions,
@@ -59,10 +59,11 @@ Article 41 is not a prediction target.
 **Prompts used for the current results.** The latest full-case, paraphrase, and
 syco runners ask whether the Court finds a violation of the specified provision.
 The dataset's more specific atomic question remains annotation metadata.
-In particular, full-case result rows retain that atomic `target_question`, and
-their saved `prompt_version` is still `atomic-target-prompts-v1`; these fields
-do not reproduce the question actually constructed by
+Published full-case rows retain the atomic `target_question` and the saved tag
+`atomic-target-prompts-v1`. The executed question is constructed by
 [`run_perturbation_fullcase.py`](experiments/run_perturbation_fullcase.py).
+New runs use the corrected tag `provision-fullcase-prompts-v1` and a new output
+directory; the question text is the same as in the published full-case run.
 
 ## Models and roles
 
@@ -151,16 +152,16 @@ trajectory stage.
 **Analysis cohort.** The release contains **47,033** matched pairs with three
 valid scores in each arm. The current manuscript uses **44,476** pairs after
 excluding **53 targets from 49 judgments** affected by a follow-up provision
-mismatch. The published runner still retrieves follow-up cases by `item_id`
-alone; a new full-cohort run needs the lookup changed to
-`(item_id, article_full)`.
+mismatch in the published checkpoints. The current runner joins follow-ups by
+`(item_id, article_full)` and binds new checkpoints to the corrected protocol.
+Use a new output directory for a new full-cohort run.
 
 ### Metadata robustness: State Swap
 
-State Swap is the metadata experiment. Its updated input, review evidence and
-results are pending publication. The previous Hub release is **deprecated**;
-its repository results have been removed. Use the actual published input and
-cohort identity when the updated run is released.
+State Swap is the metadata experiment. Its updated input, execution code,
+review evidence and results are pending publication. The previous Hub release
+is **deprecated**. Use the actual input and cohort identity when the updated
+run is published.
 
 ## Scoring and manuscript analysis
 
@@ -194,7 +195,7 @@ manuscript uses 2,000 bootstrap resamples clustered by judgment, with seed 731.
 Use **Python 3.10+** and run commands from the repository root:
 
 ```bash
-python -m pip install -r requirements.txt mlflow
+python -m pip install -r requirements.txt
 python scripts/validate_eval_dataset.py --require-complete
 ```
 
@@ -230,20 +231,25 @@ python experiments/run_perturbation_fullcase.py \
 
 ### Paraphrase generation and evaluation
 
-The runner fixes its input and output paths in `PAIRS` and `OUT`. Set these
-to new run locations before regenerating inputs so existing evaluation
-checkpoints remain associated with their original paraphrases.
+Choose explicit input and output paths for a new run. Missing variants and
+failed rewrites are rejected rather than scored as unchanged originals.
 
 ```bash
-python experiments/paraphrase_run.py generate --workers 40
+python experiments/paraphrase_run.py generate \
+  --pairs data/processed/paraphrase_pairs_new.json --workers 40
 python experiments/paraphrase_run.py eval \
+  --pairs data/processed/paraphrase_pairs_new.json \
+  --out data/experiments/paraphrase_new \
   --model openai/gpt-5.6-sol --samples 10 --workers 60
 ```
 
+Evaluation checkpoints bind the input texts, prompt and sample count. Changing
+these settings requires a new output directory.
+
 ### Three-turn persuasion
 
-After applying the provision lookup correction described above, the matching
-protocol is launched with:
+The runner applies the case/provision lookup correction and uses a fresh,
+versioned output directory:
 
 ```bash
 python experiments/syco_run.py \
@@ -254,10 +260,14 @@ python experiments/syco_run.py \
   --out data/experiments/syco_new
 ```
 
-Repeat evaluation with the other target identifiers in the model table. The
+Repeat evaluation with the other target identifiers in the model table. For
+syco, use a separate output directory per model or pass all target identifiers
+to one invocation. The
 SLURM launchers (`model_par.sh`, `paraphrase_eval.sh`, and
-`run_syco_full.sh`) contain cluster-specific paths; the Python entry points
-above expose the current experiments directly.
+`run_syco_full.sh`) resolve the repository location and use the prepared Python
+environment. Set the API key before launch and adjust scheduler resources for
+your cluster. `scripts/run_roster.sh` runs the six current models through the
+full-case and shared-summary arms with ten ratings per target.
 
 ## Input provenance and deprecated sources
 

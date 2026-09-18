@@ -1,7 +1,7 @@
 # Author Contributions — LiveHumanRightsBench
 
 This file records the authorship and contribution agreement for the
-LiveHumanRightsBench paper (working title; ICLR target, end-of-August 2026),
+LiveHumanRightsBench paper,
 as agreed by email between the co-first authors and confirmed by the PI.
 
 ## Author list

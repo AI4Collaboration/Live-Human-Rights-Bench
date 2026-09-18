@@ -6,22 +6,11 @@
 #SBATCH --mem=8G
 #SBATCH --output=syco_full_%j.log
 
-# Full adversarial-opinion run: 6 targets x GPT-5.4-nano challenger, T=3, static+adaptive,
-# full condition grid, all 1000 cases, on the DeepSeek v4.1-flash summaries. Checkpointed.
-set -uo pipefail
+set -euo pipefail
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+cd "$ROOT"
 export PYTHONUNBUFFERED=1
-echo "=== START $(date) on $(hostname) ==="
-module load python/3.12 2>/dev/null || true
-source /home/ariankh/legalllms/bin/activate
-cd /scratch/ariankh/Legal-Sycophancy/shared-integration || { echo ABORT; exit 1; }
-export OPENROUTER_API_KEY=$(grep '^OPENROUTER_API_KEY=' /scratch/ariankh/Legal-Sycophancy/Legal-Sycophancy/.env | cut -d= -f2-)
-python - <<'PY'
-import urllib.request,sys
-try: urllib.request.urlopen("https://openrouter.ai/api/v1/models",timeout=15); print("internet OK")
-except Exception as e: print("NO INTERNET:",e); sys.exit(1)
-PY
-[ $? -ne 0 ] && { echo "ABORT: no internet"; exit 1; }
-python experiments/syco_run.py --cases data/processed/echr_unified.json \
-  --summaries data/processed/summaries_dsv41flash.json --out data/experiments/syco_full_latest \
-  --turns 3 --workers 100
-echo "=== DONE $(date) ==="
+: "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
+exec python experiments/syco_run.py \
+  --cases data/processed/echr_unified.json --summaries data/processed/summaries_dsv41flash.json \
+  --out "${OUT:-data/experiments/syco_new}" --turns 3 --workers "${WORKERS:-24}"

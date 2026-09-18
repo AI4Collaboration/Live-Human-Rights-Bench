@@ -242,7 +242,7 @@ def test_baseline_is_joined_by_item_id_not_case_name():
     from pathlib import Path
     runners = sorted((Path(__file__).resolve().parent.parent / "experiments")
                      .glob("run_perturbation_*.py"))
-    assert [path.name for path in runners] == ["run_perturbation_openai.py"]
+    assert [path.name for path in runners] == ["run_perturbation_fullcase.py"]
     for path in runners:
         src = path.read_text(encoding="utf-8")
         assert not re.search(r'\["case_name"\]\s*==\s*case\["case_name"\]', src), path.name
@@ -300,7 +300,7 @@ def test_fan_out_runs_every_unit_exactly_once(tmp_path):
     import importlib, threading
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
     from checkpoint import Checkpoint
-    runner = importlib.import_module("run_perturbation_openai")
+    runner = importlib.import_module("run_perturbation_fullcase")
 
     calls, lock = _Counter(), threading.Lock()
 
@@ -336,7 +336,7 @@ def test_fan_out_stops_when_most_rows_come_back_empty(tmp_path):
     import importlib
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
     from checkpoint import Checkpoint
-    runner = importlib.import_module("run_perturbation_openai")
+    runner = importlib.import_module("run_perturbation_fullcase")
 
     def dead(unit):
         return {"item_id": unit["id"], "ratings": [None, None, None], "n_unparsed": 3}
@@ -353,7 +353,7 @@ def test_fan_out_does_not_trip_on_healthy_rows(tmp_path):
     import importlib
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
     from checkpoint import Checkpoint
-    runner = importlib.import_module("run_perturbation_openai")
+    runner = importlib.import_module("run_perturbation_fullcase")
 
     def good(unit):
         return {"item_id": unit["id"], "ratings": [70, 70, 70], "n_unparsed": 0}
@@ -375,7 +375,7 @@ def test_artifact_failure_does_not_kill_the_arm():
     """
     import importlib
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))
-    runner = importlib.import_module("run_perturbation_openai")
+    runner = importlib.import_module("run_perturbation_fullcase")
 
     class Boom:
         def log_dict(self, *a, **k):
@@ -427,14 +427,7 @@ def test_abstention_kind_separates_the_two_routes():
 
 
 def test_refresh_cuts_where_the_release_cuts():
-    """The live-refresh path must apply the rule the released set was built with.
-
-    The published evaluation set records ``the_law_header`` on all 1,212 rows. The
-    refresh path used to truncate at the earliest "the Court's assessment" marker,
-    the rule the leak audit condemned, so a refresh would have appended rows cut by
-    a weaker rule than the release it extends. That breaks the one property a
-    living benchmark needs: that every release is curated the same way.
-    """
+    """Source ingestion removes the merits section and retains facts."""
     import os
     import sys
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(

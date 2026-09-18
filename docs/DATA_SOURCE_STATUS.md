@@ -49,10 +49,9 @@ records for the current release. The current result directories are
 `data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`
 and `data/experiments/syco_full_latest/`.
 
-The source importers `build_livehrb_input.py`, `build_contamination_input.py`
-and `build_stateswap_input.py` still refer to deprecated Hub releases. They are
-not entry points for reconstructing the current reviewed input. Renaming fields
-or importing a Hub export does not perform source review.
+The deprecated input adapters and experiment runners have been removed.
+Use the current entry points in the [README](../README.md#setup-and-execution).
+New candidate corpora require source review before evaluation.
 
 ## Pending inputs
 
@@ -62,4 +61,5 @@ or importing a Hub export does not perform source review.
 | `data/processed/paraphrase_pairs.json` | Generated inputs for the published paraphrase results pending publication |
 
 Publish updated inputs with their exact source revision, text hashes and review
-evidence. New State Swap results must identify their actual base groups and arms.
+evidence. Updated State Swap execution code is also pending publication; its
+results must identify the actual base groups and arms used.

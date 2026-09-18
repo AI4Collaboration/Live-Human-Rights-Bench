@@ -55,26 +55,9 @@ def test_empty_text_is_not_an_error():
     assert find("") is None and strip("") == ""
 
 
-@pytest.mark.skipif(not os.path.isdir(os.path.join(ROOT, ".git")),
-                    reason="needs the repository history")
-def test_stripping_the_pre_repair_rows_reproduces_the_release():
-    """Read the boundary off the release rather than inventing one."""
-    field = "full_case_text_no_verdict"
-
-    def corpus(ref):
-        out = subprocess.check_output(
-            ["git", "show", f"{ref}:data/processed/echr_unified.json"], cwd=ROOT)
-        return {r["item_id"]: r[field] for r in json.loads(out)}
-
-    try:
-        before, after = corpus("ecb5e60"), corpus("8c43527")
-    except subprocess.CalledProcessError:
-        pytest.skip("pre-repair or released commit not present in this clone")
-    normalise = lambda s: re.sub(r"\s+", " ", s).strip()
-    rows = [i for i in before if find(before[i])]
-    assert len(rows) > 100
-    matched = sum(1 for i in rows
-                  if normalise(strip(before[i])[:400]) == normalise(after[i][:400]))
-    # The release also re-fetched some sources from HUDOC, which changes whitespace and
-    # wording independently of where the block was cut; those rows are the remainder.
-    assert matched / len(rows) > 0.95
+def test_current_sources_have_no_registry_cover_blocks():
+    """Check the current canonical input instead of retired release snapshots."""
+    from pathlib import Path
+    rows = json.loads((Path(ROOT) / "data/processed/echr_unified.json").read_text(encoding="utf-8"))
+    flagged = {row["item_id"] for row in rows if find(row["full_case_text_no_verdict"])}
+    assert not flagged, sorted(flagged)

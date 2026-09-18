@@ -1,27 +1,14 @@
-"""
-HISTORICAL CANDIDATE SAMPLER: its static-2k source is deprecated for evaluation.
-Use a separate --out path. Sampling does not reproduce the current reviewed
-echr_unified.json release; see docs/DATA_SOURCE_STATUS.md for release status.
+"""Select a candidate cohort from an explicitly supplied local source corpus.
 
-Build the ONE unified evaluation set (Terry: one set, ~800-1000 cases, spanning a
-time window relatively evenly; recent is fine because we pick a model whose cutoff
-sits mid-window for the contamination split).
-
-Source = the leak-scrubbed static-2k HF set (verdict-free text + dates + labels
-already computed). We drop Ukraine (country skew), keep 2012-2026 (the densely
-covered, relatively even span), dedup to one row per (case, article), and carry a
-stable pair_id so every axis (summarization / paraphrase / metadata / facts /
-contamination / state-swap) runs on the SAME rows.
-
-Prints the full distribution for verification. Writes data/processed/echr_unified.json.
-Run: python scripts/build_unified_set.py [--cap N] [--min-year 2012] [--out ...]
+Sampling supports a configurable time window, target count and respondent mix.
+The output is a candidate set: resolve target scope and review source text before
+publishing a new evaluation release. The default output is echr_candidates.json.
 """
 import argparse, json, random
 from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SRC = REPO / "data" / "processed" / "echr_livehrb_static_2k.json"
 SEED = 12345
 
 KEEP = ["item_id", "case_name", "respondent", "decision_date", "article",
@@ -44,17 +31,20 @@ def pair_id(c):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--source", type=Path, required=True, help="Local candidate corpus JSON")
     ap.add_argument("--min-year", type=int, default=2012)
     ap.add_argument("--max-year", type=int, default=2026)
     ap.add_argument("--cap", type=int, default=0, help="max rows per year (0 = keep all)")
     ap.add_argument("--include-ukraine", action="store_true",
-                    help="add Ukraine cases back (Terry wants ~1000 with some Ukraine)")
+                    help="include cases with Ukraine as respondent")
     ap.add_argument("--target", type=int, default=0,
                     help="trim to exactly N rows (seeded, drops violation cases from the biggest years)")
-    ap.add_argument("--out", default=str(REPO / "data" / "processed" / "echr_unified.json"))
+    ap.add_argument("--out", default=str(REPO / "data" / "processed" / "echr_candidates.json"))
     args = ap.parse_args()
+    if args.min_year > args.max_year or args.cap < 0 or args.target < 0:
+        ap.error("Use an ordered year window and nonnegative cap/target counts")
 
-    raw = json.load(open(SRC))
+    raw = json.loads(args.source.read_text(encoding="utf-8"))
     rows = [c for c in raw
             if (args.include_ukraine or str(c.get("respondent", "")).lower() != "ukraine")
             and c.get("decision_date")
@@ -63,7 +53,7 @@ def main():
     # dedup to one row per (case, respondent, article)
     seen, dedup = set(), []
     for c in rows:
-        k = (c.get("case_name"), c.get("respondent"), c.get("article"))
+        k = (pair_id(c), c.get("respondent"), c.get("article_full") or c.get("article"))
         if k in seen:
             continue
         seen.add(k)
@@ -116,13 +106,25 @@ def main():
     out = []
     for c in rows:
         r = {k: c.get(k) for k in KEEP}
+        r["article_full"] = str(c.get("article_full") or c.get("article") or "").strip()
+        r["article"] = r["article_full"]
+        r["full_case_text_no_verdict"] = (
+            c.get("full_case_text_no_verdict") or c.get("verdict_free_text")
+            or c.get("full_case_text") or ""
+        )
+        if not r["article_full"] or not r["full_case_text_no_verdict"].strip():
+            raise ValueError(f"Candidate lacks a provision or source text: {pair_id(c)}")
         r["pair_id"] = pair_id(c)
         out.append(r)
 
-    json.dump(out, open(args.out, "w"), indent=1)
+    if not out:
+        raise ValueError("No candidates match the requested sampling window")
+    output = Path(args.out)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     # ---- report ----
-    print(f"SOURCE {SRC.name}  ->  UNIFIED {Path(args.out).name}")
+    print(f"SOURCE {args.source.name}  ->  UNIFIED {Path(args.out).name}")
     print(f"window {args.min_year}-{args.max_year}  cap/yr={args.cap or 'none'}")
     print(f"\nN rows = {len(out)}   unique cases = {len(set(pair_id(c) for c in out))}"
           f"   respondents = {len(set(c['respondent'] for c in out))}")

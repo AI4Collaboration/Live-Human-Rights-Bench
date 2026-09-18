@@ -1,22 +1,8 @@
 #!/usr/bin/env python3
-"""Remove the Registry keyword line from a corpus, the way the 15 September release did.
+"""Remove Registry cover-headnote blocks from an explicitly supplied input.
 
-The release repaired `echr_unified.json`. Two corpora built from the same HUDOC sources
-never went through it and still carry the block: `echr-livehrb-stateswap`, the state-swap
-arm, on 186 of its 816 scored texts, and `echr-livehrb-static-2k`, from which the MFT
-paragraphs are generated, on 310 of 2,000.
-
-    python scripts/strip_registry_headnote.py --cases data/processed/echr_stateswap.json \
-      --field case_text_rendered --report data/audits/verdict_spans/headnote_strip.json
-
-Dry-run by default. The boundary is not this script's invention: `experiments/headnote.py`
-reads it off the released corpus, and `tests/test_headnote.py` asserts that stripping the
-pre-repair rows reproduces what the release actually contains.
-
-This removes one class of leakage and no other. Both corpora also carry the Court's own
-reasoning inside the facts -- 56% and 57% of rows reach the leak tier, against 23% and 16%
-carrying a keyword line -- and that residue needs the source repair the release ran, not a
-deterministic cut. The report says what was removed so the two are never confused.
+Source attribution and review are still required before releasing the output.
+This utility does not replace the current input acceptance records.
 """
 
 import argparse, hashlib, json, os, sys

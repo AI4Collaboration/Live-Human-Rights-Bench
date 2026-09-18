@@ -1,4 +1,4 @@
-"""The outgoing-message verifier exercises all four arms without network calls."""
+"""The outgoing-message verifier exercises the current full-case and summary arms without network calls."""
 
 import json
 from pathlib import Path
@@ -84,12 +84,10 @@ print(json.dumps(verifier.verify()))
     report = json.loads(output)
     assert report["status"] == "PASSED"
     assert report["dataset_id"] == dataset_id
-    assert report["total_checks"] == 14
+    assert report["total_checks"] == 4
     assert report["outgoing_message_checks"] == {
         "baseline": 2,
         "summarization": 2,
-        "framing": 6,
-        "reconsideration": 4,
     }
     assert report["network_requests"] == 0
     assert report["gold_label_sentinel_hits"] == 0

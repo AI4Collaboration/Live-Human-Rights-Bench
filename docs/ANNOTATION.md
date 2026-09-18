@@ -1,76 +1,49 @@
-# Human validation of the back-reference mapping
+# Human validation of paragraph back-reference mapping
 
-Materiality in this project is not judged by an annotator. It is read off the Court`s own
-back-references: when a judgment writes "see paragraph 18 above", the Court has itself said
-that paragraph 18 is a fact its reasoning rests on. That construction is what this exercise
-validates, so annotators only check a mapping and never decide what mattered.
+This 120-item annotation set checks whether a cited paragraph number maps to the
+intended factual paragraph. The current factual-coverage experiment operates on
+atomic claims; see [SUMMARIZATION_PROTOCOL.md](SUMMARIZATION_PROTOCOL.md).
+The two analyses have separate units and denominators.
 
-## The set
+## Data and annotation rules
 
-120 items, `data/annotation/annotation_merged.csv`, self-contained: each row carries the
-reasoning paragraph, the fact paragraph our tool believes it points at, the shown paragraph
-number and a link to the judgment.
+[`annotation_merged.csv`](../data/annotation/annotation_merged.csv) contains
+**101 genuine pairs and 19 blind controls**. Each row includes the reasoning
+paragraph, the proposed fact paragraph, the displayed paragraph number and the
+judgment link. Four annotators returned overlapping sheets; labels A-D are
+anonymous identifiers.
 
-* **101 genuine** back-reference pairs and **19 blind controls** whose paragraph number was
-  altered on purpose, so the correct answer on a control is `no`.
-* Three sheets of 80 rows, every pair of sheets sharing 40 items, so each item was labelled
-  independently by two people. Four annotators returned sheets; one sheet was covered twice.
-* Labels are `yes`, `no` or `unclear`, one column per annotator as `label_A` to `label_D`.
-  The letters are stable; the mapping to people is held privately.
+The [instructions](annotation/INSTRUCTIONS.md) define `yes`, `no` and `unclear`.
+References appearing only in a range or list require `unclear`. Of the genuine
+pairs, 65 are single-pointer items, 35 refer to ranges/lists and one (P051) is a
+construction error: the displayed number is absent from the reasoning.
 
-## Reading the derived columns
+Four controls are defective because their altered number points to a genuine
+source paragraph. Four more are range cases requiring `unclear`. The remaining
+**11 controls** are scoreable.
 
-* `cite_class` — whether the reasoning cites the shown number on its own, only inside a
-  range or list, or never. It is computed from the reasoning text, not from the key.
-* `control_status` — `scoreable`, `defective` or `excused`, see below.
-* `pointer_kind`, `sheets`, `expected`, `accepts_unclear` come from the build.
+## Results by annotator
 
-## Two caveats that change the arithmetic
+| Annotator | Mapping confirmed on genuine single-pointer items | Scoreable controls correctly rejected |
+| --- | ---: | ---: |
+| A | 45/47 (95.7%) | 8/9; one unclear |
+| B | 40/40 (100%) | 0/7 |
+| C | 38/43 (88.4%) | 4/6; two unclear |
+| D | 37/40 (92.5%) | 4/7 |
 
-**Four controls are defective** (P014, P073, P095, P053). The renumbering landed on a
-paragraph that genuinely is a source, so `yes` is the correct answer and the key is wrong.
-Three of them were caught by annotators disagreeing with the key, not by us.
+Agreement on shared genuine single-pointer items is A-B 21/22, A-C 25/25,
+A-D 21/22, B-C 14/18, B-D 37/40 and C-D 16/18. Report control performance
+alongside confirmation rates; a high confirmation rate alone does not establish
+that an annotator distinguished valid mappings from controls.
 
-**Four more cannot be scored** (P036, P084, P090, P099): the number appears only inside a
-cited range, and the written instructions tell the annotator to answer `unclear` in exactly
-that situation, so a `no` cannot be demanded.
+## Reproduce
 
-Those instructions are `docs/annotation/INSTRUCTIONS.md`, committed verbatim: it is the same
-file in every sheet that went out, and the rules it fixes are what the controls are scored
-against, so quoting it from memory is not good enough.
+```bash
+python scripts/score_annotation.py
+```
 
-That leaves **11 controls that test anything**, and only those are scored.
-
-## What the exercise found
-
-* On the 65 genuine single-pointer items, the subset the protocol can validate, the mapping
-  is confirmed on **88 to 96 percent** of items depending on the annotator.
-* Pairwise agreement on that subset runs from 0.89 to 1.00 among the annotators whose sheets
-  passed the control check.
-* **P051 is a genuine construction error**, one in 101: the shown number is never cited
-  anywhere in the reasoning. It is dropped from the validation set and reported as such.
-* Thirty-five of the 101 genuine items point at a range or a list rather than a single
-  paragraph. Those are `unclear` by protocol, and that is the honest answer rather than a
-  convention: where the Court cites several paragraphs its reliance is distributed across
-  them, so asking whether one of them is "the source" is ill-posed.
-
-## Reproducing the figures
-
-    python scripts/score_annotation.py
-
-It reads `data/annotation/annotation_merged.csv` and nothing else. If a number in the paper
-disagrees with its output, the paper is wrong.
-
-The merged table itself comes from `scripts/merge_annotation.py`, which is committed for the
-rule it encodes rather than to be re-run: its inputs are the returned sheets and the control
-key, and those stay out of the repository because they identify the annotators. The rule worth
-reading there is `cite_class`, which decides from the reasoning text alone whether the shown
-paragraph is cited on its own or only inside a range, and therefore which controls are
-scoreable at all.
-
-## What is deliberately not here
-
-Annotator identities, and the raw per-annotator sheets as returned. Committing the merged
-table does disclose which rows are controls, which is intentional: the control figures are
-reported in the paper and a reader cannot check them otherwise. It does mean these particular
-controls are spent, and a future refresh of the sets needs freshly built ones.
+The script reads only the merged CSV. Its `cite_class` is derived from the
+reasoning text; `control_status` identifies scoreable, defective and excused
+controls. The merged artifact supports public verification without publishing
+annotator identities or their original sheets. New annotation rounds require
+new blind controls.

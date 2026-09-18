@@ -1,10 +1,3 @@
-"""
-Shared library for LLM Human Rights experiments.
-"""
+"""Shared API helpers and ECtHR provision names."""
 
-from . import prompts
-from . import evaluation
-from . import models
-from . import metrics
-
-__all__ = ['prompts', 'evaluation', 'models', 'metrics']
+__all__ = ["prompts", "models"]

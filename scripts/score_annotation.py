@@ -29,7 +29,7 @@ print(f'  (of 19 controls: {dropped["scoreable"]} scoreable, {dropped["defective
       f'{dropped["excused"]} excused because the number appears only inside a cited range)')
 print()
 
-print('RANGE ROWS  (the brief says `unclear`; a low share means the annotator got my bad DM rule)')
+print('RANGE ROWS  (the written instructions require `unclear`)')
 for l in LETTERS:
     mine = [r for r in rows if r['cite_class'] == 'range' and seen(r, l)]
     n_unclear = sum(1 for r in mine if lab(r, l) == 'unclear')

@@ -23,7 +23,7 @@ def create_client(model_id: str, api_key: str, use_openrouter: bool) -> Tuple[op
             api_key=api_key,
             base_url="https://openrouter.ai/api/v1",
             default_headers={
-                "HTTP-Referer": "https://github.com/anthropics/llm-human-rights",
+                "HTTP-Referer": "https://github.com/AI4Collaboration/Live-Human-Rights-Bench",
                 "X-Title": "LLM Human Rights Research"
             }
         )

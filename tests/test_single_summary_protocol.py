@@ -40,15 +40,6 @@ def test_no_runner_enumerates_summary_draws():
         assert "enumerate(summaries" not in source
 
 
-def test_analysis_does_not_pool_old_draws():
-    from scripts.analyse_perturbation_run import validate_summary_results
-    row = {"item_id": "x", "target_respondent_code": "AAA",
-           "article_full": "3", "target_issue": "detention conditions",
-           "summary_version": 0}
-    validate_summary_results([row])
-    for wrong in [[row, row], [{**row, "summary_version": 1}]]:
-        with pytest.raises(ValueError, match="one summary result"):
-            validate_summary_results(wrong)
 
 
 def test_atomic_verifier_receives_a_string(monkeypatch):

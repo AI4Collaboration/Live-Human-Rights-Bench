@@ -5,18 +5,20 @@ Targets = the 6-model roster, challenger = GPT-5.4-nano, T=3 turns, one static a
 adaptive trajectory per (target, case, condition), from a shared saved initial response.
 Runs on the DeepSeek v4.1-flash SUMMARIES (case_text = summary). Condition grid follows
 docs/ADVERSARIAL_OPINION.md. Checkpointed per (target, case, condition, arm) so a re-run
-resumes. Metrics (any-turn / final-turn persuasion) are computed by syco_analysis.py.
+resumes only with matching inputs and settings. The analysis protocol is in
+STATISTICAL_METHODOLOGY.md.
 """
 from __future__ import annotations
-import argparse, json, math, os, re, sys, threading, time, urllib.request
+import argparse, hashlib, json, math, os, re, sys, threading, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "experiments"))
-from adversarial_prompts import (load_prompt_pack, build_initial_messages, initial_judgment,
+from adversarial_prompts import (load_prompt_pack, build_initial_messages,
     opposing_judgment, build_static_sequence, build_adaptive_messages,
-    assemble_adaptive_challenge, build_consistency_followup)
+    assemble_adaptive_challenge)
+from input_gate import bind_run_inputs
 
 URL = "https://openrouter.ai/api/v1/chat/completions"
 TARGETS = ["openai/gpt-5.6-sol", "anthropic/claude-opus-4.6", "deepseek/deepseek-v4-pro",
@@ -24,6 +26,62 @@ TARGETS = ["openai/gpt-5.6-sol", "anthropic/claude-opus-4.6", "deepseek/deepseek
 CHALLENGER = "openai/gpt-5.4-nano"
 TURNS = 3
 WORD_BUDGET = 60
+RUN_VERSION = "syco-provision-pairs-v1"
+
+
+def case_key(row):
+    item_id = row.get("item_id")
+    article = row.get("article_full") or row.get("article")
+    if not item_id or not article:
+        raise ValueError("Every initial response and case needs item_id and article_full")
+    return str(item_id).strip(), str(article).strip()
+
+
+def index_cases(cases):
+    indexed = {}
+    for case in cases:
+        key = case_key(case)
+        if key in indexed:
+            raise ValueError(f"Duplicate case/provision identity: {key}")
+        indexed[key] = case
+    return indexed
+
+
+def bind_syco_config(args, pack):
+    """Prevent repaired trajectories from being mixed with previous checkpoints."""
+    def file_hash(path):
+        return hashlib.sha256(Path(path).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+    config = {
+        "version": RUN_VERSION,
+        "case_identity": ["item_id", "article_full"],
+        "prompt_scope": "provision",
+        "cases_sha256_lf": file_hash(args.cases),
+        "summaries_sha256_lf": file_hash(args.summaries),
+        "prompt_pack_sha256": hashlib.sha256(
+            json.dumps(pack, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        ).hexdigest(),
+        "conditions": condition_grid(),
+        "targets": sorted(args.targets),
+        "challenger": CHALLENGER,
+        "turns": args.turns,
+        "word_budget": WORD_BUDGET,
+        "temperature": 1.0,
+        "limit": args.limit,
+    }
+    # Match the JSON representation on both the first run and resume.
+    config = json.loads(json.dumps(config))
+    output = Path(args.out)
+    marker = output / "run_config.json"
+    if marker.exists():
+        if json.loads(marker.read_text(encoding="utf-8")) != config:
+            raise ValueError("Sycophancy inputs or settings changed; use a new output directory")
+    else:
+        if any(output.glob("*.jsonl")):
+            raise ValueError("Unversioned sycophancy checkpoints require a new output directory")
+        output.mkdir(parents=True, exist_ok=True)
+        marker.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+    return config
 
 # Condition grid from docs/ADVERSARIAL_OPINION.md. Baseline contrasts low vs high pressure;
 # every cue comparison is fixed at high pressure.
@@ -119,9 +177,7 @@ def run_trajectory(pack, case, initial_score, initial_reply, cond, target, key, 
         for turn in range(1, turns + 1):
             ai = build_adaptive_messages(pack, case, initial_score, cond,
                                          [m for m in msgs[1:]], turn=turn, word_budget=WORD_BUDGET)
-            # v7 protocol: challenger returns JSON; assemble_adaptive_challenge parses it
-            # and enforces the budget/cue internally. Pass the raw output straight through
-            # (like Terry's run_adversarial_opinion.call_adaptive_challenge), with retries.
+            # The prompt assembler validates the challenger JSON and cue/word budget.
             challenge = None
             for _ in range(3):
                 raw = call(challenger, ai["messages"], key, max_tokens=800)
@@ -145,18 +201,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cases", default="data/processed/echr_unified.json")
     ap.add_argument("--summaries", default="data/processed/summaries_dsv41flash.json")
-    ap.add_argument("--out", default="data/experiments/syco_full")
+    ap.add_argument("--out", default="data/experiments/syco_new")
     ap.add_argument("--turns", type=int, default=TURNS)
     ap.add_argument("--workers", type=int, default=24)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--targets", nargs="*", default=TARGETS)
     a = ap.parse_args()
+    if a.turns < 1 or a.workers < 1 or a.limit < 0 or not a.targets:
+        ap.error("Use positive turns/workers, a nonnegative limit, and at least one target")
     key = os.environ["OPENROUTER_API_KEY"]
     pack = load_prompt_pack()
-    cases = json.load(open(a.cases))
+    cases = json.loads(Path(a.cases).read_text(encoding="utf-8"))
+    index_cases(cases)
+    bind_run_inputs(a.out, a.cases, a.summaries)
+    bind_syco_config(a, pack)
     if a.limit:
         cases = cases[:a.limit]
-    summaries = json.load(open(a.summaries)).get("summaries", {})
+    summaries = json.loads(Path(a.summaries).read_text(encoding="utf-8")).get("summaries", {})
     os.makedirs(a.out, exist_ok=True)
     grid = condition_grid()
     lock = threading.Lock()
@@ -202,12 +263,12 @@ def main():
     # 2) trajectories per (target, case, condition, arm) for eligible cases
     traj_path = os.path.join(a.out, "trajectories.jsonl")
     done = load_done(traj_path)
-    id_by = {c["item_id"]: c for c in cases}
+    id_by = index_cases(cases)
     jobs = []
     for k, init in initials.items():
         if not init.get("eligible"):
             continue
-        c = id_by.get(init["item_id"])
+        c = id_by.get(case_key(init))
         if not c:
             continue
         summ = (summaries.get(init["item_id"]) or [None])[0]

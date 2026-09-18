@@ -1,28 +1,7 @@
-"""The Registry keyword line, and where the 15 September repair cut it.
+"""Locate Registry cover headnotes before the judgment's case record.
 
-Modern HUDOC judgments carry a Registry summary on the cover page, between the word
-JUDGMENT and the place of delivery:
-
-    JUDGMENT
-    Art 8 • Correspondence • Additional limitation of applicant's right to correspondence
-    during special regime detention • Lack of any explicit reference to specific
-    circumstances justifying the impugned measure ...
-    Prepared by the Registry. Does not bind the Court.
-    STRASBOURG
-
-It states the outcome in one line, above the facts, which is why 251 of the 1,000
-instances in the unified pool flagged as leaks before the repair removed it. Two other
-corpora were built from the same HUDOC sources and never went through that repair:
-`echr-livehrb-stateswap` carries it on 186 of 816 scored texts, `echr-livehrb-static-2k`
-on 310 of 2,000.
-
-The boundary here is not invented: it is read off the released corpus. The repair cuts
-from the end of JUDGMENT to the start of STRASBOURG and joins them directly, which is why
-the repaired texts read "JUDGMENTSTRASBOURG". `reproduces_release` in the tests asserts
-that this function returns exactly what the release contains, on the release's own rows.
-
-Nothing is cut unless the span between the anchors actually carries the block, so a cover
-page that runs JUDGMENT straight into STRASBOURG is left alone rather than rewritten.
+This boundary detector identifies the cover block between JUDGMENT and
+STRASBOURG. Its result is a structural candidate, not a semantic leakage verdict.
 """
 
 import re

@@ -23,7 +23,7 @@ def source(name):
 
 
 def test_there_are_runners_to_check():
-    assert RUNNERS == ["run_perturbation_openai.py"]
+    assert RUNNERS == ["run_perturbation_fullcase.py"]
 
 
 @pytest.mark.parametrize("runner", RUNNERS)
@@ -44,19 +44,6 @@ def test_runner_loads_shared_summaries(runner):
     assert "load_summaries_for" in source(runner)
 
 
-@pytest.mark.parametrize("runner", RUNNERS)
-def test_challenge_uses_the_same_scale_as_the_question(runner):
-    """RQ3 asked for a number 1-5 after asking for a percentage.
-
-    A model that had not changed its mind still had to change its answer, so the
-    reported change rate measured the rescaling rather than any reconsideration.
-    """
-    src = source(runner)
-    if "RECONSIDERATION_PROMPT =" not in src:
-        return                      # vllm imports it from the bedrock runner
-    prompt = re.search(r"RECONSIDERATION_PROMPT = (.*?)\n\n", src, re.S).group(1)
-    assert "1-5" not in prompt
-    assert "0 to 100" in prompt
 
 
 def test_failed_calls_are_not_mistaken_for_summaries():

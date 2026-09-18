@@ -5,12 +5,12 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --output=para_gen_%j.log
-set -uo pipefail
+
+set -euo pipefail
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+cd "$ROOT"
 export PYTHONUNBUFFERED=1
-echo "=== para GEN START $(date) ==="
-module load python/3.12 2>/dev/null || true
-source /home/ariankh/legalllms/bin/activate
-cd /scratch/ariankh/Legal-Sycophancy/shared-integration || { echo ABORT; exit 1; }
-export OPENROUTER_API_KEY=$(grep '^OPENROUTER_API_KEY=' /scratch/ariankh/Legal-Sycophancy/Legal-Sycophancy/.env | cut -d= -f2-)
-python experiments/paraphrase_run.py generate --paraphraser openai/gpt-5.6-sol --workers 40
-echo "=== para GEN DONE $(date) ==="
+: "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
+exec python experiments/paraphrase_run.py generate \
+  --pairs "${PAIRS:-data/processed/paraphrase_pairs_new.json}" \
+  --paraphraser openai/gpt-5.6-sol --workers "${WORKERS:-40}"

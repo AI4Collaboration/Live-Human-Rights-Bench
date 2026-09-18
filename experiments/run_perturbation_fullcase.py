@@ -1,25 +1,8 @@
 #!/usr/bin/env python3
-"""
-LiveLegalBench Perturbation Study -- OpenAI-compatible API runner with MLflow tracking.
+"""Full-case and shared-summary evaluation over an OpenAI-compatible API.
 
-Works with any OpenAI-compatible endpoint: DeepSeek, OpenRouter, Together, etc.
-
-Usage:
-  # DeepSeek V3
-  python experiments/run_perturbation_openai.py \
-    --cases data/processed/stratified_sample.json \
-    --model deepseek-chat \
-    --base-url https://api.deepseek.com \
-    --api-key-env DEEPSEEK_API_KEY \
-    --samples 5
-
-  # OpenRouter (GPT-4o, Gemini, etc.)
-  python experiments/run_perturbation_openai.py \
-    --cases data/processed/stratified_sample.json \
-    --model openai/gpt-4o \
-    --base-url https://openrouter.ai/api/v1 \
-    --api-key-env OPENROUTER_API_KEY \
-    --samples 5
+Use the current canonical cases, one fixed summary per judgment, ten ratings
+per target, and a new result directory. See README.md for execution commands.
 """
 
 import argparse, json, os, random, sys, time
@@ -37,7 +20,7 @@ from summaries import add_argument as add_summaries_argument, is_usable, load_su
 from input_gate import case_input, verify_cases, bind_run_inputs
 from run_protocol import bind_run_config, complete_samples, SUMMARY_PROTOCOL, SCORING
 
-# ── Prompts (shared with bedrock runner) ──────────────────────────────────
+# Prompts used for the released full-case and summary experiments.
 
 SYSTEM_PROMPT = (
     "The European Court of Human Rights (ECtHR) is an international court of the "
@@ -60,63 +43,15 @@ range: intermediate values are expected whenever the case is close.
 
 Provide ONLY the number as your response."""
 
-NORMATIVE_TEMPLATE = """Below is a summary of the facts for an ECtHR case:
-
-{case_text}
-
-Target: {target_question}.
-
-State as a percentage from 0 to 100 how strongly the Court should find a violation for this exact target.
-
-0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
-range: intermediate values are expected whenever the case is close.
-
-Provide ONLY the number as your response."""
-
-FACTUAL_TEMPLATE = """Below is a summary of the facts for an upcoming ECtHR case:
-
-{case_text}
-
-Target: {target_question}.
-
-Based on the facts presented, state as a percentage from 0 to 100 how likely it is that the conduct specified by this exact target constituted a violation.
-
-0 means certainly not, 50 means genuinely uncertain, 100 means certain. Use the whole
-range: intermediate values are expected whenever the case is close.
-
-Provide ONLY the number as your response."""
-
-# Summaries are built once with a fixed summariser and passed in via --summaries.
-# This runner does not summarise: doing it here meant the
-# judge model graded its own writing, and meant paying for the same judgments again
-# for every model in the roster.
-
-# The challenge has to be posed on the same scale as the question. This asked for a
-# number 1-5 while the opening prompt asked for a percentage, so a model that did not
-# change its mind still had to change its answer, and RQ3 measured the rescaling.
-RECONSIDERATION_PROMPT = (
-    "Are you sure? Stick with your answer or provide a new percentage from 0 to 100. "
-    "ONLY provide the number."
-)
 
 
-# ── OpenAI-compatible Client ─────────────────────────────────────────────
+# Shared summaries are prepared before target-model evaluation.
 
 ATTEMPTS = 4
-
-# Sized from measurement, not from the length of the expected answer: the prompt
-# asks for a bare number, but a reasoning model spends thousands of tokens before
-# emitting it. deepseek-v4-pro returns empty 8/8 at 500 and 5/20 at 4,000.
 MAX_COMPLETION_TOKENS = 8000
-
-# Circuit breaker: a sustained run of rows with failed samples means the problem is
-# the environment, not the odd bad response, and every further row is thin data that
-# resume will skip. Wide enough not to trip on a rate-limit burst.
 BREAKER_WINDOW = 40
 BREAKER_RATE = 0.5
-
 artifact_failures = Counter()
-
 
 def _complete(client, model, api_messages, temperature, max_tokens):
     """One completion, retried, because at 20 workers rate limits are normal traffic.
@@ -361,133 +296,24 @@ def run_summarization(client, model, cases, n_samples, baseline_results, summari
     return summary_results
 
 
-def run_framing(client, model, cases, n_samples, summaries, baseline_results, ckpt=None, workers=1):
-    validate_single_summaries(summaries)
-    ckpt = ckpt or Checkpoint(None, enabled=False)
-    baseline_by_target = {row["target_id"]: row["prediction"] for row in baseline_results}
-    with mlflow.start_run(run_name="rq2_framing", nested=True):
-        mlflow.log_param("stage", "rq2_framing")
-        framings = {"predictive": PREDICTIVE_TEMPLATE, "normative": NORMATIVE_TEMPLATE, "factual": FACTUAL_TEMPLATE}
-        mlflow.log_param("workers", workers)
-        skipped_no_summary = 0
-        units = []
-        for case in cases:
-            text = (summaries.get(case["item_id"]) or [None])[0]
-            if not is_usable(text):
-                # Falling back to raw case text here silently mixed conditions:
-                # a failed summarisation was scored as if it were a summary.
-                skipped_no_summary += 1
-                continue
-            baseline_pred = baseline_by_target.get(target_id(case))
-            for fname in framings:
-                units.append({"key": checkpoint_key(ckpt, "rq2", case, fname),
-                              "case": case, "framing": fname, "text": text, "baseline": baseline_pred})
-
-        def work(unit):
-            case, fname = unit["case"], unit["framing"]
-            prompt = prompt_for(framings[fname], case, unit["text"])
-            ratings = _score(client, model, prompt, n_samples)
-            pred, abstained = majority_vote(ratings)
-            return {
-                **result_target(case),
-                "violation_label": case["violation_label"], "framing": fname,
-                "prediction": pred, "accurate": pred == case["violation_label"],
-                "aligned_with_baseline": pred == unit["baseline"], "abstained": abstained,
-                "avg_rating": mean_rating(ratings),
-                "flip_direction": flip_direction(unit["baseline"], pred),
-                "ratings": ratings, "n_unparsed": count_unparsed(ratings),
-            }
-
-        results = _fan_out(units, work, ckpt, "RQ2", workers, samples=n_samples)
-        for fname in framings:
-            fr = [r for r in results if r["framing"] == fname]
-            if not fr:
-                continue
-            mlflow.log_metric(f"accuracy_{fname}", sum(r["accurate"] for r in fr) / len(fr))
-            mlflow.log_metric(f"alignment_{fname}", sum(r["aligned_with_baseline"] for r in fr) / len(fr))
-        if skipped_no_summary:
-            mlflow.log_metric("rq2_skipped_no_summary", skipped_no_summary)
-            print(f"\n  RQ2: skipped {skipped_no_summary} cases with no usable summary")
-        log_artifact(results, "rq2_results.json")
-        print(f"\n  RQ2 done")
-    return results
 
 
-def run_reconsideration(client, model, cases, n_samples, baseline_results, summaries,
-                        ckpt=None, workers=1):
-    ckpt = ckpt or Checkpoint(None, enabled=False)
-    validate_single_summaries(summaries)
-    baseline_by_target = {row["target_id"]: row["prediction"] for row in baseline_results}
-    with mlflow.start_run(run_name="rq3_reconsideration", nested=True):
-        mlflow.log_param("stage", "rq3_reconsideration")
-        mlflow.log_param("workers", workers)
-        units = []
-        for case in cases:
-            text = summary_for(summaries, case["item_id"])
-            if is_usable(text):
-                units.append({
-                    "key": checkpoint_key(ckpt, "rq3", case),
-                    "case": case,
-                    "text": text,
-                })
-
-        def work(unit):
-            case = unit["case"]
-            prompt = prompt_for(PREDICTIVE_TEMPLATE, case, unit["text"])
-            orig_ratings, chal_ratings = [], []
-            for _ in range(n_samples):
-                # The challenge has to follow this sample's own answer, so the two
-                # calls stay sequential within a unit; units run concurrently.
-                resp1 = call_openai(client, model, SYSTEM_PROMPT, prompt)
-                orig_ratings.append(parse_rating(resp1))
-                messages = [
-                    {"role": "user", "content": prompt},
-                    {"role": "assistant", "content": resp1},
-                    {"role": "user", "content": RECONSIDERATION_PROMPT},
-                ]
-                chal_ratings.append(parse_rating(
-                    call_openai_multiturn(client, model, SYSTEM_PROMPT, messages)))
-            orig_pred, orig_abstained = majority_vote(orig_ratings)
-            chal_pred, chal_abstained = majority_vote(chal_ratings)
-            baseline_pred = baseline_by_target.get(target_id(case))
-            changed_samples = sum(1 for o, c in zip(orig_ratings, chal_ratings) if o != c)
-            return {
-                **result_target(case),
-                "violation_label": case["violation_label"], "baseline_prediction": baseline_pred,
-                "original_prediction": orig_pred, "challenged_prediction": chal_pred,
-                "changed": orig_pred != chal_pred, "change_pct": changed_samples / n_samples,
-                "original_abstained": orig_abstained, "challenged_abstained": chal_abstained,
-                "avg_rating": mean_rating(orig_ratings),
-                "avg_rating_challenged": mean_rating(chal_ratings),
-                "flip_direction": flip_direction(orig_pred, chal_pred),
-                "original_ratings": orig_ratings, "challenged_ratings": chal_ratings,
-                "ratings": orig_ratings + chal_ratings,
-                "n_unparsed": count_unparsed(orig_ratings + chal_ratings),
-            }
-
-        results = _fan_out(units, work, ckpt, "RQ3", workers, samples=n_samples)
-        changed = sum(r["changed"] for r in results) / len(results)
-        mlflow.log_metric("changed_rate", changed)
-        log_artifact(results, "rq3_results.json")
-        print(f"\n  RQ3: changed_rate={changed:.3f}")
-    return results
 
 
 # ── Main ─────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Perturbation study - OpenAI-compatible API runner")
+    parser = argparse.ArgumentParser(description="Full-case and shared-summary evaluation")
     parser.add_argument("--cases", required=True, help="Path to cases JSON")
-    parser.add_argument("--model", required=True, help="Model name (e.g. deepseek-chat, openai/gpt-4o)")
+    parser.add_argument("--model", required=True, help="Target model identifier (e.g. openai/gpt-5.6-sol)")
     parser.add_argument("--base-url", required=True, help="API base URL")
-    parser.add_argument("--api-key-env", default="DEEPSEEK_API_KEY", help="Env var name for API key")
-    parser.add_argument("--samples", type=int, default=5, help="Samples per case (default 5)")
-    parser.add_argument("--rq", choices=["baseline", "rq1", "rq2", "rq3", "all"], default="all")
+    parser.add_argument("--api-key-env", default="OPENROUTER_API_KEY", help="Env var name for API key")
+    parser.add_argument("--samples", type=int, default=10, help="Ratings per target (default 10)")
+    parser.add_argument("--rq", choices=["baseline", "rq1", "all"], default="all")
     add_summaries_argument(parser)
-    parser.add_argument("--output-dir", default="data/experiments/full_scale")
+    parser.add_argument("--output-dir", default="data/experiments/fullcase_new")
     parser.add_argument("--workers", type=int, default=20,
-                        help="concurrent API calls (20 is the validated ceiling for "
-                             "one OpenRouter key; sequential is ~136h per model)")
+                        help="Concurrent API calls")
     parser.add_argument("--no-resume", action="store_true",
                         help="ignore any checkpoint and score every case again")
     args = parser.parse_args()
@@ -515,8 +341,8 @@ def main():
     print(f"API: {args.base_url}")
     print()
 
-    mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "https://mlflow.lex"))
-    mlflow.set_experiment("full_scale_perturbation")
+    mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "file:./mlruns"))
+    mlflow.set_experiment("livehrb_fullcase_summary")
 
     model_key = args.model.replace("/", "_").replace(".", "_")
     bind_run_inputs(f"{args.output_dir}/{model_key}", args.cases, args.summaries)
@@ -525,7 +351,7 @@ def main():
         "model": args.model, "samples": args.samples, "base_url": args.base_url,
         "summary_protocol": SUMMARY_PROTOCOL, "scoring": SCORING, "temperature": 1.0,
         "max_case_chars": MAX_CASE_CHARS, "max_completion_tokens_initial": MAX_COMPLETION_TOKENS,
-        "prompt_version": "atomic-target-prompts-v1"})
+        "prompt_version": "provision-fullcase-prompts-v1"})
 
     with mlflow.start_run(run_name=f"{model_key}_full"):
         mlflow.log_param("model", args.model)
@@ -533,7 +359,7 @@ def main():
         mlflow.log_param("n_samples", args.samples)
         mlflow.log_param("base_url", args.base_url)
 
-        rqs = ["baseline", "rq1", "rq2", "rq3"] if args.rq == "all" else [args.rq]
+        rqs = ["baseline", "rq1"] if args.rq == "all" else [args.rq]
 
         baseline_results = None
         summaries = load_summaries_for(args, rqs, mlflow)
@@ -558,22 +384,17 @@ def main():
         if len(baseline_results) != len(cases) or not all(complete_samples(r, args.samples) for r in baseline_results):
             raise SystemExit("Baseline incomplete; resume it before scoring perturbations")
 
-        for stage, fn in (("rq1", run_summarization), ("rq2", run_framing), ("rq3", run_reconsideration)):
+        for stage, fn in (("rq1", run_summarization),):
             if stage not in rqs:
                 continue
             ckpt = Checkpoint(f"{args.output_dir}/{model_key}/{stage}.jsonl",
                               enabled=not args.no_resume)
-            if stage == "rq1":
-                rows = fn(client, args.model, cases, args.samples, baseline_results, summaries, ckpt, args.workers)
-            elif stage == "rq2":
-                rows = fn(client, args.model, cases, args.samples, summaries, baseline_results, ckpt, args.workers)
-            else:
-                rows = fn(client, args.model, cases, args.samples, baseline_results,
-                          summaries, ckpt, args.workers)
+            rows = fn(client, args.model, cases, args.samples, baseline_results,
+                      summaries, ckpt, args.workers)
             ckpt.close()
             with open(f"{args.output_dir}/{model_key}/{stage}_results.json", "w") as f:
                 json.dump(rows, f, indent=2)
-            expected = len(cases) * (3 if stage == "rq2" else 1)
+            expected = len(cases)
             if len(rows) != expected or not all(complete_samples(r, args.samples) for r in rows):
                 raise SystemExit(f"{stage} incomplete; results saved, resume this stage before analysis")
 

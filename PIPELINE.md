@@ -44,10 +44,9 @@ an older corpus retroactively. Review the complete proposed release before use.
    `clean_respondent_names.py`, `backfill_decision_dates.py` and
    `backfill_article_full.py` under `scripts/`.
 2. Select a candidate cohort. `scripts/build_unified_set.py` supports
-   `--min-year`, `--max-year`, `--cap`, `--target`, `--include-ukraine` and
-   `--out`. This historical sampler reads the local `echr_livehrb_static_2k.json`
-   corpus. Write candidates to a separate `--out` path; sampling the deprecated
-   static source does not reconstruct the current reviewed release.
+   an explicit `--source` JSON file, `--min-year`, `--max-year`, `--cap`,
+   `--target`, `--include-ukraine` and `--out`. Its default output is
+   `data/processed/echr_candidates.json`; target resolution and review follow.
 3. Resolve each target's respondent, provision and sub-conclusion against the
    public judgment. Record the target audit and review retained case text.
 4. Freeze the approved cohort, summary selection and counts in
@@ -84,4 +83,5 @@ intervention; its updated result is the remaining manuscript Results entry.
 
 Use the [source-status register](docs/DATA_SOURCE_STATUS.md) to check any source
 before evaluation. The six superseded Hub releases are deprecated as evaluation
-inputs. Their importers do not reconstruct the current reviewed release.
+inputs. Current evaluation uses the committed canonical input. New source
+corpora enter through the candidate preparation and review steps above.
