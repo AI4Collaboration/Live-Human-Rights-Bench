@@ -35,36 +35,50 @@ TARGETS = {"US": ("the United States", "American"),
            "Russia": ("Russia", "Russian"),
            "Ukraine": ("Ukraine", "Ukrainian")}
 
-# Demonyms for the respondent States present in the corpus (name -> adjective).
-DEMONYM = {
-    "ALBANIA": "Albanian", "ARMENIA": "Armenian", "AUSTRIA": "Austrian", "AZERBAIJAN": "Azerbaijani",
-    "BELGIUM": "Belgian", "BOSNIA AND HERZEGOVINA": "Bosnian", "BULGARIA": "Bulgarian",
-    "CROATIA": "Croatian", "CYPRUS": "Cypriot", "CZECH REPUBLIC": "Czech", "DENMARK": "Danish",
-    "ESTONIA": "Estonian", "FINLAND": "Finnish", "FRANCE": "French", "GEORGIA": "Georgian",
-    "GERMANY": "German", "GREECE": "Greek", "HUNGARY": "Hungarian", "ICELAND": "Icelandic",
-    "IRELAND": "Irish", "ITALY": "Italian", "LATVIA": "Latvian", "LITHUANIA": "Lithuanian",
-    "LUXEMBOURG": "Luxembourg", "MALTA": "Maltese", "MOLDOVA": "Moldovan", "MONTENEGRO": "Montenegrin",
-    "NETHERLANDS": "Dutch", "NORTH MACEDONIA": "Macedonian", "NORWAY": "Norwegian", "POLAND": "Polish",
-    "PORTUGAL": "Portuguese", "ROMANIA": "Romanian", "RUSSIA": "Russian", "SERBIA": "Serbian",
-    "SLOVAKIA": "Slovak", "SLOVENIA": "Slovenian", "SPAIN": "Spanish", "SWEDEN": "Swedish",
-    "SWITZERLAND": "Swiss", "TURKEY": "Turkish", "TÜRKIYE": "Turkish", "UKRAINE": "Ukrainian",
-    "UNITED KINGDOM": "British",
+# Exact target_respondent value -> (name aliases to match, demonym). Aliases cover the
+# forms that actually appear in the summaries (official name, short name, article).
+COUNTRIES = {
+    "Ukraine": (["Ukraine"], "Ukrainian"),
+    "the Republic of Moldova": (["the Republic of Moldova", "Republic of Moldova", "Moldova"], "Moldovan"),
+    "Russia": (["Russia", "the Russian Federation", "Russian Federation"], "Russian"),
+    "Azerbaijan": (["Azerbaijan"], "Azerbaijani"), "Greece": (["Greece"], "Greek"),
+    "Serbia": (["Serbia"], "Serbian"), "Armenia": (["Armenia"], "Armenian"),
+    "Malta": (["Malta"], "Maltese"), "Albania": (["Albania"], "Albanian"),
+    "Iceland": (["Iceland"], "Icelandic"), "Norway": (["Norway"], "Norwegian"),
+    "Romania": (["Romania"], "Romanian"), "Latvia": (["Latvia"], "Latvian"),
+    "Italy": (["Italy"], "Italian"), "Hungary": (["Hungary"], "Hungarian"),
+    "Georgia": (["Georgia"], "Georgian"), "Cyprus": (["Cyprus"], "Cypriot"),
+    "Bosnia and Herzegovina": (["Bosnia and Herzegovina", "Bosnia"], "Bosnian"),
+    "Czechia": (["Czechia", "the Czech Republic", "Czech Republic"], "Czech"),
+    "Croatia": (["Croatia"], "Croatian"), "Lithuania": (["Lithuania"], "Lithuanian"),
+    "France": (["France"], "French"), "Montenegro": (["Montenegro"], "Montenegrin"),
+    "Estonia": (["Estonia"], "Estonian"), "San Marino": (["San Marino"], "Sammarinese"),
+    "the Netherlands": (["the Netherlands", "Netherlands"], "Dutch"),
+    "Slovenia": (["Slovenia"], "Slovenian"), "Switzerland": (["Switzerland"], "Swiss"),
+    "the United Kingdom": (["the United Kingdom", "United Kingdom", "the UK", "UK"], "British"),
+    "Bulgaria": (["Bulgaria"], "Bulgarian"), "Spain": (["Spain"], "Spanish"),
+    "Austria": (["Austria"], "Austrian"), "Portugal": (["Portugal"], "Portuguese"),
+    "Sweden": (["Sweden"], "Swedish"), "Ireland": (["Ireland"], "Irish"),
+    "Slovakia": (["Slovakia"], "Slovak"), "Germany": (["Germany"], "German"),
+    "Poland": (["Poland"], "Polish"),
+    "North Macedonia": (["North Macedonia", "the former Yugoslav Republic of Macedonia", "Macedonia"], "Macedonian"),
+    "Türkiye": (["Türkiye", "Turkey"], "Turkish"), "Belgium": (["Belgium"], "Belgian"),
+    "Finland": (["Finland"], "Finnish"), "Denmark": (["Denmark"], "Danish"),
+    "Liechtenstein": (["Liechtenstein"], "Liechtenstein"),
+    "Luxembourg": (["Luxembourg"], "Luxembourgish"), "Andorra": (["Andorra"], "Andorran"),
 }
 
 
-def title(name):
-    return " ".join(w.capitalize() for w in name.split())
-
-
 def swap(text, resp_name, target):
-    """Replace the respondent country name + demonym with the target state's."""
+    """Replace the respondent country name (all forms) + demonym with the target state's."""
     tgt_name, tgt_dem = TARGETS[target]
-    resp_up = resp_name.upper().strip()
-    src_name = title(resp_name)
-    out = re.sub(rf"\b{re.escape(src_name)}\b", tgt_name, text)
-    dem = DEMONYM.get(resp_up)
+    aliases, dem = COUNTRIES.get((resp_name or "").strip(), ([resp_name.strip()] if resp_name else [], None))
+    out = text
+    for a in sorted([x for x in aliases if x], key=len, reverse=True):
+        out = re.sub(rf"\b{re.escape(a)}\b", tgt_name, out, flags=re.I)
     if dem:
-        out = re.sub(rf"\b{re.escape(dem)}\b", tgt_dem, out)
+        out = re.sub(rf"\b{re.escape(dem)}\b", tgt_dem, out, flags=re.I)
+    out = re.sub(r"\ba (American)\b", r"an \1", out)  # tidy article before American
     return out
 
 
@@ -152,11 +166,19 @@ def main():
             jobs.append((jk, c, arm, text))
     print(f"{a.model}: {len(jobs)} (case,arm) units, arms={arms}", flush=True)
 
+    def score_once(prompt, retries=3):
+        # Retry when the model returns an empty or unparseable response (not just on
+        # network errors) — this is what left DeepSeek-v4-pro with null rows.
+        for _ in range(retries):
+            r = parse_rating(call(a.model, prompt, k))
+            if r is not None:
+                return r
+        return None
+
     def work(job):
         jk, c, arm, text = job
         prompt = PREDICTIVE.format(case_text=text, article=c["article_full"])
-        responses = [call(a.model, prompt, k) for _ in range(a.samples)]
-        ratings = [parse_rating(response) for response in responses]
+        ratings = [score_once(prompt) for _ in range(a.samples)]
         good = [r for r in ratings if r is not None]
         avg = sum(good) / len(good) if good else None
         pred = None if avg is None else ("violation" if avg > 60 else "no_violation" if avg < 40 else "abstention")
