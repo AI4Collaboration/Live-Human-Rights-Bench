@@ -37,17 +37,17 @@ C = correct decisive verdict; W = wrong decisive verdict; A = abstention. Paths 
 
 The nine outcome categories are mutually exclusive within each trajectory and exhaustive on the included complete cohorts. Missing or invalid scores are excluded before classification and are not treated as wrong answers. `failure_mode_rates.csv` gives six-model within-mode cohorts and the shared cohort, with 95% judgment-cluster bootstrap intervals from 2,000 draws, seed 731. Cohort hashes and final C/W/A counts exactly reproduce the existing cue-correctness analysis.
 
-## Case review
+## Automatically selected score paths
 
-`case_review_queue.csv` contains 24 distinct judgments and all eight branches per judgment. A deterministic selection takes up to eight cases from each contrast: cue preserves a correct answer; cue preserves a wrong answer; a temporary error or lost correction occurs. Cases are unique across selection groups. This contrastive sample supplies examples, not prevalence estimates. All human review labels remain pending.
-
-For each case, inspect the supplied summary and annotated provision against the source record. Record evidence for factual omission, unsupported factual claims or a changed legal standard only when the relevant text is available. The released initial checkpoint retains initial replies; follow-up checkpoints retain scores without reply or challenger text. Review of post-challenge reasoning therefore uses recovered logs or responses saved during planned controls.
+`case_examples.csv` contains 24 distinct judgments and all eight branches per judgment. A deterministic selection takes up to eight cases from each contrast: cue preserves a correct answer; cue preserves a wrong answer; a temporary error or lost correction occurs. Cases are unique across selection groups. These examples illustrate the classified score paths; aggregate rates use the complete matched cohorts. Selection and classification are automatic and require no new human annotation.
 
 ## Scope across the paper
 
-- Summarization and paraphrasing: retain correct-to-wrong, correct-to-abstention and error-correction transitions. Link content-level explanations to the actual evaluated input pairs.
-- State Swap: report substitution sensitivity; evaluate jurisdiction and task validity before assigning correctness labels to transformed cases.
+- Summarization and paraphrasing: retain correct-to-wrong, correct-to-abstention and error-correction transitions. Compare error direction and shared vulnerable targets using each experiment's saved reference arm.
+- State Swap: report score changes, judgment transitions and abstention as substitution sensitivity.
 - Adversarial challenges: quantify error induction, persistence and recovery from complete score paths, independently of CoT availability.
+
+The [next-analysis plan](../../docs/NEXT_EXPERIMENTS.md) prioritizes initial score extremity and failure timing, followed by error direction, cue effects and shared vulnerability. These extensions use existing outputs and labels.
 
 ## Reproduction
 

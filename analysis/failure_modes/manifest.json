@@ -146,25 +146,25 @@
     "violation_label"
   ],
   "shared_349_branches": 2792,
-  "review_judgments": 24,
-  "review_branches": 192,
-  "review_selection_counts": {
+  "example_judgments": 24,
+  "example_branches": 192,
+  "example_selection_counts": {
     "cue_preserves_correct": 8,
     "cue_preserves_wrong": 8,
     "temporary_change": 8
   },
-  "human_annotation_status": "pending",
+  "classification_method": "deterministic_score_paths",
   "bootstrap_draws": 2000,
   "seed": 731,
-  "script_sha256_lf": "2e7258ccc895819d6e59172485f4ca471ec50a6d498b0d9b81847ee75f6260e3",
+  "script_sha256_lf": "a60cf88495c0cda5d3ed72e0521c84020524c64bcdd34d3f51dbdde0b02c3dec",
   "reference_table_hashes": {
     "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
     "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc"
   },
   "outputs": {
-    "case_review_queue.csv": {
-      "sha256_lf": "5aa79de5076208ab6dea78714c00fabbbb185e6ebbf17bfd67302e564d66a518",
-      "bytes": 31190
+    "case_examples.csv": {
+      "sha256_lf": "f9cab4e92b99c2792250d82a20a2851e81d4b0577861ba2a73e6e0bd2979e816",
+      "bytes": 24435
     },
     "failure_mode_rates.csv": {
       "sha256_lf": "3d05a003e40d6bab3622aabcbf9ac4dfd9fed8cac801cdb01dbee911521e98e4",
@@ -175,8 +175,8 @@
       "bytes": 32327
     },
     "REPORT.md": {
-      "sha256_lf": "f6a603a850e2a91d432021a1a315497ea9f6cdeae8011a20924932bf56e9197f",
-      "bytes": 4644
+      "sha256_lf": "a5c1f21acebdc7335a348fa0e1232a72474c346299725faf5f75a75de595a8a8",
+      "bytes": 4488
     },
     "shared_349_paths.csv": {
       "sha256_lf": "e42ae423e4020941cfc7794967ca232f9e5b014849019e48971bd267434958bb",

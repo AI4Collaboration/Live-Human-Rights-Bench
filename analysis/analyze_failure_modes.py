@@ -1,7 +1,7 @@
 """Classify observed judgment failures from saved scores; no model calls.
 
-Outcome labels describe correctness and abstention paths. Explanations of why
-those paths occur require case evidence and, where relevant, response text.
+Outcome labels and representative paths are computed from saved scores and
+existing case labels without new human annotation.
 """
 from collections import Counter, defaultdict
 import argparse
@@ -151,7 +151,7 @@ def main():
                         path=path, outcome=outcome))
     assert len(branch_rows) == 349 * 8
 
-    # Select contrasting cases for inspection, not for prevalence estimation.
+    # Select score-path examples deterministically from the classified cohorts.
     by_case = defaultdict(list)
     for row in branch_rows:
         by_case[row["item_id"], row["article_full"]].append(row)
@@ -172,13 +172,12 @@ def main():
         order = sorted(keys - set(selected), key=lambda k: hashlib.sha256(f"731|{k[0]}|{k[1]}".encode()).hexdigest())
         for key in order[:8]:
             selected[key] = stratum
-    review = [dict(selection_group=selected[key], **row, review_status="pending",
-                   followup_text_status="not_in_released_checkpoint")
-              for key in selected for row in by_case[key]]
+    examples = [dict(selection_group=selected[key], **row)
+                for key in selected for row in by_case[key]]
     write_csv(out / "failure_mode_rates.csv", rates)
     write_csv(out / "path_counts.csv", paths)
     write_csv(out / "shared_349_paths.csv", branch_rows)
-    write_csv(out / "case_review_queue.csv", review)
+    write_csv(out / "case_examples.csv", examples)
 
     lookup = {(r["model"], r["mode"], r["cue"], r["outcome"]): r for r in rates if r["scope"] == "shared_349"}
     report = ["# Failure mode analysis", "", f"Source revision: `{source.revision}`. No model API calls.", "",
@@ -204,18 +203,17 @@ def main():
                "Missing or invalid scores are excluded before classification and are not treated as wrong answers. "
                "`failure_mode_rates.csv` gives six-model within-mode cohorts and the shared cohort, with 95% judgment-cluster bootstrap intervals "
                "from 2,000 draws, seed 731. Cohort hashes and final C/W/A counts exactly reproduce the existing cue-correctness analysis.", "",
-               "## Case review", "", f"`case_review_queue.csv` contains {len(selected)} distinct judgments and all eight branches per judgment. "
+               "## Automatically selected score paths", "", f"`case_examples.csv` contains {len(selected)} distinct judgments and all eight branches per judgment. "
                "A deterministic selection takes up to eight cases from each contrast: cue preserves a correct answer; cue preserves a wrong answer; "
-               "a temporary error or lost correction occurs. Cases are unique across selection groups. This contrastive sample supplies examples, "
-               "not prevalence estimates. All human review labels remain pending.", "",
-               "For each case, inspect the supplied summary and annotated provision against the source record. "
-               "Record evidence for factual omission, unsupported factual claims or a changed legal standard only when the relevant text is available. "
-               "The released initial checkpoint retains initial replies; follow-up checkpoints retain scores without reply or challenger text. "
-               "Review of post-challenge reasoning therefore uses recovered logs or responses saved during planned controls.", "",
+               "a temporary error or lost correction occurs. Cases are unique across selection groups. "
+               "These examples illustrate the classified score paths; aggregate rates use the complete matched cohorts. "
+               "Selection and classification are automatic and require no new human annotation.", "",
                "## Scope across the paper", "", "- Summarization and paraphrasing: retain correct-to-wrong, correct-to-abstention and error-correction transitions. "
-               "Link content-level explanations to the actual evaluated input pairs.",
-               "- State Swap: report substitution sensitivity; evaluate jurisdiction and task validity before assigning correctness labels to transformed cases.",
+               "Compare error direction and shared vulnerable targets using each experiment's saved reference arm.",
+               "- State Swap: report score changes, judgment transitions and abstention as substitution sensitivity.",
                "- Adversarial challenges: quantify error induction, persistence and recovery from complete score paths, independently of CoT availability.", "",
+               "The [next-analysis plan](../../docs/NEXT_EXPERIMENTS.md) prioritizes initial score extremity and failure timing, "
+               "followed by error direction, cue effects and shared vulnerability. These extensions use existing outputs and labels.", "",
                "## Reproduction", "", "```sh", "python analysis/analyze_failure_modes.py", "```", "",
                "The script reads pinned Git objects and the existing cohort/rate tables. "
                "`manifest.json` records input hashes, checks and outputs; it makes no requests to model providers.", ""]
@@ -223,8 +221,8 @@ def main():
     manifest = {"source_revision": source.revision, "model_api_calls": 0,
         "inputs": source.inputs, "cohort_checks": checks, "initial_records": len(initials),
         "released_trajectory_records": total_branches, "released_trajectory_fields": sorted(released_fields),
-        "shared_349_branches": len(branch_rows), "review_judgments": len(selected), "review_branches": len(review),
-        "review_selection_counts": dict(Counter(selected.values())), "human_annotation_status": "pending",
+        "shared_349_branches": len(branch_rows), "example_judgments": len(selected), "example_branches": len(examples),
+        "example_selection_counts": dict(Counter(selected.values())), "classification_method": "deterministic_score_paths",
         "bootstrap_draws": 2000, "seed": 731,
         "script_sha256_lf": hashlib.sha256(Path(__file__).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
         "reference_table_hashes": {p.name: hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
@@ -233,7 +231,7 @@ def main():
              for p in sorted(out.iterdir()) if p.suffix in (".csv", ".md")}}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2)+"\n", encoding="utf-8")
     print(json.dumps({"verified_cohorts": len(checks), "shared_branches": len(branch_rows),
-                      "review_cases": len(selected), "model_calls": 0, "output": str(out)}))
+                      "example_cases": len(selected), "model_calls": 0, "output": str(out)}))
 
 
 if __name__ == "__main__":

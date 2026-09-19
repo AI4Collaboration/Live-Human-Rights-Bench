@@ -6,11 +6,23 @@
 4.6 and GPT-5.6-sol, and their saved initial responses. The list below contains
 new conditions; existing role conditions serve as matched references.
 
-**Failure mode analysis:** classify observed judgment errors from the existing
-scores and inspect representative cases. The [offline analysis](analysis/failure_modes/REPORT.md)
-now separates harmful changes, abstention, persistent errors and lost corrections
-across 16 matched cohorts. A 24-case review queue is prepared; case-level cause
-annotations are pending. This analysis does not require CoT or new model calls.
+**Failure mode analysis:** use saved scores, case labels and turn trajectories.
+The [offline analysis](analysis/failure_modes/REPORT.md) separates harmful
+changes, abstention, persistent errors and lost corrections across 16 matched
+cohorts. The next analyses require no new human annotation or model calls:
+
+1. **Initial score extremity:** distinguish changes near the verdict thresholds
+   from harmful reversals of initially extreme scores.
+2. **Failure timing and recovery:** locate the first wrong turn, subsequent
+   recovery and corrections that are later lost.
+3. **Error direction:** separate missed violations from false violation findings.
+4. **Cue effects by initial correctness:** compare correct-answer retention and
+   correction of initial errors for the existing roles.
+5. **Shared vulnerability:** identify matched cases that fail under several
+   perturbations, using each experiment's own reference prediction.
+
+Prioritize the first two analyses; add the remaining breakdowns where they
+support a distinct finding. See the [analysis definitions](docs/NEXT_EXPERIMENTS.md).
 
 | Priority | Experiment to run | Main question | Initial scope |
 | --- | --- | --- | --- |
@@ -23,7 +35,9 @@ annotations are pending. This analysis does not require CoT or new model calls.
 
 **Already available:** AI safety researcher, lawyer, junior lawyer, senior lawyer,
 and no cue. Reuse these results; nationality and professional roles remain
-separate experiments. All proposed runs are pending. See the
+separate planned experiments. A separate [old-model nationality release](data/experiments/syco_nationality/)
+uses one challenge turn and a fixed lawyer cue; the proposed three-turn
+nationality-only comparison remains pending. See the
 [exact cues, matched protocol and budget](docs/NEXT_EXPERIMENTS.md).
 
 **Additional analyses completed without API calls:**

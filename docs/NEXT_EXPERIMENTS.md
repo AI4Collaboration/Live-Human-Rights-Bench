@@ -9,9 +9,10 @@ extensions and already completed references.
 
 ## Failure mode analysis: existing results first
 
-**Question:** When judgment reliability fails, what observable error occurs,
-and which case evidence explains it? The analysis covers outcomes, input
-changes and interactions; CoT is not a prerequisite.
+**Question:** How severe are judgment errors, when do they arise, and which
+conditions preserve or correct them? Use existing case labels, saved scores
+and complete turn trajectories. The planned analyses require no new human
+annotation, CoT collection or model calls.
 
 ### Completed score-based analysis
 
@@ -32,30 +33,34 @@ corrections are retained as comparison outcomes. Use initially correct and
 initially wrong denominators separately. Static and adaptive paths use the same
 matched cases within each reported comparison.
 
-### Next: inspect case evidence
+### Next: finer analysis from existing outputs
 
-- Review the prepared 24-case queue, including cases where the cue preserves a
-  correct answer, preserves a wrong answer, or a temporary change occurs.
-  The queue supplies contrasting examples; use a separately sampled cohort
-  before estimating the prevalence of manually assigned causes.
-- Compare the actual evaluated input with the source record and target
-  provision. Check missing relevant facts, unsupported factual claims, changes
-  in the applied legal criterion, and explicit responses to user pressure.
-- Record a supporting excerpt for each label. Two reviewers independently
-  code the evidence and reconcile differences; retain an unclassified category
-  when the relevant evidence is unavailable.
-- For summarization and paraphrasing, connect harmful transitions to the actual
-  transformed input. Recover the evaluated paraphrase texts before assigning
-  factual-preservation labels. For State Swap, establish the applicable legal
-  setting before interpreting a changed verdict as an error.
-- Initial reply text is released; the three-turn checkpoints contain scores
-  without follow-up reply or challenger text. Use recovered logs for response
-  analysis, and save complete messages during the planned controls and role
-  additions. Keep the original response format for comparable conditions.
+| Priority | Analysis | Calculation | Question answered |
+| --- | --- | --- | --- |
+| First | Initial score extremity | Split initial scores by distance from the abstention interval; report harmful changes for the endpoint group, score at most 10 or at least 90, and endpoint-to-opposite-endpoint changes | Do failures extend to initially extreme judgments? |
+| First | Failure timing and recovery | First wrong turn, cumulative error incidence, recovery by turn three, and correction followed by renewed error | Does pressure cause immediate failure, accumulate new errors, or sustain existing errors? |
+| Supporting | Error direction | False violation findings among non-violation labels; missed violations among violation labels; new errors and corrections within each stratum | Which direction does each intervention move judgments? |
+| Supporting | Cue effects by initial correctness | Paired correct-answer retention and error correction for the existing role conditions | Which identities preserve correct judgments, and which preserve initial errors? |
+| Supporting | Shared vulnerability across perturbations | Overlap of harmful changes on common targets with correct experiment-specific reference predictions | Do different perturbations affect the same cases? |
 
-**Paper output:** one clear takeaway about the dominant failure pattern, with
-counts and source-linked examples. Put annotation rules and detailed cases in
-the appendix. Add a compact figure only when it makes that one takeaway clearer.
+- Fix score bins before comparisons and report their case counts. Score
+  extremity describes the reported likelihood; no probability calibration is
+  needed for this analysis.
+- For failure timing, use all initially correct cases as the denominator for
+  cumulative incidence. Report next-turn failure among cases with no previous
+  wrong verdict separately. Keep abstention as a distinct state.
+- Compare roles and challenge modes on the same complete cases within each
+  contrast. Split initially correct and initially wrong cases throughout.
+- Join experiments by the released target identifiers and verify provision
+  consistency. Use each suite's saved reference arm. Report State Swap
+  sensitivity separately from errors against the original case label.
+- Use paired comparisons and judgment-cluster intervals. Report common-target
+  and initial-correctness filters with each overlap estimate.
+
+**Paper output:** prioritize initial score extremity and failure timing. Give
+each selected result one clear takeaway; place supporting direction, role and
+overlap breakdowns in the appendix. Automatically selected score paths can
+illustrate the aggregate patterns without adding a human annotation task.
 
 ## 1. Neutral reassessment control: recommended
 
@@ -134,6 +139,13 @@ The released runner contains the existing role references, but none of the five
 new roles. Add the selected conditions explicitly before execution.
 
 ## 3. Nationality cues: separate planned experiment
+
+The separate [old-model release](../data/experiments/syco_nationality/) contains
+one-turn neutral-lawyer, same-nationality-lawyer and different-nationality-lawyer
+conditions. GPT-4.1-mini has 916 cases with all three follow-up scores present;
+GPT-4o-mini has missing follow-up scores. Analyze complete matched arms from
+that release separately. The three-turn, nationality-only protocol below is
+the planned Claude/GPT comparison.
 
 | New condition | Exact first-turn cue |
 | --- | --- |
@@ -234,8 +246,9 @@ See the [additional analysis report](../analysis/reliability_controls/REPORT.md)
 
 The [failure mode analysis](../analysis/failure_modes/REPORT.md) additionally
 provides score-path classifications, conditional rates, matched case traces
-and a 24-case inspection queue. Classification is complete; human cause
-annotations remain pending.
+and automatically selected score-path examples from 24 cases. The existing
+classification is complete; the finer analyses above are the next offline work.
 
 These analyses use existing outputs. The conversational reassessment control,
-new role cues and nationality cues remain conditions to run.
+new role cues and proposed three-turn nationality-only cues remain conditions
+to run.
