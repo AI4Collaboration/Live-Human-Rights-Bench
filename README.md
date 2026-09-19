@@ -275,7 +275,7 @@ Use a new output directory for a new full-cohort run.
 
 #### Planned role and nationality extensions
 
-The [top-of-README experiment list](#next-experiments) and
+The [top-of-README experiment list](#next-api-experiments) and
 [detailed plan](docs/NEXT_EXPERIMENTS.md) specify new professional-role cues and
 the separate same/different nationality comparison. Existing AI safety
 researcher and lawyer conditions are reference results, not pending full-cohort

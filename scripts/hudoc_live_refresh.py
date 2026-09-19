@@ -278,18 +278,20 @@ def main():
         description="Live refresh orchestrator for LiveHumanRightsBench",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-This script automates the full "live" loop:
-  1. Check the latest decision date in the current dataset
+This script refreshes a candidate corpus:
+  1. Check the latest decision date in the supplied candidate corpus
   2. Download new HUDOC judgments since that date
-  3. Run verdict-leakage removal on new judgments
-  4. Merge clean results into the existing dataset
-  5. Optionally push to HuggingFace
+  3. Extract source text; --full-pipeline also enables model verification
+  4. Merge candidates into the explicitly selected output file
+  5. Optionally publish candidates to an explicitly selected Hugging Face destination
+
+Source review and target resolution precede a frozen evaluation release.
 
 For cron usage:
   # Run daily at 06:00 UTC
-  0 6 * * * cd /path/to/Legal-Sycophancy && python scripts/hudoc_live_refresh.py \\
-    --dataset data/processed/echr_live.json \\
-    --output data/processed/echr_live.json \\
+  0 6 * * * cd /path/to/LiveHumanRightsBench && python scripts/hudoc_live_refresh.py \\
+    --dataset /path/to/pinned_candidate_corpus.json \\
+    --output data/processed/candidates_refreshed.json \\
     --quiet >> logs/live_refresh.log 2>&1
 """,
     )

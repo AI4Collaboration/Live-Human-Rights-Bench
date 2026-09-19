@@ -66,7 +66,7 @@ RETRY_BACKOFF = 5.0  # seconds, multiplied by attempt number
 
 # User-Agent header for polite scraping
 HEADERS = {
-    "User-Agent": "LiveHumanRightsBench/1.0 (academic research; https://github.com/overthelex/Legal-Sycophancy)",
+    "User-Agent": "LiveHumanRightsBench/1.0 (academic research; https://github.com/AI4Collaboration/Live-Human-Rights-Bench)",
     "Accept": "application/json",
 }
 
