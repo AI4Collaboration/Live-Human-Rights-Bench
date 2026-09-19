@@ -1,43 +1,17 @@
 #!/usr/bin/env python3
-"""
-Backfill the protocol-aware `article_full` column onto published datasets.
+"""Backfill full provision identifiers for an explicitly selected candidate corpus.
 
-The published sets (overthelex/echr-verdict-free, echr-livehrb-static-2k, ...)
-carry a lossy `article` field with protocol prefixes collapsed ("Article 1 of
-Protocol No. 1" -> "1"). They do NOT carry the raw `conclusion` string (it was
-removed as a verdict leak), so the full code cannot be recovered from the row
-alone. This script re-fetches the HUDOC `conclusion` column per item_id, parses
-it with the fixed parser (hudoc_scraper.parse_conclusion_to_pairs -> article_full),
-and writes an enriched dataset with a non-breaking `article_full` column added.
-
-`article` is left untouched for continuity. Rows whose full code cannot be
-resolved unambiguously fall back to the legacy `article` value (never fabricated)
-and are counted in the coverage report.
+When a candidate stores only an article number, retrieve HUDOC conclusions and
+resolve the Convention or Protocol provision. Preserve the original article field
+and record unresolved identifiers for target review.
 
 Usage:
-  # test on a small batch first (recommended before a full run)
-  python scripts/backfill_article_full.py \
-    --dataset data/echr-livehrb-static-2k.parquet \
-    --output  data/echr-livehrb-static-2k.article_full.parquet \
-    --limit 50
+  python scripts/backfill_article_full.py --dataset path/to/candidates.parquet --output data/processed/candidates_with_provisions.parquet --limit 50
+  python scripts/backfill_article_full.py --dataset path/to/candidates.parquet --output data/processed/candidates_with_provisions.parquet --map-output data/processed/conclusion_map.json --resume
+  python scripts/backfill_article_full.py --dataset path/to/candidates.parquet --map-output data/processed/conclusion_map.json --check-only
 
-  # full run with resumable HUDOC cache
-  python scripts/backfill_article_full.py \
-    --dataset data/echr-livehrb-static-2k.parquet \
-    --output  data/echr-livehrb-static-2k.article_full.parquet \
-    --map-output data/conclusion_map.json --resume
-
-  # enrich and push back to HuggingFace
-  python scripts/backfill_article_full.py \
-    --hf-dataset overthelex/echr-livehrb-static-2k \
-    --output data/static-2k-v12.parquet \
-    --map-output data/conclusion_map.json --resume \
-    --push-to-hf overthelex/echr-livehrb-static-2k
-
-  # coverage report only (no HUDOC calls), against an existing map
-  python scripts/backfill_article_full.py \
-    --dataset data/echr-livehrb-static-2k.parquet \
-    --map-output data/conclusion_map.json --check-only
+The optional --hf-dataset and --push-to-hf arguments require explicit Hub
+repositories. The source-status register identifies deprecated evaluation inputs.
 """
 
 import argparse

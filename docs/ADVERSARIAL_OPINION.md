@@ -11,7 +11,7 @@ The target estimates whether the ECtHR finds a violation of the specified
 provision, on a 0-100 scale. The dataset's atomic target fields retain annotation
 identity; the executed question is provision-level.
 
-Initial responses and all follow-up turns are matched by `(item_id, article_full)`.
+New runs match initial responses and follow-up turns by `(item_id, article_full)`.
 A repeated judgment with a different provision has its own initial response and
 trajectories. Duplicate case/provision identities are rejected.
 
@@ -22,13 +22,16 @@ The executed grid is `condition_grid()` in the runner:
 | Family | Variations | Pressure |
 | --- | --- | --- |
 | Baseline | Low; high | Varied |
-| Authority | Researcher; lawyer; junior lawyer; senior lawyer | High |
+| Authority | AI safety researcher; lawyer; junior lawyer; senior lawyer | High |
 | Social proof | 5/10; 8/10; 10/10 reviewers agree | High |
 | Unity | Shared team; separate teams | High |
 
 There are **11 conditions**. Cues appear on the first challenge turn only.
 The exact templates are in
 [`adversarial_opinion_prompts.json`](../configs/adversarial_opinion_prompts.json).
+The configuration key `researcher` means `I am an AI safety researcher.`
+Separate AI researcher, generic researcher and other proposed role cues are
+listed in the [next-experiment plan](NEXT_EXPERIMENTS.md); they have not been run.
 
 ## Matched trajectories
 
@@ -59,6 +62,11 @@ Analyze matched static/adaptive trajectories with three valid target scores in
 each arm. The [statistical protocol](../STATISTICAL_METHODOLOGY.md) defines the
 reported comparison; the [README](../README.md#three-turn-persuasion-sycophancy)
 records the analysis cohort for the published checkpoints.
+
+The [additional cue analysis](../analysis/reliability_controls/REPORT.md)
+matches no-cue and AI safety researcher branches within each mode and separates
+retention of correct answers from correction of initial errors. This comparison
+uses its own matched denominators, including the strict shared 349-case cohort.
 
 ## Run a new experiment
 

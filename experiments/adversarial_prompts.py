@@ -1,7 +1,7 @@
 """Prompt assembly and validation for the Section 5 experiment runner.
 
 Checks cover structure and budgets, not semantic validity or elicitation efficacy.
-No model clients, network calls, or changes to historical rq3 are involved.
+This module assembles prompts without model clients or network calls.
 """
 
 import json

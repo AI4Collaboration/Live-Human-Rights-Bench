@@ -2,9 +2,9 @@
 """
 Backfill decision dates and application numbers from HUDOC metadata.
 
-The published datasets (overthelex/echr-verdict-free) carry item_id but not
-decision_date / application_number. Both are required for the contamination
-audit (pre/post-cutoff partitions) and the facts-ablated variants.
+Candidate records with item_id can use this lookup to recover decision dates,
+application numbers and other HUDOC metadata for release construction and
+temporal evaluation.
 
 This script sweeps the HUDOC search API (metadata only, no document bodies),
 collects {item_id -> decision_date, application_number, importance, ecli}
@@ -22,7 +22,7 @@ Usage:
   python scripts/backfill_decision_dates.py --output data/processed/decision_dates.json --resume
 
   # Verify coverage against a dataset file
-  python scripts/backfill_decision_dates.py --check data/processed/stratified_sample.json \
+  python scripts/backfill_decision_dates.py --check path/to/candidates.json \
       --output data/processed/decision_dates.json
 """
 

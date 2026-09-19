@@ -28,7 +28,7 @@ def test_there_are_runners_to_check():
 
 @pytest.mark.parametrize("runner", RUNNERS)
 def test_no_runner_summarises(runner):
-    """Summarising with the judge model cost 8x and had each model grade itself."""
+    """Every target model consumes the same selected summary artifact."""
     assert "SUMMARY_TEMPLATE" not in source(runner)
 
 

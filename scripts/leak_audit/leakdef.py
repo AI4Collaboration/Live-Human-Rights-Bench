@@ -1,34 +1,12 @@
-"""Canonical definition of a verdict leak, and the cut that removes it.
+"""Structural screen and boundary cut for retained court-reasoning sections.
 
-Everything in this directory imports these two functions so that an audit and a
-repair can never disagree about what a leak is. Three separate ad-hoc probes gave
-three different leak rates before this was pinned down.
+The screen detects a THE LAW section followed by an assessment or merits heading.
+Repeated headings in a table of contents are handled by preferring later section
+boundaries. The cut preserves the facts section before the reasoning boundary.
 
-A row leaks when the Court's law section survived verdict removal: text remains
-after the ``THE LAW`` header and that remainder carries an assessment or merits
-heading. Plain ``Merits`` belongs in the pattern -- under ``THE LAW`` an ECtHR
-judgment is structured ``A. Admissibility`` / ``B. Merits`` with the Court's
-assessment inside B, so the heading's presence means the reasoning is there.
-Dropping it undercounts by roughly a third (140 rows against 186 on
-``echr-livehrb-static-2k``).
-
-Two structural traps, both of which produced wrong answers first time round:
-
-* Long Grand Chamber judgments repeat every section heading in a table of
-  contents, so the first ``THE LAW`` can sit 1,500 characters into the document
-  while the real one is 200,000 characters further down. Always cut at the last
-  occurrence, and ignore occurrences inside the table-of-contents zone when a
-  later one exists.
-* Cutting at the first "The Court's assessment" marker destroys the facts,
-  because modern judgments repeat that subheading once per complaint. One case
-  kept 3 of its 69 fact paragraphs that way.
-
-A lexical probe -- searching for phrases like "there has been no violation" --
-is not a usable substitute. It fires on domestic courts quoted in the facts
-("the City Court finds no violation of Article 6") and misses the Court's own
-conclusion when it is phrased as "did not fail to fulfil its positive
-obligations". ``retention_percentage`` is not a usable filter either: leaking
-rows appear at 49% and 66% retention.
+Source review also checks answer-revealing passages within retained facts, with
+attribution to the judgment being predicted. See docs/INPUT_REPAIR.md for the
+current review scope. This module supplies the structural component.
 """
 
 import re

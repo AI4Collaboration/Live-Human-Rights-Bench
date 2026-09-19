@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "as_of": "2026-09-18",
+  "schema_version": 4,
+  "as_of": "2026-09-19",
   "documentation": "docs/DATA_SOURCE_STATUS.md",
   "current_dataset_id": "echr-unified-atomic-targets-20260916",
   "status_definitions": {
@@ -129,7 +129,9 @@
       "name": "summary_based_stateswap",
       "status": "current",
       "runner": "experiments/stateswap_summary_run.py",
-      "published_revision": "cc59734",
+      "published_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
+      "runner_revision": "0064251",
+      "run_identity_version": "stateswap-summary-aliases-v2",
       "inputs": [
         "data/processed/echr_unified.json",
         "data/processed/summaries_dsv41flash.json"
@@ -146,10 +148,27 @@
       "models": 6,
       "result_records": 24000,
       "changed_inputs": {
-        "US": 891,
-        "Russia": 859,
-        "Ukraine": 725
-      }
+        "US": 998,
+        "Russia": 973,
+        "Ukraine": 832
+      },
+      "respondent_substitutions_with_changed_text": {
+        "US": 998,
+        "Russia": 966,
+        "Ukraine": 832
+      },
+      "same_respondent_text_normalizations": {
+        "US": 0,
+        "Russia": 7,
+        "Ukraine": 0
+      },
+      "common_substitution_cohort": {
+        "targets": 800,
+        "judgments": 757,
+        "requires": "Different respondent and changed text in all three destination arms; valid means in all four arms of all six models."
+      },
+      "common_text_change_only_targets": 807,
+      "records_without_valid_mean": 0
     }
   ]
 }

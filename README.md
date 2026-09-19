@@ -46,7 +46,7 @@ Published evaluation snapshot from **17 September 2026**,
 Summary-based State Swap results and country matching were updated in
 [`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
 
-**Code and source status updated 18 September 2026:** the six legacy Hugging Face sources
+**Code and source status updated 19 September 2026:** the six legacy Hugging Face sources
 are **deprecated as evaluation inputs**, including the old State Swap release.
 Use the GitHub inputs below. See the
 [source-status register](docs/DATA_SOURCE_STATUS.md) for exact Hub revisions,

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Backfill missing HUDOC dates for a verdict-free dataset, bake date columns in,
-and (optionally) re-publish to the Hub. Reusable for echr-verdict-free and
-echr-ukr-verdict-free.
+Backfill HUDOC metadata for an explicitly selected candidate Hub dataset.
+Supply the date lookup produced by backfill_decision_dates.py with --dates.
+Publication to that selected Hub dataset requires --push.
 """
 import argparse, json, os, sys, time
+from pathlib import Path
 import requests
-sys.path.insert(0, os.path.expanduser("~/strasbourgbench/scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hudoc_scraper import search_hudoc, parse_search_result  # noqa
 from datasets import load_dataset
 
@@ -33,7 +34,7 @@ def backfill(missing, dates, batch, sleep):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", required=True)
-    ap.add_argument("--dates", default=os.path.expanduser("~/strasbourgbench/data/processed/decision_dates.json"))
+    ap.add_argument("--dates", required=True, help="Explicit HUDOC date-lookup JSON")
     ap.add_argument("--batch", type=int, default=50)
     ap.add_argument("--sleep", type=float, default=0.25)
     ap.add_argument("--push", action="store_true")

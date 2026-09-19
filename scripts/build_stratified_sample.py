@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Build a balanced stratified sample from the multi-jurisdictional ECtHR
-verdict-free dataset.
+Build a country-stratified candidate sample from an explicit local ECtHR corpus.
+Review source text and resolve targets before publishing an evaluation release.
 
 Stratification strategy:
   1. Rank respondent states by number of case-article pairs
@@ -11,18 +11,14 @@ Stratification strategy:
   4. If a country has fewer than K cases, take all of them
 
 Usage:
-  # From HuggingFace dataset
+  # From a selected local candidate corpus
   python scripts/build_stratified_sample.py \
-    --output data/processed/stratified_sample.json \
-    --cases-per-country 20 --top-n-countries 20
-
-  # From local JSON
-  python scripts/build_stratified_sample.py \
-    --input data/processed/echr_full.json \
+    --input path/to/candidates.json \
     --output data/processed/stratified_sample.json
 
   # Custom parameters
   python scripts/build_stratified_sample.py \
+    --input path/to/candidates.json \
     --output data/processed/stratified_sample_10x30.json \
     --cases-per-country 30 --top-n-countries 10 --seed 123
 """
@@ -35,26 +31,10 @@ import sys
 from collections import Counter, defaultdict
 
 
-def load_from_huggingface() -> list:
-    """Load the dataset from HuggingFace Hub."""
-    try:
-        from datasets import load_dataset
-    except ImportError:
-        print("ERROR: 'datasets' package required for HuggingFace loading.", file=sys.stderr)
-        print("Install with: pip install datasets", file=sys.stderr)
-        sys.exit(1)
-
-    print("Loading dataset from HuggingFace: overthelex/echr-verdict-free ...")
-    ds = load_dataset("overthelex/echr-verdict-free", split="train")
-    records = [dict(row) for row in ds]
-    print(f"  Loaded {len(records)} records from HuggingFace.")
-    return records
-
-
 def load_from_json(path: str) -> list:
     """Load dataset from a local JSON file."""
     print(f"Loading dataset from {path} ...")
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         records = json.load(f)
     print(f"  Loaded {len(records)} records from JSON.")
     return records
@@ -173,8 +153,8 @@ def main():
     parser.add_argument(
         "--input",
         type=str,
-        default=None,
-        help="Path to input JSON file. If not provided, loads from HuggingFace.",
+        required=True,
+        help="Explicit local candidate corpus JSON file.",
     )
     parser.add_argument(
         "--output",
@@ -203,10 +183,7 @@ def main():
     args = parser.parse_args()
 
     # Load data
-    if args.input:
-        records = load_from_json(args.input)
-    else:
-        records = load_from_huggingface()
+    records = load_from_json(args.input)
 
     if not records:
         print("ERROR: No records loaded.", file=sys.stderr)

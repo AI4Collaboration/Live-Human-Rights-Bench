@@ -1,6 +1,6 @@
 # Current and deprecated data sources
 
-Updated **18 September 2026**. Exact revisions and current input hashes are in
+Updated **19 September 2026**. Exact revisions and current input hashes are in
 [`configs/data_source_status.json`](../configs/data_source_status.json).
 
 ## Current inputs
@@ -46,7 +46,7 @@ external repositories.
 Obsolete result directories, audit snapshots and archived trial programs have
 also been removed. The repository no longer distributes them as supporting
 records for the current release. The current result directories are
-`data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`
+`data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`,
 `data/experiments/syco_full_latest/` and `data/experiments/stateswap_summary/`.
 
 The deprecated input adapters and experiment runners have been removed.
@@ -55,11 +55,17 @@ New candidate corpora require source review before evaluation.
 
 ## Current State Swap transformation
 
-The 18 September release uses `experiments/stateswap_summary_run.py` to derive
-country arms directly from the canonical cohort and shared abstractive summaries.
-It does not require a separate `echr_stateswap.json` file. The
-[protocol and input review](STATESWAP.md) identify the released transformation,
-24,000 results, actual text changes and missing scores.
+The current results at revision `4b231e1` derive country arms directly from the
+canonical cohort and shared abstractive summaries, with country aliases and
+demonyms matched by `experiments/stateswap_summary_run.py`. Actual respondent
+substitutions with changed text number 998 US, 966 Russia and 832 Ukraine targets.
+The common comparison uses 800 targets from 757 judgments. All 24,000 rows have
+valid means. The [protocol and input review](STATESWAP.md) distinguish text
+changes, respondent substitutions and individual unparsed ratings.
+
+The current runner records the alias map in its run identity and saves individual
+ratings, raw responses and parse retries. Use a fresh output directory for new
+runs.
 
 ## Pending inputs
 

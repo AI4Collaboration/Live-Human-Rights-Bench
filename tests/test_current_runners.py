@@ -194,3 +194,41 @@ def test_candidate_sampler_keeps_distinct_case_and_protocol_identities(tmp_path)
     assert {(r["item_id"], r["article_full"]) for r in selected} == {
         ("case-a", "1"), ("case-b", "1"), ("case-a", "P1-1")}
     assert all(r["full_case_text_no_verdict"] == "Candidate facts." for r in selected)
+
+
+@pytest.mark.parametrize("script,extra", [
+    ("clean_respondent_names.py", ["--preview"]),
+    ("build_stratified_sample.py", ["--output", "unused.json"]),
+])
+def test_candidate_helpers_require_explicit_local_input(script, extra):
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    repo = Path(__file__).resolve().parents[1]
+    result = subprocess.run([sys.executable, str(repo / "scripts" / script), *extra],
+                            cwd=repo, capture_output=True, text=True)
+    assert result.returncode == 2
+    assert "required: --input" in result.stderr
+    assert "Loading" not in result.stdout
+
+
+@pytest.mark.parametrize("script,extra", [
+    ("clean_respondent_names.py", ["--apply"]),
+    ("build_stratified_sample.py", ["--cases-per-country", "1", "--top-n-countries", "1"]),
+])
+def test_candidate_helpers_preserve_local_case_provisions(tmp_path, script, extra):
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    source, output = tmp_path / "source.json", tmp_path / "output.json"
+    rows = [{"item_id": "case-a", "article": article, "article_full": article,
+             "respondent": "FRANCE", "violation_label": "violation"}
+            for article in ["3", "6"]]
+    source.write_text(json.dumps(rows), encoding="utf-8")
+    repo = Path(__file__).resolve().parents[1]
+    subprocess.run([sys.executable, str(repo / "scripts" / script), "--input", str(source),
+                    "--output", str(output), *extra], cwd=repo, check=True, capture_output=True)
+    actual = json.loads(output.read_text(encoding="utf-8"))
+    assert actual == rows

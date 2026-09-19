@@ -145,23 +145,20 @@ def narrates_current_court_assessment(summary):
 def add_argument(parser):
     """The --summaries flag, identical in every runner."""
     parser.add_argument("--summaries", help="approved single-summary JSON artifact; "
-                                            "required for rq1 and rq2")
+                                            "required for the rq1 summary comparison")
 
 
 def load_summaries_for(args, stages, mlflow=None):
     """Load the shared summaries if these stages need them, or exit saying why.
 
-    Exits rather than falling back. A runner that quietly summarises for itself when
-    the file is missing is how the judge model came to be grading its own writing.
+    The summary comparison uses one reviewed summary shared across target models.
     """
-    if not {"rq1", "rq2", "rq3"} & set(stages):
+    if "rq1" not in stages:
         return {}
     path = getattr(args, "summaries", None)
     if not path:
-        sys.exit("ERROR: --summaries is required for rq1/rq2/rq3. Supply the reviewed "
-                 "single-summary artifact; the runners do not summarise, because "
-                 "summarising with the judge model both cost 8x and had each model "
-                 "grade its own writing.")
+        sys.exit("ERROR: --summaries is required for rq1. Supply the reviewed "
+                 "single-summary artifact shared by all target models.")
     if not os.path.exists(path):
         sys.exit(f"ERROR: no such summaries file: {path}")
     summaries, meta = load_summaries(path)

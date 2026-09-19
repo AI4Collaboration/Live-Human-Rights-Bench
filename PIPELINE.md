@@ -42,7 +42,8 @@ an older corpus retroactively. Review the complete proposed release before use.
 
 1. Normalize respondent names, decision dates and provision identifiers with
    `clean_respondent_names.py`, `backfill_decision_dates.py` and
-   `backfill_article_full.py` under `scripts/`.
+   `backfill_article_full.py` under `scripts/`. Supply the candidate source
+   explicitly; preparation tools do not designate a legacy Hub pool for evaluation.
 2. Select a candidate cohort. `scripts/build_unified_set.py` supports
    an explicit `--source` JSON file, `--min-year`, `--max-year`, `--cap`,
    `--target`, `--include-ukraine` and `--out`. Its default output is
@@ -77,7 +78,7 @@ The validation command checks the existing frozen release without calling models
 
 [README.md](README.md) provides model identifiers, execution commands and the
 current run inventory. [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md)
-defines scoring and comparisons. State Swap supplies the respondent-identity
+defines scoring and comparisons. State Swap supplies the respondent-substitution
 intervention. Its released inputs and results are described in
 [docs/STATESWAP.md](docs/STATESWAP.md).
 

@@ -1,19 +1,13 @@
-"""Sentence-level scrubber for verdict-conclusion leakage in ECHR texts.
+"""Sentence-level removal of explicit verdict conclusions from candidate texts.
 
-Stage-1 truncation (court_assessment_start / conclusory_pattern) misses
-per-article conclusion sentences embedded in the Court's assessment, e.g.
-"there has been no violation of Article 8 of the Convention." — a direct
-gold-label leak. The 2026-07-03 audit measured own-article label leakage of
-6.2% (livehrb-static-2k), 5.5% (livehrb-temporal-2k), 7.3% (echr-verdict-free)
-and 2.8% (echr-ukr-verdict-free) before this scrub was applied to the
-published data. This module makes the scrub a mandatory pipeline stage so
-future live refreshes do not regress.
+Boundary truncation can leave conclusion sentences embedded in the retained
+text. This pipeline stage removes the patterns below across provisions before
+source review. See docs/INPUT_REPAIR.md for the current review protocol.
 
 Usage:
     from conclusion_scrub import scrub_text, scrub_record, has_own_article_leak
-
     clean, n_dropped = scrub_text(text)
-    record = scrub_record(record)          # dict with verdict_free_text etc.
+    record = scrub_record(record)
     assert not has_own_article_leak(clean, article)
 """
 

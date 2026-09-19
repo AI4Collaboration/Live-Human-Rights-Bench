@@ -18,6 +18,12 @@ targets per model under `data/experiments/unified_fullcase_latest/`. At a median
 24.0% of the original input length, summaries reduce accuracy by 0.9-2.4 percentage
 points under the manuscript's mean-score rule.
 
+The [saved-rating analysis](../analysis/reliability_controls/REPORT.md#2-equal-size-sampling-comparison)
+compares full-record/summary changes with same-input sampling variation, using
+five ratings per compared prediction. All six models show positive excess
+change, with each paired 95% interval above zero. This analysis has 5,995 complete
+model-target pairs; its CSV records the five excluded rows.
+
 The released extractive artifact,
 `data/processed/summaries_extractive_leakchecked_20260916.json`, contains 947
 extracts matching their selected source spans. Its median within-judgment length

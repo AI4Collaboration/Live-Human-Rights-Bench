@@ -1,8 +1,9 @@
 # Statistical methodology for the current manuscript
 
-This document describes the experiments in GitHub revision `78b775f` and the
-manuscript analysis of those records. State Swap results were added in `cc59734`;
-their input review is recorded below.
+This document describes the current experiment checkpoints, collected at GitHub
+revision `4b231e1`, and their manuscript analysis. The
+[additional reliability analyses](analysis/reliability_controls/REPORT.md)
+use the same saved outputs.
 
 ## Scores and predictions
 
@@ -16,9 +17,8 @@ Every score is a violation likelihood on the **0-100** scale:
 
 Section 4 requests ten scores per input and classifies their valid-score mean.
 Full-record and summary checkpoints retain individual scores; published paraphrase
-and State Swap
-checkpoints retain `avg_rating`, a prediction and the unparsed count. An input
-with no parsed score is a failed prediction.
+and State Swap checkpoints retain `avg_rating`, a prediction and the unparsed
+count. An input with no parsed score is a failed prediction.
 
 The saved full-record/summary `prediction` fields instead use category plurality.
 They remain unchanged in the raw data. The manuscript recomputes its primary
@@ -45,13 +45,18 @@ percentage points, using each experiment's matched reference.
 
 ## State Swap input review
 
-The released replacement rule changes 891 US, 859 Russia and 725 Ukraine inputs
-out of 1,000 targets per arm. Report actual text changes separately from
-unchanged inputs, including original respondents already equal to the swap
-destination. Pair comparisons within the State Swap experiment's own original
-arm. Missing scores remain failures rather than abstentions or reversals.
-The [protocol and input review](docs/STATESWAP.md) provide the counts and
-published scoring convention.
+The current alias-aware rule changes 998 US, 973 Russia and 832 Ukraine inputs.
+Seven Russia changes only normalize the existing respondent's name. Actual
+respondent substitutions with changed text therefore number **998, 966 and
+832**, respectively.
+
+The primary comparison uses the same **800 targets from 757 judgments** for all
+six models and three destinations: every arm changes the respondent and summary
+text, with valid means in every original and destination arm. Pair each
+destination with the experiment's own original summary. All 24,000 published
+rows have a valid mean; unparsed individual ratings are recorded separately.
+The 807-target text-change-only intersection is a sensitivity cohort. The
+[protocol and input review](docs/STATESWAP.md) detail these distinctions.
 
 ## Three-turn persuasion
 
@@ -103,3 +108,20 @@ The selected claim-level checkpoints are local analysis artifacts awaiting
 publication. [README.md](README.md) records current data availability and runner
 paths. The Overleaf manuscript's source manifests and aggregate tables pin the
 reported estimates.
+
+## Additional analyses of saved outputs
+
+The [reliability report](analysis/reliability_controls/REPORT.md) provides:
+
+- **Cue and correctness:** within each model and challenge mode, match complete
+  no-cue and AI safety researcher branches. Separate retention of correct initial
+  judgments, correction of initial errors and abstention. The strict Claude/GPT
+  comparison uses 349 judgments with the same initial verdict and all eight
+  model/cue/mode branches complete.
+- **Sampling variation:** on 5,995 model-target pairs with ten valid ratings per
+  input, enumerate all five-score subsets. Compare disjoint halves of the same
+  input with full-record/summary subsets of the same size. Report both the
+  reference-only and symmetric excess, with paired judgment-cluster intervals.
+
+The report includes exact denominators, CSV results, input hashes and a Python
+reproduction command. These analyses require no new model calls.

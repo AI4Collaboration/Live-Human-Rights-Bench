@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Clean and normalize respondent names in the ECtHR verdict-free dataset.
+Clean and normalize respondent names in an explicitly selected candidate corpus.
 
 Fixes:
   1. UNKNOWN respondents - re-extract from case_name ("v. COUNTRY" / "c. COUNTRY")
@@ -9,13 +9,13 @@ Fixes:
 
 Usage:
   # Preview changes (dry run)
-  python scripts/clean_respondent_names.py --preview
+  python scripts/clean_respondent_names.py --input path/to/candidates.json --preview
 
   # Apply changes and save
-  python scripts/clean_respondent_names.py --apply --output data/processed/echr_verdict_free_clean.json
+  python scripts/clean_respondent_names.py --input path/to/candidates.json --apply --output data/processed/candidates_normalized.json
 
   # Push cleaned dataset to HuggingFace
-  python scripts/clean_respondent_names.py --apply --push overthelex/echr-verdict-free
+  python scripts/clean_respondent_names.py --input path/to/candidates.json --apply --push your-org/reviewed-candidates
 """
 
 import argparse
@@ -221,22 +221,16 @@ def clean_dataset(records: list[dict], preview: bool = True) -> list[dict]:
 
 def main():
     parser = argparse.ArgumentParser(description="Clean respondent names in ECtHR dataset")
-    parser.add_argument("--input", help="Input JSON file")
+    parser.add_argument("--input", required=True, help="Explicit candidate corpus JSON file")
     parser.add_argument("--output", help="Output JSON file")
     parser.add_argument("--preview", action="store_true", help="Preview changes without applying")
     parser.add_argument("--apply", action="store_true", help="Apply changes")
-    parser.add_argument("--push", help="Push to HuggingFace dataset (e.g. overthelex/echr-verdict-free)")
+    parser.add_argument("--push", help="Explicit destination Hugging Face dataset")
     args = parser.parse_args()
 
-    if args.input:
-        print(f"Loading from {args.input}...")
-        with open(args.input) as f:
-            records = json.load(f)
-    else:
-        print("Loading from HuggingFace overthelex/echr-verdict-free...")
-        from datasets import load_dataset
-        ds = load_dataset("overthelex/echr-verdict-free", split="train")
-        records = [dict(r) for r in ds]
+    print(f"Loading from {args.input}...")
+    with open(args.input, encoding="utf-8") as f:
+        records = json.load(f)
 
     print(f"Loaded {len(records)} records")
 

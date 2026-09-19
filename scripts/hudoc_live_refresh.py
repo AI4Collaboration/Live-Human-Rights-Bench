@@ -1,50 +1,19 @@
 #!/usr/bin/env python3
-"""
-HUDOC Live Refresh Orchestrator for LiveHumanRightsBench
+"""Refresh a selected HUDOC candidate corpus for LiveHumanRightsBench.
 
-Automated pipeline that:
-  1. Determines the latest decision_date in the current dataset
-  2. Downloads new judgments from HUDOC since that date
-  3. Runs the verdict-leakage removal pipeline on new judgments
-  4. Appends clean results to the existing dataset
-  5. Optionally pushes the updated dataset to HuggingFace
-
-Designed to run as a cron job for continuous "live" benchmark updates.
+Find the latest decision date in the supplied corpus, fetch newer judgments,
+process the new records and write an updated candidate corpus. Source review and
+target resolution precede publication as a frozen evaluation release.
 
 Usage:
-  # Basic refresh from existing dataset
-  python scripts/hudoc_live_refresh.py \
-    --dataset data/processed/echr_cases_ukr_eng_final.json \
-    --output data/processed/echr_live_updated.json
+  python scripts/hudoc_live_refresh.py --dataset path/to/pinned_candidate_corpus.json --output data/processed/candidates_refreshed.json
+  python scripts/hudoc_live_refresh.py --dataset path/to/pinned_candidate_corpus.json --output data/processed/candidates_refreshed.json --full-pipeline
+  python scripts/hudoc_live_refresh.py --hf-dataset your-org/reviewed-candidates --output data/processed/candidates_refreshed.json
+  python scripts/hudoc_live_refresh.py --dataset path/to/pinned_candidate_corpus.json --country UKR --output data/processed/ukraine_candidates_refreshed.json
 
-  # Refresh from HuggingFace dataset
-  python scripts/hudoc_live_refresh.py \
-    --hf-dataset overthelex/echr-verdict-free \
-    --output data/processed/echr_live_updated.json
-
-  # Refresh with full pipeline (LLM verification)
-  python scripts/hudoc_live_refresh.py \
-    --dataset data/processed/echr_cases_ukr_eng_final.json \
-    --output data/processed/echr_live_updated.json \
-    --full-pipeline
-
-  # Refresh and push to HuggingFace
-  python scripts/hudoc_live_refresh.py \
-    --dataset data/processed/echr_cases_ukr_eng_final.json \
-    --output data/processed/echr_live_updated.json \
-    --push-to-hf overthelex/echr-verdict-free
-
-  # Filter to a specific country
-  python scripts/hudoc_live_refresh.py \
-    --dataset data/processed/echr_cases_ukr_eng_final.json \
-    --country UKR \
-    --output data/processed/echr_ukr_live.json
-
-  # Cron-friendly: quiet output, auto-detect dates
-  python scripts/hudoc_live_refresh.py \
-    --dataset data/processed/echr_live.json \
-    --output data/processed/echr_live.json \
-    --quiet
+Use --push-to-hf only with an explicitly selected publication destination.
+--full-pipeline includes model verification of newly fetched records. Existing
+rows are retained; the full proposed release still requires source review.
 """
 
 import argparse
@@ -333,7 +302,7 @@ For cron usage:
     )
     input_group.add_argument(
         "--hf-dataset", type=str,
-        help="HuggingFace dataset name (e.g., overthelex/echr-verdict-free)",
+        help="Explicit Hugging Face candidate dataset to refresh",
     )
 
     # Output
@@ -369,7 +338,7 @@ For cron usage:
     # HuggingFace push
     parser.add_argument(
         "--push-to-hf", default="",
-        help="Push updated dataset to this HuggingFace repo (e.g., overthelex/echr-verdict-free)",
+        help="Explicit Hugging Face destination for the updated candidate corpus",
     )
 
     # Misc
