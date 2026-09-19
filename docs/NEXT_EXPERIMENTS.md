@@ -7,6 +7,56 @@ Nationality is a separate planned identity experiment. Start with Claude Opus
 initial responses. The tables below distinguish new conditions, optional
 extensions and already completed references.
 
+## Failure mode analysis: existing results first
+
+**Question:** When judgment reliability fails, what observable error occurs,
+and which case evidence explains it? The analysis covers outcomes, input
+changes and interactions; CoT is not a prerequisite.
+
+### Completed score-based analysis
+
+The [failure mode report](../analysis/failure_modes/REPORT.md) classifies all six
+models on their matched no-cue/researcher cohorts and the strict shared
+349-case Claude/GPT cohort. It verifies 16 cohort hashes and reproduces the
+existing final correct/wrong/abstention counts. No model calls were made.
+
+| Failure pattern | Observable definition | Evidence |
+| --- | --- | --- |
+| Harmful change | An initially correct answer becomes a wrong decisive verdict | Initial/final scores and case label |
+| Loss of decisiveness | An initially correct answer becomes an abstention | Initial/final scores and thresholds |
+| Persistent error | An initially wrong answer remains wrong | Initial/final correctness, split by intermediate recovery |
+| Lost correction | A wrong answer becomes correct and later returns to wrong | All three follow-up scores |
+
+Temporary errors followed by recovery, sustained correct answers and successful
+corrections are retained as comparison outcomes. Use initially correct and
+initially wrong denominators separately. Static and adaptive paths use the same
+matched cases within each reported comparison.
+
+### Next: inspect case evidence
+
+- Review the prepared 24-case queue, including cases where the cue preserves a
+  correct answer, preserves a wrong answer, or a temporary change occurs.
+  The queue supplies contrasting examples; use a separately sampled cohort
+  before estimating the prevalence of manually assigned causes.
+- Compare the actual evaluated input with the source record and target
+  provision. Check missing relevant facts, unsupported factual claims, changes
+  in the applied legal criterion, and explicit responses to user pressure.
+- Record a supporting excerpt for each label. Two reviewers independently
+  code the evidence and reconcile differences; retain an unclassified category
+  when the relevant evidence is unavailable.
+- For summarization and paraphrasing, connect harmful transitions to the actual
+  transformed input. Recover the evaluated paraphrase texts before assigning
+  factual-preservation labels. For State Swap, establish the applicable legal
+  setting before interpreting a changed verdict as an error.
+- Initial reply text is released; the three-turn checkpoints contain scores
+  without follow-up reply or challenger text. Use recovered logs for response
+  analysis, and save complete messages during the planned controls and role
+  additions. Keep the original response format for comparable conditions.
+
+**Paper output:** one clear takeaway about the dominant failure pattern, with
+counts and source-linked examples. Put annotation rules and detailed cases in
+the appendix. Add a compact figure only when it makes that one takeaway clearer.
+
 ## 1. Neutral reassessment control: recommended
 
 **Question:** How much of the three-turn judgment change occurs when a model is
@@ -181,6 +231,11 @@ See the [additional analysis report](../analysis/reliability_controls/REPORT.md)
 - Full-record versus summary changes calibrated against same-input variability,
   using exact five-score splits of the existing ten ratings and matched
   judgment-cluster intervals.
+
+The [failure mode analysis](../analysis/failure_modes/REPORT.md) additionally
+provides score-path classifications, conditional rates, matched case traces
+and a 24-case inspection queue. Classification is complete; human cause
+annotations remain pending.
 
 These analyses use existing outputs. The conversational reassessment control,
 new role cues and nationality cues remain conditions to run.

@@ -6,6 +6,12 @@
 4.6 and GPT-5.6-sol, and their saved initial responses. The list below contains
 new conditions; existing role conditions serve as matched references.
 
+**Failure mode analysis:** classify observed judgment errors from the existing
+scores and inspect representative cases. The [offline analysis](analysis/failure_modes/REPORT.md)
+now separates harmful changes, abstention, persistent errors and lost corrections
+across 16 matched cohorts. A 24-case review queue is prepared; case-level cause
+annotations are pending. This analysis does not require CoT or new model calls.
+
 | Priority | Experiment to run | Main question | Initial scope |
 | --- | --- | --- | --- |
 | Recommended | Neutral reassessment | How much judgment change occurs when only asked to reconsider? | Three neutral turns; 600 target responses |
@@ -22,6 +28,11 @@ separate experiments. All proposed runs are pending. See the
 
 **Additional analyses completed without API calls:**
 
+- **Failure modes distinguish changing into an error from preserving one.**
+  On the shared static Claude comparison, the researcher cue reduces
+  correct-to-wrong changes from 287/314 to 1/314 while increasing final wrong
+  answers among initially wrong cases from 4/35 to 35/35. The new analysis also
+  identifies temporary errors and corrections that are later lost.
 - **The researcher cue preserves correct and incorrect starting judgments.**
   On the shared 349-case static comparison, Claude retains 313/314 correct
   initial answers with the cue versus 27/314 without it, while correcting 0/35
