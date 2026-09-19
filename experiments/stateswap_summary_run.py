@@ -99,11 +99,11 @@ def call(model, prompt, k):
 
 def bind_run_config(directory, args):
     config = {
-        "version": "stateswap-summary-literal-v1",
+        "version": "stateswap-summary-aliases-v2",
         "rating_parser": "anchored-percentage-v1",
         "model": args.model, "samples": args.samples, "limit": args.limit,
         "temperature": 1.0, "max_tokens": 2000,
-        "targets": TARGETS, "demonyms": DEMONYM,
+        "targets": TARGETS, "country_aliases_and_demonyms": COUNTRIES,
         "prompt_sha256": hashlib.sha256((SYSTEM + PREDICTIVE).encode()).hexdigest(),
         "cases_sha256": hashlib.sha256(Path(args.cases).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
         "summaries_sha256": hashlib.sha256(Path(args.summaries).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
@@ -169,16 +169,22 @@ def main():
     def score_once(prompt, retries=3):
         # Retry when the model returns an empty or unparseable response (not just on
         # network errors) — this is what left DeepSeek-v4-pro with null rows.
+        attempts = []
         for _ in range(retries):
-            r = parse_rating(call(a.model, prompt, k))
+            response = call(a.model, prompt, k)
+            attempts.append(response)
+            r = parse_rating(response)
             if r is not None:
-                return r
-        return None
+                return r, attempts
+        return None, attempts
 
     def work(job):
         jk, c, arm, text = job
         prompt = PREDICTIVE.format(case_text=text, article=c["article_full"])
-        ratings = [score_once(prompt) for _ in range(a.samples)]
+        sampled = [score_once(prompt) for _ in range(a.samples)]
+        ratings = [rating for rating, _ in sampled]
+        response_attempts = [attempts for _, attempts in sampled]
+        responses = [attempts[-1] for attempts in response_attempts]
         good = [r for r in ratings if r is not None]
         avg = sum(good) / len(good) if good else None
         pred = None if avg is None else ("violation" if avg > 60 else "no_violation" if avg < 40 else "abstention")
@@ -187,6 +193,8 @@ def main():
                 "text_changed": text != summaries[c["item_id"]][0],
                 "violation_label": c["violation_label"], "avg_rating": avg, "prediction": pred,
                 "ratings": ratings, "responses": responses,
+                "response_attempts": response_attempts,
+                "parse_retry_count": sum(len(attempts) - 1 for attempts in response_attempts),
                 "accurate": pred == c["violation_label"], "n_unparsed": len(ratings) - len(good)}
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
         futs = [ex.submit(work, j) for j in jobs]
