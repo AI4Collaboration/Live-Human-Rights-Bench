@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "new_model_calls": 0,
+  "method": "Exact text-hash binding to existing source and summary review records; no new semantic or pretraining-contamination audit.",
+  "targets": 1000,
+  "judgments": 947,
+  "source_character_cap": 50000,
+  "source_input_hash_mismatches": [],
+  "selected_summary_hash_mismatches": [],
+  "review_scope": "Prompt-level current-ECtHR outcome and merits-reasoning leakage; not pretraining overlap",
+  "existing_lexical_context_review": {
+    "matches": 21,
+    "judgments": 20,
+    "unresolved_current_case_assertions_in_these_matches": 0,
+    "scope": "Contextual review of all residual matches to this lexical candidate pattern, after the full source-input review. This is not a complete lexical definition of leakage."
+  },
+  "source_files": {
+    "dataset": {
+      "path": "data/processed/echr_unified.json",
+      "sha256_git_blob": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    "summaries": {
+      "path": "data/processed/summaries_dsv41flash.json",
+      "sha256_git_blob": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    "registry": {
+      "path": "data/audits/leakage_20260915/repair_release_report.json",
+      "sha256_git_blob": "c9e49d1a097e9779a7fa9752ee4c96e9b457285f6117e46fe598ed6de0c0fa51"
+    },
+    "residual_review": {
+      "path": "data/audits/leakage_20260915/residual_assertion_context_review.json",
+      "sha256_git_blob": "3ed0d66ae7c6a2e20296b9538f9be5ba3dea2842ea8ed2161abd1d5edc9ea369"
+    },
+    "postcut_review": {
+      "path": "data/audits/verdict_spans/postcut_verification_20260916.json",
+      "sha256_git_blob": "d635f7520b84173c6a6f1ca3b82f0b91d6d96c7ad0a820254b24f0719053c8f9"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "independent_scalar_systematic_rows": 120,
+  "independent_scalar_persuasion_turn_rows": 180,
+  "independent_scalar_role_rows": 340,
+  "primary_matched_pairs": 44476,
+  "shared_cases": 349,
+  "source_hashes_reverified": 21,
+  "output_hashes_reverified": 10,
+  "validator_sha256_lf": "0f784606848e56703c9dabe59f720913aae24adee3c0f178d3c914bc2fd269d2",
+  "manifest_sha256_lf": "a46bd20b04580d295d6106cb93ad9438d9f521548d6481c1157b010ca31e280b"
+}

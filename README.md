@@ -1,49 +1,63 @@
 # LiveHumanRightsBench
 
-## Next experiments
+## Next API experiments
 
-**Plan updated 19 September 2026.** Start with 100 matched cases, Claude Opus
-4.6 and GPT-5.6-sol, and their saved initial responses. The list below contains
-new conditions; existing role conditions serve as matched references.
+**Plan updated 19 September 2026 after review. No new API calls have been run.**
+Prioritize the role-cue finding and conversational sampling variability. Use
+Claude Opus 4.6 and GPT-5.6-sol, exact saved initial responses, and a locked
+100-case subset of the shared 349-case cohort. Existing conditions below are
+concurrent replication references, not new role additions.
 
-**Failure mode analysis:** use saved scores, case labels and turn trajectories.
-The [offline analysis](analysis/failure_modes/REPORT.md) separates harmful
-changes, abstention, persistent errors and lost corrections across 16 matched
-cohorts. All five [finer analyses](analysis/fine_grained_failures/REPORT.md) are
-now complete, with no new human annotation or model calls:
+| Priority | Experiment | Why it matters | New generations |
+| --- | --- | --- | ---: |
+| First | AI researcher + neutral reassessment, with concurrent no-cue and AI safety researcher references | Separate the `safety` wording effect from ordinary reconsideration and serving-time changes | 2,400 target responses |
+| First | Repeat the two reference conditions on 50 of those cases, five static trajectories in total | Measure within-case variability of the headline role contrast | +2,400 target responses; first trajectories reused |
+| Conditional next | Repeat the same two conditions in adaptive mode on the same 50 cases, five trajectories | Check whether the role contrast survives variation in the evolving challenger and target | +3,000 target responses and 3,000 challenger generations |
+| Retained role extensions | Generic researcher; judge | Broader research identity and legal authority | +1,200 new-cue responses; +600 for a concurrent lawyer reference |
+| Separate identity extension | Same / different nationality as respondent | Nationality alignment without professional-role cues | +1,200 target responses |
+| Optional role extensions | Human rights researcher; ordinary person; AI systems researcher | Domain relevance, non-expert identity, or equal-word-count role wording | +600 target responses per cue |
+| Conditional mechanism test | Role by explicit evaluation framing | Test evaluation signaling if advancing a mechanism claim | 2,400 target responses for one trajectory in each of four cells |
+| Conditional State Swap | Jurisdiction held fixed | Support an identity-only claim beyond the current combined intervention | 3,000 target responses |
 
-1. **Initial score extremity:** distinguish changes near the verdict thresholds
-   from harmful reversals of initially extreme scores.
-2. **Failure timing and recovery:** locate the first wrong turn, subsequent
-   recovery and corrections that are later lost.
-3. **Error direction:** separate missed violations from false violation findings.
-4. **Cue effects by initial correctness:** compare correct-answer retention and
-   correction of initial errors for the existing roles.
-5. **Shared vulnerability:** identify matched cases that fail under several
-   perturbations, using each experiment's own reference prediction.
+**Recommended first batch: 4,800 target responses, no challenger calls.**
+Adding adaptive replication brings the package to **7,800 target responses
+plus 3,000 challenger generations**, before retries. References are collected
+in the same serving window as the new conditions. Repetitions are averaged
+within cases; they do not increase the independent case count.
+The [merged protocol and exact budgets](docs/NEXT_EXPERIMENTS.md) specify
+strata, cues, repeated-trajectory handling, runner changes and stopping rules.
 
-The report prioritizes initial score extremity and failure timing, with error
-direction, role comparisons and shared vulnerability as supporting analyses.
-See the [analysis definitions and remaining experiments](docs/NEXT_EXPERIMENTS.md).
+**Already available:** AI safety researcher, lawyer, junior lawyer, senior
+lawyer and no cue. Do not rerun their full cohorts as new role experiments.
+Nationality and professional roles remain separate. The existing
+[older-model nationality release](data/experiments/syco_nationality/) combines
+nationality with a lawyer cue for one turn; it does not implement the planned
+three-turn nationality-only comparison.
 
-| Priority | Experiment to run | Main question | Initial scope |
-| --- | --- | --- | --- |
-| Recommended | Neutral reassessment | How much judgment change occurs when only asked to reconsider? | Three neutral turns; 600 target responses |
-| First role addition | AI researcher | Does the AI safety researcher effect depend on `safety`? | Static, three turns; 600 responses |
-| Next role additions | Generic researcher; judge | Does the effect extend to broader research identity or legal authority? | Two separate cues; 1,200 responses |
-| Separate identity experiment | Same / different nationality as respondent | Does the challenger's nationality relative to the respondent affect judgment? | Two separate cues; 1,200 responses |
-| Optional role additions | Human rights researcher; ordinary person | Does domain relevance or a non-expert identity matter? | Two separate cues; 1,200 responses |
-| Conditional | State Swap with jurisdiction held fixed | What changes when respondent identity varies under the same legal assumptions? | Original + two destinations, five ratings; 3,000 responses |
+## Review follow-up without API calls
 
-**Already available:** AI safety researcher, lawyer, junior lawyer, senior lawyer,
-and no cue. Reuse these results; nationality and professional roles remain
-separate planned experiments. A separate [old-model nationality release](data/experiments/syco_nationality/)
-uses one challenge turn and a fixed lawyer cue; the proposed three-turn
-nationality-only comparison remains pending. See the
-[exact cues, matched protocol and budget](docs/NEXT_EXPERIMENTS.md).
+The [review assessment](docs/REVIEW_IMPROVEMENTS.md) distinguishes useful
+additions, existing evidence and suggestions that do not fit the paper's claims.
+Threshold sensitivity uses saved scores, not fresh model responses. Existing
+source-review evidence and older-model time-window analyses address different
+questions and remain separate.
+
+The [failure mode analysis](analysis/failure_modes/REPORT.md) and all five
+[fine-grained analyses](analysis/fine_grained_failures/REPORT.md) are complete:
+initial score extremity, failure timing/recovery, error direction, cue effects
+by initial correctness, and shared vulnerability across perturbations. They
+require no new human annotation or model calls.
 
 **Additional analyses completed without API calls:**
 
+- **The main role and conversational results survive threshold changes.**
+  Across five scoring rules, final conversational accuracy falls by 12.6-53.8
+  points. The shared-case static researcher cue reduces strict reversals by
+  86.2-90.8 points for Claude and 47.3 for GPT. Summary accuracy changes are
+  more rule-sensitive (-5.7 to +0.4), while corrections and losses coexist.
+  The [threshold report](analysis/threshold_sensitivity/REPORT.md) retains the
+  original cohorts and separates rescored reversals from support for the
+  challenger's fixed verdict.
 - **Extreme scores still reverse to the opposite endpoint.** In the shared
   349-case comparison, static challenges without a cue turn 163/187 initially
   correct endpoint judgments wrong for Claude and 281/305 for GPT. Every one
@@ -112,7 +126,7 @@ available as [JSON](configs/data_source_status.json).
 | Benchmark v1.0 | 1,000 targets from 947 judgments | [Canonical dataset](data/processed/echr_unified.json) |
 | Full-case and summary evaluation | Six models; 1,000 baseline and 1,000 summary records per model; ten requested ratings per record | [Current results](data/experiments/unified_fullcase_latest/) |
 | Paraphrase evaluation | Six models; original, light, medium, and heavy arms; 24,000 result records | [Current results](data/experiments/paraphrase/) |
-| Three-turn persuasion (sycophancy) | Six models; 11 conditions; static and adaptive arms; 6,000 initial records and 118,206 trajectory records | [Current results](data/experiments/syco_full_latest/) |
+| Three-turn adversarial opinion | Six models; 11 conditions; static and adaptive arms; 6,000 initial records and 118,206 trajectory records | [Current results](data/experiments/syco_full_latest/) |
 | Extractive summaries | One source-extractive control for each of the 947 judgments | [Released artifact](data/processed/summaries_extractive_leakchecked_20260916.json) |
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
 | Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
@@ -174,7 +188,7 @@ Earlier-model controls add `openai/gpt-4o-mini` and `openai/gpt-4.1-mini` for
 full-record, summary, paraphrase and State Swap evaluation. Their
 [cutoff and temporal analysis](analysis/model_time_windows/REPORT.md) uses the
 same v1.0 targets. The separate nationality extension uses a one-turn lawyer
-cue. The six-model three-turn persuasion roster is unchanged.
+cue. The six-model three-turn adversarial-opinion roster is unchanged.
 
 Separate models prepare the inputs and challenges:
 
@@ -215,7 +229,7 @@ The generated input file, `data/processed/paraphrase_pairs.json`, and its
 generation checkpoint are not included in the current commit. Generating new
 paraphrases produces a new set of inputs.
 
-### Three-turn persuasion (sycophancy)
+### Three-turn adversarial opinion
 
 [`experiments/syco_run.py`](experiments/syco_run.py) evaluates whether a model
 reverses its initial judgment under repeated social pressure. Both the target
