@@ -1,0 +1,186 @@
+{
+  "source_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
+  "model_api_calls": 0,
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/experiments/syco_full_latest/initial.jsonl": {
+      "sha256_git_bytes": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
+      "bytes": 3351590
+    },
+    "data/experiments/syco_full_latest/trajectories.jsonl": {
+      "sha256_git_bytes": "24b215db916c259c8f529d287571b248c15c13d2481d109b5eb119903a759a68",
+      "bytes": 40613064
+    }
+  },
+  "cohort_checks": [
+    {
+      "scope": "within_model_mode",
+      "model": "anthropic/claude-opus-4.6",
+      "mode": "static",
+      "n": 874,
+      "cohort_sha256": "ed293a862c3a494da0bb9a768e4b20c4847a7865744470c7bedd72bfdb18cf2e"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "anthropic/claude-opus-4.6",
+      "mode": "adaptive",
+      "n": 480,
+      "cohort_sha256": "a8c8df43b470968bd5c81b6693a6dfe821035f8ed99763d549ef147ce8eaed87"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "openai/gpt-5.6-sol",
+      "mode": "static",
+      "n": 923,
+      "cohort_sha256": "07c91c54c290942996e9d3d57bb7aec68449a19854d0bfe6a22770afe4a87688"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "openai/gpt-5.6-sol",
+      "mode": "adaptive",
+      "n": 730,
+      "cohort_sha256": "e2bbecb08a9453adb905b507157df0c3d399b3ae2edd1170f2bc0616658f81aa"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "deepseek/deepseek-v4-pro",
+      "mode": "static",
+      "n": 603,
+      "cohort_sha256": "5a9a792f2e83ebf3a8d3b6dff998723b28917002684985c0a5edf5dec936f5c7"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "deepseek/deepseek-v4-pro",
+      "mode": "adaptive",
+      "n": 383,
+      "cohort_sha256": "499d74bbbcf3f21bb77f7b1284c2bb57b9e9aec14107a57f03333c28336de511"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "deepseek/deepseek-v4-flash",
+      "mode": "static",
+      "n": 849,
+      "cohort_sha256": "cbab00e1eca6d5f76d48bd7b7275c3f2e9c0dfab7a81ae672b4f4abd2b3f2f31"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "deepseek/deepseek-v4-flash",
+      "mode": "adaptive",
+      "n": 596,
+      "cohort_sha256": "39bfb638cca76dc229c130d6bb69a98bed2ae826b13ba4bee632ce64e12fd2ce"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "qwen/qwen3-235b-a22b",
+      "mode": "static",
+      "n": 830,
+      "cohort_sha256": "b74b10e3f8455d92346c852f33ccbbec570a45970fdd0700cb7f240d88b8d42a"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "qwen/qwen3-235b-a22b",
+      "mode": "adaptive",
+      "n": 552,
+      "cohort_sha256": "098fc8430f1b0a84ece37c043470ece72b5d1039f05f8b70660f98e0213297a7"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "qwen/qwen3-32b",
+      "mode": "static",
+      "n": 863,
+      "cohort_sha256": "26ec899298346313fa2ad5cbb4d32befa0c490a017ecf4f39c4ac43d22e08c9e"
+    },
+    {
+      "scope": "within_model_mode",
+      "model": "qwen/qwen3-32b",
+      "mode": "adaptive",
+      "n": 589,
+      "cohort_sha256": "1e5ccb0aaaeb927139df06c97f9f3cddd9aa9e9d5b996fa1842b44cec8526b16"
+    },
+    {
+      "scope": "shared_349",
+      "model": "anthropic/claude-opus-4.6",
+      "mode": "static",
+      "n": 349,
+      "cohort_sha256": "ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c"
+    },
+    {
+      "scope": "shared_349",
+      "model": "anthropic/claude-opus-4.6",
+      "mode": "adaptive",
+      "n": 349,
+      "cohort_sha256": "ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c"
+    },
+    {
+      "scope": "shared_349",
+      "model": "openai/gpt-5.6-sol",
+      "mode": "static",
+      "n": 349,
+      "cohort_sha256": "ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c"
+    },
+    {
+      "scope": "shared_349",
+      "model": "openai/gpt-5.6-sol",
+      "mode": "adaptive",
+      "n": 349,
+      "cohort_sha256": "ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c"
+    }
+  ],
+  "initial_records": 6000,
+  "released_trajectory_records": 118206,
+  "released_trajectory_fields": [
+    "any_turn_persuaded",
+    "arm",
+    "article_full",
+    "condition",
+    "final_persuaded",
+    "initial_score",
+    "item_id",
+    "key",
+    "opposing",
+    "scores",
+    "target",
+    "violation_label"
+  ],
+  "shared_349_branches": 2792,
+  "review_judgments": 24,
+  "review_branches": 192,
+  "review_selection_counts": {
+    "cue_preserves_correct": 8,
+    "cue_preserves_wrong": 8,
+    "temporary_change": 8
+  },
+  "human_annotation_status": "pending",
+  "bootstrap_draws": 2000,
+  "seed": 731,
+  "script_sha256_lf": "2e7258ccc895819d6e59172485f4ca471ec50a6d498b0d9b81847ee75f6260e3",
+  "reference_table_hashes": {
+    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
+    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc"
+  },
+  "outputs": {
+    "case_review_queue.csv": {
+      "sha256_lf": "5aa79de5076208ab6dea78714c00fabbbb185e6ebbf17bfd67302e564d66a518",
+      "bytes": 31190
+    },
+    "failure_mode_rates.csv": {
+      "sha256_lf": "3d05a003e40d6bab3622aabcbf9ac4dfd9fed8cac801cdb01dbee911521e98e4",
+      "bytes": 57182
+    },
+    "path_counts.csv": {
+      "sha256_lf": "191782479d3bb11c5b26fca1f3566d89e5cfd9356b4c180372c3f3e15187500c",
+      "bytes": 32327
+    },
+    "REPORT.md": {
+      "sha256_lf": "f6a603a850e2a91d432021a1a315497ea9f6cdeae8011a20924932bf56e9197f",
+      "bytes": 4644
+    },
+    "shared_349_paths.csv": {
+      "sha256_lf": "e42ae423e4020941cfc7794967ca232f9e5b014849019e48971bd267434958bb",
+      "bytes": 296945
+    }
+  }
+}
