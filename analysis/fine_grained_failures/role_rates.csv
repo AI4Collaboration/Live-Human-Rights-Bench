@@ -1,0 +1,361 @@
+scope,model,label,mode,cue,initial_group,metric,numerator,denominator,judgments,estimate,lower_95,upper_95,unit
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,correct,final_correct,56,684,684,8.187134502923977,6.287403263648142,10.314165906054471,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,correct,final_wrong,628,684,684,91.81286549707602,89.68583409394553,93.71259673635186,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,correct,final_abstention,0,684,684,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,correct,final_correct,677,684,684,98.9766081871345,98.14285714285714,99.70674486803519,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,correct,final_wrong,7,684,684,1.023391812865497,0.2932551319648094,1.8571428571428572,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,correct,final_abstention,0,684,684,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,correct,final_correct,523,684,684,76.46198830409357,73.20644216691069,79.50946737121522,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,correct,final_wrong,160,684,684,23.391812865497073,20.321464874632937,26.65802217315185,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,correct,final_abstention,1,684,684,0.14619883040935672,0.0,0.4484304932735426,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,correct,final_correct,585,684,684,85.52631578947368,82.77334507928518,88.06404657933042,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,correct,final_wrong,88,684,684,12.865497076023392,10.480349344978166,15.407684777288301,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,correct,final_abstention,11,684,684,1.608187134502924,0.7385524372230428,2.616279069767442,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,correct,final_correct,571,684,684,83.47953216374269,80.76317155299003,86.29752637431997,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,correct,final_wrong,109,684,684,15.935672514619883,13.256441707376078,18.714135264955942,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,correct,final_abstention,4,684,684,0.5847953216374269,0.1434668842727531,1.2162269753326347,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,wrong,final_correct,183,190,190,96.3157894736842,93.4065934065934,98.87640449438202,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,wrong,final_wrong,7,190,190,3.684210526315789,1.1235955056179776,6.593406593406594,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,wrong,final_abstention,0,190,190,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,wrong,final_correct,3,190,190,1.5789473684210527,0.0,3.5897435897435894,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,wrong,final_wrong,187,190,190,98.42105263157895,96.41025641025641,100.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,wrong,final_abstention,0,190,190,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,wrong,final_correct,93,190,190,48.94736842105264,41.98082657151237,56.45336605890603,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,wrong,final_wrong,97,190,190,51.05263157894737,43.546633941093965,58.01917342848764,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,lawyer,wrong,final_abstention,0,190,190,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,wrong,final_correct,59,190,190,31.05263157894737,24.478600543478258,37.82418428791485,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,wrong,final_wrong,122,190,190,64.21052631578948,57.066231722865744,71.06679674892169,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,junior_lawyer,wrong,final_abstention,9,190,190,4.736842105263158,2.0510204081632653,8.021860640098888,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,wrong,final_correct,70,190,190,36.84210526315789,30.04802955665025,44.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,wrong,final_wrong,119,190,190,62.63157894736842,55.55555555555556,69.45851698211045,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,static,senior_lawyer,wrong,final_abstention,1,190,190,0.5263157894736842,0.0,1.6762130437511757,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,correct,final_correct,39,219,219,17.80821917808219,12.88888888888889,23.181982872200262,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,correct,final_wrong,180,219,219,82.1917808219178,76.81801712779973,87.1111111111111,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,correct,final_abstention,0,219,219,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,correct,final_correct,212,219,219,96.80365296803653,94.33921067809179,99.04773188896412,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,correct,final_wrong,2,219,219,0.91324200913242,0.0,2.314814814814815,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,correct,final_abstention,5,219,219,2.28310502283105,0.4650624461670973,4.2061010925365245,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,correct,final_correct,164,219,219,74.88584474885845,69.05672939471675,80.53127377567773,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,correct,final_wrong,53,219,219,24.200913242009133,18.433179723502306,30.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,correct,final_abstention,2,219,219,0.91324200913242,0.0,2.3041474654377883,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,correct,final_correct,188,219,219,85.84474885844749,81.05690335511619,90.45454545454545,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,correct,final_wrong,25,219,219,11.415525114155251,7.211430180180179,15.837104072398189,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,correct,final_abstention,6,219,219,2.73972602739726,0.8967608904548366,5.045871559633028,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,correct,final_correct,162,219,219,73.97260273972603,68.07415267862886,79.55695792880259,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,correct,final_wrong,50,219,219,22.831050228310502,17.333333333333336,28.57142857142857,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,correct,final_abstention,7,219,219,3.1963470319634704,1.3097601088867463,5.752212389380531,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,wrong,final_correct,42,47,47,89.36170212765957,80.4337169650469,97.6204318936877,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,wrong,final_wrong,5,47,47,10.638297872340425,2.379568106312292,19.566283034953106,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,wrong,final_abstention,0,47,47,0.0,0.0,0.0,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,wrong,final_correct,1,47,47,2.127659574468085,0.0,6.898556535685634,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,wrong,final_wrong,43,47,47,91.48936170212765,82.6086956521739,98.07692307692307,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,wrong,final_abstention,3,47,47,6.382978723404255,0.0,14.54640151515151,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,wrong,final_correct,21,47,47,44.680851063829785,30.434782608695656,59.093228200371044,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,wrong,final_wrong,20,47,47,42.5531914893617,28.56366459627329,57.446808510638306,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,lawyer,wrong,final_abstention,6,47,47,12.76595744680851,4.166666666666666,22.916666666666664,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,wrong,final_correct,7,47,47,14.893617021276595,5.454545454545454,25.813464235624085,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,wrong,final_wrong,30,47,47,63.829787234042556,50.0,77.50127551020408,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,junior_lawyer,wrong,final_abstention,10,47,47,21.27659574468085,10.204081632653061,33.33333333333333,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,wrong,final_correct,15,47,47,31.914893617021278,18.64406779661017,46.34571752694269,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,wrong,final_wrong,28,47,47,59.57446808510638,44.89253148067738,73.68421052631578,percent
+five_roles_matched,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,senior_lawyer,wrong,final_abstention,4,47,47,8.51063829787234,1.9607843137254901,17.5,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,correct,final_correct,66,776,776,8.505154639175258,6.52994905672199,10.465268476805065,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,correct,final_wrong,710,776,776,91.49484536082474,89.53473152319494,93.47005094327801,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,correct,final_abstention,0,776,776,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,correct,final_correct,415,776,776,53.47938144329897,49.86760512888918,56.886397386397384,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,correct,final_wrong,361,776,776,46.52061855670103,43.11360261360261,50.132394871110805,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,correct,final_abstention,0,776,776,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,correct,final_correct,167,776,776,21.52061855670103,18.583985155580933,24.453540946961994,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,correct,final_wrong,609,776,776,78.47938144329896,75.54645905303799,81.41601484441908,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,correct,final_abstention,0,776,776,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,correct,final_correct,192,776,776,24.742268041237114,21.638580440105187,27.860793687810947,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,correct,final_wrong,584,776,776,75.25773195876289,72.13920631218906,78.3614195598948,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,correct,final_abstention,0,776,776,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,correct,final_correct,194,776,776,25.0,21.938383045525903,28.121405253489822,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,correct,final_wrong,582,776,776,75.0,71.87859474651017,78.06161695447409,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,correct,final_abstention,0,776,776,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,wrong,final_correct,140,142,142,98.59154929577466,96.40287769784173,100.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,wrong,final_wrong,2,142,142,1.4084507042253522,0.0,3.597122302158273,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,wrong,final_abstention,0,142,142,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,wrong,final_correct,109,142,142,76.76056338028168,70.0,83.22158475860576,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,wrong,final_wrong,33,142,142,23.239436619718308,16.778415241394242,30.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,wrong,final_abstention,0,142,142,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,wrong,final_correct,139,142,142,97.88732394366197,95.23809523809523,100.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,wrong,final_wrong,3,142,142,2.112676056338028,0.0,4.761904761904762,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,lawyer,wrong,final_abstention,0,142,142,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,wrong,final_correct,131,142,142,92.25352112676056,87.69202898550725,96.29629629629629,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,wrong,final_wrong,11,142,142,7.746478873239436,3.7037037037037033,12.307971014492752,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,junior_lawyer,wrong,final_abstention,0,142,142,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,wrong,final_correct,132,142,142,92.95774647887323,88.39271313364056,96.59963985594236,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,wrong,final_wrong,10,142,142,7.042253521126761,3.400360144057623,11.607286866359447,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,static,senior_lawyer,wrong,final_abstention,0,142,142,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,correct,final_correct,106,505,505,20.99009900990099,17.356800119958013,24.691543953592145,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,correct,final_wrong,399,505,505,79.00990099009901,75.30845604640785,82.64319988004199,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,correct,final_abstention,0,505,505,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,correct,final_correct,359,505,505,71.08910891089108,66.9958103525449,75.00122789783889,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,correct,final_wrong,146,505,505,28.910891089108908,24.9987721021611,33.00418964745511,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,correct,final_abstention,0,505,505,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,correct,final_correct,181,505,505,35.84158415841584,31.588373239759644,40.2,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,correct,final_wrong,324,505,505,64.15841584158416,59.8,68.41162676024035,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,correct,final_abstention,0,505,505,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,correct,final_correct,206,505,505,40.79207920792079,36.48525549841339,45.43733451015004,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,correct,final_wrong,299,505,505,59.20792079207921,54.56266548984995,63.5147445015866,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,correct,final_abstention,0,505,505,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,correct,final_correct,217,505,505,42.97029702970297,38.67676699552952,47.27672270611261,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,correct,final_wrong,287,505,505,56.83168316831683,52.390201100360464,61.19698841698841,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,correct,final_abstention,1,505,505,0.19801980198019803,0.0,0.6048387096774194,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,wrong,final_correct,78,80,80,97.5,93.3314606741573,100.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,wrong,final_wrong,2,80,80,2.5,0.0,6.668539325842687,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,wrong,final_abstention,0,80,80,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,wrong,final_correct,42,80,80,52.5,41.46131202691337,63.890027322404364,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,wrong,final_wrong,38,80,80,47.5,36.10997267759562,58.53868797308661,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,wrong,final_abstention,0,80,80,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,wrong,final_correct,68,80,80,85.0,76.71232876712328,92.5,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,wrong,final_wrong,12,80,80,15.0,7.5,23.28767123287671,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,lawyer,wrong,final_abstention,0,80,80,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,wrong,final_correct,70,80,80,87.5,80.0,94.36619718309859,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,wrong,final_wrong,10,80,80,12.5,5.633802816901409,20.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,junior_lawyer,wrong,final_abstention,0,80,80,0.0,0.0,0.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,wrong,final_correct,70,80,80,87.5,80.0,94.28571428571428,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,wrong,final_wrong,10,80,80,12.5,5.714285714285714,20.0,percent
+five_roles_matched,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,senior_lawyer,wrong,final_abstention,0,80,80,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,correct,final_correct,2,387,387,0.516795865633075,0.0,1.3158762671851125,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,correct,final_wrong,385,387,387,99.48320413436691,98.68412373281488,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,correct,final_abstention,0,387,387,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,correct,final_correct,19,387,387,4.909560723514212,2.842194118117158,7.086710432589569,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,correct,final_wrong,368,387,387,95.09043927648578,92.91328956741043,97.15780588188285,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,correct,final_abstention,0,387,387,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,correct,final_correct,4,387,387,1.03359173126615,0.2506109022556391,2.099737532808399,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,correct,final_wrong,383,387,387,98.96640826873386,97.9002624671916,99.74938909774436,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,correct,final_abstention,0,387,387,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,correct,final_correct,3,387,387,0.7751937984496124,0.0,1.7118076047550779,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,correct,final_wrong,384,387,387,99.2248062015504,98.28819239524492,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,correct,final_abstention,0,387,387,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,correct,final_correct,6,387,387,1.550387596899225,0.5128205128205128,2.864583333333333,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,correct,final_wrong,381,387,387,98.44961240310077,97.13541666666666,99.48717948717949,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,correct,final_abstention,0,387,387,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,wrong,final_correct,120,120,120,100.0,100.0,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,wrong,final_wrong,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,wrong,final_abstention,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,wrong,final_correct,112,120,120,93.33333333333333,88.46153846153845,97.39186656671664,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,wrong,final_wrong,8,120,120,6.666666666666667,2.6081334332833586,11.538461538461538,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,wrong,final_abstention,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,wrong,final_correct,119,120,120,99.16666666666667,97.36783884489985,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,wrong,final_wrong,1,120,120,0.8333333333333334,0.0,2.6321611551001363,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,lawyer,wrong,final_abstention,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,wrong,final_correct,119,120,120,99.16666666666667,97.22222222222221,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,wrong,final_wrong,1,120,120,0.8333333333333334,0.0,2.7777777777777777,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,junior_lawyer,wrong,final_abstention,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,wrong,final_correct,117,120,120,97.5,94.35483870967742,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,wrong,final_wrong,3,120,120,2.5,0.0,5.64516129032258,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,senior_lawyer,wrong,final_abstention,0,120,120,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,correct,final_correct,0,125,125,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,correct,final_wrong,125,125,125,100.0,100.0,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,correct,final_abstention,0,125,125,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,correct,final_correct,13,125,125,10.4,5.737704918032787,15.967226890756296,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,correct,final_wrong,110,125,125,88.0,81.89459247648904,92.97011264534883,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,correct,final_abstention,2,125,125,1.6,0.0,4.132231404958678,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,correct,final_correct,5,125,125,4.0,0.8,7.6923076923076925,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,correct,final_wrong,118,125,125,94.39999999999999,90.1639344262295,97.76119402985076,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,correct,final_abstention,2,125,125,1.6,0.0,4.0650406504065035,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,correct,final_correct,1,125,125,0.8,0.0,2.5210084033613445,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,correct,final_wrong,124,125,125,99.2,97.47899159663865,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,correct,final_abstention,0,125,125,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,correct,final_correct,2,125,125,1.6,0.0,4.033077629163384,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,correct,final_wrong,123,125,125,98.4,95.96692237083661,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,correct,final_abstention,0,125,125,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,wrong,final_correct,42,43,43,97.67441860465115,92.10263157894737,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,wrong,final_wrong,1,43,43,2.3255813953488373,0.0,7.897368421052617,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,wrong,final_abstention,0,43,43,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,wrong,final_correct,40,43,43,93.02325581395348,84.44444444444444,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,wrong,final_wrong,3,43,43,6.976744186046512,0.0,15.555555555555555,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,wrong,final_abstention,0,43,43,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,wrong,final_correct,40,43,43,93.02325581395348,84.0909090909091,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,wrong,final_wrong,3,43,43,6.976744186046512,0.0,15.909090909090908,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,lawyer,wrong,final_abstention,0,43,43,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,wrong,final_correct,39,43,43,90.69767441860465,80.95238095238095,98.07783018867923,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,wrong,final_wrong,4,43,43,9.30232558139535,1.9221698113207548,19.047619047619047,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,junior_lawyer,wrong,final_abstention,0,43,43,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,wrong,final_correct,41,43,43,95.34883720930233,87.5,100.0,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,wrong,final_wrong,2,43,43,4.651162790697675,0.0,12.5,percent
+five_roles_matched,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,senior_lawyer,wrong,final_abstention,0,43,43,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,correct,final_correct,7,615,615,1.1382113821138211,0.3322121397442467,2.031489158163264,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,correct,final_wrong,608,615,615,98.86178861788618,97.96851084183673,99.66778786025576,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,correct,final_abstention,0,615,615,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,correct,final_correct,36,615,615,5.853658536585367,4.071564622094628,7.846649762697785,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,correct,final_wrong,579,615,615,94.14634146341463,92.15335023730222,95.92843537790536,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,correct,final_abstention,0,615,615,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,correct,final_correct,9,615,615,1.4634146341463417,0.641025641025641,2.45911733828636,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,correct,final_wrong,606,615,615,98.53658536585365,97.54088266171364,99.35897435897436,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,correct,final_abstention,0,615,615,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,correct,final_correct,16,615,615,2.6016260162601625,1.4376996805111821,3.9152543889704257,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,correct,final_wrong,599,615,615,97.39837398373984,96.08474561102958,98.56230031948881,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,correct,final_abstention,0,615,615,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,correct,final_correct,17,615,615,2.7642276422764227,1.5575718376186392,4.173361434386363,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,correct,final_wrong,598,615,615,97.23577235772358,95.82663856561364,98.44242816238136,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,correct,final_abstention,0,615,615,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,wrong,final_correct,197,202,202,97.52475247524752,95.26309553504613,99.48724489795919,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,wrong,final_wrong,5,202,202,2.4752475247524752,0.5127551020408163,4.736904464953854,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,wrong,final_abstention,0,202,202,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,wrong,final_correct,185,202,202,91.58415841584159,87.67123287671232,95.16924103737605,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,wrong,final_wrong,16,202,202,7.920792079207921,4.499440298507463,11.766042780748656,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,wrong,final_abstention,1,202,202,0.49504950495049505,0.0,1.5706806282722512,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,wrong,final_correct,197,202,202,97.52475247524752,95.23809523809523,99.48717948717949,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,wrong,final_wrong,5,202,202,2.4752475247524752,0.5128205128205128,4.761904761904762,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,lawyer,wrong,final_abstention,0,202,202,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,wrong,final_correct,192,202,202,95.04950495049505,91.87741392628558,97.8612470133121,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,wrong,final_wrong,10,202,202,4.9504950495049505,2.138752986687905,8.122586073714407,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,junior_lawyer,wrong,final_abstention,0,202,202,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,wrong,final_correct,198,202,202,98.01980198019803,95.81059656367523,99.53057127813611,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,wrong,final_wrong,4,202,202,1.9801980198019802,0.46942872186389367,4.18940343632475,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,senior_lawyer,wrong,final_abstention,0,202,202,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,correct,final_correct,28,259,259,10.81081081081081,7.061714376636338,14.634834036310282,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,correct,final_wrong,226,259,259,87.25868725868726,83.0767716535433,91.1880459770115,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,correct,final_abstention,5,259,259,1.9305019305019304,0.38906735438723494,3.7601105035315525,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,correct,final_correct,38,259,259,14.671814671814673,10.383964143426295,18.89792412312097,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,correct,final_wrong,219,259,259,84.55598455598455,80.15378349308784,88.97065813017223,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,correct,final_abstention,2,259,259,0.7722007722007722,0.0,1.976480644958905,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,correct,final_correct,27,259,259,10.424710424710424,6.896551724137931,13.962472253052162,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,correct,final_wrong,229,259,259,88.41698841698842,84.61538461538461,92.04576222513948,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,correct,final_abstention,3,259,259,1.1583011583011582,0.0,2.6121848622058232,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,correct,final_correct,31,259,259,11.96911196911197,8.208649376070467,15.93668129040259,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,correct,final_wrong,226,259,259,87.25868725868726,83.33174904942966,91.18773946360153,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,correct,final_abstention,2,259,259,0.7722007722007722,0.0,1.968698453207182,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,correct,final_correct,30,259,259,11.583011583011583,7.777777777777778,15.748031496062993,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,correct,final_wrong,229,259,259,88.41698841698842,84.25196850393701,92.22222222222223,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,correct,final_abstention,0,259,259,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,wrong,final_correct,82,95,95,86.31578947368422,79.11960132890366,92.70990210843374,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,wrong,final_wrong,12,95,95,12.631578947368421,6.451612903225806,19.565217391304348,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,wrong,final_abstention,1,95,95,1.0526315789473684,0.0,3.7037037037037033,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,wrong,final_correct,76,95,95,80.0,71.13344788087056,87.36889521100048,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,wrong,final_wrong,18,95,95,18.947368421052634,11.71147211040828,27.660856190720324,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,wrong,final_abstention,1,95,95,1.0526315789473684,0.0,3.488372093023256,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,wrong,final_correct,76,95,95,80.0,72.11482558139535,88.04477225672876,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,wrong,final_wrong,19,95,95,20.0,11.955227743271223,27.88517441860465,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,lawyer,wrong,final_abstention,0,95,95,0.0,0.0,0.0,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,wrong,final_correct,82,95,95,86.31578947368422,78.81923331130206,92.78373734559301,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,wrong,final_wrong,12,95,95,12.631578947368421,6.382495164410058,20.238095238095237,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,junior_lawyer,wrong,final_abstention,1,95,95,1.0526315789473684,0.0,3.5722329472329424,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,wrong,final_correct,83,95,95,87.36842105263159,80.21978021978022,93.9137022397892,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,wrong,final_wrong,10,95,95,10.526315789473683,4.597701149425287,17.242163009404386,percent
+five_roles_matched,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,senior_lawyer,wrong,final_abstention,2,95,95,2.1052631578947367,0.0,5.434782608695652,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,correct,final_correct,5,618,618,0.8090614886731391,0.16155088852988692,1.6181885414863648,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,correct,final_wrong,613,618,618,99.19093851132686,98.38181145851364,99.83844911147011,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,correct,final_abstention,0,618,618,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,correct,final_correct,5,618,618,0.8090614886731391,0.16181229773462785,1.5748652475222926,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,correct,final_wrong,613,618,618,99.19093851132686,98.4251347524777,99.83818770226537,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,correct,final_abstention,0,618,618,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,correct,final_correct,8,618,618,1.2944983818770228,0.48543689320388345,2.177737426628942,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,correct,final_wrong,610,618,618,98.70550161812298,97.82226257337105,99.51456310679612,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,correct,final_abstention,0,618,618,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,correct,final_correct,11,618,618,1.779935275080906,0.8129751346214762,2.8574846206425137,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,correct,final_wrong,607,618,618,98.2200647249191,97.14251537935748,99.18702486537852,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,correct,final_abstention,0,618,618,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,correct,final_correct,3,618,618,0.48543689320388345,0.0,1.1165167464114827,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,correct,final_wrong,615,618,618,99.51456310679612,98.88348325358851,100.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,correct,final_abstention,0,618,618,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,wrong,final_correct,201,205,205,98.04878048780488,95.9178440607012,99.53488372093024,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,wrong,final_wrong,4,205,205,1.951219512195122,0.46511627906976744,4.082155939298794,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,wrong,final_abstention,0,205,205,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,wrong,final_correct,201,205,205,98.04878048780488,95.9178440607012,99.5475113122172,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,wrong,final_wrong,4,205,205,1.951219512195122,0.4524886877828055,4.082155939298794,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,wrong,final_abstention,0,205,205,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,wrong,final_correct,200,205,205,97.5609756097561,95.21524737860123,99.50738916256158,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,wrong,final_wrong,5,205,205,2.4390243902439024,0.49261083743842365,4.7847526213987575,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,lawyer,wrong,final_abstention,0,205,205,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,wrong,final_correct,201,205,205,98.04878048780488,95.95925470925471,99.53714322120285,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,wrong,final_wrong,4,205,205,1.951219512195122,0.4628567787971457,4.040745290745289,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,junior_lawyer,wrong,final_abstention,0,205,205,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,wrong,final_correct,203,205,205,99.02439024390245,97.54901960784314,100.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,wrong,final_wrong,2,205,205,0.975609756097561,0.0,2.450980392156863,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,static,senior_lawyer,wrong,final_abstention,0,205,205,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,correct,final_correct,31,262,262,11.83206106870229,8.208809468283583,15.730779439086964,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,correct,final_wrong,227,262,262,86.64122137404581,82.28782287822878,90.53068181818182,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,correct,final_abstention,4,262,262,1.5267175572519083,0.3703703703703704,3.0891023914279714,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,correct,final_correct,35,262,262,13.358778625954198,9.338267320982636,17.557251908396946,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,correct,final_wrong,219,262,262,83.58778625954199,79.10405198342886,88.12981630505871,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,correct,final_abstention,8,262,262,3.0534351145038165,1.140576391289319,5.283018867924529,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,correct,final_correct,26,262,262,9.923664122137405,6.425060240963854,13.584905660377359,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,correct,final_wrong,234,262,262,89.31297709923665,85.49460539760774,92.93691231139296,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,correct,final_abstention,2,262,262,0.7633587786259541,0.0,1.9157088122605364,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,correct,final_correct,36,262,262,13.740458015267176,9.523809523809524,18.250950570342205,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,correct,final_wrong,217,262,262,82.82442748091603,78.20653667568311,87.45477179546161,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,correct,final_abstention,9,262,262,3.435114503816794,1.486988847583643,5.7915057915057915,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,correct,final_correct,23,262,262,8.778625954198473,5.41491852863694,12.403173631753804,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,correct,final_wrong,233,262,262,88.93129770992367,84.96189798821378,92.5494205116991,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,correct,final_abstention,6,262,262,2.2900763358778624,0.7518092985272169,4.296875,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,wrong,final_correct,66,86,86,76.74418604651163,67.53246753246754,85.29591104734575,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,wrong,final_wrong,19,86,86,22.093023255813954,13.750000000000002,30.953219315895367,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,wrong,final_abstention,1,86,86,1.1627906976744187,0.0,3.8973855092276075,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,wrong,final_correct,66,86,86,76.74418604651163,67.46987951807229,85.26315789473684,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,wrong,final_wrong,17,86,86,19.767441860465116,11.7017822602929,28.57142857142857,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,wrong,final_abstention,3,86,86,3.488372093023256,0.0,8.00114942528735,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,wrong,final_correct,62,86,86,72.09302325581395,62.19512195121951,81.18966584158416,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,wrong,final_wrong,23,86,86,26.744186046511626,17.821443103214428,36.7816091954023,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,lawyer,wrong,final_abstention,1,86,86,1.1627906976744187,0.0,3.751186708860753,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,wrong,final_correct,66,86,86,76.74418604651163,67.41401054803944,85.07647406531697,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,wrong,final_wrong,16,86,86,18.6046511627907,11.235955056179774,27.452205882352935,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,junior_lawyer,wrong,final_abstention,4,86,86,4.651162790697675,1.0523574561403508,9.63855421686747,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,wrong,final_correct,68,86,86,79.06976744186046,69.99731182795699,87.35632183908046,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,wrong,final_wrong,17,86,86,19.767441860465116,11.878276062900408,28.986676016830287,percent
+five_roles_matched,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,senior_lawyer,wrong,final_abstention,1,86,86,1.1627906976744187,0.0,3.7037037037037033,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,correct,final_correct,1,603,603,0.16583747927031509,0.0,0.5102040816326531,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,correct,final_wrong,602,603,603,99.83416252072969,99.48979591836735,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,correct,final_abstention,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,correct,final_correct,1,603,603,0.16583747927031509,0.0,0.519975887273001,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,correct,final_wrong,602,603,603,99.83416252072969,99.48002411272701,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,correct,final_abstention,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,correct,final_correct,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,correct,final_wrong,603,603,603,100.0,100.0,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,correct,final_abstention,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,correct,final_correct,1,603,603,0.16583747927031509,0.0,0.5110732538330494,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,correct,final_wrong,602,603,603,99.83416252072969,99.48892674616695,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,correct,final_abstention,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,correct,final_correct,1,603,603,0.16583747927031509,0.0,0.5102040816326531,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,correct,final_wrong,602,603,603,99.83416252072969,99.48979591836735,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,correct,final_abstention,0,603,603,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,wrong,final_correct,219,221,221,99.09502262443439,97.69558585082778,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,wrong,final_wrong,2,221,221,0.904977375565611,0.0,2.3044141491722123,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,no_cue,wrong,final_abstention,0,221,221,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,wrong,final_correct,219,221,221,99.09502262443439,97.64122999195206,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,wrong,final_wrong,1,221,221,0.4524886877828055,0.0,1.4355792234081697,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,wrong,final_abstention,1,221,221,0.4524886877828055,0.0,1.5077280341099424,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,wrong,final_correct,220,221,221,99.5475113122172,98.56442077659183,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,wrong,final_wrong,1,221,221,0.4524886877828055,0.0,1.4355792234081697,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,lawyer,wrong,final_abstention,0,221,221,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,wrong,final_correct,221,221,221,100.0,100.0,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,wrong,final_wrong,0,221,221,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,junior_lawyer,wrong,final_abstention,0,221,221,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,wrong,final_correct,220,221,221,99.5475113122172,98.56459330143541,100.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,wrong,final_wrong,1,221,221,0.4524886877828055,0.0,1.4354066985645932,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,static,senior_lawyer,wrong,final_abstention,0,221,221,0.0,0.0,0.0,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,correct,final_correct,5,257,257,1.9455252918287937,0.39366218928516283,3.861377989284964,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,correct,final_wrong,247,257,257,96.10894941634241,93.65079365079364,98.18645640074209,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,correct,final_abstention,5,257,257,1.9455252918287937,0.3952180137561856,3.6889040680024263,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,correct,final_correct,9,257,257,3.501945525291829,1.509433962264151,5.906022163896177,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,correct,final_wrong,244,257,257,94.94163424124513,92.10500312044935,97.34898325358851,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,correct,final_abstention,4,257,257,1.556420233463035,0.37735849056603776,3.1620553359683794,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,correct,final_correct,6,257,257,2.3346303501945527,0.7633587786259541,4.330708661417323,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,correct,final_wrong,246,257,257,95.71984435797665,93.14411846496107,98.01606907585168,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,correct,final_abstention,5,257,257,1.9455252918287937,0.39370078740157477,3.787878787878788,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,correct,final_correct,9,257,257,3.501945525291829,1.4923986017866058,5.904059040590406,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,correct,final_wrong,237,257,257,92.21789883268482,88.93280632411067,95.2755905511811,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,correct,final_abstention,11,257,257,4.280155642023346,1.9839309241483154,6.9108818011257025,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,correct,final_correct,6,257,257,2.3346303501945527,0.7518796992481203,4.435707885304659,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,correct,final_wrong,248,257,257,96.49805447470817,94.09448818897637,98.52941176470588,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,correct,final_abstention,3,257,257,1.1673151750972763,0.0,2.651767196681644,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,wrong,final_correct,85,93,93,91.39784946236558,85.0,96.7032967032967,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,wrong,final_wrong,6,93,93,6.451612903225806,2.1052631578947367,11.652016093763658,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,wrong,final_abstention,2,93,93,2.1505376344086025,0.0,5.555555555555555,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,wrong,final_correct,81,93,93,87.09677419354838,79.9951923076923,93.61702127659575,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,wrong,final_wrong,10,93,93,10.75268817204301,4.819277108433735,17.443958283385268,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,wrong,final_abstention,2,93,93,2.1505376344086025,0.0,5.619573544433086,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,wrong,final_correct,84,93,93,90.32258064516128,83.72029828109201,95.70006863417981,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,wrong,final_wrong,7,93,93,7.526881720430108,2.5,13.592233009708737,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,lawyer,wrong,final_abstention,2,93,93,2.1505376344086025,0.0,5.747126436781609,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,wrong,final_correct,78,93,93,83.87096774193549,75.82417582417582,90.8165605691818,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,wrong,final_wrong,10,93,93,10.75268817204301,5.0,17.476334951456305,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,junior_lawyer,wrong,final_abstention,5,93,93,5.376344086021505,1.1108058608058609,10.344827586206897,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,wrong,final_correct,84,93,93,90.32258064516128,83.67297880690738,95.91836734693877,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,wrong,final_wrong,8,93,93,8.60215053763441,3.3333333333333335,15.058371735791066,percent
+five_roles_matched,qwen/qwen3-32b,Qwen3-32B,adaptive,senior_lawyer,wrong,final_abstention,1,93,93,1.0752688172043012,0.0,3.5304621848739437,percent

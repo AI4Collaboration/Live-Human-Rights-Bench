@@ -1,0 +1,55 @@
+model,label,destination,population,metric,numerator,denominator,judgments,estimate,lower_95,upper_95,unit
+anthropic/claude-opus-4.6,Claude Opus 4.6,US,initial_decisive,decisive_reversal,5,733,698,0.6821282401091405,0.1366120218579235,1.347799956290522,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,US,initial_decisive,became_abstention,30,733,698,4.092769440654844,2.660693803983989,5.796131142864452,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,US,initial_decisive,retained_verdict,698,733,698,95.22510231923602,93.48681631185556,96.82763631394343,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Russia,initial_decisive,decisive_reversal,11,733,698,1.5006821282401093,0.6830368125601055,2.358335608293923,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Russia,initial_decisive,became_abstention,36,733,698,4.911323328785812,3.4039521926152605,6.60377358490566,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Russia,initial_decisive,retained_verdict,686,733,698,93.58799454297409,91.54357380261314,95.38109451671801,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Ukraine,initial_decisive,decisive_reversal,11,733,698,1.5006821282401093,0.6784260515603799,2.435723951285521,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Ukraine,initial_decisive,became_abstention,26,733,698,3.547066848567531,2.2880215343203227,5.027344905353445,percent
+anthropic/claude-opus-4.6,Claude Opus 4.6,Ukraine,initial_decisive,retained_verdict,696,733,698,94.95225102319236,93.26923076923077,96.45302714548131,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,US,initial_decisive,decisive_reversal,50,770,733,6.493506493506493,4.736376491687936,8.24607329842932,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,US,initial_decisive,became_abstention,37,770,733,4.805194805194805,3.372025712142796,6.306306306306306,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,US,initial_decisive,retained_verdict,683,770,733,88.7012987012987,86.48285593765065,91.0737981005932,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Russia,initial_decisive,decisive_reversal,13,770,733,1.6883116883116882,0.8962295776283149,2.716776203339388,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Russia,initial_decisive,became_abstention,19,770,733,2.4675324675324677,1.4434750793585356,3.501945525291829,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Russia,initial_decisive,retained_verdict,738,770,733,95.84415584415584,94.42264641972812,97.20011435832275,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Ukraine,initial_decisive,decisive_reversal,15,770,733,1.948051948051948,1.041632802340702,2.9871100940671806,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Ukraine,initial_decisive,became_abstention,14,770,733,1.8181818181818181,0.916200424323307,2.849740932642487,percent
+openai/gpt-5.6-sol,GPT-5.6-sol,Ukraine,initial_decisive,retained_verdict,741,770,733,96.23376623376623,94.8385429690756,97.53254754324793,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,US,initial_decisive,decisive_reversal,47,732,694,6.420765027322404,4.564000572327943,8.28731158419409,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,US,initial_decisive,became_abstention,66,732,694,9.01639344262295,6.998584871696879,11.14132327116386,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,US,initial_decisive,retained_verdict,619,732,694,84.56284153005464,81.95163847780127,87.26318186418378,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Russia,initial_decisive,decisive_reversal,27,732,694,3.6885245901639343,2.4062566844919786,5.156388742742686,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Russia,initial_decisive,became_abstention,44,732,694,6.0109289617486334,4.401650618982118,7.8404401650618984,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Russia,initial_decisive,retained_verdict,661,732,694,90.30054644808743,88.03272542815938,92.29711141678129,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Ukraine,initial_decisive,decisive_reversal,26,732,694,3.551912568306011,2.299638128239547,4.911659260614044,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Ukraine,initial_decisive,became_abstention,35,732,694,4.781420765027322,3.314917127071823,6.380390991347993,percent
+deepseek/deepseek-v4-pro,DeepSeek V4 Pro,Ukraine,initial_decisive,retained_verdict,671,732,694,91.66666666666666,89.55223880597015,93.55292734377701,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,US,initial_decisive,decisive_reversal,41,753,713,5.444887118193891,3.835852152397727,7.171314741035857,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,US,initial_decisive,became_abstention,83,753,713,11.022576361221779,8.815394736842105,13.288839984949641,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,US,initial_decisive,retained_verdict,629,753,713,83.53253652058433,80.86472679675617,86.21655947391241,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Russia,initial_decisive,decisive_reversal,10,753,713,1.3280212483399734,0.5312084993359893,2.2696929238985315,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Russia,initial_decisive,became_abstention,32,753,713,4.249667994687915,2.91005291005291,5.7746581019477805,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Russia,initial_decisive,retained_verdict,711,753,713,94.42231075697211,92.73442042062331,95.93744859679191,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,decisive_reversal,9,753,713,1.1952191235059761,0.40214477211796246,2.1165424613700465,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,became_abstention,34,753,713,4.51527224435591,3.0910874681521787,6.0881135759708895,percent
+deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,retained_verdict,710,753,713,94.28950863213812,92.50638211761776,95.953099378576,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,decisive_reversal,4,696,663,0.5747126436781609,0.1414377212539656,1.1560693641618496,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,became_abstention,62,696,663,8.908045977011495,6.827720509448415,11.157631044947655,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,retained_verdict,630,696,663,90.51724137931035,88.31351570964247,92.69688529240273,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,decisive_reversal,2,696,663,0.28735632183908044,0.0,0.723589001447178,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,became_abstention,34,696,663,4.885057471264368,3.2810271041369474,6.656810085717467,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,retained_verdict,660,696,663,94.82758620689656,92.9997496423462,96.46892655367232,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,decisive_reversal,2,696,663,0.28735632183908044,0.0,0.7246376811594203,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,became_abstention,40,696,663,5.747126436781609,4.06913901592553,7.669647375371817,percent
+qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,retained_verdict,654,696,663,93.96551724137932,92.02279202279202,95.6776985764433,percent
+qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,decisive_reversal,17,736,699,2.309782608695652,1.3368537729450318,3.462705447830101,percent
+qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,became_abstention,60,736,699,8.152173913043478,6.172467648371263,10.28431953613419,percent
+qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,retained_verdict,659,736,699,89.53804347826086,87.2450823430301,91.73578881445778,percent
+qwen/qwen3-32b,Qwen3-32B,Russia,initial_decisive,decisive_reversal,1,736,699,0.1358695652173913,0.0,0.4172461752433936,percent
+qwen/qwen3-32b,Qwen3-32B,Russia,initial_decisive,became_abstention,32,736,699,4.3478260869565215,2.997275204359673,5.84259002514049,percent
+qwen/qwen3-32b,Qwen3-32B,Russia,initial_decisive,retained_verdict,703,736,699,95.5163043478261,93.97239603885977,96.875,percent
+qwen/qwen3-32b,Qwen3-32B,Ukraine,initial_decisive,decisive_reversal,1,736,699,0.1358695652173913,0.0,0.4172461752433936,percent
+qwen/qwen3-32b,Qwen3-32B,Ukraine,initial_decisive,became_abstention,20,736,699,2.717391304347826,1.5026809876322322,3.9791771890353065,percent
+qwen/qwen3-32b,Qwen3-32B,Ukraine,initial_decisive,retained_verdict,715,736,699,97.14673913043478,95.85561497326202,98.34036342824437,percent

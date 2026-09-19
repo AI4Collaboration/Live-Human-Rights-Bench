@@ -1,0 +1,705 @@
+scope,model,label,mode,cue,population,turn,metric,numerator,denominator,judgments,estimate,lower_95,upper_95,unit
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,1,first_error,601,684,684,87.86549707602339,85.14635854341736,90.10343609583686,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,1,cumulative_error,601,684,684,87.86549707602339,85.14635854341736,90.10343609583686,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,601,684,684,87.86549707602339,85.14635854341736,90.10343609583686,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,1,first_correction,179,190,190,94.21052631578948,90.68595702529717,97.28260869565217,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,600,628,628,95.54140127388536,93.82109311584401,97.0445768464844,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,2,first_error,21,684,684,3.070175438596491,1.8704364094930952,4.41836194453957,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,2,cumulative_error,622,684,684,90.93567251461988,88.53374565353701,92.9412206323971,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,21,83,83,25.301204819277107,16.278343023255815,34.66666666666667,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,2,first_correction,3,190,190,1.5789473684210527,0.0,3.4657775479040422,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,21,628,628,3.343949044585987,2.04049794644847,4.817422631955646,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,3,first_error,7,684,684,1.023391812865497,0.298496340948017,1.8867924528301887,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,3,cumulative_error,629,684,684,91.95906432748538,89.79591836734694,93.86634212859906,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,7,62,62,11.29032258064516,4.166666666666666,19.643588992974234,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,first_correction,1,190,190,0.5263157894736842,0.0,1.685631308322223,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,7,628,628,1.1146496815286624,0.32780221244835395,2.06357407827996,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,1,629,629,0.1589825119236884,0.0,0.4878048780487805,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,628,629,629,99.84101748807632,99.51219512195122,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,629,629,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,ever_corrected,183,190,190,96.3157894736842,93.4065934065934,98.87640449438202,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,never_corrected,7,190,190,3.684210526315789,1.1235955056179776,6.593406593406594,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,183,183,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,183,183,183,100.0,100.0,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,1,first_error,6,684,684,0.8771929824561403,0.28734601494087963,1.6248754512162076,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,1,cumulative_error,6,684,684,0.8771929824561403,0.28734601494087963,1.6248754512162076,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,6,684,684,0.8771929824561403,0.28734601494087963,1.6248754512162076,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,1,first_correction,3,190,190,1.5789473684210527,0.0,3.5897435897435894,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,6,7,7,85.71428571428571,50.0,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,2,first_error,1,684,684,0.14619883040935672,0.0,0.4491017964071856,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,2,cumulative_error,7,684,684,1.023391812865497,0.2932551319648094,1.8571428571428572,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,1,678,678,0.14749262536873156,0.0,0.4524886877828055,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,2,first_correction,0,190,190,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,1,7,7,14.285714285714285,0.0,50.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,3,first_error,0,684,684,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,3,cumulative_error,7,684,684,1.023391812865497,0.2932551319648094,1.8571428571428572,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,677,677,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,first_correction,0,190,190,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,7,7,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,0,7,7,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,7,7,7,100.0,100.0,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,7,7,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,ever_corrected,3,190,190,1.5789473684210527,0.0,3.5897435897435894,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,never_corrected,187,190,190,98.42105263157895,96.41025641025641,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,0,3,3,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,3,3,3,100.0,100.0,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,1,first_error,283,398,398,71.10552763819096,66.58352548277549,75.51133786848072,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,1,cumulative_error,283,398,398,71.10552763819096,66.58352548277549,75.51133786848072,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,283,398,398,71.10552763819096,66.58352548277549,75.51133786848072,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,1,first_correction,67,82,82,81.70731707317073,72.7241594022416,89.6564401622718,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,271,326,326,83.12883435582822,79.04723502304148,87.31574048098749,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,2,first_error,49,398,398,12.311557788944723,9.020103092783506,15.539670343742563,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,2,cumulative_error,332,398,398,83.41708542713567,79.4617656610965,87.11378483209145,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,49,115,115,42.608695652173914,33.62050854824688,51.92307692307693,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,2,first_correction,7,82,82,8.536585365853659,2.815923317683881,15.277777777777779,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,42,326,326,12.883435582822086,9.393718740806118,16.517616342457103,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,3,first_error,13,398,398,3.2663316582914574,1.530612244897959,5.037833485892202,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,3,cumulative_error,345,398,398,86.68341708542714,83.08080808080808,89.97430916623178,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,13,66,66,19.696969696969695,10.0,29.828947368421026,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,first_correction,2,82,82,2.4390243902439024,0.0,6.024096385542169,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,13,326,326,3.9877300613496933,1.910828025477707,6.148991784914115,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,18,345,345,5.217391304347826,2.93233695186157,7.758620689655173,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,326,345,345,94.4927536231884,91.93046903311533,96.89287419431845,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,1,345,345,0.2898550724637681,0.0,0.906344410876133,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,ever_corrected,76,82,82,92.6829268292683,86.73299319727892,97.59036144578313,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,never_corrected,6,82,82,7.317073170731707,2.4096385542168677,13.26700680272108,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,4,76,76,5.263157894736842,1.2345679012345678,10.81081081081081,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,72,76,76,94.73684210526315,89.1891891891892,98.76543209876543,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,1,first_error,7,398,398,1.7587939698492463,0.5207995129870129,3.140286696845281,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,7,398,398,1.7587939698492463,0.5207995129870129,3.140286696845281,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,7,398,398,1.7587939698492463,0.5207995129870129,3.140286696845281,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,1,82,82,1.2195121951219512,0.0,4.054054054054054,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,4,5,5,80.0,33.33333333333333,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,2,first_error,4,398,398,1.0050251256281406,0.24812360268284894,2.051413881748071,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,11,398,398,2.763819095477387,1.2722646310432568,4.489340558378487,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,4,391,391,1.0230179028132993,0.2518891687657431,2.0998756734355566,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,0,82,82,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,1,5,5,20.0,0.0,66.66666666666666,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,3,first_error,0,398,398,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,11,398,398,2.763819095477387,1.2722646310432568,4.489340558378487,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,387,387,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,1,82,82,1.2195121951219512,0.0,4.166666666666666,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,5,5,0.0,0.0,0.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,4,11,11,36.36363636363637,9.090909090909092,66.66666666666666,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,5,11,11,45.45454545454545,14.285714285714285,77.77777777777779,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,2,11,11,18.181818181818183,0.0,45.45454545454545,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,2,82,82,2.4390243902439024,0.0,6.666666666666667,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,80,82,82,97.5609756097561,93.33333333333333,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,1,2,2,50.0,0.0,100.0,percent
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,1,2,2,50.0,0.0,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,1,first_error,695,780,780,89.1025641025641,86.8891981726786,91.28219696969697,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,1,cumulative_error,695,780,780,89.1025641025641,86.8891981726786,91.28219696969697,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,695,780,780,89.1025641025641,86.8891981726786,91.28219696969697,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,1,first_correction,140,143,143,97.9020979020979,95.20534246575343,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,688,714,714,96.35854341736695,94.85781729623724,97.6092525617842,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,2,first_error,22,780,780,2.8205128205128207,1.6839378238341969,4.1346346949431645,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,2,cumulative_error,717,780,780,91.92307692307692,89.90858263260026,93.79961823148948,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,22,85,85,25.882352941176475,16.415071382219338,35.80740740740738,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,2,first_correction,1,143,143,0.6993006993006993,0.0,2.34375,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,17,714,714,2.380952380952381,1.3526838069463238,3.597251881491924,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,3,first_error,9,780,780,1.153846153846154,0.5069708491761723,1.9506486711638489,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,3,cumulative_error,726,780,780,93.07692307692308,91.20243893158818,94.83887595610243,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,9,63,63,14.285714285714285,6.153846153846154,23.638674884437584,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,first_correction,0,143,143,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,9,714,714,1.2605042016806722,0.553231241833062,2.1368283404660007,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,12,726,726,1.6528925619834711,0.8107834555202976,2.6171701339412934,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,714,726,726,98.34710743801654,97.38282986605871,99.1892165444797,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,726,726,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,ever_corrected,141,143,143,98.6013986013986,96.40287769784173,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,never_corrected,2,143,143,1.3986013986013985,0.0,3.597122302158273,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,141,141,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,141,141,141,100.0,100.0,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,1,first_error,363,780,780,46.53846153846154,42.92888245261457,49.935500350183325,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,1,cumulative_error,363,780,780,46.53846153846154,42.92888245261457,49.935500350183325,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,363,780,780,46.53846153846154,42.92888245261457,49.935500350183325,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,1,first_correction,114,143,143,79.72027972027972,72.93193922305765,86.11151252408477,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,324,361,361,89.75069252077562,86.45533141210375,92.89950284090908,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,2,first_error,25,780,780,3.205128205128205,2.035494245747278,4.453005412543895,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,2,cumulative_error,388,780,780,49.743589743589745,46.21192289386006,53.23655202858874,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,25,417,417,5.995203836930456,3.7692839441763404,8.25006067961165,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,2,first_correction,3,143,143,2.097902097902098,0.0,4.80068965517241,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,17,361,361,4.7091412742382275,2.5139664804469275,6.8872898261612985,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,3,first_error,20,780,780,2.564102564102564,1.5208164089351208,3.7814603372059423,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,3,cumulative_error,408,780,780,52.307692307692314,48.83404509391192,55.75257691488049,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,20,392,392,5.1020408163265305,3.0532765219597806,7.3898554924218525,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,first_correction,4,143,143,2.797202797202797,0.6493506493506493,5.970895522388055,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,20,361,361,5.540166204986149,3.2696132730698015,8.116124710753864,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,47,408,408,11.519607843137255,8.47415465047643,14.762028127313101,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,361,408,408,88.48039215686273,85.2379718726869,91.52584534952356,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,408,408,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,ever_corrected,121,143,143,84.61538461538461,78.47029320987653,90.37037037037037,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,never_corrected,22,143,143,15.384615384615385,9.62962962962963,21.52970679012345,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,11,121,121,9.090909090909092,4.385011441647597,14.65576558051249,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,110,121,121,90.9090909090909,85.34423441948749,95.6149885583524,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,1,first_error,508,634,634,80.12618296529969,77.00759729314986,83.17467734757454,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,1,cumulative_error,508,634,634,80.12618296529969,77.00759729314986,83.17467734757454,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,508,634,634,80.12618296529969,77.00759729314986,83.17467734757454,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,1,first_correction,90,96,96,93.75,88.65920805998125,97.97979797979798,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,484,505,505,95.84158415841584,93.9922480620155,97.5560081466395,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,2,first_error,27,634,634,4.2586750788643535,2.72425,5.882587111277631,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,2,cumulative_error,535,634,634,84.38485804416403,81.51065621311409,87.15003147560306,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,27,126,126,21.428571428571427,14.166666666666666,28.97285439109652,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,2,first_correction,2,96,96,2.083333333333333,0.0,5.263157894736842,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,18,505,505,3.564356435643564,1.9919328649616246,5.2734474042849895,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,3,first_error,3,634,634,0.47318611987381703,0.0,1.098901098901099,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,3,cumulative_error,538,634,634,84.85804416403786,82.00266996380317,87.55907395546849,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,3,99,99,3.0303030303030303,0.0,6.957027300303333,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,first_correction,1,96,96,1.0416666666666665,0.0,3.3333333333333335,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,3,505,505,0.594059405940594,0.0,1.3726164336068412,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,33,538,538,6.133828996282528,4.30691483776121,8.163644640012137,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,505,538,538,93.86617100371747,91.83635535998786,95.69308516223879,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,538,538,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,ever_corrected,93,96,96,96.875,92.92929292929293,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,never_corrected,3,96,96,3.125,0.0,7.07070707070707,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,93,93,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,93,93,93,100.0,100.0,100.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,1,first_error,214,634,634,33.753943217665615,30.063291139240505,37.3573501531471,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,214,634,634,33.753943217665615,30.063291139240505,37.3573501531471,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,214,634,634,33.753943217665615,30.063291139240505,37.3573501531471,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,64,96,96,66.66666666666666,56.986534477656114,75.79034123770967,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,162,184,184,88.04347826086956,83.05807464248343,92.51375315016288,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,2,first_error,26,634,634,4.100946372239748,2.5517325450278854,5.778560142455858,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,240,634,634,37.85488958990536,34.087146574965324,41.835147744945566,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,26,420,420,6.190476190476191,3.9115045300685902,8.695652173913043,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,3,96,96,3.125,0.0,6.9318443472254145,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,8,184,184,4.3478260869565215,1.6483516483516485,7.609735091470653,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,3,first_error,14,634,634,2.2082018927444795,1.1146053790770913,3.4482758620689653,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,254,634,634,40.063091482649845,36.31932087227414,44.08107893182265,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,14,394,394,3.5532994923857872,1.8323411206649076,5.511860359560318,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,0,96,96,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,14,184,184,7.608695652173914,3.910614525139665,11.76470588235294,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,70,254,254,27.559055118110237,22.41265880217786,33.47116192744082,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,184,254,254,72.44094488188976,66.52883807255918,77.58734119782214,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,254,254,0.0,0.0,0.0,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,67,96,96,69.79166666666666,60.78369322412509,78.57295482295481,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,29,96,96,30.208333333333332,21.427045177045176,39.216306775874905,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,15,67,67,22.388059701492537,12.819767441860463,32.81308302238806,percent
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,52,67,67,77.61194029850746,67.18691697761194,87.18023255813954,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,1,first_error,466,467,467,99.78586723768737,99.34065934065934,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,1,cumulative_error,466,467,467,99.78586723768737,99.34065934065934,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,466,467,467,99.78586723768737,99.34065934065934,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong,1,first_correction,136,136,136,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,463,464,464,99.78448275862068,99.33624639444304,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,2,first_error,1,467,467,0.21413276231263384,0.0,0.6593406593406593,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,2,cumulative_error,467,467,467,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,1,1,1,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong,2,first_correction,0,136,136,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,1,464,464,0.21551724137931033,0.0,0.6637536055569725,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,3,first_error,0,467,467,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct,3,cumulative_error,467,467,467,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,0,0,0,,,,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong,3,first_correction,0,136,136,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,464,464,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,3,467,467,0.6423982869379015,0.0,1.4830508474576272,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,464,467,467,99.3576017130621,98.51694915254238,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,467,467,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong,3,ever_corrected,136,136,136,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong,3,never_corrected,0,136,136,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,136,136,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,136,136,136,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,1,first_error,406,467,467,86.93790149892934,83.74151349763822,90.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,1,cumulative_error,406,467,467,86.93790149892934,83.74151349763822,90.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,406,467,467,86.93790149892934,83.74151349763822,90.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong,1,first_correction,128,136,136,94.11764705882352,89.99806201550388,97.63779527559055,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,393,435,435,90.3448275862069,87.52996191282269,93.04948305929247,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,2,first_error,40,467,467,8.565310492505352,6.028916012786981,11.11111111111111,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,2,cumulative_error,446,467,467,95.50321199143468,93.44546289084234,97.26330163644404,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,40,61,61,65.57377049180327,52.38095238095239,77.04918032786885,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong,2,first_correction,4,136,136,2.941176470588235,0.6944444444444444,6.140688259109309,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,37,435,435,8.505747126436782,5.882007732670533,11.11111111111111,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,3,first_error,5,467,467,1.070663811563169,0.2136752136752137,2.064267571461066,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct,3,cumulative_error,451,467,467,96.57387580299786,94.77124183006535,98.0934214760781,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,5,21,21,23.809523809523807,5.555555555555555,42.857142857142854,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong,3,first_correction,1,136,136,0.7352941176470588,0.0,2.4193548387096775,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,5,435,435,1.1494252873563218,0.2298718759886112,2.2028596477935674,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,16,451,451,3.5476718403547673,1.8974551992282283,5.381165919282512,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,435,451,451,96.45232815964523,94.61883408071749,98.10254480077177,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,451,451,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong,3,ever_corrected,133,136,136,97.79411764705883,95.04915385155537,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong,3,never_corrected,3,136,136,2.2058823529411766,0.0,4.950846148444629,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,6,133,133,4.511278195488721,1.5034788463696553,8.266184573002747,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,127,133,133,95.48872180451127,91.73381542699725,98.49652115363034,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,1,first_error,288,292,292,98.63013698630137,97.26027397260275,99.66996699669967,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,1,cumulative_error,288,292,292,98.63013698630137,97.26027397260275,99.66996699669967,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,288,292,292,98.63013698630137,97.26027397260275,99.66996699669967,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong,1,first_correction,87,91,91,95.6043956043956,90.9090909090909,99.01960784313727,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,288,292,292,98.63013698630137,97.26027397260275,99.66996699669967,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,2,first_error,4,292,292,1.36986301369863,0.33003300330033003,2.73972602739726,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,2,cumulative_error,292,292,292,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,4,4,4,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong,2,first_correction,2,91,91,2.197802197802198,0.0,5.826670474014841,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,4,292,292,1.36986301369863,0.33003300330033003,2.73972602739726,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,3,first_error,0,292,292,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct,3,cumulative_error,292,292,292,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,0,0,0,,,,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong,3,first_correction,2,91,91,2.197802197802198,0.0,5.88235294117647,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,292,292,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,0,292,292,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,292,292,292,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,292,292,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong,3,ever_corrected,91,91,91,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong,3,never_corrected,0,91,91,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,2,91,91,2.197802197802198,0.0,5.557116104868905,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,88,91,91,96.7032967032967,92.70769817073172,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,1,first_error,254,292,292,86.98630136986301,82.69896193771626,90.69808970099668,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,254,292,292,86.98630136986301,82.69896193771626,90.69808970099668,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,254,292,292,86.98630136986301,82.69896193771626,90.69808970099668,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,79,91,91,86.81318681318682,79.12087912087912,93.10344827586206,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,230,262,262,87.78625954198473,83.58065991879681,91.63501555478742,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,2,first_error,30,292,292,10.273972602739725,6.933646273530542,13.937489629998339,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,284,292,292,97.26027397260275,95.2523815181233,98.97610921501706,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,30,38,38,78.94736842105263,65.71428571428571,91.18277310924366,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,8,91,91,8.791208791208792,3.447296238244514,15.384615384615385,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,28,262,262,10.687022900763358,7.142221657346212,14.5597747684862,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,3,first_error,4,292,292,1.36986301369863,0.33112582781456956,2.847229283172342,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,288,292,292,98.63013698630137,97.21254355400697,99.67215793421195,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,4,8,8,50.0,14.285714285714285,87.56944444444439,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,2,91,91,2.197802197802198,0.0,5.619037523849898,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,4,262,262,1.5267175572519083,0.3676470588235294,3.1917021276595734,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,23,288,288,7.986111111111111,4.827586206896552,11.074593395464346,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,262,288,288,90.97222222222221,87.45762711864407,94.21768707482994,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,3,288,288,1.0416666666666665,0.0,2.373083131557707,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,89,91,91,97.8021978021978,94.31818181818183,100.0,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,2,91,91,2.197802197802198,0.0,5.681818181818182,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,6,89,89,6.741573033707865,2.2210144927536235,12.195799457994577,percent
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,83,89,89,93.25842696629213,87.80420054200543,97.77898550724636,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,1,first_error,620,634,634,97.79179810725552,96.54010258862172,98.87096774193549,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,1,cumulative_error,620,634,634,97.79179810725552,96.54010258862172,98.87096774193549,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,620,634,634,97.79179810725552,96.54010258862172,98.87096774193549,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong,1,first_correction,209,215,215,97.20930232558139,94.8594517776279,99.1190393384342,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,613,627,627,97.7671451355662,96.49667560621297,98.85816788021062,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,2,first_error,10,634,634,1.5772870662460567,0.6420288512985142,2.6356653001800696,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,2,cumulative_error,630,634,634,99.36908517350159,98.71170328814088,99.84710063729953,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,10,14,14,71.42857142857143,44.44444444444444,93.75919117647054,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong,2,first_correction,2,215,215,0.9302325581395349,0.0,2.380952380952381,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,10,627,627,1.5948963317384368,0.652501979372021,2.6689304484335534,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,3,first_error,4,634,634,0.6309148264984227,0.15289936270046922,1.2882967118591238,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct,3,cumulative_error,634,634,634,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,4,4,4,100.0,100.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong,3,first_correction,3,215,215,1.3953488372093024,0.0,3.167420814479638,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,4,627,627,0.6379585326953748,0.15432098765432098,1.3009191103330278,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,7,634,634,1.1041009463722398,0.3205128205128205,1.9757590688077422,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,627,634,634,98.89589905362776,98.02424093119227,99.67948717948718,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,634,634,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong,3,ever_corrected,214,215,215,99.53488372093024,98.51485148514851,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong,3,never_corrected,1,215,215,0.46511627906976744,0.0,1.4851485148514851,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,4,214,214,1.8691588785046727,0.4405286343612335,3.791920559693069,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,210,214,214,98.13084112149532,96.20807944030693,99.55947136563876,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,1,first_error,575,634,634,90.69400630914826,88.35698677617451,92.97188342300527,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,1,cumulative_error,575,634,634,90.69400630914826,88.35698677617451,92.97188342300527,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,575,634,634,90.69400630914826,88.35698677617451,92.97188342300527,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong,1,first_correction,183,215,215,85.11627906976744,80.44420289855073,89.76744186046511,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,552,597,597,92.46231155778895,90.32244601217081,94.55136138613861,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,2,first_error,43,634,634,6.782334384858044,4.873831844798013,8.851075454336323,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,2,cumulative_error,618,634,634,97.47634069400631,96.15369181380417,98.62395810024614,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,43,59,59,72.88135593220339,61.53846153846154,84.31372549019608,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong,2,first_correction,18,215,215,8.372093023255815,4.8307589626239515,12.254901960784313,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,36,597,597,6.030150753768844,4.208754208754209,8.099874426890164,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,3,first_error,9,634,634,1.4195583596214512,0.6163091146141995,2.381047013399954,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct,3,cumulative_error,627,634,634,98.89589905362776,97.94612478500235,99.67590308933414,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,9,16,16,56.25,31.23798076923077,80.03124999999983,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong,3,first_correction,8,215,215,3.7209302325581395,1.4218009478672986,6.532663316582915,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,9,597,597,1.507537688442211,0.6525285481239804,2.5253589861515655,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,30,627,627,4.784688995215311,3.225806451612903,6.613195787117125,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,597,627,627,95.21531100478468,93.38680421288288,96.7741935483871,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,627,627,0.0,0.0,0.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong,3,ever_corrected,209,215,215,97.20930232558139,95.09782037815125,99.11514170987486,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong,3,never_corrected,6,215,215,2.7906976744186047,0.8848582901251414,4.902179621848739,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,10,209,209,4.784688995215311,2.0618556701030926,7.804878048780488,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,198,209,209,94.73684210526315,91.55522388059701,97.61932972241028,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,1,first_error,414,435,435,95.17241379310344,92.98612067777931,97.05215419501134,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,1,cumulative_error,414,435,435,95.17241379310344,92.98612067777931,97.05215419501134,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,414,435,435,95.17241379310344,92.98612067777931,97.05215419501134,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong,1,first_correction,147,161,161,91.30434782608695,86.75476741402696,95.40286229434302,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,366,382,382,95.81151832460732,93.73257771373953,97.67456844881322,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,2,first_error,15,435,435,3.4482758620689653,1.8305591256282459,5.2640292784942435,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,2,cumulative_error,429,435,435,98.62068965517241,97.39317132856303,99.54855815183129,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,15,21,21,71.42857142857143,50.0,90.00806451612898,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong,2,first_correction,10,161,161,6.211180124223603,2.757682383298147,10.25684931506849,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,11,382,382,2.8795811518324608,1.3157031357922364,4.6394749460561,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,3,first_error,5,435,435,1.1494252873563218,0.23148148148148145,2.293577981651376,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct,3,cumulative_error,434,435,435,99.77011494252874,99.29245283018868,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,5,6,6,83.33333333333334,50.0,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong,3,first_correction,2,161,161,1.2422360248447204,0.0,3.205128205128205,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,5,382,382,1.3089005235602094,0.26455026455026454,2.6178010471204187,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,47,434,434,10.829493087557603,7.990652431430914,13.990825688073393,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,382,434,434,88.0184331797235,84.75750577367207,90.97226346001582,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,5,434,434,1.1520737327188941,0.23094688221709006,2.314814814814815,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong,3,ever_corrected,159,161,161,98.75776397515527,96.75666900666901,100.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong,3,never_corrected,2,161,161,1.2422360248447204,0.0,3.243330993330993,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,18,159,159,11.320754716981133,6.578947368421052,16.56450793189821,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,140,159,159,88.0503144654088,82.80237654955141,92.85714285714286,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,1,first_error,371,435,435,85.28735632183908,81.96307714834217,88.55867930696306,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,371,435,435,85.28735632183908,81.96307714834217,88.55867930696306,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,371,435,435,85.28735632183908,81.96307714834217,88.55867930696306,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,139,161,161,86.33540372670807,80.74534161490683,91.50356506238859,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,317,355,355,89.29577464788733,86.11837252962769,92.45810055865921,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,2,first_error,45,435,435,10.344827586206897,7.582674505747369,13.37872472932835,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,416,435,435,95.63218390804597,93.58663264877136,97.41236802413272,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,45,64,64,70.3125,57.96910755148742,81.16168478260869,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,14,161,161,8.695652173913043,4.571428571428571,13.24523258597303,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,27,355,355,7.605633802816901,4.97011760169655,10.422841396203305,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,3,first_error,11,435,435,2.528735632183908,1.1600256724241642,4.128677633660233,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,427,435,435,98.16091954022988,96.78899082568807,99.30875576036865,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,11,19,19,57.89473684210527,33.33333333333333,80.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,3,161,161,1.8633540372670807,0.0,4.225778915919759,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,11,355,355,3.0985915492957745,1.436678687876692,5.028285057039574,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,66,427,427,15.456674473067917,12.264037554426706,19.037250404749052,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,355,427,427,83.13817330210773,79.43245444365266,86.42877668308702,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,6,427,427,1.405152224824356,0.4576659038901602,2.576112412177986,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,156,161,161,96.8944099378882,93.97540712299748,99.33774834437085,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,5,161,161,3.1055900621118013,0.6622516556291391,6.0245928770025134,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,22,156,156,14.102564102564102,8.981844004299095,20.0,percent
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,133,156,156,85.25641025641025,79.2850529100529,90.625,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,1,first_error,616,622,622,99.03536977491962,98.21717990275528,99.68405669263086,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,1,cumulative_error,616,622,622,99.03536977491962,98.21717990275528,99.68405669263086,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,616,622,622,99.03536977491962,98.21717990275528,99.68405669263086,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong,1,first_correction,204,208,208,98.07692307692307,95.99955357142858,99.55947136563876,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,614,617,617,99.51377633711506,98.8817891373802,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,2,first_error,3,622,622,0.482315112540193,0.0,1.1076388192340867,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,2,cumulative_error,619,622,622,99.51768488745981,98.88888888888889,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,3,6,6,50.0,0.0,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong,2,first_correction,0,208,208,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,3,617,617,0.48622366288492713,0.0,1.1182108626198082,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,3,first_error,0,622,622,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct,3,cumulative_error,619,622,622,99.51768488745981,98.88888888888889,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,0,3,3,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong,3,first_correction,0,208,208,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,617,617,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,2,619,619,0.32310177705977383,0.0,0.8130081300813009,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,617,619,619,99.67689822294022,99.1869918699187,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,619,619,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong,3,ever_corrected,204,208,208,98.07692307692307,95.99955357142858,99.55947136563876,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong,3,never_corrected,4,208,208,1.9230769230769231,0.4405286343612335,4.0004464285714265,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,1,204,204,0.49019607843137253,0.0,1.6044937036398128,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,203,204,204,99.50980392156863,98.3955062963602,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,1,first_error,615,622,622,98.87459807073955,97.95259419586769,99.67269445697823,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,1,cumulative_error,615,622,622,98.87459807073955,97.95259419586769,99.67269445697823,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,615,622,622,98.87459807073955,97.95259419586769,99.67269445697823,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong,1,first_correction,203,208,208,97.59615384615384,95.39170506912443,99.50254913551058,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,614,617,617,99.51377633711506,98.90096890491213,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,2,first_error,4,622,622,0.6430868167202572,0.15822159897614335,1.298754091437018,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,2,cumulative_error,619,622,622,99.51768488745981,98.87455276470375,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,4,7,7,57.14285714285714,16.666666666666664,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong,2,first_correction,2,208,208,0.9615384615384616,0.0,2.427480464125028,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,3,617,617,0.48622366288492713,0.0,1.0990310950878768,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,3,first_error,0,622,622,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct,3,cumulative_error,619,622,622,99.51768488745981,98.87455276470375,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,3,3,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong,3,first_correction,0,208,208,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,617,617,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,2,619,619,0.32310177705977383,0.0,0.8116883116883116,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,617,619,619,99.67689822294022,99.18831168831169,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,619,619,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong,3,ever_corrected,205,208,208,98.5576923076923,96.6977219887329,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong,3,never_corrected,3,208,208,1.4423076923076923,0.0,3.3022780112670995,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,2,205,205,0.975609756097561,0.0,2.4875621890547266,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,203,205,205,99.02439024390245,97.51243781094527,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,1,first_error,388,405,405,95.80246913580247,93.7961105108813,97.61413050269277,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,1,cumulative_error,388,405,405,95.80246913580247,93.7961105108813,97.61413050269277,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,388,405,405,95.80246913580247,93.7961105108813,97.61413050269277,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong,1,first_correction,131,147,147,89.1156462585034,83.7829391891892,93.78998978984089,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,354,356,356,99.43820224719101,98.58757062146893,100.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,2,first_error,4,405,405,0.9876543209876543,0.2380952380952381,2.005138474326519,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,2,cumulative_error,392,405,405,96.79012345679013,95.01187648456056,98.33333333333333,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,4,17,17,23.52941176470588,5.263157894736842,45.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong,2,first_correction,5,147,147,3.4013605442176873,0.6802721088435374,6.474820143884892,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,1,356,356,0.2808988764044944,0.0,0.872093023255814,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,3,first_error,1,405,405,0.24691358024691357,0.0,0.7557152125791922,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct,3,cumulative_error,393,405,405,97.03703703703704,95.26154925187032,98.55430375347544,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,1,13,13,7.6923076923076925,0.0,25.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong,3,first_correction,0,147,147,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,1,356,356,0.2808988764044944,0.0,0.8670520231213872,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,33,393,393,8.396946564885496,5.728424546632124,11.250079923273656,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,356,393,393,90.5852417302799,87.5,93.3521892136356,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,4,393,393,1.0178117048346056,0.24813895781637718,2.117255504352274,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong,3,ever_corrected,136,147,147,92.51700680272108,88.02816901408451,96.50410353535354,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong,3,never_corrected,11,147,147,7.482993197278912,3.495896464646465,11.971830985915492,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,16,136,136,11.76470588235294,6.493039334765952,17.46130952380952,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,119,136,136,87.5,81.53846153846153,92.80704008221993,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,1,first_error,382,405,405,94.32098765432099,92.03980099502488,96.61835748792271,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,382,405,405,94.32098765432099,92.03980099502488,96.61835748792271,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,382,405,405,94.32098765432099,92.03980099502488,96.61835748792271,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,128,147,147,87.07482993197279,81.32454277541822,92.19981857166418,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,338,343,343,98.54227405247813,97.19081341984491,99.70588235294117,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,2,first_error,8,405,405,1.9753086419753085,0.729882715611934,3.5000000000000004,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,390,405,405,96.29629629629629,94.37313512361467,98.06798039829006,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,8,23,23,34.78260869565217,15.0,56.25,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,4,147,147,2.7210884353741496,0.6450578990901571,5.633802816901409,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,3,343,343,0.8746355685131195,0.0,2.0117849312338034,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,3,first_error,2,405,405,0.49382716049382713,0.0,1.2658227848101267,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,392,405,405,96.79012345679013,95.02487562189054,98.47337931568954,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,2,15,15,13.333333333333334,0.0,33.33333333333333,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,1,147,147,0.6802721088435374,0.0,2.2556390977443606,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,2,343,343,0.5830903790087464,0.0,1.4837899180443685,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,40,392,392,10.204081632653061,7.161786753681983,13.315943293490953,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,343,392,392,87.5,84.1262353998203,90.64061800268696,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,9,392,392,2.295918367346939,1.0,3.937007874015748,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,133,147,147,90.47619047619048,85.21061554512258,94.85294117647058,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,14,147,147,9.523809523809524,5.147058823529411,14.789384454877409,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,12,133,133,9.022556390977442,4.510436539108966,14.07433489827856,percent
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,116,133,133,87.21804511278195,81.34328358208955,92.66751824817517,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,1,first_error,629,633,633,99.36808846761454,98.71382636655949,99.84567901234568,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,1,cumulative_error,629,633,633,99.36808846761454,98.71382636655949,99.84567901234568,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,629,633,633,99.36808846761454,98.71382636655949,99.84567901234568,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong,1,first_correction,227,230,230,98.69565217391305,97.008226037196,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,628,631,631,99.52456418383518,98.89928426879351,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,2,first_error,4,633,633,0.631911532385466,0.15432098765432098,1.2861736334405145,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,2,cumulative_error,633,633,633,100.0,100.0,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,4,4,4,100.0,100.0,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong,2,first_correction,0,230,230,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,3,631,631,0.4754358161648178,0.0,1.1007157312064753,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,3,first_error,0,633,633,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct,3,cumulative_error,633,633,633,100.0,100.0,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,0,0,0,,,,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong,3,first_correction,1,230,230,0.43478260869565216,0.0,1.3576203208556141,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,631,631,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,2,633,633,0.315955766192733,0.0,0.8025682182985553,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,631,633,633,99.68404423380727,99.19743178170144,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,633,633,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong,3,ever_corrected,228,230,230,99.1304347826087,97.73729946524064,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong,3,never_corrected,2,230,230,0.8695652173913043,0.0,2.262700534759357,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,228,228,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,228,228,228,100.0,100.0,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,1,first_error,628,633,633,99.21011058451816,98.41017488076311,99.84076433121018,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,1,cumulative_error,628,633,633,99.21011058451816,98.41017488076311,99.84076433121018,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,628,633,633,99.21011058451816,98.41017488076311,99.84076433121018,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong,1,first_correction,225,230,230,97.82608695652173,95.71919274663489,99.5475113122172,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,627,631,631,99.3660855784469,98.6234809920168,99.84544645753431,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,2,first_error,4,633,633,0.631911532385466,0.1543150430862295,1.3743100411039328,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,2,cumulative_error,632,633,633,99.84202211690362,99.50980392156863,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,4,5,5,80.0,33.33333333333333,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong,2,first_correction,3,230,230,1.3043478260869565,0.0,2.8814575092892203,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,4,631,631,0.6339144215530903,0.15455354246570113,1.3765190079832093,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,3,first_error,0,633,633,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct,3,cumulative_error,632,633,633,99.84202211690362,99.50980392156863,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,1,1,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong,3,first_correction,1,230,230,0.43478260869565216,0.0,1.402033697512175,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,631,631,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,1,632,632,0.15822784810126583,0.0,0.48622366288492713,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,631,632,632,99.84177215189874,99.51377633711506,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,632,632,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong,3,ever_corrected,229,230,230,99.56521739130434,98.5780297901151,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong,3,never_corrected,1,230,230,0.43478260869565216,0.0,1.421970209884901,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,0,229,229,0.0,0.0,0.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,228,229,229,99.56331877729258,98.6046511627907,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,1,first_error,416,425,425,97.88235294117648,96.40271566530559,99.07407407407408,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,1,cumulative_error,416,425,425,97.88235294117648,96.40271566530559,99.07407407407408,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,416,425,425,97.88235294117648,96.40271566530559,99.07407407407408,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong,1,first_correction,152,164,164,92.6829268292683,88.43501611170784,96.51162790697676,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,399,404,404,98.76237623762376,97.5726678950228,99.75369458128078,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,2,first_error,4,425,425,0.9411764705882352,0.22518743575790556,1.951219512195122,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,2,cumulative_error,420,425,425,98.82352941176471,97.68505091518433,99.7624703087886,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,4,9,9,44.44444444444444,11.11111111111111,80.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong,2,first_correction,3,164,164,1.8292682926829267,0.0,4.216867469879518,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,3,404,404,0.7425742574257426,0.0,1.6951214483071455,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,3,first_error,2,425,425,0.4705882352941176,0.0,1.196243961768384,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct,3,cumulative_error,422,425,425,99.29411764705883,98.39061877837062,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,2,5,5,40.0,0.0,100.0,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong,3,first_correction,1,164,164,0.6097560975609756,0.0,2.151122019635341,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,2,404,404,0.49504950495049505,0.0,1.2658227848101267,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,11,422,422,2.6066350710900474,1.179245283018868,4.3577981651376145,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,404,422,422,95.73459715639811,93.58669833729216,97.51981791068205,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,7,422,422,1.6587677725118484,0.4854075084040527,2.920064961718985,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong,3,ever_corrected,156,164,164,95.1219512195122,91.55844155844156,98.125,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong,3,never_corrected,8,164,164,4.878048780487805,1.875,8.441558441558442,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,6,156,156,3.8461538461538463,1.2656237560703767,7.228915662650602,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,147,156,156,94.23076923076923,90.27777777777779,97.5609756097561,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,1,first_error,396,425,425,93.17647058823529,90.73139607266143,95.51886792452831,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,396,425,425,93.17647058823529,90.73139607266143,95.51886792452831,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,396,425,425,93.17647058823529,90.73139607266143,95.51886792452831,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,151,164,164,92.07317073170732,87.71929824561403,95.97382550335568,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,379,400,400,94.75,92.40458137891153,96.85063144280878,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,2,first_error,20,425,425,4.705882352941177,2.7585774781782044,6.824335975524958,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,416,425,425,97.88235294117648,96.4618449879281,99.26663719229947,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,20,29,29,68.96551724137932,50.0,86.37121212121208,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,5,164,164,3.048780487804878,0.624902950310559,6.0606060606060606,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,17,400,400,4.25,2.307692307692308,6.413637501602866,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,3,first_error,4,425,425,0.9411764705882352,0.22934467700963618,1.9801980198019802,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,420,425,425,98.82352941176471,97.65807962529274,99.76525821596243,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,4,9,9,44.44444444444444,11.11111111111111,80.03124999999983,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,2,164,164,1.2195121951219512,0.0,3.1055900621118013,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,4,400,400,1.0,0.2444838690440694,2.094378255074136,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,14,420,420,3.3333333333333335,1.6548463356973995,5.048311781609194,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,400,420,420,95.23809523809523,93.13702258154447,97.17663628831815,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,6,420,420,1.4285714285714286,0.46726248829052563,2.70935960591133,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,158,164,164,96.34146341463415,93.16770186335404,98.87037212385191,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,6,164,164,3.6585365853658534,1.129627876148092,6.832298136645963,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,14,158,158,8.860759493670885,4.8186581944215225,13.450573549257756,percent
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,142,158,158,89.87341772151899,84.79434103551561,94.24481104771355,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,1,first_error,275,314,314,87.57961783439491,83.70607028753993,91.11111111111111,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,1,cumulative_error,275,314,314,87.57961783439491,83.70607028753993,91.11111111111111,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,275,314,314,87.57961783439491,83.70607028753993,91.11111111111111,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,1,first_correction,29,35,35,82.85714285714286,70.26883266244968,94.28571428571428,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,274,287,287,95.47038327526133,92.88256227758008,97.66724422442245,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,2,first_error,10,314,314,3.1847133757961785,1.2943939868462262,5.229212055192445,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,2,cumulative_error,285,314,314,90.76433121019109,87.45980707395499,93.83166792754172,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,10,39,39,25.64102564102564,12.5,40.627893518518505,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,2,first_correction,1,35,35,2.857142857142857,0.0,9.75609756097561,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,10,287,287,3.484320557491289,1.4284443314692425,5.715009652509648,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,3,first_error,3,314,314,0.9554140127388535,0.0,2.2014314624129505,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct,3,cumulative_error,288,314,314,91.71974522292994,88.6354382588096,94.68791374610592,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,3,29,29,10.344827586206897,0.0,22.58064516129032,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,first_correction,1,35,35,2.857142857142857,0.0,9.67741935483871,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,3,287,287,1.0452961672473868,0.0,2.413793103448276,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,1,288,288,0.3472222222222222,0.0,1.0752688172043012,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,287,288,288,99.65277777777779,98.9247311827957,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,288,288,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,ever_corrected,31,35,35,88.57142857142857,76.92307692307693,97.5,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong,3,never_corrected,4,35,35,11.428571428571429,2.5,23.076923076923077,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,31,31,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,31,31,31,100.0,100.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,1,first_error,1,314,314,0.3184713375796179,0.0,0.9933774834437087,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,1,cumulative_error,1,314,314,0.3184713375796179,0.0,0.9933774834437087,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,1,314,314,0.3184713375796179,0.0,0.9933774834437087,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,1,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,1,1,1,100.0,100.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,2,first_error,0,314,314,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,2,cumulative_error,1,314,314,0.3184713375796179,0.0,0.9933774834437087,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,0,313,313,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,2,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,0,1,1,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,3,first_error,0,314,314,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct,3,cumulative_error,1,314,314,0.3184713375796179,0.0,0.9933774834437087,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,313,313,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,1,1,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,0,1,1,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,1,1,1,100.0,100.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,1,1,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,ever_corrected,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong,3,never_corrected,35,35,35,100.0,100.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,0,0,0,,,,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,0,0,0,,,,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,1,first_error,215,314,314,68.47133757961782,63.3843949044586,73.50320982941187,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,1,cumulative_error,215,314,314,68.47133757961782,63.3843949044586,73.50320982941187,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,215,314,314,68.47133757961782,63.3843949044586,73.50320982941187,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,1,first_correction,27,35,35,77.14285714285715,62.5,90.32258064516128,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,206,253,253,81.42292490118577,76.53795546558705,86.08058608058609,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,2,first_error,41,314,314,13.05732484076433,9.40314996460714,16.934112966423527,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,2,cumulative_error,256,314,314,81.52866242038218,77.32813938907067,85.8044164037855,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,41,99,99,41.41414141414141,31.681905435441504,51.22473867595816,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,2,first_correction,3,35,35,8.571428571428571,0.0,19.047619047619047,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,34,253,253,13.438735177865613,9.337851888025963,17.599999999999998,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,3,first_error,13,314,314,4.140127388535031,2.039963142447615,6.473218311340884,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct,3,cumulative_error,269,314,314,85.6687898089172,81.87702265372168,89.5574516554653,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,13,58,58,22.413793103448278,11.864406779661017,33.964271376957036,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,first_correction,2,35,35,5.714285714285714,0.0,14.285714285714285,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,13,253,253,5.138339920948617,2.554512276045123,8.051189174412244,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,15,269,269,5.5762081784386615,3.100475891173566,8.582591076873692,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,253,269,269,94.05204460966543,91.01113491229488,96.64210314598013,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,1,269,269,0.37174721189591076,0.0,1.1627906976744187,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,ever_corrected,32,35,35,91.42857142857143,80.55555555555556,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong,3,never_corrected,3,35,35,8.571428571428571,0.0,19.444444444444446,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,2,32,32,6.25,0.0,16.003225806451596,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,30,32,32,93.75,83.99677419354839,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,1,first_error,5,314,314,1.5923566878980893,0.31746031746031744,3.205128205128205,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,5,314,314,1.5923566878980893,0.31746031746031744,3.205128205128205,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,5,314,314,1.5923566878980893,0.31746031746031744,3.205128205128205,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,1,35,35,2.857142857142857,0.0,8.825163398692801,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,3,4,4,75.0,0.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,2,first_error,3,314,314,0.9554140127388535,0.0,2.2082018927444795,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,8,314,314,2.547770700636943,0.9523056057866185,4.516129032258064,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,3,309,309,0.9708737864077669,0.0,2.2366009256983688,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,1,4,4,25.0,0.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,3,first_error,0,314,314,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,8,314,314,2.547770700636943,0.9523056057866185,4.516129032258064,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,0,306,306,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,0,4,4,0.0,0.0,0.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,2,8,8,25.0,0.0,62.5,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,4,8,8,50.0,11.11111111111111,85.71428571428571,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,2,8,8,25.0,0.0,60.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,1,35,35,2.857142857142857,0.0,8.825163398692801,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,34,35,35,97.14285714285714,91.17483660130719,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,1,1,1,100.0,100.0,100.0,percent
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,0,1,1,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,1,first_error,281,314,314,89.49044585987261,85.8974358974359,92.85714285714286,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,1,cumulative_error,281,314,314,89.49044585987261,85.8974358974359,92.85714285714286,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,281,314,314,89.49044585987261,85.8974358974359,92.85714285714286,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,1,first_correction,33,35,35,94.28571428571428,86.36363636363636,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,278,290,290,95.86206896551724,93.42560553633218,98.18214637348211,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,2,first_error,11,314,314,3.5031847133757963,1.5922303103831768,5.6426332288401255,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,2,cumulative_error,292,314,314,92.99363057324841,90.09577246065739,95.79288025889967,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,11,33,33,33.33333333333333,17.24137931034483,50.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,2,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,7,290,290,2.413793103448276,0.7272727272727273,4.332522366975354,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,3,first_error,5,314,314,1.5923566878980893,0.3205128205128205,3.115508177570092,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct,3,cumulative_error,297,314,314,94.5859872611465,91.79745837160085,96.90473703204239,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,5,22,22,22.727272727272727,5.88235294117647,40.91577540106949,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,5,290,290,1.7241379310344827,0.3472222222222222,3.3557046979865772,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,recovered_by_final,7,297,297,2.356902356902357,0.6920415224913495,4.333333333333334,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,wrong_at_final,290,297,297,97.64309764309765,95.66666666666667,99.30795847750865,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,297,297,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,ever_corrected,33,35,35,94.28571428571428,86.36363636363636,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong,3,never_corrected,2,35,35,5.714285714285714,0.0,13.636363636363635,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,33,33,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,no_cue,initial_wrong_ever_corrected,3,correct_at_final,33,33,33,100.0,100.0,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,1,first_error,132,314,314,42.038216560509554,36.68750260993026,47.43630573248407,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,1,cumulative_error,132,314,314,42.038216560509554,36.68750260993026,47.43630573248407,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,132,314,314,42.038216560509554,36.68750260993026,47.43630573248407,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,1,first_correction,26,35,35,74.28571428571429,59.45945945945946,88.24095022624431,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,114,131,131,87.02290076335878,80.83333333333333,92.24806201550388,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,2,first_error,9,314,314,2.8662420382165608,1.2422360248447204,4.777070063694268,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,2,cumulative_error,141,314,314,44.904458598726116,39.60905392076278,50.62529856687898,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,9,182,182,4.945054945054945,2.094240837696335,8.241758241758241,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,2,first_correction,2,35,35,5.714285714285714,0.0,14.285714285714285,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,7,131,131,5.343511450381679,1.5873015873015872,9.449667390714087,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,3,first_error,10,314,314,3.1847133757961785,1.5526748456819799,5.3627760252365935,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct,3,cumulative_error,151,314,314,48.089171974522294,42.81150159744409,53.69774919614147,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,10,173,173,5.780346820809249,2.6727413453419646,9.49854058125666,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,first_correction,1,35,35,2.857142857142857,0.0,9.75609756097561,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,10,131,131,7.633587786259542,3.597122302158273,12.766357382818747,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,20,151,151,13.245033112582782,7.9470198675496695,18.95484471160727,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,131,151,151,86.75496688741721,81.04515528839272,92.05298013245033,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,151,151,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,ever_corrected,29,35,35,82.85714285714286,69.69367588932806,94.73684210526315,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong,3,never_corrected,6,35,35,17.142857142857142,5.263157894736842,30.30632411067192,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,2,29,29,6.896551724137931,0.0,17.857142857142858,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,27,29,29,93.10344827586206,82.14285714285714,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,1,first_error,256,314,314,81.52866242038218,77.31520476328782,85.66775244299674,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,1,cumulative_error,256,314,314,81.52866242038218,77.31520476328782,85.66775244299674,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,1,first_error_hazard,256,314,314,81.52866242038218,77.31520476328782,85.66775244299674,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,1,first_correction,32,35,35,91.42857142857143,81.81220095693782,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,1,final_error_first_at_this_turn,247,263,263,93.91634980988593,91.015625,96.5909090909091,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,2,first_error,17,314,314,5.414012738853503,3.066555121769846,7.887059258076105,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,2,cumulative_error,273,314,314,86.94267515923568,83.16703098881317,90.6668810289389,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,2,first_error_hazard,17,58,58,29.310344827586203,17.647058823529413,41.510159651669085,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,2,first_correction,1,35,35,2.857142857142857,0.0,9.375,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,2,final_error_first_at_this_turn,13,263,263,4.942965779467681,2.3622047244094486,7.633657182512144,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,3,first_error,3,314,314,0.9554140127388535,0.0,2.2083765922613097,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct,3,cumulative_error,276,314,314,87.89808917197452,84.17682207720733,91.45637004352513,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_not_yet_wrong,3,first_error_hazard,3,41,41,7.317073170731707,0.0,16.666666666666664,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_final_wrong,3,final_error_first_at_this_turn,3,263,263,1.1406844106463878,0.0,2.602473228652276,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,recovered_by_final,13,276,276,4.710144927536232,2.490882360364453,7.2992700729927,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,wrong_at_final,263,276,276,95.28985507246377,92.7007299270073,97.50911763963555,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_correct_ever_wrong,3,abstaining_at_final,0,276,276,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,ever_corrected,33,35,35,94.28571428571428,86.36363636363636,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong,3,never_corrected,2,35,35,5.714285714285714,0.0,13.636363636363635,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong_ever_corrected,3,correction_lost,0,33,33,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,no_cue,initial_wrong_ever_corrected,3,correct_at_final,33,33,33,100.0,100.0,100.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,1,first_error,85,314,314,27.070063694267514,22.291021671826623,32.247819691079116,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,1,cumulative_error,85,314,314,27.070063694267514,22.291021671826623,32.247819691079116,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,1,first_error_hazard,85,314,314,27.070063694267514,22.291021671826623,32.247819691079116,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,1,first_correction,21,35,35,60.0,44.11764705882353,75.76018808777427,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,1,final_error_first_at_this_turn,65,81,81,80.24691358024691,71.42503536067893,88.88888888888889,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,2,first_error,10,314,314,3.1847133757961785,1.3028258386564577,5.296363901869157,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,2,cumulative_error,95,314,314,30.254777070063692,25.543638830268314,35.4846246608381,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,2,first_error_hazard,10,229,229,4.366812227074235,1.8518518518518516,7.142857142857142,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,2,first_correction,1,35,35,2.857142857142857,0.0,9.378720238095218,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,2,final_error_first_at_this_turn,5,81,81,6.172839506172839,1.282051282051282,12.197936210131317,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,3,first_error,11,314,314,3.5031847133757963,1.587176009644364,5.678682665814796,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct,3,cumulative_error,106,314,314,33.75796178343949,28.618394609917072,38.97819488817891,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_not_yet_wrong,3,first_error_hazard,11,219,219,5.0228310502283104,2.2724701768819418,8.019289083557949,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,first_correction,0,35,35,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_final_wrong,3,final_error_first_at_this_turn,11,81,81,13.580246913580247,6.41025641025641,21.252457865168527,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,recovered_by_final,25,106,106,23.58490566037736,16.071428571428573,31.958762886597935,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,wrong_at_final,81,106,106,76.41509433962264,68.04123711340206,83.92857142857143,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_correct_ever_wrong,3,abstaining_at_final,0,106,106,0.0,0.0,0.0,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,ever_corrected,22,35,35,62.857142857142854,46.42857142857143,78.5768398268398,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong,3,never_corrected,13,35,35,37.142857142857146,21.423160173160174,53.57142857142857,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correction_lost,5,22,22,22.727272727272727,6.666666666666667,42.857142857142854,percent
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,ai_safety_researcher,initial_wrong_ever_corrected,3,correct_at_final,17,22,22,77.27272727272727,57.14285714285714,93.33333333333333,percent

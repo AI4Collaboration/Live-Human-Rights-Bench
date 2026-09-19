@@ -9,7 +9,8 @@ new conditions; existing role conditions serve as matched references.
 **Failure mode analysis:** use saved scores, case labels and turn trajectories.
 The [offline analysis](analysis/failure_modes/REPORT.md) separates harmful
 changes, abstention, persistent errors and lost corrections across 16 matched
-cohorts. The next analyses require no new human annotation or model calls:
+cohorts. All five [finer analyses](analysis/fine_grained_failures/REPORT.md) are
+now complete, with no new human annotation or model calls:
 
 1. **Initial score extremity:** distinguish changes near the verdict thresholds
    from harmful reversals of initially extreme scores.
@@ -21,8 +22,9 @@ cohorts. The next analyses require no new human annotation or model calls:
 5. **Shared vulnerability:** identify matched cases that fail under several
    perturbations, using each experiment's own reference prediction.
 
-Prioritize the first two analyses; add the remaining breakdowns where they
-support a distinct finding. See the [analysis definitions](docs/NEXT_EXPERIMENTS.md).
+The report prioritizes initial score extremity and failure timing, with error
+direction, role comparisons and shared vulnerability as supporting analyses.
+See the [analysis definitions and remaining experiments](docs/NEXT_EXPERIMENTS.md).
 
 | Priority | Experiment to run | Main question | Initial scope |
 | --- | --- | --- | --- |
@@ -42,6 +44,14 @@ nationality-only comparison remains pending. See the
 
 **Additional analyses completed without API calls:**
 
+- **Extreme scores still reverse to the opposite endpoint.** In the shared
+  349-case comparison, static challenges without a cue turn 163/187 initially
+  correct endpoint judgments wrong for Claude and 281/305 for GPT. Every one
+  of these changes crosses from at most 10 to at least 90, or vice versa.
+- **Errors appear early and rarely recover.** After the first static challenge,
+  275/314 initially correct Claude answers and 281/314 GPT answers are already
+  wrong. Of cases that become wrong at any turn, 1/288 and 7/297 respectively
+  recover by the final turn. These are the shared no-cue cases.
 - **Failure modes distinguish changing into an error from preserving one.**
   On the shared static Claude comparison, the researcher cue reduces
   correct-to-wrong changes from 287/314 to 1/314 while increasing final wrong
@@ -58,6 +68,9 @@ nationality-only comparison remains pending. See the
 The [analysis report](analysis/reliability_controls/REPORT.md) includes both
 challenge modes, all six models, matched denominators, CSV results and
 reproduction instructions.
+The [fine-grained report](analysis/fine_grained_failures/REPORT.md) additionally
+provides five-role matched comparisons and 258 cross-perturbation overlap
+estimates, with source checks and reproducible validation.
 
 LiveHumanRightsBench evaluates how language models judge European Court of Human
 Rights (ECtHR) cases as new judgments become available. The experiments measure

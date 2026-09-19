@@ -11,8 +11,8 @@ extensions and already completed references.
 
 **Question:** How severe are judgment errors, when do they arise, and which
 conditions preserve or correct them? Use existing case labels, saved scores
-and complete turn trajectories. The planned analyses require no new human
-annotation, CoT collection or model calls.
+and complete turn trajectories. All five finer analyses are complete using
+existing outputs, with no new human annotation, CoT collection or model calls.
 
 ### Completed score-based analysis
 
@@ -33,7 +33,12 @@ corrections are retained as comparison outcomes. Use initially correct and
 initially wrong denominators separately. Static and adaptive paths use the same
 matched cases within each reported comparison.
 
-### Next: finer analysis from existing outputs
+### Completed: finer analysis from existing outputs
+
+The [fine-grained report](../analysis/fine_grained_failures/REPORT.md) contains
+all five analyses below. Validation independently recounts 704 timing rows and
+400 score-stratum rows from published paths, checks 432 paired role contrasts,
+and reproduces the manuscript's summary and paraphrase transition totals.
 
 | Priority | Analysis | Calculation | Question answered |
 | --- | --- | --- | --- |
@@ -57,10 +62,18 @@ matched cases within each reported comparison.
 - Use paired comparisons and judgment-cluster intervals. Report common-target
   and initial-correctness filters with each overlap estimate.
 
-**Paper output:** prioritize initial score extremity and failure timing. Give
-each selected result one clear takeaway; place supporting direction, role and
-overlap breakdowns in the appendix. Automatically selected score paths can
-illustrate the aggregate patterns without adding a human annotation task.
+**Findings:** static no-cue challenges reverse 163/187 initially correct
+endpoint judgments for Claude and 281/305 for GPT in the shared cohort; all
+these failures reach the opposite endpoint. Most errors appear at turn one,
+with little subsequent recovery. Heavy paraphrasing is more likely to overturn
+a correct no-violation judgment than a correct violation judgment in every
+model. Role cues can preserve initial errors as well as correct answers.
+Summary and heavy-paraphrase errors rarely coincide on cases where both
+experiment-specific reference judgments are correct.
+
+**Paper output:** prioritize initial score extremity and failure timing. Put
+the full error-direction, role and overlap tables in the appendix, with one
+clear takeaway per displayed result.
 
 ## 1. Neutral reassessment control: recommended
 
@@ -247,7 +260,9 @@ See the [additional analysis report](../analysis/reliability_controls/REPORT.md)
 The [failure mode analysis](../analysis/failure_modes/REPORT.md) additionally
 provides score-path classifications, conditional rates, matched case traces
 and automatically selected score-path examples from 24 cases. The existing
-classification is complete; the finer analyses above are the next offline work.
+classification and all five [finer analyses](../analysis/fine_grained_failures/REPORT.md)
+are complete. The report provides matched denominators, source hashes,
+judgment-cluster intervals and reproduction instructions.
 
 These analyses use existing outputs. The conversational reassessment control,
 new role cues and proposed three-turn nationality-only cues remain conditions
