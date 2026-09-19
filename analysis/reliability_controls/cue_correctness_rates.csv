@@ -1,0 +1,97 @@
+scope,model,label,mode,group,cue,n,correct_n,correct_pct,wrong_n,wrong_pct,abstention_n,abstention_pct,reversal_n,reversal_pct
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,no_cue,874,239,27.34553775743707,635,72.65446224256293,0,0.0,811,92.79176201372998
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,researcher,874,680,77.80320366132723,194,22.19679633867277,0,0.0,10,1.1441647597254005
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,no_cue,684,56,8.187134502923977,628,91.81286549707602,0,0.0,628,91.81286549707602
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,researcher,684,677,98.9766081871345,7,1.023391812865497,0,0.0,7,1.023391812865497
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,no_cue,190,183,96.3157894736842,7,3.6842105263157894,0,0.0,183,96.3157894736842
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,researcher,190,3,1.5789473684210527,187,98.42105263157895,0,0.0,3,1.5789473684210527
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,no_cue,480,143,29.791666666666668,336,70.0,1,0.20833333333333334,398,82.91666666666667
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,researcher,480,386,80.41666666666667,82,17.083333333333332,12,2.5,6,1.25
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,no_cue,398,71,17.839195979899497,326,81.90954773869346,1,0.25125628140703515,326,81.90954773869346
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,researcher,398,385,96.73366834170854,5,1.256281407035176,8,2.0100502512562812,5,1.256281407035176
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,no_cue,82,72,87.8048780487805,10,12.195121951219512,0,0.0,72,87.8048780487805
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,researcher,82,1,1.2195121951219512,77,93.90243902439025,4,4.878048780487805,1,1.2195121951219512
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,no_cue,923,207,22.426868905742147,716,77.57313109425786,0,0.0,855,92.63271939328277
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,researcher,923,529,57.313109425785484,394,42.686890574214516,0,0.0,471,51.02925243770314
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,no_cue,780,66,8.461538461538462,714,91.53846153846153,0,0.0,714,91.53846153846153
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,researcher,780,419,53.717948717948715,361,46.282051282051285,0,0.0,361,46.282051282051285
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,no_cue,143,141,98.6013986013986,2,1.3986013986013985,0,0.0,141,98.6013986013986
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,researcher,143,110,76.92307692307692,33,23.076923076923077,0,0.0,110,76.92307692307692
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,no_cue,730,222,30.410958904109588,508,69.58904109589041,0,0.0,598,81.91780821917808
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,researcher,730,502,68.76712328767124,228,31.232876712328768,0,0.0,236,32.32876712328767
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,no_cue,634,129,20.347003154574132,505,79.65299684542586,0,0.0,505,79.65299684542586
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,researcher,634,450,70.97791798107255,184,29.022082018927446,0,0.0,184,29.022082018927446
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,no_cue,96,93,96.875,3,3.125,0,0.0,93,96.875
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,researcher,96,52,54.166666666666664,44,45.833333333333336,0,0.0,52,54.166666666666664
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,no_cue,603,139,23.051409618573796,464,76.9485903814262,0,0.0,600,99.50248756218906
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,researcher,603,159,26.3681592039801,444,73.6318407960199,0,0.0,562,93.20066334991708
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,no_cue,467,3,0.6423982869379015,464,99.3576017130621,0,0.0,464,99.3576017130621
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,researcher,467,32,6.852248394004283,435,93.14775160599572,0,0.0,435,93.14775160599572
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,no_cue,136,136,100.0,0,0.0,0,0.0,136,100.0
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,researcher,136,127,93.38235294117646,9,6.617647058823529,0,0.0,127,93.38235294117646
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,no_cue,383,88,22.97650130548303,294,76.76240208877284,1,0.26109660574412535,380,99.21671018276763
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,researcher,383,110,28.720626631853786,270,70.49608355091384,3,0.783289817232376,345,90.07832898172323
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,no_cue,292,0,0.0,292,100.0,0,0.0,292,100.0
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,researcher,292,27,9.246575342465754,262,89.72602739726027,3,1.0273972602739727,262,89.72602739726027
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,no_cue,91,88,96.7032967032967,2,2.197802197802198,1,1.098901098901099,88,96.7032967032967
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,researcher,91,83,91.20879120879121,8,8.791208791208792,0,0.0,83,91.20879120879121
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,no_cue,849,217,25.559481743227327,632,74.44051825677268,0,0.0,837,98.58657243816255
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,researcher,849,235,27.67962308598351,613,72.20259128386337,1,0.11778563015312132,795,93.63957597173145
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,no_cue,634,7,1.1041009463722398,627,98.89589905362776,0,0.0,627,98.89589905362776
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,researcher,634,37,5.83596214511041,597,94.16403785488959,0,0.0,597,94.16403785488959
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,no_cue,215,210,97.67441860465117,5,2.3255813953488373,0,0.0,210,97.67441860465117
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,researcher,215,198,92.09302325581395,16,7.441860465116279,1,0.46511627906976744,198,92.09302325581395
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,no_cue,596,188,31.543624161073826,402,67.4496644295302,6,1.0067114093959733,522,87.58389261744966
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,researcher,596,207,34.73154362416108,382,64.09395973154362,7,1.174496644295302,488,81.87919463087249
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,no_cue,435,48,11.03448275862069,382,87.816091954023,5,1.1494252873563218,382,87.816091954023
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,researcher,435,74,17.011494252873565,355,81.60919540229885,6,1.3793103448275863,355,81.60919540229885
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,no_cue,161,140,86.95652173913044,20,12.422360248447205,1,0.6211180124223602,140,86.95652173913044
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,researcher,161,133,82.6086956521739,27,16.770186335403725,1,0.6211180124223602,133,82.6086956521739
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,no_cue,830,208,25.06024096385542,622,74.93975903614458,0,0.0,820,98.79518072289157
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,researcher,830,208,25.06024096385542,622,74.93975903614458,0,0.0,820,98.79518072289157
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,no_cue,622,5,0.8038585209003215,617,99.19614147909968,0,0.0,617,99.19614147909968
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,researcher,622,5,0.8038585209003215,617,99.19614147909968,0,0.0,617,99.19614147909968
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,no_cue,208,203,97.59615384615384,5,2.4038461538461537,0,0.0,203,97.59615384615384
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,researcher,208,203,97.59615384615384,5,2.4038461538461537,0,0.0,203,97.59615384615384
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,no_cue,552,162,29.347826086956523,383,69.3840579710145,7,1.2681159420289856,475,86.05072463768116
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,researcher,552,169,30.615942028985508,369,66.84782608695652,14,2.536231884057971,459,83.15217391304348
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,no_cue,405,43,10.617283950617283,356,87.90123456790124,6,1.4814814814814814,356,87.90123456790124
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,researcher,405,53,13.08641975308642,343,84.69135802469135,9,2.2222222222222223,343,84.69135802469135
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,no_cue,147,119,80.95238095238095,27,18.367346938775512,1,0.6802721088435374,119,80.95238095238095
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,researcher,147,116,78.91156462585035,26,17.687074829931973,5,3.401360544217687,116,78.91156462585035
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,no_cue,863,230,26.651216685979144,633,73.34878331402086,0,0.0,859,99.53650057937428
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,researcher,863,230,26.651216685979144,632,73.23290845886443,1,0.11587485515643106,859,99.53650057937428
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,no_cue,633,2,0.315955766192733,631,99.68404423380727,0,0.0,631,99.68404423380727
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,researcher,633,2,0.315955766192733,631,99.68404423380727,0,0.0,631,99.68404423380727
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,no_cue,230,228,99.1304347826087,2,0.8695652173913043,0,0.0,228,99.1304347826087
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,researcher,230,228,99.1304347826087,1,0.43478260869565216,1,0.43478260869565216,228,99.1304347826087
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,no_cue,589,160,27.164685908319186,418,70.96774193548387,11,1.867572156196944,551,93.54838709677419
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,researcher,589,158,26.825127334465193,419,71.13752122241087,12,2.037351443123939,542,92.02037351443124
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,no_cue,425,13,3.0588235294117645,404,95.05882352941177,8,1.8823529411764706,404,95.05882352941177
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,researcher,425,16,3.764705882352941,400,94.11764705882354,9,2.1176470588235294,400,94.11764705882354
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,no_cue,164,147,89.63414634146342,14,8.536585365853659,3,1.829268292682927,147,89.63414634146342
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,researcher,164,142,86.58536585365853,19,11.585365853658537,3,1.829268292682927,142,86.58536585365853
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,no_cue,349,58,16.6189111747851,291,83.3810888252149,0,0.0,318,91.11747851002865
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,researcher,349,313,89.68481375358166,36,10.315186246418339,0,0.0,1,0.28653295128939826
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,no_cue,314,27,8.598726114649681,287,91.40127388535032,0,0.0,287,91.40127388535032
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,researcher,314,313,99.68152866242038,1,0.3184713375796178,0,0.0,1,0.3184713375796178
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,no_cue,35,31,88.57142857142857,4,11.428571428571429,0,0.0,31,88.57142857142857
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,researcher,35,0,0.0,35,100.0,0,0.0,0,0.0
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,no_cue,349,90,25.787965616045845,258,73.92550143266476,1,0.28653295128939826,283,81.08882521489971
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,researcher,349,304,87.10601719197707,38,10.888252148997134,7,2.005730659025788,4,1.146131805157593
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,no_cue,314,60,19.10828025477707,253,80.5732484076433,1,0.3184713375796178,253,80.5732484076433
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,researcher,314,304,96.81528662420382,4,1.2738853503184713,6,1.910828025477707,4,1.2738853503184713
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,no_cue,35,30,85.71428571428571,5,14.285714285714286,0,0.0,30,85.71428571428571
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,researcher,35,0,0.0,34,97.14285714285714,1,2.857142857142857,0,0.0
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,no_cue,349,57,16.332378223495702,292,83.6676217765043,0,0.0,323,92.55014326647564
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,researcher,349,210,60.17191977077364,139,39.82808022922636,0,0.0,158,45.27220630372493
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,no_cue,314,24,7.643312101910828,290,92.35668789808918,0,0.0,290,92.35668789808918
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,researcher,314,183,58.28025477707006,131,41.71974522292994,0,0.0,131,41.71974522292994
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,no_cue,35,33,94.28571428571429,2,5.714285714285714,0,0.0,33,94.28571428571429
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,researcher,35,27,77.14285714285714,8,22.857142857142858,0,0.0,27,77.14285714285714
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,no_cue,349,84,24.068767908309457,265,75.93123209169055,0,0.0,296,84.81375358166189
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,researcher,349,250,71.63323782234957,99,28.36676217765043,0,0.0,98,28.08022922636103
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,no_cue,314,51,16.24203821656051,263,83.75796178343948,0,0.0,263,83.75796178343948
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,researcher,314,233,74.20382165605096,81,25.796178343949045,0,0.0,81,25.796178343949045
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,no_cue,35,33,94.28571428571429,2,5.714285714285714,0,0.0,33,94.28571428571429
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,researcher,35,17,48.57142857142857,18,51.42857142857143,0,0.0,17,48.57142857142857

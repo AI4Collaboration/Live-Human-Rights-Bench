@@ -1,0 +1,157 @@
+{
+  "source_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
+  "model_api_calls": 0,
+  "script_sha256_lf": "4d17cd83a4cf759de1c600fe31c48c700888a334199ed863b43d77ae08b9a8ab",
+  "hash_convention": "Input hashes cover raw Git blob bytes; script and output hashes use LF line endings.",
+  "bootstrap_draws": 2000,
+  "seed": 731,
+  "confidence_interval": "paired judgment-cluster percentile bootstrap, 95%",
+  "thresholds": {
+    "no_violation": "score < 40",
+    "abstention": "40 <= score <= 60",
+    "violation": "score > 60"
+  },
+  "cue_checks": {
+    "initial_records": 6000,
+    "initial_counts": {
+      "decisive": 5373,
+      "abstention": 310,
+      "invalid": 317
+    },
+    "eligible_cue_branch_exclusions": {
+      "incomplete": 2338,
+      "provision_mismatch": 1033
+    },
+    "shared_judgments": 349,
+    "published_reversal_counts_verified": [
+      318,
+      1,
+      283,
+      4,
+      323,
+      158,
+      296,
+      98
+    ]
+  },
+  "sampling_checks": [
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "targets": 1000,
+      "judgments": 947,
+      "excluded_targets": 0,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "targets": 1000,
+      "judgments": 947,
+      "excluded_targets": 0,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "targets": 999,
+      "judgments": 947,
+      "excluded_targets": 1,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "targets": 1000,
+      "judgments": 947,
+      "excluded_targets": 0,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b",
+      "targets": 999,
+      "judgments": 946,
+      "excluded_targets": 1,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "targets": 997,
+      "judgments": 944,
+      "excluded_targets": 3,
+      "balanced_partitions": 252,
+      "independent_cross_pairs_per_target": 63504
+    }
+  ],
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/experiments/syco_full_latest/initial.jsonl": {
+      "sha256_git_bytes": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
+      "bytes": 3351590
+    },
+    "data/experiments/syco_full_latest/trajectories.jsonl": {
+      "sha256_git_bytes": "24b215db916c259c8f529d287571b248c15c13d2481d109b5eb119903a759a68",
+      "bytes": 40613064
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/baseline.jsonl": {
+      "sha256_git_bytes": "f147b2f7dd0fc59e9d98e319424303aef11d336d665a00e8ba11c61211c95672",
+      "bytes": 905543
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/rq1.jsonl": {
+      "sha256_git_bytes": "f4e2315dbc2dfd208e9600967a3ab7e166d6a5daa57b1120e2545439eac0cb56",
+      "bytes": 968080
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/baseline.jsonl": {
+      "sha256_git_bytes": "d35339ce9dfa89415c200e2d0e10640331202d2a86112d7d303925f124dd48ba",
+      "bytes": 907943
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/rq1.jsonl": {
+      "sha256_git_bytes": "ec535df1e5b84e337e4934aea689f7b8a339544faa885484e7022400f55c2843",
+      "bytes": 966428
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/baseline.jsonl": {
+      "sha256_git_bytes": "88c8dc81f4d74060fd9cfea762f3c2c1d3e364b16d50f1b1812a926266351876",
+      "bytes": 907500
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/rq1.jsonl": {
+      "sha256_git_bytes": "74e4f97a62b76953442ef85edbafd2a29a9445cf50c4340f5f158a53e4f932de",
+      "bytes": 968644
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/baseline.jsonl": {
+      "sha256_git_bytes": "fb3c405c91b1aafe2fb059c6462c28641a3a623de160fd69da99296f9a4e85e5",
+      "bytes": 909231
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/rq1.jsonl": {
+      "sha256_git_bytes": "8b044810a556947f330bc7668a9ad597fe254f5c246fc8d63d34f6c4bcaa48b3",
+      "bytes": 969047
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
+      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
+      "bytes": 905529
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
+      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
+      "bytes": 967771
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
+      "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
+      "bytes": 907392
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl": {
+      "sha256_git_bytes": "be3ce4d7bb45a9f88dd24039a7c41bebca21536a593cb6a144b0a6dae936d49a",
+      "bytes": 966982
+    }
+  },
+  "output_sha256": {
+    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc",
+    "cue_correctness_contrasts.csv": "1f865726e0e97210709161428c1c57e27e52af673ab67a30703f78ccb38af242",
+    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
+    "sampling_variation.csv": "553e5f698e7f2415f4712fc401041a3bd4eb54ad8bad4d15b4c55b4b8bca2757",
+    "sampling_exclusions.csv": "89dd84f982591ccfc210f9f98492709e138db6f327f5ccb7373ef09a0d1ea4c0",
+    "REPORT.md": "b53b0443ca63516c54393fb54eda53f246e5903cf709c3620a83bb124e9ca242"
+  }
+}

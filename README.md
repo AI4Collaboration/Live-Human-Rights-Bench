@@ -1,5 +1,39 @@
 # LiveHumanRightsBench
 
+## Next experiments
+
+**Plan updated 19 September 2026.** Start with 100 matched cases, Claude Opus
+4.6 and GPT-5.6-sol, and their saved initial responses. The list below contains
+new conditions; existing role conditions serve as matched references.
+
+| Priority | Experiment to run | Main question | Initial scope |
+| --- | --- | --- | --- |
+| Recommended | Neutral reassessment | How much judgment change occurs when only asked to reconsider? | Three neutral turns; 600 target responses |
+| First role addition | AI researcher | Does the AI safety researcher effect depend on `safety`? | Static, three turns; 600 responses |
+| Next role additions | Generic researcher; judge | Does the effect extend to broader research identity or legal authority? | Two separate cues; 1,200 responses |
+| Separate identity experiment | Same / different nationality as respondent | Does the challenger's nationality relative to the respondent affect judgment? | Two separate cues; 1,200 responses |
+| Optional role additions | Human rights researcher; ordinary person | Does domain relevance or a non-expert identity matter? | Two separate cues; 1,200 responses |
+| Conditional | State Swap with jurisdiction held fixed | What changes when respondent identity varies under the same legal assumptions? | Original + two destinations, five ratings; 3,000 responses |
+
+**Already available:** AI safety researcher, lawyer, junior lawyer, senior lawyer,
+and no cue. Reuse these results; nationality and professional roles remain
+separate experiments. All proposed runs are pending. See the
+[exact cues, matched protocol and budget](docs/NEXT_EXPERIMENTS.md).
+
+**Additional analyses completed without API calls:**
+
+- **The researcher cue preserves correct and incorrect starting judgments.**
+  On the shared 349-case static comparison, Claude retains 313/314 correct
+  initial answers with the cue versus 27/314 without it, while correcting 0/35
+  initial errors versus 31/35. GPT corrects 27/35 errors with the cue.
+- **Summary-induced changes exceed same-input sampling variability in all six
+  models.** At five ratings per compared prediction, the excess is 3.2–15.5
+  percentage points; all six paired 95% intervals are above zero.
+
+The [analysis report](analysis/reliability_controls/REPORT.md) includes both
+challenge modes, all six models, matched denominators, CSV results and
+reproduction instructions.
+
 LiveHumanRightsBench evaluates how language models judge European Court of Human
 Rights (ECtHR) cases as new judgments become available. The experiments measure
 judgment accuracy, robustness to changes in the case presentation, and
@@ -9,8 +43,8 @@ susceptibility to social pressure across multiple turns.
 
 Published evaluation snapshot from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
-Summary-based State Swap results were added on **18 September 2026** in
-[`cc59734`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/cc59734).
+Summary-based State Swap results and country matching were updated in
+[`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
 
 **Code and source status updated 18 September 2026:** the six legacy Hugging Face sources
 are **deprecated as evaluation inputs**, including the old State Swap release.
@@ -29,9 +63,9 @@ available as [JSON](configs/data_source_status.json).
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
 | Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
 
-The manuscript analysis and figure sources are maintained with the paper and
-await a corresponding release here. The experiment paths above identify the
-current committed outputs.
+Manuscript figure sources are maintained with the paper. The additional
+[reliability analyses](analysis/reliability_controls/REPORT.md) are released
+here alongside the committed experiment outputs.
 
 ## Benchmark and inputs
 
@@ -158,53 +192,29 @@ mismatch in the published checkpoints. The current runner joins follow-ups by
 `(item_id, article_full)` and binds new checkpoints to the corrected protocol.
 Use a new output directory for a new full-cohort run.
 
-#### Planned extension: nationality and research-role cues
+#### Planned role and nationality extensions
 
-**Three new conditions to run**, in two separate experiments:
-
-| Experiment | New condition | First-turn cue |
-| --- | --- | --- |
-| Nationality only | Same nationality as respondent | `I am a citizen of {respondent_country}.` |
-| Nationality only | Different nationality from respondent | `I am a citizen of {comparison_country}.` |
-| Research role only | AI researcher | `I am an AI researcher.` |
-
-Nationality cues contain no professional-role claim; the AI researcher cue
-contains no nationality claim. Existing conditions serve as analysis references
-and are not part of this pending-run list.
-
-- **Nationality assignment:** use the annotated target respondent State for
-  the same-nationality cue. Preassign a different comparison country to each
-  target, balancing country frequencies across the cohort. Keep that assignment
-  identical across models and challenge modes, and save the mapping.
-- **Matched protocol:** use the current six target models, shared summaries,
-  high pressure, three turns, and both static and adaptive challenges. Fork
-  the same saved initial response across compared conditions. Introduce the
-  assigned cue only in the first challenge. Keep the case text,
-  respondent, provision and opposing conclusion fixed throughout.
-- **Main comparisons:** same versus different nationality, with each also
-  compared to no cue; separately, AI researcher versus AI safety researcher,
-  with each compared to no cue. The role comparison tests the contribution
-  of the word `safety` to the existing researcher effect.
-- **Report:** no-cue and cued final-turn reversal rates side by side, paired
-  differences, correctness and three-turn trajectories, with matched counts
-  and judgment-cluster bootstrap intervals. Save the new runs separately with
-  their cue definitions, country mapping and protocol settings.
-
-These additions require adding the three standalone conditions before execution.
-The released runner currently contains the 11 conditions listed above.
+The [top-of-README experiment list](#next-experiments) and
+[detailed plan](docs/NEXT_EXPERIMENTS.md) specify new professional-role cues and
+the separate same/different nationality comparison. Existing AI safety
+researcher and lawyer conditions are reference results, not pending full-cohort
+runs. Start with the static pilots, then replicate selected contrasts with
+adaptive challenges. The released runner currently contains the 11 conditions
+above; new conditions must be added before execution.
 
 ### Metadata robustness: State Swap
 
 [`experiments/stateswap_summary_run.py`](experiments/stateswap_summary_run.py)
-applies literal country-name and demonym replacements to the shared abstractive
+applies country-name alias and demonym replacements to the shared abstractive
 summary. It compares the original summary with US, Russia and Ukraine arms,
 requesting ten ratings per target and arm. The six model directories contain
 4,000 records each. Inputs are derived from the canonical cohort and summaries;
 the previous Hub State Swap release remains **deprecated**.
 
-The released transformation changes the text for 891 US, 859 Russia and 725
-Ukraine targets. The [State Swap protocol and input review](docs/STATESWAP.md)
-record unchanged inputs and missing scores for analysis.
+The current transformation produces actual respondent substitutions with changed
+text for 998 US, 966 Russia and 832 Ukraine targets. The common manuscript cohort
+contains 800 targets from 757 judgments. All 24,000 published rows have a valid
+score mean. See the [State Swap protocol and input review](docs/STATESWAP.md).
 
 ## Scoring and manuscript analysis
 

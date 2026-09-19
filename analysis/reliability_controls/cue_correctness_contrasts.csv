@@ -1,0 +1,193 @@
+scope,model,label,mode,group,outcome,n,researcher_minus_no_cue_pp,lower_95,upper_95,defined_bootstrap_draws
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,correct,874,50.45766590389016,45.08009153318078,55.49485125858122,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,wrong,874,-50.45766590389016,-55.494851258581235,-45.08009153318078,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,abstention,874,0.0,0.0,0.0,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,reversal,874,-91.64759725400458,-93.36384439359267,-89.7025171624714,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,correct,684,90.78947368421052,88.52211825598077,92.74177109440268,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,wrong,684,-90.78947368421052,-92.74177109440268,-88.52211825598077,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,abstention,684,0.0,0.0,0.0,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,reversal,684,-90.78947368421052,-92.74177109440268,-88.52211825598077,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,correct,190,-94.73684210526316,-97.7780847145488,-91.42780337941629,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,wrong,190,94.73684210526316,91.42780337941629,97.7780847145488,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,abstention,190,0.0,0.0,0.0,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,reversal,190,-94.73684210526316,-97.7780847145488,-91.42780337941629,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,correct,480,50.625,43.958333333333336,57.083333333333336,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,wrong,480,-52.916666666666664,-59.375,-46.25,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,abstention,480,2.2916666666666665,0.8333333333333334,3.75,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,reversal,480,-81.66666666666667,-85.20833333333333,-78.125,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,correct,398,78.89447236180905,74.68221924300056,82.90155440414507,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,wrong,398,-80.65326633165829,-84.61636828644501,-76.55790371011248,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,abstention,398,1.7587939698492463,0.2617801047120419,3.29134806913834,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,reversal,398,-80.65326633165829,-84.61636828644501,-76.55790371011248,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,correct,82,-86.58536585365853,-93.33516483516483,-78.88849765258216,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,wrong,82,81.70731707317073,73.56237322515213,89.47368421052632,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,abstention,82,4.878048780487805,1.136044433094995,9.85958963658494,2000
+within_model_mode,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,reversal,82,-86.58536585365853,-93.33516483516483,-78.88849765258216,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,correct,923,34.88624052004334,31.31094257854821,38.24756229685806,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,wrong,923,-34.88624052004334,-38.24756229685807,-31.31094257854821,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,abstention,923,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,reversal,923,-41.603466955579634,-44.7453954496208,-38.46153846153846,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,correct,780,45.256410256410255,41.75386025991974,48.7245837089856,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,wrong,780,-45.256410256410255,-48.7245837089856,-41.75386025991974,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,abstention,780,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,reversal,780,-45.256410256410255,-48.7245837089856,-41.75386025991974,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,correct,143,-21.678321678321677,-29.055314643001207,-15.331944444444453,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,wrong,143,21.678321678321677,15.331944444444446,29.055314643001203,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,abstention,143,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,reversal,143,-21.678321678321677,-29.055314643001207,-15.331944444444453,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,correct,730,38.35616438356164,33.83561643835616,42.602739726027394,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,wrong,730,-38.35616438356164,-42.602739726027394,-33.83561643835616,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,abstention,730,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,reversal,730,-49.58904109589041,-53.15068493150685,-46.02739726027397,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,correct,634,50.630914826498426,46.86997086698381,54.51772424722662,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,wrong,634,-50.630914826498426,-54.517724247226624,-46.86997086698381,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,abstention,634,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,reversal,634,-50.630914826498426,-54.517724247226624,-46.86997086698381,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,correct,96,-42.708333333333336,-52.500631313131315,-32.905915287244426,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,wrong,96,42.708333333333336,32.9059152872444,52.50063131313131,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,abstention,96,0.0,0.0,0.0,2000
+within_model_mode,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,reversal,96,-42.708333333333336,-52.500631313131315,-32.905915287244426,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,correct,603,3.316749585406302,1.3266998341625207,5.472636815920398,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,wrong,603,-3.316749585406302,-5.472636815920398,-1.3266998341625207,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,abstention,603,0.0,0.0,0.0,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,all,reversal,603,-6.301824212271973,-8.457711442786069,-4.311774461028192,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,correct,467,6.209850107066381,3.930131004366812,8.571735131820967,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,wrong,467,-6.209850107066381,-8.571735131820969,-3.930131004366812,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,abstention,467,0.0,0.0,0.0,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_correct,reversal,467,-6.209850107066381,-8.571735131820969,-3.930131004366812,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,correct,136,-6.617647058823529,-11.11111111111111,-2.8298564974754203,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,wrong,136,6.617647058823529,2.8298564974754186,11.11111111111111,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,abstention,136,0.0,0.0,0.0,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,static,initial_wrong,reversal,136,-6.617647058823529,-11.11111111111111,-2.8298564974754203,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,correct,383,5.7441253263707575,2.8720626631853787,8.616187989556137,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,wrong,383,-6.266318537859008,-9.399477806788513,-3.133159268929504,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,abstention,383,0.5221932114882507,-0.5221932114882507,1.566579634464752,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,all,reversal,383,-9.138381201044387,-12.27154046997389,-6.005221932114883,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,correct,292,9.246575342465754,6.122448979591836,12.585034013605442,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,wrong,292,-10.273972602739725,-13.92981950844854,-6.920415224913495,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,abstention,292,1.0273972602739727,0.0,2.3413335278669383,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_correct,reversal,292,-10.273972602739725,-13.92981950844854,-6.920415224913495,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,correct,91,-5.4945054945054945,-12.64367816091954,1.1904761904761905,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,wrong,91,6.593406593406593,0.0,13.188468158347666,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,abstention,91,-1.098901098901099,-3.5714285714285716,0.0,2000
+within_model_mode,deepseek/deepseek-v4-pro,DeepSeek V4 Pro,adaptive,initial_wrong,reversal,91,-5.4945054945054945,-12.64367816091954,1.1904761904761905,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,correct,849,2.1201413427561837,0.35335689045936397,3.8869257950530036,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,wrong,849,-2.237926972909305,-4.004711425206125,-0.4711425206124853,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,abstention,849,0.11778563015312132,0.0,0.35335689045936397,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,all,reversal,849,-4.946996466431095,-6.713780918727915,-3.297997644287397,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,correct,634,4.73186119873817,2.8212062342708286,6.8363515843876055,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,wrong,634,-4.73186119873817,-6.836351584387606,-2.8212062342708295,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,abstention,634,0.0,0.0,0.0,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_correct,reversal,634,-4.73186119873817,-6.836351584387606,-2.8212062342708295,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,correct,215,-5.5813953488372094,-9.251305270027737,-2.183168786785648,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,wrong,215,5.116279069767442,1.8177723177723177,8.737864077669903,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,abstention,215,0.46511627906976744,0.0,1.4851485148514851,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,static,initial_wrong,reversal,215,-5.5813953488372094,-9.251305270027737,-2.183168786785648,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,correct,596,3.1879194630872485,-0.6711409395973155,7.214765100671141,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,wrong,596,-3.3557046979865772,-7.382550335570469,0.5033557046979866,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,abstention,596,0.16778523489932887,-0.8389261744966443,1.174496644295302,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,all,reversal,596,-5.704697986577181,-9.563758389261745,-1.8456375838926173,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,correct,435,5.977011494252873,1.4284865965388531,10.577737020316022,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,wrong,435,-6.206896551724138,-11.013707058799197,-1.7482525641158722,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,abstention,435,0.22988505747126436,-1.1286681715575622,1.583710407239819,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_correct,reversal,435,-6.206896551724138,-11.013707058799197,-1.7482525641158722,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,correct,161,-4.3478260869565215,-11.971936408872395,3.2051282051282053,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,wrong,161,4.3478260869565215,-2.824858757062147,11.875327797202795,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,abstention,161,0.0,-1.8518518518518519,1.8404907975460123,2000
+within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,reversal,161,-4.3478260869565215,-11.971936408872395,3.2051282051282053,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,correct,830,0.0,-0.8433734939759037,0.8433734939759037,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,wrong,830,0.0,-0.8433734939759037,0.8433734939759037,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,abstention,830,0.0,0.0,0.0,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,reversal,830,0.0,-0.8433734939759037,0.8433734939759037,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,correct,622,0.0,-0.8156606851549756,0.8077544426494345,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,wrong,622,0.0,-0.8077544426494345,0.8156606851549756,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,abstention,622,0.0,0.0,0.0,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,reversal,622,0.0,-0.8077544426494345,0.8156606851549756,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,correct,208,0.0,-1.9052197802197801,1.9138755980861244,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,wrong,208,0.0,-1.9138755980861244,1.9052197802197777,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,abstention,208,0.0,0.0,0.0,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,reversal,208,0.0,-1.9052197802197801,1.9138755980861244,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,correct,552,1.2681159420289856,-1.9927536231884058,4.7101449275362315,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,wrong,552,-2.536231884057971,-5.978260869565218,0.9057971014492754,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,abstention,552,1.2681159420289856,-0.18115942028985507,2.898550724637681,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,reversal,552,-2.898550724637681,-6.340579710144928,0.7246376811594203,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,correct,405,2.4691358024691357,-1.2225687952442592,6.0606060606060606,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,wrong,405,-3.2098765432098766,-7.075889870199385,0.9732360097323601,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,abstention,405,0.7407407407407407,-0.9779951100244498,2.525252525252525,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,reversal,405,-3.2098765432098766,-7.075889870199385,0.9732360097323601,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,correct,147,-2.0408163265306123,-9.317184265010352,5.645876229695718,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,wrong,147,-0.6802721088435374,-8.0007299270073,6.212150621118007,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,abstention,147,2.7210884353741496,0.0,6.293843951324265,2000
+within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,reversal,147,-2.0408163265306123,-9.317184265010352,5.645876229695718,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,correct,863,0.0,-0.6952491309385863,0.6952491309385863,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,wrong,863,-0.11587485515643106,-0.8111239860950173,0.46349942062572425,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,abstention,863,0.11587485515643106,0.0,0.34762456546929316,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,reversal,863,0.0,-0.6952491309385863,0.5793742757821553,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,correct,633,0.0,-0.6359300476947536,0.6279681683994351,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,wrong,633,0.0,-0.6279681683994353,0.6359300476947536,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,abstention,633,0.0,0.0,0.0,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_correct,reversal,633,0.0,-0.6279681683994353,0.6359300476947536,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,correct,230,0.0,-1.8352871219843698,1.7391304347826086,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,wrong,230,-0.43478260869565216,-2.020717377860235,0.9616545893719801,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,abstention,230,0.43478260869565216,0.0,1.3953488372093024,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,initial_wrong,reversal,230,0.0,-1.8352871219843698,1.7391304347826086,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,correct,589,-0.3395585738539898,-2.3769100169779285,1.5280135823429541,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,wrong,589,0.1697792869269949,-2.2071307300509337,2.7164685908319184,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,abstention,589,0.1697792869269949,-1.3582342954159592,1.867572156196944,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,all,reversal,589,-1.5280135823429541,-4.074702886247878,1.0186757215619695,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,correct,425,0.7058823529411765,-1.1934605060581605,2.541007875880852,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,wrong,425,-0.9411764705882353,-3.513086717023452,1.8272256301051988,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,abstention,425,0.23529411764705882,-1.707421432405033,2.2885925458323455,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_correct,reversal,425,-0.9411764705882353,-3.513086717023452,1.8272256301051988,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,correct,164,-3.048780487804878,-8.824460163812361,2.2598870056497176,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,wrong,164,3.048780487804878,-2.4691358024691357,8.72546140939597,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,abstention,164,0.0,-2.9585798816568047,2.942051820728287,2000
+within_model_mode,qwen/qwen3-32b,Qwen3-32B,adaptive,initial_wrong,reversal,164,-3.048780487804878,-8.824460163812361,2.2598870056497176,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,correct,349,73.06590257879657,66.7621776504298,79.36962750716333,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,wrong,349,-73.06590257879657,-79.36962750716333,-66.7621776504298,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,abstention,349,0.0,0.0,0.0,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,all,reversal,349,-90.83094555873926,-93.98280802292264,-87.67908309455588,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,correct,314,91.0828025477707,87.8594249201278,94.21221864951768,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,wrong,314,-91.0828025477707,-94.21221864951768,-87.8594249201278,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,abstention,314,0.0,0.0,0.0,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_correct,reversal,314,-91.0828025477707,-94.21221864951768,-87.8594249201278,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,correct,35,-88.57142857142857,-97.5,-76.92307692307692,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,wrong,35,88.57142857142857,76.92307692307692,97.5,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,abstention,35,0.0,0.0,0.0,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,static,initial_wrong,reversal,35,-88.57142857142857,-97.5,-76.92307692307692,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,correct,349,61.31805157593123,54.44126074498568,67.90830945558739,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,wrong,349,-63.03724928366762,-69.63467048710602,-56.44699140401146,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,abstention,349,1.7191977077363896,0.28653295128939826,3.438395415472779,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,all,reversal,349,-79.94269340974212,-84.2406876790831,-75.63753581661895,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,correct,314,77.70700636942675,72.95532387934142,82.3333596214511,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,wrong,314,-79.29936305732484,-83.88206269349845,-74.68333881308564,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,abstention,314,1.5923566878980893,0.0,3.3557545731707203,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_correct,reversal,314,-79.29936305732484,-83.88206269349845,-74.68333881308564,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,correct,35,-85.71428571428571,-96.55459770114942,-73.07432432432434,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,wrong,35,82.85714285714286,68.96012931034484,93.93939393939394,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,abstention,35,2.857142857142857,0.0,9.67741935483871,2000
+shared_349,anthropic/claude-opus-4.6,Claude Opus 4.6,adaptive,initial_wrong,reversal,35,-85.71428571428571,-96.55459770114942,-73.07432432432434,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,correct,349,43.83954154727794,38.108882521489974,49.570200573065904,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,wrong,349,-43.83954154727794,-49.570200573065904,-38.108882521489974,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,abstention,349,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,all,reversal,349,-47.277936962750715,-52.43553008595988,-42.39971346704875,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,correct,314,50.63694267515923,45.077782881641404,56.29139072847682,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,wrong,314,-50.63694267515923,-56.29139072847682,-45.07778288164141,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,abstention,314,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_correct,reversal,314,-50.63694267515923,-56.29139072847682,-45.07778288164141,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,correct,35,-17.142857142857142,-30.555555555555557,-5.405405405405405,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,wrong,35,17.142857142857142,5.405405405405405,30.555555555555557,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,abstention,35,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,static,initial_wrong,reversal,35,-17.142857142857142,-30.555555555555557,-5.405405405405405,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,correct,349,47.56446991404012,41.54727793696275,53.58166189111748,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,wrong,349,-47.56446991404012,-53.58166189111748,-41.54727793696275,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,abstention,349,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,all,reversal,349,-56.73352435530086,-61.891117478510026,-51.862464183381086,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,correct,314,57.961783439490446,52.63157894736842,63.63636363636363,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,wrong,314,-57.961783439490446,-63.63636363636363,-52.63157894736842,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,abstention,314,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_correct,reversal,314,-57.961783439490446,-63.63636363636363,-52.63157894736842,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,correct,35,-45.714285714285715,-62.5,-28.94736842105263,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,wrong,35,45.714285714285715,28.94736842105263,62.5,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,abstention,35,0.0,0.0,0.0,2000
+shared_349,openai/gpt-5.6-sol,GPT-5.6-sol,adaptive,initial_wrong,reversal,35,-45.714285714285715,-62.5,-28.94736842105263,2000

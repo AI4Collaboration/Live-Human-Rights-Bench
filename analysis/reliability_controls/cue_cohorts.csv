@@ -1,0 +1,17 @@
+scope,model,mode,targets,judgments,initial_correct,initial_wrong,cohort_sha256
+within_model_mode,anthropic/claude-opus-4.6,static,874,874,684,190,ed293a862c3a494da0bb9a768e4b20c4847a7865744470c7bedd72bfdb18cf2e
+within_model_mode,anthropic/claude-opus-4.6,adaptive,480,480,398,82,a8c8df43b470968bd5c81b6693a6dfe821035f8ed99763d549ef147ce8eaed87
+within_model_mode,openai/gpt-5.6-sol,static,923,923,780,143,07c91c54c290942996e9d3d57bb7aec68449a19854d0bfe6a22770afe4a87688
+within_model_mode,openai/gpt-5.6-sol,adaptive,730,730,634,96,e2bbecb08a9453adb905b507157df0c3d399b3ae2edd1170f2bc0616658f81aa
+within_model_mode,deepseek/deepseek-v4-pro,static,603,603,467,136,5a9a792f2e83ebf3a8d3b6dff998723b28917002684985c0a5edf5dec936f5c7
+within_model_mode,deepseek/deepseek-v4-pro,adaptive,383,383,292,91,499d74bbbcf3f21bb77f7b1284c2bb57b9e9aec14107a57f03333c28336de511
+within_model_mode,deepseek/deepseek-v4-flash,static,849,849,634,215,cbab00e1eca6d5f76d48bd7b7275c3f2e9c0dfab7a81ae672b4f4abd2b3f2f31
+within_model_mode,deepseek/deepseek-v4-flash,adaptive,596,596,435,161,39bfb638cca76dc229c130d6bb69a98bed2ae826b13ba4bee632ce64e12fd2ce
+within_model_mode,qwen/qwen3-235b-a22b,static,830,830,622,208,b74b10e3f8455d92346c852f33ccbbec570a45970fdd0700cb7f240d88b8d42a
+within_model_mode,qwen/qwen3-235b-a22b,adaptive,552,552,405,147,098fc8430f1b0a84ece37c043470ece72b5d1039f05f8b70660f98e0213297a7
+within_model_mode,qwen/qwen3-32b,static,863,863,633,230,26ec899298346313fa2ad5cbb4d32befa0c490a017ecf4f39c4ac43d22e08c9e
+within_model_mode,qwen/qwen3-32b,adaptive,589,589,425,164,1e5ccb0aaaeb927139df06c97f9f3cddd9aa9e9d5b996fa1842b44cec8526b16
+shared_349,anthropic/claude-opus-4.6,static,349,349,314,35,ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c
+shared_349,anthropic/claude-opus-4.6,adaptive,349,349,314,35,ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c
+shared_349,openai/gpt-5.6-sol,static,349,349,314,35,ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c
+shared_349,openai/gpt-5.6-sol,adaptive,349,349,314,35,ce4bc9a27f275064aaca16c09a77a8f99b568132fb639d1805e71ad00859694c
