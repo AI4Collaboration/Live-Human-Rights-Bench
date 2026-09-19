@@ -50,6 +50,11 @@ require no new human annotation or model calls.
 
 **Additional analyses completed without API calls:**
 
+- **The perturbation patterns persist after evaluator exclusions.** Removing
+  both DeepSeek evaluators leaves summary accuracy 1.3-2.4 points lower in the
+  four remaining models. Removing GPT-5.6-sol leaves paraphrase changes spanning
+  -1.4 to +1.9 points. The [exclusion diagnostic](analysis/generator_exclusion/REPORT.md)
+  keeps the generated inputs and 1,000-target cohort fixed for every model.
 - **The main role and conversational results survive threshold changes.**
   Across five scoring rules, final conversational accuracy falls by 12.6-53.8
   points. The shared-case static researcher cue reduces strict reversals by

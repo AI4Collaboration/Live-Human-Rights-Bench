@@ -14,8 +14,8 @@ No API experiments or new human annotation were performed for this revision.
 | Single conversation per condition | Existing judgment bootstrap measures variation across cases, not repeated conversations | Five static trajectories on 50 locked cases; adaptive replication is a separately budgeted next step |
 | Neutral reassessment | Existing disagreement already supplies an opposing verdict | Add the planned neutral branch to the same static batch |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
-| Conversation protocol visibility | Settings exist in the appendix and runner, but readers must assemble them | Bring temperature and response budgets into the main setup; explain why fixed-input scoring averages responses while dialogue analysis tracks individual turns |
-| Close multi-turn prior work | TRUTH DECAY is a direct antecedent | Add a precise citation; emphasize court-grounded evaluation, matched cue contrasts, correctness and persistence |
+| Conversation protocol visibility | Settings exist in the appendix and runner, but readers must assemble them | Implemented in Section 5 and Appendix C: temperature, response budgets, challenge length and the distinction between averaged fixed-input scores and individual dialogue turns |
+| Close multi-turn prior work | TRUTH DECAY is a direct antecedent | Implemented in Related Work, alongside ECtHR-PCR; the contribution remains court-grounded evaluation, matched cue contrasts, correctness and persistence |
 
 The recommended static API package costs **4,800 target responses**. It combines
 four contemporaneous conditions on 100 cases and four additional repetitions
@@ -24,6 +24,23 @@ of the two headline references on a nested 50 cases. Adaptive replication adds
 references; generic researcher, judge and nationality stay in the merged plan.
 Nationality is not crossed with professional roles.
 
+## Direct manuscript fixes completed
+
+- Define extreme-score reversals as at most 10 to at least 90, or the reverse,
+  without implying every score equals exactly 0 or 100.
+- Define correctness denominators as matched conditions, consistent with the
+  pooled tables and judgment-cluster intervals.
+- Distinguish GPT-5.6-sol's exact paraphraser/evaluator overlap from the
+  DeepSeek summarizer/evaluators' shared model family.
+- State that the symmetric abstention band records indecision around the
+  prompt's 50-point uncertainty anchor, and link the main accuracy result to
+  the completed five-rule sensitivity analysis.
+- Add the completed [evaluator-exclusion diagnostic](../analysis/generator_exclusion/REPORT.md)
+  to Appendix D: summary accuracy still decreases for all four retained models,
+  and paraphrase effects retain mixed signs after removing GPT-5.6-sol.
+- Preserve the approved abstract, protected Section 3, chapter structure,
+  conference template and result figures.
+
 ## What the existing evidence already addresses
 
 **Human validation is present, with a specific scope.** Appendix F reports
@@ -31,8 +48,7 @@ reasoning-to-fact paragraph-link validation: 120 assigned items, four returned
 annotation sheets, and 65 genuine single-paragraph mappings after the documented
 exclusions. Control-passing sheets confirm 88-96%, with pairwise agreement
 0.89-1.00. This validates evidence links, not the separate claim-retention
-judgments. Clarify that distinction rather than treating it as either no human
-validation or complete calibration of the auxiliary judge. New intensive human
+judgments. The manuscript now states that distinction explicitly. New intensive human
 annotation is outside this plan.
 
 **Source review is not absent.** The released audit includes source boundaries,
@@ -63,7 +79,7 @@ Lawyer, junior lawyer and senior lawyer should not be listed as missing roles.
 | Suggestion | Decision and reason |
 | --- | --- |
 | Identity-only State Swap | Conditional API extension. The current claim explicitly combines identity and jurisdiction; US substitution is not interpreted as pure nationality bias. Contracting-state membership alone does not fix every legal assumption. |
-| New text generator | Optional for a claim about robustness across generators. Shared inputs control the present comparisons; changing generators answers a separate generalization question. Excluding same-family evaluators is an offline diagnostic, not an independent-generator experiment. |
+| New text generator | Optional for a claim about robustness across generators. The completed evaluator-exclusion diagnostic preserves summary losses and mixed paraphrase effects with generated inputs fixed. It tests dependence on the included evaluators; a replacement generator answers a separate generalization question. |
 | Evaluation-awareness mechanism | Keep as a hypothesis. AI versus AI safety estimates wording sensitivity. A separate role-by-evaluation-framing experiment is available in the plan if a mechanism claim becomes central. |
 | Tone, length and large role taxonomy | Static role comparisons already preserve the surrounding template and later turns. Retain requested roles; add one equal-word-count wording control only if needed. A large grid is unnecessary. |
 | Mixed-effects regression | Optional, not automatically more precise. Matched contrasts and judgment-cluster bootstrap already target the reported effects. Random-effects assumptions should serve a new question, not replace a valid paired analysis for appearance. |

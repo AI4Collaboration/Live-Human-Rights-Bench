@@ -1,0 +1,93 @@
+{
+  "source_revision": "66e9f06451ac3463cb7dd6bc6e995e1fa67f9220",
+  "upstream_raw_score_revision": "24bb24f23ed478bb1a5fb0e22cbc8cb5ea4284c3",
+  "rule": "band_40_60",
+  "model_api_calls": 0,
+  "new_human_annotations": 0,
+  "new_bootstrap_draws": 0,
+  "unique_targets": 1000,
+  "unique_judgments": 947,
+  "estimand": "Target-weighted paired model-target outcomes",
+  "target_cohort_sha256": "ec17ffa333a9137cbc08de4e498772061533739f911c72473d8b9908ba8752d6",
+  "generator_mapping": {
+    "summarization": {
+      "generator": "deepseek/deepseek-v4.1-flash",
+      "link": "family",
+      "excluded_evaluators": [
+        "deepseek/deepseek-v4-flash",
+        "deepseek/deepseek-v4-pro"
+      ]
+    },
+    "paraphrasing": {
+      "generator": "openai/gpt-5.6-sol",
+      "link": "exact_model",
+      "excluded_evaluators": [
+        "openai/gpt-5.6-sol"
+      ]
+    }
+  },
+  "checks": {
+    "source_output_hashes_match_upstream": true,
+    "all_24_target_cohorts_identical": true,
+    "all_24_cohort_registry_matches": true,
+    "all_24_correctness_transition_identities": true,
+    "all_four_published_pooled_count_vectors_reproduced": true,
+    "no_target_filtering_or_generated_text_changes": true
+  },
+  "retained_paraphrase_strength_patterns": {
+    "nondecreasing": 3,
+    "nonincreasing": 0,
+    "nonmonotonic": 2
+  },
+  "inputs": {
+    "analysis/threshold_sensitivity/systematic.csv": {
+      "bytes": 51285,
+      "sha256_git_bytes": "cfbbcd8264c7c41697e67acfcd7d40ee18b39e8ed17d40ec224c0913e4468a86"
+    },
+    "analysis/threshold_sensitivity/systematic_pooled.csv": {
+      "bytes": 13494,
+      "sha256_git_bytes": "7ca168cfa6b4bdb2ed4313ea1fad83bcf9ab8c373674490d2cb15c7632aa34b6"
+    },
+    "analysis/threshold_sensitivity/manifest.json": {
+      "bytes": 20449,
+      "sha256_git_bytes": "a46bd20b04580d295d6106cb93ad9438d9f521548d6481c1157b010ca31e280b"
+    },
+    "analysis/threshold_sensitivity/cohorts.csv": {
+      "bytes": 8684,
+      "sha256_git_bytes": "d4f954babfe894baec68addcbc1db894d82dad5405be6745e704aea28a931e47"
+    },
+    "README.md": {
+      "bytes": 22986,
+      "sha256_git_bytes": "a5c3856b332efe2236b5043383f19d5c2c5aef42071d1451167f34b2683bd5db"
+    },
+    "experiments/paraphrase_run.py": {
+      "bytes": 10584,
+      "sha256_git_bytes": "ef3e2ea349738b901a1e57b56a40e3321ac1f4961bb57a83dba4343f6e233570"
+    }
+  },
+  "outputs": {
+    "pooled.csv": {
+      "bytes_lf": 3711,
+      "sha256_lf": "a967a86b1254a00a98f6a6eb131fd65dbccfb95c4a03ab868846b98398d3ff57",
+      "rows": 8
+    },
+    "per_model.csv": {
+      "bytes_lf": 4653,
+      "sha256_lf": "7ea9afce193e16ee73c69af6c227925d015888193768a09e5d84ab68aa820b86",
+      "rows": 24
+    },
+    "paraphrase_strength.csv": {
+      "bytes_lf": 538,
+      "sha256_lf": "7a3083454d0eef4ba70931eb2a140df27cca22124976d97c05e651875a76af15",
+      "rows": 6
+    },
+    "REPORT.md": {
+      "bytes_lf": 5129,
+      "sha256_lf": "a38a99c95e2d0025ac21ba3350b4c3d99636a1daf8679db09d5feaf94031e087"
+    },
+    "analyze.py": {
+      "bytes_lf": 16453,
+      "sha256_lf": "17d5e1bba3326356c12c8e23ec0cb64faa8c92eb69bdea79e3a66e126b160466"
+    }
+  }
+}
