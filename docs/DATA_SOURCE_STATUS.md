@@ -5,6 +5,10 @@ Updated **19 September 2026**. Exact revisions and current input hashes are in
 
 ## Current inputs
 
+The current fixed snapshot is **LiveHumanRightsBench v1.0**. Its
+[release manifest](../configs/releases/v1.0.json) pins the 1,000 targets and
+designated summary inputs. See the [version policy](BENCHMARK_RELEASES.md).
+
 | Artifact | Contents | Use |
 | --- | --- | --- |
 | [`echr_unified.json`](../data/processed/echr_unified.json) | 1,000 targets / 947 judgments | Canonical full-case evaluation input |
@@ -48,6 +52,11 @@ also been removed. The repository no longer distributes them as supporting
 records for the current release. The current result directories are
 `data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`,
 `data/experiments/syco_full_latest/` and `data/experiments/stateswap_summary/`.
+Current extensions add `data/experiments/unified_fullcase_oldmodels/`,
+`data/experiments/paraphrase_oldmodels/`, `data/experiments/stateswap_oldmodels/`
+and the separate one-turn `data/experiments/syco_nationality/` protocol. Their
+[inventory and matched analysis](../analysis/model_time_windows/REPORT.md)
+record valid scores and protocol identities.
 
 The deprecated input adapters and experiment runners have been removed.
 Use the current entry points in the [README](../README.md#setup-and-execution).

@@ -1,6 +1,8 @@
 {
   "schema_version": 2,
   "dataset_id": "echr-unified-atomic-targets-20260916",
+  "release_version": "v1.0",
+  "release_manifest": "configs/releases/v1.0.json",
   "selection": "The fixed 1,000-row cohort with one verified atomic sub-conclusion per row.",
   "dataset": {
     "path": "data/processed/echr_unified.json",

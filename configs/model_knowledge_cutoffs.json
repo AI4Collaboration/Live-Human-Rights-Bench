@@ -1,0 +1,68 @@
+{
+  "verified_on": "2026-09-19",
+  "primary_cutoff_analysis_models": ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"],
+  "analysis_design": "Temporal partitions use the two earlier models' cutoffs. The primary six-model roster supplies results on the same case partitions. Other provider cutoff dates are retained as source metadata only.",
+  "date_rule": "A case is post-cutoff only when decision_date is later than the documented cutoff. For a month-only cutoff, use the final day of that month.",
+  "interpretation": "Provider knowledge cutoffs locate cases in time; they do not identify which individual judgments appeared in training. Training-data and reliable-knowledge cutoffs are separate fields.",
+  "models": [
+    {
+      "model": "openai/gpt-4o-mini",
+      "knowledge_cutoff": "2023-10-01",
+      "granularity": "day",
+      "type": "knowledge_cutoff",
+      "source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+      "status": "verified"
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "knowledge_cutoff": "2024-06-01",
+      "granularity": "day",
+      "type": "knowledge_cutoff",
+      "source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+      "status": "verified"
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "knowledge_cutoff": "2025-05-31",
+      "provider_value": "May 2025",
+      "granularity": "month",
+      "type": "reliable_knowledge_cutoff",
+      "training_data_cutoff": "2025-08-31",
+      "training_data_provider_value": "Aug 2025",
+      "source": "https://platform.claude.com/docs/en/models/opus-4-6/overview",
+      "status": "verified"
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "knowledge_cutoff": "2026-02-16",
+      "granularity": "day",
+      "type": "knowledge_cutoff",
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "status": "verified"
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "knowledge_cutoff": null,
+      "status": "not_found_in_checked_primary_sources",
+      "sources_checked": ["https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro", "https://api-docs.deepseek.com/quick_start/pricing/"]
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "knowledge_cutoff": null,
+      "status": "not_found_in_checked_primary_sources",
+      "sources_checked": ["https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash", "https://api-docs.deepseek.com/quick_start/pricing/"]
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b",
+      "knowledge_cutoff": null,
+      "status": "not_found_in_checked_primary_sources",
+      "sources_checked": ["https://huggingface.co/Qwen/Qwen3-235B-A22B"]
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "knowledge_cutoff": null,
+      "status": "not_found_in_checked_primary_sources",
+      "sources_checked": ["https://huggingface.co/Qwen/Qwen3-32B"]
+    }
+  ]
+}

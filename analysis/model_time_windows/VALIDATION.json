@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "source_revision": "8c876a920864bfa3352927551161b16166572d35",
+  "release_input_hashes_verified": 3,
+  "cohort_counts_and_membership_verified": 26,
+  "performance_rows_independently_recounted": 416,
+  "paired_model_point_differences_verified": 572,
+  "perturbation_rows_independently_recounted": 64,
+  "output_hashes_verified": 8,
+  "no_api_calls": true
+}

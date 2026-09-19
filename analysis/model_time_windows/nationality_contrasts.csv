@@ -1,0 +1,5 @@
+model,reference_arm,comparison_arm,targets,reversal_difference_pp,lower_95,upper_95
+openai/gpt-4o-mini,neutral,matched,63,-4.761904761904762,-17.46031746031746,7.936507936507937
+openai/gpt-4o-mini,neutral,mismatched,63,-23.80952380952381,-36.507936507936506,-11.11111111111111
+openai/gpt-4.1-mini,neutral,matched,916,-1.7467248908296944,-2.841607777020483,-0.6600660066006601
+openai/gpt-4.1-mini,neutral,mismatched,916,-2.074235807860262,-3.0701754385964914,-1.090453209417567

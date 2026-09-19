@@ -1,0 +1,33 @@
+{
+  "benchmark": "LiveHumanRightsBench",
+  "release_version": "v1.0",
+  "named_on": "2026-09-19",
+  "dataset_id": "echr-unified-atomic-targets-20260916",
+  "source_revision": "8c876a920864bfa3352927551161b16166572d35",
+  "scope": "The fixed evaluation snapshot. The construction pipeline supports different cohort sizes and later releases.",
+  "targets": 1000,
+  "judgments": 947,
+  "provisions": 24,
+  "respondent_states": 46,
+  "decision_date_min": "2012-01-10",
+  "decision_date_max": "2026-05-21",
+  "labels": {"violation": 700, "no_violation": 300},
+  "target_key": ["item_id", "target_respondent_code", "article_full", "target_issue"],
+  "hash_convention": "SHA-256 of committed Git blob bytes; unaffected by checkout line endings.",
+  "inputs": [
+    {
+      "path": "data/processed/echr_unified.json",
+      "sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    {
+      "path": "data/processed/summaries_dsv41flash.json",
+      "sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    {
+      "path": "data/processed/summaries_extractive_leakchecked_20260916.json",
+      "sha256": "ab0a2a19bb6284653075870b2e7b27b0397d4a32668cb3d26dd41a03d6844d93"
+    }
+  ],
+  "version_policy": "New model results and analyses may evaluate v1.0 without changing its data version. Changed cases, targets, labels or designated model inputs require a separately versioned manifest.",
+  "documentation": "docs/BENCHMARK_RELEASES.md"
+}

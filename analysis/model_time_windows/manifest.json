@@ -1,0 +1,517 @@
+{
+  "source_revision": "8c876a920864bfa3352927551161b16166572d35",
+  "release": "v1.0",
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/run_config.json": {
+      "sha256_git_bytes": "6022d072d9c4e1fa10c706142082a1383e04b9f94cc5aaf1b337a6b35d39bf62",
+      "bytes": 463
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/run_config.json": {
+      "sha256_git_bytes": "983e17e3e64044171237854e0a9bd794439e449b3c007e47480afe0f9d6bf000",
+      "bytes": 468
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/baseline.jsonl": {
+      "sha256_git_bytes": "7d3f5fe30517d04d4f7bf1ba014048fd25ccaacb7596b96ef2dc6f8320dc7513",
+      "bytes": 905756
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/rq1.jsonl": {
+      "sha256_git_bytes": "b734cf4dab420e031006f8d35246087e85b9a7bbefc51ed9c59f1cd2d5d4acd1",
+      "bytes": 968116
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4o-mini/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "269e4c26bcd0127b44ac86d3b5d9aeaa45044a4192a2ef21839d9becca9b8649",
+      "bytes": 822882
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4o-mini/run_config.json": {
+      "sha256_git_bytes": "554307ea9e69cc26ebf560e8f8b86323a802a4155acde8397b3e04121fd9fddb",
+      "bytes": 360
+    },
+    "data/experiments/stateswap_oldmodels/openai_gpt-4o-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "1695c187216adac91f9f1512428a5f40a737220ed609a1ed0391fbbffc4c8a4c",
+      "bytes": 1227593
+    },
+    "data/experiments/stateswap_oldmodels/openai_gpt-4o-mini/run_config.json": {
+      "sha256_git_bytes": "3672bd0c2f30afa309c1012b8a590f2f601084edccf269edd81252c681a0f46d",
+      "bytes": 1991
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/run_config.json": {
+      "sha256_git_bytes": "e52afa980019321b26b75465aa251d676dbbbbd51aad072a6d0d2761e5e6eca3",
+      "bytes": 469
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/baseline.jsonl": {
+      "sha256_git_bytes": "aa51d25712cbacc2fe81db8bd2401c125c311184fa03e9f99fea88e2e2e60c08",
+      "bytes": 905848
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/rq1.jsonl": {
+      "sha256_git_bytes": "005a8c4270150d4290dd53029e465eade76c4a9cd4530f61b8689511e2bedbbc",
+      "bytes": 968977
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4.1-mini/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "f5d8886ad28d48b67c4b3a7c2b4324c7e07c1f891d1f8c904ddb3a913e78f55c",
+      "bytes": 824093
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4.1-mini/run_config.json": {
+      "sha256_git_bytes": "d5914c00ad3766e10baf8e399e08833d8916a66ddfa0f392d7f71275b5229fca",
+      "bytes": 361
+    },
+    "data/experiments/stateswap_oldmodels/openai_gpt-4.1-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "dab031da2b7e4dbf7412af23f4d66ac765faa29ee68c37e5e3cf89043fa1393f",
+      "bytes": 1227725
+    },
+    "data/experiments/stateswap_oldmodels/openai_gpt-4.1-mini/run_config.json": {
+      "sha256_git_bytes": "0b2173a9bfbe37c5971525785b0383e9551b8134296661b4c5cc17827fec19ba",
+      "bytes": 1992
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/run_config.json": {
+      "sha256_git_bytes": "ce69c99b4b7b38dc71930a4aa97961654554879d7b09876e85a63996b4429e9f",
+      "bytes": 470
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/baseline.jsonl": {
+      "sha256_git_bytes": "f147b2f7dd0fc59e9d98e319424303aef11d336d665a00e8ba11c61211c95672",
+      "bytes": 905543
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/rq1.jsonl": {
+      "sha256_git_bytes": "f4e2315dbc2dfd208e9600967a3ab7e166d6a5daa57b1120e2545439eac0cb56",
+      "bytes": 968080
+    },
+    "data/experiments/paraphrase/anthropic_claude-opus-4.6/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "9c2d7f9f8841a646e2393d82fc19c8c638d483112a66425df291fb4c6f208b55",
+      "bytes": 822979
+    },
+    "data/experiments/stateswap_summary/anthropic_claude-opus-4.6/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "e96f0aefb9fb33dcdff1d132567633e98d20b3670f953ea71e12ff275283d2ae",
+      "bytes": 927124
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/baseline.jsonl": {
+      "sha256_git_bytes": "d35339ce9dfa89415c200e2d0e10640331202d2a86112d7d303925f124dd48ba",
+      "bytes": 907943
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/rq1.jsonl": {
+      "sha256_git_bytes": "ec535df1e5b84e337e4934aea689f7b8a339544faa885484e7022400f55c2843",
+      "bytes": 966428
+    },
+    "data/experiments/paraphrase/openai_gpt-5.6-sol/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "6365c29b2a833da0c01e952f44b24b9ff44e8e2a04d4f8abc5039f3cf03af6f4",
+      "bytes": 823547
+    },
+    "data/experiments/stateswap_summary/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "2f6e5c88acc245fe4b56e57a370c013e1e80fd72519b820960bcd0a7df79f376",
+      "bytes": 927997
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/run_config.json": {
+      "sha256_git_bytes": "65c62ff12d374e4aef32ea1ca96b3f4307ca8331fbe6d70d856f62822a13ce53",
+      "bytes": 469
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/baseline.jsonl": {
+      "sha256_git_bytes": "88c8dc81f4d74060fd9cfea762f3c2c1d3e364b16d50f1b1812a926266351876",
+      "bytes": 907500
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/rq1.jsonl": {
+      "sha256_git_bytes": "74e4f97a62b76953442ef85edbafd2a29a9445cf50c4340f5f158a53e4f932de",
+      "bytes": 968644
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-pro/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "ae66bc4fa96a67a5ec6e893349826bdf9b9dddfef75650d0a46ac2fec6cf6be6",
+      "bytes": 835431
+    },
+    "data/experiments/stateswap_summary/deepseek_deepseek-v4-pro/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "08fda9b2e8fcb1dc06dd5d5912fdae4a3cf40a6a3d5c7b49e42216ab55cc3df4",
+      "bytes": 941697
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/run_config.json": {
+      "sha256_git_bytes": "049c763f65035048a44e0bc725b3e2f889639f1fe20f9be151b26d425ee934b9",
+      "bytes": 471
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/baseline.jsonl": {
+      "sha256_git_bytes": "fb3c405c91b1aafe2fb059c6462c28641a3a623de160fd69da99296f9a4e85e5",
+      "bytes": 909231
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/rq1.jsonl": {
+      "sha256_git_bytes": "8b044810a556947f330bc7668a9ad597fe254f5c246fc8d63d34f6c4bcaa48b3",
+      "bytes": 969047
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-flash/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "8ff207e98633fa1d2ead1ef7f09c02f01718cb96f65c8b788dc9110eb6c48c9c",
+      "bytes": 825353
+    },
+    "data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
+      "bytes": 928836
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/run_config.json": {
+      "sha256_git_bytes": "7f958db3228b0c343229f9a920bc7dacc576f0e5d11182985d2966544c3498ac",
+      "bytes": 465
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
+      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
+      "bytes": 905529
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
+      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
+      "bytes": 967771
+    },
+    "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "ee4e57b2a123b03d996ae4e2e04b3fd8e6a3138e08136374330664eab78d79e7",
+      "bytes": 827064
+    },
+    "data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
+      "bytes": 928318
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/run_config.json": {
+      "sha256_git_bytes": "761bd5d9cb6b35cc6b04c439525d5ac9075c58415bf7dddf32d7692af5d13a36",
+      "bytes": 459
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
+      "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
+      "bytes": 907392
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl": {
+      "sha256_git_bytes": "be3ce4d7bb45a9f88dd24039a7c41bebca21536a593cb6a144b0a6dae936d49a",
+      "bytes": 966982
+    },
+    "data/experiments/paraphrase/qwen_qwen3-32b/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "2f5afc9ffb98cd28d4fda6ac23aff0ecda7e98a4d198fad886db77f4a5e19c8f",
+      "bytes": 824653
+    },
+    "data/experiments/stateswap_summary/qwen_qwen3-32b/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec",
+      "bytes": 928914
+    },
+    "data/experiments/syco_nationality/openai_gpt-4o-mini/syco_nationality_results.jsonl": {
+      "sha256_git_bytes": "0738208c062333874dba03a547a435e4fd6c89c8d2f829483c53474304ea8016",
+      "bytes": 393206
+    },
+    "data/experiments/syco_nationality/openai_gpt-4.1-mini/syco_nationality_results.jsonl": {
+      "sha256_git_bytes": "f7d6d3ddf027deb925d3224b6bfecffc5cd4bba038036129411def20805176f1",
+      "bytes": 403590
+    }
+  },
+  "temporal_scope": "Cutoff splits are defined only by GPT-4o mini and GPT-4.1 mini. The six primary models supply same-case reference results; they have no separate own-cutoff partitions in this analysis.",
+  "analyzer_sha256": "288a501aba03b4df9e930f62457cffc61cd3e3f5055542f36117959c62d8d38b",
+  "cutoffs_file": "configs/model_knowledge_cutoffs.json",
+  "cutoffs_sha256": "c11cd0fb8b31d833acaccdf62298b723e515a54de8ef7e9207c86030fdf9daaa",
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 731,
+    "unit": "judgment",
+    "interval": "percentile_95"
+  },
+  "scoring": "Threshold mean of valid scores: <40 no_violation, >60 violation, otherwise abstention. Missing means are failures and stay in accuracy denominators.",
+  "run_identity_checks": [
+    {
+      "model": "openai/gpt-4o-mini",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "openai/gpt-4o-mini",
+      "prompt_version": "provision-fullcase-prompts-v1"
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "family": "paraphrase",
+      "run_config": {
+        "version": "paraphrase-provision-v1",
+        "rating_parser": "anchored-percentage-v1",
+        "model": "openai/gpt-4o-mini",
+        "samples": 10,
+        "temperature": 1.0,
+        "max_case_chars": 50000,
+        "input_sha256": "a7365b435f7ba891ea752e8ed22ef18c53e9bf280222e3c8209fe8e99edad42e",
+        "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171"
+      }
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "family": "stateswap",
+      "run_config": {
+        "version": "stateswap-summary-literal-v1",
+        "rating_parser": "anchored-percentage-v1",
+        "model": "openai/gpt-4o-mini",
+        "samples": 10,
+        "limit": 0,
+        "temperature": 1.0,
+        "max_tokens": 2000,
+        "targets": {
+          "US": [
+            "the United States",
+            "American"
+          ],
+          "Russia": [
+            "Russia",
+            "Russian"
+          ],
+          "Ukraine": [
+            "Ukraine",
+            "Ukrainian"
+          ]
+        },
+        "demonyms": {
+          "Ukraine": "Ukrainian",
+          "the Republic of Moldova": "Moldovan",
+          "Russia": "Russian",
+          "Azerbaijan": "Azerbaijani",
+          "Greece": "Greek",
+          "Serbia": "Serbian",
+          "Armenia": "Armenian",
+          "Malta": "Maltese",
+          "Albania": "Albanian",
+          "Iceland": "Icelandic",
+          "Norway": "Norwegian",
+          "Romania": "Romanian",
+          "Latvia": "Latvian",
+          "Italy": "Italian",
+          "Hungary": "Hungarian",
+          "Georgia": "Georgian",
+          "Cyprus": "Cypriot",
+          "Bosnia and Herzegovina": "Bosnian",
+          "Czechia": "Czech",
+          "Croatia": "Croatian",
+          "Lithuania": "Lithuanian",
+          "France": "French",
+          "Montenegro": "Montenegrin",
+          "Estonia": "Estonian",
+          "San Marino": "Sammarinese",
+          "the Netherlands": "Dutch",
+          "Slovenia": "Slovenian",
+          "Switzerland": "Swiss",
+          "the United Kingdom": "British",
+          "Bulgaria": "Bulgarian",
+          "Spain": "Spanish",
+          "Austria": "Austrian",
+          "Portugal": "Portuguese",
+          "Sweden": "Swedish",
+          "Ireland": "Irish",
+          "Slovakia": "Slovak",
+          "Germany": "German",
+          "Poland": "Polish",
+          "North Macedonia": "Macedonian",
+          "T\u00fcrkiye": "Turkish",
+          "Belgium": "Belgian",
+          "Finland": "Finnish",
+          "Denmark": "Danish",
+          "Liechtenstein": "Liechtenstein",
+          "Luxembourg": "Luxembourgish",
+          "Andorra": "Andorran"
+        },
+        "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171",
+        "cases_sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+        "summaries_sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+      }
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "openai/gpt-4.1-mini",
+      "prompt_version": "provision-fullcase-prompts-v1"
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "family": "paraphrase",
+      "run_config": {
+        "version": "paraphrase-provision-v1",
+        "rating_parser": "anchored-percentage-v1",
+        "model": "openai/gpt-4.1-mini",
+        "samples": 10,
+        "temperature": 1.0,
+        "max_case_chars": 50000,
+        "input_sha256": "a7365b435f7ba891ea752e8ed22ef18c53e9bf280222e3c8209fe8e99edad42e",
+        "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171"
+      }
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "family": "stateswap",
+      "run_config": {
+        "version": "stateswap-summary-literal-v1",
+        "rating_parser": "anchored-percentage-v1",
+        "model": "openai/gpt-4.1-mini",
+        "samples": 10,
+        "limit": 0,
+        "temperature": 1.0,
+        "max_tokens": 2000,
+        "targets": {
+          "US": [
+            "the United States",
+            "American"
+          ],
+          "Russia": [
+            "Russia",
+            "Russian"
+          ],
+          "Ukraine": [
+            "Ukraine",
+            "Ukrainian"
+          ]
+        },
+        "demonyms": {
+          "Ukraine": "Ukrainian",
+          "the Republic of Moldova": "Moldovan",
+          "Russia": "Russian",
+          "Azerbaijan": "Azerbaijani",
+          "Greece": "Greek",
+          "Serbia": "Serbian",
+          "Armenia": "Armenian",
+          "Malta": "Maltese",
+          "Albania": "Albanian",
+          "Iceland": "Icelandic",
+          "Norway": "Norwegian",
+          "Romania": "Romanian",
+          "Latvia": "Latvian",
+          "Italy": "Italian",
+          "Hungary": "Hungarian",
+          "Georgia": "Georgian",
+          "Cyprus": "Cypriot",
+          "Bosnia and Herzegovina": "Bosnian",
+          "Czechia": "Czech",
+          "Croatia": "Croatian",
+          "Lithuania": "Lithuanian",
+          "France": "French",
+          "Montenegro": "Montenegrin",
+          "Estonia": "Estonian",
+          "San Marino": "Sammarinese",
+          "the Netherlands": "Dutch",
+          "Slovenia": "Slovenian",
+          "Switzerland": "Swiss",
+          "the United Kingdom": "British",
+          "Bulgaria": "Bulgarian",
+          "Spain": "Spanish",
+          "Austria": "Austrian",
+          "Portugal": "Portuguese",
+          "Sweden": "Swedish",
+          "Ireland": "Irish",
+          "Slovakia": "Slovak",
+          "Germany": "German",
+          "Poland": "Polish",
+          "North Macedonia": "Macedonian",
+          "T\u00fcrkiye": "Turkish",
+          "Belgium": "Belgian",
+          "Finland": "Finnish",
+          "Denmark": "Danish",
+          "Liechtenstein": "Liechtenstein",
+          "Luxembourg": "Luxembourgish",
+          "Andorra": "Andorran"
+        },
+        "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171",
+        "cases_sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+        "summaries_sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "anthropic/claude-opus-4.6",
+      "prompt_version": "atomic-target-prompts-v1"
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "openai/gpt-5.6-sol",
+      "prompt_version": "atomic-target-prompts-v1"
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "deepseek/deepseek-v4-pro",
+      "prompt_version": "atomic-target-prompts-v1"
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "deepseek/deepseek-v4-flash",
+      "prompt_version": "atomic-target-prompts-v1"
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "qwen/qwen3-235b-a22b",
+      "prompt_version": "atomic-target-prompts-v1"
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "input_identity_equal": true,
+      "run_settings_equal_except_model_and_prompt_tag": true,
+      "requested_model": "qwen/qwen3-32b",
+      "prompt_version": "atomic-target-prompts-v1"
+    }
+  ],
+  "outputs": {
+    "cohorts.csv": {
+      "rows": 26,
+      "sha256": "2dd396f225db9c2f7f4daa663231e16e600b3963a8434b0e03b8802f15a2c361"
+    },
+    "performance.csv": {
+      "rows": 416,
+      "sha256": "75957b00dff0ac3ca612b4f331fd286de4127a7f51ce2ca0ef90a422a55cc429"
+    },
+    "paired_model_differences.csv": {
+      "rows": 572,
+      "sha256": "5087c7d4d1fd056773ef38342b6992c2bf29a4f175c903f6d09d8c38a4da789d"
+    },
+    "perturbation_changes.csv": {
+      "rows": 64,
+      "sha256": "f2335d0c994d6a97f0d55151255749ef1004bdd981636e5e5eb2baf71493e1fb"
+    },
+    "result_inventory.csv": {
+      "rows": 80,
+      "sha256": "26ba1fcbb992b79be6ebd15981408e9cbca423fec966202a0554a893600590c7"
+    },
+    "nationality.csv": {
+      "rows": 6,
+      "sha256": "dde5c738ff95e65371b54b7de7cee88294d0998026a888c4149d7073c5defaa9"
+    },
+    "nationality_coverage.csv": {
+      "rows": 6,
+      "sha256": "8aa5efca3a42e773c8c3d17bad36108e0024734ef2564707cc5be696dd852757"
+    },
+    "nationality_contrasts.csv": {
+      "rows": 4,
+      "sha256": "76b13251a397d9343be096cd650a53f9f604e3db59100b518d703d5f0b47bd50"
+    }
+  }
+}

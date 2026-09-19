@@ -79,6 +79,22 @@ susceptibility to social pressure across multiple turns.
 
 ## Current release
 
+**LiveHumanRightsBench v1.0** is the current fixed release: 1,000 targets from
+947 judgments, dated 10 January 2012 to 21 May 2026. The
+[release manifest](configs/releases/v1.0.json) pins the input hashes.
+The [pipeline and version policy](docs/BENCHMARK_RELEASES.md) support different
+cohort sizes and later releases; new model results can evaluate the same v1.0.
+
+**Earlier-model results reviewed 19 September 2026:** GPT-4o mini and GPT-4.1
+mini add complete full-record, summary, paraphrase and State Swap outputs.
+The [earlier-model time-window analysis](analysis/model_time_windows/REPORT.md)
+uses their [verified knowledge dates](configs/model_knowledge_cutoffs.json),
+with the six primary models evaluated on the same case splits as references.
+Full-record balanced accuracy before/after its own cutoff is 55.3%/52.9% for
+GPT-4o mini and 57.9%/62.1% for GPT-4.1 mini. Under summarization, their verdict
+categories change on 17.0% and 22.6% of v1.0 targets. The report includes
+uncertainty, annual results, reference-model comparisons and nationality coverage.
+
 Published evaluation snapshot from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
 Summary-based State Swap results and country matching were updated in
@@ -93,13 +109,15 @@ available as [JSON](configs/data_source_status.json).
 
 | Component | Current contents | Location |
 | --- | --- | --- |
-| Benchmark | 1,000 targets from 947 judgments | [Canonical dataset](data/processed/echr_unified.json) |
+| Benchmark v1.0 | 1,000 targets from 947 judgments | [Canonical dataset](data/processed/echr_unified.json) |
 | Full-case and summary evaluation | Six models; 1,000 baseline and 1,000 summary records per model; ten requested ratings per record | [Current results](data/experiments/unified_fullcase_latest/) |
 | Paraphrase evaluation | Six models; original, light, medium, and heavy arms; 24,000 result records | [Current results](data/experiments/paraphrase/) |
 | Three-turn persuasion (sycophancy) | Six models; 11 conditions; static and adaptive arms; 6,000 initial records and 118,206 trajectory records | [Current results](data/experiments/syco_full_latest/) |
 | Extractive summaries | One source-extractive control for each of the 947 judgments | [Released artifact](data/processed/summaries_extractive_leakchecked_20260916.json) |
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
 | Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
+| Earlier-model extension | GPT-4o mini and GPT-4.1 mini; 20,000 full-record, summary, paraphrase and State Swap records, all with ten parsed ratings | [Inventory and analysis](analysis/model_time_windows/REPORT.md) |
+| One-turn nationality extension | Both earlier models; 2,000 initial records; three-arm matched cohorts of 916 and 63 targets for GPT-4.1 mini and GPT-4o mini | [Coverage](analysis/model_time_windows/nationality_coverage.csv) |
 
 Manuscript figure sources are maintained with the paper. The additional
 [reliability analyses](analysis/reliability_controls/REPORT.md) are released
@@ -107,7 +125,7 @@ here alongside the committed experiment outputs.
 
 ## Benchmark and inputs
 
-The current cohort contains **1,000 evaluation targets**, **947 judgments**,
+The **v1.0** cohort contains **1,000 evaluation targets**, **947 judgments**,
 **24 provisions**, and **46 respondent States**, dated **10 January 2012 to
 21 May 2026**. Labels comprise **700 violations** and **300 non-violations**.
 
@@ -141,7 +159,7 @@ directory; the question text is the same as in the published full-case run.
 
 ## Models and roles
 
-All four released evaluation suites use these six target models:
+The four primary evaluation suites use these six target models:
 
 | Target model | API identifier |
 | --- | --- |
@@ -151,6 +169,12 @@ All four released evaluation suites use these six target models:
 | DeepSeek V4 Flash | `deepseek/deepseek-v4-flash` |
 | Qwen3 235B A22B | `qwen/qwen3-235b-a22b` |
 | Qwen3 32B | `qwen/qwen3-32b` |
+
+Earlier-model controls add `openai/gpt-4o-mini` and `openai/gpt-4.1-mini` for
+full-record, summary, paraphrase and State Swap evaluation. Their
+[cutoff and temporal analysis](analysis/model_time_windows/REPORT.md) uses the
+same v1.0 targets. The separate nationality extension uses a one-turn lawyer
+cue. The six-model three-turn persuasion roster is unchanged.
 
 Separate models prepare the inputs and challenges:
 

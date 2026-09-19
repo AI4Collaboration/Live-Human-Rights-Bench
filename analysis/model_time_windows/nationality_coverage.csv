@@ -1,0 +1,7 @@
+model,arm,records,eligible,valid_post_scores,missing_post_scores,common_three_arms
+openai/gpt-4o-mini,neutral,1000,955,238,717,63
+openai/gpt-4o-mini,matched,1000,955,221,734,63
+openai/gpt-4o-mini,mismatched,1000,955,198,757,63
+openai/gpt-4.1-mini,neutral,1000,916,916,0,916
+openai/gpt-4.1-mini,matched,1000,916,916,0,916
+openai/gpt-4.1-mini,mismatched,1000,916,916,0,916
