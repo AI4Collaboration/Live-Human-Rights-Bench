@@ -72,7 +72,7 @@ The validation command checks the existing frozen release without calling models
 | --- | --- | --- |
 | Full record and shared summary | `experiments/run_perturbation_fullcase.py` | Matched full-record arm |
 | Case-body paraphrases | `experiments/paraphrase_run.py` | Original arm under the same prompt |
-| Three-turn persuasion | `experiments/syco_run.py` | Shared initial response |
+| Three-turn adversarial opinion | `experiments/syco_run.py` | Shared initial response |
 | Summary-based State Swap | `experiments/stateswap_summary_run.py` | Original summary under the same prompt |
 | Extractive control and fact retention | `scripts/build_extractive.py`, `scripts/build_atomic_coverage.py` | Identical source claims across summary variants |
 

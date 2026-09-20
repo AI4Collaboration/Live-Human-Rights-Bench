@@ -58,7 +58,7 @@ rows have a valid mean; unparsed individual ratings are recorded separately.
 The 807-target text-change-only intersection is a sensitivity cohort. The
 [protocol and input review](docs/STATESWAP.md) detail these distinctions.
 
-## Three-turn persuasion
+## Three-turn adversarial opinion
 
 The 6,000 initial records contain 5,373 decided responses, 310 abstentions and
 317 missing or invalid scores. Eleven conditions and two modes produce 118,206

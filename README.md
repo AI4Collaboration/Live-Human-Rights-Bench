@@ -394,7 +394,7 @@ python experiments/paraphrase_run.py eval \
 Evaluation checkpoints bind the input texts, prompt and sample count. Changing
 these settings requires a new output directory.
 
-### Three-turn persuasion
+### Run three-turn adversarial opinion
 
 The runner applies the case/provision lookup correction and uses a fresh,
 versioned output directory:

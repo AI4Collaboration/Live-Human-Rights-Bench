@@ -1,4 +1,4 @@
-# Three-turn persuasion (sycophancy)
+# Three-turn adversarial opinion
 
 The current runner is [`experiments/syco_run.py`](../experiments/syco_run.py).
 It uses the six target models listed in the [README](../README.md#models-and-roles),
@@ -60,7 +60,7 @@ or an unversioned checkpoint is rejected; use a new output directory.
 Any-turn reversal, turn-3 reversal and subsequent recovery are separate outcomes.
 Analyze matched static/adaptive trajectories with three valid target scores in
 each arm. The [statistical protocol](../STATISTICAL_METHODOLOGY.md) defines the
-reported comparison; the [README](../README.md#three-turn-persuasion-sycophancy)
+reported comparison; the [README](../README.md#three-turn-adversarial-opinion)
 records the analysis cohort for the published checkpoints.
 
 The [additional cue analysis](../analysis/reliability_controls/REPORT.md)
