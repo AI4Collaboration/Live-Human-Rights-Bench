@@ -2,7 +2,8 @@
 
 ## Next API experiments
 
-**Plan updated 19 September 2026 after review. No new API calls have been run.**
+**Plan audited 20 September 2026 against the published results and runners.
+The follow-up API experiments below remain pending.**
 Prioritize the role-cue finding and conversational sampling variability. Use
 Claude Opus 4.6 and GPT-5.6-sol, exact saved initial responses, and a locked
 100-case subset of the shared 349-case cohort. Existing conditions below are
@@ -18,6 +19,7 @@ concurrent replication references, not new role additions.
 | Optional role extensions | Human rights researcher; ordinary person; AI systems researcher | Domain relevance, non-expert identity, or equal-word-count role wording | +600 target responses per cue |
 | Conditional mechanism test | Role by explicit evaluation framing | Test evaluation signaling if advancing a mechanism claim | 2,400 target responses for one trajectory in each of four cells |
 | Conditional State Swap | Jurisdiction held fixed | Support an identity-only claim beyond the current combined intervention | 3,000 target responses |
+| Optional generator control | Alternative summary or paraphrase generator | Test generalization across generators if the claim requires it | Specify a targeted subset and budget before scheduling |
 
 **Recommended first batch: 4,800 target responses, no challenger calls.**
 Adding adaptive replication brings the package to **7,800 target responses
@@ -26,6 +28,18 @@ in the same serving window as the new conditions. Repetitions are averaged
 within cases; they do not increase the independent case count.
 The [merged protocol and exact budgets](docs/NEXT_EXPERIMENTS.md) specify
 strata, cues, repeated-trajectory handling, runner changes and stopping rules.
+
+Adding generic researcher, judge and both nationality cues to the static
+package costs **7,800 target responses in total, with no challenger calls**,
+including the concurrent lawyer reference. This total assumes all additions
+share the references' serving window and excludes the optional experiments.
+
+**Execution status:** the follow-up conditions are documented, but the current
+runner still schedules the original fixed grid with one trajectory per branch.
+Before execution, publish the locked 100-case and nested 50-case manifests,
+add the new conditions and mode filters, distinguish repetitions in checkpoint
+keys, and support replay of the saved initial replies and full message logging.
+The existing launch command does not implement this follow-up plan.
 
 **Already available:** AI safety researcher, lawyer, junior lawyer, senior
 lawyer and no cue. Do not rerun their full cohorts as new role experiments.

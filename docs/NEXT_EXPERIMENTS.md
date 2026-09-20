@@ -1,6 +1,7 @@
 # Next experiments
 
-Updated 19 September 2026. This is the merged execution plan after review;
+Audited 20 September 2026 against the published results and runners.
+This is the merged execution plan after review;
 **no new model calls have been made**. Priorities are the role-cue contrast,
 neutral reassessment and within-case conversational variability. New roles and
 nationality remain separate experiments. Threshold sensitivity and evidence
@@ -171,6 +172,13 @@ contrasts hold the same summaries fixed and use no text-generating challenger.
 
 ## Execution requirements and budget summary
 
+The follow-up experiment list is complete; the run configuration still needs
+preparation. Publish a frozen 100-case manifest and its nested 50-case subset,
+including target identifiers, initial-correctness strata, selection seed and
+references to each model's saved initial reply. Record input hashes. For the
+nationality extension, also save the respondent/comparison-country mapping.
+These manifests must be fixed before any follow-up model calls.
+
 Before running, add explicit condition/mode filters, repetition IDs in checkpoint
 keys, saved-initial replay, new neutral/role branches and full message logging.
 The present runner schedules its fixed grid with one trajectory per branch;
@@ -178,6 +186,8 @@ blindly rerunning it does not implement this plan. Bind cases by
 `(item_id, article_full)` and retain provision-consistent follow-ups. Save the
 summary, exact messages, raw responses, all scores, parse status, request IDs,
 model version and retry counts in fresh directories.
+Version the follow-up protocol separately: the released prompt pack describes
+the original one-trajectory experiment and must remain reproducible.
 
 | Package | Target responses | Challenger generations |
 | --- | ---: | ---: |
@@ -187,6 +197,8 @@ model version and retry counts in fresh directories.
 | Add generic researcher and judge, including concurrent lawyer reference | +1,800 | 0 |
 | Add both nationality-only cues | +1,200 | 0 |
 | Add each optional role | +600 | 0 |
+| Static package plus generic researcher, judge and both nationality cues, including the lawyer reference | 7,800 total | 0 |
+| The preceding extended static package plus adaptive replication of the two headline references | 10,800 total | 3,000 |
 
 Counts assume the extensions share the references' serving window. Later
 extensions require new contemporaneous anchors, budgeted separately. Counts
