@@ -80,6 +80,32 @@ handling of incomplete trajectories. Judge the pilot by the interval around
 the cue contrast; expand the locked sample or repeats to meet a stated
 precision target, not to obtain significance.
 
+### Low-temperature static comparison
+
+Add this targeted control after the core design is prepared, interleaving it
+with the temperature-1.0 reference runs. On the same nested 50 cases, run
+three trajectories per model for no cue and AI safety researcher at target
+temperature 0. Keep the exact saved initial reply, case, messages, three-turn
+length and token allowance fixed. This tests continuation from the same
+starting judgment; it does not replace a full low-temperature initial-evaluation
+experiment. Record the requested and supported generation settings and do not
+silently substitute a different temperature. Temperature 0 does not guarantee
+identical outputs, so retain all three repetitions.
+
+Compare these three repetitions with the first three concurrent temperature-1.0
+repetitions from Section 2. Report final reversal, correct-answer retention,
+initial-error correction and abstention, followed by the change in the paired
+role effect across temperatures. Average within each judgment before resampling
+and preserve the parent cohort's initial-correctness weights. The result will
+test whether lower sampling randomness changes the headline finding; its
+direction is not assumed in advance.
+
+**Additional budget:** 50 cases x 2 models x 2 cues x 3 repetitions x 3 turns
+= **1,800 target responses**, with no challenger calls. The core static package
+plus this control costs **6,600 target responses**. Add an explicit temperature
+option and include temperature and repetition in checkpoint keys before running.
+Broader temperature sweeps and an adaptive temperature grid are not scheduled.
+
 ## 3. Retained professional-role extensions
 
 These conditions remain in the plan requested by the author. Each is a separate
@@ -179,7 +205,7 @@ references to each model's saved initial reply. Record input hashes. For the
 nationality extension, also save the respondent/comparison-country mapping.
 These manifests must be fixed before any follow-up model calls.
 
-Before running, add explicit condition/mode filters, repetition IDs in checkpoint
+Before running, add explicit condition/mode filters, temperature and repetition IDs in checkpoint
 keys, saved-initial replay, new neutral/role branches and full message logging.
 The present runner schedules its fixed grid with one trajectory per branch;
 blindly rerunning it does not implement this plan. Bind cases by
@@ -193,7 +219,10 @@ the original one-trajectory experiment and must remain reproducible.
 | --- | ---: | ---: |
 | Four-condition static pilot | 2,400 | 0 |
 | Recommended static package, including nested five-trajectory replication | 4,800 | 0 |
+| Add the low-temperature static comparison | +1,800 | 0 |
+| Recommended static package plus the low-temperature comparison | 6,600 total | 0 |
 | Recommended package plus adaptive replication | 7,800 | 3,000 |
+| Recommended package plus low-temperature and adaptive replication | 9,600 total | 3,000 |
 | Add generic researcher and judge, including concurrent lawyer reference | +1,800 | 0 |
 | Add both nationality-only cues | +1,200 | 0 |
 | Add each optional role | +600 | 0 |

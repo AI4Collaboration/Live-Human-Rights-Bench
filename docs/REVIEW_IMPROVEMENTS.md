@@ -1,6 +1,7 @@
 # Review assessment and improvements
 
-Checked 19 September 2026 against the current v1.0 results and manuscript.
+Checked 20 September 2026 against GitHub revision `cdda570` and manuscript
+revision `12bd7fa`, including the latest supplied review.
 The review identifies useful controls for the role-cue result and conversational
 sampling. Its suggestions vary in relevance; they are not all missing experiments.
 The [merged API plan](NEXT_EXPERIMENTS.md) is summarized at the top of the README.
@@ -12,17 +13,90 @@ No API experiments or new human annotation were performed for this revision.
 | --- | --- | --- |
 | AI researcher versus AI safety researcher | Directly tests the distinctive wording in the headline finding | First API batch, with concurrent no-cue and AI-safety references |
 | Single conversation per condition | Existing judgment bootstrap measures variation across cases, not repeated conversations | Five static trajectories on 50 locked cases; adaptive replication is a separately budgeted next step |
+| Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Add three static trajectories per reference cue/model on the same 50 cases at temperature 0, compared with three concurrent temperature-1.0 trajectories |
 | Neutral reassessment | Existing disagreement already supplies an opposing verdict | Add the planned neutral branch to the same static batch |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
+| Continuous probability-score accuracy | Complements the completed threshold checks without assigning every uncertain score a full classification error | Pending paired Brier-score analysis from saved scores; no model calls |
+| Multiple comparisons | Pointwise intervals do not provide simultaneous coverage for all displayed contrasts | Pending family-level sensitivity checks for the main claims, with effect sizes retained |
 | Conversation protocol visibility | Settings exist in the appendix and runner, but readers must assemble them | Implemented in Section 5 and Appendix C: temperature, response budgets, challenge length and the distinction between averaged fixed-input scores and individual dialogue turns |
 | Close multi-turn prior work | TRUTH DECAY is a direct antecedent | Implemented in Related Work, alongside ECtHR-PCR; the contribution remains court-grounded evaluation, matched cue contrasts, correctness and persistence |
 
 The recommended static API package costs **4,800 target responses**. It combines
 four contemporaneous conditions on 100 cases and four additional repetitions
 of the two headline references on a nested 50 cases. Adaptive replication adds
-3,000 target responses and 3,000 challenger generations. Existing roles remain
+3,000 target responses and 3,000 challenger generations. The targeted
+low-temperature comparison adds 1,800 target responses, making the static
+package 6,600 or the package with both extensions 9,600 target responses
+plus 3,000 challenger generations. Existing roles remain
 references; generic researcher, judge and nationality stay in the merged plan.
 Nationality is not crossed with professional roles.
+
+## Contribution and evidence priorities
+
+Preserve the construction pipeline, systematic perturbations and adversarial
+opinion as the three contributions. The connected result is that aggregate
+accuracy hides offsetting corrections and errors, challenger identity changes
+judgments on fixed case evidence, and early mistakes often persist. Lower
+reversal alone can also preserve an initially wrong answer. These findings
+should guide the additions; the review does not require a new mitigation paper.
+
+Metadata shifts show sensitivity to respondent context. Summarization changes
+available evidence. Neither experiment alone makes every judgment change an
+error. The clearest evidence of harmful volatility comes from correctness
+transitions and challenges that keep the case fixed. Keep that distinction in
+the Results interpretation without adding a limitations paragraph to each result.
+
+## Pending improvements without model calls
+
+1. **Add a compact Brier-score sensitivity table.** Convert each valid stored
+   violation score to `p = score / 100` and compute `(p - label)^2`. Use the
+   published score means for fixed-input experiments and individual turn scores
+   for dialogues. Keep the main paired cohorts where valid scores permit;
+   otherwise report the paired valid-score count and missing outputs separately.
+   Retain scores in the abstention band. Compare before/after error and the cue
+   contrast with judgment-cluster intervals. Apply this to full-record/summary,
+   paraphrase and unchanged-case dialogues. Do not score jurisdiction-changing
+   State Swap arms against the original case label as if it were new ground
+   truth. Brier score measures probability-forecast error, not calibration alone;
+   a calibration claim would also need observed frequencies or decomposition.
+2. **Check the main contrast families.** Specify the families before the new
+   analysis, such as the six US shifts, the six pressure-by-mode interactions,
+   and the static/adaptive shared-case cue-gap contrasts. Use a suitable paired
+   test with Holm correction or simultaneous judgment-cluster intervals. Keep
+   pointwise intervals labeled as such and report any changed conclusions.
+   A single correction over every descriptive table would obscure which claim
+   is being tested.
+3. **Make existing evidence easier to locate.** Put one short static challenge
+   example and the role-prefix change beside the Section 5 protocol. In the
+   appendix, make the challenger validation/retry behavior explicit and give
+   a small source-review accounting paragraph using the existing registry.
+   The current code retries transport up to four attempts and adaptive assembly
+   up to three generations; unsuccessful assembly ends that trajectory. Do not
+   describe failure as a static fallback.
+4. **Add the closest related work concisely.** Prioritize SYCON-Bench for
+   multi-turn stance changes; consider ICE-Guard and TriBench-Ko in the existing
+   reliability paragraph. Replace less specific descriptions to preserve the
+   recently shortened Related Work. The verified records are listed below.
+
+The Brier-score and multiple-comparison tasks above are not yet completed.
+They should produce one short appendix table or concise prose, with only the
+supported takeaway in the main text. Additional main-text figures are not needed.
+
+**Prompt availability has two parts.** The exact static templates and adaptive
+generation specification are already public in the
+[prompt pack](../configs/adversarial_opinion_prompts.json) and
+[protocol](ADVERSARIAL_OPINION.md). The current runner saves the initial reply
+and turn scores but does not save the generated adaptive messages or subsequent
+raw target replies in each trajectory record. Publish original logs if retained
+elsewhere; a newly generated dialogue cannot be presented as a historical one.
+Full message logging is already a requirement of the next API batch.
+
+**Turn-of-flip metrics are an optional appendix extension.** Existing analyses
+already report turn-specific reversal, first errors, recovery and persistence.
+First reversal and the number of adjacent verdict switches could be derived
+from the saved three-turn paths for comparison with SYCON-Bench. Define how
+abstentions and conversations with no reversal are handled; first error is not
+the same event as first reversal when an initial verdict is wrong.
 
 ## Direct manuscript fixes completed
 
@@ -85,11 +159,25 @@ Lawyer, junior lawyer and senior lawyer should not be listed as missing roles.
 | Mixed-effects regression | Optional, not automatically more precise. Matched contrasts and judgment-cluster bootstrap already target the reported effects. Random-effects assumptions should serve a new question, not replace a valid paired analysis for appearance. |
 | Utility-weighted abstention | Do not choose arbitrary clinical/legal costs. Report correct, wrong, abstaining and failed outcomes and threshold sensitivity. Court outcomes alone do not establish whether incomplete inputs are answerable. |
 | New retrieval or adversarial-training experiments | Outside the central pipeline and judgment-reliability evidence; no immediate experiment added. |
+| Mitigation baseline | Optional follow-up, not a required new contribution. Any prompt-based defense must measure both correct-answer retention and correction of initial errors; fewer reversals alone would not demonstrate improvement. |
+| Human-curated summary subset | Defer: it requires substantial new annotation. Existing source review, fact-link validation and evaluator exclusions address distinct parts of the evidence. |
 
 ## Literature verification
 
-All suggested works were checked against primary records. Two are the most
-useful additions within the current Related Work structure:
+The latest review's named works were retrieved programmatically from arXiv or
+the publisher. The [retrieval record](../analysis/review_followup/review_literature_20260920.json)
+stores titles, authors, publication metadata, URLs, HTTP status and checksums.
+
+| Work | Relevance and decision |
+| --- | --- |
+| [SYCON-Bench, Hong et al., Findings of EMNLP 2025](https://aclanthology.org/2025.findings-emnlp.121/) | Direct multi-turn antecedent measuring first conformity and stance switches. Prioritize a concise citation; our emphasis remains reference-outcome correctness and persistence on real cases. |
+| [ICE-Guard, Basu and Chakraborty, 2026](https://arxiv.org/abs/2603.18530) | Close connection to demographic, authority and framing interventions. Cite for context rather than importing its mitigation pipeline. |
+| [TriBench-Ko, Lee et al., 2026](https://arxiv.org/abs/2605.03792) | Judicial workflow risks across several tasks. Useful context for the reliability paragraph; it does not replace the renewable case construction or conversational study. |
+| [Pressure-Tune, Zhang et al., 2025](https://arxiv.org/abs/2508.13743) | Fine-tuning on adversarial scientific-QA dialogues. Real but less central to this benchmark paper; a training experiment is not required. |
+| [Relevance paraphrasing, Askari et al., 2025](https://arxiv.org/abs/2406.03993) | Studies robustness of summary generation to paraphrased source passages. Our outcome is downstream judgment under changed input, so the tasks should not be equated. |
+| [Proper-score decomposition, Broecker](https://arxiv.org/abs/0806.0813) | Supports the distinction between probability-score error and calibration alone when designing the Brier analysis. |
+
+Two useful additions from the earlier review are already in Related Work:
 
 - **TRUTH DECAY**, Liu et al. (2025), studies accuracy and answer changes under
   static and rationale-based repeated feedback. It prevents attributing novelty

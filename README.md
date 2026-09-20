@@ -13,6 +13,7 @@ concurrent replication references, not new role additions.
 | --- | --- | --- | ---: |
 | First | AI researcher + neutral reassessment, with concurrent no-cue and AI safety researcher references | Separate the `safety` wording effect from ordinary reconsideration and serving-time changes | 2,400 target responses |
 | First | Repeat the two reference conditions on 50 of those cases, five static trajectories in total | Measure within-case variability of the headline role contrast | +2,400 target responses; first trajectories reused |
+| Recommended next | Low-temperature static comparison on the same 50 cases, no cue and AI safety researcher, three trajectories | Test whether the role contrast and harmful revisions persist with less sampling randomness | +1,800 target responses |
 | Conditional next | Repeat the same two conditions in adaptive mode on the same 50 cases, five trajectories | Check whether the role contrast survives variation in the evolving challenger and target | +3,000 target responses and 3,000 challenger generations |
 | Retained role extensions | Generic researcher; judge | Broader research identity and legal authority | +1,200 new-cue responses; +600 for a concurrent lawyer reference |
 | Separate identity extension | Same / different nationality as respondent | Nationality alignment without professional-role cues | +1,200 target responses |
@@ -22,8 +23,12 @@ concurrent replication references, not new role additions.
 | Optional generator control | Alternative summary or paraphrase generator | Test generalization across generators if the claim requires it | Specify a targeted subset and budget before scheduling |
 
 **Recommended first batch: 4,800 target responses, no challenger calls.**
+Adding the low-temperature comparison costs **6,600 target responses in total**,
+with no challenger calls. Keep its serving window aligned with the reference
+conditions; the comparison reuses saved initial judgments.
 Adding adaptive replication brings the package to **7,800 target responses
-plus 3,000 challenger generations**, before retries. References are collected
+plus 3,000 challenger generations**, or **9,600 plus 3,000** when the
+low-temperature comparison is also included, before retries. References are collected
 in the same serving window as the new conditions. Repetitions are averaged
 within cases; they do not increase the independent case count.
 The [merged protocol and exact budgets](docs/NEXT_EXPERIMENTS.md) specify
@@ -52,6 +57,11 @@ three-turn nationality-only comparison.
 
 The [review assessment](docs/REVIEW_IMPROVEMENTS.md) distinguishes useful
 additions, existing evidence and suggestions that do not fit the paper's claims.
+The latest review adds three pending offline tasks: paired Brier-score changes,
+multiple-comparison checks for the main contrast families, and a compact
+presentation of the existing prompt and source-review evidence. Suggested
+literature has been checked against publisher or arXiv records. These tasks
+are planned, not completed analyses.
 Threshold sensitivity uses saved scores, not fresh model responses. Existing
 source-review evidence and older-model time-window analyses address different
 questions and remain separate.

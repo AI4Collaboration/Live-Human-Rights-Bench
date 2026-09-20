@@ -1,0 +1,201 @@
+{
+  "retrieved_at": "2026-09-20T14:39:17.825543+00:00",
+  "scope": "Bibliographic verification of review-suggested literature; no model calls.",
+  "records": [
+    {
+      "url": "https://arxiv.org/abs/2605.03792",
+      "http_status": 200,
+      "sha256": "87e5503f0c808843b53be6465f7f3a884dc49ad0db10474664bd2a2fc30d9384",
+      "metadata": {
+        "citation_title": [
+          "TriBench-Ko: Evaluating LLM Risks in Judicial Workflows"
+        ],
+        "citation_author": [
+          "Lee, Haesung",
+          "Choi, Gyubin",
+          "Lee, Eun-Ju",
+          "Lee, So-Min",
+          "Ko, Youkang",
+          "Lim, Dogyoon",
+          "Jang, Sung-Kyoung",
+          "Jo, Yohan"
+        ],
+        "citation_date": [
+          "2026/05/05"
+        ],
+        "citation_online_date": [
+          "2026/05/05"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2605.03792"
+        ],
+        "citation_arxiv_id": [
+          "2605.03792"
+        ],
+        "citation_abstract": [
+          "Large language models (LLMs) are increasingly integrated into legal workflows. However, existing benchmarks primarily address proxy tasks, such as bar examination performance or classification, which fail to capture the performance and risks inherent in day-to-day judicial processes. To address this, we publicly release TriBench-Ko, a Korean benchmark designed to evaluate potential deployment risks of LLMs within the context of verified judicial task requirements. It covers four core tasks: jurisprudence summarization, precedent retrieval, legal issue extraction, and evidence analysis. It jointly assesses model behavior across multiple deployment risk categories, including inaccuracy (hallucination, omission, statutory misapplication), biases (demographic, overcompliance), inconsistencies (prompt sensitivity, non-determinism), and adjudicative overreach. Each item is structured to systematically assess both task performance and a specific risk type based on real judicial decisions. Our evaluation of a range of contemporary LLMs reveals that many models frequently manifest significant risks, most notably struggling with precedent retrieval and failing to capture critical legal information. We provide a comprehensive diagnosis of these LLMs and pinpoint critical areas where LLM-generated outputs in judicial contexts necessitate rigorous inspection and caution. Our dataset and code are available at https://github.com/holi-lab/TriBench-Ko"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.18530",
+      "http_status": 200,
+      "sha256": "925ce9375babcbcd8e3315202dab273c5be6f35401de3b4483bf4517ba029b79",
+      "metadata": {
+        "citation_title": [
+          "When Names Change Verdicts: Intervention Consistency Reveals Systematic Bias in LLM Decision-Making"
+        ],
+        "citation_author": [
+          "Basu, Abhinaba",
+          "Chakraborty, Pavan"
+        ],
+        "citation_date": [
+          "2026/03/19"
+        ],
+        "citation_online_date": [
+          "2026/03/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2603.18530"
+        ],
+        "citation_arxiv_id": [
+          "2603.18530"
+        ],
+        "citation_abstract": [
+          "Large language models (LLMs) are increasingly used for high-stakes decisions, yet their susceptibility to spurious features remains poorly characterized. We introduce ICE-Guard, a framework applying intervention consistency testing to detect three types of spurious feature reliance: demographic (name/race swaps), authority (credential/prestige swaps), and framing (positive/negative restatements). Across 3,000 vignettes spanning 10 high-stakes domains, we evaluate 11 LLMs from 8 families and find that (1) authority bias (mean 5.8%) and framing bias (5.0%) substantially exceed demographic bias (2.2%), challenging the field's narrow focus on demographics; (2) bias concentrates in specific domains -- finance shows 22.6% authority bias while criminal justice shows only 2.8%; (3) structured decomposition, where the LLM extracts features and a deterministic rubric decides, reduces flip rates by up to 100% (median 49% across 9 models). We demonstrate an ICE-guided detect-diagnose-mitigate-verify loop achieving cumulative 78% bias reduction via iterative prompt patching. Validation against real COMPAS recidivism data shows COMPAS-derived flip rates exceed pooled synthetic rates, suggesting our benchmark provides a conservative estimate of real-world bias. Code and data are publicly available."
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2025.findings-emnlp.121/",
+      "http_status": 200,
+      "sha256": "1fea2bf6b06a8fbb22e930a8abc18cc9c5f77f00a45a81dc026725df46298220",
+      "metadata": {
+        "citation_title": [
+          "Measuring Sycophancy of Language Models in Multi-turn Dialogues"
+        ],
+        "citation_author": [
+          "Jiseung Hong",
+          "Grace Byun",
+          "Seungone Kim",
+          "Kai Shu"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: EMNLP 2025"
+        ],
+        "citation_publication_date": [
+          "2025/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.findings-emnlp.121.pdf"
+        ],
+        "citation_firstpage": [
+          "2239"
+        ],
+        "citation_lastpage": [
+          "2259"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.findings-emnlp.121"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.13743",
+      "http_status": 200,
+      "sha256": "0afe38da8dd59c29eb2f59e628727f3e92d336786c82f4b5b574c003f37c3663",
+      "metadata": {
+        "citation_title": [
+          "Sycophancy under Pressure: Evaluating and Mitigating Sycophantic Bias via Adversarial Dialogues in Scientific QA"
+        ],
+        "citation_author": [
+          "Zhang, Kaiwei",
+          "Jia, Qi",
+          "Chen, Zijian",
+          "Sun, Wei",
+          "Zhu, Xiangyang",
+          "Li, Chunyi",
+          "Zhu, Dandan",
+          "Zhai, Guangtao"
+        ],
+        "citation_date": [
+          "2025/08/19"
+        ],
+        "citation_online_date": [
+          "2025/08/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2508.13743"
+        ],
+        "citation_arxiv_id": [
+          "2508.13743"
+        ],
+        "citation_abstract": [
+          "Large language models (LLMs), while increasingly used in domains requiring factual rigor, often display a troubling behavior: sycophancy, the tendency to align with user beliefs regardless of correctness. This tendency is reinforced by preference-based alignment techniques that optimize for user satisfaction but can undermine truthfulness. While relatively benign in casual dialogue, sycophancy poses serious risks in high-stakes settings such as scientific question answering (QA), where model outputs may shape collaborative reasoning, decision-making, and knowledge formation. Despite its importance, this phenomenon remains underexamined in factual QA contexts. We address this gap by introducing a unified evaluation framework to quantify the impact of sycophantic context on model behavior in scientific QA, measuring how much user-imposed social pressure distorts model outputs. The framework incorporates adversarial prompting setups and targeted metrics, such as misleading resistance and sycophancy resistance, that capture a model's ability to maintain factual consistency under misleading cues. Systematic evaluations across open-source and proprietary models reveal pervasive sycophantic tendencies, driven more by alignment strategy than by model size. To mitigate this issue, we propose Pressure-Tune, a lightweight post-training method that fine-tunes models on synthetic adversarial dialogues paired with chain-of-thought rationales. These rationales reject user misinformation while reinforcing factual commitments. Experiments on challenging scientific QA benchmarks show that Pressure-Tune significantly enhances sycophancy resistance without compromising accuracy or responsiveness to valid feedback, offering a practical pathway toward more truthful and principled model behavior."
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.03993",
+      "http_status": 200,
+      "sha256": "0effb2cda4afb7b4e32774d89de4c88f769deb738120bc99ea5af00df4cdb1f8",
+      "metadata": {
+        "citation_title": [
+          "Assessing LLMs for Zero-shot Abstractive Summarization Through the Lens of Relevance Paraphrasing"
+        ],
+        "citation_author": [
+          "Askari, Hadi",
+          "Chhabra, Anshuman",
+          "Chen, Muhao",
+          "Mohapatra, Prasant"
+        ],
+        "citation_date": [
+          "2024/06/06"
+        ],
+        "citation_online_date": [
+          "2025/02/01"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2406.03993"
+        ],
+        "citation_arxiv_id": [
+          "2406.03993"
+        ],
+        "citation_abstract": [
+          "Large Language Models (LLMs) have achieved state-of-the-art performance at zero-shot generation of abstractive summaries for given articles. However, little is known about the robustness of such a process of zero-shot summarization. To bridge this gap, we propose relevance paraphrasing, a simple strategy that can be used to measure the robustness of LLMs as summarizers. The relevance paraphrasing approach identifies the most relevant sentences that contribute to generating an ideal summary, and then paraphrases these inputs to obtain a minimally perturbed dataset. Then, by evaluating model performance for summarization on both the original and perturbed datasets, we can assess the LLM's one aspect of robustness. We conduct extensive experiments with relevance paraphrasing on 4 diverse datasets, as well as 4 LLMs of different sizes (GPT-3.5-Turbo, Llama-2-13B, Mistral-7B, and Dolly-v2-7B). Our results indicate that LLMs are not consistent summarizers for the minimally perturbed articles, necessitating further improvements."
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/0806.0813",
+      "http_status": 200,
+      "sha256": "44c14de36d276ed5803e9daef3bcc2d72d1938d393b0c53d0cd5ac41ca25f58f",
+      "metadata": {
+        "citation_title": [
+          "Reliability, Sufficiency, and the Decomposition of Proper Scores"
+        ],
+        "citation_author": [
+          "Bröcker, Jochen"
+        ],
+        "citation_doi": [
+          "10.1002/qj.456"
+        ],
+        "citation_date": [
+          "2008/06/04"
+        ],
+        "citation_online_date": [
+          "2008/12/01"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/0806.0813"
+        ],
+        "citation_arxiv_id": [
+          "0806.0813"
+        ],
+        "citation_abstract": [
+          " Scoring rules are an important tool for evaluating the performance of probabilistic forecasting schemes. In the binary case, scoring rules (which are strictly proper) allow for a decomposition into terms related to the resolution and to the reliability of the forecast. This fact is particularly well known for the Brier Score. In this paper, this result is extended to forecasts for finite--valued targets. Both resolution and reliability are shown to have a positive effect on the score. It is demonstrated that resolution and reliability are directly related to forecast attributes which are desirable on grounds independent of the notion of scores. This finding can be considered an epistemological justification of measuring forecast quality by proper scores. A link is provided to the original work of DeGroot et al (1982), extending their concepts of sufficiency and refinement. The relation to the conjectured sharpness principle of Gneiting et al (2005a) is elucidated."
+        ]
+      }
+    }
+  ]
+}
