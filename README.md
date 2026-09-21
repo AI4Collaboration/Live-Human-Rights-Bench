@@ -2,7 +2,7 @@
 
 ## Next API experiments
 
-**Plan audited 20 September 2026 against the published results and runners.
+**Plan audited 21 September 2026 against the published results and runners.
 The follow-up API experiments below remain pending.**
 Prioritize the role-cue finding and conversational sampling variability. Use
 Claude Opus 4.6 and GPT-5.6-sol, exact saved initial responses, and a locked
@@ -19,7 +19,7 @@ concurrent replication references, not new role additions.
 | Separate identity extension | Same / different nationality as respondent | Nationality alignment without professional-role cues | +1,200 target responses |
 | Optional role extensions | Human rights researcher; ordinary person; AI systems researcher | Domain relevance, non-expert identity, or equal-word-count role wording | +600 target responses per cue |
 | Conditional mechanism test | Role by explicit evaluation framing | Test evaluation signaling if advancing a mechanism claim | 2,400 target responses for one trajectory in each of four cells |
-| Conditional State Swap | Jurisdiction held fixed | Support an identity-only claim beyond the current combined intervention | 3,000 target responses |
+| Conditional State Swap | United Kingdom / France destinations, with the Convention framework held fixed | Test respondent-country effects within the Convention, as requested in the Overleaf comments | 3,000 target responses |
 | Optional generator control | Alternative summary or paraphrase generator | Test generalization across generators if the claim requires it | Specify a targeted subset and budget before scheduling |
 
 **Recommended first batch: 4,800 target responses, no challenger calls.**
@@ -78,6 +78,11 @@ require no new human annotation or model calls.
 
 **Additional analyses completed without API calls:**
 
+- **Summary score variance does not rise uniformly across models.** Within-target
+  variance rises in two models and falls in four. The paired interval is positive
+  for DeepSeek V4 Flash and negative for DeepSeek V4 Pro and both Qwen models.
+  The [score variability analysis](analysis/summary_variability/REPORT.md) uses
+  5,995 complete ten-score pairs and also reproduces the existing SD estimates.
 - **The perturbation patterns persist after evaluator exclusions.** Removing
   both DeepSeek evaluators leaves summary accuracy 1.3-2.4 points lower in the
   four remaining models. Removing GPT-5.6-sol leaves paraphrase changes spanning

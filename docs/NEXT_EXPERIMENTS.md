@@ -177,12 +177,15 @@ state.
 The existing experiment measures respondent substitution, including jurisdiction.
 A fixed-jurisdiction control becomes necessary for an identity-only claim.
 Use cases within the same Convention/provision framework and decision period;
-select two applicable Contracting State destinations, verify respondent changes
-and preserve the factual event structure. Mere treaty membership does not make
+use the United Kingdom and France as the two Contracting State destinations,
+select original respondents distinct from both destinations, verify applicability
+of the target provision in the decision period, and preserve the factual event
+structure. This directly addresses the Overleaf request for within-Convention
+comparators. Mere treaty membership does not make
 all legal context identical. A separately stipulated hypothetical-jurisdiction
 US arm would be an additional manipulation, not the existing US condition.
 
-Original plus two destination arms, 100 cases, two models and five scores per
+Original plus UK and France arms, 100 cases, two models and five scores per
 arm cost **3,000 target responses**. Fix countries and transformed inputs before
 execution; record likelihood shifts and verdict transitions. This control is
 not needed to report the current combined-intervention result.

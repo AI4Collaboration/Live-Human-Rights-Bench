@@ -1,0 +1,84 @@
+{
+  "source_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
+  "model_api_calls": 0,
+  "draws": 2000,
+  "seed": 731,
+  "input_units": "Target-level sample SD and variance over ten ratings per input; paired comparison clustered by judgment.",
+  "inputs": {
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/baseline.jsonl": {
+      "sha256_git_bytes": "f147b2f7dd0fc59e9d98e319424303aef11d336d665a00e8ba11c61211c95672",
+      "bytes": 905543
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/rq1.jsonl": {
+      "sha256_git_bytes": "f4e2315dbc2dfd208e9600967a3ab7e166d6a5daa57b1120e2545439eac0cb56",
+      "bytes": 968080
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/baseline.jsonl": {
+      "sha256_git_bytes": "d35339ce9dfa89415c200e2d0e10640331202d2a86112d7d303925f124dd48ba",
+      "bytes": 907943
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/rq1.jsonl": {
+      "sha256_git_bytes": "ec535df1e5b84e337e4934aea689f7b8a339544faa885484e7022400f55c2843",
+      "bytes": 966428
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/baseline.jsonl": {
+      "sha256_git_bytes": "88c8dc81f4d74060fd9cfea762f3c2c1d3e364b16d50f1b1812a926266351876",
+      "bytes": 907500
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/rq1.jsonl": {
+      "sha256_git_bytes": "74e4f97a62b76953442ef85edbafd2a29a9445cf50c4340f5f158a53e4f932de",
+      "bytes": 968644
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/baseline.jsonl": {
+      "sha256_git_bytes": "fb3c405c91b1aafe2fb059c6462c28641a3a623de160fd69da99296f9a4e85e5",
+      "bytes": 909231
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/rq1.jsonl": {
+      "sha256_git_bytes": "8b044810a556947f330bc7668a9ad597fe254f5c246fc8d63d34f6c4bcaa48b3",
+      "bytes": 969047
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
+      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
+      "bytes": 905529
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
+      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
+      "bytes": 967771
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
+      "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
+      "bytes": 907392
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl": {
+      "sha256_git_bytes": "be3ce4d7bb45a9f88dd24039a7c41bebca21536a593cb6a144b0a6dae936d49a",
+      "bytes": 966982
+    }
+  },
+  "exclusions": [
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "target_id": "001-141635::UKR::3::Degrading treatment; substantive aspect"
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b",
+      "target_id": "001-119676::UKR::5::Length of pre-trial detention"
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "target_id": "001-109565::UKR::8::Respect for private life"
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "target_id": "001-167490::CHE::6::Civil proceedings; Article 6-1 - Fair hearing"
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "target_id": "001-241978::GBR::6::Criminal proceedings; Article 6-1 - Reasonable time"
+    }
+  ],
+  "script_sha256_lf": "e655a16302200c4f09dc1933c4ba89769554a33f1d2464c90b368e1428b73ced",
+  "output_sha256_lf": {
+    "source_data.csv": "9c455521c5352cb2da109b878db0d8f7389d49d9459bf3c05d739ea4865f40d0",
+    "REPORT.md": "b2bee3e5ff8fb11b326e4e79a73325170dbc083eca7258c0ae1f809ca3220172"
+  }
+}
