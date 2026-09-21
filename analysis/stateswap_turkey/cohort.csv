@@ -1,0 +1,1001 @@
+item_id,article,respondent,substituted_Turkey,substituted_Russia,substituted_Ukraine,common
+001-108433,10,Austria,True,True,True,True
+001-108580,34,Ukraine,True,True,False,False
+001-108599,3,the United Kingdom,True,True,True,True
+001-108607,5,the Republic of Moldova,True,True,True,True
+001-108680,8,Lithuania,True,True,True,True
+001-108859,6,Türkiye,False,True,True,False
+001-109062,P4-2,Bulgaria,True,True,True,True
+001-109072,8,the United Kingdom,True,True,True,True
+001-109565,8,Ukraine,True,True,False,False
+001-109572,14,France,True,True,True,True
+001-109575,8,Sweden,True,True,True,True
+001-109581,5,the United Kingdom,True,True,True,True
+001-110164,6,Luxembourg,True,True,True,True
+001-110171,10,Poland,True,True,True,True
+001-110249,3,Czechia,True,True,True,True
+001-110271,8,the United Kingdom,True,True,True,True
+001-110486,P4-2,Bulgaria,True,True,True,True
+001-110702,6,Greece,True,True,True,True
+001-110810,6,Bulgaria,True,True,True,True
+001-110812,13,Bulgaria,True,True,True,True
+001-110936,5,Türkiye,False,True,True,False
+001-110942,8,Latvia,True,True,True,True
+001-110949,3,Estonia,True,True,True,True
+001-110950,6,Estonia,True,True,True,True
+001-111044,P1-3,Italy,True,True,True,True
+001-111175,6,Finland,True,True,True,True
+001-111369,7,Germany,True,True,True,True
+001-111394,14,the Republic of Moldova,True,True,True,True
+001-111419,6,Georgia,True,True,True,True
+001-111429,3,Austria,True,True,True,True
+001-111518,6,Bosnia and Herzegovina,True,True,True,True
+001-111521,P1-1,Georgia,True,True,True,True
+001-111628,5,Armenia,True,True,True,True
+001-111666,5,San Marino,True,True,True,True
+001-111902,8,Latvia,True,True,True,True
+001-111938,8,Finland,True,True,True,True
+001-112102,6,the Netherlands,True,True,True,True
+001-112465,3,Poland,True,True,True,True
+001-112529,P1-1,Albania,True,True,True,True
+001-112576,3,Italy,True,True,True,True
+001-112588,8,Lithuania,True,True,True,True
+001-113137,10,Austria,True,True,True,True
+001-113328,2,Albania,True,True,True,True
+001-113432,3,Latvia,True,True,True,True
+001-113648,6,Latvia,True,True,True,True
+001-113806,6,Slovenia,True,True,True,True
+001-113819,8,France,True,True,True,True
+001-114082,P1-2,the Republic of Moldova,True,True,True,True
+001-114085,3,Poland,True,True,True,True
+001-114087,3,Romania,True,True,True,True
+001-114096,P1-1,Bulgaria,True,True,True,True
+001-114243,13,Serbia,True,True,True,True
+001-114244,14,the United Kingdom,True,True,True,True
+001-114273,10,Germany,True,True,True,True
+001-114439,8,the Netherlands,True,True,True,True
+001-114473,2,the United Kingdom,True,True,True,True
+001-114485,5,Denmark,True,True,True,True
+001-114486,14,Finland,True,True,True,True
+001-114486,8,Finland,True,True,True,True
+001-114492,2,Bulgaria,True,True,True,True
+001-114514,3,Slovakia,True,True,True,True
+001-114658,5,Czechia,True,True,True,True
+001-115165,8,Andorra,True,True,True,True
+001-115166,6,Croatia,True,True,True,True
+001-115210,13,Montenegro,True,True,True,True
+001-115377,8,France,True,True,True,True
+001-115396,3,Sweden,True,True,True,True
+001-115770,P4-2,Ukraine,True,True,False,False
+001-115850,3,Georgia,True,True,True,True
+001-115854,8,Albania,True,True,True,True
+001-115864,8,Finland,True,True,True,True
+001-115876,6,Bosnia and Herzegovina,True,True,True,True
+001-115883,5,Ukraine,True,True,False,False
+001-115884,2,Ukraine,True,True,False,False
+001-115885,6,Ukraine,True,True,False,False
+001-115981,3,Belgium,True,True,True,True
+001-116827,6,North Macedonia,True,True,True,True
+001-117132,3,Azerbaijan,True,True,True,True
+001-117134,34,Ukraine,True,True,False,False
+001-118045,6,Austria,True,True,True,True
+001-118335,5,the United Kingdom,True,True,True,True
+001-118383,P1-1,Ukraine,True,True,False,False
+001-118388,P1-1,Ukraine,True,True,False,False
+001-118590,6,Slovenia,True,True,True,True
+001-118591,13,Slovenia,True,True,True,True
+001-118592,6,Slovenia,True,True,True,True
+001-118647,13,Hungary,True,True,True,True
+001-118737,13,Slovenia,True,True,True,True
+001-118737,6,Slovenia,True,True,True,True
+001-119049,6,Norway,True,True,True,True
+001-119055,10,Luxembourg,True,True,True,True
+001-119055,8,Luxembourg,True,True,True,True
+001-119465,34,Ukraine,True,True,False,False
+001-119676,5,Ukraine,True,True,False,False
+001-119688,P1-1,Ukraine,True,True,False,False
+001-119968,14,the Republic of Moldova,True,True,True,True
+001-119972,6,Azerbaijan,True,True,True,True
+001-120067,P1-1,Ukraine,True,True,False,False
+001-120073,3,Austria,True,True,True,True
+001-120968,6,Slovenia,True,True,True,True
+001-120969,P1-1,Czechia,True,True,True,True
+001-121569,3,Sweden,True,True,True,True
+001-121573,3,Sweden,True,True,True,True
+001-121574,2,Sweden,True,True,True,True
+001-122187,5,Ukraine,True,True,False,False
+001-122429,6,Liechtenstein,True,True,True,True
+001-122434,P1-1,Ukraine,True,True,False,False
+001-122664,3,the United Kingdom,True,True,True,True
+001-122892,P1-1,Malta,True,True,True,True
+001-123422,8,Sweden,True,True,True,True
+001-123422,P1-1,Sweden,True,True,True,True
+001-126133,14,Türkiye,False,True,True,False
+001-126349,6,Montenegro,True,True,True,True
+001-126352,6,Poland,True,True,True,True
+001-126360,5,North Macedonia,True,True,True,True
+001-126451,6,Spain,True,True,True,True
+001-126635,10,Estonia,True,True,True,True
+001-126636,6,Slovenia,True,True,True,True
+001-126800,13,Slovakia,True,True,True,True
+001-126807,6,Italy,True,True,True,True
+001-126918,13,Czechia,True,True,True,True
+001-127399,3,Ukraine,True,True,False,False
+001-127401,6,Ukraine,True,True,False,False
+001-127410,6,Ireland,True,True,True,True
+001-127617,P1-1,Serbia,True,True,True,True
+001-127809,34,Ukraine,True,True,False,False
+001-127812,6,Greece,True,True,True,True
+001-127813,8,Ukraine,True,True,False,False
+001-128040,P1-1,Lithuania,True,True,True,True
+001-128204,8,Ukraine,False,False,False,False
+001-138558,13,Romania,True,True,True,True
+001-138597,2,Norway,True,True,True,True
+001-138919,6,Ireland,True,True,True,True
+001-139175,3,Sweden,True,True,True,True
+001-139897,3,Serbia,True,True,True,True
+001-139897,5,Serbia,True,True,True,True
+001-139995,3,Finland,True,True,True,True
+001-140020,2,Sweden,True,True,True,True
+001-140028,6,Italy,True,True,True,True
+001-140235,3,Ireland,True,True,True,True
+001-140239,6,Portugal,True,True,True,True
+001-140769,6,Latvia,True,True,True,True
+001-140782,13,Ukraine,True,True,False,False
+001-140785,3,Estonia,True,True,True,True
+001-141434,5,Switzerland,True,True,True,True
+001-141629,13,Estonia,True,True,True,True
+001-141635,3,Ukraine,True,True,False,False
+001-141635,6,Ukraine,True,True,False,False
+001-141644,6,Latvia,True,True,True,True
+001-141668,8,Belgium,True,True,True,True
+001-141910,6,Romania,True,True,True,True
+001-141933,13,Albania,True,True,True,True
+001-141933,6,Albania,True,True,True,True
+001-141943,6,Hungary,True,True,True,True
+001-142082,13,Slovenia,True,True,True,True
+001-142083,13,Slovenia,True,True,True,True
+001-142185,6,Albania,True,True,True,True
+001-142305,6,Albania,True,True,True,True
+001-142398,8,the Republic of Moldova,True,True,True,True
+001-142403,6,Hungary,True,True,True,True
+001-142515,6,North Macedonia,True,True,True,True
+001-142519,P1-1,Russia,True,False,True,False
+001-142521,5,North Macedonia,True,True,True,True
+001-144113,P7-4,Finland,True,True,True,True
+001-144367,6,Croatia,True,True,True,True
+001-144672,5,Slovenia,True,True,True,True
+001-145014,P1-1,Ukraine,True,True,False,False
+001-145018,3,Sweden,True,True,True,True
+001-145068,8,Spain,True,True,True,True
+001-145341,3,Denmark,True,True,True,True
+001-145349,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-145466,14,France,True,True,True,True
+001-145466,8,France,True,True,True,True
+001-145575,P1-1,Serbia,True,True,True,True
+001-145579,13,Ukraine,True,True,False,False
+001-145580,6,Ukraine,True,True,False,False
+001-145581,6,Ukraine,True,True,False,False
+001-145653,8,France,True,True,True,True
+001-145779,13,Ukraine,True,True,False,False
+001-145787,8,Estonia,True,True,True,True
+001-145788,3,Azerbaijan,True,True,True,True
+001-146047,38,Poland,True,True,True,True
+001-146353,6,Germany,True,True,True,True
+001-146399,6,Sweden,True,True,True,True
+001-146409,5,Latvia,True,True,True,True
+001-146410,10,Hungary,True,True,True,True
+001-146697,5,Ukraine,True,True,False,False
+001-147037,3,Ukraine,True,True,False,False
+001-147045,5,Sweden,True,True,True,True
+001-147272,10,Iceland,True,True,True,True
+001-147274,8,Hungary,True,True,True,True
+001-147286,3,Latvia,True,True,True,True
+001-147443,13,Portugal,True,True,True,True
+001-147443,6,Portugal,True,True,True,True
+001-147875,6,Austria,True,True,True,True
+001-148263,6,Slovakia,True,True,True,True
+001-148268,8,Latvia,True,True,True,True
+001-148636,P1-1,Malta,True,True,True,True
+001-148642,6,Norway,True,True,True,True
+001-148659,5,the Republic of Moldova,True,True,True,True
+001-148673,6,the United Kingdom,True,True,True,True
+001-149201,P1-1,Hungary,True,True,True,True
+001-150217,13,Romania,True,True,True,True
+001-150217,3,Romania,True,True,True,True
+001-150234,3,Latvia,True,True,True,True
+001-150239,P1-1,Serbia,True,True,True,True
+001-150653,3,Ukraine,True,True,False,False
+001-150668,P7-4,Finland,True,True,True,True
+001-150676,2,Croatia,True,True,True,True
+001-150704,8,Austria,True,True,True,True
+001-150788,8,Slovenia,True,True,True,True
+001-151000,P7-4,Finland,True,True,True,True
+001-151051,7,Czechia,True,True,True,True
+001-152259,5,Croatia,True,True,True,True
+001-152597,2,Ukraine,True,True,False,False
+001-152780,6,Montenegro,True,True,True,True
+001-153349,3,Armenia,True,True,True,True
+001-153767,P1-1,the Republic of Moldova,True,True,True,True
+001-153770,2,Switzerland,True,True,True,True
+001-153906,38,Russia,True,False,True,False
+001-153910,6,Greece,True,True,True,True
+001-153919,2,Romania,True,True,True,True
+001-153960,6,Luxembourg,True,True,True,True
+001-154149,3,Montenegro,True,True,True,True
+001-154151,5,Slovakia,True,True,True,True
+001-154344,6,Portugal,True,True,True,True
+001-154347,13,Portugal,True,True,True,True
+001-154354,13,Portugal,True,True,True,True
+001-154354,6,Portugal,True,True,True,True
+001-154527,2,Ukraine,True,True,False,False
+001-155006,5,Slovakia,True,True,True,True
+001-155082,6,Belgium,True,True,True,True
+001-155102,6,Slovakia,True,True,True,True
+001-155352,2,France,True,True,True,True
+001-155357,6,Romania,True,True,True,True
+001-155374,6,Slovakia,True,True,True,True
+001-155819,8,San Marino,True,True,True,True
+001-155824,6,Liechtenstein,True,True,True,True
+001-155827,6,Estonia,True,True,True,True
+001-156069,6,Albania,True,True,True,True
+001-156073,34,Ukraine,True,True,False,False
+001-156076,5,Slovakia,True,True,True,True
+001-156080,13,Hungary,True,True,True,True
+001-156080,6,Hungary,True,True,True,True
+001-156243,2,Belgium,True,True,True,True
+001-156248,3,North Macedonia,True,True,True,True
+001-156263,P4-4,Cyprus,True,True,True,True
+001-156265,8,Italy,True,True,True,True
+001-156267,13,Latvia,True,True,True,True
+001-156272,10,Finland,True,True,True,True
+001-156272,6,Finland,True,True,True,True
+001-156274,P1-1,Serbia,True,True,True,True
+001-156275,5,Latvia,True,True,True,True
+001-156520,6,Liechtenstein,True,True,True,True
+001-157286,7,France,True,True,True,True
+001-157538,6,Slovenia,True,True,True,True
+001-157670,3,Belgium,True,True,True,True
+001-157761,3,Romania,True,True,True,True
+001-157967,34,Ukraine,True,True,False,False
+001-158037,6,Serbia,True,True,True,True
+001-158090,13,Cyprus,True,True,True,True
+001-158279,10,Finland,True,True,True,True
+001-158472,3,Bulgaria,True,True,True,True
+001-158494,3,Russia,True,False,True,False
+001-158504,14,Portugal,True,True,True,True
+001-158950,6,Spain,True,True,True,True
+001-159211,6,Norway,True,True,True,True
+001-159375,P1-3,Azerbaijan,True,True,True,True
+001-159732,14,Switzerland,True,True,True,True
+001-159880,6,Serbia,True,True,True,True
+001-159882,13,the Netherlands,True,True,True,True
+001-159882,3,the Netherlands,True,True,True,True
+001-159906,8,Romania,True,True,True,True
+001-159915,6,Hungary,True,True,True,True
+001-160223,2,Russia,True,False,True,False
+001-160270,10,Estonia,True,True,True,True
+001-160619,13,Liechtenstein,True,True,True,True
+001-160619,6,Liechtenstein,True,True,True,True
+001-160800,4,Switzerland,True,True,True,True
+001-161369,6,the Republic of Moldova,True,True,True,True
+001-161381,6,Spain,True,True,True,True
+001-161527,14,Portugal,True,True,True,True
+001-161738,6,the United Kingdom,True,True,True,True
+001-161809,6,Albania,True,True,True,True
+001-161809,P1-1,Albania,True,True,True,True
+001-161975,2,the United Kingdom,True,True,True,True
+001-162114,13,Albania,True,True,True,True
+001-162179,13,Portugal,True,True,True,True
+001-162214,3,Latvia,True,True,True,True
+001-162217,P1-1,North Macedonia,True,True,True,True
+001-162424,3,Malta,True,True,True,True
+001-162864,8,Austria,True,True,True,True
+001-163054,2,Ukraine,True,True,False,False
+001-163331,P1-1,Albania,True,True,True,True
+001-163356,P1-1,Germany,True,True,True,True
+001-163358,5,Germany,True,True,True,True
+001-163438,6,Bulgaria,True,True,True,True
+001-163451,3,the Netherlands,True,True,True,True
+001-163662,3,Poland,True,True,True,True
+001-163799,6,Georgia,True,True,True,True
+001-163822,10,Portugal,True,True,True,True
+001-163909,3,Ukraine,True,True,False,False
+001-163911,34,Ukraine,True,True,False,False
+001-164434,5,the Netherlands,True,True,True,True
+001-164454,P1-1,Slovakia,True,True,True,True
+001-164470,6,Switzerland,True,True,True,True
+001-164515,6,Switzerland,True,True,True,True
+001-164682,5,Lithuania,True,True,True,True
+001-164917,8,Romania,True,True,True,True
+001-164920,P1-1,Serbia,True,True,True,True
+001-165230,3,Slovakia,True,True,True,True
+001-165250,7,Ukraine,True,True,False,False
+001-165750,2,Ukraine,True,True,False,False
+001-165755,2,Ukraine,True,True,False,False
+001-165758,3,Germany,True,True,True,True
+001-165951,3,Estonia,False,False,False,False
+001-166689,6,Germany,True,True,True,True
+001-166950,8,Germany,True,True,True,True
+001-166954,2,Ukraine,True,True,False,False
+001-167110,34,Spain,True,True,True,True
+001-167490,6,Switzerland,True,True,True,True
+001-167797,8,the Republic of Moldova,True,True,True,True
+001-167806,13,Greece,True,True,True,True
+001-168377,8,Switzerland,True,True,True,True
+001-168380,6,Serbia,True,True,True,True
+001-168382,6,Lithuania,True,True,True,True
+001-168816,5,France,True,True,True,True
+001-168853,3,the Republic of Moldova,True,True,True,True
+001-168860,6,Armenia,True,True,True,True
+001-168864,2,Ukraine,True,True,False,False
+001-169210,34,Ukraine,True,True,False,False
+001-169520,6,Czechia,True,True,True,True
+001-169521,5,Latvia,True,True,True,True
+001-169654,13,Sweden,True,True,True,True
+001-169662,3,Belgium,True,True,True,True
+001-169957,6,Norway,True,True,True,True
+001-169957,8,Norway,True,True,True,True
+001-170040,P1-1,Serbia,True,True,True,True
+001-170050,8,Switzerland,True,True,True,True
+001-170349,9,Georgia,True,True,True,True
+001-170361,P1-1,Bulgaria,True,True,True,True
+001-170451,P1-1,Serbia,True,True,True,True
+001-170456,7,Slovenia,True,True,True,True
+001-170467,3,Switzerland,True,True,True,True
+001-170648,34,Ukraine,True,True,False,False
+001-171486,6,Azerbaijan,True,True,True,True
+001-171489,11,Azerbaijan,True,True,True,True
+001-171507,34,the United Kingdom,True,True,True,True
+001-171994,3,Italy,True,True,True,True
+001-172091,13,Hungary,True,True,True,True
+001-172100,8,Poland,True,True,True,True
+001-172317,6,Türkiye,False,True,True,False
+001-172459,3,Cyprus,True,True,True,True
+001-172460,2,Cyprus,True,True,True,True
+001-172463,6,Serbia,True,True,True,True
+001-172656,3,Lithuania,True,True,True,True
+001-172665,3,San Marino,True,True,True,True
+001-172665,5,San Marino,True,True,True,True
+001-172855,3,Greece,True,True,True,True
+001-173089,6,Armenia,True,True,True,True
+001-173091,8,Germany,True,True,True,True
+001-173103,8,Austria,True,True,True,True
+001-173369,10,Iceland,True,True,True,True
+001-173498,P7-4,Iceland,True,True,True,True
+001-173624,6,Croatia,True,True,True,True
+001-173802,34,the Republic of Moldova,True,True,True,True
+001-174119,6,Belgium,True,True,True,True
+001-174386,6,Montenegro,True,True,True,True
+001-174389,6,Montenegro,True,True,True,True
+001-174404,10,Iceland,True,True,True,True
+001-174413,P1-1,North Macedonia,True,True,True,True
+001-174414,6,North Macedonia,True,True,True,True
+001-174419,10,Ireland,True,True,True,True
+001-174424,3,Switzerland,True,True,True,True
+001-174814,6,North Macedonia,True,True,True,True
+001-174965,2,Croatia,True,True,True,True
+001-174997,13,Portugal,True,True,True,True
+001-175121,10,Finland,True,True,True,True
+001-175155,6,Latvia,True,True,True,True
+001-175645,5,Slovakia,True,True,True,True
+001-175646,6,Portugal,True,True,True,True
+001-175658,6,Slovakia,True,True,True,True
+001-175667,6,the Netherlands,True,True,True,True
+001-176765,6,Montenegro,True,True,True,True
+001-176838,5,Germany,True,True,True,True
+001-176964,6,Austria,True,True,True,True
+001-176969,6,Croatia,True,True,True,True
+001-177080,8,Norway,True,True,True,True
+001-177118,13,Slovenia,True,True,True,True
+001-177124,6,Azerbaijan,True,True,True,True
+001-177228,8,Ukraine,True,True,False,False
+001-177349,10,Norway,True,True,True,True
+001-177650,3,the Republic of Moldova,True,True,True,True
+001-178182,6,Ireland,True,True,True,True
+001-178352,6,Estonia,True,True,True,True
+001-178362,8,Iceland,True,True,True,True
+001-178372,6,Latvia,True,True,True,True
+001-178700,6,Iceland,True,True,True,True
+001-178701,10,Austria,True,True,True,True
+001-178877,8,Norway,True,True,True,True
+001-178904,8,Montenegro,True,True,True,True
+001-178921,2,France,True,True,True,True
+001-178921,3,France,True,True,True,True
+001-179216,14,Montenegro,True,True,True,True
+001-179853,5,Ukraine,True,True,False,False
+001-179867,6,Albania,True,True,True,True
+001-179878,6,Cyprus,True,True,True,True
+001-180281,6,Ireland,True,True,True,True
+001-180288,P1-1,Romania,True,True,True,True
+001-180296,8,Spain,True,True,True,True
+001-180505,8,Hungary,True,True,True,True
+001-180841,P1-1,Montenegro,True,True,True,True
+001-180843,P1-1,Malta,True,True,True,True
+001-181068,6,Ukraine,True,True,False,False
+001-181202,8,Lithuania,True,True,True,True
+001-181210,10,Ukraine,True,True,False,False
+001-181278,P1-1,Malta,True,True,True,True
+001-181393,2,Latvia,True,True,True,True
+001-181394,5,Germany,True,True,True,True
+001-181584,8,Germany,True,True,True,True
+001-181595,10,Malta,True,True,True,True
+001-181847,3,Romania,True,True,True,True
+001-181850,3,Russia,True,False,True,False
+001-181859,6,Armenia,True,True,True,True
+001-181877,5,Ukraine,True,True,False,False
+001-181882,3,Cyprus,True,True,True,True
+001-182213,8,Russia,True,False,True,False
+001-182605,13,Ukraine,True,True,False,False
+001-182853,6,Montenegro,True,True,True,True
+001-183126,5,Malta,True,True,True,True
+001-183206,6,Russia,True,False,True,False
+001-183337,6,Bosnia and Herzegovina,True,True,True,True
+001-183338,3,Cyprus,True,True,True,True
+001-183373,8,Czechia,True,True,True,True
+001-183376,6,Georgia,True,True,True,True
+001-183395,6,Ireland,True,True,True,True
+001-183395,P1-1,Ireland,True,True,True,True
+001-183542,6,Lithuania,True,True,True,True
+001-183546,3,Russia,True,False,True,False
+001-183558,3,Romania,True,True,True,True
+001-183586,13,Ukraine,True,True,False,False
+001-183817,6,Austria,True,True,True,True
+001-183862,6,Türkiye,False,True,True,False
+001-184496,5,Türkiye,False,True,True,False
+001-184651,13,the Republic of Moldova,True,True,True,True
+001-184651,P1-1,the Republic of Moldova,True,True,True,True
+001-184671,3,Malta,True,True,True,True
+001-184673,3,Malta,True,True,True,True
+001-185031,5,Ukraine,True,True,False,False
+001-185308,6,the Netherlands,True,True,True,True
+001-186048,8,the United Kingdom,True,True,True,True
+001-186116,8,Georgia,True,True,True,True
+001-186117,10,Germany,True,True,True,True
+001-186126,5,Azerbaijan,True,True,True,True
+001-186424,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-186770,6,Lithuania,True,True,True,True
+001-187195,6,Serbia,True,True,True,True
+001-187200,14,Malta,True,True,True,True
+001-187251,5,Estonia,True,True,True,True
+001-187455,12,France,True,True,True,True
+001-187465,34,Ukraine,True,True,False,False
+001-187474,8,Slovenia,True,True,True,True
+001-187476,7,Iceland,True,True,True,True
+001-187510,6,Spain,True,True,True,True
+001-187574,13,Hungary,True,True,True,True
+001-187686,34,Ukraine,True,True,False,False
+001-187818,34,Ukraine,True,True,False,False
+001-187923,8,Ukraine,True,True,False,False
+001-187931,8,Romania,True,True,True,True
+001-188360,P1-1,Lithuania,True,True,True,True
+001-188374,8,Ukraine,True,True,False,False
+001-188382,34,Ukraine,True,True,False,False
+001-188991,14,Latvia,True,True,True,True
+001-188997,7,San Marino,True,True,True,True
+001-189092,6,Bosnia and Herzegovina,True,True,True,True
+001-189092,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-189589,6,Armenia,True,True,True,True
+001-189621,2,Ukraine,True,True,False,False
+001-189740,34,Ukraine,True,True,False,False
+001-189741,6,the Republic of Moldova,True,True,True,True
+001-189786,13,Ireland,True,True,True,True
+001-189786,6,Ireland,True,True,True,True
+001-189795,P1-1,Armenia,True,True,True,True
+001-190020,34,Ukraine,True,True,False,False
+001-190025,13,Ukraine,True,True,False,False
+001-191359,34,Ukraine,True,True,False,False
+001-191369,P4-2,Ukraine,True,True,False,False
+001-191487,5,Montenegro,True,True,True,True
+001-191717,8,Ukraine,True,True,False,False
+001-191721,3,Montenegro,True,True,True,True
+001-192202,P7-4,Iceland,True,True,True,True
+001-192424,10,Bulgaria,True,True,True,True
+001-192787,6,San Marino,True,True,True,True
+001-192892,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-192983,P1-1,Bulgaria,True,True,True,True
+001-192985,8,North Macedonia,True,True,True,True
+001-192995,3,Ukraine,True,True,False,False
+001-193083,6,Ireland,True,True,True,True
+001-193251,6,Estonia,True,True,True,True
+001-193259,6,the Netherlands,True,True,True,True
+001-193469,3,Ukraine,True,True,False,False
+001-193590,3,Belgium,True,True,True,True
+001-193870,6,the Republic of Moldova,True,True,True,True
+001-193994,6,Ukraine,True,True,False,False
+001-194001,6,Bosnia and Herzegovina,True,True,True,True
+001-194106,8,Spain,True,True,True,True
+001-194183,P1-1,Ukraine,True,True,False,False
+001-194188,18,Ukraine,True,True,False,False
+001-194240,3,the Republic of Moldova,True,True,True,True
+001-194241,6,the Republic of Moldova,True,True,True,True
+001-194303,3,Ukraine,True,True,False,False
+001-195540,6,the Republic of Moldova,True,True,True,True
+001-195861,6,Serbia,True,True,True,True
+001-195869,13,Hungary,True,True,True,True
+001-195909,8,Norway,True,True,True,True
+001-196149,6,Armenia,True,True,True,True
+001-196152,3,Denmark,True,True,True,True
+001-196421,P1-1,San Marino,True,True,True,True
+001-196423,8,Serbia,True,True,True,True
+001-196600,13,Ukraine,True,True,False,False
+001-196680,6,San Marino,True,True,True,True
+001-196682,3,Ukraine,True,True,False,False
+001-196836,5,Belgium,True,True,True,True
+001-196879,6,Bosnia and Herzegovina,True,True,True,True
+001-196887,6,the Republic of Moldova,True,True,True,True
+001-196893,5,Ukraine,True,True,False,False
+001-196897,14,the United Kingdom,True,True,True,True
+001-197215,P12-1,Bosnia and Herzegovina,True,True,True,True
+001-198472,8,Austria,True,True,True,True
+001-198485,34,Ukraine,True,True,False,False
+001-198718,6,Bosnia and Herzegovina,True,True,True,True
+001-198882,6,Ukraine,True,True,False,False
+001-198884,3,Ukraine,True,True,False,False
+001-198885,P1-1,North Macedonia,True,True,True,True
+001-199168,2,Ukraine,True,True,False,False
+001-199173,34,Ukraine,True,True,False,False
+001-199173,5,Ukraine,True,True,False,False
+001-199381,8,Norway,True,True,True,True
+001-199382,8,Norway,True,True,True,True
+001-200209,P1-1,Ukraine,True,True,False,False
+001-200213,34,Ukraine,True,True,False,False
+001-200214,3,Ukraine,True,True,False,False
+001-200434,6,Azerbaijan,True,True,True,True
+001-200450,P1-1,Malta,True,True,True,True
+001-200547,2,Cyprus,True,True,True,True
+001-200709,5,Ukraine,True,True,False,False
+001-200815,6,Latvia,True,True,True,True
+001-201139,6,Bosnia and Herzegovina,True,True,True,True
+001-201329,6,Iceland,True,True,True,True
+001-201351,2,Bulgaria,True,True,True,True
+001-201531,6,Montenegro,True,True,True,True
+001-201641,6,Ukraine,True,True,False,False
+001-201738,P1-1,Armenia,True,True,True,True
+001-202222,5,Ukraine,True,True,False,False
+001-202411,13,Ireland,True,True,True,True
+001-202411,6,Ireland,True,True,True,True
+001-202524,14,Azerbaijan,True,True,True,True
+001-202524,2,Azerbaijan,True,True,True,True
+001-202524,38,Azerbaijan,True,True,True,True
+001-202529,P1-1,North Macedonia,True,True,True,True
+001-202531,3,Poland,True,True,True,True
+001-202619,5,Poland,True,True,True,True
+001-202622,3,Romania,True,True,True,True
+001-202750,34,Ukraine,True,True,False,False
+001-202750,5,Ukraine,True,True,False,False
+001-202991,P1-1,Ukraine,True,True,False,False
+001-203048,6,Ukraine,True,True,False,False
+001-203165,9,Greece,True,True,True,True
+001-203187,3,Georgia,True,True,True,True
+001-203294,P1-1,Ukraine,True,True,False,False
+001-203492,8,Poland,True,True,True,True
+001-203559,13,Ukraine,True,True,False,False
+001-203645,3,France,True,True,True,True
+001-203885,13,Belgium,True,True,True,True
+001-203885,P1-3,Belgium,True,True,True,True
+001-203931,8,Ukraine,True,True,False,False
+001-203976,13,Croatia,True,True,True,True
+001-204194,3,Ukraine,True,True,False,False
+001-204473,5,Türkiye,False,True,True,False
+001-204584,18,Azerbaijan,True,True,True,True
+001-204584,5,Azerbaijan,True,True,True,True
+001-204584,6,Azerbaijan,True,True,True,True
+001-204584,8,Azerbaijan,True,True,True,True
+001-204601,6,Lithuania,True,True,True,True
+001-204602,3,Denmark,True,True,True,True
+001-204660,3,Ukraine,True,True,False,False
+001-204812,6,Armenia,True,True,True,True
+001-204995,3,Ukraine,True,True,False,False
+001-205140,5,Ukraine,True,True,False,False
+001-205141,3,Ukraine,True,True,False,False
+001-205166,6,San Marino,True,True,True,True
+001-205170,8,Estonia,True,True,True,True
+001-205538,3,Azerbaijan,True,True,True,True
+001-205539,5,Ukraine,True,True,False,False
+001-205797,3,Ukraine,True,True,False,False
+001-206159,6,Croatia,True,True,True,True
+001-206266,11,Russia,True,False,True,False
+001-206268,8,Russia,True,False,True,False
+001-206342,6,Russia,True,False,True,False
+001-206345,3,the Republic of Moldova,True,True,True,True
+001-206360,P7-4,Ukraine,True,True,False,False
+001-206371,6,Ukraine,True,True,False,False
+001-206504,6,Spain,True,True,True,True
+001-206511,2,Ukraine,True,True,False,False
+001-206516,3,Ukraine,True,True,False,False
+001-206525,3,Ukraine,True,True,False,False
+001-207136,8,Denmark,True,True,True,True
+001-207366,6,Spain,True,True,True,True
+001-207474,3,Ukraine,True,True,False,False
+001-207667,14,Denmark,True,True,True,True
+001-207695,8,Switzerland,True,True,True,True
+001-207806,5,the Netherlands,True,True,True,True
+001-207848,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-207849,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-207850,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-208280,10,Liechtenstein,True,True,True,True
+001-208447,34,Malta,True,True,True,True
+001-208534,6,Türkiye,False,True,True,False
+001-208547,6,Ireland,True,True,True,True
+001-208589,3,Montenegro,True,True,True,True
+001-208592,2,Romania,True,True,True,True
+001-208764,P1-1,Malta,True,True,True,True
+001-209035,8,Austria,True,True,True,True
+001-209152,3,Romania,True,True,True,True
+001-209154,13,Poland,True,True,True,True
+001-209330,13,Ukraine,True,True,False,False
+001-209358,6,Norway,True,True,True,True
+001-209373,3,the Republic of Moldova,True,True,True,True
+001-209438,5,Russia,True,False,True,False
+001-209520,3,France,True,True,True,True
+001-209992,8,Iceland,True,True,True,True
+001-210046,5,Montenegro,True,True,True,True
+001-210078,8,Sweden,True,True,True,True
+001-210089,P1-3,Spain,True,True,True,True
+001-210257,P1-3,Bulgaria,True,True,True,True
+001-210282,13,Lithuania,True,True,True,True
+001-210304,5,Ukraine,True,True,False,False
+001-210322,2,Ukraine,True,True,False,False
+001-210332,11,Norway,True,True,True,True
+001-210413,11,the Republic of Moldova,True,True,True,True
+001-210537,2,the Republic of Moldova,True,True,True,True
+001-210680,5,Cyprus,True,True,True,True
+001-210689,6,the Republic of Moldova,True,True,True,True
+001-211017,13,the Republic of Moldova,True,True,True,True
+001-211020,9,the Republic of Moldova,True,True,True,True
+001-211138,6,Hungary,True,True,True,True
+001-211596,P7-4,Croatia,True,True,True,True
+001-211777,10,France,True,True,True,True
+001-211795,8,Denmark,True,True,True,True
+001-211814,11,Armenia,True,True,True,True
+001-211892,2,Russia,True,False,True,False
+001-212150,8,Slovakia,True,True,True,True
+001-212829,P7-4,Switzerland,True,True,True,True
+001-212843,3,Romania,True,True,True,True
+001-212897,7,Ukraine,True,True,False,False
+001-212970,8,Montenegro,True,True,True,True
+001-213203,14,Georgia,True,True,True,True
+001-213406,8,Norway,True,True,True,True
+001-213407,8,Norway,True,True,True,True
+001-213522,8,Denmark,True,True,True,True
+001-213525,6,Romania,True,True,True,True
+001-213529,6,Norway,True,True,True,True
+001-213706,13,the Republic of Moldova,True,True,True,True
+001-213706,P4-2,the Republic of Moldova,True,True,True,True
+001-213730,5,Hungary,True,True,True,True
+001-213788,10,Azerbaijan,True,True,True,True
+001-213796,13,Malta,True,True,True,True
+001-213853,6,Slovakia,True,True,True,True
+001-213901,6,Lithuania,True,True,True,True
+001-214012,8,Croatia,True,True,True,True
+001-214047,3,Romania,True,True,True,True
+001-214048,3,Romania,True,True,True,True
+001-214780,2,Ukraine,True,True,False,False
+001-215132,13,Malta,True,True,True,True
+001-215132,P1-1,Malta,True,True,True,True
+001-215166,6,Spain,True,True,True,True
+001-215170,3,Lithuania,True,True,True,True
+001-215176,8,Norway,True,True,True,True
+001-215177,8,Norway,True,True,True,True
+001-215350,8,Ukraine,True,True,False,False
+001-215708,6,Czechia,True,True,True,True
+001-215716,14,Georgia,True,True,True,True
+001-215735,6,Montenegro,True,True,True,True
+001-215898,13,Ukraine,True,True,False,False
+001-215913,6,Armenia,True,True,True,True
+001-216184,6,Iceland,True,True,True,True
+001-216193,P1-1,Türkiye,False,True,True,False
+001-216196,P1-1,Czechia,True,True,True,True
+001-216348,8,Norway,True,True,True,True
+001-216349,P1-1,North Macedonia,True,True,True,True
+001-216352,5,the Republic of Moldova,True,True,True,True
+001-216454,8,Lithuania,True,True,True,True
+001-216463,11,Switzerland,True,True,True,True
+001-216464,14,Estonia,True,True,True,True
+001-216535,6,Hungary,True,True,True,True
+001-216686,6,Georgia,True,True,True,True
+001-216720,5,Hungary,True,True,True,True
+001-217039,10,Denmark,True,True,True,True
+001-217415,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-217436,14,Iceland,True,True,True,True
+001-217605,6,Cyprus,True,True,True,True
+001-218022,8,Norway,True,True,True,True
+001-218074,P7-4,Greece,True,True,True,True
+001-218131,P1-1,Slovenia,True,True,True,True
+001-218132,8,Croatia,True,True,True,True
+001-218941,14,Ireland,True,True,True,True
+001-219068,2,Slovakia,True,True,True,True
+001-219194,10,Ukraine,True,True,False,False
+001-219220,6,Georgia,True,True,True,True
+001-219226,8,France,True,True,True,True
+001-219293,13,Ukraine,True,True,False,False
+001-219309,P1-1,Ukraine,True,True,False,False
+001-219490,34,Ukraine,True,True,False,False
+001-219493,3,Ukraine,True,True,False,False
+001-219500,3,Croatia,True,True,True,True
+001-219506,5,Ukraine,True,True,False,False
+001-219556,6,the Netherlands,True,True,True,True
+001-219641,P1-1,the Republic of Moldova,True,True,True,True
+001-219684,8,Russia,True,False,True,False
+001-219944,6,San Marino,True,True,True,True
+001-219946,6,Slovenia,True,True,True,True
+001-219984,14,Spain,True,True,True,True
+001-219988,2,Belgium,True,True,True,True
+001-220010,P1-1,Ukraine,True,True,False,False
+001-220013,14,Sweden,True,True,True,True
+001-220164,6,Bosnia and Herzegovina,True,True,True,True
+001-220415,6,Belgium,True,True,True,True
+001-220537,8,Malta,True,True,True,True
+001-220556,5,Russia,True,False,True,False
+001-220665,6,Spain,True,True,True,True
+001-220712,2,Armenia,True,True,True,True
+001-220866,10,Lithuania,True,True,True,True
+001-220885,8,Iceland,True,True,True,True
+001-220887,6,Spain,True,True,True,True
+001-220890,9,Ukraine,True,True,False,False
+001-221266,8,Czechia,True,True,True,True
+001-221480,6,the Republic of Moldova,True,True,True,True
+001-221503,14,North Macedonia,True,True,True,True
+001-221637,6,San Marino,True,True,True,True
+001-221637,P1-1,San Marino,True,True,True,True
+001-222134,P1-1,Bulgaria,True,True,True,True
+001-222138,8,Ukraine,True,True,False,False
+001-222312,10,Germany,True,True,True,True
+001-222775,6,Greece,True,True,True,True
+001-222790,6,Czechia,True,True,True,True
+001-222894,P1-1,Italy,True,True,True,True
+001-222898,5,Georgia,True,True,True,True
+001-222915,P1-1,Slovakia,True,True,True,True
+001-222917,5,Ukraine,True,True,False,False
+001-222920,3,Ukraine,True,True,False,False
+001-223027,8,France,True,True,True,True
+001-223259,10,Luxembourg,True,True,True,True
+001-223278,P1-1,Bulgaria,True,True,True,True
+001-223284,P1-1,Azerbaijan,True,True,True,True
+001-223361,3,Russia,True,False,True,False
+001-223361,5,Russia,True,False,True,False
+001-223361,6,Russia,True,False,True,False
+001-223379,8,Ukraine,True,True,False,False
+001-223380,8,Ireland,True,True,True,True
+001-223435,6,Greece,True,True,True,True
+001-223716,P4-4,Italy,True,True,True,True
+001-224091,8,Latvia,True,True,True,True
+001-224365,2,Armenia,True,True,True,True
+001-224366,8,Azerbaijan,True,True,True,True
+001-224505,6,Germany,True,True,True,True
+001-224554,7,Croatia,True,True,True,True
+001-224576,6,Russia,True,False,True,False
+001-224580,P1-1,San Marino,True,True,True,True
+001-224581,3,Ukraine,True,True,False,False
+001-224732,8,the Netherlands,True,True,True,True
+001-224734,8,the Netherlands,True,True,True,True
+001-224776,13,Cyprus,True,True,True,True
+001-224776,6,Cyprus,True,True,True,True
+001-224963,8,Croatia,True,True,True,True
+001-225318,6,Albania,True,True,True,True
+001-225329,14,Ireland,True,True,True,True
+001-225652,8,Switzerland,True,True,True,True
+001-225678,6,Ukraine,True,True,False,False
+001-225772,6,Ukraine,True,True,False,False
+001-225807,34,Azerbaijan,True,True,True,True
+001-225900,13,Ukraine,True,True,False,False
+001-226011,14,Switzerland,True,True,True,True
+001-226093,6,Belgium,True,True,True,True
+001-226195,8,Denmark,True,True,True,True
+001-226474,P1-1,Malta,True,True,True,True
+001-227718,6,Türkiye,False,True,True,False
+001-227719,3,Denmark,True,True,True,True
+001-227753,13,Ukraine,True,True,False,False
+001-228118,13,Armenia,True,True,True,True
+001-228151,3,the Republic of Moldova,True,True,True,True
+001-228155,8,Italy,True,True,True,True
+001-228167,5,Italy,True,True,True,True
+001-228357,3,the Netherlands,True,True,True,True
+001-228530,10,Germany,True,True,True,True
+001-228673,5,Russia,True,False,True,False
+001-228683,3,Ukraine,True,True,False,False
+001-228840,P1-1,Italy,True,True,True,True
+001-228857,13,Malta,True,True,True,True
+001-228861,P1-1,Malta,True,True,True,True
+001-228992,5,Italy,True,True,True,True
+001-229125,5,Greece,True,True,True,True
+001-229134,3,Estonia,True,True,True,True
+001-229134,8,Estonia,True,True,True,True
+001-229141,5,Ukraine,True,True,False,False
+001-229325,2,Czechia,True,True,True,True
+001-229601,5,Russia,True,False,True,False
+001-229601,6,Russia,True,False,True,False
+001-229726,11,Germany,True,True,True,True
+001-229927,34,Ukraine,True,True,False,False
+001-229927,38,Ukraine,True,True,False,False
+001-230260,P1-1,Malta,True,True,True,True
+001-230271,3,Greece,True,True,True,True
+001-230281,6,Italy,True,True,True,True
+001-230627,P1-1,Lithuania,True,True,True,True
+001-230725,6,Poland,True,True,True,True
+001-230729,6,Poland,True,True,True,True
+001-230739,13,Poland,True,True,True,True
+001-230878,P1-1,Ukraine,True,True,False,False
+001-231078,34,the Republic of Moldova,True,True,True,True
+001-231078,P1-1,Russia,True,False,True,False
+001-231088,P1-1,Montenegro,True,True,True,True
+001-231227,9,Belgium,True,True,True,True
+001-231331,14,Switzerland,True,True,True,True
+001-231333,P1-1,Albania,True,True,True,True
+001-231871,5,Russia,True,False,True,False
+001-233111,P1-3,Iceland,True,True,True,True
+001-233206,6,Switzerland,True,True,True,True
+001-233213,5,the Netherlands,True,True,True,True
+001-233215,6,Lithuania,True,True,True,True
+001-233231,6,Portugal,True,True,True,True
+001-233236,6,Russia,True,False,True,False
+001-233378,10,Portugal,True,True,True,True
+001-233381,P1-1,Italy,True,True,True,True
+001-233409,3,Georgia,True,True,True,True
+001-233412,3,Georgia,True,True,True,True
+001-233495,3,Sweden,True,True,True,True
+001-233652,6,Italy,True,True,True,True
+001-233686,8,Czechia,True,True,True,True
+001-233761,6,Georgia,True,True,True,True
+001-233937,P4-2,France,True,True,True,True
+001-234008,3,Latvia,True,True,True,True
+001-234129,2,Croatia,True,True,True,True
+001-234259,3,Armenia,True,True,True,True
+001-234516,5,Cyprus,True,True,True,True
+001-234522,2,Georgia,True,True,True,True
+001-234604,6,Albania,True,True,True,True
+001-235034,6,Albania,True,True,True,True
+001-235346,6,the Netherlands,True,True,True,True
+001-235470,10,Austria,True,True,True,True
+001-235475,8,San Marino,True,True,True,True
+001-235491,5,Azerbaijan,True,True,True,True
+001-235491,8,Azerbaijan,True,True,True,True
+001-235692,8,Slovakia,True,True,True,True
+001-235896,P1-1,San Marino,True,True,True,True
+001-236132,6,the Republic of Moldova,True,True,True,True
+001-236140,8,Finland,True,True,True,True
+001-236179,8,Cyprus,True,True,True,True
+001-237290,3,Greece,True,True,True,True
+001-237290,5,Greece,True,True,True,True
+001-237294,3,Denmark,True,True,True,True
+001-237435,6,Croatia,True,True,True,True
+001-237438,3,Malta,True,True,True,True
+001-237504,6,Azerbaijan,True,True,True,True
+001-237797,6,North Macedonia,True,True,True,True
+001-237808,P1-1,Czechia,True,True,True,True
+001-237811,14,Georgia,True,True,True,True
+001-237954,8,Denmark,True,True,True,True
+001-237959,8,Denmark,True,True,True,True
+001-237960,P1-1,Italy,True,True,True,True
+001-238009,6,Serbia,True,True,True,True
+001-238072,6,Cyprus,True,True,True,True
+001-238269,3,Türkiye,False,True,True,False
+001-238270,8,Greece,True,True,True,True
+001-238515,6,Georgia,True,True,True,True
+001-238515,P1-1,Russia,True,False,True,False
+001-238658,13,Armenia,True,True,True,True
+001-238658,2,Armenia,True,True,True,True
+001-238661,6,San Marino,True,True,True,True
+001-238788,6,Albania,True,True,True,True
+001-238800,P1-1,Ukraine,True,True,False,False
+001-238839,5,Russia,True,False,True,False
+001-238843,P1-1,Italy,True,True,True,True
+001-240184,6,Iceland,True,True,True,True
+001-240242,5,Greece,True,True,True,True
+001-241743,8,Czechia,True,True,True,True
+001-241871,8,Bulgaria,True,True,True,True
+001-241978,6,the United Kingdom,True,True,True,True
+001-241986,4,the Republic of Moldova,True,True,True,True
+001-242058,3,Hungary,True,True,True,True
+001-242059,P1-1,Croatia,True,True,True,True
+001-242073,13,Portugal,True,True,True,True
+001-242521,13,the Netherlands,True,True,True,True
+001-242534,6,Austria,True,True,True,True
+001-242757,P1-1,Azerbaijan,True,True,True,True
+001-242762,6,Albania,True,True,True,True
+001-242768,6,France,True,True,True,True
+001-242788,8,Poland,True,True,True,True
+001-242855,P1-1,Azerbaijan,True,True,True,True
+001-242857,6,Serbia,True,True,True,True
+001-243081,P1-1,Croatia,True,True,True,True
+001-243363,6,Serbia,True,True,True,True
+001-243553,P1-1,Türkiye,False,True,True,False
+001-243562,14,Iceland,True,True,True,True
+001-243781,P1-1,Bosnia and Herzegovina,True,True,True,True
+001-243782,8,North Macedonia,True,True,True,True
+001-243878,8,the United Kingdom,True,True,True,True
+001-243885,14,Cyprus,True,True,True,True
+001-243885,3,Cyprus,True,True,True,True
+001-243887,10,Cyprus,True,True,True,True
+001-243997,10,Ukraine,True,True,False,False
+001-244000,8,Italy,True,True,True,True
+001-244020,6,Türkiye,False,True,True,False
+001-244588,P7-2,Greece,True,True,True,True
+001-244592,9,Lithuania,True,True,True,True
+001-244593,14,Iceland,True,True,True,True
+001-244593,3,Iceland,True,True,True,True
+001-244594,13,Greece,True,True,True,True
+001-244594,6,Greece,True,True,True,True
+001-244728,10,Ukraine,True,True,False,False
+001-244851,P1-3,the United Kingdom,True,True,True,True
+001-244894,P1-1,Bulgaria,True,True,True,True
+001-245104,P1-3,Cyprus,True,True,True,True
+001-245246,6,Greece,True,True,True,True
+001-245279,P1-1,Spain,True,True,True,True
+001-245390,8,Spain,True,True,True,True
+001-245444,8,Italy,True,True,True,True
+001-245447,8,Russia,True,False,True,False
+001-245460,13,Greece,True,True,True,True
+001-245460,6,Greece,True,True,True,True
+001-245463,13,Greece,True,True,True,True
+001-245684,8,Estonia,True,True,True,True
+001-245686,3,Georgia,True,True,True,True
+001-245690,6,Armenia,True,True,True,True
+001-245701,8,Czechia,True,True,True,True
+001-245708,6,Serbia,True,True,True,True
+001-245810,P1-1,Cyprus,True,True,True,True
+001-245821,5,Türkiye,False,True,True,False
+001-245886,5,Russia,True,False,True,False
+001-246017,6,Albania,True,True,True,True
+001-246024,P1-1,Ukraine,True,True,False,False
+001-247556,10,Hungary,True,True,True,True
+001-247564,13,Czechia,True,True,True,True
+001-247564,8,Czechia,True,True,True,True
+001-247651,13,Ukraine,True,True,False,False
+001-247822,6,Azerbaijan,True,True,True,True
+001-247827,14,Iceland,True,True,True,True
+001-247827,3,Iceland,True,True,True,True
+001-247833,8,Iceland,True,True,True,True
+001-247909,8,Ukraine,True,True,False,False
+001-247913,3,Greece,True,True,True,True
+001-247917,6,Türkiye,False,True,True,False
+001-248128,2,Ukraine,True,True,False,False
+001-248167,13,Ukraine,True,True,False,False
+001-248198,8,Estonia,True,True,True,True
+001-248201,P1-1,the Republic of Moldova,True,True,True,True
+001-248220,3,Ukraine,True,True,False,False
+001-248392,6,Greece,True,True,True,True
+001-248395,6,Ukraine,True,True,False,False
+001-248396,2,Ukraine,True,True,False,False
+001-248397,2,Ukraine,True,True,False,False
+001-248592,3,Serbia,True,True,True,True
+001-248594,10,Russia,True,False,True,False
+001-248594,3,Russia,True,False,True,False
+001-248598,8,San Marino,True,True,True,True
+001-248636,P12-1,Bosnia and Herzegovina,True,True,True,True
+001-248682,5,Armenia,True,True,True,True
+001-248687,6,Ukraine,True,True,False,False
+001-248854,8,Ukraine,True,True,False,False
+001-248953,11,Ukraine,True,True,False,False
+001-248957,P1-1,Ukraine,True,True,False,False
+001-248960,2,Ukraine,True,True,False,False
+001-248961,3,Ukraine,True,True,False,False
+001-248979,6,Ukraine,True,True,False,False
+001-249134,6,Hungary,True,True,True,True
+001-249223,3,Sweden,True,True,True,True
+001-249234,2,Ukraine,True,True,False,False
+001-249236,2,Ukraine,True,True,False,False
+001-249251,11,Russia,True,False,True,False
+001-249345,6,Armenia,True,True,True,True
+001-249370,34,Ukraine,True,True,False,False
+001-249380,8,the Republic of Moldova,True,True,True,True
+001-249515,P4-2,Azerbaijan,True,True,True,True
+001-249525,14,Ukraine,True,True,False,False
+001-249527,2,Ukraine,True,True,False,False
+001-249530,6,San Marino,True,True,True,True
+001-249531,8,Czechia,True,True,True,True
+001-249581,5,Armenia,True,True,True,True
+001-249583,2,Ukraine,True,True,False,False
+001-249586,13,Ukraine,True,True,False,False
+001-249587,2,Ukraine,True,True,False,False
+001-249691,3,the Netherlands,True,True,True,True
+001-249810,P1-1,Ukraine,True,True,False,False
+001-249964,8,Albania,True,True,True,True
+001-249970,2,Italy,True,True,True,True
+001-250034,5,Ukraine,True,True,False,False
+001-250035,3,Ukraine,True,True,False,False
+001-250036,5,Ukraine,True,True,False,False
+001-250107,5,Austria,True,True,True,True
+001-250111,6,Poland,True,True,True,True
+001-250112,5,Portugal,True,True,True,True
