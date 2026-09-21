@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'analysis/review_offline'
 manifest = json.loads((OUT / 'manifest.json').read_text())
 for name, sha in manifest['outputs'].items():
-    assert hashlib.sha256((OUT / name).read_bytes()).hexdigest() == sha
+    assert hashlib.sha256((OUT / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == sha
 assert hashlib.sha256((ROOT / 'analysis/analyze_review_offline.py').read_bytes().replace(b'\r\n', b'\n')).hexdigest() == manifest['analysis_sha256']
 
 
