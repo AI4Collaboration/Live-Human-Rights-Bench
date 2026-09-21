@@ -70,7 +70,7 @@ and first-reversal/switch counts. Final conversational Brier error rises by
 interval above zero. Five of six US shifts remain negative after correction;
 all twelve comparisons with Russia and Ukraine retain that ordering. Prompt
 examples, retry/failure behavior and source-review accounting have been clarified
-in the manuscript, with three additional primary-source-verified references.
+in the manuscript, with relevant references verified against primary sources.
 The model-call queue above remains pending.
 Threshold sensitivity uses saved scores, not fresh model responses. Existing
 source-review evidence and older-model time-window analyses address different
@@ -158,7 +158,7 @@ Published evaluation snapshot from **17 September 2026**,
 Summary-based State Swap results and country matching were updated in
 [`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
 
-**Code and source status updated 19 September 2026:** the six legacy Hugging Face sources
+**Code and source status checked 21 September 2026:** the six legacy Hugging Face sources
 are **deprecated as evaluation inputs**, including the old State Swap release.
 Use the GitHub inputs below. See the
 [source-status register](docs/DATA_SOURCE_STATUS.md) for exact Hub revisions,

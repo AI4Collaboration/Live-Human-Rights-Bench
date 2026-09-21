@@ -202,7 +202,7 @@ def main():
                 row.append(choose(direction,scope='all_available_targets',model=model,experiment=exp,
                     condition=condition,truth_label=truth,initial_state='correct',metric=metric))
         lines.append(f"| {labels[model]} | "+' | '.join(rate(r) for r in row)+" |")
-    lines += ["", "The complete [error-direction table](error_direction.csv) includes all paraphrase levels, initially wrong and abstaining references, and matched persuasion conditions. Summary transitions reproduce 106 new decisive errors, 92 corrected errors, 230 correct-to-abstention changes and 142 abstention-to-correct changes.", "",
+    lines += ["", "The complete [error-direction table](error_direction.csv) includes all paraphrase levels, initially wrong and abstaining references, and matched adversarial-opinion conditions. Summary transitions reproduce 106 new decisive errors, 92 corrected errors, 230 correct-to-abstention changes and 142 abstention-to-correct changes.", "",
         "## 4. Role cues preserve both correct and incorrect starting judgments", "",
         "On the five-role matched static cohort, Claude's AI safety researcher cue raises correct-answer retention from 8.2% to 99.0%, while reducing correction of initial errors from 96.3% to 1.6%. GPT retains 53.5% of correct answers and corrects 76.8% of initial errors under the same cue. The two Qwen models show no net change in either rate between this cue and no cue.", ""]
     for group,title in [('correct','Correct initial judgments retained at turn 3'),('wrong','Initial errors corrected by turn 3')]:

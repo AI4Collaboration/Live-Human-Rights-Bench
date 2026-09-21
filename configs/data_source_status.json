@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "as_of": "2026-09-19",
+  "as_of": "2026-09-21",
   "documentation": "docs/DATA_SOURCE_STATUS.md",
   "current_dataset_id": "echr-unified-atomic-targets-20260916",
   "current_release_version": "v1.0",

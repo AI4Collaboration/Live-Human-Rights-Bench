@@ -1,6 +1,6 @@
 # Current and deprecated data sources
 
-Updated **19 September 2026**. Exact revisions and current input hashes are in
+Checked **21 September 2026**. Exact revisions and current input hashes are in
 [`configs/data_source_status.json`](../configs/data_source_status.json).
 
 ## Current inputs
@@ -12,7 +12,7 @@ designated summary inputs. See the [version policy](BENCHMARK_RELEASES.md).
 | Artifact | Contents | Use |
 | --- | --- | --- |
 | [`echr_unified.json`](../data/processed/echr_unified.json) | 1,000 targets / 947 judgments | Canonical full-case evaluation input |
-| [`summaries_dsv41flash.json`](../data/processed/summaries_dsv41flash.json) | 947 selected abstractive summaries | Summary evaluation and sycophancy |
+| [`summaries_dsv41flash.json`](../data/processed/summaries_dsv41flash.json) | 947 selected abstractive summaries | Summary evaluation and adversarial opinion |
 | [`summaries_extractive_leakchecked_20260916.json`](../data/processed/summaries_extractive_leakchecked_20260916.json) | 947 extractive controls | Factual-retention comparison |
 
 The current target contract is

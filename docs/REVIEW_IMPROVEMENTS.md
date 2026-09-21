@@ -1,7 +1,7 @@
 # Review assessment and improvements
 
-Checked 20 September 2026 against GitHub revision `cdda570` and manuscript
-revision `12bd7fa`, including the latest supplied review.
+Status checked 21 September 2026 against the published results at GitHub
+revision `340ef57` and manuscript revision `4a76cfe`.
 The review identifies useful controls for the role-cue result and conversational
 sampling. Its suggestions vary in relevance; they are not all missing experiments.
 The [merged API plan](NEXT_EXPERIMENTS.md) is summarized at the top of the README.
@@ -16,10 +16,10 @@ No API experiments or new human annotation were performed for this revision.
 | Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Add three static trajectories per reference cue/model on the same 50 cases at temperature 0, compared with three concurrent temperature-1.0 trajectories |
 | Neutral reassessment | Existing disagreement already supplies an opposing verdict | Add the planned neutral branch to the same static batch |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
-| Continuous probability-score accuracy | Complements the completed threshold checks without assigning every uncertain score a full classification error | Pending paired Brier-score analysis from saved scores; no model calls |
-| Multiple comparisons | Pointwise intervals do not provide simultaneous coverage for all displayed contrasts | Pending family-level sensitivity checks for the main claims, with effect sizes retained |
-| Conversation protocol visibility | Settings exist in the appendix and runner, but readers must assemble them | Implemented in Section 5 and Appendix C: temperature, response budgets, challenge length and the distinction between averaged fixed-input scores and individual dialogue turns |
-| Close multi-turn prior work | TRUTH DECAY is a direct antecedent | Implemented in Related Work, alongside ECtHR-PCR; the contribution remains court-grounded evaluation, matched cue contrasts, correctness and persistence |
+| Continuous probability-score accuracy | Complements the threshold checks without assigning every uncertain score a full classification error | Completed [paired Brier-score analysis](../analysis/review_offline/REPORT.md) from saved scores; reported in Section 5 and Appendix C |
+| Multiple comparisons | Simultaneous intervals distinguish family-level from pointwise support | Completed [five-family sensitivity analysis](../analysis/review_offline/REPORT.md), with effect sizes retained; Appendix C describes the procedure |
+| Conversation protocol visibility | State the settings and distinguish averaged fixed-input scores from individual dialogue turns | Implemented in Section 5 and Appendices C/E: temperature, response budgets, challenge length and trajectory handling |
+| Close multi-turn prior work | TRUTH DECAY and SYCON-Bench are direct antecedents | Included in Related Work; the comparison focuses on judgment correctness and persistence under input changes and adversarial opinions |
 
 The recommended static API package costs **4,800 target responses**. It combines
 four contemporaneous conditions on 100 cases and four additional repetitions
@@ -59,9 +59,10 @@ the Results interpretation without adding a limitations paragraph to each result
    three assembly generations versus four transport attempts, and documented
    failed trajectories and saved-message coverage. Expanded the existing
    source-review accounting without claiming a measured zero-leakage rate.
-4. **Closest related work.** Incorporated SYCON-Bench, ICE-Guard and TriBench-Ko
-   into the existing paragraphs. All three have corresponding DBLP records and
-   verified publisher or arXiv metadata; the Related Work stays concise.
+4. **Related-work structure.** The current paragraphs cover living benchmarks,
+   systematic perturbation, and adversarial opinion and sycophancy. They include
+   TRUTH DECAY, SYCON-Bench, ICE-Guard and EvalAwareBench. TriBench-Ko and ECtHR-PCR
+   remain verified background references and are not cited in the current text.
 
 The [completed analysis](../analysis/review_offline/REPORT.md) covers 32
 systematic comparisons, 36 model-mode-turn comparisons, 38 family-adjusted
@@ -167,19 +168,19 @@ stores titles, authors, publication metadata, URLs, HTTP status and checksums.
 | --- | --- |
 | [SYCON-Bench, Hong et al., Findings of EMNLP 2025](https://aclanthology.org/2025.findings-emnlp.121/) | Added: direct multi-turn antecedent measuring first conformity and stance switches; our emphasis remains reference-outcome correctness and persistence on real cases. |
 | [ICE-Guard, Basu and Chakraborty, 2026](https://arxiv.org/abs/2603.18530) | Added for demographic, authority and framing sensitivity; no mitigation pipeline is imported. |
-| [TriBench-Ko, Lee et al., 2026](https://arxiv.org/abs/2605.03792) | Added for judicial workflow risks across several tasks; it does not replace the renewable case construction or conversational study. |
+| [TriBench-Ko, Lee et al., 2026](https://arxiv.org/abs/2605.03792) | Verified background on judicial workflow tasks; not cited in the current judgment-reliability narrative. |
 | [Pressure-Tune, Zhang et al., 2025](https://arxiv.org/abs/2508.13743) | Fine-tuning on adversarial scientific-QA dialogues. Real but less central to this benchmark paper; a training experiment is not required. |
 | [Relevance paraphrasing, Askari et al., 2025](https://arxiv.org/abs/2406.03993) | Studies robustness of summary generation to paraphrased source passages. Our outcome is downstream judgment under changed input, so the tasks should not be equated. |
 | [Proper-score decomposition, Broecker](https://arxiv.org/abs/0806.0813) | Supports the distinction between probability-score error and calibration alone when designing the Brier analysis. |
 
-Two useful additions from the earlier review are already in Related Work:
+The earlier review also identified these works:
 
 - **TRUTH DECAY**, Liu et al. (2025), studies accuracy and answer changes under
   static and rationale-based repeated feedback. It prevents attributing novelty
   to multi-turn feedback alone. [arXiv record](https://arxiv.org/abs/2503.11656v1)
 - **ECtHR-PCR**, Santosh T.Y.S.S., Haddad and Grabmair (LREC-COLING 2024), separates
-  factual queries from judicial arguments in precedent retrieval. It supports
-  the construction context without requiring a retrieval extension.
+  factual queries from judicial arguments in precedent retrieval. It is verified
+  background and is not cited in the current manuscript.
   [Publisher record](https://aclanthology.org/2024.lrec-main.486/)
 
 Other suggestions are real but should not be imported mechanically:

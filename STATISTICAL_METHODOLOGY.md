@@ -1,7 +1,7 @@
 # Statistical methodology for the current manuscript
 
-This document describes the current experiment checkpoints, collected at GitHub
-revision `4b231e1`, and their manuscript analysis. The
+This document describes the primary six-model checkpoints at GitHub revision
+`4b231e1`, the Türkiye follow-up at `b35f6ca`, and their manuscript analysis. The
 [additional reliability analyses](analysis/reliability_controls/REPORT.md)
 use the same saved outputs.
 
@@ -16,15 +16,18 @@ Every score is a violation likelihood on the **0-100** scale:
 | Above 60 | Violation |
 
 Section 4 requests ten scores per input and classifies their valid-score mean.
-Full-record and summary checkpoints retain individual scores; published paraphrase
-and State Swap checkpoints retain `avg_rating`, a prediction and the unparsed
-count. An input with no parsed score is a failed prediction.
+Full-record and summary checkpoints retain individual scores. The original
+six-model paraphrase and US State Swap checkpoints retain `avg_rating`, a
+prediction and the unparsed count. The Türkiye follow-up retains all ten ratings,
+raw responses and parse histories for every record. An input with no parsed
+score is a failed prediction.
 
 The saved full-record/summary `prediction` fields instead use category plurality.
 They remain unchanged in the raw data. The manuscript recomputes its primary
 predictions from scores and reports plurality, with ties assigned to abstention,
-as a sensitivity analysis. Section 5 applies the thresholds to each response's
-single score.
+as a sensitivity analysis. The primary six-model adversarial-opinion experiment
+applies the thresholds to each response's single score. The separate earlier-model
+nationality study uses one turn and three ratings per score.
 
 ## Correctness and paired comparisons
 
@@ -37,7 +40,8 @@ mean recall of the violation and no-violation classes.
   its original arm under the paraphrase prompt. The six four-arm checkpoints
   contain 24,000 rows.
 - **State Swap:** compare each country arm with the same target's original
-  summary. The six four-arm checkpoints contain 24,000 rows.
+  summary. The original six-model US grid contains 24,000 rows; the three-model
+  Türkiye follow-up contains 12,000 rows. Keep their reference arms and cohorts separate.
 
 A strict reversal crosses between violation and no violation. Abstention
 transitions are counted separately. Accuracy differences are reported in
@@ -50,13 +54,19 @@ Seven Russia changes only normalize the existing respondent's name. Actual
 respondent substitutions with changed text therefore number **998, 966 and
 832**, respectively.
 
-The primary comparison uses the same **800 targets from 757 judgments** for all
+The original US comparison uses the same **800 targets from 757 judgments** for all
 six models and three destinations: every arm changes the respondent and summary
 text, with valid means in every original and destination arm. Pair each
 destination with the experiment's own original summary. All 24,000 published
 rows have a valid mean; unparsed individual ratings are recorded separately.
 The 807-target text-change-only intersection is a sensitivity cohort. The
 [protocol and input review](docs/STATESWAP.md) detail these distinctions.
+
+The Türkiye follow-up uses **785 targets from 742 judgments** across all three
+models and destinations. Actual substitutions number 983 for Türkiye, 966 for
+Russia and 832 for Ukraine. Every one of its 12,000 records has ten parsed ratings.
+The [follow-up audit](analysis/stateswap_turkey/REPORT.md) records its nine-effect
+comparison family and the 15-target cohort difference from the US grid.
 
 ## Three-turn adversarial opinion
 
@@ -81,11 +91,15 @@ therefore differ from the pooled model comparison.
 
 ## Confidence intervals
 
-The manuscript uses **2,000 bootstrap draws clustered by judgment**, with
+Pointwise manuscript intervals use **2,000 bootstrap draws clustered by judgment**, with
 **seed 731**. A sampled judgment brings all associated target observations into
 the draw; paired arms, conditions and turns remain together. Conditional metrics
 recompute their denominators in each draw. Report the 2.5th and 97.5th percentiles
 as the 95% interval.
+
+The completed [multiple-comparison analysis](analysis/review_offline/REPORT.md)
+uses 20,000 draws for five predeclared contrast families and reports
+Bonferroni-adjusted intervals separately from pointwise intervals.
 
 Complete-sample sensitivity requires every requested rating in both compared
 arms to parse. The primary accuracy analysis retains all targets. This keeps

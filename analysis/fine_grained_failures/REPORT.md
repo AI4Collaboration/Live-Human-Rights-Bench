@@ -43,7 +43,7 @@ Among initially correct judgments, heavy paraphrasing introduces false violation
 | Qwen3-235B | 5/66 (7.6%) | 2/597 (0.3%) | 1/62 (1.6%) | 2/607 (0.3%) |
 | Qwen3-32B | 11/52 (21.2%) | 6/639 (0.9%) | 4/49 (8.2%) | 2/645 (0.3%) |
 
-The complete [error-direction table](error_direction.csv) includes all paraphrase levels, initially wrong and abstaining references, and matched persuasion conditions. Summary transitions reproduce 106 new decisive errors, 92 corrected errors, 230 correct-to-abstention changes and 142 abstention-to-correct changes.
+The complete [error-direction table](error_direction.csv) includes all paraphrase levels, initially wrong and abstaining references, and matched adversarial-opinion conditions. Summary transitions reproduce 106 new decisive errors, 92 corrected errors, 230 correct-to-abstention changes and 142 abstention-to-correct changes.
 
 ## 4. Role cues preserve both correct and incorrect starting judgments
 

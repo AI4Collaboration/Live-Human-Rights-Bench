@@ -2,7 +2,7 @@
 
 ## Current evaluation pool
 
-The full-record, summary, paraphrase, State Swap and persuasion experiments use
+The full-record, summary, paraphrase, State Swap and adversarial-opinion experiments use
 **1,000 target instances from 947 judgments** in
 [`data/processed/echr_unified.json`](data/processed/echr_unified.json).
 This is the paper's selected sample; the pipeline supports other release sizes
@@ -60,17 +60,23 @@ python scripts/validate_eval_dataset.py --require-complete
 
 Use a fresh output directory whenever inputs, prompts or the release change.
 Summary comparisons pair the same targets across full and compressed records;
-paraphrases use their own original-input arm. Persuasion pairs static and
+paraphrases use their own original-input arm. Adversarial opinion pairs static and
 adaptive branches from the same decided initial response. The current analysis
 rules are in [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md).
 
 ## State Swap and deprecated sources
 
-The current State Swap experiment derives original, US, Russia and Ukraine arms
+The original six-model State Swap experiment derives original, US, Russia and Ukraine arms
 from the same 1,000 targets and their shared summaries. Its six model checkpoints
 are in `data/experiments/stateswap_summary/`. The
 [input review](docs/STATESWAP.md) records which replacements actually change the
 summary text. Its previous Hub release remains deprecated for current evaluation.
+
+The completed Türkiye follow-up uses original, Türkiye, Russia and Ukraine arms
+for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. Its 12,000 records are in
+`data/experiments/stateswap_summary_turkey/`. The shared comparison has 785 targets
+from 742 judgments; the original US comparison has 800 targets from 757 judgments.
+Each experiment uses its own original-summary scores and common cohort.
 
 The [source-status register](docs/DATA_SOURCE_STATUS.md) lists all deprecated
 releases and their replacements. Superseded local input files and results have

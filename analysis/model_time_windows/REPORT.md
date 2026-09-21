@@ -81,7 +81,7 @@ all compared models together.
 year, three five-year bands, shared older-model cutoff intervals and each
 earlier model's own cutoff split. [Paired model differences](paired_model_differences.csv) keep
 the cohort and input form fixed. The two earlier models are additional
-controls; the existing three-turn persuasion suite still covers six models.
+controls; the existing three-turn adversarial-opinion suite still covers six models.
 
 ## Other results in the extension
 
