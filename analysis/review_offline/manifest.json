@@ -1,0 +1,173 @@
+{
+  "source_revision": "c9ad289158fe3a244312a341c5863a075fbe19db",
+  "new_model_calls": 0,
+  "seed": 731,
+  "brier_draws": 2000,
+  "multiplicity_draws": 20000,
+  "families": {
+    "us_likelihood": 6,
+    "us_destination_order": 12,
+    "pressure_mode_interaction": 6,
+    "shared_role_gap": 2,
+    "dialogue_brier": 12
+  },
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/baseline.jsonl": {
+      "sha256_git_bytes": "f147b2f7dd0fc59e9d98e319424303aef11d336d665a00e8ba11c61211c95672",
+      "bytes": 905543
+    },
+    "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/rq1.jsonl": {
+      "sha256_git_bytes": "f4e2315dbc2dfd208e9600967a3ab7e166d6a5daa57b1120e2545439eac0cb56",
+      "bytes": 968080
+    },
+    "data/experiments/paraphrase/anthropic_claude-opus-4.6/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "9c2d7f9f8841a646e2393d82fc19c8c638d483112a66425df291fb4c6f208b55",
+      "bytes": 822979
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/baseline.jsonl": {
+      "sha256_git_bytes": "d35339ce9dfa89415c200e2d0e10640331202d2a86112d7d303925f124dd48ba",
+      "bytes": 907943
+    },
+    "data/experiments/unified_fullcase_latest/openai_gpt-5_6-sol/rq1.jsonl": {
+      "sha256_git_bytes": "ec535df1e5b84e337e4934aea689f7b8a339544faa885484e7022400f55c2843",
+      "bytes": 966428
+    },
+    "data/experiments/paraphrase/openai_gpt-5.6-sol/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "6365c29b2a833da0c01e952f44b24b9ff44e8e2a04d4f8abc5039f3cf03af6f4",
+      "bytes": 823547
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/baseline.jsonl": {
+      "sha256_git_bytes": "88c8dc81f4d74060fd9cfea762f3c2c1d3e364b16d50f1b1812a926266351876",
+      "bytes": 907500
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-pro/rq1.jsonl": {
+      "sha256_git_bytes": "74e4f97a62b76953442ef85edbafd2a29a9445cf50c4340f5f158a53e4f932de",
+      "bytes": 968644
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-pro/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "ae66bc4fa96a67a5ec6e893349826bdf9b9dddfef75650d0a46ac2fec6cf6be6",
+      "bytes": 835431
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/baseline.jsonl": {
+      "sha256_git_bytes": "fb3c405c91b1aafe2fb059c6462c28641a3a623de160fd69da99296f9a4e85e5",
+      "bytes": 909231
+    },
+    "data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/rq1.jsonl": {
+      "sha256_git_bytes": "8b044810a556947f330bc7668a9ad597fe254f5c246fc8d63d34f6c4bcaa48b3",
+      "bytes": 969047
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-flash/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "8ff207e98633fa1d2ead1ef7f09c02f01718cb96f65c8b788dc9110eb6c48c9c",
+      "bytes": 825353
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
+      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
+      "bytes": 905529
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
+      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
+      "bytes": 967771
+    },
+    "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "ee4e57b2a123b03d996ae4e2e04b3fd8e6a3138e08136374330664eab78d79e7",
+      "bytes": 827064
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
+      "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
+      "bytes": 907392
+    },
+    "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl": {
+      "sha256_git_bytes": "be3ce4d7bb45a9f88dd24039a7c41bebca21536a593cb6a144b0a6dae936d49a",
+      "bytes": 966982
+    },
+    "data/experiments/paraphrase/qwen_qwen3-32b/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "2f5afc9ffb98cd28d4fda6ac23aff0ecda7e98a4d198fad886db77f4a5e19c8f",
+      "bytes": 824653
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/baseline.jsonl": {
+      "sha256_git_bytes": "7d3f5fe30517d04d4f7bf1ba014048fd25ccaacb7596b96ef2dc6f8320dc7513",
+      "bytes": 905756
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4o-mini/rq1.jsonl": {
+      "sha256_git_bytes": "b734cf4dab420e031006f8d35246087e85b9a7bbefc51ed9c59f1cd2d5d4acd1",
+      "bytes": 968116
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4o-mini/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "269e4c26bcd0127b44ac86d3b5d9aeaa45044a4192a2ef21839d9becca9b8649",
+      "bytes": 822882
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/baseline.jsonl": {
+      "sha256_git_bytes": "aa51d25712cbacc2fe81db8bd2401c125c311184fa03e9f99fea88e2e2e60c08",
+      "bytes": 905848
+    },
+    "data/experiments/unified_fullcase_oldmodels/openai_gpt-4_1-mini/rq1.jsonl": {
+      "sha256_git_bytes": "005a8c4270150d4290dd53029e465eade76c4a9cd4530f61b8689511e2bedbbc",
+      "bytes": 968977
+    },
+    "data/experiments/paraphrase_oldmodels/openai_gpt-4.1-mini/paraphrase_results.jsonl": {
+      "sha256_git_bytes": "f5d8886ad28d48b67c4b3a7c2b4324c7e07c1f891d1f8c904ddb3a913e78f55c",
+      "bytes": 824093
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "experiments/stateswap_summary_run.py": {
+      "sha256_git_bytes": "d57ffa97886c2fdfc0773954412c2308d84c5aa8e87a8f71182cb967745f8996",
+      "bytes": 11154
+    },
+    "data/experiments/stateswap_summary/anthropic_claude-opus-4.6/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "e96f0aefb9fb33dcdff1d132567633e98d20b3670f953ea71e12ff275283d2ae",
+      "bytes": 927124
+    },
+    "data/experiments/stateswap_summary/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "2f6e5c88acc245fe4b56e57a370c013e1e80fd72519b820960bcd0a7df79f376",
+      "bytes": 927997
+    },
+    "data/experiments/stateswap_summary/deepseek_deepseek-v4-pro/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "08fda9b2e8fcb1dc06dd5d5912fdae4a3cf40a6a3d5c7b49e42216ab55cc3df4",
+      "bytes": 941697
+    },
+    "data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
+      "bytes": 928836
+    },
+    "data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
+      "bytes": 928318
+    },
+    "data/experiments/stateswap_summary/qwen_qwen3-32b/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec",
+      "bytes": 928914
+    },
+    "data/experiments/syco_full_latest/initial.jsonl": {
+      "sha256_git_bytes": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
+      "bytes": 3351590
+    },
+    "data/experiments/syco_full_latest/trajectories.jsonl": {
+      "sha256_git_bytes": "24b215db916c259c8f529d287571b248c15c13d2481d109b5eb119903a759a68",
+      "bytes": 40613064
+    }
+  },
+  "conversation_counts": {
+    "recorded": 118206,
+    "incomplete": 12426,
+    "complete": 105780,
+    "provision_consistent_complete": 100132,
+    "provision_mismatch": 5648
+  },
+  "analysis_sha256": "89a90ee8249935fe9e7489e9354450c9b54ac21d9739437d3205a5c7a476dd63",
+  "outputs": {
+    "cue_brier.csv": "771ece92a6262bede55c3238a2e24ed9c2c806832d7d73ae9810b204c6213901",
+    "cue_brier_contrasts.csv": "65ca4442cca8280b7794245df75125b9a96cb63fe36ac9b5572ce26990a97072",
+    "dialogue_brier.csv": "0be94d00ccb66764702b148d752b5fc21f36f17bc4b05b891a78cfc170e6b7d2",
+    "input_checks.csv": "2ab37151d7329b5b8737b67e4bd7d43da0d9be68d549a1a98a89cadf4b1b1186",
+    "multiplicity.csv": "8aa8e46a0ff5c2a29acaa0014efbbbcfef34a31f66b5dee692eb6ce46c26c244",
+    "systematic_brier.csv": "1378b7bd8782da0cc9a9ecd83fbf25f4764c7b6d5f2ae0203758a851d3e6a210",
+    "turn_descriptors.csv": "44d7cc041197cf0984848863ad220ba50637adf1e33846901860a62a53eab0d7"
+  }
+}

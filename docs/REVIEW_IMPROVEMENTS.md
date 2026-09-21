@@ -46,41 +46,35 @@ error. The clearest evidence of harmful volatility comes from correctness
 transitions and challenges that keep the case fixed. Keep that distinction in
 the Results interpretation without adding a limitations paragraph to each result.
 
-## Pending improvements without model calls
+## Completed improvements without model calls
 
-1. **Add a compact Brier-score sensitivity table.** Convert each valid stored
-   violation score to `p = score / 100` and compute `(p - label)^2`. Use the
-   published score means for fixed-input experiments and individual turn scores
-   for dialogues. Keep the main paired cohorts where valid scores permit;
-   otherwise report the paired valid-score count and missing outputs separately.
-   Retain scores in the abstention band. Compare before/after error and the cue
-   contrast with judgment-cluster intervals. Apply this to full-record/summary,
-   paraphrase and unchanged-case dialogues. Do not score jurisdiction-changing
-   State Swap arms against the original case label as if it were new ground
-   truth. Brier score measures probability-forecast error, not calibration alone;
-   a calibration claim would also need observed frequencies or decomposition.
-2. **Check the main contrast families.** Specify the families before the new
-   analysis, such as the six US shifts, the six pressure-by-mode interactions,
-   and the static/adaptive shared-case cue-gap contrasts. Use a suitable paired
-   test with Holm correction or simultaneous judgment-cluster intervals. Keep
-   pointwise intervals labeled as such and report any changed conclusions.
-   A single correction over every descriptive table would obscure which claim
-   is being tested.
-3. **Make existing evidence easier to locate.** Put one short static challenge
-   example and the role-prefix change beside the Section 5 protocol. In the
-   appendix, make the challenger validation/retry behavior explicit and give
-   a small source-review accounting paragraph using the existing registry.
-   The current code retries transport up to four attempts and adaptive assembly
-   up to three generations; unsuccessful assembly ends that trajectory. Do not
-   describe failure as a static fallback.
-4. **Add the closest related work concisely.** Prioritize SYCON-Bench for
-   multi-turn stance changes; consider ICE-Guard and TriBench-Ko in the existing
-   reliability paragraph. Replace less specific descriptions to preserve the
-   recently shortened Related Work. The verified records are listed below.
+1. **Continuous scores.** Added paired Brier errors for summary, three paraphrase
+   strengths, every dialogue turn and the shared-case cue comparison. Numeric
+   abstentions remain included; tables identify missing paired scores. The
+   original label is not reused as ground truth for jurisdiction-changing arms.
+2. **Multiple comparisons.** Fixed five contrast families before computation,
+   then obtained Bonferroni-adjusted judgment-cluster intervals from 20,000
+   draws. Pointwise intervals remain labeled separately.
+3. **Protocol visibility.** Added short static challenge examples, clarified
+   three assembly generations versus four transport attempts, and documented
+   failed trajectories and saved-message coverage. Expanded the existing
+   source-review accounting without claiming a measured zero-leakage rate.
+4. **Closest related work.** Incorporated SYCON-Bench, ICE-Guard and TriBench-Ko
+   into the existing paragraphs. All three have corresponding DBLP records and
+   verified publisher or arXiv metadata; the Related Work stays concise.
 
-The Brier-score and multiple-comparison tasks above are not yet completed.
-They should produce one short appendix table or concise prose, with only the
-supported takeaway in the main text. Additional main-text figures are not needed.
+The [completed analysis](../analysis/review_offline/REPORT.md) covers 32
+systematic comparisons, 36 model-mode-turn comparisons, 38 family-adjusted
+contrasts and the shared-case role effect. All twelve final conversational
+Brier changes are positive (0.114-0.544), including after correction. Summary
+and paraphrase changes are small and mixed in direction. Five of six US shifts
+retain adjusted intervals below zero; Claude's interval includes zero. All
+destination-order, pressure-interaction and shared-role-gap contrasts retain
+their direction. The manuscript adds one compact appendix table and a short
+main-text takeaway, without adding result figures. The
+[protocol](../analysis/review_followup/OFFLINE_PROTOCOL.md) was fixed before
+computation; [validation](../analysis/review_offline/validation.json) independently
+recomputes all systematic and dialogue point estimates from the saved scores.
 
 **Prompt availability has two parts.** The exact static templates and adaptive
 generation specification are already public in the
@@ -91,12 +85,13 @@ raw target replies in each trajectory record. Publish original logs if retained
 elsewhere; a newly generated dialogue cannot be presented as a historical one.
 Full message logging is already a requirement of the next API batch.
 
-**Turn-of-flip metrics are an optional appendix extension.** Existing analyses
-already report turn-specific reversal, first errors, recovery and persistence.
-First reversal and the number of adjacent verdict switches could be derived
-from the saved three-turn paths for comparison with SYCON-Bench. Define how
-abstentions and conversations with no reversal are handled; first error is not
-the same event as first reversal when an initial verdict is wrong.
+**Turn-of-flip descriptors are complete.** The new
+[source table](../analysis/review_offline/turn_descriptors.csv) reports first
+reversal at turn 1, 2 or 3, no reversal, adjacent decisive switches and any
+abstention for every model and mode. No reversal is not assigned a fictitious
+fourth turn. First error and first reversal remain distinct for initially
+incorrect answers. These descriptors complement the existing first-error,
+recovery and persistence analyses; their definitions are in the appendix.
 
 ## Direct manuscript fixes completed
 
@@ -170,9 +165,9 @@ stores titles, authors, publication metadata, URLs, HTTP status and checksums.
 
 | Work | Relevance and decision |
 | --- | --- |
-| [SYCON-Bench, Hong et al., Findings of EMNLP 2025](https://aclanthology.org/2025.findings-emnlp.121/) | Direct multi-turn antecedent measuring first conformity and stance switches. Prioritize a concise citation; our emphasis remains reference-outcome correctness and persistence on real cases. |
-| [ICE-Guard, Basu and Chakraborty, 2026](https://arxiv.org/abs/2603.18530) | Close connection to demographic, authority and framing interventions. Cite for context rather than importing its mitigation pipeline. |
-| [TriBench-Ko, Lee et al., 2026](https://arxiv.org/abs/2605.03792) | Judicial workflow risks across several tasks. Useful context for the reliability paragraph; it does not replace the renewable case construction or conversational study. |
+| [SYCON-Bench, Hong et al., Findings of EMNLP 2025](https://aclanthology.org/2025.findings-emnlp.121/) | Added: direct multi-turn antecedent measuring first conformity and stance switches; our emphasis remains reference-outcome correctness and persistence on real cases. |
+| [ICE-Guard, Basu and Chakraborty, 2026](https://arxiv.org/abs/2603.18530) | Added for demographic, authority and framing sensitivity; no mitigation pipeline is imported. |
+| [TriBench-Ko, Lee et al., 2026](https://arxiv.org/abs/2605.03792) | Added for judicial workflow risks across several tasks; it does not replace the renewable case construction or conversational study. |
 | [Pressure-Tune, Zhang et al., 2025](https://arxiv.org/abs/2508.13743) | Fine-tuning on adversarial scientific-QA dialogues. Real but less central to this benchmark paper; a training experiment is not required. |
 | [Relevance paraphrasing, Askari et al., 2025](https://arxiv.org/abs/2406.03993) | Studies robustness of summary generation to paraphrased source passages. Our outcome is downstream judgment under changed input, so the tasks should not be equated. |
 | [Proper-score decomposition, Broecker](https://arxiv.org/abs/0806.0813) | Supports the distinction between probability-score error and calibration alone when designing the Brier analysis. |

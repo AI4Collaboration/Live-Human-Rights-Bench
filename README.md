@@ -57,11 +57,15 @@ three-turn nationality-only comparison.
 
 The [review assessment](docs/REVIEW_IMPROVEMENTS.md) distinguishes useful
 additions, existing evidence and suggestions that do not fit the paper's claims.
-The latest review adds three pending offline tasks: paired Brier-score changes,
-multiple-comparison checks for the main contrast families, and a compact
-presentation of the existing prompt and source-review evidence. Suggested
-literature has been checked against publisher or arXiv records. These tasks
-are planned, not completed analyses.
+The [offline review analyses](analysis/review_offline/REPORT.md) are complete:
+paired Brier-score changes, five multiple-comparison families, cue contrasts,
+and first-reversal/switch counts. Final conversational Brier error rises by
+0.114-0.544 across all twelve model-mode combinations, with every adjusted
+interval above zero. Five of six US shifts remain negative after correction;
+all twelve comparisons with Russia and Ukraine retain that ordering. Prompt
+examples, retry/failure behavior and source-review accounting have been clarified
+in the manuscript, with three additional primary-source-verified references.
+The model-call queue above remains pending.
 Threshold sensitivity uses saved scores, not fresh model responses. Existing
 source-review evidence and older-model time-window analyses address different
 questions and remain separate.

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "raw_systematic_point_estimates_verified": 32,
+  "dialogue_point_estimates_verified": 36,
+  "output_checksums_verified": 7,
+  "input_hashes_rechecked": 27,
+  "multiplicity_family_sizes_verified": true,
+  "cohort_linkage_verified": true,
+  "turn_category_counts_verified": true,
+  "scope": "Raw stored means independently rescored in scalar arithmetic; dialogue means checked on the published cohorts. Bootstrap intervals use the documented analysis, not a separate resampling implementation."
+}
