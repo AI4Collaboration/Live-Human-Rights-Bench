@@ -54,7 +54,9 @@ records for the current release. The current result directories are
 `data/experiments/syco_full_latest/` and `data/experiments/stateswap_summary/`.
 Current extensions add `data/experiments/unified_fullcase_oldmodels/`,
 `data/experiments/paraphrase_oldmodels/`, `data/experiments/stateswap_oldmodels/`
-and the separate one-turn `data/experiments/syco_nationality/` protocol. Their
+and the separate one-turn `data/experiments/syco_nationality/` protocol. The
+Türkiye follow-up adds `data/experiments/stateswap_summary_turkey/`, with
+12,000 records and an [offline input/response audit](../analysis/stateswap_turkey/REPORT.md). Their
 [inventory and matched analysis](../analysis/model_time_windows/REPORT.md)
 record valid scores and protocol identities.
 

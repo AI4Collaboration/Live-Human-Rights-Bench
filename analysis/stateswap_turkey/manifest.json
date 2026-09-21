@@ -1,0 +1,126 @@
+{
+  "source_revision": "b35f6ca1b97017175fab7d9862d29a057529ec2f",
+  "new_model_calls": 0,
+  "models": [
+    "openai/gpt-4o-mini",
+    "openai/gpt-4.1-mini",
+    "openai/gpt-5.6-sol"
+  ],
+  "arms": [
+    "Turkey",
+    "Russia",
+    "Ukraine"
+  ],
+  "targets": 1000,
+  "judgments": 947,
+  "records": 12000,
+  "requested_ratings": 120000,
+  "parsed_ratings": 120000,
+  "common_targets": 785,
+  "common_judgments": 742,
+  "destination_substitution_counts": {
+    "Turkey": 983,
+    "Russia": 966,
+    "Ukraine": 832
+  },
+  "changed_text_counts": {
+    "Turkey": 992,
+    "Russia": 973,
+    "Ukraine": 832
+  },
+  "identity": {
+    "dataset_id": "echr-unified-atomic-targets-20260916",
+    "targets": 1000,
+    "judgments": 947,
+    "target_unit": "one judgment, one respondent State, one provision, one sub-conclusion",
+    "target_keys": "Verified against every canonical v1.0 target; see cohort.csv.",
+    "summaries": {
+      "dataset_id": "echr-unified-atomic-targets-20260916",
+      "summarizer": "deepseek/deepseek-v4.1-flash",
+      "mode": "abstractive",
+      "versions": 1,
+      "judgments": 947
+    }
+  },
+  "bootstrap": {
+    "seed": 731,
+    "pointwise_draws": 2000,
+    "family_draws": 20000,
+    "cluster": "judgment",
+    "estimand": "target-weighted mean"
+  },
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "experiments/stateswap_summary_run.py": {
+      "sha256_git_bytes": "998467a3e5d889f345c068e3adc37a26344bd35adeb0ca28aeff71e01ecd925c",
+      "sha256_lf": "998467a3e5d889f345c068e3adc37a26344bd35adeb0ca28aeff71e01ecd925c",
+      "bytes": 11585
+    },
+    "experiments/scoring.py": {
+      "sha256_git_bytes": "39c64b09d54877bfa828f51261ccb2c6893b7632f2f91ea2172857354648825d",
+      "sha256_lf": "39c64b09d54877bfa828f51261ccb2c6893b7632f2f91ea2172857354648825d",
+      "bytes": 4839
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4o-mini/run_config.json": {
+      "sha256_git_bytes": "6c8196cd80be57fdaac98fd9ef77af2ca3e7b22ab3416025733f286a1caf3766",
+      "sha256_lf": "6c8196cd80be57fdaac98fd9ef77af2ca3e7b22ab3416025733f286a1caf3766",
+      "bytes": 4700
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4o-mini/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4o-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "58dd34840bea6315757070347a6c6f0734108001888eae3b3e53b640c0ca30b4",
+      "sha256_lf": "58dd34840bea6315757070347a6c6f0734108001888eae3b3e53b640c0ca30b4",
+      "bytes": 2043401
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4.1-mini/run_config.json": {
+      "sha256_git_bytes": "3df93d77bd2ebedb8de5dffb21cef97f447237693e6ceabe10c14ca711051593",
+      "sha256_lf": "3df93d77bd2ebedb8de5dffb21cef97f447237693e6ceabe10c14ca711051593",
+      "bytes": 4701
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4.1-mini/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-4.1-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "84cfa077aaf2f636f0a90a9f305be02b98b826b175d6c515c891ac40e8626c23",
+      "sha256_lf": "84cfa077aaf2f636f0a90a9f305be02b98b826b175d6c515c891ac40e8626c23",
+      "bytes": 2043037
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-5.6-sol/run_config.json": {
+      "sha256_git_bytes": "28a96739de55116648a75f6252bc4137ec6a7b5163506e22c6ad0bbfcfc449a5",
+      "sha256_lf": "28a96739de55116648a75f6252bc4137ec6a7b5163506e22c6ad0bbfcfc449a5",
+      "bytes": 4700
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-5.6-sol/input_identity.json": {
+      "sha256_git_bytes": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_summary_turkey/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "d92f1f8a2a4355500e77129859dfc9eac997025778e5f0772acd60298ccdd3d1",
+      "sha256_lf": "d92f1f8a2a4355500e77129859dfc9eac997025778e5f0772acd60298ccdd3d1",
+      "bytes": 2035728
+    }
+  },
+  "output_sha256_lf": {
+    "source_data.csv": "e09629d12239c519994b2ca704d8483a8827426a082e19a58a7782434a28cc4d",
+    "model_contrasts.csv": "a7d07cf9f37eb80a7cd17539842897bc5501bf572b16c135e1b0988cac6e9ce2",
+    "response_checks.csv": "708e012d36d9d121daa3cde99e65ac6adf43d26ebf0457f9a3d33b675a0b8e51",
+    "cohort.csv": "f68c5b857d87988db76bdcd51997c56490aa1dbf2d0008dcc10d888d1ed58288",
+    "REPORT.md": "df235acc15360b91bde7bdab666739ea2131f18c466d65491ef1a50d9e63e348"
+  }
+}

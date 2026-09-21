@@ -1,6 +1,6 @@
 # Summary-based State Swap
 
-The current experiment and country matching were updated in
+The original six-model experiment and country matching were updated in
 [`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
 Its six model checkpoints are in
 [`data/experiments/stateswap_summary/`](../data/experiments/stateswap_summary/).
@@ -11,7 +11,7 @@ Russia and Ukraine. These records cover the canonical 1,000 targets from
 ## Inputs and transformation
 
 The runner selects the same reviewed abstractive summary as the summary and
-persuasion experiments. It replaces respondent-country names, aliases and
+adversarial opinion experiments. It replaces respondent-country names, aliases and
 demonyms with the destination country's name and demonym, using case-insensitive
 matching. No generation model
 is used. The original summary is the matched reference. The case cohort,
@@ -29,7 +29,7 @@ All counts use 1,000 targets per destination. Seven Russia-arm changes only
 normalize the name of the original Russian respondent. The manuscript therefore
 uses **800 targets from 757 judgments** with a different respondent and changed
 summary text in every destination arm, and valid score means in all four arms
-of all six models. This common cohort supports every model/destination contrast.
+of all six models. This common cohort supports every original six-model/destination contrast.
 The text-change-only intersection has 807 targets and serves as a sensitivity
 cohort. The source transformation includes aliases such as Moldova, Czech
 Republic, UK, Netherlands and Bosnia.
@@ -49,6 +49,26 @@ The published rows store aggregate results. The manuscript thresholds the saved
 means. Current code uses the shared answer parser and the updated country alias
 mapping; new runs save individual ratings and raw responses as well.
 
+## Türkiye follow-up
+
+The [21 September release](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/b35f6ca1b97017175fab7d9862d29a057529ec2f)
+adds original, Türkiye, Russia and Ukraine arms for GPT-4o mini, GPT-4.1 mini
+and GPT-5.6-sol in `data/experiments/stateswap_summary_turkey/`. The three runs
+share the v1.0 input hashes, summaries and scoring settings. All 12,000 records
+have ten parsed ratings; their raw responses, parse histories, stored means and
+transformation flags pass the [offline audit](../analysis/stateswap_turkey/REPORT.md).
+
+Actual respondent substitutions number 983 for Türkiye, 966 for Russia and 832
+for Ukraine. The common comparison uses **785 targets from 742 judgments**,
+excluding original respondents equal to any destination and requiring changed
+text in all three arms. The 15-target difference from the US cohort consists
+of original Türkiye cases, not missing scores.
+
+Russia and Ukraine shifts are positive for both earlier GPT mini models and
+negative for GPT-5.6-sol, including after correction across nine effects.
+The follow-up replaces the US arm; it does not implement the separately planned
+UK/France control with its explicitly fixed Convention framework.
+
 ## New runs
 
 [`experiments/stateswap_summary_run.py`](../experiments/stateswap_summary_run.py)
@@ -56,7 +76,7 @@ validates the canonical inputs and binds checkpoints to the inputs and settings.
 New rows additionally save `text_changed`, individual `ratings`, raw `responses`,
 all parse `response_attempts` and `parse_retry_count`. The run identity records
 the country aliases and demonyms along with model, prompt and input hashes.
-Use a fresh output directory:
+Select `--targets us` (default) or `--targets turkey`; use a fresh output directory:
 
 ```bash
 python experiments/stateswap_summary_run.py \

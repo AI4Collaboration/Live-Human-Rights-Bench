@@ -4,6 +4,12 @@
 
 **Plan audited 21 September 2026 against the published results and runners.
 The follow-up API experiments below remain pending.**
+
+**New results incorporated:** the [Türkiye State Swap follow-up](analysis/stateswap_turkey/REPORT.md)
+is complete for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol: 12,000 records and
+120,000 parsed ratings. It adds a destination comparison; the UK/France control
+with an explicitly fixed Convention framework below remains conditional.
+
 Prioritize the role-cue finding and conversational sampling variability. Use
 Claude Opus 4.6 and GPT-5.6-sol, exact saved initial responses, and a locked
 100-case subset of the shared 349-case cohort. Existing conditions below are
@@ -168,6 +174,7 @@ available as [JSON](configs/data_source_status.json).
 | Extractive summaries | One source-extractive control for each of the 947 judgments | [Released artifact](data/processed/summaries_extractive_leakchecked_20260916.json) |
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
 | Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
+| Türkiye State Swap follow-up | GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol; original, Türkiye, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_turkey/REPORT.md) |
 | Earlier-model extension | GPT-4o mini and GPT-4.1 mini; 20,000 full-record, summary, paraphrase and State Swap records, all with ten parsed ratings | [Inventory and analysis](analysis/model_time_windows/REPORT.md) |
 | One-turn nationality extension | Both earlier models; 2,000 initial records; three-arm matched cohorts of 916 and 63 targets for GPT-4.1 mini and GPT-4o mini | [Coverage](analysis/model_time_windows/nationality_coverage.csv) |
 
@@ -328,7 +335,16 @@ the previous Hub State Swap release remains **deprecated**.
 The current transformation produces actual respondent substitutions with changed
 text for 998 US, 966 Russia and 832 Ukraine targets. The common manuscript cohort
 contains 800 targets from 757 judgments. All 24,000 published rows have a valid
-score mean. See the [State Swap protocol and input review](docs/STATESWAP.md).
+score mean.
+
+The [Türkiye follow-up](analysis/stateswap_turkey/REPORT.md) adds GPT-4o mini,
+GPT-4.1 mini and GPT-5.6-sol on 785 common targets from 742 judgments. Russia
+and Ukraine substitutions raise mean violation likelihood for the two earlier
+models (+0.7 to +1.5 points), but lower it for GPT-5.6-sol (-1.0 to -1.4).
+These directions persist after correction across nine model-destination effects.
+All 120,000 requested ratings parse. This run has its own original arms and
+cohort; its rows are not pooled with the original US comparison. See the
+[State Swap protocol and input review](docs/STATESWAP.md).
 
 ## Scoring and manuscript analysis
 

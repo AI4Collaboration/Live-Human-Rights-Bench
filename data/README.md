@@ -26,5 +26,9 @@ Current results are in `experiments/unified_fullcase_latest/`,
 Protocols and analysis cohorts are in the [README](../README.md#experiments).
 
 The generated `processed/paraphrase_pairs.json` inputs await publication.
-The updated `processed/echr_stateswap.json` input, review evidence and results
-also await publication.
+Summary-based State Swap results are released in `experiments/stateswap_summary/`
+and `experiments/stateswap_summary_turkey/`. Their transformed inputs are
+reconstructed from the canonical summaries and published replacement rule;
+`processed/echr_stateswap.json` is not an input to these experiments. The
+[Türkiye audit](../analysis/stateswap_turkey/REPORT.md) verifies all 12,000 new
+records and their shared 785-target comparison.
