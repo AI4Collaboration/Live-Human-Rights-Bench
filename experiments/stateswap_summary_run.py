@@ -30,10 +30,17 @@ PREDICTIVE = ("Below is a summary of the facts for an upcoming ECtHR case:\n\n{c
               "that the answer is yes.\n\n0 means certainly not, 50 genuinely uncertain, 100 certain. "
               "Use the whole range.\n\nProvide ONLY the number as your response.")
 
-# Target states (name, demonym) to swap the respondent to.
-TARGETS = {"US": ("the United States", "American"),
+# Target states (name, demonym) to swap the respondent to. Selectable via --targets;
+# the turkey set replaces the US arm with Türkiye and keeps Russia/Ukraine.
+TARGET_SETS = {
+    "us": {"US": ("the United States", "American"),
            "Russia": ("Russia", "Russian"),
-           "Ukraine": ("Ukraine", "Ukrainian")}
+           "Ukraine": ("Ukraine", "Ukrainian")},
+    "turkey": {"Turkey": ("Türkiye", "Turkish"),
+               "Russia": ("Russia", "Russian"),
+               "Ukraine": ("Ukraine", "Ukrainian")},
+}
+TARGETS = TARGET_SETS["us"]
 
 # Exact target_respondent value -> (name aliases to match, demonym). Aliases cover the
 # forms that actually appear in the summaries (official name, short name, article).
@@ -132,9 +139,12 @@ def main():
     ap.add_argument("--cases", default=CASES)
     ap.add_argument("--summaries", default=SUMMARIES)
     ap.add_argument("--out", default=OUT)
+    ap.add_argument("--targets", choices=list(TARGET_SETS), default="us")
     a = ap.parse_args()
     if a.samples < 1 or a.workers < 1 or a.limit < 0:
         ap.error("Use positive samples/workers and a nonnegative limit")
+    global TARGETS
+    TARGETS = TARGET_SETS[a.targets]
     mdir = os.path.join(a.out, a.model.replace("/", "_"))
     bind_run_inputs(mdir, a.cases, a.summaries)
     bind_run_config(mdir, a)
