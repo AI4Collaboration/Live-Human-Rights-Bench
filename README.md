@@ -2,13 +2,16 @@
 
 ## Next API experiments
 
-**Plan audited 21 September 2026 against the published results and runners.
+**Plan audited 22 September 2026 against the published results and runners.
 The follow-up API experiments below remain pending.**
 
-**New results incorporated:** the [Türkiye State Swap follow-up](analysis/stateswap_turkey/REPORT.md)
-is complete for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol: 12,000 records and
-120,000 parsed ratings. It adds a destination comparison; the UK/France control
-with an explicitly fixed Convention framework below remains conditional.
+**New results incorporated:** the [Türkiye](analysis/stateswap_turkey/REPORT.md)
+and [UK](analysis/stateswap_uk/REPORT.md) State Swap follow-ups are complete for
+GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. Together they contain 24,000 records
+and 240,000 parsed ratings. The [combined comparison](analysis/stateswap_followups/REPORT.md)
+retains all eighteen effects on 768 shared targets and displays repeated
+destinations separately. The ordinary UK destination run is complete; the
+UK/France control with an explicitly fixed Convention framework below remains conditional.
 
 Prioritize the role-cue finding and conversational sampling variability. Use
 Claude Opus 4.6 and GPT-5.6-sol, exact saved initial responses, and a locked
@@ -175,6 +178,8 @@ available as [JSON](configs/data_source_status.json).
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
 | Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
 | Türkiye State Swap follow-up | GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol; original, Türkiye, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_turkey/REPORT.md) |
+| UK State Swap follow-up | The same three GPT models; original, UK, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_uk/REPORT.md) |
+| Both State Swap follow-ups | All eighteen effects on 768 shared targets from 725 judgments; each run retains its own original arm | [Combined comparison](analysis/stateswap_followups/REPORT.md) |
 | Earlier-model extension | GPT-4o mini and GPT-4.1 mini; 20,000 full-record, summary, paraphrase and State Swap records, all with ten parsed ratings | [Inventory and analysis](analysis/model_time_windows/REPORT.md) |
 | One-turn nationality extension | Both earlier models; 2,000 initial records; three-arm matched cohorts of 916 and 63 targets for GPT-4.1 mini and GPT-4o mini | [Coverage](analysis/model_time_windows/nationality_coverage.csv) |
 
@@ -345,6 +350,16 @@ These directions persist after correction across nine model-destination effects.
 All 120,000 requested ratings parse. This run has its own original arms and
 cohort; its rows are not pooled with the original US comparison. See the
 [State Swap protocol and input review](docs/STATESWAP.md).
+
+The [UK follow-up](analysis/stateswap_uk/REPORT.md) adds another 12,000 records
+with 120,000 parsed ratings. UK substitution lowers violation likelihood in
+all three models. Both follow-ups are retained in the
+[combined analysis](analysis/stateswap_followups/REPORT.md): on the same 768
+targets, the UK shifts are -1.3, -3.1 and -2.0 points for GPT-4o mini,
+GPT-4.1 mini and GPT-5.6-sol. These directions persist after correction across
+all eighteen effects. Russia and Ukraine raise scores in both mini models in
+both runs. Each effect uses the original arm collected in that run; repeated
+conditions are not pooled across runs.
 
 ## Scoring and manuscript analysis
 

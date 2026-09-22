@@ -69,6 +69,32 @@ negative for GPT-5.6-sol, including after correction across nine effects.
 The follow-up replaces the US arm; it does not implement the separately planned
 UK/France control with its explicitly fixed Convention framework.
 
+## UK follow-up and combined comparison
+
+Revision `05b96bf` adds original, UK, Russia and Ukraine arms for GPT-4o mini,
+GPT-4.1 mini and GPT-5.6-sol. All 12,000 records and 120,000 final ratings pass
+the [offline audit](../analysis/stateswap_uk/REPORT.md). The run uses the same
+v1.0 input hashes and scoring prompt as the Türkiye follow-up. The UK
+replacement is `the United Kingdom` / `British`.
+
+Actual substitutions affect 981 UK targets. Requiring substitutions under UK,
+Russia and Ukraine leaves 783 targets from 740 judgments. On this cohort,
+UK substitution lowers mean violation likelihood by 1.32, 3.06 and 2.01
+points for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. All three effects remain
+negative after correction across nine comparisons.
+
+The manuscript's [combined follow-up comparison](../analysis/stateswap_followups/REPORT.md)
+retains all eighteen effects from both runs. It uses 768 targets from 725
+judgments with actual substitutions in all four destination countries. Each
+effect uses its run's own original arm. The repeated Russia and Ukraine
+conditions remain separate. Pointwise intervals use 2,000 judgment-cluster
+bootstrap draws; the joint eighteen-effect family uses 20,000 draws. The
+original US comparison and the individual follow-up cohorts remain available.
+
+The UK run adds a destination under the existing prompt. The separately
+proposed UK/France experiment explicitly fixes Convention applicability and
+remains conditional; the ordinary UK grid is complete.
+
 ## New runs
 
 [`experiments/stateswap_summary_run.py`](../experiments/stateswap_summary_run.py)
@@ -76,7 +102,7 @@ validates the canonical inputs and binds checkpoints to the inputs and settings.
 New rows additionally save `text_changed`, individual `ratings`, raw `responses`,
 all parse `response_attempts` and `parse_retry_count`. The run identity records
 the country aliases and demonyms along with model, prompt and input hashes.
-Select `--targets us` (default) or `--targets turkey`; use a fresh output directory:
+Select `--targets us` (default), `--targets turkey` or `--targets uk`; use a fresh output directory:
 
 ```bash
 python experiments/stateswap_summary_run.py \

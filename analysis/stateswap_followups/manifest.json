@@ -1,0 +1,33 @@
+{
+  "source_revisions": {
+    "turkey": "b35f6ca1b97017175fab7d9862d29a057529ec2f",
+    "uk": "05b96bf53698e503f18f25bd44c3a66f47b67d20"
+  },
+  "new_model_calls": 0,
+  "models": [
+    "openai/gpt-4o-mini",
+    "openai/gpt-4.1-mini",
+    "openai/gpt-5.6-sol"
+  ],
+  "destinations": [
+    "UK",
+    "Turkey",
+    "Russia",
+    "Ukraine"
+  ],
+  "comparisons": 18,
+  "common_targets": 768,
+  "common_judgments": 725,
+  "aggregation": "Each effect uses the original arm of its own run. Repeated destinations are displayed separately.",
+  "bootstrap": {
+    "seed": 731,
+    "pointwise_draws": 2000,
+    "family_draws": 20000,
+    "cluster": "judgment",
+    "estimand": "target-weighted mean"
+  },
+  "source_audits": [
+    "analysis/stateswap_turkey/manifest.json",
+    "analysis/stateswap_uk/manifest.json"
+  ]
+}

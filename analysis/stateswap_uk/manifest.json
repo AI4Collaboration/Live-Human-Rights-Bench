@@ -1,0 +1,100 @@
+{
+  "source_revision": "05b96bf53698e503f18f25bd44c3a66f47b67d20",
+  "new_model_calls": 0,
+  "models": [
+    "openai/gpt-4o-mini",
+    "openai/gpt-4.1-mini",
+    "openai/gpt-5.6-sol"
+  ],
+  "arms": [
+    "UK",
+    "Russia",
+    "Ukraine"
+  ],
+  "targets": 1000,
+  "judgments": 947,
+  "records": 12000,
+  "parsed_ratings": 120000,
+  "common_targets": 783,
+  "common_judgments": 740,
+  "convention_articles_targets": 675,
+  "convention_articles_judgments": 641,
+  "destination_substitution_counts": {
+    "UK": 981,
+    "Russia": 966,
+    "Ukraine": 832
+  },
+  "changed_text_counts": {
+    "UK": 996,
+    "Russia": 973,
+    "Ukraine": 832
+  },
+  "bootstrap": {
+    "seed": 731,
+    "pointwise_draws": 2000,
+    "family_draws": 20000,
+    "cluster": "judgment",
+    "estimand": "target-weighted mean"
+  },
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "experiments/stateswap_summary_run.py": {
+      "sha256_git_bytes": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f",
+      "sha256_lf": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f",
+      "bytes": 11730
+    },
+    "experiments/scoring.py": {
+      "sha256_git_bytes": "39c64b09d54877bfa828f51261ccb2c6893b7632f2f91ea2172857354648825d",
+      "sha256_lf": "39c64b09d54877bfa828f51261ccb2c6893b7632f2f91ea2172857354648825d",
+      "bytes": 4839
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-4o-mini/run_config.json": {
+      "sha256_git_bytes": "e3fd5831b6ebe220d918c8ee240e9c9283d196ce9fc8f76896f9f3991da436af",
+      "sha256_lf": "e3fd5831b6ebe220d918c8ee240e9c9283d196ce9fc8f76896f9f3991da436af",
+      "bytes": 4702
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-4o-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "37dfbeeebbf729ca0c9dd8a56a3fb96a77737193821fc908f7c71bf0f45ba398",
+      "sha256_lf": "37dfbeeebbf729ca0c9dd8a56a3fb96a77737193821fc908f7c71bf0f45ba398",
+      "bytes": 2035424
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-4.1-mini/run_config.json": {
+      "sha256_git_bytes": "e237ff4310fb79993bcb33e6515572b31ba45aa45555150295ac59032de48044",
+      "sha256_lf": "e237ff4310fb79993bcb33e6515572b31ba45aa45555150295ac59032de48044",
+      "bytes": 4703
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-4.1-mini/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "66e818502c983668ace35fdb6bf0cc49817148803ce3c16ab14e1d576f2a07a9",
+      "sha256_lf": "66e818502c983668ace35fdb6bf0cc49817148803ce3c16ab14e1d576f2a07a9",
+      "bytes": 2035164
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-5.6-sol/run_config.json": {
+      "sha256_git_bytes": "1bc686ab860c3cae3d59336b97c56cd9026fc66978edba20c9b9c6f5bb41c232",
+      "sha256_lf": "1bc686ab860c3cae3d59336b97c56cd9026fc66978edba20c9b9c6f5bb41c232",
+      "bytes": 4702
+    },
+    "data/experiments/stateswap_summary_uk/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "sha256_git_bytes": "1747ef0c60afe2b7c3d258a1f152af2e327005727521bb29377027a15724f68a",
+      "sha256_lf": "1747ef0c60afe2b7c3d258a1f152af2e327005727521bb29377027a15724f68a",
+      "bytes": 2026312
+    }
+  },
+  "output_sha256_lf": {
+    "source_data.csv": "f6a6d2fc7cf5c1461812591bf8aa74284924f44d8a9693b3dae6c9cded650ea2",
+    "destination_contrasts.csv": "aaa5fd4856963061c99adb2f5aa428f8db7d9fafd5c77819188a6ab97338c1b6",
+    "model_contrasts.csv": "4769c96e6c7a6d1d6b04d155dfffb151ca5ad348f04f82e9ca487cc5cd8a3704",
+    "response_checks.csv": "f1116e7bc7be0cd403f6e7b47eec2a7e8dcbd9d148825da15b92e582445fede7",
+    "convention_articles_sensitivity.csv": "d89df227672a3f0eb5888a0eb364cdc7d20c6cf106fcc65d9829f56da0111e7c",
+    "cohort.csv": "e2076ee8551e73bb066dbe5b261d763bbe5f804986aaf545c46f8708742f60b4",
+    "REPORT.md": "78c80e60f1eabccb3f8630fb9277c3bd030d3739a08380b977265c5f9e70466e"
+  }
+}

@@ -174,11 +174,12 @@ state.
 
 ### State Swap with the legal framework held fixed
 
-The published [Türkiye follow-up](../analysis/stateswap_turkey/REPORT.md) is complete
-for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. It adds original/Türkiye/Russia/Ukraine
-arms with the existing prompt. The UK/France experiment below remains a separate,
-conditional control with an explicitly fixed framework; do not rerun the completed
-Türkiye grid as a pending experiment.
+The published [Türkiye](../analysis/stateswap_turkey/REPORT.md) and
+[UK](../analysis/stateswap_uk/REPORT.md) follow-ups are complete for GPT-4o mini,
+GPT-4.1 mini and GPT-5.6-sol. Each adds its destination alongside original,
+Russia and Ukraine arms with the existing prompt. The UK/France experiment
+below remains a separate conditional control with an explicitly fixed framework.
+Do not rerun either completed grid as a pending experiment.
 
 The existing experiment measures respondent substitution, including jurisdiction.
 A fixed-jurisdiction control becomes necessary for an identity-only claim.
