@@ -5,6 +5,7 @@ revision `340ef57` and manuscript revision `4a76cfe`.
 The review identifies useful controls for the role-cue result and conversational
 sampling. Its suggestions vary in relevance; they are not all missing experiments.
 The [merged API plan](NEXT_EXPERIMENTS.md) is summarized at the top of the README.
+The experiment scope below was updated on 22 September 2026.
 No API experiments or new human annotation were performed for this revision.
 
 ## Highest-value additions
@@ -12,24 +13,23 @@ No API experiments or new human annotation were performed for this revision.
 | Issue | Assessment | Action |
 | --- | --- | --- |
 | AI researcher versus AI safety researcher | Directly tests the distinctive wording in the headline finding | First API batch, with concurrent no-cue and AI-safety references |
-| Single conversation per condition | Existing judgment bootstrap measures variation across cases, not repeated conversations | Five static trajectories on 50 locked cases; adaptive replication is a separately budgeted next step |
-| Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Add three static trajectories per reference cue/model on the same 50 cases at temperature 0, compared with three concurrent temperature-1.0 trajectories |
+| Single conversation per condition | Existing judgment bootstrap measures variation across cases, not repeated conversations | Budget full-cohort reference repetitions separately after the core batch |
+| Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Define coverage after the core results and preserve the saved initial replies |
 | Neutral reassessment | Existing disagreement already supplies an opposing verdict | Add the planned neutral branch to the same static batch |
+| Placebo prefix | A first-person line may affect responses without claimed expertise | Add the neutral six-word prefix alongside both researcher cues and no cue |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
 | Continuous probability-score accuracy | Complements the threshold checks without assigning every uncertain score a full classification error | Completed [paired Brier-score analysis](../analysis/review_offline/REPORT.md) from saved scores; reported in Section 5 and Appendix C |
 | Multiple comparisons | Simultaneous intervals distinguish family-level from pointwise support | Completed [five-family sensitivity analysis](../analysis/review_offline/REPORT.md), with effect sizes retained; Appendix C describes the procedure |
 | Conversation protocol visibility | State the settings and distinguish averaged fixed-input scores from individual dialogue turns | Implemented in Section 5 and Appendices C/E: temperature, response budgets, challenge length and trajectory handling |
 | Close multi-turn prior work | TRUTH DECAY and SYCON-Bench are direct antecedents | Included in Related Work; the comparison focuses on judgment correctness and persistence under input changes and adversarial opinions |
 
-The recommended static API package costs **4,800 target responses**. It combines
-four contemporaneous conditions on 100 cases and four additional repetitions
-of the two headline references on a nested 50 cases. Adaptive replication adds
-3,000 target responses and 3,000 challenger generations. The targeted
-low-temperature comparison adds 1,800 target responses, making the static
-package 6,600 or the package with both extensions 9,600 target responses
-plus 3,000 challenger generations. Existing roles remain
-references; generic researcher, judge and nationality stay in the merged plan.
-Nationality is not crossed with professional roles.
+The first static batch uses GPT-5.6-sol and Claude Opus 4.6 on all eligible
+saved initial replies from v1.0. Five conditions cost **28,440 target replies**
+across 918 Claude targets and 978 GPT targets. Four additional repetitions
+of both reference conditions would add **45,504** replies and require a
+separate budget decision. Nationality-only cues and broader input extensions
+are deferred to future work. AI researcher is the only new professional role
+in the core plan. Nationality is not crossed with professional roles.
 
 ## Contribution and evidence priorities
 
