@@ -1,12 +1,20 @@
 # Next experiments
 
 Updated 22 September 2026 against the published results and runners.
-The first batch uses **GPT-5.6-sol and Claude Opus 4.6** with the full v1.0
-target inventory. Three experiments contain four new conditions for
-**22,752 target replies**. No cue and AI safety researcher are completed
+The first batch uses **GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash**
+with the full v1.0 target inventory. Three experiments contain four new conditions for
+**33,864 target replies**. No cue and AI safety researcher are completed
 references and are not scheduled for full-cohort reruns. There is no arbitrary
 case-sampling cap. This document is an execution plan; no model API calls have
 been made for it.
+
+DeepSeek V4 Flash is the lower-performing comparison. Its full-record accuracy
+is 70.1% against 74.7% for Claude Opus 4.6 and 83.5% for GPT-5.6-sol in the
+[published results](../analysis/model_time_windows/REPORT.md).
+It also has saved three-turn references under the same original protocol.
+Reuse `deepseek/deepseek-v4-flash`, which is listed on
+[OpenRouter](https://openrouter.ai/deepseek/deepseek-v4-flash) as V4 Flash 0423
+at the 22 September 2026 check. Record the served version with each new run.
 
 ## 1. Full-release coverage
 
@@ -18,6 +26,7 @@ score below 40 or above 60 and a saved reply that can be replayed.
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Claude Opus 4.6 | 1,000 | 918 | 717 | 201 | 82 | 0 |
 | GPT-5.6-sol | 1,000 | 978 | 824 | 154 | 0 | 22 |
+| DeepSeek V4 Flash | 1,000 | 926 | 684 | 242 | 46 | 28 |
 
 These counts were recomputed from `data/experiments/syco_full_latest/initial.jsonl`
 at commit `3db5624c6e5a94f39e689d637e6185d03f0e37af`. Its SHA-256 is
@@ -25,12 +34,13 @@ at commit `3db5624c6e5a94f39e689d637e6185d03f0e37af`. Its SHA-256 is
 The current GitHub version has the same hash. The machine-readable
 [coverage audit](CONTROL_COHORT.json) records the counts and overlap.
 
-Collect every new condition on all 918 and 978 eligible targets for the
-respective models. Comparisons with saved references use the valid shared
-targets reported in Section 2. Both models have decisive initial replies on 899
-shared targets; 779 have the same initial verdict. Use those common targets
-for secondary cross-model comparisons and report whether initial agreement
-is required. The historical 349-case analysis also required completed old
+Collect every new condition on all eligible targets in the table above.
+Comparisons with saved references use the valid shared targets reported in
+Section 2. All three models have decisive initial replies on 836 shared targets;
+677 have the same initial verdict. Claude and GPT alone share 899 decisive
+targets with the same initial verdict on 779. Use these intersections for
+secondary cross-model comparisons and specify the models and initial-agreement
+requirement. The historical 349-case analysis also required completed old
 trajectories. It does not limit the new experiment.
 
 Keep abstentions and invalid scores separate in coverage reporting. An
@@ -49,6 +59,7 @@ provision-consistency check as the published analyses:
 | --- | ---: | ---: | ---: |
 | Claude Opus 4.6 | 874 | 874 | 874 |
 | GPT-5.6-sol | 926 | 923 | 923 |
+| DeepSeek V4 Flash | 863 | 862 | 849 |
 
 The [coverage audit](CONTROL_COHORT.json) pins the saved sources and exclusions.
 Run new conditions on the full eligible initial cohort and take the valid
@@ -81,8 +92,8 @@ exact initial reply. Retain target temperature 1.0 and the 1,200-token
 allowance. Save model identifiers and returned versions with request dates
 and settings. Preserve source dates and protocol versions for the reused references.
 
-**Budget:** (918 + 978) targets across the two models × 2 conditions × 3 turns
-= **11,376 target replies**. Each condition contributes 5,688 replies.
+**Budget:** (918 + 978 + 926) targets across the three models × 2 conditions × 3 turns
+= **16,932 target replies**. Each condition contributes 8,466 replies.
 Static challenges require no challenger generations. Budgets exclude retries
 and reuse the saved initial judgments.
 
@@ -109,9 +120,9 @@ opposing challenge on turn one only. Preserve the high-pressure challenge and ou
 with the later two messages. Use the same saved initial replies and request
 settings as the two new conditions in Section 2.
 
-Use all 918 eligible Claude and 978 eligible GPT targets. These two conditions
-cost **11,376 target replies** for one static three-turn trajectory each.
-The combined four-condition first batch costs **22,752 replies** with no
+Use all 2,822 eligible model-target pairs across the three models. These two
+conditions cost **16,932 target replies** for one static three-turn trajectory each.
+The combined four-condition first batch costs **33,864 replies** with no
 challenger generations. Interleave all four new conditions during the same serving
 window and assign distinct condition IDs to the two framing branches.
 The unframed AI-researcher branch is new; unframed AI safety researcher is a
@@ -130,12 +141,13 @@ evaluation wording.
 
 Reference repetition is a separate budget decision. A later study could
 collect five fresh static trajectories for no cue and AI safety researcher
-on every eligible target. These are repeat measurements of completed conditions.
+on every eligible target across the three selected models. These are repeat
+measurements of completed conditions.
 The first batch contains no fresh trajectories for these two references.
 
-**Separate repetition budget:** 1,896 × 2 conditions × 5 repetitions × 3 turns
-= **56,880 target replies**. The four-condition first batch plus this study
-would cost **79,632**. There is no default 50-case repetition subset. Collect
+**Separate repetition budget:** 2,822 × 2 conditions × 5 repetitions × 3 turns
+= **84,660 target replies**. The four-condition first batch plus this study
+would cost **118,524**. There is no default 50-case repetition subset. Collect
 the fresh repetitions together and retain the historical trajectories as
 separate observations with their original dates.
 
@@ -170,8 +182,9 @@ Preserve the three-turn challenges and exact initial replies. Compare both
 conditions with no cue on the same targets within each model.
 
 On the present replay cohort both static nationality branches would add
-**11,376 target replies**. Use valid saved no-cue references for the historical
-comparison and compare the two new nationality branches directly. The
+**16,932 target replies** across the three selected models. Use valid saved
+no-cue references for the historical comparison and compare the two new
+nationality branches directly. The
 [older-model nationality release](../analysis/model_time_windows/REPORT.md)
 uses a lawyer cue and one turn. Its common three-arm samples contain 916
 GPT-4.1 mini and 63 GPT-4o mini targets and are analyzed separately.
@@ -182,7 +195,7 @@ A confirming challenge supports the model's initial answer. It measures
 response to agreement when compared with neutral and opposing challenges.
 Both sycophantic agreement and following the latest speaker predict retention
 under agreement, so this branch alone cannot distinguish those explanations.
-One static branch on the present cohort would add **5,688 target replies**.
+One static branch on the present cohort would add **8,466 target replies**.
 
 ### Input extensions
 
@@ -223,14 +236,14 @@ before execution. These experiments require no new human annotation.
 | Package | Target replies | Challenger generations |
 | --- | ---: | ---: |
 | Existing no-cue and AI-safety references | 0 new | 0 |
-| AI-researcher condition | 5,688 | 0 |
-| Neutral reassessment | 5,688 | 0 |
-| Two evaluation-framing conditions | 11,376 | 0 |
-| Scheduled four-condition first batch | 22,752 total | 0 |
-| Optional separate five-trajectory reference study | 56,880 | 0 |
-| First batch plus the optional reference study | 79,632 total | 0 |
-| Two nationality-only conditions | +11,376 | 0 |
-| Confirming challenge | +5,688 | 0 |
+| AI-researcher condition | 8,466 | 0 |
+| Neutral reassessment | 8,466 | 0 |
+| Two evaluation-framing conditions | 16,932 | 0 |
+| Scheduled four-condition first batch | 33,864 total | 0 |
+| Optional separate five-trajectory reference study | 84,660 | 0 |
+| First batch plus the optional reference study | 118,524 total | 0 |
+| Two nationality-only conditions | +16,932 | 0 |
+| Confirming challenge | +8,466 | 0 |
 
 The first-batch budget covers only the four new conditions. Saved references
 require no model calls. Any future reference replication is a separate budget

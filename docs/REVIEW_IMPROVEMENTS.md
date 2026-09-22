@@ -23,12 +23,13 @@ No API experiments or new human annotation were performed for this revision.
 | Conversation protocol visibility | State the settings and distinguish averaged fixed-input scores from individual dialogue turns | Implemented in Section 5 and Appendices C/E: temperature, response budgets, challenge length and trajectory handling |
 | Close multi-turn prior work | TRUTH DECAY and SYCON-Bench are direct antecedents | Included in Related Work; the comparison focuses on judgment correctness and persistence under input changes and adversarial opinions |
 
-The first static batch uses GPT-5.6-sol and Claude Opus 4.6 on all eligible
-saved initial replies from v1.0. The AI-researcher and neutral-reassessment
-conditions cost **11,376 target replies** across 918 Claude targets and 978 GPT
-targets. Two evaluation-framing conditions add **11,376** for a planned total
-of **22,752**. No cue and AI safety researcher are completed reference conditions.
-A separate five-trajectory reference study would cost **56,880** replies and
+The first static batch uses GPT-5.6-sol and Claude Opus 4.6 alongside the
+lower-performing DeepSeek V4 Flash. Their eligible saved initial replies
+number 978 for GPT and 918 for Claude plus 926 for DeepSeek.
+The AI-researcher and neutral-reassessment conditions cost **16,932 target replies**.
+Two evaluation-framing conditions add **16,932** for a planned total
+of **33,864**. No cue and AI safety researcher are completed reference conditions.
+A separate five-trajectory reference study would cost **84,660** replies and
 requires its own budget decision. Nationality-only cues and broader input extensions
 are deferred to future work. AI researcher is the only new professional role
 in the core plan. Nationality is not crossed with professional roles.

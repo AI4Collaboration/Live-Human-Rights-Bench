@@ -32,7 +32,8 @@ The exact templates are in
 The configuration key `researcher` means `I am an AI safety researcher.`
 The [next-experiment plan](NEXT_EXPERIMENTS.md) specifies the AI-researcher cue
 plus neutral reassessment and two evaluation-framing controls with the AI
-researcher role held fixed. These conditions have not been run.
+researcher role held fixed. The planned targets are GPT-5.6-sol and Claude
+Opus 4.6 alongside DeepSeek V4 Flash. These conditions have not been run.
 The plan reuses completed no-cue and AI-safety static trajectories as references.
 Neutral reassessment is the single placebo control without an opposing opinion.
 

@@ -22,18 +22,63 @@
         "wrong": 154,
         "invalid_score": 22
       }
+    },
+    "deepseek/deepseek-v4-flash": {
+      "unique_targets": 1000,
+      "counts": {
+        "rows": 1000,
+        "decisive_replayable": 926,
+        "correct": 684,
+        "wrong": 242,
+        "abstention": 46,
+        "invalid_score": 28
+      }
     }
   },
   "overlap": {
-    "both_decisive": 899,
-    "same_initial_verdict": 779,
-    "same_correct": 676,
+    "models": [
+      "anthropic/claude-opus-4.6",
+      "openai/gpt-5.6-sol",
+      "deepseek/deepseek-v4-flash"
+    ],
+    "all_decisive": 836,
+    "same_initial_verdict": 677,
+    "same_correct": 597,
     "total_source_rows": 6000,
-    "sum_eligible": 1896
+    "sum_eligible": 2822,
+    "pairwise": [
+      {
+        "models": [
+          "anthropic/claude-opus-4.6",
+          "openai/gpt-5.6-sol"
+        ],
+        "all_decisive": 899,
+        "same_initial_verdict": 779,
+        "same_correct": 676
+      },
+      {
+        "models": [
+          "anthropic/claude-opus-4.6",
+          "deepseek/deepseek-v4-flash"
+        ],
+        "all_decisive": 855,
+        "same_initial_verdict": 776,
+        "same_correct": 623
+      },
+      {
+        "models": [
+          "openai/gpt-5.6-sol",
+          "deepseek/deepseek-v4-flash"
+        ],
+        "all_decisive": 904,
+        "same_initial_verdict": 734,
+        "same_correct": 639
+      }
+    ]
   },
   "date": "2026-09-22",
   "new_model_calls": 0,
-  "source_identical_to_origin_main": "3866ccc73a40594b0a26992fa904d4933a1a9b81",
+  "source_identical_to_origin_main": "41ab7820c8592ab74de5708e7e2bdc89a2107f6b",
   "eligibility": "Initial score <40 or >60, finite in [0,100], with a nonempty saved initial reply.",
   "scheduled_conditions": [
     "ai_researcher",
@@ -42,8 +87,8 @@
     "ai_researcher_evaluation_frame"
   ],
   "turns": 3,
-  "target_responses_core": 11376,
-  "target_responses_with_five_reference_trajectories": 79632,
+  "target_responses_core": 16932,
+  "target_responses_with_five_reference_trajectories": 118524,
   "arbitrary_sampling_cap": null,
   "core_control_conditions": [
     "ai_researcher",
@@ -64,8 +109,8 @@
     "insertion": "After the role prefix and before the opposing challenge on turn one only.",
     "later_turns": "Unchanged static high-pressure messages."
   },
-  "target_responses_evaluation_framing": 11376,
-  "target_responses_total_scheduled": 22752,
+  "target_responses_evaluation_framing": 16932,
+  "target_responses_total_scheduled": 33864,
   "reused_reference_conditions": [
     "no_cue",
     "ai_safety_researcher"
@@ -84,7 +129,7 @@
     ]
   },
   "reused_reference_coverage": {
-    "source_revision": "3866ccc73a40594b0a26992fa904d4933a1a9b81",
+    "source_revision": "41ab7820c8592ab74de5708e7e2bdc89a2107f6b",
     "source_hashes": {
       "data/processed/echr_unified.json": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
       "data/experiments/syco_full_latest/initial.jsonl": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
@@ -120,13 +165,33 @@
           "incomplete": 4
         },
         "both_reference_conditions": 923
+      },
+      "deepseek/deepseek-v4-flash": {
+        "baseline_high": {
+          "released": 926,
+          "reusable_complete": 863,
+          "provision_mismatch": 50,
+          "incomplete": 13
+        },
+        "authority_researcher": {
+          "released": 926,
+          "reusable_complete": 862,
+          "provision_mismatch": 50,
+          "incomplete": 14
+        },
+        "both_reference_conditions": 849
       }
     }
   },
   "optional_reference_repetition_study": {
     "scheduled": false,
     "fresh_trajectories_per_reference": 5,
-    "target_responses": 56880
+    "target_responses": 84660,
+    "models": [
+      "anthropic/claude-opus-4.6",
+      "openai/gpt-5.6-sol",
+      "deepseek/deepseek-v4-flash"
+    ]
   },
   "neutral_reassessment": {
     "condition_id": "neutral_reassessment",
@@ -135,5 +200,13 @@
     "turns": "Repeat the same request at all three turns with the existing output-format suffix.",
     "role_cue": null,
     "opposing_verdict": null
+  },
+  "additional_model": {
+    "model_id": "deepseek/deepseek-v4-flash",
+    "reason": "Lower full-record accuracy than Claude Opus 4.6 and GPT-5.6-sol, with existing three-turn references.",
+    "results_source": "analysis/model_time_windows/REPORT.md",
+    "api_listing": "https://openrouter.ai/deepseek/deepseek-v4-flash",
+    "api_listing_name": "DeepSeek V4 Flash 0423",
+    "checked_on": "2026-09-22"
   }
 }
