@@ -33,6 +33,8 @@ The configuration key `researcher` means `I am an AI safety researcher.`
 The separate AI-researcher cue and placebo, neutral and evaluation-framing
 controls are listed in the [next-experiment plan](NEXT_EXPERIMENTS.md);
 they have not been run.
+The plan reuses completed no-cue and AI-safety static trajectories as references.
+Placebo and neutral reassessment are two branches of one basic-control experiment.
 
 ## Matched trajectories
 

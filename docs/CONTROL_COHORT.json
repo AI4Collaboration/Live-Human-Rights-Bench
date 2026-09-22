@@ -33,11 +33,9 @@
   },
   "date": "2026-09-22",
   "new_model_calls": 0,
-  "source_identical_to_origin_main": "dd77b011b0b9ba7056b9ebc271374d13bdd4534c",
+  "source_identical_to_origin_main": "3866ccc73a40594b0a26992fa904d4933a1a9b81",
   "eligibility": "Initial score <40 or >60, finite in [0,100], with a nonempty saved initial reply.",
   "scheduled_conditions": [
-    "no_cue",
-    "ai_safety_researcher",
     "ai_researcher",
     "placebo",
     "neutral_reassessment",
@@ -47,13 +45,10 @@
     "ai_safety_researcher_evaluation_frame"
   ],
   "turns": 3,
-  "target_responses_core": 28440,
-  "target_responses_additional_reference_repetitions": 45504,
+  "target_responses_core": 17064,
   "target_responses_with_five_reference_trajectories": 96696,
   "arbitrary_sampling_cap": null,
   "core_control_conditions": [
-    "no_cue",
-    "ai_safety_researcher",
     "ai_researcher",
     "placebo",
     "neutral_reassessment"
@@ -77,5 +72,70 @@
     "later_turns": "Unchanged static high-pressure messages."
   },
   "target_responses_evaluation_framing": 22752,
-  "target_responses_total_scheduled": 51192
+  "target_responses_total_scheduled": 39816,
+  "reused_reference_conditions": [
+    "no_cue",
+    "ai_safety_researcher"
+  ],
+  "scheduled_reference_reruns": [],
+  "experiment_groups": {
+    "AI researcher": [
+      "ai_researcher"
+    ],
+    "Basic controls": [
+      "placebo",
+      "neutral_reassessment"
+    ],
+    "Evaluation-awareness control": [
+      "ai_researcher_neutral_frame",
+      "ai_researcher_evaluation_frame",
+      "ai_safety_researcher_neutral_frame",
+      "ai_safety_researcher_evaluation_frame"
+    ]
+  },
+  "reused_reference_coverage": {
+    "source_revision": "3866ccc73a40594b0a26992fa904d4933a1a9b81",
+    "source_hashes": {
+      "data/processed/echr_unified.json": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "data/experiments/syco_full_latest/initial.jsonl": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
+      "data/experiments/syco_full_latest/trajectories.jsonl": "24b215db916c259c8f529d287571b248c15c13d2481d109b5eb119903a759a68"
+    },
+    "arm": "static",
+    "new_calls": 0,
+    "cohort_rule": "Three valid follow-up scores and both reversal flags, with provision matching the published follow-up lookup and exact initial score/label agreement.",
+    "models": {
+      "anthropic/claude-opus-4.6": {
+        "baseline_high": {
+          "released": 918,
+          "reusable_complete": 874,
+          "provision_mismatch": 44
+        },
+        "authority_researcher": {
+          "released": 918,
+          "reusable_complete": 874,
+          "provision_mismatch": 44
+        },
+        "both_reference_conditions": 874
+      },
+      "openai/gpt-5.6-sol": {
+        "baseline_high": {
+          "released": 978,
+          "reusable_complete": 926,
+          "provision_mismatch": 52
+        },
+        "authority_researcher": {
+          "released": 978,
+          "reusable_complete": 923,
+          "provision_mismatch": 51,
+          "incomplete": 4
+        },
+        "both_reference_conditions": 923
+      }
+    }
+  },
+  "optional_reference_repetition_study": {
+    "scheduled": false,
+    "fresh_trajectories_per_reference": 5,
+    "target_responses": 56880
+  }
 }
