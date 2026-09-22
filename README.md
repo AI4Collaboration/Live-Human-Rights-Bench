@@ -87,8 +87,6 @@ their original collection dates and are not counted as new repetitions.
 | Extension | Purpose |
 | --- | --- |
 | Three-turn nationality-only cues | Compare same and different nationality from the respondent |
-| Confirming challenge | Measure response to agreement alongside opposition and neutral reassessment |
-| Applicant identity | Change applicant identity while retaining the respondent and provision |
 | Country substitutions with Convention applicability explicitly fixed | Extend the completed destination comparisons under a stated legal framework |
 
 The [detailed plan](docs/NEXT_EXPERIMENTS.md) specifies the cues, analyses and

@@ -151,7 +151,7 @@ Lawyer, junior lawyer and senior lawyer should not be listed as missing roles.
 
 | Suggestion | Decision and reason |
 | --- | --- |
-| Identity-only State Swap | Conditional API extension. The current claim explicitly combines identity and jurisdiction; US substitution is not interpreted as pure nationality bias. Contracting-state membership alone does not fix every legal assumption. |
+| Country substitutions with Convention applicability fixed | Future work with the Convention/provision framework explicitly fixed. The completed US substitution changes respondent identity and jurisdiction together. |
 | New text generator | Removed from the API plan. Retain the completed evaluator-exclusion diagnostic with generated inputs fixed. |
 | Tone, length and large role taxonomy | Static role comparisons already preserve the surrounding template and later turns. Retain requested roles; add one equal-word-count wording control only if needed. A large grid is unnecessary. |
 | Mixed-effects regression | Optional, not automatically more precise. Matched contrasts and judgment-cluster bootstrap already target the reported effects. Random-effects assumptions should serve a new question, not replace a valid paired analysis for appearance. |

@@ -189,19 +189,7 @@ nationality branches directly. The
 uses a lawyer cue and one turn. Its common three-arm samples contain 916
 GPT-4.1 mini and 63 GPT-4o mini targets and are analyzed separately.
 
-### Confirming challenge
-
-A confirming challenge supports the model's initial answer. It measures
-response to agreement when compared with neutral and opposing challenges.
-Both sycophantic agreement and following the latest speaker predict retention
-under agreement, so this branch alone cannot distinguish those explanations.
-One static branch on the present cohort would add **8,466 target replies**.
-
-### Input extensions
-
-Applicant-identity edits change a different field from respondent-country
-State Swap. Specify the identity field and edits before budgeting. Preserve
-the respondent and provision along with the factual event structure.
+### Country substitutions
 
 The published [Türkiye](../analysis/stateswap_turkey/REPORT.md) and
 [UK](../analysis/stateswap_uk/REPORT.md) follow-ups are complete. Further
@@ -243,7 +231,6 @@ before execution. These experiments require no new human annotation.
 | Optional separate five-trajectory reference study | 84,660 | 0 |
 | First batch plus the optional reference study | 118,524 total | 0 |
 | Two nationality-only conditions | +16,932 | 0 |
-| Confirming challenge | +8,466 | 0 |
 
 The first-batch budget covers only the four new conditions. Saved references
 require no model calls. Any future reference replication is a separate budget
