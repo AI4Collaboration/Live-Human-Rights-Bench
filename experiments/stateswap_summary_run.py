@@ -39,6 +39,9 @@ TARGET_SETS = {
     "turkey": {"Turkey": ("Türkiye", "Turkish"),
                "Russia": ("Russia", "Russian"),
                "Ukraine": ("Ukraine", "Ukrainian")},
+    "uk": {"UK": ("the United Kingdom", "British"),
+           "Russia": ("Russia", "Russian"),
+           "Ukraine": ("Ukraine", "Ukrainian")},
 }
 TARGETS = TARGET_SETS["us"]
 

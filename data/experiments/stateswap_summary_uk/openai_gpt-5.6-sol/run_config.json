@@ -1,0 +1,318 @@
+{
+  "version": "stateswap-summary-aliases-v2",
+  "rating_parser": "anchored-percentage-v1",
+  "model": "openai/gpt-5.6-sol",
+  "samples": 10,
+  "limit": 0,
+  "temperature": 1.0,
+  "max_tokens": 2000,
+  "targets": {
+    "UK": [
+      "the United Kingdom",
+      "British"
+    ],
+    "Russia": [
+      "Russia",
+      "Russian"
+    ],
+    "Ukraine": [
+      "Ukraine",
+      "Ukrainian"
+    ]
+  },
+  "country_aliases_and_demonyms": {
+    "Ukraine": [
+      [
+        "Ukraine"
+      ],
+      "Ukrainian"
+    ],
+    "the Republic of Moldova": [
+      [
+        "the Republic of Moldova",
+        "Republic of Moldova",
+        "Moldova"
+      ],
+      "Moldovan"
+    ],
+    "Russia": [
+      [
+        "Russia",
+        "the Russian Federation",
+        "Russian Federation"
+      ],
+      "Russian"
+    ],
+    "Azerbaijan": [
+      [
+        "Azerbaijan"
+      ],
+      "Azerbaijani"
+    ],
+    "Greece": [
+      [
+        "Greece"
+      ],
+      "Greek"
+    ],
+    "Serbia": [
+      [
+        "Serbia"
+      ],
+      "Serbian"
+    ],
+    "Armenia": [
+      [
+        "Armenia"
+      ],
+      "Armenian"
+    ],
+    "Malta": [
+      [
+        "Malta"
+      ],
+      "Maltese"
+    ],
+    "Albania": [
+      [
+        "Albania"
+      ],
+      "Albanian"
+    ],
+    "Iceland": [
+      [
+        "Iceland"
+      ],
+      "Icelandic"
+    ],
+    "Norway": [
+      [
+        "Norway"
+      ],
+      "Norwegian"
+    ],
+    "Romania": [
+      [
+        "Romania"
+      ],
+      "Romanian"
+    ],
+    "Latvia": [
+      [
+        "Latvia"
+      ],
+      "Latvian"
+    ],
+    "Italy": [
+      [
+        "Italy"
+      ],
+      "Italian"
+    ],
+    "Hungary": [
+      [
+        "Hungary"
+      ],
+      "Hungarian"
+    ],
+    "Georgia": [
+      [
+        "Georgia"
+      ],
+      "Georgian"
+    ],
+    "Cyprus": [
+      [
+        "Cyprus"
+      ],
+      "Cypriot"
+    ],
+    "Bosnia and Herzegovina": [
+      [
+        "Bosnia and Herzegovina",
+        "Bosnia"
+      ],
+      "Bosnian"
+    ],
+    "Czechia": [
+      [
+        "Czechia",
+        "the Czech Republic",
+        "Czech Republic"
+      ],
+      "Czech"
+    ],
+    "Croatia": [
+      [
+        "Croatia"
+      ],
+      "Croatian"
+    ],
+    "Lithuania": [
+      [
+        "Lithuania"
+      ],
+      "Lithuanian"
+    ],
+    "France": [
+      [
+        "France"
+      ],
+      "French"
+    ],
+    "Montenegro": [
+      [
+        "Montenegro"
+      ],
+      "Montenegrin"
+    ],
+    "Estonia": [
+      [
+        "Estonia"
+      ],
+      "Estonian"
+    ],
+    "San Marino": [
+      [
+        "San Marino"
+      ],
+      "Sammarinese"
+    ],
+    "the Netherlands": [
+      [
+        "the Netherlands",
+        "Netherlands"
+      ],
+      "Dutch"
+    ],
+    "Slovenia": [
+      [
+        "Slovenia"
+      ],
+      "Slovenian"
+    ],
+    "Switzerland": [
+      [
+        "Switzerland"
+      ],
+      "Swiss"
+    ],
+    "the United Kingdom": [
+      [
+        "the United Kingdom",
+        "United Kingdom",
+        "the UK",
+        "UK"
+      ],
+      "British"
+    ],
+    "Bulgaria": [
+      [
+        "Bulgaria"
+      ],
+      "Bulgarian"
+    ],
+    "Spain": [
+      [
+        "Spain"
+      ],
+      "Spanish"
+    ],
+    "Austria": [
+      [
+        "Austria"
+      ],
+      "Austrian"
+    ],
+    "Portugal": [
+      [
+        "Portugal"
+      ],
+      "Portuguese"
+    ],
+    "Sweden": [
+      [
+        "Sweden"
+      ],
+      "Swedish"
+    ],
+    "Ireland": [
+      [
+        "Ireland"
+      ],
+      "Irish"
+    ],
+    "Slovakia": [
+      [
+        "Slovakia"
+      ],
+      "Slovak"
+    ],
+    "Germany": [
+      [
+        "Germany"
+      ],
+      "German"
+    ],
+    "Poland": [
+      [
+        "Poland"
+      ],
+      "Polish"
+    ],
+    "North Macedonia": [
+      [
+        "North Macedonia",
+        "the former Yugoslav Republic of Macedonia",
+        "Macedonia"
+      ],
+      "Macedonian"
+    ],
+    "T\u00fcrkiye": [
+      [
+        "T\u00fcrkiye",
+        "Turkey"
+      ],
+      "Turkish"
+    ],
+    "Belgium": [
+      [
+        "Belgium"
+      ],
+      "Belgian"
+    ],
+    "Finland": [
+      [
+        "Finland"
+      ],
+      "Finnish"
+    ],
+    "Denmark": [
+      [
+        "Denmark"
+      ],
+      "Danish"
+    ],
+    "Liechtenstein": [
+      [
+        "Liechtenstein"
+      ],
+      "Liechtenstein"
+    ],
+    "Luxembourg": [
+      [
+        "Luxembourg"
+      ],
+      "Luxembourgish"
+    ],
+    "Andorra": [
+      [
+        "Andorra"
+      ],
+      "Andorran"
+    ]
+  },
+  "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171",
+  "cases_sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+  "summaries_sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+}
