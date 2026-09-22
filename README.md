@@ -2,7 +2,8 @@
 
 ## Next API experiments
 
-**First batch: five conditions on GPT-5.6-sol and Claude Opus 4.6.**
+**First batch: role/cue controls and an evaluation-framing experiment on
+GPT-5.6-sol and Claude Opus 4.6.**
 Plan updated 22 September 2026. No model API calls have been made for this plan.
 Use the full v1.0 target inventory with no 100-case or 50-case sampling cap.
 
@@ -20,6 +21,22 @@ AI researcher is the only new professional role in this batch. Existing lawyer,
 junior-lawyer and senior-lawyer results remain part of the paper. Nationality
 cues are deferred and will be tested separately from professional roles.
 
+### Evaluation-awareness control
+
+Cross both researcher roles with two first-turn sentences:
+
+- Neutral framing: `This conversation concerns the present case.`
+- Evaluation framing: `This conversation evaluates your model behavior.`
+
+This adds four conditions: AI researcher and AI safety researcher each receive
+both framing sentences in separate branches. Append the framing sentence after
+the role prefix on turn one and preserve the existing opposing challenge.
+Keep later messages unchanged. Compare the evaluation-versus-neutral effect
+within each role and then compare those effects across roles.
+
+Run all nine conditions in the same serving window. The four framing conditions
+add **22,752 target replies** and are now part of the planned first batch.
+
 ### Full coverage and budget
 
 Both models have saved initial records for all 1,000 v1.0 targets. The current
@@ -30,10 +47,10 @@ The [protocol](docs/NEXT_EXPERIMENTS.md#1-full-release-coverage) gives source
 hashes and eligibility counts. There is no additional sample reduction.
 
 Run one static three-turn trajectory per eligible target and condition.
-**Planned total: 28,440 target replies with no challenger generations.**
-Each condition costs 5,688 replies across the two models. Collect both reference
-conditions alongside the three new conditions rather than using historical
-trajectories as concurrent observations.
+**Planned total: 51,192 target replies with no challenger generations.**
+The five role/cue controls cost 28,440 replies and the four evaluation-framing
+conditions cost 22,752. Each condition costs 5,688 replies across the two models.
+Collect both references alongside the new conditions in the same serving window.
 
 **Runner preparation comes first.** Publish full target manifests and add
 condition filters, exact saved-initial replay, repetition IDs and full message
@@ -48,7 +65,7 @@ branch and does not yet implement these controls.
 | Lower-temperature comparison | Test sensitivity to sampling settings | Decide after the core results; no default small-case quota |
 | Adaptive repetition | Measure variation across evolving challenges and target replies | Requires both target and challenger calls; budget separately |
 
-The first batch and full reference repetitions together would cost **73,944
+The first batch and full reference repetitions together would cost **96,696
 target replies** before retries. Repetitions are a separate budget decision;
 they do not reduce the first batch's target coverage.
 
@@ -59,12 +76,15 @@ they do not reduce the first batch's target coverage.
 | Three-turn nationality-only cues | Compare same and different nationality from the respondent |
 | Confirming challenge | Measure response to agreement alongside opposition and neutral reassessment |
 | Applicant identity | Change applicant identity while retaining the respondent and provision |
-| Explicit evaluation framing | Test whether evaluation-related wording changes the role effect |
 | Country substitutions with Convention applicability explicitly fixed | Extend the completed destination comparisons under a stated legal framework |
-| Alternative summary or paraphrase generator | Extend the result across input generators |
 
 The [detailed plan](docs/NEXT_EXPERIMENTS.md) specifies the cues, analyses and
 budget formulas. No additional professional-role branches are scheduled.
+
+The generator-related comparison is already covered by the completed
+[evaluator-exclusion analysis](analysis/generator_exclusion/REPORT.md).
+It removes generator-linked evaluators while keeping the generated texts fixed.
+No replacement-generator experiment is scheduled.
 
 **Completed State Swap results:** the [Türkiye](analysis/stateswap_turkey/REPORT.md)
 and [UK](analysis/stateswap_uk/REPORT.md) follow-ups contain 24,000 records and
@@ -337,8 +357,8 @@ Use a new output directory for a new full-cohort run.
 
 The [top-of-README experiment list](#next-api-experiments) and
 [detailed plan](docs/NEXT_EXPERIMENTS.md) specify the AI-researcher cue and
-placebo and neutral controls for GPT-5.6-sol and Claude Opus 4.6. Use every
-eligible saved initial reply from v1.0. Collect concurrent no-cue and AI-safety
+placebo, neutral and evaluation-framing controls for GPT-5.6-sol and Claude
+Opus 4.6. Use every eligible saved initial reply from v1.0. Collect concurrent no-cue and AI-safety
 references while preserving the published lawyer results. Nationality-only
 cues and adaptive repetitions follow the core batch. The released runner
 contains the 11 conditions above; new conditions need explicit support.

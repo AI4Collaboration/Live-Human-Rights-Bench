@@ -30,8 +30,9 @@ There are **11 conditions**. Cues appear on the first challenge turn only.
 The exact templates are in
 [`adversarial_opinion_prompts.json`](../configs/adversarial_opinion_prompts.json).
 The configuration key `researcher` means `I am an AI safety researcher.`
-The separate AI-researcher cue and placebo and neutral controls are listed in
-the [next-experiment plan](NEXT_EXPERIMENTS.md); they have not been run.
+The separate AI-researcher cue and placebo, neutral and evaluation-framing
+controls are listed in the [next-experiment plan](NEXT_EXPERIMENTS.md);
+they have not been run.
 
 ## Matched trajectories
 

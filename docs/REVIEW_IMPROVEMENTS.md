@@ -17,6 +17,7 @@ No API experiments or new human annotation were performed for this revision.
 | Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Define coverage after the core results and preserve the saved initial replies |
 | Neutral reassessment | Existing disagreement already supplies an opposing verdict | Add the planned neutral branch to the same static batch |
 | Placebo prefix | A first-person line may affect responses without claimed expertise | Add the neutral six-word prefix alongside both researcher cues and no cue |
+| Explicit evaluation framing | Tests the response to evaluation-related wording within each researcher role | Include all four role/framing conditions in the first batch |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
 | Continuous probability-score accuracy | Complements the threshold checks without assigning every uncertain score a full classification error | Completed [paired Brier-score analysis](../analysis/review_offline/REPORT.md) from saved scores; reported in Section 5 and Appendix C |
 | Multiple comparisons | Simultaneous intervals distinguish family-level from pointwise support | Completed [five-family sensitivity analysis](../analysis/review_offline/REPORT.md), with effect sizes retained; Appendix C describes the procedure |
@@ -24,8 +25,9 @@ No API experiments or new human annotation were performed for this revision.
 | Close multi-turn prior work | TRUTH DECAY and SYCON-Bench are direct antecedents | Included in Related Work; the comparison focuses on judgment correctness and persistence under input changes and adversarial opinions |
 
 The first static batch uses GPT-5.6-sol and Claude Opus 4.6 on all eligible
-saved initial replies from v1.0. Five conditions cost **28,440 target replies**
-across 918 Claude targets and 978 GPT targets. Four additional repetitions
+saved initial replies from v1.0. Five role/cue controls cost **28,440 target replies**
+across 918 Claude targets and 978 GPT targets. Four evaluation-framing conditions
+add **22,752** for a planned first-batch total of **51,192**. Four additional repetitions
 of both reference conditions would add **45,504** replies and require a
 separate budget decision. Nationality-only cues and broader input extensions
 are deferred to future work. AI researcher is the only new professional role
@@ -149,8 +151,7 @@ Lawyer, junior lawyer and senior lawyer should not be listed as missing roles.
 | Suggestion | Decision and reason |
 | --- | --- |
 | Identity-only State Swap | Conditional API extension. The current claim explicitly combines identity and jurisdiction; US substitution is not interpreted as pure nationality bias. Contracting-state membership alone does not fix every legal assumption. |
-| New text generator | Optional for a claim about robustness across generators. The completed evaluator-exclusion diagnostic preserves summary losses and mixed paraphrase effects with generated inputs fixed. It tests dependence on the included evaluators; a replacement generator answers a separate generalization question. |
-| Evaluation-awareness mechanism | Keep as a hypothesis. AI versus AI safety estimates wording sensitivity. A separate role-by-evaluation-framing experiment is available in the plan if a mechanism claim becomes central. |
+| New text generator | Removed from the API plan. Retain the completed evaluator-exclusion diagnostic with generated inputs fixed. |
 | Tone, length and large role taxonomy | Static role comparisons already preserve the surrounding template and later turns. Retain requested roles; add one equal-word-count wording control only if needed. A large grid is unnecessary. |
 | Mixed-effects regression | Optional, not automatically more precise. Matched contrasts and judgment-cluster bootstrap already target the reported effects. Random-effects assumptions should serve a new question, not replace a valid paired analysis for appearance. |
 | Utility-weighted abstention | Do not choose arbitrary clinical/legal costs. Report correct, wrong, abstaining and failed outcomes and threshold sensitivity. Court outcomes alone do not establish whether incomplete inputs are answerable. |
