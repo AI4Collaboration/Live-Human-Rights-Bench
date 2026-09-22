@@ -20,7 +20,7 @@ concurrent replication references, not new role additions.
 
 | Priority | Experiment | Why it matters | New generations |
 | --- | --- | --- | ---: |
-| First | AI researcher + neutral reassessment, with concurrent no-cue and AI safety researcher references | Separate the `safety` wording effect from ordinary reconsideration and serving-time changes | 2,400 target responses |
+| First | AI researcher + placebo prefix + neutral reassessment, with concurrent no-cue and AI safety researcher references | Separate safety-specific wording, a neutral first-person prefix and ordinary reconsideration | 3,000 target responses |
 | First | Repeat the two reference conditions on 50 of those cases, five static trajectories in total | Measure within-case variability of the headline role contrast | +2,400 target responses; first trajectories reused |
 | Recommended next | Low-temperature static comparison on the same 50 cases, no cue and AI safety researcher, three trajectories | Test whether the role contrast and harmful revisions persist with less sampling randomness | +1,800 target responses |
 | Conditional next | Repeat the same two conditions in adaptive mode on the same 50 cases, five trajectories | Check whether the role contrast survives variation in the evolving challenger and target | +3,000 target responses and 3,000 challenger generations |
@@ -30,13 +30,15 @@ concurrent replication references, not new role additions.
 | Conditional mechanism test | Role by explicit evaluation framing | Test evaluation signaling if advancing a mechanism claim | 2,400 target responses for one trajectory in each of four cells |
 | Conditional State Swap | United Kingdom / France destinations, with the Convention framework held fixed | Test respondent-country effects within the Convention, as requested in the Overleaf comments | 3,000 target responses |
 | Optional generator control | Alternative summary or paraphrase generator | Test generalization across generators if the claim requires it | Specify a targeted subset and budget before scheduling |
+| Optional diagnostic | Confirming challenge supporting the saved initial answer | Measure response to agreement; agreement alone does not distinguish sycophancy from following the latest speaker | +600 target responses |
+| Deferred separate question | Applicant identity edits with respondent and provision fixed | Test sensitivity to applicant identity; this varies a different field from respondent-country State Swap | Specify identity fields and scope before budgeting |
 
-**Recommended first batch: 4,800 target responses, no challenger calls.**
-Adding the low-temperature comparison costs **6,600 target responses in total**,
+**Recommended first batch: 5,400 target responses, no challenger calls.**
+Adding the low-temperature comparison costs **7,200 target responses in total**,
 with no challenger calls. Keep its serving window aligned with the reference
 conditions; the comparison reuses saved initial judgments.
-Adding adaptive replication brings the package to **7,800 target responses
-plus 3,000 challenger generations**, or **9,600 plus 3,000** when the
+Adding adaptive replication brings the package to **8,400 target responses
+plus 3,000 challenger generations**, or **10,200 plus 3,000** when the
 low-temperature comparison is also included, before retries. References are collected
 in the same serving window as the new conditions. Repetitions are averaged
 within cases; they do not increase the independent case count.
@@ -44,7 +46,7 @@ The [merged protocol and exact budgets](docs/NEXT_EXPERIMENTS.md) specify
 strata, cues, repeated-trajectory handling, runner changes and stopping rules.
 
 Adding generic researcher, judge and both nationality cues to the static
-package costs **7,800 target responses in total, with no challenger calls**,
+package costs **8,400 target responses in total, with no challenger calls**,
 including the concurrent lawyer reference. This total assumes all additions
 share the references' serving window and excludes the optional experiments.
 
@@ -54,6 +56,11 @@ Before execution, publish the locked 100-case and nested 50-case manifests,
 add the new conditions and mode filters, distinguish repetitions in checkpoint
 keys, and support replay of the saved initial replies and full message logging.
 The existing launch command does not implement this follow-up plan.
+Prepare the minimum replay, condition-filter and repetition support first,
+then run the core controls together. Placebo and confirming branches need
+these same comparison safeguards; they are not a separate shortcut before
+runner preparation. Additional professional roles and nationality remain
+retained extensions after the core controls.
 
 **Already available:** AI safety researcher, lawyer, junior lawyer, senior
 lawyer and no cue. Do not rerun their full cohorts as new role experiments.
