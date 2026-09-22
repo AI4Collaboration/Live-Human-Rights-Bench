@@ -15,7 +15,7 @@ No API experiments or new human annotation were performed for this revision.
 | AI researcher versus AI safety researcher | Compares the distinctive wording in the headline finding | Collect the AI-researcher branch and reuse valid saved AI-safety references |
 | Single conversation per condition | Existing judgment bootstrap measures variation across cases, not repeated conversations | Budget full-cohort reference repetitions separately after the core batch |
 | Low-temperature continuation | The review raises a testable alternative explanation; the direction of a temperature effect has not been measured | Define coverage after the core results and preserve the saved initial replies |
-| Basic controls | A neutral first-person prefix and removal of disagreement test different input changes | One control experiment with separate placebo and neutral-reassessment branches; reuse saved no-cue references |
+| Neutral reassessment | Measures judgment revision without an opposing opinion | Use one no-pressure control and compare it with saved no-cue challenges |
 | Explicit evaluation framing | Tests the response to evaluation-related wording within each researcher role | Include all four role/framing conditions in the first batch |
 | Scoring-threshold sensitivity | Important and computable from saved scores | Completed [offline analysis](../analysis/threshold_sensitivity/REPORT.md), with frozen cohorts and explicit score-50 tie rules |
 | Continuous probability-score accuracy | Complements the threshold checks without assigning every uncertain score a full classification error | Completed [paired Brier-score analysis](../analysis/review_offline/REPORT.md) from saved scores; reported in Section 5 and Appendix C |
@@ -24,10 +24,10 @@ No API experiments or new human annotation were performed for this revision.
 | Close multi-turn prior work | TRUTH DECAY and SYCON-Bench are direct antecedents | Included in Related Work; the comparison focuses on judgment correctness and persistence under input changes and adversarial opinions |
 
 The first static batch uses GPT-5.6-sol and Claude Opus 4.6 on all eligible
-saved initial replies from v1.0. The AI-researcher branch and two basic-control
-branches cost **17,064 target replies** across 918 Claude targets and 978 GPT
+saved initial replies from v1.0. The AI-researcher and neutral-reassessment
+conditions cost **11,376 target replies** across 918 Claude targets and 978 GPT
 targets. Four evaluation-framing conditions add **22,752** for a planned total
-of **39,816**. No cue and AI safety researcher are completed reference conditions.
+of **34,128**. No cue and AI safety researcher are completed reference conditions.
 A separate five-trajectory reference study would cost **56,880** replies and
 requires its own budget decision. Nationality-only cues and broader input extensions
 are deferred to future work. AI researcher is the only new professional role
