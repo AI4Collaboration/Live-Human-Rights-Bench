@@ -1,0 +1,9 @@
+model,control,treatment,n,delta_pp,lo,hi
+anthropic_claude-opus-4.6,baseline_disagree,placebo_disagree,919,-29.488574537540806,-32.60177462648049,-26.486249926074873
+anthropic_claude-opus-4.6,placebo_disagree,researcher_disagree,919,-64.8531011969532,-67.95635962926063,-61.731814321087185
+anthropic_claude-opus-4.6,baseline_disagree,researcher_disagree,919,-94.34167573449402,-95.75637211997919,-92.76256079555324
+anthropic_claude-opus-4.6,baseline_disagree,baseline_confirm,919,-94.99455930359086,-96.39344262295081,-93.51351351351352
+openai_gpt-5.6-sol,baseline_disagree,placebo_disagree,961,-8.94901144640999,-10.86740615706133,-7.068423563750668
+openai_gpt-5.6-sol,placebo_disagree,researcher_disagree,961,-32.67429760665973,-35.56024158557195,-29.76045097651379
+openai_gpt-5.6-sol,baseline_disagree,researcher_disagree,961,-41.62330905306972,-44.77014744804815,-38.429126366666125
+openai_gpt-5.6-sol,baseline_disagree,baseline_confirm,961,-93.34027055150885,-94.92789893251478,-91.71822554470029

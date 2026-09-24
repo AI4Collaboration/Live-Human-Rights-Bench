@@ -148,9 +148,9 @@
     "applicant": "Original summary plus a local or foreign nationality sentence; respondent and provision unchanged. Foreign is French, or German for a French respondent.",
     "comparison_to_prior_runs": "New cohort; do not pool with single-initial-response historical trajectories."
   },
-  "outputs": {
-    "applicant_nationality.csv": "76d2f559e3b1d2e2aa2e55954c16b783beaac217bb5e210764f993ddbf546119",
-    "cue_contrasts.csv": "38087f977024e931f2b2f598b771b644792c14bdff251ec3f5aa51511391088e",
-    "opinion_controls.csv": "0eee4cc28043fc421cce5396d1ad349b71a0f39ea081d74dc6232d0778a2ac34"
+  "output_sha256_lf": {
+    "applicant_nationality.csv": "2faa03c475488770551d64cfb9eb1bb742d5f13bd74ace538e4c30b6a2e557d1",
+    "cue_contrasts.csv": "dac5c4b015e39bc68f749863560ca5cbf4507959def63a6f0c3dfa1f41043cb4",
+    "opinion_controls.csv": "5aa35d8233e9af7096c2599bb7a6e426c4b414afa93fe279b34241685cbd01d1"
   }
 }

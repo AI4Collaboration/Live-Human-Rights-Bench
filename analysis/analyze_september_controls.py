@@ -43,7 +43,7 @@ def estimate(values, ids):
 
 def write_csv(path, rows):
     with path.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 
@@ -189,7 +189,7 @@ def main():
                             'opinion_saved_evidence':'Initial aggregates and turn scores only; individual initial samples, replay text and full messages are not in these result files.',
                             'applicant':'Original summary plus a local or foreign nationality sentence; respondent and provision unchanged. Foreign is French, or German for a French respondent.',
                             'comparison_to_prior_runs':'New cohort; do not pool with single-initial-response historical trajectories.'}}
-    manifest['outputs'] = {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in args.out.glob('*.csv')}
+    manifest['output_sha256_lf'] = {p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in args.out.glob('*.csv')}
     (args.out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     lines=['# September control results','',f'Source: `{revision}`. Recomputed without model API calls.','',
            '## Adversarial-opinion controls','',
