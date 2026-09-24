@@ -2,9 +2,26 @@
 
 ## Next API experiments
 
+**Results checked 24 September 2026:** the new
+[control analysis](analysis/september_controls/REPORT.md) covers four static
+conditions for Claude Opus 4.6 and GPT-5.6-sol, plus applicant-nationality
+additions for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol.
+
+- A reading preface lowers final reversal from 95.0% to 65.5% in Claude and
+  from 93.3% to 84.4% in GPT. The AI safety researcher cue lowers these rates
+  further to 0.7% and 51.7% on the same 919 and 961 complete targets.
+- Confirming challenges produce no reversals and correct no initial errors.
+- Applicant-nationality additions give mean shifts below one score point
+  across all three models. All 1,000 targets are present in each arm.
+
+**The four conditions planned below remain pending.** The released reading
+cue still precedes an opposing challenge, so it does not implement neutral
+reassessment. The new researcher condition is AI safety researcher, not AI
+researcher. No evaluation-framing or DeepSeek control results are present.
+
 **First batch: role/cue controls and an evaluation-framing experiment on
 GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash.**
-Plan updated 22 September 2026. No model API calls have been made for this plan.
+Plan reconciled with the published results on 24 September 2026.
 Use the full v1.0 target inventory with no 100-case or 50-case sampling cap.
 
 DeepSeek V4 Flash adds a lower-performing comparison with existing three-turn
@@ -67,8 +84,9 @@ valid case/provision matches; the detailed protocol reports reference coverage.
 
 **Runner preparation comes first.** Publish full target manifests and add
 condition filters, exact saved-initial replay, repetition IDs and full message
-logging. The current runner schedules a fixed grid with one trajectory per
-branch and does not yet implement these controls.
+logging. The released control runner uses four different fixed conditions and
+fresh initial sampling. It saves initial means and turn scores but omits the
+replayed reply and full messages. Adapt it to the remaining plan before running.
 
 ### After the first batch
 

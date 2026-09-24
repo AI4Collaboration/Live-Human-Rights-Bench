@@ -1,12 +1,31 @@
 # Next experiments
 
-Updated 22 September 2026 against the published results and runners.
+Updated 24 September 2026 against the published results and runners.
 The first batch uses **GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash**
 with the full v1.0 target inventory. Three experiments contain four new conditions for
 **33,864 target replies**. No cue and AI safety researcher are completed
 references and are not scheduled for full-cohort reruns. There is no arbitrary
-case-sampling cap. This document is an execution plan; no model API calls have
-been made for it.
+case-sampling cap. The four conditions specified here still have no published
+results in the current snapshot.
+
+### Newly published controls
+
+Commit `e7a78f9` adds separate controls with fresh initial sampling. The
+[offline analysis](../analysis/september_controls/REPORT.md) reproduces all
+saved means and reversal flags and reports paired judgment-cluster intervals.
+
+| Released experiment | Actual coverage | Relation to the remaining plan |
+| --- | --- | --- |
+| No cue, reading cue, AI safety researcher, confirming | Claude: 1,000 records with 919 complete eligible targets; GPT: 996 records with 961 complete eligible targets | Reading cue retains an opposing challenge; neither AI researcher nor neutral reassessment is implemented |
+| Applicant-nationality additions | GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol; 1,000 targets in each of three arms | Completed supplementary analysis; no repeat is scheduled |
+
+No DeepSeek or evaluation-framing results are in this release. The new
+opinion-control runner derives direction from a mean of up to three fresh
+initial samples but replays the first parsed response. It saves the mean and
+turn scores without the individual initial samples or full messages. The
+remaining plan retains exact saved-initial replay and full logging as specified
+below. Previously excluded confirming and applicant-identity experiments are
+reported because their results were published; they are not added to the queue.
 
 DeepSeek V4 Flash is the lower-performing comparison. Its full-record accuracy
 is 70.1% against 74.7% for Claude Opus 4.6 and 83.5% for GPT-5.6-sol in the
@@ -209,10 +228,10 @@ hashes. Do not sample 100 cases or restrict the manifests to the historical
 349-case subset. Preserve natural initial-correctness proportions.
 
 Add condition and mode filters with repetition IDs in checkpoint keys.
-Support exact initial replay and the new cue, neutral and framing branches. The
-present runner schedules a fixed grid with one trajectory per branch and
-does not yet implement this plan. These minimum changes are needed before
-the first control batch. No runner changes are performed by this document.
+Support exact initial replay and the new cue, neutral and framing branches.
+The released control runner collects a different four-condition grid with fresh
+initial samples. It needs these changes and complete response logging to
+implement the remaining plan. No additional API runs are scheduled by this document.
 
 Bind targets by `(item_id, article_full)`. Save summaries and complete
 messages together with raw responses and parsed scores. Also retain parse

@@ -1,0 +1,156 @@
+{
+  "revision": "e7a78f9a99ccbc551832acb75c46c13c3ef2f178",
+  "new_api_calls": 0,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 731,
+    "cluster": "judgment"
+  },
+  "inputs": {
+    "data/processed/echr_unified.json": {
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "experiments/syco_controls_run.py": {
+      "sha256_lf": "510f272d3dc6d0d68425f74189903dfccf90fcfbcbf448df7a5dca382f8b1165",
+      "bytes": 10316
+    },
+    "experiments/stateswap_applicant_run.py": {
+      "sha256_lf": "d1867030f7274d44144270a30ac7cc9169b9e6d657b42cda2b60e0285c249c76",
+      "bytes": 9306
+    },
+    "experiments/scoring.py": {
+      "sha256_lf": "39c64b09d54877bfa828f51261ccb2c6893b7632f2f91ea2172857354648825d",
+      "bytes": 4839
+    },
+    "experiments/adversarial_prompts.py": {
+      "sha256_lf": "8e39e2e2f243d6aa3c56f3e1cb31bc93b02af76999add8127c080c90939fbf46",
+      "bytes": 9891
+    },
+    "data/experiments/syco_controls/anthropic_claude-opus-4.6/syco_controls_results.jsonl": {
+      "sha256_lf": "ad7f320a79f94a9ed01fc18827103c7096b9bdce0dc6d8d5931ae636f563743b",
+      "bytes": 654812
+    },
+    "data/experiments/syco_controls/openai_gpt-5.6-sol/syco_controls_results.jsonl": {
+      "sha256_lf": "b977a9d45d7f61459ad9ced6d63a3f69e5065414a717983dabe9e9317c167147",
+      "bytes": 690760
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4.1-mini/run_config.json": {
+      "sha256_lf": "392a9098d89f5876e24617c6693d5009ec078d8d194114f2b463cfe797232d60",
+      "bytes": 1917
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4.1-mini/input_identity.json": {
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4.1-mini/stateswap_applicant_results.jsonl": {
+      "sha256_lf": "a5e143faf05dd43d35d735d95d7eb4385eb177f93c289596970eb100bdeba6d0",
+      "bytes": 1633591
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4o-mini/run_config.json": {
+      "sha256_lf": "6174d6a2fe333ac4fdad2bb21c40867c0694ab75a897515f40de287f6c2581c5",
+      "bytes": 1916
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4o-mini/input_identity.json": {
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-4o-mini/stateswap_applicant_results.jsonl": {
+      "sha256_lf": "ac5b6be9c46cc3555a8c41cd486f80afbaea5681857a77683a25e28da3a1170f",
+      "bytes": 1633905
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-5.6-sol/run_config.json": {
+      "sha256_lf": "63b6d6afb8cb73d02a191d476eb482866134a137e35f27340d9b99aae98c4051",
+      "bytes": 1916
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-5.6-sol/input_identity.json": {
+      "sha256_lf": "ac11d3e923f52535a47d6abd70b7044817a55fdc87993d1fc5544b51f9f2264d",
+      "bytes": 116580
+    },
+    "data/experiments/stateswap_applicant/openai_gpt-5.6-sol/stateswap_applicant_results.jsonl": {
+      "sha256_lf": "a3a9336dac240dcd83b1322be309f07929ed8bb0d82558e3e8f11645beae5651",
+      "bytes": 1630800
+    }
+  },
+  "coverage": {
+    "opinion_controls": {
+      "anthropic_claude-opus-4.6": {
+        "records": 1000,
+        "missing_target_keys": [],
+        "initial_abstentions": 81,
+        "eligible": 919,
+        "complete_all_arms": 919,
+        "judgments": 880,
+        "initial_correct": 725,
+        "missing_turn_scores": {
+          "baseline_disagree": 0,
+          "placebo_disagree": 0,
+          "researcher_disagree": 0,
+          "baseline_confirm": 0
+        }
+      },
+      "openai_gpt-5.6-sol": {
+        "records": 996,
+        "missing_target_keys": [
+          "001-118591|13",
+          "001-205166|6",
+          "001-243885|14",
+          "001-244594|13"
+        ],
+        "initial_abstentions": 28,
+        "eligible": 968,
+        "complete_all_arms": 961,
+        "judgments": 917,
+        "initial_correct": 807,
+        "missing_turn_scores": {
+          "baseline_disagree": 0,
+          "placebo_disagree": 1,
+          "researcher_disagree": 7,
+          "baseline_confirm": 0
+        }
+      }
+    },
+    "applicant_nationality": {
+      "openai_gpt-4.1-mini": {
+        "records": 3000,
+        "targets": 1000,
+        "judgments": 947,
+        "ratings_requested": 30000,
+        "unparsed_ratings": 0,
+        "parse_retries": 0
+      },
+      "openai_gpt-4o-mini": {
+        "records": 3000,
+        "targets": 1000,
+        "judgments": 947,
+        "ratings_requested": 30000,
+        "unparsed_ratings": 0,
+        "parse_retries": 0
+      },
+      "openai_gpt-5.6-sol": {
+        "records": 3000,
+        "targets": 1000,
+        "judgments": 947,
+        "ratings_requested": 30000,
+        "unparsed_ratings": 2,
+        "parse_retries": 39
+      }
+    }
+  },
+  "protocol": {
+    "opinion_initial": "Mean of up to three fresh parsed initial samples; first parsed reply replayed to every arm.",
+    "opinion_primary": "Same targets with all three scores available in all four arms; one trajectory per arm.",
+    "opinion_saved_evidence": "Initial aggregates and turn scores only; individual initial samples, replay text and full messages are not in these result files.",
+    "applicant": "Original summary plus a local or foreign nationality sentence; respondent and provision unchanged. Foreign is French, or German for a French respondent.",
+    "comparison_to_prior_runs": "New cohort; do not pool with single-initial-response historical trajectories."
+  },
+  "outputs": {
+    "applicant_nationality.csv": "76d2f559e3b1d2e2aa2e55954c16b783beaac217bb5e210764f993ddbf546119",
+    "cue_contrasts.csv": "38087f977024e931f2b2f598b771b644792c14bdff251ec3f5aa51511391088e",
+    "opinion_controls.csv": "0eee4cc28043fc421cce5396d1ad349b71a0f39ea081d74dc6232d0778a2ac34"
+  }
+}
