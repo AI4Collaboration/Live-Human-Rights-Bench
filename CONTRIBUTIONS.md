@@ -32,7 +32,7 @@ this paper"). The CRediT role split below was proposed by V. Ovcharov
 |---|---|
 | **Conceptualization** | Terry J. C. Zhang, Volodymyr Ovcharov, Zhijing Jin |
 | **Data Curation** | **Volodymyr Ovcharov**: ECtHR/HUDOC corpus ingestion, verdict-removal pipeline, benchmark dataset construction and input audits |
-| **Methodology** | **Volodymyr Ovcharov**: living benchmark design, verdict-free construction and temporal evaluation; **Terry J. C. Zhang**: perturbation-stability framework |
+| **Methodology** | **Volodymyr Ovcharov**: Live Benchmark design, verdict-free construction and temporal evaluation; **Terry J. C. Zhang**: perturbation-stability framework |
 | **Software** | **Volodymyr Ovcharov** (data & live-refresh pipeline, experiment runners), **Arian Khorasani** (perturbation experiments on top of the pipeline) |
 | **Investigation / Experiments & Evaluation** | **Arian Khorasani** and **Volodymyr Ovcharov** (shared) |
 | **Resources / Funding (compute & API)** | Terry J. C. Zhang (OpenRouter, Bedrock credits), Volodymyr Ovcharov (Bedrock, DeepSeek API, data infrastructure) |

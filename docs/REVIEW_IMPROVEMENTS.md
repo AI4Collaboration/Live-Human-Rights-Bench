@@ -62,7 +62,7 @@ the Results interpretation without adding a limitations paragraph to each result
    three assembly generations versus four transport attempts, and documented
    failed trajectories and saved-message coverage. Expanded the existing
    source-review accounting without claiming a measured zero-leakage rate.
-4. **Related-work structure.** The current paragraphs cover living benchmarks,
+4. **Related-work structure.** The current paragraphs cover Live Benchmarks,
    systematic perturbation, and adversarial opinion and sycophancy. They include
    TRUTH DECAY, SYCON-Bench, ICE-Guard and EvalAwareBench. TriBench-Ko and ECtHR-PCR
    remain verified background references and are not cited in the current text.
@@ -151,7 +151,7 @@ Lawyer, junior lawyer and senior lawyer should not be listed as missing roles.
 
 | Suggestion | Decision and reason |
 | --- | --- |
-| Country substitutions with Convention applicability fixed | Future work with the Convention/provision framework explicitly fixed. The completed US substitution changes respondent identity and jurisdiction together. |
+| Country Swap with Convention applicability fixed | Future work with the Convention/provision framework explicitly fixed. The completed US substitution changes respondent identity and jurisdiction together. |
 | New text generator | Removed from the API plan. Retain the completed evaluator-exclusion diagnostic with generated inputs fixed. |
 | Tone, length and large role taxonomy | Static role comparisons already preserve the surrounding template and later turns. Retain requested roles; add one equal-word-count wording control only if needed. A large grid is unnecessary. |
 | Mixed-effects regression | Optional, not automatically more precise. Matched contrasts and judgment-cluster bootstrap already target the reported effects. Random-effects assumptions should serve a new question, not replace a valid paired analysis for appearance. |
