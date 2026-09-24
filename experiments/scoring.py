@@ -90,9 +90,8 @@ def majority_vote(ratings):
 def abstention_kind(ratings):
     """Why a row abstained: the model sat in the middle, or its samples split.
 
-    Terry's question on 28 Aug, and a fair one: "abstention" reads as though the
-    model said something, when one of the two routes to it is a rule we impose on
-    disagreeing samples. Derived from the stored ratings, so no re-run is needed.
+    Distinguish midpoint scores from ties between disagreeing samples.
+    Both are derived from stored ratings without new model requests.
     """
     prediction, abstained = majority_vote(ratings)
     if not abstained:

@@ -3,9 +3,7 @@
 
 Materiality does not have to be judged by the annotator. The Court states it: when
 its assessment says "see paragraph 18 above", it is naming the fact it relied on.
-That is what makes non-experts sufficient here, which is the point Terry raised on
-25 Aug and Yu Fan endorsed with the jury argument -- the annotator validates a
-mapping, they do not decide what is legally material.
+The annotator validates this mapping rather than deciding legal materiality.
 
 So each item shows one paragraph of the Court's reasoning and one fact paragraph it
 cites, and asks only whether the reasoning really rests on that fact.

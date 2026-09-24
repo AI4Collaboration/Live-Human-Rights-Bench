@@ -556,3 +556,9 @@ files to include.
 
 For questions about the benchmark, open a
 [GitHub issue](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/issues).
+
+## AI assistance
+
+Coding agents assisted with coding and refactoring. We reviewed the code and
+checked its outputs against the saved experiment results. The paper provides
+the full AI-use disclosure.

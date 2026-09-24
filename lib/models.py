@@ -23,7 +23,6 @@ def create_client(model_id: str, api_key: str, use_openrouter: bool) -> Tuple[op
             api_key=api_key,
             base_url="https://openrouter.ai/api/v1",
             default_headers={
-                "HTTP-Referer": "https://github.com/AI4Collaboration/Live-Human-Rights-Bench",
                 "X-Title": "LLM Human Rights Research"
             }
         )
@@ -248,7 +247,7 @@ def prepare_request(
 
     # Claude with extended thinking counts thinking+answer against max_tokens and
     # can spend >13k on one prompt; give headroom so it can't truncate silently
-    # (per Vladimir's Opus 5 smoke). Terse prompt keeps it near 0 in practice.
+    # A terse prompt keeps the observed overhead near zero.
     elif "claude" in model_id.lower():
         request['max_tokens'] = 16000
         request['temperature'] = temperature

@@ -251,8 +251,8 @@ def test_baseline_is_joined_by_item_id_not_case_name():
 def test_every_result_row_keeps_its_abstentions_and_flip_direction():
     """Only baseline used to record these; every other arm threw them away.
 
-    The thread with Yu Fan and Terry settled on reporting confidence, abstention
-    and flip direction alongside accuracy. A flip rate without direction cannot
+    Report confidence, abstention and flip direction alongside accuracy.
+    A flip rate without direction cannot
     distinguish drift toward "violation" from drift away from it, and an arm that
     silently drops abstentions reports a prediction where the model gave none.
     """

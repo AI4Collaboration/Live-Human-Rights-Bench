@@ -191,7 +191,7 @@ def checkpoint_key(ckpt, stage, case, variant=""):
 
 
 def prompt_for(template, case, text):
-    # Full-case scoring (Terry: "run the full case, atomic doesn't matter"): ask the
+    # Full-case scoring asks the
     # generic per-article question instead of the atomic country/issue target_question.
     q = f"the ECtHR finds a violation of Article {case['article_full']}"
     return template.format(case_text=text, target_question=q)

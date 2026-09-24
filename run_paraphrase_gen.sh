@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=para_gen
-#SBATCH --account=def-zhijing
 #SBATCH --time=50:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G

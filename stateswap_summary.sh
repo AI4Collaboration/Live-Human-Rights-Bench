@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=stateswap
-#SBATCH --account=def-zhijing
 #SBATCH --time=24:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G

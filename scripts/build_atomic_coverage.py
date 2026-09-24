@@ -27,7 +27,7 @@ scored: it would pass while measuring exactly the thing it exists to prevent. Us
 Claims are extracted per paragraph so each keeps the number it came from, which is
 what makes the headline possible: the Court's assessment back-references the
 paragraphs it rested on, so "relied upon" is read off the judgment rather than
-decided by us. That is the part of Yu Fan's objection that can be answered.
+decided by the evaluation procedure.
 """
 
 import argparse

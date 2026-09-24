@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=syco_full
-#SBATCH --account=def-zhijing
 #SBATCH --time=65:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G

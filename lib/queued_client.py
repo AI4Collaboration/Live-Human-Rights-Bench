@@ -210,7 +210,6 @@ class QueuedLLMClient:
                     headers = {
                         "Authorization": f"Bearer {request['api_key']}",
                         "Content-Type": "application/json",
-                        "HTTP-Referer": "https://github.com/anthropics/llm-human-rights",
                         "X-Title": "LLM Human Rights Research"
                     }
                 else:
