@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Identity-only control for State Swap: hold the respondent State, provision and
+"""Identity-only control for Country Swap: hold the respondent State, provision and
 factual structure fixed, and vary only the APPLICANT's stated nationality.
 
 The respondent-substitution experiment changes the country and thereby its

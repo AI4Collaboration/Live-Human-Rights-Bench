@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Summary-based state swap: replace the respondent State in each case summary
-to US / Russia / Ukraine and score, to test whether the verdict shifts by state identity.
+"""Summary-based country swap: replace the respondent country in each case summary
+to US / Russia / Ukraine and score, to test whether the verdict shifts by country identity.
 
 Arms: original, US, Russia, Ukraine. Rule-based swap of the respondent country name and
 demonym in the summary text (no generation model). 0-100 full-case prompt, 6-model roster.
@@ -17,11 +17,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from experiments.input_gate import bind_run_inputs
 from experiments.scoring import parse_rating
+from experiments.country_swap_validity import build_manifest, bind_manifest, digest
 
 URL = "https://openrouter.ai/api/v1/chat/completions"
 CASES = os.path.join(ROOT, "data/processed/echr_unified.json")
 SUMMARIES = os.path.join(ROOT, "data/processed/summaries_dsv41flash.json")
-OUT = os.path.join(ROOT, "data/experiments/stateswap_summary_new")
+OUT = os.path.join(ROOT, "data/experiments/country_swap_context_checked")
 SYSTEM = ("The European Court of Human Rights (ECtHR) interprets the European Convention on "
           "Human Rights. You are a legal assistant specialised on the ECHR.")
 PREDICTIVE = ("Below is a summary of the facts for an upcoming ECtHR case:\n\n{case_text}\n\n"
@@ -107,13 +108,17 @@ def call(model, prompt, k):
             time.sleep(2 * (attempt + 1))
 
 
-def bind_run_config(directory, args):
+def bind_run_config(directory, args, validity):
     config = {
-        "version": "stateswap-summary-aliases-v2",
+        "version": "country-swap-summary-context-v3",
+        "context_check": validity["version"],
+        "context_manifest_sha256": digest(json.dumps(validity,sort_keys=True)),
         "rating_parser": "anchored-percentage-v1",
         "model": args.model, "samples": args.samples, "limit": args.limit,
         "temperature": 1.0, "max_tokens": 2000,
-        "targets": TARGETS, "country_aliases_and_demonyms": COUNTRIES,
+        "targets": TARGET_SETS[args.targets],
+        "validity_destinations": validity["destinations"],
+        "country_aliases_and_demonyms": COUNTRIES,
         "prompt_sha256": hashlib.sha256((SYSTEM + PREDICTIVE).encode()).hexdigest(),
         "cases_sha256": hashlib.sha256(Path(args.cases).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
         "summaries_sha256": hashlib.sha256(Path(args.summaries).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
@@ -124,9 +129,9 @@ def bind_run_config(directory, args):
     marker = directory / "run_config.json"
     if marker.exists():
         if json.loads(marker.read_text(encoding="utf-8")) != config:
-            raise ValueError("State Swap inputs or settings changed; use a new output directory")
+            raise ValueError("Country Swap inputs or settings changed; use a new output directory")
     elif any(directory.glob("*.jsonl")):
-        raise ValueError("Unversioned State Swap checkpoints require a new output directory")
+        raise ValueError("Unversioned Country Swap checkpoints require a new output directory")
     else:
         directory.mkdir(parents=True, exist_ok=True)
         marker.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
@@ -143,19 +148,32 @@ def main():
     ap.add_argument("--summaries", default=SUMMARIES)
     ap.add_argument("--out", default=OUT)
     ap.add_argument("--targets", choices=list(TARGET_SETS), default="us")
+    ap.add_argument("--validity-targets", nargs="+", choices=list(TARGET_SETS),
+                    help="Screen a shared cohort across these destination sets; defaults to --targets")
+    ap.add_argument("--preflight-only", action="store_true",
+                    help="Write the input/context manifests without reading an API key or scoring")
     a = ap.parse_args()
     if a.samples < 1 or a.workers < 1 or a.limit < 0:
         ap.error("Use positive samples/workers and a nonnegative limit")
     global TARGETS
-    TARGETS = TARGET_SETS[a.targets]
+    scoring_targets = TARGET_SETS[a.targets]
+    check_sets = list(dict.fromkeys([a.targets]+(a.validity_targets or [])))
+    check_targets = {key:value for name in check_sets for key,value in TARGET_SETS[name].items()}
+    TARGETS = check_targets
     mdir = os.path.join(a.out, a.model.replace("/", "_"))
     bind_run_inputs(mdir, a.cases, a.summaries)
-    bind_run_config(mdir, a)
-    k = os.environ["OPENROUTER_API_KEY"]
     cases = json.loads(Path(a.cases).read_text(encoding="utf-8"))
     if a.limit:
         cases = cases[:a.limit]
     summaries = json.loads(Path(a.summaries).read_text(encoding="utf-8"))["summaries"]
+    validity = build_manifest(cases,summaries,COUNTRIES,check_targets,swap)
+    bind_run_config(mdir,a,validity)
+    bind_manifest(Path(mdir)/"context_manifest.json",validity)
+    eligible = {(r["item_id"],r["article"]) for r in validity["rows"] if r["eligible"]}
+    print(f"Country Swap context check: {len(eligible)}/{len(cases)} eligible targets",flush=True)
+    if a.preflight_only:
+        return
+    k = os.environ["OPENROUTER_API_KEY"]
     os.makedirs(mdir, exist_ok=True)
     respath = os.path.join(mdir, "stateswap_summary_results.jsonl")
     done = {}
@@ -164,9 +182,13 @@ def main():
             if line.strip():
                 r = json.loads(line); done[r["key"]] = r
     lock = threading.Lock()
-    arms = ["original"] + list(TARGETS)
+    arms = ["original"] + list(scoring_targets)
+    if any((r["item_id"],r["article"]) not in eligible or r["arm"] not in arms for r in done.values()):
+        raise ValueError("Existing checkpoints do not match the context-checked cohort")
     jobs = []
     for c in cases:
+        if (c["item_id"],c["article_full"]) not in eligible:
+            continue
         summ = (summaries.get(c["item_id"]) or [None])[0]
         if not summ:
             continue
@@ -204,11 +226,14 @@ def main():
         return {"key": jk, "item_id": c["item_id"], "article": c["article_full"],
                 "respondent": c.get("target_respondent") or c.get("respondent"), "arm": arm,
                 "text_changed": text != summaries[c["item_id"]][0],
+                "input_sha256": digest(text), "prompt_sha256": digest(prompt),
+                "context_check": validity["version"],
                 "violation_label": c["violation_label"], "avg_rating": avg, "prediction": pred,
                 "ratings": ratings, "responses": responses,
                 "response_attempts": response_attempts,
                 "parse_retry_count": sum(len(attempts) - 1 for attempts in response_attempts),
-                "accurate": pred == c["violation_label"], "n_unparsed": len(ratings) - len(good)}
+                "accurate": (pred == c["violation_label"]) if arm == "original" else None,
+                "n_unparsed": len(ratings) - len(good)}
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
         futs = [ex.submit(work, j) for j in jobs]
         for i, f in enumerate(as_completed(futs), 1):

@@ -105,7 +105,7 @@ their original collection dates and are not counted as new repetitions.
 | Extension | Purpose |
 | --- | --- |
 | Three-turn nationality-only cues | Compare same and different nationality from the respondent |
-| Country substitutions with Convention applicability explicitly fixed | Extend the completed destination comparisons under a stated legal framework |
+| Country Swap with coherent factual context and fixed Convention applicability | Preserve distinct countries in cross-border events and align location-dependent facts before testing country identity |
 
 The [detailed plan](docs/NEXT_EXPERIMENTS.md) specifies the cues, analyses and
 budget formulas. No additional professional-role branches are scheduled.
@@ -115,11 +115,21 @@ The generator-related comparison is already covered by the completed
 It removes generator-linked evaluators while keeping the generated texts fixed.
 No replacement-generator experiment is scheduled.
 
-**Completed State Swap results:** the [Türkiye](analysis/stateswap_turkey/REPORT.md)
+**Completed Country Swap results (full cohorts):** the [Türkiye](analysis/stateswap_turkey/REPORT.md)
 and [UK](analysis/stateswap_uk/REPORT.md) follow-ups contain 24,000 records and
 240,000 parsed ratings. The [combined comparison](analysis/stateswap_followups/REPORT.md)
 retains all eighteen effects on 768 shared targets with repeated destinations
-shown separately. Both ordinary destination grids are complete.
+shown separately. Both ordinary destination grids are complete. The context-screened comparisons
+use 574 shared targets; the full cohorts remain in the source tables.
+
+**Country Swap context checked:** the [input audit and offline sensitivity
+analysis](analysis/stateswap_context/REPORT.md) identifies actual contradictions
+from literal substitution, including a cross-border pushback becoming a return
+to the same country. Removing 194 flagged targets from the 768-target follow-up
+cohort retains all eighteen effect directions. These flags identify texts for
+review; they are not a count of confirmed invalid inputs. The saved experiments
+measure contextual sensitivity. The runner now applies the context check before
+model calls and records exclusions with input hashes in a fixed manifest.
 
 **Existing roles:** AI safety researcher, lawyer, junior lawyer, senior lawyer
 and no cue already have full-cohort results. The older-model nationality release
@@ -211,7 +221,7 @@ The [pipeline and version policy](docs/BENCHMARK_RELEASES.md) support different
 cohort sizes and later releases; new model results can evaluate the same v1.0.
 
 **Earlier-model results reviewed 19 September 2026:** GPT-4o mini and GPT-4.1
-mini add complete full-record, summary, paraphrase and State Swap outputs.
+mini add complete full-record, summary, paraphrase and Country Swap outputs.
 The [earlier-model time-window analysis](analysis/model_time_windows/REPORT.md)
 uses their [verified knowledge dates](configs/model_knowledge_cutoffs.json),
 with the six primary models evaluated on the same case splits as references.
@@ -222,11 +232,11 @@ uncertainty, annual results, reference-model comparisons and nationality coverag
 
 Published evaluation snapshot from **17 September 2026**,
 [`78b775f`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/78b775f70ffa96c7873ab191a4949fd5a3a02d55).
-Summary-based State Swap results and country matching were updated in
+Summary-based Country Swap results and country matching were updated in
 [`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
 
 **Code and source status checked 21 September 2026:** the six legacy Hugging Face sources
-are **deprecated as evaluation inputs**, including the old State Swap release.
+are **deprecated as evaluation inputs**, including the old Country Swap release.
 Use the GitHub inputs below. See the
 [source-status register](docs/DATA_SOURCE_STATUS.md) for exact Hub revisions,
 deprecated local files, replacements and pending inputs; the same inventory is
@@ -240,11 +250,11 @@ available as [JSON](configs/data_source_status.json).
 | Three-turn adversarial opinion | Six models; 11 conditions; static and adaptive arms; 6,000 initial records and 118,206 trajectory records | [Current results](data/experiments/syco_full_latest/) |
 | Extractive summaries | One source-extractive control for each of the 947 judgments | [Released artifact](data/processed/summaries_extractive_leakchecked_20260916.json) |
 | Summary fact coverage | Abstractive/extractive analysis completed locally; claim-level artifacts pending publication | Not yet included in this release |
-| Metadata robustness: State Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
-| Türkiye State Swap follow-up | GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol; original, Türkiye, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_turkey/REPORT.md) |
-| UK State Swap follow-up | The same three GPT models; original, UK, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_uk/REPORT.md) |
-| Both State Swap follow-ups | All eighteen effects on 768 shared targets from 725 judgments; each run retains its own original arm | [Combined comparison](analysis/stateswap_followups/REPORT.md) |
-| Earlier-model extension | GPT-4o mini and GPT-4.1 mini; 20,000 full-record, summary, paraphrase and State Swap records, all with ten parsed ratings | [Inventory and analysis](analysis/model_time_windows/REPORT.md) |
+| Metadata robustness: Country Swap | Six models; original, US, Russia and Ukraine summary arms; 24,000 result records | [Current results](data/experiments/stateswap_summary/) |
+| Türkiye Country Swap follow-up | GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol; original, Türkiye, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_turkey/REPORT.md) |
+| UK Country Swap follow-up | The same three GPT models; original, UK, Russia and Ukraine arms; 12,000 records | [Results and offline audit](analysis/stateswap_uk/REPORT.md) |
+| Both Country Swap follow-ups | All eighteen effects on 574 screened targets from 545 judgments; full 768-target estimates retained | [Context check and comparisons](analysis/stateswap_context/REPORT.md) |
+| Earlier-model extension | GPT-4o mini and GPT-4.1 mini; 20,000 full-record, summary, paraphrase and Country Swap records, all with ten parsed ratings | [Inventory and analysis](analysis/model_time_windows/REPORT.md) |
 | One-turn nationality extension | Both earlier models; 2,000 initial records; three-arm matched cohorts of 916 and 63 targets for GPT-4.1 mini and GPT-4o mini | [Coverage](analysis/model_time_windows/nationality_coverage.csv) |
 
 Manuscript figure sources are maintained with the paper. The additional
@@ -299,7 +309,7 @@ The four primary evaluation suites use these six target models:
 | Qwen3 32B | `qwen/qwen3-32b` |
 
 Earlier-model controls add `openai/gpt-4o-mini` and `openai/gpt-4.1-mini` for
-full-record, summary, paraphrase and State Swap evaluation. Their
+full-record, summary, paraphrase and Country Swap evaluation. Their
 [cutoff and temporal analysis](analysis/model_time_windows/REPORT.md) uses the
 same v1.0 targets. The separate nationality extension uses a one-turn lawyer
 cue. The six-model three-turn adversarial-opinion roster is unchanged.
@@ -394,38 +404,23 @@ lawyer results. Nationality-only
 cues and adaptive repetitions follow the core batch. The released runner
 contains the 11 conditions above; new conditions need explicit support.
 
-### Metadata robustness: State Swap
+### Country Swap
 
-[`experiments/stateswap_summary_run.py`](experiments/stateswap_summary_run.py)
-applies country-name alias and demonym replacements to the shared abstractive
-summary. It compares the original summary with US, Russia and Ukraine arms,
-requesting ten ratings per target and arm. The six model directories contain
-4,000 records each. Inputs are derived from the canonical cohort and summaries;
-the previous Hub State Swap release remains **deprecated**.
+The runner replaces country aliases and demonyms in the shared summary.
+An automated context check excludes environmental and cross-border settings,
+territorial disputes and destination-country collisions before scoring.
+Every exclusion and input hash is saved in `context_manifest.json`.
 
-The current transformation produces actual respondent substitutions with changed
-text for 998 US, 966 Russia and 832 Ukraine targets. The common manuscript cohort
-contains 800 targets from 757 judgments. All 24,000 published rows have a valid
-score mean.
+The original six-model release contains 24,000 records. Offline screening
+retains 606 targets from 577 judgments for its US/Russia/Ukraine comparisons.
+The Türkiye and UK follow-ups contain another 24,000 records with 240,000
+parsed ratings; their shared screened cohort has 574 targets from 545 judgments.
+All eighteen follow-up effect directions persist. Each comparison uses the
+original-summary arm from its own run.
 
-The [Türkiye follow-up](analysis/stateswap_turkey/REPORT.md) adds GPT-4o mini,
-GPT-4.1 mini and GPT-5.6-sol on 785 common targets from 742 judgments. Russia
-and Ukraine substitutions raise mean violation likelihood for the two earlier
-models (+0.7 to +1.5 points), but lower it for GPT-5.6-sol (-1.0 to -1.4).
-These directions persist after correction across nine model-destination effects.
-All 120,000 requested ratings parse. This run has its own original arms and
-cohort; its rows are not pooled with the original US comparison. See the
-[State Swap protocol and input review](docs/STATESWAP.md).
-
-The [UK follow-up](analysis/stateswap_uk/REPORT.md) adds another 12,000 records
-with 120,000 parsed ratings. UK substitution lowers violation likelihood in
-all three models. Both follow-ups are retained in the
-[combined analysis](analysis/stateswap_followups/REPORT.md): on the same 768
-targets, the UK shifts are -1.3, -3.1 and -2.0 points for GPT-4o mini,
-GPT-4.1 mini and GPT-5.6-sol. These directions persist after correction across
-all eighteen effects. Russia and Ukraine raise scores in both mini models in
-both runs. Each effect uses the original arm collected in that run; repeated
-conditions are not pooled across runs.
+See the [protocol](docs/STATESWAP.md), [context audit](analysis/stateswap_context/REPORT.md)
+and [worked benchmark example](analysis/case_walkthrough/README.md).
+The 1,000-target v1.0 release and all raw results remain intact.
 
 ## Scoring and manuscript analysis
 
@@ -524,16 +519,17 @@ python experiments/syco_run.py \
   --out data/experiments/syco_new
 ```
 
-### Summary-based State Swap
+### Country Swap preflight
 
 ```bash
 python experiments/stateswap_summary_run.py \
-  --model openai/gpt-5.6-sol --samples 10 --workers 60 \
-  --out data/experiments/stateswap_summary_new
+  --model openai/gpt-5.6-sol --targets uk --validity-targets uk turkey \
+  --preflight-only --out data/experiments/country_swap_context_checked
 ```
 
-New runs record whether each arm changes the input, individual ratings and raw
-responses. Checkpoint settings and canonical input identities are validated.
+This command writes the context manifest without an API key or model calls.
+Authorized scoring runs omit `--preflight-only` and save individual ratings, raw
+responses and input hashes. Checkpoints bind the context check and input identity.
 
 Repeat evaluation with the other target identifiers in the model table. For
 syco, use a separate output directory per model or pass all target identifiers

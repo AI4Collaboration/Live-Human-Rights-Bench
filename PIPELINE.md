@@ -73,14 +73,17 @@ The validation command checks the existing frozen release without calling models
 | Full record and shared summary | `experiments/run_perturbation_fullcase.py` | Matched full-record arm |
 | Case-body paraphrases | `experiments/paraphrase_run.py` | Original arm under the same prompt |
 | Three-turn adversarial opinion | `experiments/syco_run.py` | Shared initial response |
-| Summary-based State Swap | `experiments/stateswap_summary_run.py` | Original summary under the same prompt |
+| Summary-based Country Swap | `experiments/stateswap_summary_run.py` | Original summary under the same prompt |
 | Extractive control and fact retention | `scripts/build_extractive.py`, `scripts/build_atomic_coverage.py` | Identical source claims across summary variants |
 
 [README.md](README.md) provides model identifiers, execution commands and the
 current run inventory. [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md)
-defines scoring and comparisons. State Swap supplies the respondent-substitution
+defines scoring and comparisons. Country Swap supplies the respondent-substitution
 intervention. Its released inputs and results are described in
-[docs/STATESWAP.md](docs/STATESWAP.md).
+[docs/STATESWAP.md](docs/STATESWAP.md). The runner checks environmental,
+cross-border and territorial context alongside destination collisions before
+scoring. It stores exclusions and input hashes in `context_manifest.json`;
+`--preflight-only` writes this manifest without model calls.
 
 ## Deprecated sources
 

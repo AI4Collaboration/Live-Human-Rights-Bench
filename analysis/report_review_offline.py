@@ -121,7 +121,7 @@ lines += ['', 'All summary pairs number 1,000. Missing-score exclusions occur in
           '- [Systematic scores](systematic_brier.csv), [all dialogue turns](dialogue_brier.csv), [cue scores](cue_brier.csv), [paired cue changes](cue_brier_contrasts.csv), [turn descriptors](turn_descriptors.csv).',
           '- [Multiple-comparison intervals](multiplicity.csv): 38 contrasts, 20,000 judgment-cluster draws; Bonferroni-adjusted percentile bounds with nominal 95% coverage within each family. Pointwise Brier intervals use 2,000 draws. All use seed 731.',
           '- [Manifest](manifest.json) binds immutable input bytes and generated tables. [Validation](validation.json) independently recomputes scalar point estimates, checks counts, cohorts, family sizes and hashes.', '',
-          'State Swap receives no Brier score against the original reference: changing jurisdiction does not supply a new ground-truth outcome. Repeated conditions are retained within judgment clusters; they are not independent cases.', '',
+          'Country Swap receives no Brier score against the original reference: changing jurisdiction does not supply a new ground-truth outcome. Repeated conditions are retained within judgment clusters; they are not independent cases.', '',
           '## Reproduce', '', '```text', 'python analysis/analyze_review_offline.py', 'python analysis/report_review_offline.py', '```', '']
 (OUT / 'REPORT.md').write_text('\n'.join(lines), encoding='utf-8')
 print(json.dumps(validation))

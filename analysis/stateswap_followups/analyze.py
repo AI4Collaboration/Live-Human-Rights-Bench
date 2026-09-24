@@ -1,4 +1,4 @@
-"""Compare both State Swap follow-ups on one cohort without pooling runs."""
+"""Compare both Country Swap follow-ups on one cohort without pooling runs."""
 from __future__ import annotations
 
 import csv
@@ -66,7 +66,7 @@ def main():
         bootstrap=dict(seed=731,pointwise_draws=2000,family_draws=20000,cluster="judgment",estimand="target-weighted mean"),
         source_audits=["analysis/stateswap_turkey/manifest.json","analysis/stateswap_uk/manifest.json"])
     (OUT/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
-    report=["# Both State Swap follow-ups", "",
+    report=["# Both Country Swap follow-ups", "",
         "The figure retains all 18 model-by-destination estimates from both follow-ups. The repeated Russia and Ukraine conditions are displayed separately. Each difference uses the original arm collected in the same run.", "",
         f"The common cohort contains {len(common)} targets from {manifest['common_judgments']} judgments with an actual substitution in all four destination countries.", "",
         "| Run | Model | Destination | Shift [95% CI] | Judgment change (%) | Strict reversal (%) |",

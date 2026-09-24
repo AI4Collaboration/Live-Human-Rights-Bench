@@ -1,4 +1,4 @@
-# Both State Swap follow-ups
+# Both Country Swap follow-ups
 
 The figure retains all 18 model-by-destination estimates from both follow-ups. The repeated Russia and Ukraine conditions are displayed separately. Each difference uses the original arm collected in the same run.
 

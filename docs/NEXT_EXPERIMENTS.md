@@ -208,16 +208,14 @@ nationality branches directly. The
 uses a lawyer cue and one turn. Its common three-arm samples contain 916
 GPT-4.1 mini and 63 GPT-4o mini targets and are analyzed separately.
 
-### Country substitutions
+### Country Swap
 
-The published [Türkiye](../analysis/stateswap_turkey/REPORT.md) and
-[UK](../analysis/stateswap_uk/REPORT.md) follow-ups are complete. Further
-country substitutions could state a common Convention/provision framework
-and decision period explicitly. A UK/France comparison would require
-original respondents distinct from both destinations and verification that
-the target provision applies. Mere treaty membership does not establish
-identical legal context. Its budget depends on the eligible inputs and
-number of ratings; do not rerun the completed destination grids.
+The completed destination runs now have an offline context check and filtered
+comparisons in the [audit](../analysis/stateswap_context/REPORT.md).
+The runner excludes flagged summaries before model calls and saves every
+exclusion in its context manifest. Future extensions must preserve coherent
+locations and cross-border relationships with Convention applicability fixed.
+No further destination grid is scheduled.
 
 ## Execution requirements
 
@@ -310,7 +308,7 @@ and reproduces the manuscript's summary and paraphrase transition totals.
 - Compare roles and challenge modes on the same complete cases within each
   contrast. Split initially correct and initially wrong cases throughout.
 - Join experiments by the released target identifiers and verify provision
-  consistency. Use each suite's saved reference arm. Report State Swap
+  consistency. Use each suite's saved reference arm. Report Country Swap
   sensitivity separately from errors against the original case label.
 - Use paired comparisons and judgment-cluster intervals. Report common-target
   and initial-correctness filters with each overlap estimate.

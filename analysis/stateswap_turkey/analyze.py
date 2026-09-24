@@ -1,4 +1,4 @@
-"""Audit and analyze the saved Türkiye State Swap release, without model calls.
+"""Audit and analyze the saved Türkiye Country Swap release, without model calls.
 
 Run from any directory: python analysis/stateswap_turkey/analyze.py
 Only pinned Git objects are read. No API runner is imported or executed.
@@ -197,7 +197,7 @@ def main():
     write_csv("cohort.csv", [dict(item_id=key[0], article=key[1], respondent=respondent[key],
         **{f"substituted_{arm}": substituted[key, arm] for arm in ARMS}, common=key in common) for key in sorted(case_map)])
     primary = [row for row in source_rows if row["scope"] == "common"]
-    report = ["# Türkiye State Swap follow-up", "", f"Source release: `{REVISION}`. All analysis is offline; no new model calls.", "",
+    report = ["# Türkiye Country Swap follow-up", "", f"Source release: `{REVISION}`. All analysis is offline; no new model calls.", "",
         "## Main finding", "", "Russia and Ukraine substitutions raise mean violation likelihood for GPT-4o mini and GPT-4.1 mini, but lower it for GPT-5.6-sol. All six directions remain after correction across the nine model-by-destination shifts. GPT-5.6-sol also has a negative Türkiye shift. These are model-specific responses to the same country edits, not estimates of a training-cutoff effect.", "",
         "## Inputs and scoring", "", "The three models use the same frozen v1.0 inputs (1,000 targets from 947 judgments) and the same summaries, prompts and scoring settings. Every target has an original arm and Türkiye, Russia and Ukraine arms, each with ten requested ratings at temperature 1.0. All 120,000 final ratings parse. The 44 additional parse attempts are retained and checked. Stored means, labels, response histories and text-change flags were verified against the saved responses and deterministic replacement code.", "",
         "The common comparison includes 785 targets from 742 judgments whose respondent differs from all three destinations, whose summary changes under every substitution, and whose means are valid in all twelve model-arm combinations. Destination-specific substitution counts are 983 for Türkiye, 966 for Russia and 832 for Ukraine. Original Türkiye cases account for the 15-target difference from the original US experiment's 800-target comparison; these are cohort exclusions, not missing model responses.", "",

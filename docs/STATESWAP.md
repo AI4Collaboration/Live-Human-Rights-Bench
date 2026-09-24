@@ -1,4 +1,4 @@
-# Summary-based State Swap
+# Summary-based Country Swap
 
 The original six-model experiment and country matching were updated in
 [`4b231e1`](https://github.com/AI4Collaboration/Live-Human-Rights-Bench/commit/4b231e17e6dd65880e665c5fe298db3862ff5ade).
@@ -26,7 +26,7 @@ Reapplying the released rule to every canonical target gives:
 | Ukraine | 832 | 832 | 167 |
 
 All counts use 1,000 targets per destination. Seven Russia-arm changes only
-normalize the name of the original Russian respondent. The manuscript therefore
+normalize the name of the original Russian respondent. The unfiltered comparison
 uses **800 targets from 757 judgments** with a different respondent and changed
 summary text in every destination arm, and valid score means in all four arms
 of all six models. This common cohort supports every original six-model/destination contrast.
@@ -83,7 +83,7 @@ UK substitution lowers mean violation likelihood by 1.32, 3.06 and 2.01
 points for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. All three effects remain
 negative after correction across nine comparisons.
 
-The manuscript's [combined follow-up comparison](../analysis/stateswap_followups/REPORT.md)
+The unfiltered [combined follow-up comparison](../analysis/stateswap_followups/REPORT.md)
 retains all eighteen effects from both runs. It uses 768 targets from 725
 judgments with actual substitutions in all four destination countries. Each
 effect uses its run's own original arm. The repeated Russia and Ukraine
@@ -95,20 +95,35 @@ The UK run adds a destination under the existing prompt. The separately
 proposed UK/France experiment explicitly fixes Convention applicability and
 remains conditional; the ordinary UK grid is complete.
 
-## New runs
+## Context check and new runs
 
-[`experiments/stateswap_summary_run.py`](../experiments/stateswap_summary_run.py)
-validates the canonical inputs and binds checkpoints to the inputs and settings.
-New rows additionally save `text_changed`, individual `ratings`, raw `responses`,
-all parse `response_attempts` and `parse_retry_count`. The run identity records
-the country aliases and demonyms along with model, prompt and input hashes.
-Select `--targets us` (default), `--targets turkey` or `--targets uk`; use a fresh output directory:
+Country Swap now excludes summaries flagged for environmental context,
+cross-border events, territorial disputes or a destination already present
+in the original text. It also excludes unchanged inputs and unresolved
+respondents. The [audit](../analysis/stateswap_context/REPORT.md) gives exact
+rules and examples. These deterministic checks identify contexts to exclude;
+they do not certify all remaining local institutions or legal relationships.
+
+Applying the check to saved results retains **606 targets from 577 judgments**
+for the original US comparison and **574 targets from 545 judgments** for the
+shared follow-ups. These are the screened manuscript comparisons. The full
+cohorts above remain available as source results.
+
+The runner writes `context_manifest.json` before scoring, recording input hashes,
+eligibility and exclusion reasons for every target. New checkpoints use
+`country-swap-summary-context-v3` and cannot resume older unscreened runs.
+No original reference verdict is used to score a substituted arm's accuracy.
+
+Preview the shared follow-up cohort without an API key or model calls:
 
 ```bash
 python experiments/stateswap_summary_run.py \
-  --model openai/gpt-5.6-sol --samples 10 --workers 60 \
-  --out data/experiments/stateswap_summary_new
+  --model openai/gpt-5.6-sol --targets uk --validity-targets uk turkey \
+  --preflight-only --out data/experiments/country_swap_context_checked
 ```
 
-The old Hugging Face State Swap release remains deprecated. It is unrelated
-to these summary-derived arms.
+Omit `--preflight-only` only when a new run is authorized. Use the same
+`--validity-targets` for runs that will share a comparison cohort. Existing
+results can be analyzed offline with `python analysis/stateswap_context/audit.py`.
+Historical `stateswap_*` filenames are retained so source references resolve.
+The deprecated Hugging Face release is not an evaluation input.

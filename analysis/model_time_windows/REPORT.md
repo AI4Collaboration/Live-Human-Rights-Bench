@@ -86,7 +86,7 @@ controls; the existing three-turn adversarial-opinion suite still covers six mod
 ## Other results in the extension
 
 Both earlier models have **1,000 full-record, 1,000 summary, 4,000 paraphrase and
-4,000 State Swap records** each. All 20,000 records report ten parsed ratings
+4,000 Country Swap records** each. All 20,000 records report ten parsed ratings
 and valid means. The [inventory](result_inventory.csv) also covers the six
 primary models and records missing means and partial ratings separately.
 
@@ -127,9 +127,9 @@ non-reversals. [Paired cue differences](nationality_contrasts.csv) and
   ratings; the saved output is retained intact.
 - Missing means remain failures in the 1,000-target accuracy denominators.
   Paired perturbation changes use valid pairs and expose missing counts.
-- Earlier-model State Swap configs declare `stateswap-summary-literal-v1`;
+- Earlier-model Country Swap configs declare `stateswap-summary-literal-v1`;
   the current six-model transformation uses country aliases. Input alignment
-  is needed for an eight-model State Swap comparison. The inventory records
+  is needed for an eight-model Country Swap comparison. The inventory records
   completed outputs and their run configurations.
 - Earlier-model nationality is a separate one-turn, lawyer-cue protocol with
   three requested initial and post-challenge ratings. Its continuation supplies

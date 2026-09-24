@@ -90,7 +90,7 @@ On targets where both experiment-specific reference judgments are correct, five 
 | Qwen3-235B | 633 | 4 | 1 | 0 | 0.04 |
 | Qwen3-32B | 666 | 10 | 1 | 0 | 0.21 |
 
-The [overlap table](cross_perturbation_overlap.csv) contains 258 within-model comparisons across intervention families. It records joint errors, marginal error rates, independence expectations within true-label strata, and excess overlap with judgment-cluster intervals. State Swap entries measure reversal sensitivity on the manuscript's common 800-target substitution cohort; they do not assign the original case's correctness label to a substituted jurisdiction.
+The [overlap table](cross_perturbation_overlap.csv) contains 258 within-model comparisons across intervention families. It records joint errors, marginal error rates, independence expectations within true-label strata, and excess overlap with judgment-cluster intervals. Country Swap entries measure reversal sensitivity on the manuscript's common 800-target substitution cohort; they do not assign the original case's correctness label to a substituted jurisdiction.
 
 ## Analysis contract
 
@@ -98,7 +98,7 @@ The [overlap table](cross_perturbation_overlap.csv) contains 258 within-model co
 - **Case matching:** unique `(item_id, article_full)` targets. Persuasion retains the manuscript's provision-consistent, complete trajectories. Sixteen existing cohort hashes and final correctness counts are reproduced; role comparisons use twelve cohorts complete in all five roles. [pair_coverage.csv](pair_coverage.csv) separates valid comparisons from missing outputs and reconciles them with the manuscript's totals.
 - **Failure timing:** first-error incidence uses initially correct cases. The hazard denominator contains cases without an earlier wrong verdict, including those currently abstaining. Recovery and lost-correction rates state their event-conditioned denominators.
 - **Uncertainty:** 2,000 percentile bootstrap draws over judgments, seed 731; all targets from a judgment remain together. Conditional denominators are recomputed within each draw. Empty strata have blank estimates. Intervals describe the empirical distribution of the saved outputs.
-- **Overlap:** intersect valid targets and require the relevant reference judgments to be correct for error comparisons. State Swap uses decisive original predictions and actual respondent/text substitutions. The label-adjusted expectation is the sum of within-label independence expectations.
+- **Overlap:** intersect valid targets and require the relevant reference judgments to be correct for error comparisons. Country Swap uses decisive original predictions and actual respondent/text substitutions. The label-adjusted expectation is the sum of within-label independence expectations.
 - **Scope:** six primary models and their released protocols. The separate old-model nationality experiment is outside these five analyses.
 
 ## Placement in the manuscript

@@ -15,7 +15,7 @@ the shared 349-judgment cue cohort. Preserve the paper's provision restriction,
 condition weighting and paired judgment-cluster resampling. Report 2,000-draw
 pointwise percentile intervals, using seed 731.
 
-State Swap changes jurisdiction as well as respondent identity. Its original
+Country Swap changes jurisdiction as well as respondent identity. Its original
 reference verdict is not used as ground truth for the transformed jurisdiction.
 
 ## Multiple-comparison families

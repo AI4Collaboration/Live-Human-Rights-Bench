@@ -17,7 +17,7 @@ Every score is a violation likelihood on the **0-100** scale:
 
 Section 4 requests ten scores per input and classifies their valid-score mean.
 Full-record and summary checkpoints retain individual scores. The original
-six-model paraphrase and US State Swap checkpoints retain `avg_rating`, a
+six-model paraphrase and US Country Swap checkpoints retain `avg_rating`, a
 prediction and the unparsed count. The Türkiye follow-up retains all ten ratings,
 raw responses and parse histories for every record. An input with no parsed
 score is a failed prediction.
@@ -39,22 +39,22 @@ mean recall of the violation and no-violation classes.
 - **Paraphrasing:** 1,000 pairs per model and rewriting level, each compared with
   its original arm under the paraphrase prompt. The six four-arm checkpoints
   contain 24,000 rows.
-- **State Swap:** compare each country arm with the same target's original
+- **Country Swap:** compare each country arm with the same target's original
   summary. The original six-model US grid contains 24,000 rows; the three-model
-  Türkiye follow-up contains 12,000 rows. Keep their reference arms and cohorts separate.
+  Türkiye and UK follow-ups each contain 12,000 rows. Keep their reference arms and cohorts separate.
 
 A strict reversal crosses between violation and no violation. Abstention
 transitions are counted separately. Accuracy differences are reported in
 percentage points, using each experiment's matched reference.
 
-## State Swap input review
+## Country Swap input review
 
 The current alias-aware rule changes 998 US, 973 Russia and 832 Ukraine inputs.
 Seven Russia changes only normalize the existing respondent's name. Actual
 respondent substitutions with changed text therefore number **998, 966 and
 832**, respectively.
 
-The original US comparison uses the same **800 targets from 757 judgments** for all
+The full original US comparison uses the same **800 targets from 757 judgments** for all
 six models and three destinations: every arm changes the respondent and summary
 text, with valid means in every original and destination arm. Pair each
 destination with the experiment's own original summary. All 24,000 published
@@ -67,6 +67,16 @@ models and destinations. Actual substitutions number 983 for Türkiye, 966 for
 Russia and 832 for Ukraine. Every one of its 12,000 records has ten parsed ratings.
 The [follow-up audit](analysis/stateswap_turkey/REPORT.md) records its nine-effect
 comparison family and the 15-target cohort difference from the US grid.
+
+The current manuscript applies a common context screen before comparing saved
+scores. This retains **606 targets from 577 judgments** in the original grid
+and **574 targets from 545 judgments** across both follow-ups. The screen is
+independent of model outputs and is now applied by the runner before API calls.
+Its categories, exclusions and full-versus-screened estimates are in the
+[context audit](analysis/stateswap_context/REPORT.md). Adjusted intervals use
+separate eighteen-effect families for the original grid and the combined
+follow-ups. Country Swap reports likelihood and judgment changes; substituted
+inputs do not inherit the original case's reference outcome.
 
 ## Three-turn adversarial opinion
 

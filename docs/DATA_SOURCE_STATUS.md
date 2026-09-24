@@ -32,7 +32,7 @@ Hub revisions; they do not designate future releases from the same repository.
 | [`overthelex/echr-livehrb-static-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-static-2k/tree/ee9cb87f74c6843bec44f4eb33bc4151bbcfea49) | `ee9cb87` | `data/processed/echr_unified.json` |
 | [`overthelex/echr-livehrb-temporal-2k`](https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-2k/tree/24dff82a53c61fa298c0ee39841c67ea9ed0fd44) | `24dff82` | `data/processed/echr_unified.json` |
 | [`overthelex/echr-livehrb-temporal-1k`](https://huggingface.co/datasets/overthelex/echr-livehrb-temporal-1k/tree/b7cc10be36c0a8be879217c8c6b0bb9791bd5fb7) | `b7cc10b` | `data/processed/echr_unified.json` |
-| [`overthelex/echr-livehrb-stateswap`](https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e) | `4360866` | Canonical summaries and the [current State Swap transformation](STATESWAP.md) |
+| [`overthelex/echr-livehrb-stateswap`](https://huggingface.co/datasets/overthelex/echr-livehrb-stateswap/tree/4360866441dc7da39df442d16de2fbc46d29119e) | `4360866` | Canonical summaries and the [current Country Swap transformation](STATESWAP.md) |
 
 The source pools may supply candidates for a new benchmark release. Those
 candidates require source review and target resolution before evaluation.
@@ -64,7 +64,7 @@ The deprecated input adapters and experiment runners have been removed.
 Use the current entry points in the [README](../README.md#setup-and-execution).
 New candidate corpora require source review before evaluation.
 
-## Current State Swap transformation
+## Current Country Swap transformation
 
 The current results at revision `4b231e1` derive country arms directly from the
 canonical cohort and shared abstractive summaries, with country aliases and

@@ -44,7 +44,7 @@ The nine outcome categories are mutually exclusive within each trajectory and ex
 ## Scope across the paper
 
 - Summarization and paraphrasing: retain correct-to-wrong, correct-to-abstention and error-correction transitions. Compare error direction and shared vulnerable targets using each experiment's saved reference arm.
-- State Swap: report score changes, judgment transitions and abstention as substitution sensitivity.
+- Country Swap: report score changes, judgment transitions and abstention as substitution sensitivity.
 - Adversarial challenges: quantify error induction, persistence and recovery from complete score paths, independently of CoT availability.
 
 The [next-analysis plan](../../docs/NEXT_EXPERIMENTS.md) prioritizes initial score extremity and failure timing, followed by error direction, cue effects and shared vulnerability. These extensions use existing outputs and labels.

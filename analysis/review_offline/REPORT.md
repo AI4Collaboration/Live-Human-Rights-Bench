@@ -39,7 +39,7 @@ First reversal is the earliest opposite decisive verdict at turn 1, 2 or 3. No r
 - [Multiple-comparison intervals](multiplicity.csv): 38 contrasts, 20,000 judgment-cluster draws; Bonferroni-adjusted percentile bounds with nominal 95% coverage within each family. Pointwise Brier intervals use 2,000 draws. All use seed 731.
 - [Manifest](manifest.json) binds immutable input bytes and generated tables. [Validation](validation.json) independently recomputes scalar point estimates, checks counts, cohorts, family sizes and hashes.
 
-State Swap receives no Brier score against the original reference: changing jurisdiction does not supply a new ground-truth outcome. Repeated conditions are retained within judgment clusters; they are not independent cases.
+Country Swap receives no Brier score against the original reference: changing jurisdiction does not supply a new ground-truth outcome. Repeated conditions are retained within judgment clusters; they are not independent cases.
 
 ## Reproduce
 

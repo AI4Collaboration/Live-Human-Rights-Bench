@@ -1,4 +1,4 @@
-# UK State Swap analysis
+# UK Country Swap analysis
 
 Source revision: `05b96bf53698e503f18f25bd44c3a66f47b67d20`. All analysis is offline; no new model calls.
 

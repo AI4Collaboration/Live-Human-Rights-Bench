@@ -1,0 +1,44 @@
+[
+  {
+    "item_id": "001-240242",
+    "case_name": "CASE OF A.R.E. v. GREECE",
+    "article": "5",
+    "respondent": "Greece",
+    "destination": "Turkey",
+    "in_followup_cohort": true,
+    "original_excerpt": "concerns the alleged “pushback” of a Turkish national from Greece to Türkiye in May 2019",
+    "substituted_excerpt": "concerns the alleged “pushback” of a Turkish national from Türkiye to Türkiye in May 2019",
+    "issue": "Origin and destination of a cross-border pushback become the same country.",
+    "source_url": "https://hudoc.echr.coe.int/eng?i=001-240242",
+    "original_sha256": "628525a674466331f4fe19c3efb118cb8feb72d571ba465d51ced93f62290a36",
+    "substituted_sha256": "b3da74ea59c8502a1c78aab791c8192788f4116a0ede1775ae6999cc1d058bee"
+  },
+  {
+    "item_id": "001-108607",
+    "case_name": "CASE OF LEVINTA v. MOLDOVA (No. 2)",
+    "article": "5",
+    "respondent": "the Republic of Moldova",
+    "destination": "Russia",
+    "in_followup_cohort": true,
+    "original_excerpt": "were arrested in Russia in October 2000 and extradited to Moldova",
+    "substituted_excerpt": "were arrested in Russia in October 2000 and extradited to Russia",
+    "issue": "Extradition from Russia to Moldova becomes extradition from Russia to Russia.",
+    "source_url": "https://hudoc.echr.coe.int/eng?i=001-108607",
+    "original_sha256": "cb9d66f1ce2e2ad10ce878cac53c7910a0fde5b43ac3a69998c179105a932f74",
+    "substituted_sha256": "2d71fd7bb05756c2ce3cc0a357aed65d038a61cb278972b4f1a1c76e13c92168"
+  },
+  {
+    "item_id": "001-174413",
+    "case_name": "CASE OF TOLESKI v. \"THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA\"",
+    "article": "P1-1",
+    "respondent": "North Macedonia",
+    "destination": "UK",
+    "in_followup_cohort": true,
+    "original_excerpt": "It found the land was part of the Ohrid lakeshore and of general/public interest under the Protection of Lakes Act and Waters Act, making enforcement legally impossible.",
+    "substituted_excerpt": "It found the land was part of the Ohrid lakeshore and of general/public interest under the Protection of Lakes Act and Waters Act, making enforcement legally impossible.",
+    "issue": "Ohrid lakeshore and the local statutory setting remain after the respondent is changed to the UK.",
+    "source_url": "https://hudoc.echr.coe.int/eng?i=001-174413",
+    "original_sha256": "2eeba9c3cac95c4909d972794cbf2b54533cf2ff07c5c5f570f899beede6b982",
+    "substituted_sha256": "c3106c3c1cda5da23425d32ff3353a4c0471d153314bdc62cdeb8aab18753eac"
+  }
+]

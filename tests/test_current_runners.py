@@ -95,20 +95,21 @@ def test_stateswap_rejects_changed_and_unversioned_checkpoints(tmp_path):
     cases, summaries = tmp_path / "cases.json", tmp_path / "summaries.json"
     cases.write_text("[]", encoding="utf-8")
     summaries.write_text("{}", encoding="utf-8")
-    args = SimpleNamespace(model="offline", samples=10, limit=0,
+    args = SimpleNamespace(model="offline", samples=10, limit=0, targets="us",
         cases=str(cases), summaries=str(summaries))
+    validity = {"version": "country-swap-context-v1", "destinations": ["US", "Russia", "Ukraine"]}
     output = tmp_path / "run"
     output.mkdir()
     checkpoint = output / "stateswap_summary_results.jsonl"
     checkpoint.write_text("{}\n", encoding="utf-8")
     with pytest.raises(ValueError, match="Unversioned"):
-        stateswap.bind_run_config(output, args)
+        stateswap.bind_run_config(output, args, validity)
     checkpoint.unlink()
-    first = stateswap.bind_run_config(output, args)
-    assert stateswap.bind_run_config(output, args) == first
+    first = stateswap.bind_run_config(output, args, validity)
+    assert stateswap.bind_run_config(output, args, validity) == first
     args.samples = 5
     with pytest.raises(ValueError, match="settings changed"):
-        stateswap.bind_run_config(output, args)
+        stateswap.bind_run_config(output, args, validity)
 
 
 def test_stateswap_saves_raw_responses_and_parse_retries(tmp_path, monkeypatch):
@@ -136,20 +137,25 @@ def test_stateswap_saves_raw_responses_and_parse_retries(tmp_path, monkeypatch):
     assert rows["US"]["ratings"] == [20]
     assert rows["Russia"]["prediction"] == "abstention"
     assert rows["Ukraine"]["text_changed"] is True
+    assert rows["US"]["accurate"] is None
+    assert rows["original"]["accurate"] is True
+    assert rows["US"]["context_check"] == "country-swap-context-v1"
+    assert len(rows["US"]["input_sha256"]) == 64
 
 
 def test_stateswap_checkpoint_binds_country_aliases(tmp_path, monkeypatch):
     cases, summaries = tmp_path / "cases.json", tmp_path / "summaries.json"
     cases.write_text("[]", encoding="utf-8")
     summaries.write_text("{}", encoding="utf-8")
-    args = SimpleNamespace(model="offline", samples=10, limit=0,
+    args = SimpleNamespace(model="offline", samples=10, limit=0, targets="us",
         cases=str(cases), summaries=str(summaries))
-    first = stateswap.bind_run_config(tmp_path / "run", args)
+    validity = {"version": "country-swap-context-v1", "destinations": ["US", "Russia", "Ukraine"]}
+    first = stateswap.bind_run_config(tmp_path / "run", args, validity)
     assert "country_aliases_and_demonyms" in first
     monkeypatch.setattr(stateswap, "COUNTRIES", {**stateswap.COUNTRIES,
         "Croatia": (["Croatia", "Republic of Croatia"], "Croatian")})
     with pytest.raises(ValueError, match="settings changed"):
-        stateswap.bind_run_config(tmp_path / "run", args)
+        stateswap.bind_run_config(tmp_path / "run", args, validity)
 
 
 def test_paraphrase_missing_arm_cannot_be_scored_as_original(tmp_path):

@@ -1,0 +1,1001 @@
+item_id,article,respondent,environment,cross_border,territorial,destination_already_present,us_screen_flagged,followup_screen_flagged,summary_sha256,original_us_cohort,followup_cohort
+001-108433,10,Austria,,,,,False,False,f9e6e0c86990f543f0bb33e77f4e05e7630fa7bd763fab342f8fbf666f3427ff,True,True
+001-108580,34,Ukraine,,,,,False,False,ea6fe142b728d85407a115e981734e26f3444ac284fa7fad485962ed3c448d2c,False,False
+001-108599,3,the United Kingdom,,extradited; extradition,,US,True,True,5e101a1eb4c567ca49c7dd7bdb8cf7bee2cee509b15a7c703b3db186a6458487,True,False
+001-108607,5,the Republic of Moldova,,extradited; extradition,,Russia,True,True,cb9d66f1ce2e2ad10ce878cac53c7910a0fde5b43ac3a69998c179105a932f74,True,True
+001-108680,8,Lithuania,,,,,False,False,0a12ea083b80bf4695e3cc11464c5b8fa08195dbf303ad8462a17a7842d81b68,True,True
+001-108859,6,Türkiye,,,,,False,False,0693705e962b33d809250dd7f7f935f3b745b6410f9c44897a94a3a025d588a4,True,False
+001-109062,P4-2,Bulgaria,,border,,,True,True,81b56cd22e2e3de54099e96e0bb0194700df3f7edc1b9151c3fd9488f4c90e11,True,True
+001-109072,8,the United Kingdom,environmental; Hazardous; hazardous,,,,True,True,ebaf92ec274f421d4adbb6debd06a3b693b8f8197ca2fcb5e0921a838bb5f40a,True,False
+001-109565,8,Ukraine,,,,,False,False,b14f55c160d441757b2d9ba70a905e520cd6cd23f215b622f6d48be11f756193,False,False
+001-109572,14,France,,,,,False,False,13339618d8ca98db65ff9d08ebd2c935f76de95ed43452ac9ac9a709d38733c8,True,True
+001-109575,8,Sweden,,,,,False,False,e7ae7735876287138e2ecc50f4ddd6db30eecff3a8051583c8c45bce01027a98,True,True
+001-109581,5,the United Kingdom,,,,,False,False,650eaf8d47b0408563ca0ae2d8da565d84131271056a73084cdbdb377e4b885e,True,False
+001-110164,6,Luxembourg,,deportation,,,True,True,dad4d2569b3bad27f2658b630720a1fc89b3d0a232e2c6923b3bd55e9c03cebd,True,True
+001-110171,10,Poland,,,,,False,False,e9068ede2611c0b315be762836e8b1e9682f4b958638d42bce723f0483e185f7,True,True
+001-110249,3,Czechia,,,,,False,False,9c9313dbe056e8e6a29ece4003c9e32c5aa8c01fc03c533d2dac889812f6e149,True,True
+001-110271,8,the United Kingdom,,Asylum; deport; deportation,,,True,True,32c385ae7737ad48571d335a2725f105aab4e9649d4dfcf4b5333b5a33e59dd1,True,False
+001-110486,P4-2,Bulgaria,,border,,,True,True,350e68d238f8eaf3c213ab53a780a27bace2d63c9c6df55cce295fbc2f72a2ff,True,True
+001-110702,6,Greece,,borders,,,True,True,02a0f90f8312ba328e3f290f4d0695eaccd00b78456d31770f5d7b9145c46de2,True,True
+001-110810,6,Bulgaria,,,,,False,False,dfcbd08f4f488bc6bed0ef372dfcd9238e4e77d59fceb628e9b025c71c91d22d,True,True
+001-110812,13,Bulgaria,,deportation; expulsion,,,True,True,dc8ba650c69ff1828726e9a3defeb2c4ec927d54b9d8a049198d9739b6445beb,True,True
+001-110936,5,Türkiye,,,,,False,False,f5d741a3b9f6449e26bcc1c937b40ae32563aa5f7a1a74d4acd5fa7c850c8779,True,False
+001-110942,8,Latvia,,,,,False,False,b5765f5afa5cda126b13f954e29b7f5241ce487537d562cfa771405918281603,True,True
+001-110949,3,Estonia,,,,,False,False,5e700491e9595956834e3ca41b9330fa489c12877ac5f2fd1e9a56db9b8c54ed,True,True
+001-110950,6,Estonia,,,,,False,False,d6aa91f2eb9a0e88a715651010fce725c45174825cf59cf6dadc691ff2fbe5fe,True,True
+001-111044,P1-3,Italy,,,,UK,False,True,c7d9759ace9238d5115307490812ee36043928ba1ffffe23f7aa98ed3d05269e,True,True
+001-111175,6,Finland,fishing; lake; salmon,,,,True,True,564a02c9640bec0b8862d62e324803583e99c0b1f4df382f00828b6e917d3280,True,True
+001-111369,7,Germany,,,,,False,False,2d996fcd51f4b194c74795dcc61ee3affcb30db3a2a92fc5a5bf3e7f28ef4d24,True,True
+001-111394,14,the Republic of Moldova,,,,,False,False,1e9eb01b6515ca400408cccdf24272fc266d349d1401e264f1d129351b3e1ba7,True,True
+001-111419,6,Georgia,,,,,False,False,3420efb643e2b3677779dee71d8df75d9b98144db9aab125986f7e987e0f72af,True,True
+001-111429,3,Austria,,Asylum; asylum; expel; expulsion; Refugee,Chechen,Russia,True,True,ca3a695bf8dd01ce9b3a525f72bc230041015b80035c67247a9ddaa768379839,True,True
+001-111518,6,Bosnia and Herzegovina,,,armed conflict,,True,True,9cc29f9457f0ef9c2d9d34dc547575a7ee9a776c9ce4f1616e776ee923a7e7d1,True,True
+001-111521,P1-1,Georgia,,,,,False,False,a5c8b31054596e58d91d59fbe407ed153a494eb718ae185e41923e1dc9f9bae1,True,True
+001-111628,5,Armenia,,,,,False,False,d1d18c94c186b4c451615eacf070c658dc1c51d673c6848b1557318e73f07bfa,True,True
+001-111666,5,San Marino,,extradite; extradited; Extradition; extradition,,,True,True,7ca3ddb360f89bb943b42d9ea2fdb97756726c0059acd0f0e58ca7da186c0393,True,True
+001-111902,8,Latvia,,,,,False,False,a2336d49280ce35b050513eed2dd2a75eccb6bac45a2aceda751ca24853378bb,True,True
+001-111938,8,Finland,,,,,False,False,62c5899c310c0340e899f0ce3a6f4b4abbab6479d914a80abc8c6c8c171716e6,True,True
+001-112102,6,the Netherlands,,extradition,,UK,True,True,c10a0f4baca92480153d129c32a41a3b9ab665a95abb7e47a70b8d3c7da6ba1b,True,True
+001-112465,3,Poland,,,,,False,False,f66e5e1b808ba54dd7c8c04b0fab871c81121621614e7f1c1a7fa2a07f8b17da,True,True
+001-112529,P1-1,Albania,,,,,False,False,44d107b97af06317c4ce31e6e591a0c018d944219b7bf2150d332112658d2a55,True,True
+001-112576,3,Italy,,,,,False,False,6b14f5fc44ed23170a6fc46db3a0c4a63ba1ec37bed84296d1c97eebeb745531,True,True
+001-112588,8,Lithuania,,,,Russia,True,True,460171325a81ce9e263a3191c77ab29e3d4ddcf130971a97b79a689ba065cb30,True,True
+001-113137,10,Austria,,asylum,,,True,True,b15ebce91d18f62cd84fcde22d25426cc832a565c0e4fdafd5ad876623110b65,True,True
+001-113328,2,Albania,,extradite; extradited; Extradition; extradition,,US,True,True,36988578b7fb1e8dfcea3454a7296295f26c8053cb75e5d0b0277b40cc622811,True,True
+001-113432,3,Latvia,,Border; deportation; deported; expulsion,,Russia,True,True,dbbbd2cdf638315505bc70717ed250aa59421f86ef7fefe3b65219f4bf7a78ad,True,True
+001-113648,6,Latvia,,,,,False,False,a6f6ce1cf8831aa5990239a41753d282fc42eadd6c904fe68026c8eb8965ce48,True,True
+001-113806,6,Slovenia,,,,UK,False,True,5ea5b8b287ff18b66411fc6de9b16a4a53c3ea1dc46749fadbea0890a2de37af,True,True
+001-113819,8,France,,,,,False,False,bdb0a81304a800e6e05e0a4d70c975be7c59b464c9e7a3512e69cfab72665f8f,True,True
+001-114082,P1-2,the Republic of Moldova,,,,Russia,True,True,86afcad6b0844a4f407a5336283d6883a8b9a34cb79a709f5130494f7623e67d,True,True
+001-114085,3,Poland,,,,,False,False,9ff999335a1919ef2254c54d0986bca56c042d39def734d4d1931ae8ca96d2fa,True,True
+001-114087,3,Romania,,,,,False,False,9e05285187dab6dd2ac5e4f10aa7f4529d3e28b8b676ded3e27b21d472645d53,True,True
+001-114096,P1-1,Bulgaria,,,,,False,False,e15285eeccc1c95bf1d873b248fb1ecbd7ae49a1dd2998383e718abf0030dd75,True,True
+001-114243,13,Serbia,,,,,False,False,8b136d36a45050a273184929ab156b84799311b085bf62720e8523c84894cf51,True,True
+001-114244,14,the United Kingdom,,asylum; refugee; refugees,,,True,True,ac16981eb3b0f524ae8ed1016531c7942ef24f464203740421fb40ab149d4352,True,False
+001-114273,10,Germany,,,,US,True,False,ab594e87dee548c825e3bd18c3d5dbcfbf03fe810271ad316ab2434d74f0036f,True,True
+001-114439,8,the Netherlands,,,,,False,False,52c49f4d19f4416f24175081c5d58185689c0a9cc7ca4e0911439d68aec500fb,True,True
+001-114473,2,the United Kingdom,,,,,False,False,451cfdf98ca394e73ada9f72d8c9618240e4c7aa6d9dae92af5b0fb6cc804868,True,False
+001-114485,5,Denmark,,,,,False,False,ea3db845893d5e62c0c3ec64f70a4d036dbed175c70db3b919a58cff5ff25fc8,True,True
+001-114486,14,Finland,,,,,False,False,4731601e0b15c707733512e9f38669f33e1fc7b5beeaa721a252082bddf17045,True,True
+001-114486,8,Finland,,,,,False,False,4731601e0b15c707733512e9f38669f33e1fc7b5beeaa721a252082bddf17045,True,True
+001-114492,2,Bulgaria,,,,US,True,False,ba998c17820e68face9b76c0ce6e47e7b8d4499d8f7e430679d1a0394eb7bafc,True,True
+001-114514,3,Slovakia,,,,,False,False,137b468ea054579888f15237104d8e010dccb8a5be0329ff8ddcdbe77e149e2a,True,True
+001-114658,5,Czechia,,,,,False,False,68d8ad629ab89d0cde4f65a9c63178b2eb7d2815f40aa62b95e0394577f78592,True,True
+001-115165,8,Andorra,,,,UK,False,True,bc0f288dae0a67841bc1cb3cf641d11097faf4ee4afd1a63a7e4ba0b3b3f43fd,True,True
+001-115166,6,Croatia,,,,,False,False,0a9d81a0595a39e04a4660ff1bcc2ac67f9d6b3e0ae7d184bb52c7b1471d1711,True,True
+001-115210,13,Montenegro,,,,,False,False,4ecee1c87e89b220546910e100445a579f835bfb2726f4c2d6efb5ba83fc25c4,True,True
+001-115377,8,France,,,,,False,False,d304ae0879fd0d1ccecf9ca195c1ffe55b87e483bd74c247c4f569c14dc0c125,True,True
+001-115396,3,Sweden,,asylum; deportation,,,True,True,7b451d485d588551a5161a881c8bc3b1993059a15573805f2af04706d50445cf,True,True
+001-115770,P4-2,Ukraine,,,Crimea,,True,True,8e076bc59459a0854f60b4370b98b65c36d7578e597c1938a256dee998304924,False,False
+001-115850,3,Georgia,,,,,False,False,38b23093b9aa4ffa7ff52b3957360212e1778a05fb95b3c4c4594f87a4c182b5,True,True
+001-115854,8,Albania,,expelled; expulsion,,,True,True,7d4e160a1c2e1c995b2ce737a13b974ef017859bce2961ce0ce65dd1f36853cf,True,True
+001-115864,8,Finland,,,,,False,False,d5d9179834720b955a8e48d62a9c62901e10067f1af9b98ba61b7f4aa343cd34,True,True
+001-115876,6,Bosnia and Herzegovina,,,,,False,False,eefceb48a8fac16608314c3610680fefee8d75f829ae343f2f04d7fe50724674,True,True
+001-115883,5,Ukraine,,,,,False,False,ffb514457fd10f0442c57303b1d2d60d291e5648848dc8906b92f755a9647f10,False,False
+001-115884,2,Ukraine,,,,,False,False,784e38efa94b2837c4d93921e3a9a1f7839692ec23be5b1299b5143b33ce1d15,False,False
+001-115885,6,Ukraine,,,,Russia,True,True,5037ae6eb2a44ee81d9b4eeb71c2b2b1706f0510f4462c2a039d547ff18e40f9,False,False
+001-115981,3,Belgium,,,,,False,False,02fbcbaed45ea6544618856bb3f47c6f054a0d99f4ca1b5e7890e1a5103fc9fc,True,True
+001-116827,6,North Macedonia,,border,,,True,True,3f9587bacb746eeba8d30ac62916dd9e5e27d67875fc44233331b529c21f6da7,True,True
+001-117132,3,Azerbaijan,,,,,False,False,caa0a76b0489d358a8989fbc31b2c5b02a338cf5c25e0f649f4b24570894d3c7,True,True
+001-117134,34,Ukraine,,,,,False,False,f6bed0d28bce98065ebfabe04ca242a4818bf8c949e86c9bacadf62f6da26061,False,False
+001-118045,6,Austria,,,,,False,False,f5ea0d9a66edcc7d929ed3d445639300e3c8979e66699eb4ad08847de6d96ff7,True,True
+001-118335,5,the United Kingdom,,Asylum; asylum; deportation,,,True,True,481aa3b7652289c1f505364f4858ddb8b88d65989e9050daa809cbf576bb3e58,True,False
+001-118383,P1-1,Ukraine,,,,,False,False,9b6c76c18bf8d6277183795136e02a27e2cc01768d5d8c967dc10d956410b74c,False,False
+001-118388,P1-1,Ukraine,,,,Russia,True,True,38c01252f963f5fd83079c4245615338b3f7c935f0be763a1790e9713995247a,False,False
+001-118590,6,Slovenia,,,,,False,False,9c10371fc107e97cd1722781c51a0472c0b2c62c9ac4d87aec2ab893feaacf38,True,True
+001-118591,13,Slovenia,,,,,False,False,acaa1024307f3a1fdb81552b16a84cd24959a547ac385683a60f4ac3f4176677,True,True
+001-118592,6,Slovenia,,,,,False,False,e9e78d6cb1c192fd7ffcd1e8b515f1dd31ad9dc3f59969a1d5f69f7f0885d53e,True,True
+001-118647,13,Hungary,,,,,False,False,2f97272ad28a0a7470407dc61c11e4627a6fe5584c73fa1b781e6f9d3e5ab419,True,True
+001-118737,13,Slovenia,,,,,False,False,9557bafc8b7c932a8b65d54474cf3d14cf7a912c2e2b28d0c22141ac31ba18c4,True,True
+001-118737,6,Slovenia,,,,,False,False,9557bafc8b7c932a8b65d54474cf3d14cf7a912c2e2b28d0c22141ac31ba18c4,True,True
+001-119049,6,Norway,,,,US; Russia,True,True,9f1baa34b6a71050ce87ca3b0d8e97ee83a71a34b391d9b75b828060070b04ba,True,True
+001-119055,10,Luxembourg,,,,,False,False,54983408ef4c2278021d3ae4af5e771c7cba6388b3840a9927b537a16f394414,True,True
+001-119055,8,Luxembourg,,,,,False,False,54983408ef4c2278021d3ae4af5e771c7cba6388b3840a9927b537a16f394414,True,True
+001-119465,34,Ukraine,,,,,False,False,86693a0065313b7e5b2d54ffe727e1ee52eb09098de8b9be03e61d6fdb5352a1,False,False
+001-119676,5,Ukraine,,,,,False,False,44b9abe4467f033014de8f5b8c2879a52d3148c988a11d08d76adaf1cacaa289,False,False
+001-119688,P1-1,Ukraine,,,,,False,False,726966954b442b4517c4bf9ba99e51cacee8f5e741bbec45ce4cae340075b9ce,False,False
+001-119968,14,the Republic of Moldova,,,,,False,False,1279b82150154b6d9439e3982bebf0318f220483a64513778726bd97c6e2a1b6,True,True
+001-119972,6,Azerbaijan,,,,,False,False,b8de0f290372e105491d25587b7d6d4f0d684aa969681145bc5900ecb9a616c2,True,True
+001-120067,P1-1,Ukraine,,,,Russia,True,True,59f8836aebe68c3bb8a4aa488542be3b58838bed65193ad23f40dcdd80f22c15,False,False
+001-120073,3,Austria,,Asylum; asylum,,,True,True,46bf4944ba77a59efbc0f6c54b1c596694a927d750c0a8b07fe38a11954c54fc,True,True
+001-120968,6,Slovenia,,,,,False,False,c7662759b9ea9058608c11ae45da3e30ac156a175b93263120a973784007aee2,True,True
+001-120969,P1-1,Czechia,,,,Russia,True,True,6c2426d336ad5c1472c11ff019a42ebffc82d0aaeef794fe43045aa4a6d5a5a6,True,True
+001-121569,3,Sweden,,asylum; deportation,,,True,True,19d4b16b53aeb95f58a90a761652ebbcef35dabaa352b0b3ec7712ec5480e218,True,True
+001-121573,3,Sweden,,asylum; deportation; deported,,,True,True,fb637307322c4babf72e914796c79e2db97968468fbcd612738b47c71f43f71c,True,True
+001-121574,2,Sweden,,asylum; deportation,,UK,True,True,455b5a243db05714ca2f2b11fd6b6a362e7b18b18826d858beddafc1301ea6ee,True,True
+001-122187,5,Ukraine,,,,,False,False,0f139cb47c789cb8af9cdc068c52ab9675e2a0a495b0d275b1c81ba30f418be9,False,False
+001-122429,6,Liechtenstein,environmental,,,,True,True,25a7d1007c668ce6c1c9a1065bfddaf243c3b0c9c2a5614d01bc638ab669817a,True,True
+001-122434,P1-1,Ukraine,,,,,False,False,7c820251f21deb0a37a0aaa159327646bbedaa4075678881171362d3d56aae75,False,False
+001-122664,3,the United Kingdom,,,,,False,False,7c8015fda54d45ac17393deb71f3edbc08eca84c7815473c9b43c27ec3187208,True,False
+001-122892,P1-1,Malta,,,,,False,False,caae394b3a5a64d825d74c3f1222ff1f897e8c43d118ff13e2d3b20e799688c1,True,True
+001-123422,8,Sweden,,,,,False,False,6dbbcc41141dca05e502ded0f09a86156acd3712f297e46c42f0fd3339b1d74c,True,True
+001-123422,P1-1,Sweden,,,,,False,False,6dbbcc41141dca05e502ded0f09a86156acd3712f297e46c42f0fd3339b1d74c,True,True
+001-126133,14,Türkiye,,,,,False,False,d012c1365cbc9f3ddd26b135dc7772891f0d5eb2b3d3d490a48dcdd4bd1d9897,True,False
+001-126349,6,Montenegro,,,,,False,False,35b6cf5ab9ae601fd36a55c547a43e110648bd5c6156c861ae3ea4f09df5ac55,True,True
+001-126352,6,Poland,,,,,False,False,9c21f387241d76eae4d2a5aafe96be5c52fd31744f8040e6ff40fc0ee7ace6fe,True,True
+001-126360,5,North Macedonia,,,,,False,False,8937019b993d242a1aa6045d22bd59ba2d9d1e5dfa152c87874d1e0ceb65e92e,True,True
+001-126451,6,Spain,,,,,False,False,101ca9de7fac94a2a313eee01e14a426a40bf3d75af5e1b61747a08cde2f140a,True,True
+001-126635,10,Estonia,,,,,False,False,4b35b293b69268b1ad4770b50f7ff68048caa86a2c584d9b117d9b7bf9878534,True,True
+001-126636,6,Slovenia,pollution,,,,True,True,61f403b50b577b93e8a21d71a6213125137983b6e6805f3ca5e48a2a2f320250,True,True
+001-126800,13,Slovakia,,,,,False,False,a5b5085d6732ed9a734744a32c526a233f408568233dbe1ca567074ac1fefee6,True,True
+001-126807,6,Italy,,,,,False,False,e0b0158a0cf0170a0163a421968a0064dbd7402f301a31a36448afcb623ee73d,True,True
+001-126918,13,Czechia,,Asylum; asylum; Expulsion; expulsion; extradition,,,True,True,95d632abf04b19df68105bf22fdcf264d9394ee95257ef9c7295dae26690f04b,True,True
+001-127399,3,Ukraine,,,,,False,False,ef52bb626a5706fbab3259c65cf4a554d390cbbdb226a9479d35babdc1b6a780,False,False
+001-127401,6,Ukraine,,,,,False,False,76af5dcdbdc1ae55995283a4a33a66191b9126c3d1c7f817257430c4e3aa4317,False,False
+001-127410,6,Ireland,,,,,False,False,41171645f4c35579d517f9c0f109686edcba23e92d1461086400d6fefb5ae1f2,True,True
+001-127617,P1-1,Serbia,,,,,False,False,ae0561241700cc68b5331e876a39356f4a3640753540bc38d0f524a191bdf9ad,True,True
+001-127809,34,Ukraine,,,,,False,False,15ca3ed2faebf884f182c9679e2aa4e388cc5f587cfced3cd0855560452319b3,False,False
+001-127812,6,Greece,,border,,,True,True,8144126d8f918606a58193d87baf27b2ac335205bc7b704677aa68cea0a4a294,True,True
+001-127813,8,Ukraine,,,,,False,False,f74ad565fb7eccb358cb15bece622e13174e8695fd2d6ed8e93ec29672089403,False,False
+001-128040,P1-1,Lithuania,,,,,False,False,1ebfd459cde0d9032d6de66bd683ca1f4f7f97a4ad764264d95840d80b6c64ea,True,True
+001-128204,8,Ukraine,,,,,False,False,e91141126b60283585459a748beaa41fd6b145d2a2972486abc9a6163b5ac06d,False,False
+001-138558,13,Romania,,,,,False,False,b4d595bd1f7f77f8a79295bd2fdbd0169fe44fbfa5f2cf11e06d6d6854204a8a,True,True
+001-138597,2,Norway,,,,,False,False,eaaf9712d7031dbead30e217799b6f6ef47018156d3d061c4f6d3db50cda268c,True,True
+001-138919,6,Ireland,,,,,False,False,d1cccc1e803d3192672f68b659427bb251965b722ce49a337a7b90336686a93e,True,True
+001-139175,3,Sweden,,asylum; deportation,,UK,True,True,a11f88eb3424d3bdf2defafd410af0befaf9a7c70a9b87a72440927e6e033faa,True,True
+001-139897,3,Serbia,,,,,False,False,400e7b2afe551c61d74fc951d720fa9821055da1cdc143a012078a796d8f88b7,True,True
+001-139897,5,Serbia,,,,,False,False,400e7b2afe551c61d74fc951d720fa9821055da1cdc143a012078a796d8f88b7,True,True
+001-139995,3,Finland,,,,,False,False,b6966a22ec6eda919826c72d7f470b6d824dc8884eb1e95f3f619e6fe253180e,True,True
+001-140020,2,Sweden,,asylum; expelled; expelling; expulsion,,,True,True,60838fa49de119829e8762cee78a48158bb33041bc44212fd1e799f8a522b7c1,True,True
+001-140028,6,Italy,,borderline,,,True,True,5c43a15be1516723f53b5817d8b66b2f00ddaf0c74180e3ac47274aeee3cfb41,True,True
+001-140235,3,Ireland,,,,,False,False,c290d93192e9c3bceffc3881a291094534d730f42731a622122ba49b9bc33f77,True,True
+001-140239,6,Portugal,,,,,False,False,b12db4a934e3ac93c8f7accef99305b105b8ea87dae1ed35e486089cfcaf9929,True,True
+001-140769,6,Latvia,,,,,False,False,badcb50c6f96d8304831172d80d30fe38b6bbdea1fca9d7c54a97be6ff9cfd06,True,True
+001-140782,13,Ukraine,,,,,False,False,4f1bdc37fc59048f7a6d02174eb14a30459729397802cd78c0b10b7f199a3216,False,False
+001-140785,3,Estonia,,,,,False,False,d9a45cf152010702e662fc5187327852248ee12dc63020229f30ad4cbe22046f,True,True
+001-141434,5,Switzerland,,,,,False,False,bd55c4b50779326a1339fd7720babc015ce20338e78bf0f2d37cd44fbc922fdd,True,True
+001-141629,13,Estonia,,,,,False,False,5145a4c3d29af1a03ba34ebd52a84fe054f57925474396a0cb84196afbaaaa6a,True,True
+001-141635,3,Ukraine,,,,Russia,True,True,3cc0496bffc5677e0b0bd6dc953ff6dbfd97b00dbccb04df91f0572f3f24f5de,False,False
+001-141635,6,Ukraine,,,,Russia,True,True,3cc0496bffc5677e0b0bd6dc953ff6dbfd97b00dbccb04df91f0572f3f24f5de,False,False
+001-141644,6,Latvia,,,,,False,False,e5df06009041f199552ac3e56c36462c8d4cf8ce8136f48db15c03d6c0a3fcd6,True,True
+001-141668,8,Belgium,,asylum; expel; expelled; expulsion,,,True,True,4bb5dffda0dca7d6f37b3467073d133fded22d8e2ccb5278604e8443160db2db,True,True
+001-141910,6,Romania,,,,,False,False,1468d81051a858357460f61be4a5da32fcc4658511c9bccae4671e240db2c7a4,True,True
+001-141933,13,Albania,,,,,False,False,c59ed1d01410ae4ab52a9a32e0021af1c5deef670ca8ef460292ad18ed797d4c,True,True
+001-141933,6,Albania,,,,,False,False,c59ed1d01410ae4ab52a9a32e0021af1c5deef670ca8ef460292ad18ed797d4c,True,True
+001-141943,6,Hungary,,,,,False,False,0d86cd7588c8bac026041950a212513da11385c5dbb599521135354d737ff084,True,True
+001-142082,13,Slovenia,,,,,False,False,f0427e056f4b8f4ea7a15f687ad43de90010ce42c28bd822c0997ea32e418c3f,True,True
+001-142083,13,Slovenia,,,,,False,False,47f469708cf0afeca1633026eb7a25b9481050e844d1f8aa67c4915ce9719823,True,True
+001-142185,6,Albania,,,,,False,False,6b117478e0e92e788545e181c73e43c3fc6aab0a1322eb848be68bc5e7d84a69,True,True
+001-142305,6,Albania,,,,,False,False,2b5a5810981229dcf62fc4795c6b6ffa61673e85d0285b80c596f7e253089719,True,True
+001-142398,8,the Republic of Moldova,,,,,False,False,3af24241ae9d42cf6145f6d4e1db125afa0d3e1e8d7dc950f320043684949ffe,True,True
+001-142403,6,Hungary,,,,,False,False,196aab3485b87caa6fb2ea532bde04a46293af9c2a4d5b9134d9ef3ff41a4ffc,True,True
+001-142515,6,North Macedonia,,,,,False,False,2fcacffa5e006606702eb24fd8fc08e6bed895a4c52e0b842926567c11984c0e,True,True
+001-142519,P1-1,Russia,,,,,False,False,5b2bb8ae7d8e3daff387f763dbaf5671f1919dd7b7a27b47a082fc548d548c6d,False,False
+001-142521,5,North Macedonia,,,,,False,False,216e458adb9bfe14e45e3b3d90b253ba7e17b4f1ed0c940b0f93c191b47966ad,True,True
+001-144113,P7-4,Finland,,,,,False,False,0b90d2d33403d296c6a323c61c45a26c5b9100de7e813f94cf4b0dab3191e984,True,True
+001-144367,6,Croatia,,,,,False,False,4f449ddf1892dec81e4052a2a72b9e58a310fe50f4a2985bf39a7a3832cebc9f,True,True
+001-144672,5,Slovenia,,,,,False,False,c9d805fc09dbe8ca7abd76a89725524cee6daee0d5ad8f2edcf38c5634b9c3c2,True,True
+001-145014,P1-1,Ukraine,,,,,False,False,9e1447159ecce12606910719d15c6fd89c0ad7554e4c5a248da85c14aae27e3a,False,False
+001-145018,3,Sweden,,asylum; deportation; expulsion,,,True,True,86702ccdccdf4a1a82df44b5857a70affaed40a773ce71b5f4357a957aa5ba22,True,True
+001-145068,8,Spain,,,,,False,False,a1d26880b326cd198567aeec64a9198c4b2f06b9102e88bc1f9e98bf09f35bbc,True,True
+001-145341,3,Denmark,,asylum; deported; expelled; expulsion; Refugee,,,True,True,7019e4af44cbc26f4cceec7ba1685a6911822dfee9f70da42433fc4688b630da,True,True
+001-145349,P1-1,Bosnia and Herzegovina,,,,,False,False,55a0044e53a277491dffcff335f8a992c1cb83f4c34e65d901ef21fcba57efa1,True,True
+001-145466,14,France,,,,,False,False,e9b4c110a866f038f841e510dab6919b59b6ffb92c7cfd7f69773c84da63d6b1,True,True
+001-145466,8,France,,,,,False,False,e9b4c110a866f038f841e510dab6919b59b6ffb92c7cfd7f69773c84da63d6b1,True,True
+001-145575,P1-1,Serbia,,,,,False,False,e02f6558e37e61666641860e72b9e24daedc74bf92c5608dbb9849ad0e98160a,True,True
+001-145579,13,Ukraine,,,Crimea,Russia,True,True,4776717f7720f10c7d3d083a343bc34ed93615fd51d3163b1d8d2c2e7470dfe8,False,False
+001-145580,6,Ukraine,river,,,,True,True,c206f983e18d9fd79d2191a20386ed052d85d627bbe7af88f02c7f94c22f0ce3,False,False
+001-145581,6,Ukraine,,,,,False,False,30893a71247ba118263f45c00ca1d15c4ad765b4151e1c7c4438cc9fa812cd14,False,False
+001-145653,8,France,,asylum; refugee; Refugee; refugees,,,True,True,e638e972613f49b11f719433368b65b7db7e05cd41514fa3e1e975cdeec9592a,True,True
+001-145779,13,Ukraine,,,DONBASNAFTOPRODUKT,,True,True,8147238e2224207bb13dd61c45941bc8afb564f855c947edc7afc561f179b4cd,False,False
+001-145787,8,Estonia,,,,,False,False,826365c30229fa9494e89f5019576f747381b02d32f678b2f7ceb09b24d0c250,True,True
+001-145788,3,Azerbaijan,,asylum; border; extradited; extradition; refugee,Chechen,Russia,True,True,795dc630313fdb56e3795d4c8def286b6ec6d39be1ce40d853a56ded24c2991a,True,True
+001-146047,38,Poland,,,,US,True,False,45ca3a57412c99f2cd051df1e4b9fe1dbf43d12912508eef2cd1378277245707,True,True
+001-146353,6,Germany,,,,,False,False,9216ad71daac60b39eb4b518c2b2c656ca9151d6fed7c877f5a087f0b5bd40b7,True,True
+001-146399,6,Sweden,environmental; Environmental,,,,True,True,445e27786f1705425577cf75173620acb68d9b18f5a4eaaa166c624ce915efdd,True,True
+001-146409,5,Latvia,,,,,False,False,a19801a21e5cb2cc5515f80af9bdec76956958e2a933d512666d00f962cec492,True,True
+001-146410,10,Hungary,,,,,False,False,2df406e710a81b2e1e7f4953a67ae227a5362e9c894c73a21a698f1452252dec,True,True
+001-146697,5,Ukraine,,,,,False,False,8c66f09248b72d51dec25b5375b76e47b8a5750259a6fc4ee62cd086085bdd3d,False,False
+001-147037,3,Ukraine,,,,,False,False,ce5f49d9a14a07c8433ba306c28eba884c0f7eed08f1fbcfa8c93124d0b39e99,False,False
+001-147045,5,Sweden,,,,,False,False,470613fd44e9bb7110be57a2389d9b679f7c643e4f5051a41790fa116539773c,True,True
+001-147272,10,Iceland,,,,,False,False,5a3bdc74a66d687ac67be90775a5222f6cc46afac4af6e8811901281a6dbba4a,True,True
+001-147274,8,Hungary,,,,,False,False,5c32fe282890ffd86e77da0cdee41918208acd55ad6014f1377d19207b6155df,True,True
+001-147286,3,Latvia,,,,,False,False,31e50f083cb874ff478e727a2b9eb3409c351f3fbf89fb0eedefc09728abc18e,True,True
+001-147443,13,Portugal,,,,,False,False,5edf8775f2ade4ebcc2fcbbdddb49828e1e721c69d271b29617cdf5dfbb606af,True,True
+001-147443,6,Portugal,,,,,False,False,5edf8775f2ade4ebcc2fcbbdddb49828e1e721c69d271b29617cdf5dfbb606af,True,True
+001-147875,6,Austria,,,,,False,False,99c21302541b6233aa0dc618197edc0ddcdea8ba3c706b370ce2f4074268b033,True,True
+001-148263,6,Slovakia,,,,,False,False,25996998493a6f0c93ff196f43a4f3ee1aeee9d2f1a761ab3732a789c85a0347,True,True
+001-148268,8,Latvia,,,,,False,False,522d7d5a1649920460828987e5f830178356c74c7e45a4c12b828208a89fd89a,True,True
+001-148636,P1-1,Malta,,,,,False,False,53dfba77befb13464ecd8d681ff6192c0ae85b8b2d4fdc206d1168df093ef373,True,True
+001-148642,6,Norway,,,,,False,False,4f166779fc7fbaca0b9b2c14c05cbe56ef90b4ffbfd94bb4ac99ac6e76148b3d,True,True
+001-148659,5,the Republic of Moldova,,,,,False,False,1acac30cd58b43f9975b1981f72cbd99f2a7816fff961508c00a46e06cf7dab4,True,True
+001-148673,6,the United Kingdom,,,,,False,False,18c1407701bc815cd6969607194d1477b7d44a9b0134aaf36e39e9f5aaaa0202,True,False
+001-149201,P1-1,Hungary,,,,,False,False,29e30a125e08739e4346a5af7aa28603c1822ab735ef82c02c71c2e9b5e43152,True,True
+001-150217,13,Romania,,border,,Turkey,True,True,37cccd4d7069cb812ae34396d9d2089287cc2d7cfc6e9af4dab46ffd733e2b48,True,True
+001-150217,3,Romania,,border,,Turkey,True,True,37cccd4d7069cb812ae34396d9d2089287cc2d7cfc6e9af4dab46ffd733e2b48,True,True
+001-150234,3,Latvia,,,,,False,False,508eee77699b4d21bd0f2c6c7772bf3912c91e9520e269d52185e467b08e337d,True,True
+001-150239,P1-1,Serbia,,,,,False,False,e0f0f453ff6713bfa67312df6d7e95fe9409075ad0683d8d56798a5bb3682045,True,True
+001-150653,3,Ukraine,,,,,False,False,465bf7f73451cd204c0719c101d70f208b92a198ebf36ac00a7d1b7097601427,False,False
+001-150668,P7-4,Finland,,,,Russia,True,True,b09faff59e2d558a857e6039b492b976cd55c7962e78309b98465b16bffa8d43,True,True
+001-150676,2,Croatia,River,,,,True,True,6735db04f07e2069cd4a1601064c0af654e67e3d372709ba1205cf353900fa46,True,True
+001-150704,8,Austria,,,,,False,False,ed533d0b0f7f872e92acb21d4900b198bc648a746e2cea6ff8ebb3fc10ea2c62,True,True
+001-150788,8,Slovenia,,,,,False,False,30dfa71ecd859ae280c21609de84a35d7d23410a1f9b547e4d2b44ca325ebb96,True,True
+001-151000,P7-4,Finland,,,,,False,False,65be6117a8020e239f70b5a220be116f31f0c8b8fb8bce46e43fef52fc36d8ba,True,True
+001-151051,7,Czechia,,,,,False,False,9f3ef5c650c7b14b4956fb22d3154eee562e852065a6a8bff640ba5e70c8b43c,True,True
+001-152259,5,Croatia,,,,,False,False,a031cc7c42b2c0a22ded1d466f2b72a6b924bd55db557285a27cfcf66edb4de4,True,True
+001-152597,2,Ukraine,,,,,False,False,e0e91eaa3cc649a4fce5c8d3d5a68a4c3896db691a489deb3c1aaa839759519c,False,False
+001-152780,6,Montenegro,,,,,False,False,c0ceac9be873593d86219cf338b87debe193961aa21730b9af587dc87866c746,True,True
+001-153349,3,Armenia,,,,,False,False,d4b01c5c1d7f7e74b42d45aafe749fb9b5b85da80174028c730d84149b4a9b79,True,True
+001-153767,P1-1,the Republic of Moldova,,,,,False,False,65cbba44eaecc3dafec635349468a70fd3db0fe9a602266793847a4f17e62830,True,True
+001-153770,2,Switzerland,,asylum; Expulsion; expulsion; Refugee; refugee; refugees,,Turkey,True,True,66c1b286cc9793f82823b9e18b2aee1548e14ae753dfe23d10d2c3e22530fe24,True,True
+001-153906,38,Russia,,,Chechen,,True,True,27515dcb210f23dc8e6cb937dd6be4a82c90fabd41eed24fae9be0a79b1977cd,False,False
+001-153910,6,Greece,,,,,False,False,3fa67e63929c5b1c519b480a26f2117f5583b497121f4f1940584ceb1f919654,True,True
+001-153919,2,Romania,,,,,False,False,bbd65edb8299957ee0f84663ad57fa711b9c85d27ec2b3123190bf1af9cb5714,True,True
+001-153960,6,Luxembourg,,extradition,,UK,True,True,a732bc44270c4839a355e029e59c0a8ff108cc382344742cf4f6485526301084,True,True
+001-154149,3,Montenegro,,,,,False,False,0079002f66f1b73d339218b2e545d52d845ed7e420d690797bb62c9818bfedc6,True,True
+001-154151,5,Slovakia,,,,Ukraine,True,True,799b8e3dbe0ecc221077a110e168bcde3eaa7599a6c36a34cd6feb374b3820e1,True,True
+001-154344,6,Portugal,,,,,False,False,9f9412f24c43f594419ca9658a6b414f92d35f6003e4966246eded9da870a1ff,True,True
+001-154347,13,Portugal,,expulsion,,,True,True,f0c8b21c32909ad5d648ccb5495160dd59b427317d86c23734ef002116f58656,True,True
+001-154354,13,Portugal,,,,,False,False,1efd8e4bb99238859e1d2b88c7c670fadf9fd5ed221efb361604cfb886fc6b24,True,True
+001-154354,6,Portugal,,,,,False,False,1efd8e4bb99238859e1d2b88c7c670fadf9fd5ed221efb361604cfb886fc6b24,True,True
+001-154527,2,Ukraine,,,,,False,False,ff6383ba5a491360000a60cad0a85a47143237cfaeae4a2e36da7c03427b571b,False,False
+001-155006,5,Slovakia,,Border; expelled; expulsion,,Russia; Ukraine,True,True,1fe9db8f8c92aa0a5c3aed52d37122f406bb76216f45b7b41790ec7b0c544a76,True,True
+001-155082,6,Belgium,,,,,False,False,85e0bcf32efa8b5096c07f6edc185cb012d7c054cd856ef81ac498ea5766ce73,True,True
+001-155102,6,Slovakia,,,,,False,False,6cf456cf501d3e8fdc2d600a60fb02fa10efc4d9820df26573861e70912f1d3c,True,True
+001-155352,2,France,,,,,False,False,840c8d3de902d6e15b35c2dbe11309319cfadbf31603c5af04b2db2bcf764d56,True,True
+001-155357,6,Romania,,,,,False,False,3bf631955a91904bd76ec8a36c5668da7c1e1d90be66f67d62c5f185b4e53401,True,True
+001-155374,6,Slovakia,,,,,False,False,af2c194cd910d0821c00441c7e541856b107b37b656e0fb3db957725b55f9979,True,True
+001-155819,8,San Marino,,,,,False,False,4eedb80428b9791f6d9c959ad0d34006ad4cd587d6499e6ea9e7572904fbac8d,True,True
+001-155824,6,Liechtenstein,,,,,False,False,ef994dbebbb9231080cf3d2a869e1c1b40f219f7879c2b60931c25f75dc773bd,True,True
+001-155827,6,Estonia,,,,,False,False,75f192163087b443c1340b9d126d4e7168095b8b8011903ff8d87905a925a01d,True,True
+001-156069,6,Albania,,,,,False,False,914a10e6e361c64ca662b6e5699bf6d3bf9d9e7f9db370b77ffcd3fbc905c144,True,True
+001-156073,34,Ukraine,,,,,False,False,177933780330cd21bf6f1b3feb1365956e23679115751568b966896633081a7f,False,False
+001-156076,5,Slovakia,,,,,False,False,18eb1f73326c6cd11ac759c4fb2141238dbce87622cdb6a4412c9e9ce01be5f0,True,True
+001-156080,13,Hungary,,,,,False,False,85c79690ed887a75cdb475efa923a726117a1bf23f844439941f4e2b740ad431,True,True
+001-156080,6,Hungary,,,,,False,False,85c79690ed887a75cdb475efa923a726117a1bf23f844439941f4e2b740ad431,True,True
+001-156243,2,Belgium,,asylum; border,,,True,True,e30dc0cffb154e7fe292541c80331e53976da5c52f45cddd218d47ee0b741537,True,True
+001-156248,3,North Macedonia,,,,,False,False,34d07607c04d780796dd119824f776d01a1fdb954ba7f9380a6252f8f21307fe,True,True
+001-156263,P4-4,Cyprus,,Asylum; asylum; deport; deportation; Deportation; deported; expulsion,,,True,True,c340c1d0c7c62fa57abb2b2556805a62f8f649cdb4faa47d72deb386e39e992d,True,True
+001-156265,8,Italy,,,,,False,False,6f38917c547e0aad76a9675f1e262db7b315e69b1a7655888d8e54fd0bfd8000,True,True
+001-156267,13,Latvia,,,,,False,False,a72c91f0cf3d9ab4870ec88de75edd64c28648a03c3c2730411fa6813f0bfeea,True,True
+001-156272,10,Finland,,,,,False,False,a6d237a6920e289d0d01db3858b18d664ea866ad5e4bc09e292b1cf342904e90,True,True
+001-156272,6,Finland,,,,,False,False,a6d237a6920e289d0d01db3858b18d664ea866ad5e4bc09e292b1cf342904e90,True,True
+001-156274,P1-1,Serbia,,,,,False,False,e072837b0e87ff5198154b29b67ef2f64e94e20434cb203860c953b0bfe733f3,True,True
+001-156275,5,Latvia,,Asylum; asylum; Border; border,,Russia,True,True,ab832f49319865f0f23d65b4520e574d44dcfb07ad563258c4b033d84143008b,True,True
+001-156520,6,Liechtenstein,,,,,False,False,b75764bc825af749c4ba01918eddc492cd17ffd7a87e90b87a64c0e3cfa3c44a,True,True
+001-157286,7,France,,,,,False,False,44e602604101649290668f32ca11b8fcde37dfec728d976c7ec96fe87b83c264,True,True
+001-157538,6,Slovenia,,,,,False,False,42ba06ab1e2c3c3729cb489a7242afa227876be08622bba387b69f5af43f9fce,True,True
+001-157670,3,Belgium,,,,,False,False,f0fa024550f94c4e6f238cd948089e626e19b8a156691ba8d0dd248bab580dd4,True,True
+001-157761,3,Romania,,,,,False,False,3d94b7a2206a20d5d00dc885051af404021a9cf8c96caf70b0c213e169c4ad03,True,True
+001-157967,34,Ukraine,toxic,,,,True,True,8676f1f30ea983c0908f8b30308c2f3e738eb1e81a81f2373b9efc583e70b75a,False,False
+001-158037,6,Serbia,,,,,False,False,8736afd7bcf5af2265120acf4950d7567da583904e79c9cd6b5c4cd0c49b3ab5,True,True
+001-158090,13,Cyprus,,refugee,,,True,True,05e85e5f3e00486abaf3f67fea8dfd81770255dd1c0f370ef5544af626d52b6b,True,True
+001-158279,10,Finland,,,,,False,False,307b7b35ec924f97ba06102401afd41027bb51dd5ef3c66909416b14ac947a11,True,True
+001-158472,3,Bulgaria,,,,,False,False,763b9a8e8feee2d609f474c075acdd31dfb5a7b4c6ce4442ed98122a2a95687c,True,True
+001-158494,3,Russia,,,,,False,False,62eec2e91347d00efc07631cd2060d9406ba4c2e4b9eeedf244e952584baedd5,False,False
+001-158504,14,Portugal,,Borders,,,True,True,8cbba6f958bf61a612c102ca7e4e025bfa6a3833705a92d9fa4e1818007adff7,True,True
+001-158950,6,Spain,,,,,False,False,caf294fefc2f140b85c48d7e01c7828e94e1e5c9bdaa0d2a83d9f6e280940db7,True,True
+001-159211,6,Norway,,,,,False,False,56e44bd20df6e80aba74a10be0d0be63fdab7cff3b4fdf063b26dd1fe1347e2c,True,True
+001-159375,P1-3,Azerbaijan,,,,,False,False,a0bab2101bc09cd22dce42e06a1b794bc9138d882981a70e6eb00f5e2ca98f0d,True,True
+001-159732,14,Switzerland,,,,US,True,False,95cc01d79c83c6deb72077477e23927e506a8bd10cd71434049c931e8c74f29e,True,True
+001-159880,6,Serbia,,,,,False,False,53c92b9d7646daa8d2781b19d3a7889d0acaef30dc11eb4b35cbdf3761917899,True,True
+001-159882,13,the Netherlands,,asylum; Refugee,,,True,True,f9219f0d93c597fdc5572173869936a7d3003f339f13942f2705946206564e92,True,True
+001-159882,3,the Netherlands,,asylum; Refugee,,,True,True,f9219f0d93c597fdc5572173869936a7d3003f339f13942f2705946206564e92,True,True
+001-159906,8,Romania,,,,,False,False,3500f44d96520efd48b3da1aadec39f18ccd3564a1303a9a1555d839bfb94da1,True,True
+001-159915,6,Hungary,,,,,False,False,cec561d9852c735956e5651863609411df9492039ce0c5b7844646dddebd3031,True,True
+001-160223,2,Russia,,,,,False,False,abd7088309e181af229e98949a5b6ae95e370f6f93f98ca3c86c53bd764b74ff,False,False
+001-160270,10,Estonia,,,,,False,False,6f925ac1b42a528a46664cc6e7aa533a6bb819a079ed765037b26ac683a5025d,True,True
+001-160619,13,Liechtenstein,,,,,False,False,44f34555140c8ad8637c812769c74d6d8c827af3e4bd41fc98b508dc611c02b2,True,True
+001-160619,6,Liechtenstein,,,,,False,False,44f34555140c8ad8637c812769c74d6d8c827af3e4bd41fc98b508dc611c02b2,True,True
+001-160800,4,Switzerland,,,,,False,False,3e59a5570ab1ba7aa26ad164407ff0e6391fcdb347de0da8d7e54458e003f270,True,True
+001-161369,6,the Republic of Moldova,,,,UK,False,True,272a56ebfed8882d38f1e5289fd527458715cb65c639b2fed2911992473f7a75,True,True
+001-161381,6,Spain,,,,,False,False,24c7504211f53f726c29692934ece226b6bf4166e143c1b879043ad75988406c,True,True
+001-161527,14,Portugal,,,,,False,False,e593f920ac7159ddbd8b8b29354ba059e9cf13bbd0f390e0e57242d4f453c675,True,True
+001-161738,6,the United Kingdom,,extradited,,,True,True,0c4eb3244cbd22d6fa1532f37d6047a262ac25ee054a026ff2d60062142d108e,True,False
+001-161809,6,Albania,,,,,False,False,4905e061374f9af1896624a14e03ee7f16289baa0616c8c6c817333e29496e99,True,True
+001-161809,P1-1,Albania,,,,,False,False,4905e061374f9af1896624a14e03ee7f16289baa0616c8c6c817333e29496e99,True,True
+001-161975,2,the United Kingdom,,,,,False,False,352092fc214b1d69e6f31b82a1dc69acfe98d6a57fc166ff7ecffe9264996ff5,True,False
+001-162114,13,Albania,,,,US,True,False,fa64d57786022129c037c41fb04eefdcefe2a88e3b71af608636ac5bc601c3dc,True,True
+001-162179,13,Portugal,,,,,False,False,e04ea2ac84444996447c71000d41c2c9ca1c23328a61d4ca4a262156bc3aeab4,True,True
+001-162214,3,Latvia,,,,,False,False,698b780614ff6d7a3e62fa95b71eb76b2ecdd11b51a7b7827f92e09d9393a4bf,True,True
+001-162217,P1-1,North Macedonia,,,,,False,False,cc9c89ec8cbf550116654972259291b61b17bd4af8136c11c77a58bb1c0feebf,True,True
+001-162424,3,Malta,,Asylum; asylum; Refugee,,,True,True,35c4b800b96b429c6b39f2fb1d5f84781908887173b0e7fac7d81c69462bcf32,True,True
+001-162864,8,Austria,,,,,False,False,01c6b6ab270929f9833457051068ce63b0bf1b6e396398832d63605e42b01851,True,True
+001-163054,2,Ukraine,,,,,False,False,8f9f9a64b931721a06ab5e3b36c7f461a0388e3e1e43f81f9f8f820b81c6a62f,False,False
+001-163331,P1-1,Albania,,,,,False,False,28ef3295f9fc8e7926f15f709665b4551f60773d06cf82793f8577864cdac1e4,True,True
+001-163356,P1-1,Germany,,,,,False,False,711d2bd415cee110223c8209c9bf5da14aeb27936480744eecf4c6b94aa29165,True,True
+001-163358,5,Germany,,,,,False,False,1e4189602d620e5c84d1964725c3833fcf0e13cf0f466d089210e02d96121b0a,True,True
+001-163438,6,Bulgaria,,,,,False,False,a25a1bd27d9bcc28d90b1163237496a2f9f133db72b7a32221b72369e8efd083,True,True
+001-163451,3,the Netherlands,,asylum,,,True,True,906fd51b3b1da3b2dabd5b50e3dd2b179bcba79705d141c64bb09d7cb50e41bd,True,True
+001-163662,3,Poland,,,,Russia,True,True,5e4317536e2213f6681931897e2ecd013c9b8cc615643e89c238e4923ff4aa10,True,True
+001-163799,6,Georgia,,,,,False,False,85fda9f98572723b053428f1d2b5b08cd25b0164ed0f6d3401f20f3313b3cd06,True,True
+001-163822,10,Portugal,,,,,False,False,b086846dd9b04360c59b19e1b3606721e9bb88e6586824950fb98179526e9d0b,True,True
+001-163909,3,Ukraine,,,,,False,False,0b4c0ddcf3f3b1dea606052aaf5341b6b3dee77b1e0eaffaf54890974f786b8a,False,False
+001-163911,34,Ukraine,,,,,False,False,0da92a3573be8892d98be81fde12c41c8196a31f4685dab2f9fc97aab0fab081,False,False
+001-164434,5,the Netherlands,,,,,False,False,9a4360db949c638a837795613b6edfec398368ca959ab4ff09c66a256b66995d,True,True
+001-164454,P1-1,Slovakia,,,,,False,False,3b7067eafa00b0480efe545cad1e45c9ea9a101c8362ffee053ab840dd98470d,True,True
+001-164470,6,Switzerland,,asylum,,UK,True,True,5d0647ce65eb375f48fdf5cc885df6256a44761b11fa3cf1fbf19402be3c5025,True,True
+001-164515,6,Switzerland,,,,,False,False,deb506838858bf464897c209713d92b4555418853ba7c326631cf086763c98bb,True,True
+001-164682,5,Lithuania,,,,,False,False,526d80a45194e920fe6c284bd10535f530639adcb42b233c8409604b2bd042d3,True,True
+001-164917,8,Romania,,expelled,,,True,True,ee7797e047016aea4203a0564c6297f5393cfb031934d4228ee2738b7612a0e5,True,True
+001-164920,P1-1,Serbia,,,,,False,False,aba7a9477a8ba9a942c79b4322d61dcb53c26dd676aca0ee08d37f495d866005,True,True
+001-165230,3,Slovakia,,,,,False,False,e759ec4c3df7821fb4ffbb1b32a7d69ee94ee2e094cf100100d340b6e086828e,True,True
+001-165250,7,Ukraine,,extradition,,Russia,True,True,5237aa9c0ed877ae6911f22a3de5410458f304a86cac346266ec817fed181881,False,False
+001-165750,2,Ukraine,,,,,False,False,6a6624c373066a10b0d800ee3348840576e673b510aed748c59f9a5e3090c1ba,False,False
+001-165755,2,Ukraine,,,,,False,False,52b21fcd4f6238980267563e20533c3ae543452bec249de3adb96186eac8d11a,False,False
+001-165758,3,Germany,,,,,False,False,679d8821a596e4534591685834042c541e64e253ca6d14877d95bd2823310c2a,True,True
+001-165951,3,Estonia,,,,,False,False,334eb46101ee1cbd461cd8968a8e52d08ec977373ada111f6a3ee22471fcf447,False,False
+001-166689,6,Germany,,,,,False,False,1c23c25a655225d9c9bbca878d8e67656cf43272212d117828f229a73d27e4e7,True,True
+001-166950,8,Germany,,,,,False,False,c3f26182b1b66bc34cb48ae71d52ae8909cfa31fb8f30b10ac37d54730c3d21a,True,True
+001-166954,2,Ukraine,,,,,False,False,e052a5fc576af6ee918e9fb4979dc3cccb3032b4b7674a04d2cd22b272736a45,False,False
+001-167110,34,Spain,,,,,False,False,79d199a007e9ab69eac2f5cabd0c586b491de9f789389896ec757a81db85a0a3,True,True
+001-167490,6,Switzerland,,,,,False,False,751eff35e5f7106039ef03964ce6580504d986f5410de4f9c3c9f776161c76ec,True,True
+001-167797,8,the Republic of Moldova,contamination,,,,True,True,933c23624d5a25ee2cd16b08a0f466eb45ee052b56dd71ca82fa60cef3aeb6be,True,True
+001-167806,13,Greece,,Asylum; asylum; expulsion; extradition,,Turkey,True,True,9b5c2b3b731b6c0d134460022813febc0a1848c872784d1c424b9ca2e1136fa4,True,True
+001-168377,8,Switzerland,,asylum,,,True,True,499b9c68f2fec4f3652e220eb3c7baae3d7f6fb6c72d64a7066ca5aed7af8c84,True,True
+001-168380,6,Serbia,,,,,False,False,645936cf7b5133d17b107e4f6c3a39c0c03b5df361d686da0a4f28f25592d073,True,True
+001-168382,6,Lithuania,,,,,False,False,28bc23b0e60d6a0f9d97fb7c0a5fb6ac0dee0251c81705c21662d06392ec5631,True,True
+001-168816,5,France,,,,,False,False,a0c91f00f86cd993ebb2491610fc9225c654c2074e49622992091049e45a6b4e,True,True
+001-168853,3,the Republic of Moldova,,,,,False,False,aaa8367a012d8b204984192c106e783e4d6bd39e60fc236453f9f87313338e87,True,True
+001-168860,6,Armenia,,,,,False,False,52c4c782d44ae8067f19349f9e0b145770ec2a82b893ef9719d6cda15d93d2e7,True,True
+001-168864,2,Ukraine,,,,,False,False,36796bbc88851d1672171673ba880dea0b010cb974fea800529f93bc1cbbe3c5,False,False
+001-169210,34,Ukraine,,,,,False,False,99ac7436b91de2f596154e5186e2617e0c29a6bb4151aa04ae838e1a67878228,False,False
+001-169520,6,Czechia,,,,,False,False,2bc698dbd55930c4d020694187ffa05b387c8d0182a0d00394867aa07b16b47e,True,True
+001-169521,5,Latvia,,,,,False,False,db79748eb8c65166c997373c5be8aa0745aa9bac9ed95ff1a3e716a16f4bad67,True,True
+001-169654,13,Sweden,,,,,False,False,70cf164cd003e35484e9cb134f5bb0c5b5a2f5e4dc67a4179deeeabd7cbff51a,True,True
+001-169662,3,Belgium,,asylum; deportation,,,True,True,cc4c89465e7f41cabbdcc144a1756d860ac93f7950c8c6ce1576c873a4b6b376,True,True
+001-169957,6,Norway,,,,,False,False,54d49f76f45373c4a7411ed2e0efac078db84e8847f7af97fa9fe70af3d1e0e0,True,True
+001-169957,8,Norway,,,,,False,False,54d49f76f45373c4a7411ed2e0efac078db84e8847f7af97fa9fe70af3d1e0e0,True,True
+001-170040,P1-1,Serbia,,,,,False,False,d949f8b7435014e5754a20a411f575d98db334cd79f73bec7d9a024a41a02804,True,True
+001-170050,8,Switzerland,,expulsion,,,True,True,a52bee824ca546f5cfd302224ba469c03517ad28d46834069db1f2f4fb194cfa,True,True
+001-170349,9,Georgia,River,,,,True,True,09623976c4dfed70affa9ca5a3de706d2bd0b7d6005250ce5fe0c7ad8356b2ab,True,True
+001-170361,P1-1,Bulgaria,,,,,False,False,79772a833e0bcc28e37ca888b44469a7f71cd25893da5000fa8a9a41f20e27ea,True,True
+001-170451,P1-1,Serbia,,,,,False,False,35e07739f89f50f458458da3242fd6cfe60dd3c5b9f247154821d4ffd6033c61,True,True
+001-170456,7,Slovenia,,,,,False,False,cbce8ad6d1b5c44455b7ad0cb4a233f912d72a8175e907136700cb2f5abe7649,True,True
+001-170467,3,Switzerland,,asylum; deportation; deportations; deported; expulsions; refugee,,,True,True,4f6cd97171c527114c868f2e4581b84160df27f557a8b620aff618074d7b80b1,True,True
+001-170648,34,Ukraine,,,,,False,False,43f6c205068f38f7c09d0637a99976c3f165b8fc50a92802d48931bd49ba3e8c,False,False
+001-171486,6,Azerbaijan,,,,,False,False,ba3a1caddc76a66ae4b34447f673ef064e2b91cddc68e1ac7bd2456e708342b8,True,True
+001-171489,11,Azerbaijan,,,,,False,False,69eadc2ef6d708343c4bfbd7168bf38b8e10c455a15600c3f336e8fca25a30f6,True,True
+001-171507,34,the United Kingdom,,asylum; deport; deportation,,,True,True,9aa402996e505bff94fa8d7f5997d11778cd2e1007e7d0fe9746fc5306fcd4ae,True,False
+001-171994,3,Italy,,,,,False,False,a011dc6a7560fedddca2976c36e9ddd9b5584b22a2617c198b7115147b0945c3,True,True
+001-172091,13,Hungary,,asylum; border; expulsion,,,True,True,40c85f332e17899d5a64330e0de4648c5c250696756486522b00fb5640af5b57,True,True
+001-172100,8,Poland,,,,,False,False,ef2c8cf79a6a42f5748acd7bcce3dd5669ff9f2de256757676c4f5b6c2d1a570,True,True
+001-172317,6,Türkiye,,,,,False,False,9e6ba90388b73bc67b164fc452d9a480d993a30181ff880971a250e0d7784664,True,False
+001-172459,3,Cyprus,,asylum; Deportation; deportation; deported,,,True,True,afb7719e41292f476ad207b82b88db89f82a68c630f21132bcf0624ed9b19b36,True,True
+001-172460,2,Cyprus,,Extradition; extradition,Northern Cyprus,Turkey,True,True,50f67dcaa5464b4aca4b8d85870c145c18377474a7d9eff364f392f74052d780,True,True
+001-172463,6,Serbia,,,,,False,False,da6425a7dd3a6d086640f03b817774b92e58e76653c7438b5910460b24d32b43,True,True
+001-172656,3,Lithuania,,,,,False,False,d472c22ea0cea89ecc1f142af7afacf9d2ac3cf4d685e207445234dc7c72bf84,True,True
+001-172665,3,San Marino,,,,,False,False,1ca422bc1ab6e288491bf1bd8a099d8c552a020f5b2798f47d14ff40f15508e4,True,True
+001-172665,5,San Marino,,,,,False,False,1ca422bc1ab6e288491bf1bd8a099d8c552a020f5b2798f47d14ff40f15508e4,True,True
+001-172855,3,Greece,,,,,False,False,17ea1c6e339d552f173dc6c6ee1a483f5d981348f27cc35f2a092dc3f316bbac,True,True
+001-173089,6,Armenia,,,,,False,False,94d32a5ef308323d514cecd4a0fd1b8a56f51bbef5a9fbf6b2d4d5f5cd968704,True,True
+001-173091,8,Germany,,,,,False,False,6737e0ff4002c9141f2a101a1e3666af95b954881d89412dc454482dfbdc7d81,True,True
+001-173103,8,Austria,,Asylum; asylum; expel; expelled; expulsion,,,True,True,ae5b4a1fd05fd2d28bc34b81b7e9768e98bedece6d7e2eeaa3ddc6bc810643ac,True,True
+001-173369,10,Iceland,,,,,False,False,64e0217a32bc6fba241a873c508ab2642dbd53cde123532983dec219c9cd34e0,True,True
+001-173498,P7-4,Iceland,,,,Russia,True,True,47d9ddda7897fede0aa93ae2bdf633e899fa975f5473162cc5b82a3aaf875a41,True,True
+001-173624,6,Croatia,,,,,False,False,cda50eafecd742e9f3c22e04caa05c25bb9c4e1cbfd6703803dcb9890b02720c,True,True
+001-173802,34,the Republic of Moldova,,,,US; Russia,True,True,ee20b7b751715a37d5dc4777ca819dba995489af3983262c78b2a586ab57882f,True,True
+001-174119,6,Belgium,,,,,False,False,d8a653902c48474335bbc8bad2ecfac1670867881dd7951cfd2f5c98df2ce19f,True,True
+001-174386,6,Montenegro,,,,,False,False,05abb396c3f37f65699353acb78925fbcdadf5509004378c366e40f6eef6be82,True,True
+001-174389,6,Montenegro,,,,,False,False,942ed58556685f99053b6f404ce49440e108f53cb36c2ddd8b2c754a706f8e9f,True,True
+001-174404,10,Iceland,fishing; Fishing,,,,True,True,16e5aa2f669709c2a229916523d12546b97fd02c6eb39144bae9f18adc9aae96,True,True
+001-174413,P1-1,North Macedonia,Lakes; lakeshore,,,,True,True,2eeba9c3cac95c4909d972794cbf2b54533cf2ff07c5c5f570f899beede6b982,True,True
+001-174414,6,North Macedonia,,,,,False,False,d63875b483a297c24146d4389f1fe55fa15cdb08d7bb08d802385260a4a48e08,True,True
+001-174419,10,Ireland,,,,,False,False,8cd296a2632a1e99448c6349852afb6ac8860f3fb9a164daa05c3396c860af8c,True,True
+001-174424,3,Switzerland,,asylum; expulsion; refugee,,,True,True,9b40f174eae4c82e550e6b128640e18f1386b2205668dc1d4442f656bc0367ad,True,True
+001-174814,6,North Macedonia,,,,,False,False,39db84cea3e47c1ec36dc4632695858db13123688bf9d7533a078060a51f677f,True,True
+001-174965,2,Croatia,,,,,False,False,673968f6b3d77b266d80138d7c0a548448a08a090736f1362cf3975d9506ae10,True,True
+001-174997,13,Portugal,,,,,False,False,df0059582b1fa71240e7ecb687d59fdb6e13e9a5c9654b5b0cefec250af54f20,True,True
+001-175121,10,Finland,,,,,False,False,113a9b72057903d31a1c1c148f3d4c135246a3b9cba0763a6bee8d3883b74e19,True,True
+001-175155,6,Latvia,,,,,False,False,7ad0c8572f4ea1e17ad30bbdc0b209f60409e44d9fcef7233f069561994b970d,True,True
+001-175645,5,Slovakia,,,,,False,False,3b2077980fc49bfa53f2e130393c8dbbd45b4c2f1508f0ed067b939ccda2a263,True,True
+001-175646,6,Portugal,,,,,False,False,63e6d48bcc5f0a553ee4d025e55d8298d398d2d436ae84ff77b1fd4b13a911af,True,True
+001-175658,6,Slovakia,,,,,False,False,bc1f5393aa5678b066288397b666bb01364745e63670e89464bf0138cada2885,True,True
+001-175667,6,the Netherlands,,,,,False,False,386b7fc9abac9e83cab0a0f810265642ca7e66a772f828713ae0988457b746d3,True,True
+001-176765,6,Montenegro,,,,,False,False,a85311711c7560577dff3819a7f87a7c539c36969f7ba16e5924ccf15ad3f5bb,True,True
+001-176838,5,Germany,,,,Turkey,False,True,0e237ded141901fecb710ba2e91985590751c73ad130b99ff9a5c0daa3e65cae,True,True
+001-176964,6,Austria,,,,,False,False,c8d7ce0eccc50f34c8e2918f99ddb210354501533a51bc6723fc1477885b6fcc,True,True
+001-176969,6,Croatia,,,,,False,False,1f4024eb31c7686da88e6040bc55687066b649776ee18732af0b3d8542f80405,True,True
+001-177080,8,Norway,,,,,False,False,f9f3c0060162669b65d1d7d636983bcb27113c3f55cdd07489deb6a21d7602be,True,True
+001-177118,13,Slovenia,,,,,False,False,96551b52bbdacdeef234d6475aaede70a277aeac2594074ce7fc9c831bd33203,True,True
+001-177124,6,Azerbaijan,,,,,False,False,d7bad619a51e49f8538e4140aeca9c60a4b00b2d120317442840214debb3f150,True,True
+001-177228,8,Ukraine,,,,US,True,False,c326d630455b04018d1deb3473e8b3f83120898e257fba57124a1d2d81728f66,False,False
+001-177349,10,Norway,,,,,False,False,8d8e00bb4378998bffc9ead8eab7ddda0891396fd4f1d2a6f82ebb4027384a50,True,True
+001-177650,3,the Republic of Moldova,,,,Russia,True,True,e86bba0929e20407a91eba180b88f7674c4f2b93004fd87e6f8aa7abf7944833,True,True
+001-178182,6,Ireland,,,,UK,False,True,92c279118d8296c3c4f3df2e95ccf26124c286436b3e6769c0d34b635ae9acb3,True,True
+001-178352,6,Estonia,,,,,False,False,97c5e49c3e6f082b3b2d461921cae180c973384cbc097b8e9ac561fa9c62989d,True,True
+001-178362,8,Iceland,,,,,False,False,8e774a412f5f617fa889d6ae47b7a9e1ab9506f18b8f0e068fef4bc9e4de981f,True,True
+001-178372,6,Latvia,,,,,False,False,42e3fed6bc393813c651295efee6bceed2b1ff5a8a8369cf40dc25f70eefd3cf,True,True
+001-178700,6,Iceland,,,,,False,False,f7b7145b6fb534085de4472ff6445e39b70d27b39d8bf8d87fd615673bc377b4,True,True
+001-178701,10,Austria,,,,,False,False,012f753f997871cdad5e84e213479d3c2bc40a74f2a5c7ddf84e222d99a2da13,True,True
+001-178877,8,Norway,,,,,False,False,50fdc23b240a119645fa1e44055f7251327c668283cacde996a4b278bdf5a6cb,True,True
+001-178904,8,Montenegro,,,,,False,False,fae7faea38ccd82e24bd51dc3d1e2dd9e1736effe9c041fa53c770bff4b8c4a5,True,True
+001-178921,2,France,,,,,False,False,5343f20e0a11b079894218ae19149c1a4cfbc4b9b6803831fa11c903037ba21e,True,True
+001-178921,3,France,,,,,False,False,5343f20e0a11b079894218ae19149c1a4cfbc4b9b6803831fa11c903037ba21e,True,True
+001-179216,14,Montenegro,,,,Turkey,False,True,3a74336a3dcb9366a5cc19aa1460b9e8496e246de50e2b039fdffb3193955737,True,True
+001-179853,5,Ukraine,,,,,False,False,3340653daf6a04291572490069e5f130daaec727016e6937b7380c1efe7635d5,False,False
+001-179867,6,Albania,environmental,,,,True,True,e3c6756682a6eaf641e50a7f1325d2bf464a0dfe09ba358d988c372e53782a8b,True,True
+001-179878,6,Cyprus,,,,UK,False,True,73e84336b9999db1f15e7ef20441389943fa28cf5ae8648f7ec38b29a2f4ddb5,True,True
+001-180281,6,Ireland,,,,,False,False,7192a8537b74f785785410f9b04d7ba67b94d37b2341d49c0acd637263181077,True,True
+001-180288,P1-1,Romania,,,,,False,False,9616cd935d9d7e0b184f64ffdc3aa0963a473157765880db2c609f08a247f3d6,True,True
+001-180296,8,Spain,pollution,,,,True,True,91b7df86801a44449deab71f1e187926709296adee949ae9cecd2c946c2bc7e7,True,True
+001-180505,8,Hungary,,expelled,,US,True,True,e58f4e9a6085dec0682b64a125ad42be5911bfbb1e38c9c24859cfaea0a61350,True,True
+001-180841,P1-1,Montenegro,,,,,False,False,9e832959b6c784ca151f1296ad57229a1a19a264ff2ed78be4a49aa34e8cb8b6,True,True
+001-180843,P1-1,Malta,,,,,False,False,a2b8b7e0b7383d87f1e4516ab7da182ac05a7212bc5485f44f68f94534f30bc5,True,True
+001-181068,6,Ukraine,,,,,False,False,19e15ee4e9eda1f83ad41b50ced134234b3d6f5a420ab59667d23ea2ed524e6c,False,False
+001-181202,8,Lithuania,,,,US,True,False,05ce7be69e47944feda59b91865921af765ed8d823f28e3e80b5e2c1e70cc03c,True,True
+001-181210,10,Ukraine,,,,,False,False,8da08a04bf4a2fd51b22f0db96ad1382d0f3d5acf492a1ecc7d653830aeb83e0,False,False
+001-181278,P1-1,Malta,,,,,False,False,3239ade063f20f7799328ff629716f95f13d8a18c8e65a4e01358e85c49be391,True,True
+001-181393,2,Latvia,,,,,False,False,cc80621eef3b50cb6d87592f9e95115a79d6d5c41174faaecd133e32547e9718,True,True
+001-181394,5,Germany,,,,Russia,True,True,a82f090f0323a2fd3ced4feee37401245f7554018ace01888b855077da8dc634,True,True
+001-181584,8,Germany,,bordering,,,True,True,1665a207471ca939f6097b4c8c6431c7b65663564ea10cc6c5cc3c220f118b35,True,True
+001-181595,10,Malta,,,,,False,False,e2f3d0f9d075c9ba0acbe43c359cedba4f9805e35a48ea158a0ba905aa3e8083,True,True
+001-181847,3,Romania,,,,,False,False,99d31792cef61306cc8760689627551f1585a36dac37e3e7dedb7e05e40cd243,True,True
+001-181850,3,Russia,,,,,False,False,869a1b41f210b2104344f201ea63c13c28bb500fcbcc3b1cc5df28343f4a1c61,False,False
+001-181859,6,Armenia,,,,US,True,False,5939673486e7107b571112c3601b047b6515b943d4a9f86ae6a8648f62dcc5bf,True,True
+001-181877,5,Ukraine,,,,,False,False,ac7d2fc0b2bf7c4907e18f408253c05db13313466dc1d07d0a43f38fccba4a9f,False,False
+001-181882,3,Cyprus,,,,,False,False,e61168cea619700f360646ed36fac49ec87f6d62a0b0aede458e08149e473c0a,True,True
+001-182213,8,Russia,,,,,False,False,107a47836bcd6287998e899bcbc5d1996fd83820f5325b7aff84eab8ce30ff46,False,False
+001-182605,13,Ukraine,,,,,False,False,225e2f90b5ae1d86d3f50447b6630667e65424c0870c3a4c28e1b3d2d2fd06fc,False,False
+001-182853,6,Montenegro,,,,,False,False,613ccbcb69f81499bf9bfbd8caae4e201081c8f4005b6baf23fc9de212e7cbb3,True,True
+001-183126,5,Malta,,,,,False,False,b0bd5a0f3e3339e57550e4ff876119c6f03280a7ed2bb0d79aee6c7fbe99ac29,True,True
+001-183206,6,Russia,,,,,False,False,08b7738b8dc57cc51a1930fcf612156935c597529a32b5ec27c57af9e4760a31,False,False
+001-183337,6,Bosnia and Herzegovina,,,,,False,False,086d047316fd87408d4b3ee474b0730067eb1ddbd1de9ec342a0d83a4961af30,True,True
+001-183338,3,Cyprus,,deported,,,True,True,68a0184a85679a44096418f824c6ef06356087c9ef4182d8e201c59bcebb7c41,True,True
+001-183373,8,Czechia,,,,,False,False,01beeeb93f6a7b208b15ab25af01466dd8f810aa895ddb7f7b3dd7230c43f1e9,True,True
+001-183376,6,Georgia,,,,,False,False,37639ea62ce4c05a9c11c4450a641a5c2d6d110c8a4a38289fcf47db1159d34c,True,True
+001-183395,6,Ireland,environmental; fishing; Fishing,,,,True,True,290223036453083cf1c31d5b140df303f8bc37a41be6936aa4b50b5b7a93cf42,True,True
+001-183395,P1-1,Ireland,environmental; fishing; Fishing,,,,True,True,290223036453083cf1c31d5b140df303f8bc37a41be6936aa4b50b5b7a93cf42,True,True
+001-183542,6,Lithuania,,,,,False,False,12991c580348206116b33c0f2c7bcc5210d6d494de9440e3f7d9aa823a37be34,True,True
+001-183546,3,Russia,Environmental; environmental,,,,True,True,a4ac27cc81c2789b727a618f57928a621e9a4c2089097a54245e4fe3111cb7cb,False,False
+001-183558,3,Romania,,,,,False,False,1f471697b0d95bd8a70b042f30cc7dc3928a1f6bf52f6e9f920adf527493393a,True,True
+001-183586,13,Ukraine,,,,,False,False,32587b274a9af71ea55c132ee3ea018593962b4be682bf5cbf7324a56383af3d,False,False
+001-183817,6,Austria,,,,,False,False,1d5bd66c73e9e6a14a993c9710072f2e5a7c3a7799776624a9a39ad57efce0a0,True,True
+001-183862,6,Türkiye,,,,,False,False,ddd63c492972b9e9351a7b90d522cc36574891b7ee27f3abb80d37504073b9c7,True,False
+001-184496,5,Türkiye,,,,,False,False,6fe4fe52fffd0b67b0f130ddce3b42aec3f6d3c2439e8e910f02df69a80acde9,True,False
+001-184651,13,the Republic of Moldova,,,,Russia,True,True,9efa7d4af31b9fbcacb5eb8210d6ee85ad330ae42f978ad2811bb96196a6f48c,True,True
+001-184651,P1-1,the Republic of Moldova,,,,Russia,True,True,9efa7d4af31b9fbcacb5eb8210d6ee85ad330ae42f978ad2811bb96196a6f48c,True,True
+001-184671,3,Malta,,,,,False,False,8c7a10c86055059ad9794ef6170dea49741380956f96899dcef4e65efca6ea91,True,True
+001-184673,3,Malta,,,,,False,False,7dc94155de2ad0f7757a22b20b6e3c0e913be2d04aa4536598316468db8fa809,True,True
+001-185031,5,Ukraine,,,,,False,False,4a68b332bb1a24763228e34bb1831d66937580e73026c7f0816b3936a7d887ff,False,False
+001-185308,6,the Netherlands,,,,,False,False,2423b7c956f0ba363adb847e752dc1c011a94986bf4a56610ed2931affa966c1,True,True
+001-186048,8,the United Kingdom,,,,,False,False,bfa97a444baea1659052395d05839a4dc0a39fb10596e3c304d791316671c359,True,False
+001-186116,8,Georgia,,,,,False,False,4b0899e139e64d77fa6491c00719167723adac74892c954992bbf7f8dd306e24,True,True
+001-186117,10,Germany,,,,,False,False,39ec47aa7b63f674f7e56881b9c9bc7b3ed3a0fa303ab89c6cf001212c9d71a6,True,True
+001-186126,5,Azerbaijan,,,,,False,False,79899bac6ce5717c428f3fe381d36a82292d568038e8f8500998d32d553c4ad9,True,True
+001-186424,P1-1,Bosnia and Herzegovina,,,,,False,False,44ba6b3850967d3fc09dca2f521d3fe882e21bde2bbfb752cb0145b0145108a9,True,True
+001-186770,6,Lithuania,,,,,False,False,1a2a5feeb1bf81ae9fd3d8625d8e7466914eb3fce9d062ae92eaebf9c03163b7,True,True
+001-187195,6,Serbia,,,,,False,False,c025f3e31d5c6160be15a9eddf87d878fdea5c51b5f58dccb840c23ff3a0f0b5,True,True
+001-187200,14,Malta,,,,,False,False,edb92ec893af41afd72ae923d995acd491c1301f99efdc9ae14c0d3c3dd8bd7f,True,True
+001-187251,5,Estonia,,,,,False,False,4579cf57a6373aff1965ec787b38d42eaa614386a6423a21814d628ccec503d4,True,True
+001-187455,12,France,,bordering,,,True,True,eebda8a7deb9da4a451d0d8b4055a3f2d301a8b69a38108d659d8c5a6f1ca8fa,True,True
+001-187465,34,Ukraine,,,,,False,False,c7d762a072859b838accc9a8a8bef41552bc0f8a53caceb87742528919862327,False,False
+001-187474,8,Slovenia,,,,,False,False,0bb45ae2a5207daa5cee164bd34477539d727d07c9632a9396576fc22a59a14e,True,True
+001-187476,7,Iceland,,,,,False,False,432dd95f880d1698e127fe9e63df6f737ab898ea672d1630989c3a7110e034d0,True,True
+001-187510,6,Spain,contaminate,,,,True,True,f601bde6068d0da1b951000e68a833d013542ee8a0f91dbe3362f4aebb652aed,True,True
+001-187574,13,Hungary,,,,,False,False,ae5d519dea0df5138818142ecf95ce97e9c642a3371fd408222bbfcf434fcffc,True,True
+001-187686,34,Ukraine,,,,,False,False,c3508459da7412a5a4299a6e848b42adcf3aba83115cbc1a63f499edbf2fca90,False,False
+001-187818,34,Ukraine,,,,,False,False,4fc92cc826d9d7aa959b8e7377c4983f2e858cc0117ecaa7b13b07e308c5a6ae,False,False
+001-187923,8,Ukraine,,,,,False,False,4348ad4a68dc629777eb6fba6acc21770fe8846666edcc3c63b39997d88c48b8,False,False
+001-187931,8,Romania,,,,,False,False,a0a6b085825404032077046de766badd7f523ae31698dc2c65fe599bdf868102,True,True
+001-188360,P1-1,Lithuania,,,,,False,False,ef4e1d24d261ccf1eff654ce3121751345afa510f21bce1a25a7047f6684a482,True,True
+001-188374,8,Ukraine,,,,,False,False,7682126e13f5fd0cf59c622cd726109eb34a9186fabab84e7e73056589f4531f,False,False
+001-188382,34,Ukraine,,,,,False,False,2d78c47b71c5276850c04b373c079dc5896044cf7a145242ae5c0f2f4e1b6ee7,False,False
+001-188991,14,Latvia,,,,,False,False,55dcca683f948a9174b5af03e4df967a9ba924d7591af609b34ea3cff955b616,True,True
+001-188997,7,San Marino,,,,,False,False,bfe6e2d2526bbdfc178a6bee7545464f4fc2aaaef52dce43e72a0936c423a330,True,True
+001-189092,6,Bosnia and Herzegovina,,,,,False,False,7e51f59cf2115f8372df3e9c6f127e31ca3e8157fda57117cd46371d13c94d0c,True,True
+001-189092,P1-1,Bosnia and Herzegovina,,,,,False,False,7e51f59cf2115f8372df3e9c6f127e31ca3e8157fda57117cd46371d13c94d0c,True,True
+001-189589,6,Armenia,,,,,False,False,1948a313a12b261d43a686b6ce3ff897faa76f59b624d91f891bedb9806a7a2a,True,True
+001-189621,2,Ukraine,,,,,False,False,47e271695fa50d16d8bb00bbf502b004045d0a0039921202a45dbfd2bea2b6f0,False,False
+001-189740,34,Ukraine,,,,,False,False,a3c0681e7fd435dd59b9ff3ce052df6de43752af7e47e2493243a45c994fa57b,False,False
+001-189741,6,the Republic of Moldova,,,,,False,False,d634f0f5fd8c66974b01f17fcdd92ace3c24df9950374e6762570a301467f747,True,True
+001-189786,13,Ireland,,,,,False,False,b7ab8d310b72b7451921c81683015decbafdfcdf94f11dcf450910255be68360,True,True
+001-189786,6,Ireland,,,,,False,False,b7ab8d310b72b7451921c81683015decbafdfcdf94f11dcf450910255be68360,True,True
+001-189795,P1-1,Armenia,,,,,False,False,d8041b471846a209f9c344ea9e586b0b5aa7a9b745116de6442ded19e94a92b5,True,True
+001-190020,34,Ukraine,,,,,False,False,b96401d03d23df78d7f83e3336f86bb26031d0447426b1b83aa322947749fbfa,False,False
+001-190025,13,Ukraine,,,,,False,False,5965a69380c3778eb1385e88b28e7b3c1a479e0851a322c4c70939e47f0dfcec,False,False
+001-191359,34,Ukraine,,,,,False,False,e45a8b906d317f640718cf8dc2067811f617592b844b696d9996f96e89f6f199,False,False
+001-191369,P4-2,Ukraine,,,,,False,False,fdd4ffd9ccc1fbad978ccdacceb6587af1f671fa231edb6f6ce3dbf131a53597,False,False
+001-191487,5,Montenegro,,extradition,,,True,True,00c5aa2d3f82b5d73c0502756f60c5ce2dcd2f02791949fcbad8f15cf4105dcb,True,True
+001-191717,8,Ukraine,,,,US,True,False,02856c8eeb45bfeaf9f8865a777cddee3e4330b5d5f52716d76912b4e95157f0,False,False
+001-191721,3,Montenegro,,,,,False,False,6d689bb1f5dfcdb02ae33147e5620937df1f53b117a169c55b7ddc0ae2052f75,True,True
+001-192202,P7-4,Iceland,,,,,False,False,ee1f0e7f60a3f1ad0e9b27e07ec961c27be5f2656791d51ed79d04914f09da13,True,True
+001-192424,10,Bulgaria,,,,,False,False,274aeea64b3e0d734b83b7efa20192cbace40543b09536a1ccf67b141a56a4ec,True,True
+001-192787,6,San Marino,,,,,False,False,8f9a11a8b157b7acae31f404bf44f5eedeb7bc29a2236fd2bf3864b31cb87991,True,True
+001-192892,P1-1,Bosnia and Herzegovina,,,,,False,False,d08a5103e60e4d04e9ca01d5849370b5738adfabfd9e3a34a1091d5285e8bfd9,True,True
+001-192983,P1-1,Bulgaria,,borders,,,True,True,8633ec74877427d33ef318f339e9335a36f78134568caae8a776bb87e66ba917,True,True
+001-192985,8,North Macedonia,,,,,False,False,958a3ca456e4647cd1f229cc124c01088121b3fc2412151374edb9dbe320e09d,True,True
+001-192995,3,Ukraine,,,,,False,False,259de14cfb3d061b9362d4b26281f5cb9c09d50d6f827e2ecc581514cbf9a6e3,False,False
+001-193083,6,Ireland,,,,,False,False,5af28b5764239a3501424769aafcc36abefac5cc5a0045c9c84dab493e45a182,True,True
+001-193251,6,Estonia,,,,,False,False,a5896d9f650576c8f40710c6501849e92598e87d08b0897e0946bc568245bf7e,True,True
+001-193259,6,the Netherlands,,,,,False,False,6f718fb70c4d862288e08a6a069505f65d5f799decdc40850a2a163c00e28611,True,True
+001-193469,3,Ukraine,,,,Russia,True,True,5bb0496d1410fc4a6aa6c35852b706aadac52cd988385b40e6e6f4122f1162e2,False,False
+001-193590,3,Belgium,,,,,False,False,60d94376b8bde6b497b42667f3817634841be08a22ce22d184a2c86d172e6538,True,True
+001-193870,6,the Republic of Moldova,,,,Russia,True,True,85cd3c318447da5b7754a8ff5c614535a0d3300484ab6e4848e286ad8be31ab7,True,True
+001-193994,6,Ukraine,,,,,False,False,6c04cf30a025b40fdba9f24c27a309b0810db88ad8e5f9a70f9e2b2d13370112,False,False
+001-194001,6,Bosnia and Herzegovina,,,,,False,False,132fadad27a0507647c93d58c3616a67473bd7d11ed53caa4f87204b074326a5,True,True
+001-194106,8,Spain,,,armed conflict,,True,True,8a4ecc8f3219426d45d410124f2d01a6eedf596da3e85b5e5554cb5ab35c1150,True,True
+001-194183,P1-1,Ukraine,,,,,False,False,7b0bee26b97e4df4221a24ca19f5c15d6d76087bb0b1c7e0a9058408eff9e17c,False,False
+001-194188,18,Ukraine,,,,,False,False,70ae76e1750813cc8ae9eb807e284276a77cdef0820b7ffa28e9296c0a83ef7e,False,False
+001-194240,3,the Republic of Moldova,,,,Russia; Ukraine,True,True,e7d8e7b303e5d1a3961f6b72854f958277f36c8c2070959f1e932d012fd886c2,True,True
+001-194241,6,the Republic of Moldova,,,,Russia,True,True,28fa581e6bb33bebb3beea2966b5ac7db77718b80dbd8142a9e03cc948078f68,True,True
+001-194303,3,Ukraine,,,,,False,False,7521e36d3b01557707d7dfcbe123e109a6987c05698abae6c7cead8ecd4476d0,False,False
+001-195540,6,the Republic of Moldova,,,,Russia,True,True,bc7f70b8f0c4a02621d4b4027c024aed1e975c72e9f266706f345e7657a12268,True,True
+001-195861,6,Serbia,,,,,False,False,feb0a2e84db359967e32ec66642628f79bb1b8e9ca5d66d2024dd2e6d10aee70,True,True
+001-195869,13,Hungary,,,,,False,False,a8485c6eecd828be8fdc8d80999cd9a48a4ee0aa83ca6a3a648e09adf8fdd824,True,True
+001-195909,8,Norway,,,,,False,False,7c74cf3d85a919d75c6d08d07927f3198fccb1f237d17cd3aec526a52676c1e5,True,True
+001-196149,6,Armenia,,,,,False,False,43d476d4ad79a768a5062dcd03e21b73067e0e7f188e2aa2e3707bcd5cdd533c,True,True
+001-196152,3,Denmark,,deportation; expelled; expulsion,,Turkey,True,True,8a89ae30427ce3d1e6b985b04cca13da8f43eb5900f902172e3e4e7c86389e69,True,True
+001-196421,P1-1,San Marino,,,,,False,False,96dfdfeb4e6edb59f96754a660034c4a308981d644edb6f0c725d7c8ab8e02f6,True,True
+001-196423,8,Serbia,,,,,False,False,afb481df666a639d6f0e356890bd2f81f97f5998978924a585eb39d0bb3d1b3c,True,True
+001-196600,13,Ukraine,,,,,False,False,0dc5343a8a4a6abe335a0582bd6514054558d27f7be87047c91ba60c89e3aecc,False,False
+001-196680,6,San Marino,,,,,False,False,6f5482a6e31dd550a6d1c73f26cfbdefd89b86cba15463c7bd82173d52638796,True,True
+001-196682,3,Ukraine,,,,,False,False,62f48c00419230080f8785a27a14053fc9789139d122b17549354fc315a1b82e,False,False
+001-196836,5,Belgium,,,,UK,False,True,03605b52b1d843a4cb1c500c2066d17293223e9daca728774c47009cf444d35e,True,True
+001-196879,6,Bosnia and Herzegovina,,,,,False,False,b7833c192c6cb9ad0b0deb5ba295ed4399c28f41be424df62784cfa4f3fbf6ee,True,True
+001-196887,6,the Republic of Moldova,,,,,False,False,e21b3c8441a047b68ca07cdec9c312df29e7b347af4195e81ef55932836e3a68,True,True
+001-196893,5,Ukraine,,,,,False,False,e808bd1923f64aabdf4ea7e37b9426a074bdd1e3b5aea52dfcb5dc6a266d835c,False,False
+001-196897,14,the United Kingdom,,,,,False,False,568c80f52162a8b873815cd0668da9c200456be925cac15f5b50945ed7b56b4c,True,False
+001-197215,P12-1,Bosnia and Herzegovina,,,,,False,False,0a4f34669614b7205fbb1830afd695c48d83ae0d6d232fd59b126da2ddc7bb76,True,True
+001-198472,8,Austria,,,,,False,False,93bef8557432e85f48c616f86eaddfc4556bd3b06f8e42cd9f1daf03018e2ac1,True,True
+001-198485,34,Ukraine,river,,,,True,True,6e071896f6e277c38011ddafa5aa6e73973c8909d54f1b6d7588dc1b7105754a,False,False
+001-198718,6,Bosnia and Herzegovina,,,,,False,False,07becc77a51f9252c5a19560ec54cd9ba86b8a307daad09f811391e0a24f7432,True,True
+001-198882,6,Ukraine,,,,,False,False,ed72b7442d14e5184677aa187c5e1eb054f969e280f8cef3cae9803ca7561264,False,False
+001-198884,3,Ukraine,,,,,False,False,18c59c66204f86bc8e810e89361c1dc7ea549965f2be184bfd96ff4d570799ed,False,False
+001-198885,P1-1,North Macedonia,,,,,False,False,9c30e1b923294d672963f5e1fc909f8806ddb6a68eb1ba5eaea40270d2eb2575,True,True
+001-199168,2,Ukraine,,,,,False,False,7fc154dddcda0bb4764c51054a560aea2268eb3333c77865eeca077d5ebac999,False,False
+001-199173,34,Ukraine,,,,,False,False,85d9e13140bc21c78725b37e6739f2fd17118a210240e0e6b75496242d995e28,False,False
+001-199173,5,Ukraine,,,,,False,False,85d9e13140bc21c78725b37e6739f2fd17118a210240e0e6b75496242d995e28,False,False
+001-199381,8,Norway,,,,,False,False,c63be0647870556e1bd0c32379ca7cb89ada8cbe62542409ccf79d560d31adb9,True,True
+001-199382,8,Norway,,refugee,,,True,True,597fd536ec6bcf7507508a3ee4063cc52963dad9cf73332a6a2a2084c9e86ac0,True,True
+001-200209,P1-1,Ukraine,,,,,False,False,3f0ce2986e0c12debb6c56bdf8de880d6822473cccbf9b0688eff3dbd480bf75,False,False
+001-200213,34,Ukraine,,,Crimea,,True,True,b85dd69841611dfe093a8b6fc428888452c72eb14eaa82cc3a074a1564fbe2bc,False,False
+001-200214,3,Ukraine,,,,,False,False,42c5266c891e2ce426360f802c94cc02c84ca837300e6ec2ab07958972115f0e,False,False
+001-200434,6,Azerbaijan,,,,,False,False,75738ce7b289fa1a0a971622a1fcaa81462546f90a9ebe1124b548c687bfd148,True,True
+001-200450,P1-1,Malta,,,,,False,False,948654b6845cabc1aff3ad9c62d3771ea82709bb3ce626ed1480a277e65ff6ae,True,True
+001-200547,2,Cyprus,,,,,False,False,5fe461a4fb92004589607742181dceff65c0cb8ce1e55f1fe2069035e8ae71ee,True,True
+001-200709,5,Ukraine,,,,,False,False,8678de670dcf1e42a0bad914d1cb3d3675db35cf92e0e696b7ffa8c43855bef2,False,False
+001-200815,6,Latvia,,,,,False,False,875dbd7ab0d9dd2fecff24b5eb21133209dd97cb3bd78b32ca821f1f2e249f78,True,True
+001-201139,6,Bosnia and Herzegovina,,,,,False,False,72867e8f7f1c7b4dd4c12bb0d3a465cabff2ca55333a451c57e0461ece12097b,True,True
+001-201329,6,Iceland,,,,,False,False,6dee7bb509e3de15290d0ead7082ef121f09ae4f1bb979a85082535d9ab5401d,True,True
+001-201351,2,Bulgaria,,asylum; border; deport; expulsion; Refugees; repatriate; repatriation,,Turkey,True,True,92437893ecce98d0a973cb7f08d581da72a2f2ace7fb1b074d60d6920430f707,True,True
+001-201531,6,Montenegro,,,,,False,False,e69e0f7584df47a0690500b925c95b57becafbd6b6e6e8b032d6a05102bb84a5,True,True
+001-201641,6,Ukraine,,,Crimea,,True,True,77980c671e39f5511ec6631487e854fa48597270cec8c7fb9d6f7fd9f083f7fe,False,False
+001-201738,P1-1,Armenia,,,,,False,False,38910a9254c025becb5732c77c546d87fe70db283a07912bdba8073a875bccd5,True,True
+001-202222,5,Ukraine,,,,,False,False,9997ea616cacc8376bcbf0e95f1b5bb12b502ec0e68cff47571626041b62512d,False,False
+001-202411,13,Ireland,,bordered,,,True,True,f9f56a0782e6b5c7703fb0359d44498d2701e23d219cf540a5d2057c339d1850,True,True
+001-202411,6,Ireland,,bordered,,,True,True,f9f56a0782e6b5c7703fb0359d44498d2701e23d219cf540a5d2057c339d1850,True,True
+001-202524,14,Azerbaijan,,,Karabakh; Nagorno,,True,True,90576463b765a28b3ff51502fdd104d0c1a957ae97a9a24fb8e76342be970503,True,True
+001-202524,2,Azerbaijan,,,Karabakh; Nagorno,,True,True,90576463b765a28b3ff51502fdd104d0c1a957ae97a9a24fb8e76342be970503,True,True
+001-202524,38,Azerbaijan,,,Karabakh; Nagorno,,True,True,90576463b765a28b3ff51502fdd104d0c1a957ae97a9a24fb8e76342be970503,True,True
+001-202529,P1-1,North Macedonia,,,,,False,False,ca7a09efdba6dc2835705ae5a9a332ce7024d492081c4b575503ea36f6b32ea6,True,True
+001-202531,3,Poland,,,,,False,False,c7aa441bfea874658668b1a875cabb396a9763a042a759d5a8589540b401f2fe,True,True
+001-202619,5,Poland,,,,,False,False,afc9fb17e3e4dd347bcd91ac7e66c53a805b52ae9b7207833d7cf0d273aea390,True,True
+001-202622,3,Romania,,,,,False,False,ead64b4046176e1e8fdb99d2fb84a568d64ab21fbd51b3ca5e79679e09fab010,True,True
+001-202750,34,Ukraine,,asylum; border; Border; expelled; expulsion; refugee,,Russia,True,True,dc65602b4f08e709e88668f4ab27f0af60eb7fe2cd7f1b6da992f08a2f57b19c,False,False
+001-202750,5,Ukraine,,asylum; border; Border; expelled; expulsion; refugee,,Russia,True,True,dc65602b4f08e709e88668f4ab27f0af60eb7fe2cd7f1b6da992f08a2f57b19c,False,False
+001-202991,P1-1,Ukraine,,,,,False,False,cc97d959375e61deed2fc02421c7f780e4871bff7d4433eb0d5c32bee079a876,False,False
+001-203048,6,Ukraine,,,,,False,False,77eaff1f14c5580c7fa83edecc260b9bced476b2c6e74d423a15fd8a4f0c33ac,False,False
+001-203165,9,Greece,,,,UK,False,True,e284851b977a843f7639c901ae237d6349589f766e61cc680aabc1dc3d1b99c2,True,True
+001-203187,3,Georgia,,,,,False,False,f7af44d0bf8d27b7ea821d6e04d4e688ab50c737a291d248aaa5bebada50448a,True,True
+001-203294,P1-1,Ukraine,,,,,False,False,d1ed917f769a31194f2ea6517cae9948f9490022471ef649900adb3af211a446,False,False
+001-203492,8,Poland,,,,,False,False,8390baa926d25e8c9e63ad683f4990fb46b27fc694e6df595627cc49db1e0db5,True,True
+001-203559,13,Ukraine,,,,Russia,True,True,ab10bbc8f984d05b164b4d69a479d7a4a2775700763056cf72dd477cf572c82f,False,False
+001-203645,3,France,river,Asylum; asylum; refugee,,,True,True,fe808bada8a3b99961716fd6e0012647d94bf5dc5782758d83927557035cb725,True,True
+001-203885,13,Belgium,,,,,False,False,2a46c8d113ef814cb26a508284e49941ff08f500bc4e9ef82f7cbf6092b460ca,True,True
+001-203885,P1-3,Belgium,,,,,False,False,2a46c8d113ef814cb26a508284e49941ff08f500bc4e9ef82f7cbf6092b460ca,True,True
+001-203931,8,Ukraine,,,,,False,False,658cc6d9c474187320e695144b50de557632c32246388bd0a2c86210b6b8195b,False,False
+001-203976,13,Croatia,,,,,False,False,16d9b6b7421456ae5646f0335ba97c0cd2f5234ec1c5303e337716de979598c7,True,True
+001-204194,3,Ukraine,,,,,False,False,d64b1540e6273911296ed8c006aebea7949bb384d6d81dcdc88660c8943e5fb0,False,False
+001-204473,5,Türkiye,,,,,False,False,ad4291066cbfcd890dbd007b51c1a33d25bb4493d561ed74448f95f735aba56b,True,False
+001-204584,18,Azerbaijan,,deport; deportation,Karabakh; Nagorno,Turkey,True,True,c29959a3928114132e00dc3f066d863d6d01f3a7b35a884d4fdf64049cf61c1e,True,True
+001-204584,5,Azerbaijan,,deport; deportation,Karabakh; Nagorno,Turkey,True,True,c29959a3928114132e00dc3f066d863d6d01f3a7b35a884d4fdf64049cf61c1e,True,True
+001-204584,6,Azerbaijan,,deport; deportation,Karabakh; Nagorno,Turkey,True,True,c29959a3928114132e00dc3f066d863d6d01f3a7b35a884d4fdf64049cf61c1e,True,True
+001-204584,8,Azerbaijan,,deport; deportation,Karabakh; Nagorno,Turkey,True,True,c29959a3928114132e00dc3f066d863d6d01f3a7b35a884d4fdf64049cf61c1e,True,True
+001-204601,6,Lithuania,,,,,False,False,7904661df16a0a757fae596aa0962932c6bbe0a281475de3c67734b38f1a5bc4,True,True
+001-204602,3,Denmark,,,,,False,False,816ca553acf0a0839c15f44d9ed2ab009680ba889ec08d2acea14191790c21c2,True,True
+001-204660,3,Ukraine,,,,,False,False,2ad68ac8e81cfc986081b2c5400190036d4976d4093982237514947ea85b2d63,False,False
+001-204812,6,Armenia,,,,,False,False,11d91d5de6b80ca362cbbacb07103328d65f4b60e4a583107ee35439ca57a263,True,True
+001-204995,3,Ukraine,,,,Russia,True,True,58def1ec1deb18159159037bdfd887ce1164627022c965cb4bab666e1d8eec08,False,False
+001-205140,5,Ukraine,,,,,False,False,ec3f83236028e3979aaae1f5a76cd33f02bbfadcaceb4049948c7247f3d4cc2a,False,False
+001-205141,3,Ukraine,,,,,False,False,54dd2552a0c7939507a8ce62d8b8e9de860b9e9c19d37a0f461d840ae0f638b5,False,False
+001-205166,6,San Marino,,,,,False,False,bc3ea16bc06b1652fa4e5d809057345ec9dc9fb9ab366314c84582b60adc060c,True,True
+001-205170,8,Estonia,,,,,False,False,338be8e06f4d1094aff0a0a87df111e3e81068f68e31946236374b895529f17d,True,True
+001-205538,3,Azerbaijan,,,,,False,False,1b8b16622591f0217a28532f17d25a3ffbe6bd1631b8c65d617561e4dbfd56f6,True,True
+001-205539,5,Ukraine,,Extradition; extradition; refugee; refugees,,Turkey,True,True,60690486e4f83cb41653d0168b0299c514e7dfc61391d77468ad0c6d6029f112,False,False
+001-205797,3,Ukraine,,,,,False,False,1f57bd5b0c850af675297af3459e512138a61009d55a80b7e4c1b4d2107a79c3,False,False
+001-206159,6,Croatia,,,,,False,False,ac419599f7285d53f6ac46be3fc2e637236264f3cb019d94a5a567b015d64534,True,True
+001-206266,11,Russia,,,,,False,False,1207015b89df2c2e5566837144a4cbb926cd60051090ee9e68e5d1ebb04f323e,False,False
+001-206268,8,Russia,,border,,,True,True,9403174c7b5df619ad5212e4792a96cae6c3bf05baa98b6f06c21dbe5b966ea8,False,False
+001-206342,6,Russia,,,,,False,False,abc7ea9f5c0b7a07d9ce5842901aedd1f2a859d47a89f67b0dbd59513d5f43dd,False,False
+001-206345,3,the Republic of Moldova,,,,,False,False,7ebb6836d55a356ebe63276a6dd8b9eff224ffc231a8f3ab90fdbcc88e7aea52,True,True
+001-206360,P7-4,Ukraine,,,,,False,False,3bbc8789afbcdfabd222014eef1adb4a69406608ccdbfd6a1f74ab5901478d68,False,False
+001-206371,6,Ukraine,,,armed conflict,,True,True,ebf59f8a54b3a28fd6ce2ed14be66096e2550846a14b0cbd549cbbe2d39368cf,False,False
+001-206504,6,Spain,,,,,False,False,9912cc63d1eaf367bda813819c8d6a3e417fd726e69cb2a6673736440e8946ad,True,True
+001-206511,2,Ukraine,,,,,False,False,eb5180da126a65fc755263b89c2a3e2aa8b8d6e0bd4b55ca9001ffc402968887,False,False
+001-206516,3,Ukraine,,,Crimea,,True,True,a26a38df3666a108462c4513c67db742ea87a2cceea87730d2f9f7b80e49ad20,False,False
+001-206525,3,Ukraine,,,Crimea,,True,True,0d9345a87d4515e8b26d5d612394d56d8a121e143de88ed24b83d768db47ca5e,False,False
+001-207136,8,Denmark,,expelling; expulsion,armed conflict,UK,True,True,e45487705fc616438d4400f0c802436996b19131aac892fa4f8a4f1a447ffcc8,True,True
+001-207366,6,Spain,,,,,False,False,8e5a2d8deb74476c46123f2979423b62eeaa45d4ecabf262dff0fdf8bcfa8cf1,True,True
+001-207474,3,Ukraine,,,,,False,False,d0327f67a6d8d582f85b0d7fdb7b470574dce4843835bac2a8a167baecce5ed6,False,False
+001-207667,14,Denmark,,,,,False,False,b7ad0a001764c57e5c2f98f5a8aaa565d03269eac0553737f9ebe3197bd2bd6e,True,True
+001-207695,8,Switzerland,,,,,False,False,f8d088f4769ea0dc366e52f314d421237d681d70d6d0071cbcde8a7780f295ee,True,True
+001-207806,5,the Netherlands,,,,,False,False,6ff7d526812d18970c270208b32c328914b4c5ad262f2c9002f1d4a939987a3e,True,True
+001-207848,P1-1,Bosnia and Herzegovina,,,,,False,False,6cf6fc09c50a2a6f80b900d78e7c2d51f66d24870dbc4c3f3701e7d88cbc4772,True,True
+001-207849,P1-1,Bosnia and Herzegovina,,,,,False,False,bd741ea0fab8d0f9e0d0d81ad4e1b01940ebf3f3a0bdc96bf707cecf62936855,True,True
+001-207850,P1-1,Bosnia and Herzegovina,,,,,False,False,188b41031e7f7a6be7e2b2763501098ef07ba2aa1fe1bc1270c737c2e1672931,True,True
+001-208280,10,Liechtenstein,,,,,False,False,e40aa147a5af457d9d0b4f1ec291576fff00308e907be297c2fd528ff82ff0e7,True,True
+001-208447,34,Malta,,deportation,,,True,True,1f35d20caa2c4c71d90a433193f54e16b3150266bfad875d8e7ed8e9b2318443,True,True
+001-208534,6,Türkiye,,,,Ukraine,True,True,f241a3da6e8551984ae8cc2e8705a6d682738785c5f48a969161b224a6b8413d,True,False
+001-208547,6,Ireland,,extradited,,,True,True,5d9fa32d9b5d83afc0b52e1af1f27e70b01910e98bba9c9b2142d32aa8dbf817,True,True
+001-208589,3,Montenegro,,,,,False,False,dc51726bb1730c7b073c6c463b67f89a51a2cac50b0ff372410c527b286ad739,True,True
+001-208592,2,Romania,,,,,False,False,68eecb1583a17af32be746b481eea992cd2c784024bdae03c056c61354e2f1f5,True,True
+001-208764,P1-1,Malta,,,,,False,False,9d54219aab0deed797ed8b284e273a81df03a692c2a852f0bd0a96a6118f9f2e,True,True
+001-209035,8,Austria,,,,,False,False,8f0c1977872f0f9474b9cffe260a4918bcedd514a885a1cd0846dfe6e3a5852d,True,True
+001-209152,3,Romania,,,,,False,False,2f3067fdc7c82345c32419b2a9b44a39fef1246aacad0266684b5bce94b33ddf,True,True
+001-209154,13,Poland,,,,,False,False,3395ac4642f9c91a632c7441c20edb1a7f022731211ce541342edc5c4cd9030f,True,True
+001-209330,13,Ukraine,,,,,False,False,b836d7acaacd83fc4094e9ed5d07eeb6fa1decb2d572d75b7b3d3319e218be23,False,False
+001-209358,6,Norway,,,,,False,False,2e56288dce3ceeae36ac164a7c0a52eb661180c4d3f8bb4325d22fe427d16201,True,True
+001-209373,3,the Republic of Moldova,,,,Ukraine,True,True,e849da4a614310a8a13657ee3fe943bc0352ff0ccfd2d3b521027f06f88f65a6,True,True
+001-209438,5,Russia,,,,,False,False,a9ba767392dcd52df5057ea5289b822924bd0c638522cf38642fbe807d394133,False,False
+001-209520,3,France,,Asylum; asylum; deportation; refugee; Refugees,Chechen,Turkey; Russia; Ukraine,True,True,f822d5037c062fd6b83d70cc0d74e401ac26b537be88d0d686dcfc942c8b80f3,True,True
+001-209992,8,Iceland,,,,,False,False,5c81836a7b5c63eaddff8a328b24c13f5493439dc751e803fb97ab020ea565c5,True,True
+001-210046,5,Montenegro,,,,,False,False,94fc7adfa828d0ea10d6ad00916c65d26ba5e4e2a3e0a5351a406ad6f77dfb2f,True,True
+001-210078,8,Sweden,,border,,,True,True,1c00b49bbe0fcdac7868202b15a3c7293bab7c0e6dd5beba04f091f6be3c6a9f,True,True
+001-210089,P1-3,Spain,,,,,False,False,506f86005da79c5a8f018b29103c4e9a4f7bd61b192784b1a5f940b8924868c4,True,True
+001-210257,P1-3,Bulgaria,,,,,False,False,92e85a3f178d9a64b5e72a6cf1e3eae98db4ab994b62bda64dbb51040b1f5a6a,True,True
+001-210282,13,Lithuania,,,,,False,False,83158205ecceda5b8ae65a261be5eb9323152f0449a96f293c1c70f71b636243,True,True
+001-210304,5,Ukraine,,,,,False,False,96b433e34841fe9a8194df81f60a0649c0912c9bc196dcf0bd34fb4964a92486,False,False
+001-210322,2,Ukraine,toxic,,,,True,True,77aa6aab0776315b47e2e35bdd9a0d3425743ad24985cbbafa5f5a1d6fac2954,False,False
+001-210332,11,Norway,,,,,False,False,9120ccc86e3a746f4d458a327571765533ecf1b40b1c2f7a88544ac492a1fcbd,True,True
+001-210413,11,the Republic of Moldova,,,armed conflict; Transnistria,Russia,True,True,a66e9eedf3a577a355ebd64614903f80f7e76dd00241e2bedc1e55931e7cc2d2,True,True
+001-210537,2,the Republic of Moldova,,,Transnistria,Russia; Ukraine,True,True,3f10e4ba5b47c3832116be6cffee23c2bc998088716ca3cfe85fd7e1545b55ee,True,True
+001-210680,5,Cyprus,,asylum; deport; deportation; deported,,,True,True,9d7f90f43173cc60b709b8848fbca03cdaf930358117d6907c403a2b65c5ee38,True,True
+001-210689,6,the Republic of Moldova,,,armed conflict,Russia,True,True,b7f186ffccdbf6892ac0db8602bdda6d8c07d8c6ecd8f21327b6661c51cf328a,True,True
+001-211017,13,the Republic of Moldova,,,,Russia,True,True,595376807099b027ad5212f6cd8dff493313ffa8a27f5050c23f2345d9c152e9,True,True
+001-211020,9,the Republic of Moldova,,,,Russia,True,True,b498bbaffe4e8e728d0001c9ba6591242646a7eb2425d46e1ee3dea8cfd27e01,True,True
+001-211138,6,Hungary,,,,,False,False,1451809fbb8751b8d81b3a47be8fd7afdcd805d5ffdc9dc5fad243dbeccaf436,True,True
+001-211596,P7-4,Croatia,,,,,False,False,35544c4267b32038093235dcaf445fba411ec7dbffaf8262c56f3ff6ee27020d,True,True
+001-211777,10,France,,,,,False,False,8370c58c7b0789fe4f0c3a92b1b443b98062b11546e5a80fd4db15acf73da852,True,True
+001-211795,8,Denmark,,asylum; expulsion,,,True,True,dfd7565d0dacfbb6ea1e7bbd58c717b84e6dccc9be5eb4d0113fe4e6e032f39c,True,True
+001-211814,11,Armenia,,,,,False,False,111f8ac1986ebeefa9adbae08a509640ec738a98546b1f298b42ffacde0702c3,True,True
+001-211892,2,Russia,,extradited,,,True,True,4b76de095afffb2f8f415cf35ed23346e03caf82d25e95ae5d7855b811329671,False,False
+001-212150,8,Slovakia,,,,,False,False,cf7f1c4e45785a80e43ab827281e15418218f44b7ab857150caa14fedcfe487a,True,True
+001-212829,P7-4,Switzerland,,,,,False,False,a5876633ae9fd4f0b1bca9a5027c322a7857a9d5d59e1d2d541df56d129a1002,True,True
+001-212843,3,Romania,,,,,False,False,027bf5806aa1c2b39d282b82722d062a9c9e4b1942a370aa997c50acc8a62b76,True,True
+001-212897,7,Ukraine,,,,,False,False,7e564d21cd565a2e9aed868c60e78cae13ad4f1d1cab79d998295e3fd141c7ae,False,False
+001-212970,8,Montenegro,,,,,False,False,38b3f846b1ff8f902197a22ca33aeabcb5d0ff60925e4fff4fc094bf7e5c885c,True,True
+001-213203,14,Georgia,,,,,False,False,16708af1ef062579ddd68eb99e31f7bc8ca2d55a74f290cd060e21ec855fa92c,True,True
+001-213406,8,Norway,,,,,False,False,a660d3ca739729748d6027b2667988f77d253a24c4def9c120d145960a6b9c7f,True,True
+001-213407,8,Norway,,,,,False,False,66128983e53f6ba01b1742133dd9fe14dade55d67f0550c0173d186900f876bb,True,True
+001-213522,8,Denmark,,deportation; expel; expelled; expulsion,,Turkey,True,True,d0b966b9f55dd308670085749d4baf47eb004c765913625f75a378253d30b160,True,True
+001-213525,6,Romania,,,,,False,False,2bbfa8914f65341cf209029fb88ede1bccb32841b6e4144f6ea4def8c83c6504,True,True
+001-213529,6,Norway,,,,,False,False,379829bb1ff45736913bce2bb1564d1e0e8d440c5954ac481ccc6b4192187289,True,True
+001-213706,13,the Republic of Moldova,,,,Russia,True,True,de88604b23991f47f9f7c285a42ac7866d2877051fcb18d5663e901f7c51265a,True,True
+001-213706,P4-2,the Republic of Moldova,,,,Russia,True,True,de88604b23991f47f9f7c285a42ac7866d2877051fcb18d5663e901f7c51265a,True,True
+001-213730,5,Hungary,,,,,False,False,8d12f4cf3500d6327f584d2cc5ee4a26ed9259bcae0a7b6829522f74efc12a04,True,True
+001-213788,10,Azerbaijan,environmental,,,Russia,True,True,694cd7c950face55e922e45ca3996dc02eac7ee7f8efc39c7d017e253e1795da,True,True
+001-213796,13,Malta,,,,,False,False,0f85c3df706eec7f03e34cde0a02b661114b28a94176101c4ff4ddcafe734190,True,True
+001-213853,6,Slovakia,,,,,False,False,6a63122ec4b6909b2d73fd207b355d4d19f8e78f0eb0e723b1a4d8a4275a3f54,True,True
+001-213901,6,Lithuania,,,,,False,False,4f4fc4fbdf04c91964b54b52deb0519a937bef85dcba2f9bdcb461553cb197aa,True,True
+001-214012,8,Croatia,,,,,False,False,47a39325a59bee252eac160009c1c3e79cdbf62b81b7808e50788320b2a57f2a,True,True
+001-214047,3,Romania,,,,,False,False,2ab9680a91bf0b5849d1abac7765c7e95a05ef4a95800575caa5ba0c822d4bd5,True,True
+001-214048,3,Romania,,,,,False,False,a4a8639b9c3c48343f4f872160f3cf4679ae0906f11a73513c201923720cda75,True,True
+001-214780,2,Ukraine,,,,,False,False,b8ea8f6945ca4bb625cfd3a826a7e38d34c67f3fa3343419e0f8c08c5fea9021,False,False
+001-215132,13,Malta,,,,,False,False,cb98662a951ba119841ef9d4c7c75b13fa7de7fac23b8f045deef6393367ed8a,True,True
+001-215132,P1-1,Malta,,,,,False,False,cb98662a951ba119841ef9d4c7c75b13fa7de7fac23b8f045deef6393367ed8a,True,True
+001-215166,6,Spain,,,,,False,False,c26c337384a3fee1c25b57e19312df8b60dd112ead26a7367060c05af58abcfd,True,True
+001-215170,3,Lithuania,,,,,False,False,8f4b8e543f3e0374375288ab678a72f6253f93e924638944a81454a32d9b4fa9,True,True
+001-215176,8,Norway,,,,,False,False,faacae131edd09c9dcef738f868022abab2adb06f5ec88a9f551af4fce20aa1c,True,True
+001-215177,8,Norway,,,,,False,False,7f22204dbddf9b57f24ea9c875cbc56bfdd260f9fdbcab42d399e7f7754babf7,True,True
+001-215350,8,Ukraine,,Border,,,True,True,08cd04febd13c6a8eac305d725b8bd8cdf74b546af3f92dc431adcfe39169385,False,False
+001-215708,6,Czechia,,,,,False,False,011ef39bb3d2029c20c19b9b4878edcb00240b160d64589eae31c8ba308e2692,True,True
+001-215716,14,Georgia,,,,,False,False,498a410b0ebb5cc7eb6e324560d458c2f384445c700a7137e60d637f8865f1c7,True,True
+001-215735,6,Montenegro,,,,,False,False,6df9d0588ccd288c8af1af6c233098f3371f61055d49f8267aee179d2b738a76,True,True
+001-215898,13,Ukraine,,,,,False,False,0f9e0ed1450b4764d2ca14fae04dad19883a268167cd97fbd274ac6f2219e51b,False,False
+001-215913,6,Armenia,,,,,False,False,f6d25062385c14171e6142b46760eb466287927253fdf5136599d81532c9634b,True,True
+001-216184,6,Iceland,,,,,False,False,8d60882f657214e78d6e269a5ebb7bdad024b5bede13566e1d99c4367adae171,True,True
+001-216193,P1-1,Türkiye,,,,,False,False,0d06661a20c5e3df0970b342daf1b6922aa9cf68c953545357700d6dd6231768,True,False
+001-216196,P1-1,Czechia,,,,,False,False,116e2a5a761b78380e58690186c2c7e8754ece78c1193eee5841d9a30c58a41d,True,True
+001-216348,8,Norway,,,,US,True,False,b7e04feec1d1b7c69488b4dce3d42a1f351eec34f25cff5bbe79a7bb2968bf29,True,True
+001-216349,P1-1,North Macedonia,,,,,False,False,3cdc8f126209a1f2896ff05001fc36aa3eb2b84ba788193da9192c64daf51f82,True,True
+001-216352,5,the Republic of Moldova,,,,,False,False,f49f07547d115d85e23ab4e351792fd80cc6aa4066f8c5e969f62fa4544b5319,True,True
+001-216454,8,Lithuania,,,,,False,False,35f6726789dd34362724ddb79606affe3988181de096ade1e733997e86f3d54f,True,True
+001-216463,11,Switzerland,,,,,False,False,e4d8139bc2e3b9e4dd55da2997b194c882c4c5f8b040614a62c731f85688847b,True,True
+001-216464,14,Estonia,,,,,False,False,f1516958c78fe395ff7fd96ca78bddd8de97f22f2d1033bd3f00435935b6751c,True,True
+001-216535,6,Hungary,,,,,False,False,74614e8fc091d59036bd2525ce3bcad362f38cf2ae5f1cb1f6bc2d4242cdf1c3,True,True
+001-216686,6,Georgia,,,,,False,False,ed54fa6bb75ec77ffb122b5df6a872183a65ad63734cf7109c03bd296f12bc10,True,True
+001-216720,5,Hungary,,,,,False,False,ef09a9851e7e68c676ef915dadb0b5fbc41d6f2266aebb290823eca89fea764f,True,True
+001-217039,10,Denmark,,,,,False,False,c680ba4b5d339d793d9bb621a1ec3891747cf2b7a15e8a1cea711920dfd53cc6,True,True
+001-217415,P1-1,Bosnia and Herzegovina,,,,,False,False,1aff6629aa20daa84294315a527c968c156a54d6e00ab19df613362175dd18c5,True,True
+001-217436,14,Iceland,,,,,False,False,1cf2fe152a0f4bb2467b50156e89223a83835981cb5508dd002699fb3766a7f1,True,True
+001-217605,6,Cyprus,,,,,False,False,a454a4c3a72cb71affd93f435b9077ef0e0eff773ce69fb7dee0da0880fe6731,True,True
+001-218022,8,Norway,,asylum; expelled; expulsion,,,True,True,9d2c6e9cb17eed724b5300f1960154f9b74b999b006e28e8fd3ef5a61c326db8,True,True
+001-218074,P7-4,Greece,,,,,False,False,7bd933727476d5f15c9af65c0ce99f0d7861fa4f18c9825458e3b01a252c0d38,True,True
+001-218131,P1-1,Slovenia,,,,,False,False,605671a124cd4a55d7d125dd41e2b2284c9b7eeea515c86a8d9e924744d32747,True,True
+001-218132,8,Croatia,,,,,False,False,b1d43942b12150aa391d99fc852d4324f8ee05417314ce27d7270a725a0e1326,True,True
+001-218941,14,Ireland,,,,,False,False,5dc8d4cb6e745dbad775c7360ae7b73d4e0c547ece0357f4535ae9aebde61cad,True,True
+001-219068,2,Slovakia,,,,,False,False,c250337631bf0655ed0a287723e5847cf99c03472867aab376f555a5180bba4f,True,True
+001-219194,10,Ukraine,,,,,False,False,3eb121598d1abd84feff27926de8707bd150c0a94635ca4f261e85f01e746529,False,False
+001-219220,6,Georgia,,,,,False,False,5ba24f41c1195ac0ac7195d7df193537036a27b3b67e34a90908f764f8b502a0,True,True
+001-219226,8,France,,,,,False,False,2e2afb0aba3d31652dc14e117f0b545ed2bb5f51e581a49dc9b6b47b86c04abe,True,True
+001-219293,13,Ukraine,,,,,False,False,f77c9bf9031887e17a0378969b8963948f366f9b352e1d5f3053ebd26a77461a,False,False
+001-219309,P1-1,Ukraine,,,,,False,False,6a51a50d0935303a856faeb4027506d178e1bdc35cec17dd1c0e5c78ec5839d2,False,False
+001-219490,34,Ukraine,,,,Russia,True,True,18a006dc53835cbb163fad3fc9b5d99c1f4318c4e529b5ad3ec84261aeec3535,False,False
+001-219493,3,Ukraine,,,,,False,False,9db8ce29f81f32de8166375b5e7ec82018db7e60f643351fe556bcfc48def4d1,False,False
+001-219500,3,Croatia,,,,,False,False,9074125e0ccde3eb6e534d0bc970674d54de87107a4b48245cdafb6673ea1a8a,True,True
+001-219506,5,Ukraine,,,,,False,False,54f5cfb32d35d3efd40d0e5cbfda8e559fd75ba9d4826e4b17ffe36de76460bb,False,False
+001-219556,6,the Netherlands,,,,UK,False,True,bfcb1a6ca24017272dddb66a202e51a9d9f94144a0a60dfafc163f07b33edea8,True,True
+001-219641,P1-1,the Republic of Moldova,,,,,False,False,55b5dc678847c89ae289a79fff9edabdbda9e9d869c7718bbdd169ef8a5e2472,True,True
+001-219684,8,Russia,,,,,False,False,81744f686f9cdb38dd55be5041f06df7d22e115a213d1e0ab591ce3cd106e678,False,False
+001-219944,6,San Marino,,,,,False,False,127680f33a97bd9eea27899d8104883d359d108421bd2b40489d0f436d1e5152,True,True
+001-219946,6,Slovenia,,,,,False,False,b58a6cb9ba3df9d65c980feb2f10db035739dd4f4f1f6916e8997a68741c6f15,True,True
+001-219984,14,Spain,,,,,False,False,9f465a0e03c6fded1492c57629969109b97618001893049e5fba81bf1f048986,True,True
+001-219988,2,Belgium,,,,,False,False,a9e0542904447dc295be70009a16e785e700d374884f1e582c71c3073d3e15ca,True,True
+001-220010,P1-1,Ukraine,,,,,False,False,71c79cee6718e12eebf2e25afc4ee8410b1e69fc0183ceec6eda6bcdf8d22583,False,False
+001-220013,14,Sweden,,asylum; refugee; refugees,,Turkey,True,True,caf8fc09732ed0de19944cb400d7982bbb97ae605671870d499327bd6036b4c0,True,True
+001-220164,6,Bosnia and Herzegovina,,,,,False,False,a71ec74303877b33696f236e6ac2c11203064588d45f0ba199bd7479858f1ac2,True,True
+001-220415,6,Belgium,,,,,False,False,cc83b7eeeeddf32db16322c1f6c063fb87f3196411a8c072bdb4aeac48506fe7,True,True
+001-220537,8,Malta,,,,UK,False,True,d0a8f175ff074c96f45791cfeeb7c511202484e307cb3f1b418d1ac62976c27d,True,True
+001-220556,5,Russia,,,,,False,False,c3a47062f0323137a9618f8cee05161587d7cf551597f2e8cf7b0436abd33949,False,False
+001-220665,6,Spain,,,,,False,False,e2c907b2a0b867c98c5649c6824405555d0b20bc894e1e517071bcabec747068,True,True
+001-220712,2,Armenia,,,,,False,False,da7c9ca8dab71700a3586d4d29a31b047327a251487ffc1856d2822fd719ea0d,True,True
+001-220866,10,Lithuania,,,,,False,False,4ab99e184f3a2521676a442df756586ac42d6a2275a41bcfdbe314ac4c3ce3dc,True,True
+001-220885,8,Iceland,,,,,False,False,1873985657303ed117ae6c5237ca02090c0d51ff00cda594e62030f143c4b102,True,True
+001-220887,6,Spain,,,,,False,False,d7f5453e0d654979c8ac930d52112770e1688563277369e458b6cb562892cf74,True,True
+001-220890,9,Ukraine,,,,,False,False,7328944d44327b18650e7f1546f6766d24a51e4b1acc095479c435322daa431a,False,False
+001-221266,8,Czechia,,,,,False,False,ceaa64a98a800eaf35906e499c5e6b0bfbbfc184344efb7fa5946a61180a7267,True,True
+001-221480,6,the Republic of Moldova,,,,Ukraine,True,True,f74002e174be371790a11bc22df13258b2180c3a8c3e17ac464d5c989d560dbf,True,True
+001-221503,14,North Macedonia,,,,Turkey,False,True,f63452bb9fdc41a4bce03ab6d976ed43b61b69c20a261a143838150fb30f7e63,True,True
+001-221637,6,San Marino,,,,,False,False,abf2dac2c2b5de215f383d36a052b3bd7b8d55bfc345175577c7defc0af68677,True,True
+001-221637,P1-1,San Marino,,,,,False,False,abf2dac2c2b5de215f383d36a052b3bd7b8d55bfc345175577c7defc0af68677,True,True
+001-222134,P1-1,Bulgaria,,,,,False,False,f73665636098e511d8442fec6a03a21c15a309cde40cbaf8ecb026efd5dd8789,True,True
+001-222138,8,Ukraine,,,,,False,False,4f05de3f54b90845702b414976d7ce551a18b8655d7754d64aa4698f186ffc0b,False,False
+001-222312,10,Germany,,,,,False,False,62d145d292c192688e231290ad5b7f4a18f50b7191b3dcdcdc8445a68ad3a721,True,True
+001-222775,6,Greece,,,,,False,False,d0cdb20707c8f4b20cc2a96f65cba6e73e3d20552baa380b40b6969007aeee13,True,True
+001-222790,6,Czechia,,,,,False,False,fcd43517edddde176ec255d65cd92157402f2649f3597b386d0ae0293190e261,True,True
+001-222894,P1-1,Italy,,,,,False,False,a5eaa3f47fa887550d0caa76e21707c0d9a31f52ce234af4056f83ded0e946cd,True,True
+001-222898,5,Georgia,,,,,False,False,221933896007ef4e4eb78b1db26633f9bd444e0256f0670e717fe1b75d61ae1f,True,True
+001-222915,P1-1,Slovakia,,,,,False,False,0fee1387ca176b0892edc20e27b35feb5eb3dda00a3cc655f9272276408a4e53,True,True
+001-222917,5,Ukraine,,,,,False,False,7f52c774515a84e9385e399879517a05a7bd20c0a6f5c16904af2af8ac24d2a3,False,False
+001-222920,3,Ukraine,,,,,False,False,d66ecfc2daf724c20d5bed1c6cc6d0a8f552d7589ab341e33424a8caa5c8c261,False,False
+001-223027,8,France,,,,,False,False,232b099a3a0f34f92ff07b6fd58a0c7e8c8dd31ac59ceb6751f08412e80fb378,True,True
+001-223259,10,Luxembourg,,,,,False,False,1f07780717121fc11e58d416d189a39040b72274bed47103646159ad7a8079cc,True,True
+001-223278,P1-1,Bulgaria,,,,,False,False,5b2b4bb8268f375e19cd64ad9c13062a6eab97645ef85901c3d7f40bcaa85b07,True,True
+001-223284,P1-1,Azerbaijan,,,,,False,False,a5180f9010caea40d7b42f7f94395608381be32dd981441ddda8e1c1a7413fed,True,True
+001-223361,3,Russia,,border,Abkhaz; Abkhazia,,True,True,69a293e03f8fcb17cd9c035f504a2bcb299d64798240b0514da0cede43cd0272,False,False
+001-223361,5,Russia,,border,Abkhaz; Abkhazia,,True,True,69a293e03f8fcb17cd9c035f504a2bcb299d64798240b0514da0cede43cd0272,False,False
+001-223361,6,Russia,,border,Abkhaz; Abkhazia,,True,True,69a293e03f8fcb17cd9c035f504a2bcb299d64798240b0514da0cede43cd0272,False,False
+001-223379,8,Ukraine,,,,,False,False,fab0e81084a15f58c7f6354f52b00d24751437042a6e3cb6106e79a8634351a9,False,False
+001-223380,8,Ireland,,asylum; deportation,,UK,True,True,d8f4023df6ede2eb0e1bcf0fa13b63d467f0c0bbac95d88c10708ac0338f0548,True,True
+001-223435,6,Greece,,,,,False,False,e25ef0bc590197123f44eb94b3e7ee11a8d26dbb615ce837463a5b812a8ff5e6,True,True
+001-223716,P4-4,Italy,,asylum; expulsion,,,True,True,e5f9424506fc330701bba99ce3e11d30522e320120bafa59aafb91d787b5307b,True,True
+001-224091,8,Latvia,,,,,False,False,e5a75734730129ade5cfe2d0bd1c193ac0a10727155980d0b797f14137c088d2,True,True
+001-224365,2,Armenia,,,,,False,False,25bec058cd5584456c67c013a9ecc4a8c908c345dbc7b73b3e1d5e3d4d26a386,True,True
+001-224366,8,Azerbaijan,,,,,False,False,f8011518b8ac111348e220560a68a708703c386ee7b015788d41d835d25a9745,True,True
+001-224505,6,Germany,,,,,False,False,e66e536b5290099cbf65d51333a057610ad144ad7304aedf6e656fb60374604c,True,True
+001-224554,7,Croatia,,,,,False,False,37b63c8285c985d84a133b9b2819cde62c674e03dd94c24a528f3a0b67b526a8,True,True
+001-224576,6,Russia,,,,,False,False,963840db9b232d8b59ec4b05d12e37d5d1658c00cb1255c5dcaf7907de4dc270,False,False
+001-224580,P1-1,San Marino,,,,,False,False,ada94c0a85f081e80d047e9284560160bddb60c16a7c4a79685e5e0d66aef501,True,True
+001-224581,3,Ukraine,,,,,False,False,778c275552414320d1bb424ae6288a66d41bea56c54157cc46f3fe69511ce4b7,False,False
+001-224732,8,the Netherlands,polluted,,,,True,True,4dcfbe19ec0194a8d8640e090ae3c5519cac89e50ec699dcd0b6f6f12640fba4,True,True
+001-224734,8,the Netherlands,polluted,,,,True,True,ddf000b2676ba37f113352d5003bbc27b5af3350ca6f26796d0ccd76f8d89ca6,True,True
+001-224776,13,Cyprus,,,,,False,False,6d17c7182a2237e1b9915b92f99c9bc7e387564bbb7845288b02fb05dff27e53,True,True
+001-224776,6,Cyprus,,,,,False,False,6d17c7182a2237e1b9915b92f99c9bc7e387564bbb7845288b02fb05dff27e53,True,True
+001-224963,8,Croatia,,,,,False,False,55d88c914e8f279ae5f442a12dd5cdfbf7615c6d59234d564fe0916cf3aad05b,True,True
+001-225318,6,Albania,,,,,False,False,b48209df73de9975f889e02c8c7d8dc1e802b6e8a2e61f0e59bb992e024c3166,True,True
+001-225329,14,Ireland,,asylum; refugee,,,True,True,768d8ce7b6c8dcbae1c7fa3ec924a28ae9c32e3f168f463dceb0a122a6b98e38,True,True
+001-225652,8,Switzerland,,Asylum; asylum; Refugee; refugee; refugees,,,True,True,1820099e3d1e904f359b2755b373371b6a45a1b693b781b8c99d770c53055534,True,True
+001-225678,6,Ukraine,,,,,False,False,5ca6f5c98170695722bddf1870e3d51ce42764b52b563bacceb5dc01e3c9aa36,False,False
+001-225772,6,Ukraine,,,,,False,False,f25e477e5e63ba5a897ae55848f8f85e493be4bfed1e387ab0f288f7d7f0539c,False,False
+001-225807,34,Azerbaijan,,asylum,,,True,True,7eb44402164374ce6b523515b226d3d2bc22648bc3677338ce06edc8ec10b220,True,True
+001-225900,13,Ukraine,,,,,False,False,165750a8bf06f12da91f2ed65a71211062de6af9c676da1a752daa0ea9a327d8,False,False
+001-226011,14,Switzerland,,,,,False,False,78bf2d647afea9f10260c06d523d91878a20d7e85f69b201dd63c61c9392ad62,True,True
+001-226093,6,Belgium,,asylum,,,True,True,f6cc53e17c3e9cf57dab8300838c157ef75d139714625629ddbb3ae312b9fa7a,True,True
+001-226195,8,Denmark,,deported; expelled; expulsion,,,True,True,c2c842cb01d4897ccb905a7aeb5ecedff9a0ac13a4c74ef7da14681984ca5915,True,True
+001-226474,P1-1,Malta,,,,,False,False,f3dccf12f6b196b67ca98331ea28f667bbfff0e4f79b61abf60649bb68e22fbd,True,True
+001-227718,6,Türkiye,environmental; fauna; pollution,,,,True,True,923e54f938cd77cd06e45924b4310aa30fb82302c4ec8fd158dc541a0128a86e,True,False
+001-227719,3,Denmark,,,,,False,False,c8f0719147930ca3342395eb38a3174a5438aa51ceb2870e2b17f545e62210bf,True,True
+001-227753,13,Ukraine,,,,,False,False,19e66b411e85aa4102e5215cdd9ba40d6c61e2936168c40e2f9a7dd79c4ec277,False,False
+001-228118,13,Armenia,,,Karabakh; Nagorno,,True,True,dcf4e9107b824aec2e68d7124b8b25b682f686ff6b60250646d408144ca41071,True,True
+001-228151,3,the Republic of Moldova,,,,,False,False,3faf200352559eff3ae823d8c90980b87e43edabcad21d915dab0eaf3852f9fb,True,True
+001-228155,8,Italy,contaminated; contamination; environmental; Environmental; hazardous; pollution,,,,True,True,d1f4f6c55ecec788fda87cf554a4749d82c38067fa0ea879642c333790ba7af6,True,True
+001-228167,5,Italy,,asylum; expulsion; Repatriation; repatriation,,,True,True,6b3c46fffad234d0df4fdb5eb0b85a05e156ab7c78c7f9993767950b07b28a9c,True,True
+001-228357,3,the Netherlands,,asylum; expelled; expulsion,,,True,True,58fd15bf5cdd905b276fb58bfbcac4ef3021b5e8b86f07025763d6df48dafb60,True,True
+001-228530,10,Germany,,,,,False,False,4c07b7a461c8cdd14992780c433b445dd3ced53333769972721b49f21565af2a,True,True
+001-228673,5,Russia,,,,Ukraine,True,True,15434fbb98f09a418af6a50ac580bac547a99144a47cc6b3d448b1cb87c34d96,False,False
+001-228683,3,Ukraine,,asylum; extraditable; extradite; extradition,,US,True,True,2dbf5248df4688ebb7687294c4e8a77d740b96785b83b6970f5363c44c9dcaa1,False,False
+001-228840,P1-1,Italy,,,,,False,False,af3f0567caf3c2051daea7fd76a3b0019677bf2b88018c1e2bce5b3b3bfcbb77,True,True
+001-228857,13,Malta,,,,,False,False,1c9609559f321a7c5d432c1da3c596997960cda923d1db867361ae5d34b8db25,True,True
+001-228861,P1-1,Malta,,,,,False,False,2e83572a248bc354e814baa1758fd6f3b2e582063929470d3ed88541519bdd98,True,True
+001-228992,5,Italy,,Refugees,,,True,True,25de153c6f742d051cbefe77007232cc7a7804d7dee4644db9cadde9678c21ae,True,True
+001-229125,5,Greece,,,,,False,False,60e6d5cf435e0e0e4c8f3e2728cc90afcb9dc63cb486fe7f8e508b10a9e78866,True,True
+001-229134,3,Estonia,,,,,False,False,8d101a1413581ff489ba2d8c8526885a2e1263ca016ab3359b41b2cb3dd3e9cb,True,True
+001-229134,8,Estonia,,,,,False,False,8d101a1413581ff489ba2d8c8526885a2e1263ca016ab3359b41b2cb3dd3e9cb,True,True
+001-229141,5,Ukraine,,,,,False,False,b019b32adfead89ba6c1dacb83fc6c6e5cfd6c28d2b8f59f49bf1cfe35a19edc,False,False
+001-229325,2,Czechia,,,,,False,False,c4b0cfe7576b1138533e9d982c047fc574c290a5af936b448474d8b7ad6b53cc,True,True
+001-229601,5,Russia,,border,Abkhaz; Abkhazia,,True,True,0bf7fb3771eb7df84387fc3b36bc46a2e3f5e6d8096e574bd7df30310de8f0c6,False,False
+001-229601,6,Russia,,border,Abkhaz; Abkhazia,,True,True,0bf7fb3771eb7df84387fc3b36bc46a2e3f5e6d8096e574bd7df30310de8f0c6,False,False
+001-229726,11,Germany,,,,,False,False,98efc7ce15782da4568b7ca80e3530be2494fa52bf6e1222153762b1b20c94a8,True,True
+001-229927,34,Ukraine,,,,Russia,True,True,f0dbec57fcd95b3efed983c923205c678bb86cfdb825a0bfd496a96aa2f7329c,False,False
+001-229927,38,Ukraine,,,,Russia,True,True,f0dbec57fcd95b3efed983c923205c678bb86cfdb825a0bfd496a96aa2f7329c,False,False
+001-230260,P1-1,Malta,,,,,False,False,5eae1e0c992f3e162b74286934eb42b42708fea746d0cb53dc22579b4f901ebd,True,True
+001-230271,3,Greece,,Asylum; asylum; border; expulsion; refugees,,,True,True,7ed6ed4e2b6492405aeca1cf249f69c7283e6e583c4848d5e73b343dc946f7ab,True,True
+001-230281,6,Italy,,,,,False,False,f7748a18e424b8640b686b404b9c2bd233cebf315fcc077b1e2acd49e7f8849b,True,True
+001-230627,P1-1,Lithuania,,,,,False,False,c90205fad59da8ea5961b4ba4537995a387a4c222bddc3098cd6d6b2f899a773,True,True
+001-230725,6,Poland,,,,,False,False,e4d5618b57c905cac6e43e51efae1a992aae16f23724c1ab2a3c0333ac3123c1,True,True
+001-230729,6,Poland,,,,,False,False,56b1783d5d9670f57378df1ad2fe4aa5d76cbb096eb1a6f089b8585366a2ebcb,True,True
+001-230739,13,Poland,,,,,False,False,8864ebfd7b1f74c85938f58d58f102bbc70fe5296c436621406b6542ccabe88d,True,True
+001-230878,P1-1,Ukraine,,,Crimea,Russia,True,True,0b869565377c1a29da69ddc1368f6f06508dfa45a013ed836e29d05268caa3f6,False,False
+001-231078,34,the Republic of Moldova,,,Transnistria; Transnistrian,Russia; Ukraine,True,True,29a3c04732c2dd2a99de0249b0313085dbb1675d4f658543c0b16d49b98a294e,True,True
+001-231078,P1-1,Russia,,,Transnistria; Transnistrian,Ukraine,True,True,29a3c04732c2dd2a99de0249b0313085dbb1675d4f658543c0b16d49b98a294e,False,False
+001-231088,P1-1,Montenegro,,,,,False,False,e5dbd0daf256e987185cdd8088d1a7fe34d4ed7e96c60418143ca2604c6ef44e,True,True
+001-231227,9,Belgium,fishing,,,Turkey,True,True,c2623de4eec92e959d2be23c2823cb7897ff8480adc422e9e2a6bf123b244647,True,True
+001-231331,14,Switzerland,,,,,False,False,f60e22026b5f468bdea60c0cc267d20cce55862800ffdca18876194e0c6dec13,True,True
+001-231333,P1-1,Albania,,,,,False,False,20defdf7a57f73e3b89c842d4be0d573e6a7f77bf94e94080b61c282bdfa80d2,True,True
+001-231871,5,Russia,,,,,False,False,d0d04e0fd26537e266dfbbb8f59d1fb3dea9877cc92207ced42210ab92d9ca14,False,False
+001-233111,P1-3,Iceland,,,,,False,False,a8a5916d6059aabfee115394dffc25d2e8780f4aad38ebf9fafe1c3f4c0d3352,True,True
+001-233206,6,Switzerland,,,,,False,False,2f1acc99746579bfcd253b35f83a1a8fa4370b71db54838f17a916b7971a09be,True,True
+001-233213,5,the Netherlands,,asylum; deportation; expulsion; extradition,,UK; Turkey,True,True,6edd4ca75b8b6e462b3927d87f318fb6d692abaa39df99a39b6b1bc3351ca923,True,True
+001-233215,6,Lithuania,,,,,False,False,4a677583c8812b372b0d2faff974114fde644669a6e212f24d3a37f2a0454479,True,True
+001-233231,6,Portugal,,,,,False,False,0d95081216c8fca5a41bd7d6251b5cdf7b1e1384922abb6f8baca5322d18143c,True,True
+001-233236,6,Russia,,,,,False,False,a8f9e9a220cca0918477ac3533c757fb259a301f0940df847ce54fee28967c05,False,False
+001-233378,10,Portugal,,,,,False,False,0e8377cdaf2ddf733c0a020b22721c584bfb5ebc0083df6f213a6c4959b40b27,True,True
+001-233381,P1-1,Italy,,,,US,True,False,a8fcf0830c75ae9318fea3dc73daa20340aa0b5ae2d572a9d8d327b56c44e053,True,True
+001-233409,3,Georgia,,,,,False,False,25ce92a6126935b33e06333f6e90e93f364850ed75afdb9d4492a83442356265,True,True
+001-233412,3,Georgia,,,,Russia,True,True,c644290e353f33ccac13435fc43cca33bf1005cfa80af7d3de2371fbe10996b6,True,True
+001-233495,3,Sweden,,asylum; deportation,,,True,True,1445af5fa293f0e15ecef7f3011befa41380236cdcb7cfe27bc805fc7691dcff,True,True
+001-233652,6,Italy,,,,,False,False,bd9aac74f34c74abd5d7b05b72c2c4fc11f93cfb7656714cd04c595aa77fd22f,True,True
+001-233686,8,Czechia,,,,Russia,True,True,cbae1000443a0d5baa4076ff3bd3e37e660f1978b1984c418d5d720263e71e60,True,True
+001-233761,6,Georgia,,,,Ukraine,True,True,ada3f4e0df56b4314e672a041f2a1f990450fc83f45115067ab9e7c87ba9451a,True,True
+001-233937,P4-2,France,environmental,,,,True,True,fd4a2599f83639cf4f7d5a053f28170fa19f5cae0148ff919eef6312dfbd3534,True,True
+001-234008,3,Latvia,,,,,False,False,1232c1334e11cdca22ac4176c429c2812fb670ba83cf351b8ca9b686960728f4,True,True
+001-234129,2,Croatia,,border,,,True,True,260ea3294348560415f23b8c2ded2d02b5ecc88227021cd5b049297ab38269d4,True,True
+001-234259,3,Armenia,,,,,False,False,3824761e4d1bf5e04fa035dd9a59807d4d57ba561bd262eb651a1887815162f6,True,True
+001-234516,5,Cyprus,,Asylum; asylum; Refugee,,Turkey,True,True,d10c46904180b34ec4082e95d0ab87aff47b2cfdb9d281367809c2f229b9834c,True,True
+001-234522,2,Georgia,,,,,False,False,a8876f07b129d75ed14535d171fe404b7eb60038daf4ec5db6405ff6b596d526,True,True
+001-234604,6,Albania,,bordered,,,True,True,429b8615251a1b4e075989f9579e9b1c3fdad4c17d50fddba9be40d2dcb4a847,True,True
+001-235034,6,Albania,,,,,False,False,4ca45f30325a4a6571e060d53fc4f645066a6613657ef4795340e47804b3480b,True,True
+001-235346,6,the Netherlands,,,,,False,False,3be80b9de9d7edd62e8f61bc2d8e5172a6589f03958039d05837a45616891f8a,True,True
+001-235470,10,Austria,,,,,False,False,a4f85cba3f9088e85fdf95e0d5954b8deaf101bc431206db25f870fe896d66c3,True,True
+001-235475,8,San Marino,,,,,False,False,28862e6f0de4d1e115853edf622735011118afd088d18db01343910b8513b413,True,True
+001-235491,5,Azerbaijan,,asylum; Border; border,,,True,True,ccdad2c5b1dc108db1f747f6d278e4c9f59f880e223b3c42ffda92a10f1a114a,True,True
+001-235491,8,Azerbaijan,,asylum; Border; border,,,True,True,ccdad2c5b1dc108db1f747f6d278e4c9f59f880e223b3c42ffda92a10f1a114a,True,True
+001-235692,8,Slovakia,,,,,False,False,cd72cbe0d5b38d451eef551342a527790412f075dbf0892d3d9283789ee239a5,True,True
+001-235896,P1-1,San Marino,,,,,False,False,c811fdcfc6fec89830c6bda3095f178f2ea54444943798c72bd9005353d19abc,True,True
+001-236132,6,the Republic of Moldova,,,,,False,False,b52d9e69abc799401bb162432fff1b03f5a2a8a2e76b7ec7f7b153b51533e3d9,True,True
+001-236140,8,Finland,,asylum; refugee,,,True,True,cd09f6a978406170fbb97af3f4ca525a4211bc21e713407fe0a9d24c48a2e141,True,True
+001-236179,8,Cyprus,,,,,False,False,bb87ec5bb733b774f3e06be1e5e340b0411096da0ff7c9de5c0e3491a1dedfbb,True,True
+001-237290,3,Greece,,asylum; border; refugee,,Turkey,True,True,b53cfc0fcc9ba7b446aaac3b0b29b83ea7834f802febdab729f05922cb9c94a9,True,True
+001-237290,5,Greece,,asylum; border; refugee,,Turkey,True,True,b53cfc0fcc9ba7b446aaac3b0b29b83ea7834f802febdab729f05922cb9c94a9,True,True
+001-237294,3,Denmark,,,,,False,False,499dbafe078963a10874fce68bd1605bb37bd07b018fc1dbabcb02bd7f43eacf,True,True
+001-237435,6,Croatia,,,occupied territories,,True,True,bbf80f261f2b0f677383937bd36fef54a17845f8b6889695ae4b5bfb62f92c8a,True,True
+001-237438,3,Malta,,Asylum,,,True,True,b0ee25c5b21bc489279d98f5e8b971d7156a289f10d13688998b7635c6c50d75,True,True
+001-237504,6,Azerbaijan,,,,,False,False,951dd6ae41cbf77539fd5c2183cdbf6bc50192c9e1157f1512983a1273983a7e,True,True
+001-237797,6,North Macedonia,,,,,False,False,86d903b1f91eb4ec12e690238a58083f65b8242cc31ace0f502f7a3a476cf9fd,True,True
+001-237808,P1-1,Czechia,,,,,False,False,dee668e6be232d310819e3b4da28b7b174cf30397490e8f3f7af91fa01b933eb,True,True
+001-237811,14,Georgia,,,,,False,False,b040e0eeea598957d9c3d394620fd2fcb4e50640d267ad1b901ebf98a683d565,True,True
+001-237954,8,Denmark,,asylum; deportation; expelled; expulsion; refugee,,,True,True,5fd28f30c5ea53c3881c139246d7cf4227c67961f81808ad2c02d312df02f2c0,True,True
+001-237959,8,Denmark,,expelled; expulsion,,,True,True,61ff3ec2b124a5bd91bbbabc7547d9f3e4a6364269ec9a562b42c31436a83421,True,True
+001-237960,P1-1,Italy,,,,,False,False,2bc6293f178ac233b17b469fa29395b8f4ceb1fa2b774b57135a9a21234d2f8d,True,True
+001-238009,6,Serbia,,,,,False,False,b08d42b8159303b0ec208f28ee1748a039d98466d59b15731c3c893e5c3dca21,True,True
+001-238072,6,Cyprus,,,,Turkey,False,True,b4cf451fea6c726d76d1b7219c45a6df3f2154d17941492693fb80850d060dc6,True,True
+001-238269,3,Türkiye,,,,,False,False,8475a6010e7cd7cf22679234c308b1659975badbc3264fcca5a3352c73472b1f,True,False
+001-238270,8,Greece,,,,,False,False,33eba03c2d7e87c6f90d8d098c08139e2d85d99a8fd195691d77612c6cbcdf57,True,True
+001-238515,6,Georgia,,,Abkhaz; Abkhazia; armed conflict,Russia,True,True,d9de807a5fcfd39b2009b88a3c71f534bcdd371c64703327f2e0a1c42f753cdf,True,True
+001-238515,P1-1,Russia,,,Abkhaz; Abkhazia; armed conflict,,True,True,d9de807a5fcfd39b2009b88a3c71f534bcdd371c64703327f2e0a1c42f753cdf,False,False
+001-238658,13,Armenia,,,Karabakh; Nagorno,,True,True,c5d004e506b8d58ef897246fe1064bdfc553c299666249b18ddd9d17798d332b,True,True
+001-238658,2,Armenia,,,Karabakh; Nagorno,,True,True,c5d004e506b8d58ef897246fe1064bdfc553c299666249b18ddd9d17798d332b,True,True
+001-238661,6,San Marino,,,,,False,False,d3aab31837e2ec874c66069dd51168faebade587e47c4ee57968cb292aade875,True,True
+001-238788,6,Albania,,,,,False,False,9684e1eb6d681108810edaf4364bd1482334f8c036e97de153d5aa92455a7a8f,True,True
+001-238800,P1-1,Ukraine,,,,,False,False,995392431105757d213978d3120b3b6662e2f21aee6c430f0fdeee68e931b2e0,False,False
+001-238839,5,Russia,,,,,False,False,a2d9274bdf825b99337125cc7f8c0155a9141111a7e85b2ce9e15d12fb7a441e,False,False
+001-238843,P1-1,Italy,,,,,False,False,e4162070047f0ea943ecdbd00b89f84a1ace1b236113abd74e77623624cca652,True,True
+001-240184,6,Iceland,,,,,False,False,f59e38cffd3d3715db8b6b14638ef2e8d4bfc827b1fcb330699cc3ba87334762,True,True
+001-240242,5,Greece,River,asylum; border; pushback; pushbacks; Refugees,,Turkey,True,True,628525a674466331f4fe19c3efb118cb8feb72d571ba465d51ced93f62290a36,True,True
+001-241743,8,Czechia,,,,,False,False,e75ae7d3fe9f9838152a0116f4f3b3df0dd82a048c376e9ce60148147096d6a5,True,True
+001-241871,8,Bulgaria,,border,,,True,True,7d2a2963bac80b5198eac44fc6d6fda438662dac8c26904b2e527ac0d3a76040,True,True
+001-241978,6,the United Kingdom,,,,,False,False,dd638a919043541cf1d92942f3363b5e5afabc332ebb19f89ebc73916181d69a,True,False
+001-241986,4,the Republic of Moldova,,asylum,,,True,True,7a9e2502620584aba273b36f71ff607b3761d41cddafb6f4f4545a4f54939fbf,True,True
+001-242058,3,Hungary,,,,,False,False,7061d7527cafb8e5036bc3c5554ae53582e70fcb082b1c6c72c523b40176de28,True,True
+001-242059,P1-1,Croatia,,,,UK,False,True,0ffbb7df044c8660276f882f412f39e2faa2a9a6edd85a9b2b05d909025f3f88,True,True
+001-242073,13,Portugal,,,,,False,False,4f13b14f3f52513edb294d70f1711c73a75718227e3901d7b64b54629c2a294e,True,True
+001-242521,13,the Netherlands,environmental,,,,True,True,8662013cc92aa10e2240f1bb9594bc7cccda79b7c99489f528160c472e3f20f8,True,True
+001-242534,6,Austria,,,,,False,False,fcd3c89d9aacbca1842eaf441de686bd6de5cfadfd568b4e3b611bdec9a91684,True,True
+001-242757,P1-1,Azerbaijan,,,,,False,False,dcaa9f5321994a6e10b80a3eee56a2abf5fca59b985828d342c7341188d518ed,True,True
+001-242762,6,Albania,,,,,False,False,af3a3eb531b5f6e1f3ed8619a7a5978e5d507f7a718b952b6ad12b3bc3c0590d,True,True
+001-242768,6,France,,,,Russia,True,True,e3d5184718a9c7da62eafeb7722012d50ebf73ed646c2aed74f8f80af4a5c280,True,True
+001-242788,8,Poland,,,,UK,False,True,1dcebc31b8c3d58fc2f4e8781843b920a5d67f55789f4796c7fc6aef75fe0e93,True,True
+001-242855,P1-1,Azerbaijan,,,,,False,False,6f2ff0e11c3c38474454fce4cdca58c4909e104134ae438070dd38647c4b0e11,True,True
+001-242857,6,Serbia,,,,,False,False,eeda4cbd74ca8869fbd31c25daf1debc49e62a6434ed77d955fefc3812013d75,True,True
+001-243081,P1-1,Croatia,,,,,False,False,ed90ece3de470f3e4b4c113936f4dabd41d52eeb218d830a4fc1b299038031e8,True,True
+001-243363,6,Serbia,,,,,False,False,52a4c54fafe8eb3705fe55ec0b4ad12c20b93a00fc9e39cd991a3cfabf63670a,True,True
+001-243553,P1-1,Türkiye,,,northern Cyprus; Northern Cyprus,,True,True,e5919ddf72c110698a6fce6ac45a4d22b6ee20840e5b7eb64e3798fbe3d4bef0,True,False
+001-243562,14,Iceland,,,,,False,False,1f7c0dc9fe3be9dc3009bd94084e800c728c3706c01a29d85fc2b4eb4da1daa9,True,True
+001-243781,P1-1,Bosnia and Herzegovina,,,,,False,False,9f9f5da32297da8c44b4f7d7200e3dd6ac731507b1b2eb9b9cd04ee0447000d8,True,True
+001-243782,8,North Macedonia,,,,,False,False,de58ca6acf72ba3feaf5bd10753e02c907b73cd3adcc890b738560e8c1a2c2a2,True,True
+001-243878,8,the United Kingdom,,,,,False,False,116657ca4b5d6ce82d284baeeff6f3f2c6c35c14666cca4a93cd1a411f29306b,True,False
+001-243885,14,Cyprus,,,,,False,False,0e3a7348a362294a44a4ef4fb746159b6256b34ccbd2dcba853ca60ba7975146,True,True
+001-243885,3,Cyprus,,,,,False,False,0e3a7348a362294a44a4ef4fb746159b6256b34ccbd2dcba853ca60ba7975146,True,True
+001-243887,10,Cyprus,,,,Turkey,False,True,c757696a9cd8ab0907b8f1262f279e76069e212e7d60721548e3d999fb1f705a,True,True
+001-243997,10,Ukraine,,,,,False,False,81cec9eac0958b0d70bc8f69f4e0a90fa178574679f4b2364754f86813af607f,False,False
+001-244000,8,Italy,,,,,False,False,21aa7083ac51ad2a287b62cc661bb1a8ef9c30396917da1ec0f070a1429ab66e,True,True
+001-244020,6,Türkiye,,,,,False,False,6a7dce333450e83203e00b49b2a6773056ff88daf80991f49beb32f018a8cace,True,False
+001-244588,P7-2,Greece,,deportation; deported; expelled,,,True,True,376f657db86da88268f9a250e086a5b14a9ebc17b9cdc6aa59fd897e13cc3c68,True,True
+001-244592,9,Lithuania,,,,,False,False,fd3f15d9e106d9ab89847b9846a95c645c79b2c19a20621b42b3dfb49ccc73d8,True,True
+001-244593,14,Iceland,,,,,False,False,239f9f491c97606934d83a564561cc3561c22263f9c8e1f8f56d75db31281441,True,True
+001-244593,3,Iceland,,,,,False,False,239f9f491c97606934d83a564561cc3561c22263f9c8e1f8f56d75db31281441,True,True
+001-244594,13,Greece,,,,,False,False,05afeb6fde4c791448bb4db3c8d46f55f2305fd27c2a333ab51c8f941096d2eb,True,True
+001-244594,6,Greece,,,,,False,False,05afeb6fde4c791448bb4db3c8d46f55f2305fd27c2a333ab51c8f941096d2eb,True,True
+001-244728,10,Ukraine,environmental; pollution,,,,True,True,ccb3242d08572a723ef04c84febb868d6636a4ff302486ebce99a6499926106e,False,False
+001-244851,P1-3,the United Kingdom,,,,,False,False,5bde20b26fa01ffadfbc72fc622fada1d9984c4f2f3b481398c10d4a13fb1687,True,False
+001-244894,P1-1,Bulgaria,,,,,False,False,6807e6fc42aea3dac207fda38bdf8b9d282ca7f7b6745d58c7decf4ff0c312dc,True,True
+001-245104,P1-3,Cyprus,,,,,False,False,0482c27d4395195f041de9634beb6df4fad60a406104882b8bf921800f30b492,True,True
+001-245246,6,Greece,,,,,False,False,f3f21d76fba6481fbb78969b7abbb477b35bad345d799eb069182c9af58c6ac1,True,True
+001-245279,P1-1,Spain,,,,,False,False,d216b66d088f0fb53681a807231c1cb2051e37ca57f2e5f7df85781c333b8a79,True,True
+001-245390,8,Spain,,,,,False,False,287699b02d5f0d6cda26d77e954956baac5920038cba8e139f19f4c8a9d399a5,True,True
+001-245444,8,Italy,environmental,,,,True,True,6115fc8e13d6c4edef084a6c530ab2f99319edce82b0fab2ecdc504158d49041,True,True
+001-245447,8,Russia,,border; expelled,Transnistria,,True,True,e1ca61f2105be02e5447382c9b21126fda2752d37f74d75d4a41145975fa3504,False,False
+001-245460,13,Greece,,,,,False,False,096e70c2b4cfd5278b06ca5eca57b7297c5dcbc87770aaad3d648149ca787bff,True,True
+001-245460,6,Greece,,,,,False,False,096e70c2b4cfd5278b06ca5eca57b7297c5dcbc87770aaad3d648149ca787bff,True,True
+001-245463,13,Greece,,,,,False,False,6014e45a3f6a2a0e7e5e5d397fbb3787e62583fc5766c549f9be755a533b85f7,True,True
+001-245684,8,Estonia,,,,,False,False,3603d204cb33b326c1f4b494bacac24f118c4cebe0b9f08e7822622487b40274,True,True
+001-245686,3,Georgia,,,,,False,False,225c8f57b808a4ff566d02f68e7fc7343e577b01edc8f4fa8e69619660a5f842,True,True
+001-245690,6,Armenia,,,,,False,False,cc69cc585c9d747c9618608ca6541f3ffac0d0d255e3f87ebbb32b132c1659c7,True,True
+001-245701,8,Czechia,,bordering,,,True,True,0c92388ae09cd66ccb7c1e67b865b714add0f3ae95ffe8d8cfb47e3c9707e039,True,True
+001-245708,6,Serbia,,,,,False,False,c76b9b36e5f9158753abd6adeb6bcf10f8f498615a726e2ef52eaaa603874938,True,True
+001-245810,P1-1,Cyprus,,,,,False,False,16ca1c4db0ddaea66a66cb73921332fc04f0949ad1b7673be6509ac6a44ae0b7,True,True
+001-245821,5,Türkiye,,,,,False,False,9f6f91590959f5bfda622a0183ca397543d5cb539b4c97b955fff19b32ee5a79,True,False
+001-245886,5,Russia,,,,,False,False,57360f6f43f8c278bd1182558cfd9c6a60c6a9f2cb33c0ea8ff84f3ac4f5e329,False,False
+001-246017,6,Albania,,,,,False,False,af96c5dc5a5e2a215088904d384443740dbc04feb59297997d09ac76f2ec0e10,True,True
+001-246024,P1-1,Ukraine,,,,,False,False,e13687191d1ee6e5e2fc1420811b8d01d47686e1329a144fb3e20e62799b9486,False,False
+001-247556,10,Hungary,,,,,False,False,9a109274d2f17d071434826be6ad8c054bdb2fa15bc2f88022b0de39fe0f731b,True,True
+001-247564,13,Czechia,,,,,False,False,e73bb193c9dd2eda4486c5afaeba8cac9d9f372eb285b4e958c0560153719f22,True,True
+001-247564,8,Czechia,,,,,False,False,e73bb193c9dd2eda4486c5afaeba8cac9d9f372eb285b4e958c0560153719f22,True,True
+001-247651,13,Ukraine,,,,,False,False,9ed4f9dcf3aecfe4ac0084478b0d18dd66a7e99f72075fd1a56277c20329be45,False,False
+001-247822,6,Azerbaijan,,,,,False,False,a0f0bc129de7fb6e451799714367bcb7cff7d570382afbb8226a1b95dd610d52,True,True
+001-247827,14,Iceland,,,,,False,False,6beff849d781a72b23e8dff03d1e738dfdf6f12aee3b2460f7f87fde7bd0f8c0,True,True
+001-247827,3,Iceland,,,,,False,False,6beff849d781a72b23e8dff03d1e738dfdf6f12aee3b2460f7f87fde7bd0f8c0,True,True
+001-247833,8,Iceland,,,,,False,False,8aeef07b7772658448cfb98fe812b71641b55d5576be4a2763629c88c09e8d8d,True,True
+001-247909,8,Ukraine,,,,,False,False,7ed53baafd97c3b00e2fc9184523f8c4ac52fd6d94064fb3dfef4d39c4c32f83,False,False
+001-247913,3,Greece,,,,,False,False,965ce40dd93f64fc9ab7b2b7ef9d2a8abad1068572285d28de2f31a059e5b4bc,True,True
+001-247917,6,Türkiye,,,,,False,False,cf32abae0966f31478aa4ce06d9fae0044da32855bf0df47599aff86e4a859e5,True,False
+001-248128,2,Ukraine,,,,,False,False,7e9e972fc83bd4a22122b017d54de284f81eff266db4d979ac4ff4dc8402d5d9,False,False
+001-248167,13,Ukraine,,,,,False,False,ea8c27a2fe86f86aa23b3cfa9a057b847ffd3838b002f24fa6e31d390ab386db,False,False
+001-248198,8,Estonia,,,,,False,False,1ca9c3bf7553c35b1c8494912519b0764874f64d62e406969574c281ed8d9ad2,True,True
+001-248201,P1-1,the Republic of Moldova,,,,,False,False,8805799cd6547048f5d4199e80272e9eb31914e879c255c2570136c77a55dbf5,True,True
+001-248220,3,Ukraine,,,,,False,False,bfdd48e0ab5d744fa5f8fe1c02b95d416adf88c6ca3a7125d4ba3dfabfbfb4e5,False,False
+001-248392,6,Greece,,,,,False,False,6a163a1d37689732023a568581c700cbe63eced857f134a8d66caaf166d399fa,True,True
+001-248395,6,Ukraine,,,Crimea,,True,True,d90e343fd0e3a19a5d63881f203a40de9edcf822cbe96926d81f03f2f324d171,False,False
+001-248396,2,Ukraine,,,,,False,False,6ea4dfe4f86d51523c060b41f435031e6e3f38f7b43ecddedc3ed6f50def9299,False,False
+001-248397,2,Ukraine,,,,,False,False,d4754bd9381db713516647caa4532e8e6f51d5461bd13826cb273664c7b93471,False,False
+001-248592,3,Serbia,,,,,False,False,faa22c2fa9ee0c6c3dee2d1db46eca79c57939dfa6bf4d6312b7294f8b3edcce,True,True
+001-248594,10,Russia,,,Transnistria; Transnistrian,,True,True,a69ae6d5b7b6243a965aa278580e3482831e0ec3bb17e3f8d816b6460ef2346b,False,False
+001-248594,3,Russia,,,Transnistria; Transnistrian,,True,True,a69ae6d5b7b6243a965aa278580e3482831e0ec3bb17e3f8d816b6460ef2346b,False,False
+001-248598,8,San Marino,,,,,False,False,113e6707a45a4361648839c3c7bda517de4dccaee4931626cf2f324afd43c388,True,True
+001-248636,P12-1,Bosnia and Herzegovina,,,,,False,False,292c07624bb8f8c8d9f49d9dc219101631dfc94986560d0e056ed43cc942d840,True,True
+001-248682,5,Armenia,,,,,False,False,f18a450c72d903210d91d43dd9d08f2353874e428ea3209ea7d4e19c5775501a,True,True
+001-248687,6,Ukraine,,,,,False,False,3e6b68b63c23b97e3a248894caab60ed342f5fba3ec93dd2a482eb5337554dfe,False,False
+001-248854,8,Ukraine,,,,,False,False,afcb8569278c221ad3e5cebae4fe1ac7d6bdb383a0a3ed2e2b1115f137ed6171,False,False
+001-248953,11,Ukraine,,,,,False,False,12df61afc3958a47f02effa85d4a9c244e485cb2200ac0671657cc7153810f03,False,False
+001-248957,P1-1,Ukraine,,,Crimea; Crimean; occupied territories,Russia,True,True,a9b30b75afc2f70b4963ec27baacbfe5688b8f15e545b627ee5196820d916f3c,False,False
+001-248960,2,Ukraine,,,,,False,False,6c67d720efc562e3f82c58e23e6375fb981bb3a7cc38b8c9f7ce32702e6ce4c2,False,False
+001-248961,3,Ukraine,,,,,False,False,7c4c9bb640cece83bb125b6e6ca02ed1be810d33843c79ce07c6f3febc0c91f5,False,False
+001-248979,6,Ukraine,,,,,False,False,bacb1d4fe69225119cfc63e6923f5bc226a2c0fcc74a76cf641a3828fadc2726,False,False
+001-249134,6,Hungary,,,,,False,False,136753ca37304f99fbfa0c6adadc07853df54d986880bb5f48c0afe40d173987,True,True
+001-249223,3,Sweden,,asylum; deportation,,,True,True,2fa610d243107ba16255dee9fee472235c8a68291fb14da4fe152ae4552c0731,True,True
+001-249234,2,Ukraine,,,,,False,False,5bcab07545719308ebbcd110455d4883f7a5ac0557c58d886be621685e3093b3,False,False
+001-249236,2,Ukraine,,,,,False,False,dfd88caa128f3b4ffff309cbab0632b4c8c37d5702a409eaeae626e978518a6e,False,False
+001-249251,11,Russia,,,,Ukraine,True,True,1c75edd3eb95a2c903a0426e533e5fcea707fc1906d3ad7451dbc11d7df96343,False,False
+001-249345,6,Armenia,,,,,False,False,e5791800aa3b22c990055efe3fd4c26cf0b55c5a92b4c9a58b2e0f3891d609dc,True,True
+001-249370,34,Ukraine,,,,,False,False,014ea8abc8f25d22caa304ac889e73b92c95117345c1a50b1c6c24b2a66cdce3,False,False
+001-249380,8,the Republic of Moldova,,,,,False,False,dd8baea7d26126b663e0ad478404ed4e0e528b2b47f58671fa93e62c38f67668,True,True
+001-249515,P4-2,Azerbaijan,,,,Turkey,False,True,27966ceeb28ddee5516d0aef8fd1b347c11b3e14a2264ea67d67ce6efdbc43cb,True,True
+001-249525,14,Ukraine,,,,,False,False,3e8a684ece071e5829398a7d3d2dbaf92eaffb1b3c81783b3ab055e4711512dc,False,False
+001-249527,2,Ukraine,,,,,False,False,05c137a658a4bf193d07928c33fae955f690ec1e9a75f61fae51535263010785,False,False
+001-249530,6,San Marino,,,,,False,False,96ce3a8644ffd6f9b392146b5622544f9d29185606e1e7bfcca8f77bad711861,True,True
+001-249531,8,Czechia,,,,,False,False,e21acf4aa3b141cc63ac9c6ff0f593f7583a0413672077beab07e3c07249995f,True,True
+001-249581,5,Armenia,,,,,False,False,dfb516ac31300fea59feb9700a8ac7d809ab8c46dbf9ea3bf3d27fc831d33b06,True,True
+001-249583,2,Ukraine,,,,,False,False,d6f6ddda190febc4dc6f9254dd94d4fa2559475bbb8aa0d021d48e026d03a64c,False,False
+001-249586,13,Ukraine,,,,,False,False,050ae2de924915b37ad50d64ceb108248b5e082704b9e4ab7aa31224109f06d5,False,False
+001-249587,2,Ukraine,,,,,False,False,66c7849a5b81c094eab31a666dfd27b59efe0e1aac35adeecdf43613aaaa21b6,False,False
+001-249691,3,the Netherlands,,,,UK,False,True,4bdcafa41872e4b7b6debd79fdad1b13f2c39b5099ec40d1756fb98b122ae47c,True,True
+001-249810,P1-1,Ukraine,,,,,False,False,c00f1c69cc9450797c5bddf8aefbb802fa873ef2aae173b4238c167281c528b5,False,False
+001-249964,8,Albania,,,,,False,False,f6a487290a8f1de321f59770503a337d8bbced974749d01a9c5100b75df4817f,True,True
+001-249970,2,Italy,,,,,False,False,d828b48049e04e2fd0c58f097f24f49292eee0c3f1a215bbe3123e5fe2c522a8,True,True
+001-250034,5,Ukraine,,,,,False,False,6791efe7f831d25532b3e677dd6503e0f2372753856bbff7e810635e0698eaff,False,False
+001-250035,3,Ukraine,,,,,False,False,a1f1fee691d7d025ffe36a88584f9d902c06dfd062d10e3f5951828bb6eb4698,False,False
+001-250036,5,Ukraine,,,,,False,False,d284e75a34d5d5a40f285dcb247c7f7712045d3bb2780cf84c933f0d3274c8f3,False,False
+001-250107,5,Austria,,,,,False,False,2ff9e6c4b1e8fd8250ed18ff5d85e7cf5a5168e780f247259607f027b172a790,True,True
+001-250111,6,Poland,,,,,False,False,9d88d9149dce0d076d1c2044da9eabd2713959c4d792495ffa12a42a9ca75c11,True,True
+001-250112,5,Portugal,,,,,False,False,7a2a644a375d596e97764d5583cc6b300708d11657b63d1c56df09aa22721b1d,True,True

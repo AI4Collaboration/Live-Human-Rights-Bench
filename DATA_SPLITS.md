@@ -2,7 +2,7 @@
 
 ## Current evaluation pool
 
-The full-record, summary, paraphrase, State Swap and adversarial-opinion experiments use
+The full-record, summary, paraphrase, Country Swap and adversarial-opinion experiments use
 **1,000 target instances from 947 judgments** in
 [`data/processed/echr_unified.json`](data/processed/echr_unified.json).
 This is the paper's selected sample; the pipeline supports other release sizes
@@ -30,53 +30,12 @@ Each row stores one verified respondent, provision and sub-conclusion, together
 with `target_question` and its reference outcome. Article 41 is excluded as a
 binary violation target.
 
-The completed experiments ask the provision-level question shown in the
-[README](README.md#benchmark-and-inputs). The atomic fields
-retain annotation identity. The executed prompt in each runner determines the
-question seen by the model; a stored prompt-version tag alone is insufficient.
-
-## Shared summaries
-
-[`data/processed/summaries_dsv41flash.json`](data/processed/summaries_dsv41flash.json)
-contains one selected DeepSeek v4.1 Flash summary for each judgment. Original
-version index 0 was selected before evaluation. All targets and models sharing a
-judgment receive the same summary.
-
-The extractive control is
-[`data/processed/summaries_extractive_leakchecked_20260916.json`](data/processed/summaries_extractive_leakchecked_20260916.json).
-Its 947 extracts support the fact-retention comparison. The current manuscript
-reports predictive accuracy for full records and abstractive summaries.
-[docs/SUMMARIZATION_PROTOCOL.md](docs/SUMMARIZATION_PROTOCOL.md) describes both
-summary variants and the selected coverage analysis.
-
-## Frozen release and paired comparisons
-
-The [manifest](configs/evaluation_dataset.json) records target fields, annual
-counts, labels and summary coverage. Validate it without model calls:
-
-```bash
-python scripts/validate_eval_dataset.py --require-complete
-```
-
-Use a fresh output directory whenever inputs, prompts or the release change.
-Summary comparisons pair the same targets across full and compressed records;
-paraphrases use their own original-input arm. Adversarial opinion pairs static and
-adaptive branches from the same decided initial response. The current analysis
-rules are in [STATISTICAL_METHODOLOGY.md](STATISTICAL_METHODOLOGY.md).
-
-## State Swap and deprecated sources
-
-The original six-model State Swap experiment derives original, US, Russia and Ukraine arms
-from the same 1,000 targets and their shared summaries. Its six model checkpoints
-are in `data/experiments/stateswap_summary/`. The
-[input review](docs/STATESWAP.md) records which replacements actually change the
-summary text. Its previous Hub release remains deprecated for current evaluation.
-
-The completed Türkiye follow-up uses original, Türkiye, Russia and Ukraine arms
-for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. Its 12,000 records are in
-`data/experiments/stateswap_summary_turkey/`. The shared comparison has 785 targets
-from 742 judgments; the original US comparison has 800 targets from 757 judgments.
-Each experiment uses its own original-summary scores and common cohort.
+The completed Türkiye and UK follow-ups each contain 12,000 records for
+GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol. Their original common comparison
+has 768 targets from 725 judgments. The automated context screen retains
+574 targets from 545 judgments for these follow-ups and 606 targets from
+577 judgments for the original six-model grid. The full results remain
+available; every effect uses its own run's original-summary arm.
 
 The [source-status register](docs/DATA_SOURCE_STATUS.md) lists all deprecated
 releases and their replacements. Superseded local input files and results have

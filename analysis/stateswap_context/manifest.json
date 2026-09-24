@@ -1,0 +1,214 @@
+{
+  "data_revision": "d282acc0e40e058617e66de26f072bafae9ff162",
+  "new_model_calls": 0,
+  "input_targets": 1000,
+  "input_judgments": 947,
+  "selected_summary_version": 0,
+  "summary_inputs_identical_across_runs": true,
+  "swap_reconstructed_for_all_targets_and_runs": true,
+  "followup_estimates_reproduced": 18,
+  "nigeria_respondents": 0,
+  "nigeria_mentioned_judgments": 5,
+  "rules": {
+    "environment": "\\b(?:lakes?|lakeshore|rivers?|fauna|wildlife|salmon|fishing|pollution|pollut(?:ed|ants|ing)|environmental|hazardous|toxic|contamin\\w*)\\b",
+    "cross_border": "\\b(?:extradit\\w*|deport\\w*|expulsi\\w*|expel\\w*|asylum|refugee\\w*|border\\w*|pushbacks?|push-backs?|repatriat\\w*)\\b",
+    "territorial": "\\b(?:Transnistr\\w*|Nagorno|Karabakh|Abkhaz\\w*|Osseti\\w*|Crimea\\w*|Donbas\\w*|Cheche\\w*|Northern Cyprus|occupied territor\\w*|armed conflicts?|military occupation)\\b"
+  },
+  "destination_terms": {
+    "US": [
+      "United States",
+      "USA",
+      "U.S.",
+      "American"
+    ],
+    "UK": [
+      "United Kingdom",
+      "UK",
+      "Britain",
+      "British"
+    ],
+    "Turkey": [
+      "Türkiye",
+      "Turkey",
+      "Turkish"
+    ],
+    "Russia": [
+      "Russia",
+      "Russian Federation",
+      "Russian"
+    ],
+    "Ukraine": [
+      "Ukraine",
+      "Ukrainian"
+    ]
+  },
+  "cohorts": {
+    "us": {
+      "full_targets": 800,
+      "full_judgments": 757,
+      "flagged_targets": 194,
+      "remaining_targets": 606,
+      "remaining_judgments": 577,
+      "flagged_by_rule": {
+        "environment": 26,
+        "cross_border": 118,
+        "territorial": 24
+      },
+      "destination_already_present_targets": 53
+    },
+    "followups": {
+      "full_targets": 768,
+      "full_judgments": 725,
+      "flagged_targets": 194,
+      "remaining_targets": 574,
+      "remaining_judgments": 545,
+      "flagged_by_rule": {
+        "environment": 24,
+        "cross_border": 112,
+        "territorial": 23
+      },
+      "destination_already_present_targets": 85
+    }
+  },
+  "interpretation": "Lexical flags select inputs for review. Neither flag prevalence nor the remaining subset estimates a validated invalid-input rate.",
+  "bootstrap": {
+    "cluster": "judgment",
+    "seed": 731,
+    "pointwise_draws": 2000,
+    "family_draws": 20000,
+    "family_comparisons": 18,
+    "estimand": "target-weighted mean"
+  },
+  "inputs": {
+    "d282acc0e40e058617e66de26f072bafae9ff162:data/processed/echr_unified.json": {
+      "bytes": 24822473,
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    "d282acc0e40e058617e66de26f072bafae9ff162:data/processed/summaries_dsv41flash.json": {
+      "bytes": 3542646,
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    "d282acc0e40e058617e66de26f072bafae9ff162:experiments/stateswap_summary_run.py": {
+      "bytes": 11730,
+      "sha256_git_bytes": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f",
+      "sha256_lf": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/processed/echr_unified.json": {
+      "bytes": 24822473,
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/processed/summaries_dsv41flash.json": {
+      "bytes": 3542646,
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:experiments/stateswap_summary_run.py": {
+      "bytes": 10682,
+      "sha256_git_bytes": "b57d85ebdd856b6b68933cb036c3c6ab470feb43abcd6f009bc159812d01de38",
+      "sha256_lf": "b57d85ebdd856b6b68933cb036c3c6ab470feb43abcd6f009bc159812d01de38"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/anthropic_claude-opus-4.6/stateswap_summary_results.jsonl": {
+      "bytes": 927124,
+      "sha256_git_bytes": "e96f0aefb9fb33dcdff1d132567633e98d20b3670f953ea71e12ff275283d2ae",
+      "sha256_lf": "e96f0aefb9fb33dcdff1d132567633e98d20b3670f953ea71e12ff275283d2ae"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "bytes": 927997,
+      "sha256_git_bytes": "2f6e5c88acc245fe4b56e57a370c013e1e80fd72519b820960bcd0a7df79f376",
+      "sha256_lf": "2f6e5c88acc245fe4b56e57a370c013e1e80fd72519b820960bcd0a7df79f376"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/deepseek_deepseek-v4-pro/stateswap_summary_results.jsonl": {
+      "bytes": 941697,
+      "sha256_git_bytes": "08fda9b2e8fcb1dc06dd5d5912fdae4a3cf40a6a3d5c7b49e42216ab55cc3df4",
+      "sha256_lf": "08fda9b2e8fcb1dc06dd5d5912fdae4a3cf40a6a3d5c7b49e42216ab55cc3df4"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl": {
+      "bytes": 928836,
+      "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
+      "sha256_lf": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
+      "bytes": 928318,
+      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
+      "sha256_lf": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26"
+    },
+    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/qwen_qwen3-32b/stateswap_summary_results.jsonl": {
+      "bytes": 928914,
+      "sha256_git_bytes": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec",
+      "sha256_lf": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:data/processed/echr_unified.json": {
+      "bytes": 24822473,
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:data/processed/summaries_dsv41flash.json": {
+      "bytes": 3542646,
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:experiments/stateswap_summary_run.py": {
+      "bytes": 11585,
+      "sha256_git_bytes": "998467a3e5d889f345c068e3adc37a26344bd35adeb0ca28aeff71e01ecd925c",
+      "sha256_lf": "998467a3e5d889f345c068e3adc37a26344bd35adeb0ca28aeff71e01ecd925c"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:data/experiments/stateswap_summary_turkey/openai_gpt-4o-mini/stateswap_summary_results.jsonl": {
+      "bytes": 2043401,
+      "sha256_git_bytes": "58dd34840bea6315757070347a6c6f0734108001888eae3b3e53b640c0ca30b4",
+      "sha256_lf": "58dd34840bea6315757070347a6c6f0734108001888eae3b3e53b640c0ca30b4"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:data/experiments/stateswap_summary_turkey/openai_gpt-4.1-mini/stateswap_summary_results.jsonl": {
+      "bytes": 2043037,
+      "sha256_git_bytes": "84cfa077aaf2f636f0a90a9f305be02b98b826b175d6c515c891ac40e8626c23",
+      "sha256_lf": "84cfa077aaf2f636f0a90a9f305be02b98b826b175d6c515c891ac40e8626c23"
+    },
+    "b35f6ca1b97017175fab7d9862d29a057529ec2f:data/experiments/stateswap_summary_turkey/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "bytes": 2035728,
+      "sha256_git_bytes": "d92f1f8a2a4355500e77129859dfc9eac997025778e5f0772acd60298ccdd3d1",
+      "sha256_lf": "d92f1f8a2a4355500e77129859dfc9eac997025778e5f0772acd60298ccdd3d1"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:data/processed/echr_unified.json": {
+      "bytes": 24822473,
+      "sha256_git_bytes": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "sha256_lf": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:data/processed/summaries_dsv41flash.json": {
+      "bytes": 3542646,
+      "sha256_git_bytes": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "sha256_lf": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:experiments/stateswap_summary_run.py": {
+      "bytes": 11730,
+      "sha256_git_bytes": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f",
+      "sha256_lf": "ac9cfa01916188ec73261563e954ab91480a449c6614edba279eb4ed3e0d706f"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:data/experiments/stateswap_summary_uk/openai_gpt-4o-mini/stateswap_summary_results.jsonl": {
+      "bytes": 2035424,
+      "sha256_git_bytes": "37dfbeeebbf729ca0c9dd8a56a3fb96a77737193821fc908f7c71bf0f45ba398",
+      "sha256_lf": "37dfbeeebbf729ca0c9dd8a56a3fb96a77737193821fc908f7c71bf0f45ba398"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:data/experiments/stateswap_summary_uk/openai_gpt-4.1-mini/stateswap_summary_results.jsonl": {
+      "bytes": 2035164,
+      "sha256_git_bytes": "66e818502c983668ace35fdb6bf0cc49817148803ce3c16ab14e1d576f2a07a9",
+      "sha256_lf": "66e818502c983668ace35fdb6bf0cc49817148803ce3c16ab14e1d576f2a07a9"
+    },
+    "05b96bf53698e503f18f25bd44c3a66f47b67d20:data/experiments/stateswap_summary_uk/openai_gpt-5.6-sol/stateswap_summary_results.jsonl": {
+      "bytes": 2026312,
+      "sha256_git_bytes": "1747ef0c60afe2b7c3d258a1f152af2e327005727521bb29377027a15724f68a",
+      "sha256_lf": "1747ef0c60afe2b7c3d258a1f152af2e327005727521bb29377027a15724f68a"
+    },
+    "d282acc0e40e058617e66de26f072bafae9ff162:analysis/stateswap_followups/cohort.csv": {
+      "bytes": 10450,
+      "sha256_git_bytes": "4ad0ed2f15c3827e24cedbc24a5e95604adcf9b56103ca125f4f4adeea0bbfbb",
+      "sha256_lf": "4ad0ed2f15c3827e24cedbc24a5e95604adcf9b56103ca125f4f4adeea0bbfbb"
+    },
+    "d282acc0e40e058617e66de26f072bafae9ff162:analysis/stateswap_followups/source_data.csv": {
+      "bytes": 7337,
+      "sha256_git_bytes": "5315476e9d14ab1ff34fe3fbffa978c102eb3b4ee475c15b80e68a4e30c17b70",
+      "sha256_lf": "5315476e9d14ab1ff34fe3fbffa978c102eb3b4ee475c15b80e68a4e30c17b70"
+    }
+  }
+}

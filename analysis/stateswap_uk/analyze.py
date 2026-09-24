@@ -1,4 +1,4 @@
-"""Audit the UK State Swap release and compare its evidence with the Türkiye run.
+"""Audit the UK Country Swap release and compare its evidence with the Türkiye run.
 
 All inputs are read from pinned Git objects. This script makes no model calls.
 """
@@ -165,7 +165,7 @@ def main():
         changed_text_counts={a:sum(changed[k,a] for k in case_map) for a in ARMS},
         bootstrap=dict(seed=731,pointwise_draws=2000,family_draws=20000,cluster="judgment",estimand="target-weighted mean"),
         inputs=h.INPUTS)
-    report = ["# UK State Swap analysis", "",
+    report = ["# UK Country Swap analysis", "",
         f"Source revision: `{REVISION}`. All analysis is offline; no new model calls.", "",
         "## Finding", "",
         "Replacing the respondent with the United Kingdom lowers mean violation likelihood in all three GPT models. Each UK effect remains negative after correction across nine model-by-destination effects. Russia and Ukraine raise scores for both mini models. GPT-5.6-sol has a negative Ukraine effect; its Russia estimate has a pointwise interval crossing zero.", "",
