@@ -1,5 +1,15 @@
 # LiveHumanRightsBench
 
+## Reasoning-trace analysis
+
+The [CoT analysis plan](docs/COT_ANALYSIS_PLAN.md) separates challenger authority,
+acceptance of asserted outcomes, instruction following and evaluation awareness.
+It connects expressed reasoning to correct-answer retention, error correction
+and first reversal. Use existing Flash traces now and the same procedure for
+Opus when available. The existing evaluation-framing pair remains the direct
+comparison for evaluation wording; no new cue arms or API calls are added here.
+This planning document is excluded from supplementary submission material.
+
 ## Next API experiments
 
 **Priority: distinguish challenger identity from explicit evaluation framing.**
