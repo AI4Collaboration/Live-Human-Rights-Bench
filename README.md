@@ -2,6 +2,15 @@
 
 ## Next API experiments
 
+**Priority: distinguish challenger identity from explicit evaluation framing.**
+The observed AI safety researcher effect does not by itself establish evaluation
+awareness. Run the already planned neutral-versus-evaluation contrast below with
+the same role, case, initial reply and opposing challenge. Do not announce the
+desired behavior (for example, whether the model should resist disagreement).
+Report reversal separately for initially correct and initially wrong judgments
+alongside final accuracy. This is the existing two-arm plan, not an extra batch.
+No API experiments were launched during the manuscript review.
+
 **Results checked 24 September 2026:** the new
 [control analysis](analysis/september_controls/REPORT.md) covers four static
 conditions for Claude Opus 4.6 and GPT-5.6-sol, plus applicant-nationality
