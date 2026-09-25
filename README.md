@@ -2,13 +2,18 @@
 
 ## Reasoning-trace analysis
 
-The [CoT analysis plan](docs/COT_ANALYSIS_PLAN.md) separates challenger authority,
-acceptance of asserted outcomes, instruction following and evaluation awareness.
-It connects expressed reasoning to correct-answer retention, error correction
-and first reversal. Use existing Flash traces now and the same procedure for
-Opus when available. The existing evaluation-framing pair remains the direct
-comparison for evaluation wording; no new cue arms or API calls are added here.
-This planning document is excluded from supplementary submission material.
+The [completed offline analysis](analysis/reasoning_traces/README.md) covers the
+released Opus 4.6 and DeepSeek V4 Flash reasoning runs at `80ea0ff`. On common
+three-cue static cohorts, the AI safety researcher cue reduces final reversal
+from 92.0% to 5.2% for Opus and from 99.6% to 92.7% for Flash. Saved explanations
+include recognized evaluation followed by harmful compliance, correct retention,
+and error persistence. Exact counts, source hashes, paired intervals and
+verbatim evidence are included. Adaptive coverage remains a partial checkpoint.
+
+Run `python analysis/analyze_reasoning_traces.py --revision 80ea0ff` to reproduce
+the analysis without model APIs. The [analysis plan](docs/COT_ANALYSIS_PLAN.md)
+keeps the explicit evaluation-framing experiment separate from role cues and
+is excluded from supplementary submission material.
 
 ## Next API experiments
 

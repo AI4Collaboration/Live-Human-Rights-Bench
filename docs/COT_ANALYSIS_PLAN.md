@@ -147,9 +147,8 @@ same cue leads to warranted correction or where recognized pressure is resisted.
 
 ## Current checkpoint
 
-DeepSeek V4 Flash at `c1d1293`: 1,000 initial records, 987 valid initial scores and
-950 decisive initial judgments. Static contains 10,450 trajectories with 10,430
-complete three-score trajectories; 31,349 of 31,350 reasoning slots are nonempty.
-Adaptive contains 4,989 published trajectories with 4,297 complete three-score
-trajectories. These are coverage counts, not an assertion that all eligible
-adaptive jobs have finished. Opus results are pending.
+The offline analysis now covers Flash and Opus at `80ea0ff`; see
+[results and evidence](../analysis/reasoning_traces/README.md). Static three-cue
+comparisons use 946 Flash and 911 Opus targets with complete scores. The released
+adaptive trajectories remain partial. Explicit evaluation framing remains a
+separate planned comparison; role-cue traces are not that intervention.
