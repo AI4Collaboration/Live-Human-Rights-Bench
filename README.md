@@ -15,6 +15,12 @@ the analysis without model APIs. The [analysis plan](docs/COT_ANALYSIS_PLAN.md)
 keeps the explicit evaluation-framing experiment separate from role cues and
 is excluded from supplementary submission material.
 
+The [CoT deep dive](analysis/reasoning_traces/deep_dive/README.md) additionally
+compares delayed reversals on identical cases and traces how the same model
+switches between accuracy and compliance. Among 137 targets where both models
+retain their shared initial verdict at turn 1, Flash later reverses 112 and
+Opus three. Paired evidence and reconstructed static challenges are included.
+
 ## Next API experiments
 
 **Priority: distinguish challenger identity from explicit evaluation framing.**
