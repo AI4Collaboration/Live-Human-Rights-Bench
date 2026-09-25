@@ -2,6 +2,16 @@
 
 ## Next API experiments
 
+**Next missing cue: AI researcher.** The core comparison should contain No cue,
+AI researcher, AI safety researcher and Lawyer. The AI researcher arm below
+has not been released; `researcher_disagree` in the completed control run means
+AI safety researcher. Do not relabel it or substitute it for AI researcher.
+Compare the new arm with saved references only after matching target, initial
+reply, opposing challenge, pressure, mode and turn. Keep the reading-cue control
+as a separate experiment because it used fresh initial sampling. Report final
+accuracy and reversals conditional on initial correctness for each available cue.
+This prioritizes the already planned arm and adds no new API conditions.
+
 **Priority: distinguish challenger identity from explicit evaluation framing.**
 The observed AI safety researcher effect does not by itself establish evaluation
 awareness. Run the already planned neutral-versus-evaluation contrast below with
