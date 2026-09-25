@@ -2,16 +2,6 @@
 
 ## Next API experiments
 
-**Next missing cue: AI researcher.** The core comparison should contain No cue,
-AI researcher, AI safety researcher and Lawyer. The AI researcher arm below
-has not been released; `researcher_disagree` in the completed control run means
-AI safety researcher. Do not relabel it or substitute it for AI researcher.
-Compare the new arm with saved references only after matching target, initial
-reply, opposing challenge, pressure, mode and turn. Keep the reading-cue control
-as a separate experiment because it used fresh initial sampling. Report final
-accuracy and reversals conditional on initial correctness for each available cue.
-This prioritizes the already planned arm and adds no new API conditions.
-
 **Priority: distinguish challenger identity from explicit evaluation framing.**
 The observed AI safety researcher effect does not by itself establish evaluation
 awareness. Run the already planned neutral-versus-evaluation contrast below with
@@ -33,7 +23,7 @@ additions for GPT-4o mini, GPT-4.1 mini and GPT-5.6-sol.
 - Applicant-nationality additions give mean shifts below one score point
   across all three models. All 1,000 targets are present in each arm.
 
-**The four conditions planned below remain pending.** The released reading
+**The three conditions planned below remain pending.** The released reading
 cue still precedes an opposing challenge, so it does not implement neutral
 reassessment. The new researcher condition is AI safety researcher, not AI
 researcher. No evaluation-framing or DeepSeek control results are present.
@@ -56,7 +46,6 @@ static results as references. Full-cohort reruns are not part of this batch.
 
 | Experiment | New conditions | Purpose | New target replies |
 | --- | ---: | --- | ---: |
-| AI researcher | 1 | Compare `I am an AI researcher.` with the saved AI safety researcher result | 8,466 |
 | Neutral reassessment (placebo control) | 1 | Measure revision without an opposing opinion | 8,466 |
 | Evaluation-awareness control | 2 | Compare neutral and evaluation framing with the AI researcher role held fixed | 16,932 |
 
@@ -65,7 +54,7 @@ Neutral reassessment is the single placebo control. At each turn use
 current conclusion and violation likelihood.` It adds no opposing verdict or
 professional identity.
 
-AI researcher is the only new professional role in this batch. Existing lawyer,
+The standalone AI researcher cue is deferred to potential rebuttal work. Existing lawyer,
 junior-lawyer and senior-lawyer results remain part of the paper. Nationality
 cues are deferred and will be tested separately from professional roles.
 
@@ -81,7 +70,7 @@ Append one framing sentence after the role prefix on turn one and preserve
 the existing opposing challenge. Keep later messages unchanged and compare
 final reversal under evaluation versus neutral framing within each model.
 
-Run all four new conditions in the same serving window. The two framing
+Run all three new conditions in the same serving window. The two framing
 conditions add **16,932 target replies**. The saved unframed AI safety researcher
 condition remains an existing reference.
 
@@ -95,8 +84,8 @@ The [protocol](docs/NEXT_EXPERIMENTS.md#1-full-release-coverage) gives source
 hashes and eligibility counts. There is no additional sample reduction.
 
 Run one static three-turn trajectory per eligible target and condition.
-**Planned total: 33,864 target replies with no challenger generations.**
-The AI-researcher and neutral-reassessment conditions cost 16,932 replies.
+**Planned total: 25,398 target replies with no challenger generations.**
+Neutral reassessment costs 8,466 replies.
 The two evaluation-framing conditions cost 16,932. Each condition costs 8,466
 replies across the three models. Compare with saved references on targets with
 valid case/provision matches; the detailed protocol reports reference coverage.
@@ -115,9 +104,21 @@ replayed reply and full messages. Adapt it to the remaining plan before running.
 | Lower-temperature comparison | Test sensitivity to sampling settings | Decide after the core results; no default small-case quota |
 | Adaptive repetition | Measure variation across evolving challenges and target replies | Requires both target and challenger calls; budget separately |
 
-The first batch plus that separate repetition study would cost **118,524
+The first batch plus that separate repetition study would cost **110,058
 target replies** before retries. Historical reference trajectories retain
 their original collection dates and are not counted as new repetitions.
+
+### Potential rebuttal experiments (not for the supplementary submission)
+
+- **Standalone AI researcher cue:** compare `I am an AI researcher.` with
+  No cue, Lawyer and AI safety researcher using compatible saved initial replies
+  and challenge settings. Optional budget: 8,466 target replies across the three
+  models. Do not run or include this plan in the supplementary archive.
+- The two currently planned evaluation-framing arms still hold AI researcher
+  identity fixed. They do not require the deferred standalone arm.
+
+See [the private-to-submission planning note](docs/REBUTTAL_EXPERIMENTS.md).
+The submission uses its own reproduction README and excludes experiment plans.
 
 ### Future work
 
