@@ -446,7 +446,7 @@ Scores represent the likelihood of a violation:
 | 40 through 60, inclusive | Abstention |
 | Above 60 | Violation |
 
-The current manuscript's Section 4 analysis thresholds the **mean of valid
+The current manuscript's perturbation analysis thresholds the **mean of valid
 ratings**. The saved baseline/summary `prediction` fields instead use category
 plurality, with ties assigned to abstention; the original fields are retained,
 and plurality is used as a sensitivity analysis. Paraphrase predictions already
