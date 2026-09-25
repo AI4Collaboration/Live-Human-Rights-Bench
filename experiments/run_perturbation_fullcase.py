@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Full-case and shared-summary evaluation over an OpenAI-compatible API.
 
 Use the current canonical cases, one fixed summary per judgment, ten ratings

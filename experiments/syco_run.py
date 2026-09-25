@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Full adversarial-opinion (sycophancy) run over OpenRouter.
 
 Targets = the 6-model roster, challenger = GPT-5.4-nano, T=3 turns, one static and one

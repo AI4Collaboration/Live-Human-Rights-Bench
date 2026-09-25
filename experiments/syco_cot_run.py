@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Sycophancy run that KEEPS THE CHAIN OF THOUGHT at every turn.
 
 Same three-turn adversarial-opinion protocol as syco_run.py, but each target call
@@ -11,9 +10,6 @@ Backends:
               message.reasoning when requested.
   bedrock     Claude Opus via AWS Bedrock extended thinking (needs AWS_BEARER_TOKEN_BEDROCK
               + AWS_REGION and the exact --model Bedrock id); thinking blocks are stored.
-
-  python experiments/syco_cot_run.py --backend openrouter --model deepseek/deepseek-v4-flash
-  python experiments/syco_cot_run.py --backend bedrock --model <opus-bedrock-id>
 """
 from __future__ import annotations
 import argparse, hashlib, json, math, os, re, sys, threading, time, urllib.request

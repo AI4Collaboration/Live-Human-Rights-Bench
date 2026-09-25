@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Identity-only control for Country Swap: hold the respondent State, provision and
 factual structure fixed, and vary only the APPLICANT's stated nationality.
 
@@ -14,8 +13,6 @@ Arms per eligible case:
   foreign    applicant is a national of a fixed comparison State (different from respondent)
 
 0-100 full-case prompt, checkpointed per (model, case, arm).
-
-  python experiments/stateswap_applicant_run.py --model openai/gpt-5.6-sol
 """
 from __future__ import annotations
 import argparse, hashlib, json, os, re, sys, threading, time, urllib.request

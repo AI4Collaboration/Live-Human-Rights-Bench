@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Nationality-role adversarial persuasion (senior's suggestion): does the challenger's
 claimed NATIONALITY change how much it flips the target — specifically, does a lawyer of
 the SAME nationality as the applicant's respondent State persuade more than a mismatched

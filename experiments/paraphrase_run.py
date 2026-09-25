@@ -6,9 +6,6 @@ Two stages:
             strong paraphraser (gpt-5.6-sol), chunked so long cases don't truncate.
   eval      score arms [original, light, medium, heavy] for the 6-model roster with the
             same full-case prompt used elsewhere. Checkpointed per (model, case, arm).
-
-  python experiments/paraphrase_run.py generate
-  python experiments/paraphrase_run.py eval --model openai/gpt-5.6-sol
 """
 from __future__ import annotations
 import argparse, hashlib, json, os, sys, threading, time, urllib.request

@@ -1,12 +1,9 @@
-#!/usr/bin/env python3
 """Summary-based country swap: replace the respondent country in each case summary
 to US / Russia / Ukraine and score, to test whether the verdict shifts by country identity.
 
 Arms: original, US, Russia, Ukraine. Rule-based swap of the respondent country name and
 demonym in the summary text (no generation model). 0-100 full-case prompt, 6-model roster.
 Checkpointed per (model, case, arm).
-
-  python experiments/stateswap_summary_run.py --model openai/gpt-5.6-sol
 """
 from __future__ import annotations
 import argparse, hashlib, json, os, re, sys, threading, time, urllib.request

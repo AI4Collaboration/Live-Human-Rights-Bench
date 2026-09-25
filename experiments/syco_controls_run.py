@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Two persuasion controls in one serving window, sharing the same saved initial
 reply per case so the arms are directly comparable.
 
@@ -16,8 +15,6 @@ in whatever direction it is pushed, or specifically yields to opposition.
 
 Static three-turn, one trajectory per arm (raise --trajectories for replication).
 The cue appears on turn one only; wording reuses the shared v7 prompt pack.
-
-  python experiments/syco_controls_run.py --model openai/gpt-5.6-sol
 """
 from __future__ import annotations
 import argparse, json, math, os, re, sys, threading, time, urllib.request
