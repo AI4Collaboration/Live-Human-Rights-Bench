@@ -5,6 +5,9 @@
 __pycache__
 
 # Output directories
+tmp/
+.pytest_cache/
+.ruff_cache/
 other
 results
 figures
@@ -16,6 +19,8 @@ slurm/output
 # Large data files
 *.csv
 !config/*.csv
+# Audited analysis tables are intended release artifacts.
+!analysis/**/*.csv
 
 # Keep only the main dataset
 data/real_cases/

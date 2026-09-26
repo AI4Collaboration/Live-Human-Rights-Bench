@@ -122,7 +122,16 @@ def main():
         assert len({r['config'][field] for r in report.values()}) == 1, field
     payload = {'revision': rev, 'sources_sha256':sources,'lexical_patterns':PATTERNS,'models':report,'cross_model':cross}
     (out/'results.json').write_text(json.dumps(payload,indent=2)+'\n',encoding='utf-8')
-    lines = ['# Reasoning traces and judgment changes', '', f'Source commit: `{rev}`. No model APIs are used.', '',
+    lines = ['# Reasoning traces and judgment changes', '', f'Score-analysis source commit: `{rev}`. No model APIs are used.', '',
+        '## Current full-text analysis', '',
+        'Use the [full-explanation analysis](full_text/README.md) for the current CoT comparisons. '
+        'It reports availability, paired length distributions, evaluation-language frequency per explanation '
+        'and per thousand words, and all three turns without word-length truncation. '
+        'The score results below retain the complete-score cohorts of 911 Opus and 946 Flash targets; '
+        'first-turn paired text comparisons use 734 and 946 targets respectively.', '',
+        'The [phrase-evidence report](language/README.md) retains all available first-turn explanations. '
+        'The [supplementary deep dive](deep_dive/README.md) contains delayed-reversal counts and selected '
+        'examples. Neither replaces the paired full-text comparison.', '',
         '## Scope and measures', '',
         'These are fresh initial samples with reasoning requested, separate from the original score-only runs. '
         'Both released configurations use OpenRouter with reasoning enabled; the request does not specify a reasoning-token budget. '

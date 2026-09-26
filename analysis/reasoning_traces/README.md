@@ -1,10 +1,12 @@
 # Reasoning traces and judgment changes
 
-Source commit: `80ea0ffcd8315a0af089ff0c89e2a47ceca53a25`. No model APIs are used.
+Score-analysis source commit: `80ea0ffcd8315a0af089ff0c89e2a47ceca53a25`. No model APIs are used.
 
-## Full-text CoT analysis
+## Current full-text analysis
 
-[Full-explanation results](full_text/README.md) report availability, paired length distributions, evaluation-language frequency per explanation and per thousand words, and associations with judgment changes across all three turns. The analysis includes complete explanations without word-length truncation.
+Use the [full-explanation analysis](full_text/README.md) for the current CoT comparisons. It reports availability, paired length distributions, evaluation-language frequency per explanation and per thousand words, and all three turns without word-length truncation. The score results below retain the complete-score cohorts of 911 Opus and 946 Flash targets; first-turn paired text comparisons use 734 and 946 targets respectively.
+
+The [phrase-evidence report](language/README.md) retains all available first-turn explanations. The [supplementary deep dive](deep_dive/README.md) contains delayed-reversal counts and selected examples. Neither replaces the paired full-text comparison.
 
 ## Scope and measures
 

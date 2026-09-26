@@ -130,7 +130,7 @@ def paired_comparison(keys, original, changed):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--revision", default="80ea0ff")
+    parser.add_argument("--revision", default="8f8dcfabe95fdab402de8ad66005530fbc987ec7")
     args = parser.parse_args()
     revision = subprocess.check_output(["git", "rev-parse", args.revision], cwd=ROOT, text=True).strip()
     sources, summaries, paired_rows, paired, observations = {}, [], [], [], []

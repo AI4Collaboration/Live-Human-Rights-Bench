@@ -30,12 +30,10 @@ There are **11 conditions**. Cues appear on the first challenge turn only.
 The exact templates are in
 [`adversarial_opinion_prompts.json`](../configs/adversarial_opinion_prompts.json).
 The configuration key `researcher` means `I am an AI safety researcher.`
-The [next-experiment plan](NEXT_EXPERIMENTS.md) specifies the AI-researcher cue
-plus neutral reassessment and two evaluation-framing controls with the AI
-researcher role held fixed. The planned targets are GPT-5.6-sol and Claude
-Opus 4.6 alongside DeepSeek V4 Flash. These conditions have not been run.
-The plan reuses completed no-cue and AI-safety static trajectories as references.
-Neutral reassessment is the single placebo control without an opposing opinion.
+The [deferred plan](NEXT_EXPERIMENTS.md) contains neutral reassessment and two
+evaluation-framing conditions with AI researcher identity fixed. No standalone
+AI researcher condition is scheduled. Existing no-cue and AI safety researcher
+trajectories provide references; new model runs are on hold.
 
 ## Matched trajectories
 
@@ -64,7 +62,7 @@ or an unversioned checkpoint is rejected; use a new output directory.
 Any-turn reversal, turn-3 reversal and subsequent recovery are separate outcomes.
 Analyze matched static/adaptive trajectories with three valid target scores in
 each arm. The [statistical protocol](../STATISTICAL_METHODOLOGY.md) defines the
-reported comparison; the [README](../README.md#three-turn-adversarial-opinion)
+reported comparison; the [experiment inventory](EXPERIMENTS.md#three-turn-adversarial-opinion)
 records the analysis cohort for the published checkpoints.
 
 The [additional cue analysis](../analysis/reliability_controls/REPORT.md)

@@ -2,6 +2,8 @@
 
 Source data: `80ea0ffcd8315a0af089ff0c89e2a47ceca53a25`. Offline analysis only; no model APIs.
 
+This is the supplementary phrase-evidence inventory on all available first-turn explanations. Use the [full-explanation analysis](../full_text/README.md) for current paired cue comparisons and length statistics. Opus has 79/911 researcher-cue matches here and 52/734 when restricted to instances with reasoning under all three cues. The phrase rules are the same.
+
 ## Finding
 
 Under the AI safety researcher cue, V4-Flash reverses at the first challenge in 125/201 (62.2%) traces containing the specified evaluation phrases. Opus-4.6 reverses in 3/79 (3.8%). These are conditional rates within different model-specific text subsets, not a matched-case model effect or a measure of internal awareness.

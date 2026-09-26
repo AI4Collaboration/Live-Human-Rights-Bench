@@ -1,6 +1,8 @@
 # Next experiments
 
-Updated 25 September 2026 against the published results and runners.
+Reviewed 26 September 2026 against the published results and runners.
+**On hold: current work uses existing data only.** This document retains the
+planned scope for a later decision; no new API runs are scheduled.
 The first batch uses **GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash**
 with the full v1.0 target inventory. Two experiments contain three new conditions for
 **25,398 target replies**. No cue and AI safety researcher are completed
@@ -118,7 +120,7 @@ Also report abstention and any-turn reversal. Resample at the source-judgment
 level so multiple targets from one judgment remain together. Prespecify how
 incomplete trajectories enter each denominator and report failed outputs.
 
-## 3. Scheduled evaluation-framing control
+## 3. Planned evaluation-framing control
 
 Hold the AI researcher role fixed and compare two first-turn sentences:
 
@@ -251,97 +253,12 @@ The completed [evaluator-exclusion analysis](../analysis/generator_exclusion/REP
 addresses the generator/evaluator overlap question with the existing generated
 texts. A replacement-generator experiment has been removed from the API plan.
 
-## Failure mode analysis: existing results first
+## Completed analyses
 
-**Question:** How severe are judgment errors, when do they arise, and which
-conditions preserve or correct them? Use existing case labels, saved scores
-and complete turn trajectories. All five finer analyses are complete using
-existing outputs, with no new human annotation, CoT collection or model calls.
-
-### Completed score-based analysis
-
-The [failure mode report](../analysis/failure_modes/REPORT.md) classifies all six
-models on their matched no-cue/researcher cohorts and the strict shared
-349-case Claude/GPT cohort. It verifies 16 cohort hashes and reproduces the
-existing final correct/wrong/abstention counts. No model calls were made.
-
-| Failure pattern | Observable definition | Evidence |
-| --- | --- | --- |
-| Harmful change | An initially correct answer becomes a wrong decisive verdict | Initial/final scores and case label |
-| Loss of decisiveness | An initially correct answer becomes an abstention | Initial/final scores and thresholds |
-| Persistent error | An initially wrong answer remains wrong | Initial/final correctness, split by intermediate recovery |
-| Lost correction | A wrong answer becomes correct and later returns to wrong | All three follow-up scores |
-
-Temporary errors followed by recovery, sustained correct answers and successful
-corrections are retained as comparison outcomes. Use initially correct and
-initially wrong denominators separately. Static and adaptive paths use the same
-matched cases within each reported comparison.
-
-### Completed: finer analysis from existing outputs
-
-The [fine-grained report](../analysis/fine_grained_failures/REPORT.md) contains
-all five analyses below. Validation independently recounts 704 timing rows and
-400 score-stratum rows from published paths, checks 432 paired role contrasts,
-and reproduces the manuscript's summary and paraphrase transition totals.
-
-| Priority | Analysis | Calculation | Question answered |
-| --- | --- | --- | --- |
-| First | Initial score extremity | Split initial scores by distance from the abstention interval; report harmful changes for the endpoint group, score at most 10 or at least 90, and endpoint-to-opposite-endpoint changes | Do failures extend to initially extreme judgments? |
-| First | Failure timing and recovery | First wrong turn, cumulative error incidence, recovery by turn three, and correction followed by renewed error | Does pressure cause immediate failure, accumulate new errors, or sustain existing errors? |
-| Supporting | Error direction | False violation findings among non-violation labels; missed violations among violation labels; new errors and corrections within each stratum | Which direction does each intervention move judgments? |
-| Supporting | Cue effects by initial correctness | Paired correct-answer retention and error correction for the existing role conditions | Which identities preserve correct judgments, and which preserve initial errors? |
-| Supporting | Shared vulnerability across perturbations | Overlap of harmful changes on common targets with correct experiment-specific reference predictions | Do different perturbations affect the same cases? |
-
-- Fix score bins before comparisons and report their case counts. Score
-  extremity describes the reported likelihood; no probability calibration is
-  needed for this analysis.
-- For failure timing, use all initially correct cases as the denominator for
-  cumulative incidence. Report next-turn failure among cases with no previous
-  wrong verdict separately. Keep abstention as a distinct state.
-- Compare roles and challenge modes on the same complete cases within each
-  contrast. Split initially correct and initially wrong cases throughout.
-- Join experiments by the released target identifiers and verify provision
-  consistency. Use each suite's saved reference arm. Report Country Swap
-  sensitivity separately from errors against the original case label.
-- Use paired comparisons and judgment-cluster intervals. Report common-target
-  and initial-correctness filters with each overlap estimate.
-
-**Findings:** static no-cue challenges reverse 163/187 initially correct
-endpoint judgments for Claude and 281/305 for GPT in the shared cohort; all
-these failures reach the opposite endpoint. Most errors appear at turn one,
-with little subsequent recovery. Heavy paraphrasing is more likely to overturn
-a correct no-violation judgment than a correct violation judgment in every
-model. Role cues can preserve initial errors as well as correct answers.
-Summary and heavy-paraphrase errors rarely coincide on cases where both
-experiment-specific reference judgments are correct.
-
-**Paper output:** prioritize initial score extremity and failure timing. Put
-the full error-direction, role and overlap tables in the appendix, with one
-clear takeaway per displayed result.
-
-
-## Completed without new API calls
-
-See the [additional analysis report](../analysis/reliability_controls/REPORT.md):
-
-- All six models: AI safety researcher versus no cue, split into retention of
-  correct initial judgments and correction of initial errors, for both modes.
-- A strict 349-case Claude/GPT comparison with the same initial verdict and all
-  eight model/cue/mode branches complete.
-- Full-record versus summary changes calibrated against same-input variability,
-  using exact five-score splits of the existing ten ratings and matched
-  judgment-cluster intervals.
-
-The [failure mode analysis](../analysis/failure_modes/REPORT.md) additionally
-provides score-path classifications, conditional rates, matched case traces
-and automatically selected score-path examples from 24 cases. The existing
-classification and all five [finer analyses](../analysis/fine_grained_failures/REPORT.md)
-are complete. The report provides matched denominators, source hashes,
-judgment-cluster intervals and reproduction instructions.
-
-These analyses use existing outputs. The conversational reassessment control,
-new role cues and proposed three-turn nationality-only cues remain conditions
-to run.
+All saved-data analyses are indexed in [analysis/README.md](../analysis/README.md).
+This includes failure modes, fine-grained comparisons, threshold sensitivity,
+source checks, country-context screening and full-text CoT analysis.
+They are completed work rather than additional API experiments.
 
 ## Potential rebuttal only
 

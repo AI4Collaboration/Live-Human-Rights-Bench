@@ -1,4 +1,9 @@
-# CoT deep dive: resistance, compliance and contradictory explanations
+# Supplementary CoT score paths and examples
+
+The [full-text analysis](../full_text/README.md) is the primary report for
+reasoning length and evaluation language. Sections 2 and 3 below illustrate
+individual recorded responses; they do not estimate the prevalence of a
+reasoning pattern.
 
 Source result commit: `80ea0ff`. Offline analysis only; no model APIs.
 Reproduce with `python analysis/deepen_reasoning_analysis.py` (Python + NumPy).
@@ -74,13 +79,11 @@ compare the full templates rather than isolate a single imperative phrase.
 
 ## Interpretation and evidence boundaries
 
-The strongest combined finding is that a model can recognize unsupported
-pressure, initially resist it, and later explicitly prioritize compliance over
-accuracy. Separately, resisting perceived evaluation can preserve an initial
-error, as the existing Mitkus example shows. These are different failures and
-should not be collapsed into one measure of sycophancy or evaluation awareness.
-The traces record expressed reasoning; they do not establish a causal account
-of internal computation. No keyword hit rates are used as semantic prevalence.
+The quantitative finding is delayed reversal among conversations retaining
+an initial verdict at the first challenge. The selected examples show how
+individual explanations accompany those score paths; they do not establish
+which reasoning patterns caused the changes or how common such patterns are.
+General text-frequency claims use the full-text analysis linked above.
 
 The primary quantitative analysis here is static. Partial adaptive checkpoints
 are calculated separately in `results.json`. The source blobs, prompt pack and

@@ -66,8 +66,7 @@ of original Türkiye cases, not missing scores.
 
 Russia and Ukraine shifts are positive for both earlier GPT mini models and
 negative for GPT-5.6-sol, including after correction across nine effects.
-The follow-up replaces the US arm; it does not implement the separately planned
-UK/France control with its explicitly fixed Convention framework.
+The follow-up replaces the US destination under the existing prompt.
 
 ## UK follow-up and combined comparison
 
@@ -91,9 +90,9 @@ conditions remain separate. Pointwise intervals use 2,000 judgment-cluster
 bootstrap draws; the joint eighteen-effect family uses 20,000 draws. The
 original US comparison and the individual follow-up cohorts remain available.
 
-The UK run adds a destination under the existing prompt. The separately
-proposed UK/France experiment explicitly fixes Convention applicability and
-remains conditional; the ordinary UK grid is complete.
+The UK run adds a destination under the existing prompt. A comparison holding
+Convention applicability fixed remains [future work](NEXT_EXPERIMENTS.md#country-swap).
+No further destination grid is scheduled.
 
 ## Context check and new runs
 

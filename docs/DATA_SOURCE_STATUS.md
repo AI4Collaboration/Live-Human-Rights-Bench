@@ -1,6 +1,6 @@
 # Current and deprecated data sources
 
-Checked **21 September 2026**. Exact revisions and current input hashes are in
+Input provenance was recorded on **21 September 2026**. Exact revisions and input hashes are in
 [`configs/data_source_status.json`](../configs/data_source_status.json).
 
 ## Current inputs
@@ -48,17 +48,10 @@ external repositories.
 | `data/processed/test_20_cases.json` | An explicitly selected subset of the current dataset |
 
 Obsolete result directories, audit snapshots and archived trial programs have
-also been removed. The repository no longer distributes them as supporting
-records for the current release. The current result directories are
-`data/experiments/unified_fullcase_latest/`, `data/experiments/paraphrase/`,
-`data/experiments/syco_full_latest/` and `data/experiments/stateswap_summary/`.
-Current extensions add `data/experiments/unified_fullcase_oldmodels/`,
-`data/experiments/paraphrase_oldmodels/`, `data/experiments/stateswap_oldmodels/`
-and the separate one-turn `data/experiments/syco_nationality/` protocol. The
-Türkiye follow-up adds `data/experiments/stateswap_summary_turkey/`, with
-12,000 records and an [offline input/response audit](../analysis/stateswap_turkey/REPORT.md). Their
-[inventory and matched analysis](../analysis/model_time_windows/REPORT.md)
-record valid scores and protocol identities.
+also been removed. The [current data inventory](../data/README.md) lists all
+published primary, earlier-model, Country Swap, control and reasoning runs.
+The [analysis index](../analysis/README.md) identifies their report-specific
+cohorts and reproduction commands.
 
 The deprecated input adapters and experiment runners have been removed.
 Use the current entry points in the [README](../README.md#setup-and-execution).
@@ -66,23 +59,23 @@ New candidate corpora require source review before evaluation.
 
 ## Current Country Swap transformation
 
-The current results at revision `4b231e1` derive country arms directly from the
-canonical cohort and shared abstractive summaries, with country aliases and
-demonyms matched by `experiments/stateswap_summary_run.py`. Actual respondent
-substitutions with changed text number 998 US, 966 Russia and 832 Ukraine targets.
-The common comparison uses 800 targets from 757 judgments. All 24,000 rows have
-valid means. The [protocol and input review](STATESWAP.md) distinguish text
-changes, respondent substitutions and individual unparsed ratings.
+Country Swap derives destination arms from the canonical summaries using
+`experiments/stateswap_summary_run.py`. The current runner checks for conflicting
+country contexts and writes exclusions and input hashes before scoring.
 
-The current runner records the alias map in its run identity and saves individual
-ratings, raw responses and parse retries. Use a fresh output directory for new
-runs.
+The original US/Russia/Ukraine comparison contains 800 targets before context
+screening and 606 afterward. The combined Türkiye/UK follow-ups contain 768
+before screening and 574 afterward. These are comparison cohorts rather than
+changes to the 1,000-target v1.0 dataset. See the
+[protocol](STATESWAP.md) and [context audit](../analysis/stateswap_context/REPORT.md)
+for exact selection rules. All source results remain available.
 
 ## Pending inputs
 
 | Artifact | Status |
 | --- | --- |
 | `data/processed/paraphrase_pairs.json` | Generated inputs for the published paraphrase results pending publication |
+| Claim-level summary-coverage checkpoints | Completed locally; see the [summarization protocol](SUMMARIZATION_PROTOCOL.md) for publication status |
 
 Publish updated inputs with their exact source revision, text hashes and review
 evidence.
