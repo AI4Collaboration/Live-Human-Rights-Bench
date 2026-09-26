@@ -2,6 +2,10 @@
 
 Source commit: `80ea0ffcd8315a0af089ff0c89e2a47ceca53a25`. No model APIs are used.
 
+## Full-text CoT analysis
+
+[Full-explanation results](full_text/README.md) report availability, paired length distributions, evaluation-language frequency per explanation and per thousand words, and associations with judgment changes across all three turns. The analysis includes complete explanations without word-length truncation.
+
 ## Scope and measures
 
 These are fresh initial samples with reasoning requested, separate from the original score-only runs. Both released configurations use OpenRouter with reasoning enabled; the request does not specify a reasoning-token budget. All initial labels match the released benchmark. Source, summary and prompt-pack hashes match across the two runs. A valid score lies in [0,100]; scores below 40 or above 60 are decisive. Each cue comparison keeps the same targets with three valid scores under no cue, lawyer and AI safety researcher. Reversal means the opposite decisive verdict, with abstention separate. Correct-to-wrong and wrong-to-correct denominators contain initially correct and initially wrong targets respectively.
