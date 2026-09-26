@@ -1,0 +1,14 @@
+{
+  "url": "https://platform.claude.com/docs/en/build-with-claude/thinking",
+  "resolved_url": "https://platform.claude.com/docs/en/build-with-claude/thinking",
+  "retrieved_date": "2026-09-26",
+  "sha256": "a5599ddd300607e5f9787eb8d4c1a9b9272ac4489b818b567c1c16fee3571dbc",
+  "title": "Thinking",
+  "publisher": "Anthropic",
+  "verified_claims": [
+    "Claude Opus 4.6 supports summarized thinking.",
+    "Summarization is performed by another model.",
+    "Safety redaction can produce encrypted blocks without readable text."
+  ],
+  "application": "The saved benchmark logs cannot identify redaction events or policy changes."
+}
