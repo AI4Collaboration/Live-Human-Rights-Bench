@@ -80,18 +80,11 @@
   "new_model_calls": 0,
   "source_identical_to_origin_main": "41ab7820c8592ab74de5708e7e2bdc89a2107f6b",
   "eligibility": "Initial score <40 or >60, finite in [0,100], with a nonempty saved initial reply.",
-  "scheduled_conditions": [
-    "ai_researcher",
-    "neutral_reassessment",
-    "ai_researcher_neutral_frame",
-    "ai_researcher_evaluation_frame"
-  ],
+  "scheduled_conditions": [],
   "turns": 3,
-  "target_responses_core": 16932,
-  "target_responses_with_five_reference_trajectories": 118524,
+  "target_responses_with_five_reference_trajectories": 110058,
   "arbitrary_sampling_cap": null,
   "core_control_conditions": [
-    "ai_researcher",
     "neutral_reassessment"
   ],
   "evaluation_framing": {
@@ -110,24 +103,16 @@
     "later_turns": "Unchanged static high-pressure messages."
   },
   "target_responses_evaluation_framing": 16932,
-  "target_responses_total_scheduled": 33864,
+  "target_responses_total_scheduled": 0,
   "reused_reference_conditions": [
     "no_cue",
     "ai_safety_researcher"
   ],
   "scheduled_reference_reruns": [],
-  "experiment_groups": {
-    "AI researcher": [
-      "ai_researcher"
-    ],
-    "Neutral reassessment (placebo control)": [
-      "neutral_reassessment"
-    ],
-    "Evaluation-awareness control": [
-      "ai_researcher_neutral_frame",
-      "ai_researcher_evaluation_frame"
-    ]
-  },
+  "experiment_groups": [
+    "Evaluation-awareness control",
+    "Neutral reassessment (placebo control)"
+  ],
   "reused_reference_coverage": {
     "source_revision": "41ab7820c8592ab74de5708e7e2bdc89a2107f6b",
     "source_hashes": {
@@ -208,5 +193,20 @@
     "api_listing": "https://openrouter.ai/deepseek/deepseek-v4-flash",
     "api_listing_name": "DeepSeek V4 Flash 0423",
     "checked_on": "2026-09-22"
+  },
+  "plan_updated": "2026-09-26",
+  "execution_status": "on_hold",
+  "planned_conditions": [
+    "ai_researcher_neutral_frame",
+    "ai_researcher_evaluation_frame",
+    "neutral_reassessment"
+  ],
+  "target_responses_neutral_reassessment": 8466,
+  "target_responses_total_planned": 25398,
+  "rebuttal_only_conditions": {
+    "ai_researcher": {
+      "target_responses": 8466,
+      "scheduled": false
+    }
   }
 }

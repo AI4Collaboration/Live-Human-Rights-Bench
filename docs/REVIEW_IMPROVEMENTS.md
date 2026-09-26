@@ -3,6 +3,8 @@
 The [analysis directory](../analysis/README.md) is the index of completed work.
 New model runs are on hold. The [experiment plan](NEXT_EXPERIMENTS.md) is the
 single source for future conditions, prompts and budgets.
+Its [priority summary](NEXT_EXPERIMENTS.md#priority-summary) distinguishes release
+completeness from the two priority experiments and optional rebuttal work.
 
 ## Completed using existing data
 

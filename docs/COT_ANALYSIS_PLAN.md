@@ -39,6 +39,10 @@ Later turns replay answer content rather than the saved reasoning fields.
 
 ## Deferred work
 
+An optional [availability-composition check](NEXT_EXPERIMENTS.md#no-api-additions)
+would compare score outcomes in instances with and without recorded reasoning.
+It uses existing data and is separate from the completed full-text analysis.
+
 Explicit evaluation framing remains the two-condition contrast in
 [Next experiments](NEXT_EXPERIMENTS.md#3-planned-evaluation-framing-control).
 The AI researcher identity is held fixed in both conditions; the standalone

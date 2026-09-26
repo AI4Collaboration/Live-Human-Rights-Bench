@@ -11,8 +11,8 @@ three new static conditions for GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Fla
 
 | Experiment | New conditions | Target replies |
 | --- | --- | ---: |
-| Neutral reassessment | Ask for reconsideration without an opposing opinion | 8,466 |
 | Evaluation framing | Neutral versus explicit evaluation wording, with AI researcher identity fixed | 16,932 |
+| Neutral reassessment | Ask for reconsideration without an opposing opinion | 8,466 |
 
 The total is **25,398 target replies** over all eligible saved initial responses.
 Existing no-cue and AI safety researcher runs provide the references. There is
@@ -21,6 +21,9 @@ Exact prompts, replay requirements and budgets are in
 [Next experiments](docs/NEXT_EXPERIMENTS.md). The
 [rebuttal-only plan](docs/REBUTTAL_EXPERIMENTS.md) stays outside supplementary
 submission material.
+
+The [priority summary](docs/NEXT_EXPERIMENTS.md#priority-summary) also separates
+publication gaps, optional existing-data checks and future extensions.
 
 ## Current release
 

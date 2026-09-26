@@ -1,8 +1,50 @@
-# Next experiments
+# Potential additions and experiment plan
 
 Reviewed 26 September 2026 against the published results and runners.
 **On hold: current work uses existing data only.** This document retains the
 planned scope for a later decision; no new API runs are scheduled.
+
+## Priority summary
+
+| Priority | Addition | Why it matters | New model calls |
+| --- | --- | --- | --- |
+| Release completeness | Publish the original paraphrase inputs and claim-level summary-coverage checkpoints | Makes the reported transformations and factual-retention results reproducible | No |
+| First experiment if runs resume | Explicit evaluation framing versus neutral framing with the same AI researcher identity | Tests evaluation-related wording while holding the claimed role fixed | 16,932 target replies |
+| Second experiment in the same batch | Neutral reassessment without an opposing opinion | Measures judgment changes from another request to reconsider, without disagreement | 8,466 target replies |
+| Optional existing-data check | Compare instances with and without recorded CoT | Shows whether available explanations disproportionately represent particular score outcomes | No |
+| Rebuttal only | Standalone AI researcher cue or repeated trajectories | Answers a specific question about role wording or within-instance variation | Separate decision |
+| Future work | Nationality-only cues and coherent Country Swap with Convention applicability fixed | Extends the benchmark beyond the current comparisons | Separate decision |
+
+The two priority experiments contain the existing three conditions; this is not
+an expanded experiment grid. Run them in the same serving window if approved.
+The evaluation-framing contrast tests explicit wording, while the CoT analysis
+measures spontaneously verbalized evaluation language.
+
+## No-API additions
+
+1. **Release the actual generated paraphrases.** Recover the inputs used in the
+   published run and match their target identities and recorded hashes. New
+   generations would not reproduce those inputs.
+2. **Release the claim-level summary analysis.** Include the original claim
+   inventory, summary-support decisions, source links and the selection needed
+   to reproduce overall and Court-referenced retention. Paragraph-link human
+   annotations are already public and are a different artifact.
+3. **Optionally check CoT availability against score outcomes.** Compare the
+   retained and excluded instances by initial correctness, cue, turn and
+   reversal. The full-text report already records missingness and paired length
+   distributions; this would assess the composition of the available-text
+   cohort. Use complete recorded explanations without a word-count cutoff.
+4. **Recover historical dialogue logs if retained elsewhere.** Publish the
+   actual adaptive challenges and requests when available. Do not regenerate
+   messages and present them as the original conversations.
+
+The first two items are publication gaps. The last two are conditional
+follow-ups, not new model experiments or prerequisites for the current findings.
+See the [data inventory](../data/README.md#inputs-awaiting-publication) and
+[completed analyses](../analysis/README.md) for current artifacts.
+
+## Retained API scope
+
 The first batch uses **GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash**
 with the full v1.0 target inventory. Two experiments contain three new conditions for
 **25,398 target replies**. No cue and AI safety researcher are completed
@@ -239,7 +281,7 @@ before execution. These experiments require no new human annotation.
 | Existing no-cue and AI-safety references | 0 new | 0 |
 | Neutral reassessment | 8,466 | 0 |
 | Two evaluation-framing conditions | 16,932 | 0 |
-| Scheduled three-condition first batch | 25,398 total | 0 |
+| Planned three-condition first batch, currently on hold | 25,398 total | 0 |
 | Optional separate five-trajectory reference study | 84,660 | 0 |
 | First batch plus the optional reference study | 110,058 total | 0 |
 | Two nationality-only conditions | +16,932 | 0 |
@@ -259,6 +301,11 @@ All saved-data analyses are indexed in [analysis/README.md](../analysis/README.m
 This includes failure modes, fine-grained comparisons, threshold sensitivity,
 source checks, country-context screening and full-text CoT analysis.
 They are completed work rather than additional API experiments.
+
+The published no-cue, AI safety researcher, lawyer and seniority comparisons
+are not missing conditions. No additional generator, judge or generic-researcher
+grid is planned. Confirming challenges and applicant-identity runs are not being
+requested again; already published outputs remain in the control analysis.
 
 ## Potential rebuttal only
 
