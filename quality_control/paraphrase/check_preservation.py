@@ -213,8 +213,10 @@ def main(path, outdir):
                 "chunk_tail_recall": None if tail_recall is None else round(tail_recall, 4),
                 "output_tokens_o200k": tokens,
                 "tail_lost": tail_recall is not None and tail_recall < 0.5,
-                # One oversized chunk in, output stopping mid-sentence: cut at the cap.
+                # One oversized chunk in, output stopping mid-sentence: cut at the cap. A source
+                # cut mid-sentence at MAX_CHARS ends mid-sentence too, faithfully, so it is excluded.
                 "end_cut": (len(parts) == 1 and max_chunk > OVERSIZED_CHUNK
+                            and src.rstrip()[-1:] in SENTENCE_END
                             and dst.rstrip()[-1:] not in SENTENCE_END),
             }
             per_row.append(row)

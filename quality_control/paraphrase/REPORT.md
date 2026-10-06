@@ -37,7 +37,9 @@ a chunk over 12,000 characters. Two signals mark a cut:
   chunk never fall below 0.5 on the same measure taken over the last 20% of the
   source (731 targets with at least three such numbers).
 * `end_cut`: a single oversized chunk whose paraphrase stops mid-sentence ("...
-  the Code of Criminal Procedure provides that").
+  the Code of Criminal Procedure provides that"), when the source itself ends a
+  sentence. A source cut mid-sentence at 50,000 characters is rendered faithfully
+  as a paraphrase that also stops mid-sentence, and is not flagged.
 
 26 targets (25 judgments) carry at least one signal: 26 in `light`, 23 in
 `medium`, 22 in `heavy`. They are listed under `truncated` in `summary.json`. 19
@@ -49,9 +51,8 @@ passage. `001-213901` is flagged inside its text, only in `light` and on three
 numbers. The cut single-chunk paraphrases measure 3,700-3,960 tokens by
 `o200k_base`, which is the cap as counted by a different tokenizer.
 
-For these targets the accuracy change mixes rewording with missing facts. The
-options are to exclude them from the paraphrase analysis and say so, or to
-regenerate them with chunks split on sentences.
+For these targets the accuracy change mixes rewording with missing facts. They
+have been regenerated; see [Regenerated cut targets](#regenerated-cut-targets).
 
 ## Results
 
@@ -165,6 +166,45 @@ appended table"). The rest are present, or misread at extraction.
 Taken together, rearranged facts are at most 0.2% of claims (131 of 66,369, of
 which most are noise) and dropped facts at most 0.1%, both under the verifier's
 own noise. The one material loss in the paraphrase arm is the 26 cut targets.
+
+## Regenerated cut targets
+
+`chunks()` in `experiments/paraphrase_run.py` now splits any line longer than
+3,000 characters on sentence ends, cutting at a space only inside a sentence that
+is itself longer. No chunk exceeds about 3,000 characters, far below the cap.
+Text whose lines all fit chunks exactly as before (307 of the 1,000 sources);
+the other 693 have at least one line over 3,000 characters, which the old code
+sent whole and which fit the cap unless it ran past about 12,000. Re-joined
+chunks equal the source up to whitespace for all 1,000.
+
+[`regenerate_cut.py`](regenerate_cut.py) rewrote the 26 cut targets at all three
+strengths with the generator's own `paraphrase_text()`, same model
+(`openai/gpt-5.6-sol`) and instructions; only the chunking differs. The result is
+[`data/processed/paraphrase_texts_regen_cut.jsonl.gz`](../../data/processed/paraphrase_texts_regen_cut.jsonl.gz),
+104 rows in the schema of `paraphrase_texts.jsonl.gz`, original rows included. It
+cost about $6.5. The main file is unchanged: the model evaluation of these 26
+targets has to be rerun before the rows are swapped in.
+
+Both checks were rerun ([`regen/`](regen/)):
+
+* **Numbers**, on the full set with the 26 replaced
+  ([`regen/numbers/`](regen/numbers/), built with
+  [`regen/merge_texts.py`](regen/merge_texts.py)): no target is flagged as cut.
+  The 26 now keep 95-101% of the source length (median 0.98-0.99), dates 0.996-0.999
+  and salient numbers 0.98.
+* **Claims**, on the same claims as before ([`regen/claims/`](regen/claims/),
+  seeded from the full run with [`regen/seed_claims.py`](regen/seed_claims.py), so
+  only the new paraphrases were verified, $1.63):
+
+| retention, 26 targets | light | medium | heavy |
+| --- | --- | --- | --- |
+| before | 0.905 [0.854, 0.944] | 0.914 [0.864, 0.952] | 0.899 [0.843, 0.945] |
+| after | 0.991 [0.977, 1.000] | 0.993 [0.985, 1.000] | 0.995 [0.990, 0.999] |
+| 974 targets never cut | 0.995 | 0.993 | 0.992 |
+
+`heavy` now keeps 0.99-1.00 of claims at every position in the source, against
+0.66 in the last fifth before. The regenerated targets are indistinguishable from
+the rest on both checks.
 
 ## Not covered
 

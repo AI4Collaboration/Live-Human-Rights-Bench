@@ -8,7 +8,7 @@ Two stages:
             same full-case prompt used elsewhere. Checkpointed per (model, case, arm).
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, sys, threading, time, urllib.request
+import argparse, hashlib, json, os, re, sys, threading, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -53,12 +53,41 @@ def call(model, messages, k, max_tokens=4000):
             time.sleep(2 * (attempt + 1))
 
 
+def sentences(line, size):
+    """Split one over-long line into pieces of at most `size` characters at sentence ends.
+
+    Many sources have no line breaks at all, so splitting on lines alone sent the whole
+    record as one chunk and its rewrite stopped at the 4,000-token output cap
+    (quality_control/paraphrase/REPORT.md). A sentence longer than `size` is cut at a space.
+    """
+    pieces, cur = [], ""
+    for sent in re.split(r"(?<=[.!?\u201d])\s+", line):
+        while len(sent) > size:
+            cut = sent.rfind(" ", 0, size)
+            cut = cut if cut > 0 else size
+            if cur:
+                pieces.append(cur); cur = ""
+            pieces.append(sent[:cut]); sent = sent[cut:].lstrip()
+        if cur and len(cur) + 1 + len(sent) > size:
+            pieces.append(cur); cur = ""
+        cur = f"{cur} {sent}" if cur else sent
+    if cur:
+        pieces.append(cur)
+    return pieces
+
+
 def chunks(text, size=3000):
+    """Chunks of about `size` characters on line breaks; over-long lines split on sentences.
+
+    Text whose lines all fit within `size` chunks exactly as before.
+    """
     parts, cur = [], ""
     for para in text.split("\n"):
-        if len(cur) + len(para) > size and cur:
-            parts.append(cur); cur = ""
-        cur += para + "\n"
+        pieces = [para] if len(para) <= size else sentences(para, size)
+        for j, piece in enumerate(pieces):
+            if len(cur) + len(piece) > size and cur:
+                parts.append(cur); cur = ""
+            cur += piece + ("\n" if j == len(pieces) - 1 else " ")
     if cur.strip():
         parts.append(cur)
     return parts
