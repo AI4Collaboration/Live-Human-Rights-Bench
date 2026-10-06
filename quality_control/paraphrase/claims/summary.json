@@ -1,0 +1,409 @@
+{
+  "config": {
+    "model": "qwen/qwen3-235b-a22b",
+    "per_judgment": 16,
+    "max_claims": 6,
+    "batch": 40,
+    "max_source_chars": 50000,
+    "texts": "paraphrase_texts.jsonl.gz",
+    "protocol": "paraphrase-claims-v1"
+  },
+  "judgments": 947,
+  "targets": 1000,
+  "claim_target_pairs": 69106,
+  "unverified_verdicts": 0,
+  "claims_per_target_median": 78.0,
+  "all": {
+    "supported_raw": {
+      "original": {
+        "mean": 0.9919,
+        "lo": 0.9909,
+        "hi": 0.9928,
+        "targets": 1000
+      },
+      "light": {
+        "mean": 0.9883,
+        "lo": 0.9863,
+        "hi": 0.99,
+        "targets": 1000
+      },
+      "medium": {
+        "mean": 0.987,
+        "lo": 0.985,
+        "hi": 0.9887,
+        "targets": 1000
+      },
+      "heavy": {
+        "mean": 0.9857,
+        "lo": 0.9834,
+        "hi": 0.9878,
+        "targets": 1000
+      }
+    },
+    "retention_given_original": {
+      "light": {
+        "mean": 0.9925,
+        "lo": 0.9906,
+        "hi": 0.9941,
+        "targets": 1000
+      },
+      "medium": {
+        "mean": 0.9913,
+        "lo": 0.9894,
+        "hi": 0.9928,
+        "targets": 1000
+      },
+      "heavy": {
+        "mean": 0.9897,
+        "lo": 0.9874,
+        "hi": 0.9915,
+        "targets": 1000
+      }
+    },
+    "retention_given_original_adjusted": {
+      "light": {
+        "mean": 0.9963,
+        "lo": 0.995,
+        "hi": 0.9973,
+        "targets": 1000
+      },
+      "medium": {
+        "mean": 0.9952,
+        "lo": 0.9936,
+        "hi": 0.9965,
+        "targets": 1000
+      },
+      "heavy": {
+        "mean": 0.9944,
+        "lo": 0.9926,
+        "hi": 0.9958,
+        "targets": 1000
+      }
+    }
+  },
+  "without_truncated": {
+    "supported_raw": {
+      "original": {
+        "mean": 0.992,
+        "lo": 0.991,
+        "hi": 0.9929,
+        "targets": 974
+      },
+      "light": {
+        "mean": 0.9906,
+        "lo": 0.9896,
+        "hi": 0.9917,
+        "targets": 974
+      },
+      "medium": {
+        "mean": 0.9891,
+        "lo": 0.9878,
+        "hi": 0.9903,
+        "targets": 974
+      },
+      "heavy": {
+        "mean": 0.9881,
+        "lo": 0.9866,
+        "hi": 0.9896,
+        "targets": 974
+      }
+    },
+    "retention_given_original": {
+      "light": {
+        "mean": 0.9949,
+        "lo": 0.994,
+        "hi": 0.9957,
+        "targets": 974
+      },
+      "medium": {
+        "mean": 0.9933,
+        "lo": 0.9923,
+        "hi": 0.9943,
+        "targets": 974
+      },
+      "heavy": {
+        "mean": 0.9921,
+        "lo": 0.9907,
+        "hi": 0.9934,
+        "targets": 974
+      }
+    },
+    "retention_given_original_adjusted": {
+      "light": {
+        "mean": 0.998,
+        "lo": 0.9975,
+        "hi": 0.9984,
+        "targets": 974
+      },
+      "medium": {
+        "mean": 0.997,
+        "lo": 0.9963,
+        "hi": 0.9977,
+        "targets": 974
+      },
+      "heavy": {
+        "mean": 0.9963,
+        "lo": 0.9953,
+        "hi": 0.9972,
+        "targets": 974
+      }
+    }
+  },
+  "truncated_only": {
+    "supported_raw": {
+      "original": {
+        "mean": 0.9889,
+        "lo": 0.9814,
+        "hi": 0.9946,
+        "targets": 26
+      },
+      "light": {
+        "mean": 0.9016,
+        "lo": 0.852,
+        "hi": 0.9409,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9101,
+        "lo": 0.8601,
+        "hi": 0.9472,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.8965,
+        "lo": 0.8401,
+        "hi": 0.9419,
+        "targets": 26
+      }
+    },
+    "retention_given_original": {
+      "light": {
+        "mean": 0.9047,
+        "lo": 0.8543,
+        "hi": 0.9437,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9144,
+        "lo": 0.8637,
+        "hi": 0.9516,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.8995,
+        "lo": 0.8428,
+        "hi": 0.9451,
+        "targets": 26
+      }
+    },
+    "retention_given_original_adjusted": {
+      "light": {
+        "mean": 0.9326,
+        "lo": 0.8955,
+        "hi": 0.963,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9275,
+        "lo": 0.8787,
+        "hi": 0.9638,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9235,
+        "lo": 0.8755,
+        "hi": 0.9599,
+        "targets": 26
+      }
+    }
+  },
+  "heavy_retention_by_position": {
+    "clean": {
+      "0-20%": 0.9949,
+      "20-40%": 0.9919,
+      "40-60%": 0.9913,
+      "60-80%": 0.9931,
+      "80-100%": 0.9926
+    },
+    "truncated": {
+      "0-20%": 0.9843,
+      "20-40%": 0.9885,
+      "40-60%": 0.9288,
+      "60-80%": 0.7949,
+      "80-100%": 0.6634
+    }
+  },
+  "lost_claims_by_label": {
+    "clean/heavy": {
+      "absent": 69,
+      "altered": 131,
+      "present": 271,
+      "total": 471
+    },
+    "clean/light": {
+      "absent": 39,
+      "altered": 111,
+      "present": 197,
+      "total": 347
+    },
+    "clean/medium": {
+      "absent": 50,
+      "altered": 130,
+      "present": 238,
+      "total": 418
+    },
+    "truncated/heavy": {
+      "absent": 151,
+      "altered": 22,
+      "present": 53,
+      "total": 226
+    },
+    "truncated/light": {
+      "absent": 131,
+      "altered": 21,
+      "present": 63,
+      "total": 215
+    },
+    "truncated/medium": {
+      "absent": 151,
+      "altered": 12,
+      "present": 28,
+      "total": 191
+    }
+  },
+  "examples_altered_in_heavy": [
+    "The Slovyansk Court issued a final decision on 14/12/2001 for application 47120/12.",
+    "The section titled 'THE FACTS' includes a subsection labeled 'I. THE CIRCUMSTANCES OF THE CASE'.",
+    "The applicant and N.B. signed an affidavit on 24 July 2003.",
+    "The invitation required payment of court expenses.",
+    "The public prosecutor issued a decision not to prosecute without providing reasoning and relied solely on gendarmerie officers' statements.",
+    "The appeal was upheld for the same reasons as the dismissal of the petition.",
+    "The applicant was the recipient of the invitation.",
+    "The applicant alleged health problems.",
+    "C and D denied that C had been ill-treated during the incident.",
+    "The list and details are set out in an appended table.",
+    "Prosecutor G.B. instituted criminal proceedings against the applicant.",
+    "The applicant received no medical treatment between 20 January 2012 and 9 January 2013.",
+    "The applicant was placed in detention.",
+    "The Assize Court's judgment did not include reasons.",
+    "The court in Charalambous decided Law no. 112(I)/2012 is not a tax law.",
+    "The Lisbon Ministerial Conference occurred in 2003.",
+    "The applicant requested information about his children's situation in February 2013.",
+    "The sill of the window was 90 cm above the ground.",
+    "The complaint was described as 'fresh' when lodged.",
+    "The case includes a section titled 'I. THE CIRCUMSTANCES OF THE CASE'.",
+    "The applicants were born in 1972.",
+    "The CJEU may specify a lump sum payment to be paid by the Member State.",
+    "The prosecutor issued a confiscation order on 27 June 2012.",
+    "An appeal numbered 129/2021 was upheld.",
+    "The applications were lodged on various dates."
+  ],
+  "swap_control": {
+    "claims": 300,
+    "accepted_as_supported": 0.1467
+  },
+  "examples_lost_in_heavy": [
+    "The plot of land was occupied by a national park.",
+    "The Croatian National Bank proposed the Decision on recovery and restructuring of Croatia Bank on 18 June 1999.",
+    "The prison governor requested to renew the applicant’s right to correspondence for a further three months.",
+    "The case was heard at first instance before the courts.",
+    "Company S brought judicial proceedings before the Chișinău Court of Appeal.",
+    "The applicant's health problems constantly deteriorated.",
+    "The report on the thirty-seventh and thirty-eighth sessions was published in 2007.",
+    "Aleksey Nikolayevich IVANOV was born on 27/03/1953 in Selydove.",
+    "The applicant appealed the scope of the discovery order dated 5 August 2003.",
+    "Article 215 is titled 'Police power to stop'.",
+    "No other funds were provided by B. to pay the debt of LIT 9,900,000,000 to bank S.",
+    "The Dubno Town Court quashed a decision as unfounded.",
+    "Nearby districts were also affected.",
+    "The medical commission reported that the applicant's sick leave from 27 October 2011 could not be granted.",
+    "The prosecution stated that Gregoris Souroullas had parked the money in Polleson’s account.",
+    "S.’s brothers persuaded the applicant to open the door.",
+    "Subsection (b) refers to Schedule 21.",
+    "A fresh reconstruction of the events was conducted.",
+    "The Joint Council for the Mentally Disabled recommended the sanction to be imposed on the perpetrator, including the type of institution for placement.",
+    "The lawyer's submission remedied the initial lack of representation.",
+    "The applicant company did not have an effective domestic remedy available.",
+    "The CJEU may specify a penalty payment to be paid by the Member State.",
+    "The request for a preliminary ruling was made in 2007.",
+    "The cases Mushegh Saghatelyan and Myasnik Malkhasyan were cited with paragraphs 125-134 and 50-57 respectively.",
+    "The applicants were removed from Sweden to Albania."
+  ],
+  "swap_examples": [
+    {
+      "claim": "The applicant had disagreements with the German national in Germany.",
+      "swapped": "The German national had disagreements with the applicant in Greece.",
+      "supported": false
+    },
+    {
+      "claim": "The applicant was arrested.",
+      "swapped": "The German national was arrested.",
+      "supported": false
+    },
+    {
+      "claim": "The applicant did not raise a complaint about the interpretation service at the moment of his arrest.",
+      "swapped": "The applicant did not raise a complaint about the interpretation service at the moment of his conviction.",
+      "supported": true
+    },
+    {
+      "claim": "The applicant was convicted.",
+      "swapped": "The German national was convicted.",
+      "supported": false
+    },
+    {
+      "claim": "The Ioannina First Instance Prosecutor prosecuted the applicant.",
+      "swapped": "The applicant prosecuted the Ioannina First Instance Prosecutor.",
+      "supported": false
+    },
+    {
+      "claim": "The applicant filed an appeal against a decision.",
+      "swapped": "The respondent filed an appeal against a decision.",
+      "supported": false
+    },
+    {
+      "claim": "The applicant's name is Mr. Toby Nigel Ball.",
+      "swapped": "The respondent's name is Mr. Toby Nigel Ball.",
+      "supported": false
+    },
+    {
+      "claim": "The applicant sought to have the requirement of psychological treatment removed.",
+      "swapped": "The respondent sought to have the requirement of psychological treatment removed.",
+      "supported": false
+    },
+    {
+      "claim": "The contact schedule from the 13 June 2005 judgment was provisionally suspended.",
+      "swapped": "The contact schedule from the 31 March 2004 judgment was provisionally suspended.",
+      "supported": false
+    },
+    {
+      "claim": "The date of the applicant's departure was 31 March 2004.",
+      "swapped": "The date of the applicant's departure was 13 June 2005.",
+      "supported": false
+    },
+    {
+      "claim": "Request asked Court to indicate to the Government",
+      "swapped": "Court asked Request to indicate to the Government",
+      "supported": true
+    },
+    {
+      "claim": "The applicant did not have chronic or temporary psychiatric diseases or dementia.",
+      "swapped": "The Government did not have chronic or temporary psychiatric diseases or dementia",
+      "supported": false
+    },
+    {
+      "claim": "The applicant’s depression and personality disorder signs had disappeared by 3 June 2009.",
+      "swapped": "The applicant’s depression and personality disorder signs had disappeared by 28 December 2007",
+      "supported": false
+    },
+    {
+      "claim": "The applicant's capacity to understand the wrongfulness of his actions was not impaired.",
+      "swapped": "The Government's capacity to understand the wrongfulness of his actions was not impaired",
+      "supported": false
+    },
+    {
+      "claim": "The criminal enquiry was closed by a prosecutorial decision on 28 December 2007.",
+      "swapped": "The criminal enquiry was closed by a prosecutorial decision on 3 June 2009",
+      "supported": false
+    }
+  ]
+}

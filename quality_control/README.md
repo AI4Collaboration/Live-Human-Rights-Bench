@@ -25,4 +25,5 @@ the protocol document.
 | Fact preservation (numbers, dates, application numbers, names) | [paraphrase/REPORT.md](paraphrase/REPORT.md) |
 | Per-target results | [paraphrase/per_row.csv](paraphrase/per_row.csv), [paraphrase/summary.json](paraphrase/summary.json) |
 | Script | [paraphrase/check_preservation.py](paraphrase/check_preservation.py) |
+| Claim-level retention (relations, facts without numbers) | [paraphrase/REPORT.md](paraphrase/REPORT.md#claim-level-check), [paraphrase/claims/](paraphrase/claims/) |
 | Generator-exclusion check | [analysis/generator_exclusion/paraphrase_strength.csv](../analysis/generator_exclusion/paraphrase_strength.csv) |

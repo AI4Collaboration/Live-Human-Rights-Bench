@@ -8,7 +8,7 @@ Input: [`data/processed/paraphrase_texts.jsonl.gz`](../../data/processed/paraphr
 3,000 characters split on line breaks, with `max_tokens=4000` per chunk, so every
 check here compares a paraphrase with that same 50,000-character prefix.
 
-The check is deterministic and makes no model calls:
+The number check is deterministic and makes no model calls:
 
 ```bash
 python quality_control/paraphrase/check_preservation.py \
@@ -94,9 +94,82 @@ than `heavy` on dates and on numbers counted with repeats.
 * **Instruction**: only `heavy` asks to "keep every fact and number"; `medium` asks
   to "keep all facts"; `light` says nothing about facts.
 
+## Claim-level check
+
+The number check cannot see a fact without a number or a name, or a fact whose
+parts survive in the wrong arrangement. [`claim_coverage.py`](claim_coverage.py)
+covers both, using the summary arm's method (`experiments/atomic.py`):
+
+1. Atomic claims are extracted from the source, from up to 16 numbered paragraphs
+   per judgment chosen at random inside the 50,000-character prefix (at most 6
+   claims per paragraph, as for summaries).
+2. Each claim is checked against each paraphrase by a verifier that never sees
+   the source. The prompt says a claim with its actor, object, date, figure or
+   outcome rearranged is not supported.
+3. Every claim the original supports but a paraphrase does not gets a second
+   look: `absent` (the event is not reported), `altered` (reported with a part
+   changed) or `present` (a verifier miss).
+
+Extractor and verifier are `qwen/qwen3-235b-a22b`, the model of the summary
+claim check, called the same way (default reasoning, temperature 0) through
+OpenRouter. It is not the paraphraser. The run covers 947 judgments, 1,000
+targets and 69,106 claim-target pairs, with a median of 78 claims per target and
+no unverified batch. It cost $94.51 including a 20-judgment pilot.
+
+```bash
+python quality_control/paraphrase/claim_coverage.py \
+    --model qwen/qwen3-235b-a22b --api-key-env OPENROUTER_API_KEY --out <run dir>
+python quality_control/paraphrase/claim_report.py --run quality_control/paraphrase/claims \
+    --out quality_control/paraphrase/claims/summary.json \
+    --per-target quality_control/paraphrase/claims/per_target.csv
+```
+
+[`claims/claims.jsonl.gz`](claims/claims.jsonl.gz) holds every claim and verdict,
+[`claims/per_target.csv`](claims/per_target.csv) one row per target and
+[`claims/summary.json`](claims/summary.json) the aggregates below.
+
+### Results
+
+Retention is the share of claims the verifier finds in the original that it
+still finds in the paraphrase, averaged per target. Brackets are 95% intervals
+from a bootstrap over targets.
+
+| | light | medium | heavy |
+| --- | --- | --- | --- |
+| 974 targets, not cut | 0.995 [0.994, 0.996] | 0.993 [0.992, 0.994] | 0.992 [0.991, 0.993] |
+| same, verifier misses credited | 0.998 | 0.997 | 0.996 |
+| 26 cut targets | 0.905 [0.854, 0.944] | 0.914 [0.864, 0.952] | 0.900 [0.843, 0.945] |
+
+The verifier finds 99.2% of the claims in the original text itself, which sets
+its noise floor. Retention falls slightly with rewrite strength, which the
+number check did not show.
+
+**Controls.** The cut targets serve as a known-bad case. On them, `heavy` keeps
+0.98-0.99 of claims from the first 40% of the source, 0.79 at 60-80% and 0.66 in
+the last fifth. On the other targets it keeps 0.99 at every position. A second
+control rewrote 300 claims with roles or attributes swapped and checked them
+against the original. The verifier accepted 14.7%, so it catches about 85% of
+rearranged facts.
+
+**What the losses are.** In the 974 targets that were not cut, `heavy` loses 471 of
+66,369 claims: 271 `present`, 131 `altered`, 69 `absent`. `light` and `medium` show
+the same pattern (347 and 418 losses). Read against the texts, the labels
+overstate real changes. In 20 sampled `altered` claims, about two are genuine.
+Both sit in tables of sources without line breaks, where the source glues a
+cell number to a date (`25007/06/06` for cell 250 from 7 June 2006) and the
+paraphrase splits it wrongly (cell 500). The rest are claims the extractor
+misread from the source, or wording the verifier did not match. In 10 sampled
+`absent` claims, one is a real omission ("on the various dates indicated in the
+appended table"). The rest are present, or misread at extraction.
+
+Taken together, rearranged facts are at most 0.2% of claims (131 of 66,369, of
+which most are noise) and dropped facts at most 0.1%, both under the verifier's
+own noise. The one material loss in the paraphrase arm is the 26 cut targets.
+
 ## Not covered
 
-This is a surface check. Reworded facts with the same numbers, changed relations
-("the applicant" and "the officer" swapped) and dropped sentences without numbers
-or names are not detected. A claim-level check like the one for summaries
-(`scripts/build_atomic_coverage.py`) would cover them.
+Claims come from at most 16 paragraphs per judgment, so a loss confined to an
+unsampled paragraph is missed in that target. The claim check estimates rates
+across targets; it does not certify any single paraphrase. The manual reading
+covers 30 labelled claims, enough to show the labels overstate real changes, not
+to estimate the real rate precisely.
