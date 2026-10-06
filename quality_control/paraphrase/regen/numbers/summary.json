@@ -1,146 +1,146 @@
 {
-  "input": "paraphrase_texts.jsonl.gz",
+  "input": "merged.jsonl.gz",
   "rows": 4000,
   "targets": 1000,
   "incomplete_targets": 0,
   "max_source_chars": 50000,
   "by_condition": {
     "light": {
-      "len_ratio_median": 0.9874,
+      "len_ratio_median": 0.988,
       "application_numbers": {
         "n": 1000,
-        "mean": 0.9919,
+        "mean": 0.9993,
         "median": 1.0,
-        "share_perfect": 0.985
+        "share_perfect": 0.998
       },
       "dates_distinct": {
         "n": 1000,
-        "mean": 0.9931,
+        "mean": 0.9992,
         "median": 1.0,
-        "share_perfect": 0.959
+        "share_perfect": 0.98
       },
       "salient_numbers": {
         "n": 973,
-        "mean": 0.9839,
+        "mean": 0.9948,
         "median": 1.0,
-        "share_perfect": 0.9044
+        "share_perfect": 0.9219
       },
       "salient_numbers_distinct": {
         "n": 973,
-        "mean": 0.9838,
+        "mean": 0.9947,
         "median": 1.0,
-        "share_perfect": 0.9281
+        "share_perfect": 0.9455
       },
       "all_numbers": {
         "n": 1000,
-        "mean": 0.9317,
+        "mean": 0.9378,
         "median": 1.0,
         "share_perfect": 0.535
       },
       "proper_names_distinct": {
         "n": 1000,
-        "mean": 0.9789,
-        "median": 0.9891,
-        "share_perfect": 0.461
+        "mean": 0.9824,
+        "median": 0.9897,
+        "share_perfect": 0.467
       },
       "share_with_added_salient_number": 0.035,
-      "share_new_verdict_terms": 0.059,
+      "share_new_verdict_terms": 0.062,
       "oversized_chunk_targets": 104,
-      "tail_lost_targets": 21,
-      "end_cut_targets": 21,
-      "truncated_targets": 26,
+      "tail_lost_targets": 0,
+      "end_cut_targets": 0,
+      "truncated_targets": 0,
       "share_preamble_or_refusal": 0.0
     },
     "medium": {
-      "len_ratio_median": 0.9808,
+      "len_ratio_median": 0.9814,
       "application_numbers": {
         "n": 1000,
-        "mean": 0.9915,
+        "mean": 0.9989,
         "median": 1.0,
-        "share_perfect": 0.981
+        "share_perfect": 0.994
       },
       "dates_distinct": {
         "n": 1000,
-        "mean": 0.9902,
+        "mean": 0.9952,
         "median": 1.0,
-        "share_perfect": 0.875
+        "share_perfect": 0.893
       },
       "salient_numbers": {
         "n": 973,
-        "mean": 0.9776,
+        "mean": 0.9874,
         "median": 1.0,
-        "share_perfect": 0.7616
+        "share_perfect": 0.776
       },
       "salient_numbers_distinct": {
         "n": 973,
-        "mean": 0.9826,
+        "mean": 0.9925,
         "median": 1.0,
-        "share_perfect": 0.8972
+        "share_perfect": 0.9147
       },
       "all_numbers": {
         "n": 1000,
-        "mean": 0.9118,
+        "mean": 0.9172,
         "median": 0.9792,
         "share_perfect": 0.296
       },
       "proper_names_distinct": {
         "n": 1000,
-        "mean": 0.9431,
-        "median": 0.963,
-        "share_perfect": 0.193
+        "mean": 0.9466,
+        "median": 0.9637,
+        "share_perfect": 0.197
       },
-      "share_with_added_salient_number": 0.1,
-      "share_new_verdict_terms": 0.08,
+      "share_with_added_salient_number": 0.099,
+      "share_new_verdict_terms": 0.083,
       "oversized_chunk_targets": 104,
-      "tail_lost_targets": 19,
-      "end_cut_targets": 16,
-      "truncated_targets": 23,
+      "tail_lost_targets": 0,
+      "end_cut_targets": 0,
+      "truncated_targets": 0,
       "share_preamble_or_refusal": 0.001
     },
     "heavy": {
-      "len_ratio_median": 0.9852,
+      "len_ratio_median": 0.9859,
       "application_numbers": {
         "n": 1000,
-        "mean": 0.9926,
+        "mean": 1.0,
         "median": 1.0,
-        "share_perfect": 0.986
+        "share_perfect": 0.999
       },
       "dates_distinct": {
         "n": 1000,
-        "mean": 0.9941,
+        "mean": 0.9994,
         "median": 1.0,
-        "share_perfect": 0.964
+        "share_perfect": 0.984
       },
       "salient_numbers": {
         "n": 973,
-        "mean": 0.9833,
+        "mean": 0.9934,
         "median": 1.0,
-        "share_perfect": 0.8469
+        "share_perfect": 0.8633
       },
       "salient_numbers_distinct": {
         "n": 973,
-        "mean": 0.9855,
+        "mean": 0.9957,
         "median": 1.0,
-        "share_perfect": 0.9342
+        "share_perfect": 0.9507
       },
       "all_numbers": {
         "n": 1000,
-        "mean": 0.9226,
-        "median": 0.9879,
-        "share_perfect": 0.397
+        "mean": 0.9283,
+        "median": 0.988,
+        "share_perfect": 0.398
       },
       "proper_names_distinct": {
         "n": 1000,
-        "mean": 0.9389,
-        "median": 0.9583,
-        "share_perfect": 0.185
+        "mean": 0.9416,
+        "median": 0.9592,
+        "share_perfect": 0.189
       },
-      "share_with_added_salient_number": 0.068,
-      "share_new_verdict_terms": 0.107,
+      "share_with_added_salient_number": 0.067,
+      "share_new_verdict_terms": 0.11,
       "oversized_chunk_targets": 104,
-      "tail_lost_targets": 19,
-      "end_cut_targets": 17,
-      "truncated_targets": 22,
+      "tail_lost_targets": 0,
+      "end_cut_targets": 0,
+      "truncated_targets": 0,
       "share_preamble_or_refusal": 0.0
     }
   },
@@ -218,16 +218,7 @@
         "item_id": "001-117134",
         "article": "34",
         "lost": [
-          "115",
-          "140",
-          "186",
-          "1993",
-          "2005",
-          "2007",
-          "4.3",
-          "607",
-          "7.43",
-          "850"
+          "7.43"
         ],
         "added": []
       },
@@ -260,16 +251,6 @@
         "added": []
       },
       {
-        "item_id": "001-122187",
-        "article": "5",
-        "lost": [
-          "104",
-          "110",
-          "2012-11-20"
-        ],
-        "added": []
-      },
-      {
         "item_id": "001-122434",
         "article": "P1-1",
         "lost": [
@@ -288,19 +269,18 @@
         "added": []
       },
       {
-        "item_id": "001-127399",
-        "article": "3",
+        "item_id": "001-140782",
+        "article": "13",
         "lost": [
-          "2.5",
-          "2003",
-          "2000-09-07",
-          "2000-11-22",
-          "2001-05-18",
-          "2003-11-06",
-          "2005-05-20",
-          "2005-06-15",
-          "2008-06-12",
-          "2012-05-15"
+          "2010"
+        ],
+        "added": []
+      },
+      {
+        "item_id": "001-142083",
+        "article": "13",
+        "lost": [
+          "2004-04-09"
         ],
         "added": []
       }
@@ -528,16 +508,7 @@
         "item_id": "001-117134",
         "article": "34",
         "lost": [
-          "140",
-          "186",
-          "1993",
-          "2005",
-          "2007",
-          "4.3",
-          "607",
-          "7.43",
-          "2000-01-18",
-          "2005-11-15"
+          "7.43"
         ],
         "added": []
       },
@@ -562,47 +533,6 @@
         ]
       },
       {
-        "item_id": "001-122187",
-        "article": "5",
-        "lost": [
-          "104",
-          "110",
-          "2012-11-20"
-        ],
-        "added": []
-      },
-      {
-        "item_id": "001-127399",
-        "article": "3",
-        "lost": [
-          "2.5",
-          "2003",
-          "2003-11-06",
-          "2005-05-20",
-          "2005-06-15",
-          "2008-06-12",
-          "2012-05-15"
-        ],
-        "added": []
-      },
-      {
-        "item_id": "001-127809",
-        "article": "34",
-        "lost": [
-          "177",
-          "183",
-          "1960",
-          "1992",
-          "1996",
-          "2003",
-          "2004",
-          "2005",
-          "311",
-          "2002-12-28"
-        ],
-        "added": []
-      },
-      {
         "item_id": "001-142082",
         "article": "13",
         "lost": [
@@ -617,82 +547,38 @@
           "2004-04-09"
         ],
         "added": []
+      },
+      {
+        "item_id": "001-142515",
+        "article": "6",
+        "lost": [
+          "2.296"
+        ],
+        "added": []
+      },
+      {
+        "item_id": "001-145018",
+        "article": "3",
+        "lost": [
+          "20.12",
+          "20.13",
+          "2012",
+          "2012-12-19"
+        ],
+        "added": []
+      },
+      {
+        "item_id": "001-145466",
+        "article": "14",
+        "lost": [
+          "2646"
+        ],
+        "added": []
       }
     ]
   },
   "token_counts": "o200k_base",
-  "tail_lost": [
-    "001-117134|34",
-    "001-127399|3",
-    "001-127809|34",
-    "001-156073|34",
-    "001-163911|34",
-    "001-165951|3",
-    "001-169210|34",
-    "001-181210|10",
-    "001-181877|5",
-    "001-190025|13",
-    "001-194188|18",
-    "001-198485|34",
-    "001-202750|34",
-    "001-202750|5",
-    "001-203559|13",
-    "001-203931|8",
-    "001-206511|2",
-    "001-212897|7",
-    "001-213901|6",
-    "001-219194|10",
-    "001-222138|8"
-  ],
-  "end_cut": [
-    "001-117134|34",
-    "001-119465|34",
-    "001-122187|5",
-    "001-127399|3",
-    "001-127809|34",
-    "001-156073|34",
-    "001-163909|3",
-    "001-163911|34",
-    "001-169210|34",
-    "001-177228|8",
-    "001-181210|10",
-    "001-181877|5",
-    "001-190025|13",
-    "001-198485|34",
-    "001-202750|34",
-    "001-202750|5",
-    "001-203931|8",
-    "001-205797|3",
-    "001-206511|2",
-    "001-212897|7",
-    "001-222138|8"
-  ],
-  "truncated": [
-    "001-117134|34",
-    "001-119465|34",
-    "001-122187|5",
-    "001-127399|3",
-    "001-127809|34",
-    "001-156073|34",
-    "001-163909|3",
-    "001-163911|34",
-    "001-165951|3",
-    "001-169210|34",
-    "001-177228|8",
-    "001-181210|10",
-    "001-181877|5",
-    "001-190025|13",
-    "001-194188|18",
-    "001-198485|34",
-    "001-202750|34",
-    "001-202750|5",
-    "001-203559|13",
-    "001-203931|8",
-    "001-205797|3",
-    "001-206511|2",
-    "001-212897|7",
-    "001-213901|6",
-    "001-219194|10",
-    "001-222138|8"
-  ]
+  "tail_lost": [],
+  "end_cut": [],
+  "truncated": []
 }

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3-235b-a22b",
+  "per_judgment": 16,
+  "max_claims": 6,
+  "batch": 40,
+  "max_source_chars": 50000,
+  "texts": "paraphrase_texts_regen_subset.jsonl.gz",
+  "protocol": "paraphrase-claims-v1"
+}

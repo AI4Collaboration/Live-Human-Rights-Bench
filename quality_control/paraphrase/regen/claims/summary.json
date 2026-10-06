@@ -1,0 +1,206 @@
+{
+  "config": {
+    "model": "qwen/qwen3-235b-a22b",
+    "per_judgment": 16,
+    "max_claims": 6,
+    "batch": 40,
+    "max_source_chars": 50000,
+    "texts": "paraphrase_texts_regen_subset.jsonl.gz",
+    "protocol": "paraphrase-claims-v1"
+  },
+  "judgments": 25,
+  "targets": 26,
+  "claim_target_pairs": 2185,
+  "unverified_verdicts": 0,
+  "claims_per_target_median": 84.0,
+  "all": {
+    "supported_raw": {
+      "original": {
+        "mean": 0.9889,
+        "lo": 0.981,
+        "hi": 0.9948,
+        "targets": 26
+      },
+      "light": {
+        "mean": 0.9851,
+        "lo": 0.9689,
+        "hi": 0.996,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9882,
+        "lo": 0.9782,
+        "hi": 0.9955,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9907,
+        "lo": 0.9853,
+        "hi": 0.9954,
+        "targets": 26
+      }
+    },
+    "retention_given_original": {
+      "light": {
+        "mean": 0.9908,
+        "lo": 0.9769,
+        "hi": 0.9995,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9931,
+        "lo": 0.985,
+        "hi": 0.9996,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9948,
+        "lo": 0.9902,
+        "hi": 0.9985,
+        "targets": 26
+      }
+    },
+    "retention_given_original_adjusted": {
+      "light": {
+        "mean": 0.9991,
+        "lo": 0.9977,
+        "hi": 1,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9991,
+        "lo": 0.9972,
+        "hi": 1,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9977,
+        "lo": 0.9953,
+        "hi": 0.9995,
+        "targets": 26
+      }
+    }
+  },
+  "without_truncated": {
+    "supported_raw": {
+      "original": null,
+      "light": null,
+      "medium": null,
+      "heavy": null
+    },
+    "retention_given_original": {
+      "light": null,
+      "medium": null,
+      "heavy": null
+    },
+    "retention_given_original_adjusted": {
+      "light": null,
+      "medium": null,
+      "heavy": null
+    }
+  },
+  "truncated_only": {
+    "supported_raw": {
+      "original": {
+        "mean": 0.9889,
+        "lo": 0.981,
+        "hi": 0.9948,
+        "targets": 26
+      },
+      "light": {
+        "mean": 0.9851,
+        "lo": 0.9689,
+        "hi": 0.996,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9882,
+        "lo": 0.9782,
+        "hi": 0.9955,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9907,
+        "lo": 0.9853,
+        "hi": 0.9954,
+        "targets": 26
+      }
+    },
+    "retention_given_original": {
+      "light": {
+        "mean": 0.9908,
+        "lo": 0.9769,
+        "hi": 0.9995,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9931,
+        "lo": 0.985,
+        "hi": 0.9996,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9948,
+        "lo": 0.9902,
+        "hi": 0.9985,
+        "targets": 26
+      }
+    },
+    "retention_given_original_adjusted": {
+      "light": {
+        "mean": 0.9991,
+        "lo": 0.9977,
+        "hi": 1,
+        "targets": 26
+      },
+      "medium": {
+        "mean": 0.9991,
+        "lo": 0.9972,
+        "hi": 1,
+        "targets": 26
+      },
+      "heavy": {
+        "mean": 0.9977,
+        "lo": 0.9953,
+        "hi": 0.9995,
+        "targets": 26
+      }
+    }
+  },
+  "heavy_retention_by_position": {
+    "truncated": {
+      "0-20%": 0.9922,
+      "20-40%": 0.9908,
+      "40-60%": 1,
+      "60-80%": 1,
+      "80-100%": 0.9935
+    }
+  },
+  "lost_claims_by_label": {
+    "truncated/heavy": {
+      "absent": 2,
+      "altered": 3,
+      "present": 6,
+      "total": 11
+    },
+    "truncated/light": {
+      "absent": 0,
+      "altered": 2,
+      "present": 18,
+      "total": 20
+    },
+    "truncated/medium": {
+      "absent": 1,
+      "altered": 1,
+      "present": 12,
+      "total": 14
+    }
+  },
+  "examples_altered_in_heavy": [],
+  "swap_control": {
+    "claims": 0,
+    "accepted_as_supported": null
+  },
+  "examples_lost_in_heavy": [],
+  "swap_examples": []
+}

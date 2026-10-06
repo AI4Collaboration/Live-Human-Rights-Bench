@@ -26,4 +26,5 @@ the protocol document.
 | Per-target results | [paraphrase/per_row.csv](paraphrase/per_row.csv), [paraphrase/summary.json](paraphrase/summary.json) |
 | Script | [paraphrase/check_preservation.py](paraphrase/check_preservation.py) |
 | Claim-level retention (relations, facts without numbers) | [paraphrase/REPORT.md](paraphrase/REPORT.md#claim-level-check), [paraphrase/claims/](paraphrase/claims/) |
+| Regenerated cut targets (26) and both checks rerun | [paraphrase/REPORT.md](paraphrase/REPORT.md#regenerated-cut-targets), [paraphrase/regen/](paraphrase/regen/) |
 | Generator-exclusion check | [analysis/generator_exclusion/paraphrase_strength.csv](../analysis/generator_exclusion/paraphrase_strength.csv) |
