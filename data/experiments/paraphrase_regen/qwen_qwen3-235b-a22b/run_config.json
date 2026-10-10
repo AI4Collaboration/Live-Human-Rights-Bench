@@ -1,0 +1,10 @@
+{
+  "version": "paraphrase-provision-v1",
+  "rating_parser": "anchored-percentage-v1",
+  "model": "qwen/qwen3-235b-a22b",
+  "samples": 10,
+  "temperature": 1.0,
+  "max_case_chars": 50000,
+  "input_sha256": "012351f6e8b3733e54cc9b7e0e162bab0a9cd9facb9a55e8efe3192b51900997",
+  "prompt_sha256": "b644e6fd51461a2015ed7e8ebbd1f4b762361284ec8b622e2d48b4d61359a171"
+}
