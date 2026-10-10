@@ -220,11 +220,24 @@ def stage_eval(a):
             jobs.append((jk, p, arm))
     print(f"eval {model}: {len(jobs)} (case,arm) units", flush=True)
 
+    max_tokens = getattr(a, "max_tokens", 2000)
+    unparsed_retries = getattr(a, "unparsed_retries", 0)
+
+    def score_one(prompt):
+        # Re-call on an unparseable/empty response (e.g. reasoning models that spend the
+        # token budget before the number on very long inputs). Default retries=0 keeps
+        # the original single-call behaviour.
+        for _ in range(unparsed_retries + 1):
+            r = parse_rating(call(model, [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}], k, max_tokens))
+            if r is not None:
+                return r
+        return None
+
     def work(job):
         jk, p, arm = job
         text = p[arm]
         prompt = PREDICTIVE.format(case_text=text[:MAX_CHARS], article=p["article"])
-        ratings = [parse_rating(call(model, [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}], k, 2000)) for _ in range(a.samples)]
+        ratings = [score_one(prompt) for _ in range(a.samples)]
         good = [r for r in ratings if r is not None]
         avg = sum(good) / len(good) if good else None
         # score = likelihood of a violation: high -> violation (matches run_perturbation thresholds)
@@ -245,7 +258,7 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="stage", required=True)
     g = sub.add_parser("generate"); g.add_argument("--workers", type=int, default=40); g.add_argument("--limit", type=int, default=0); g.add_argument("--paraphraser", default=PARAPHRASER)
-    e = sub.add_parser("eval"); e.add_argument("--model", required=True); e.add_argument("--samples", type=int, default=10); e.add_argument("--workers", type=int, default=60); e.add_argument("--limit", type=int, default=0)
+    e = sub.add_parser("eval"); e.add_argument("--model", required=True); e.add_argument("--samples", type=int, default=10); e.add_argument("--workers", type=int, default=60); e.add_argument("--limit", type=int, default=0); e.add_argument("--max-tokens", type=int, default=2000); e.add_argument("--unparsed-retries", type=int, default=0)
     g.add_argument("--cases", default=CASES)
     for parser in (g, e):
         parser.add_argument("--pairs", default=PAIRS, help="Generated paraphrase input JSON path")
