@@ -125,9 +125,9 @@
   "canonical_judgments": 947,
   "initial_records": 6000,
   "released_trajectories": 118206,
-  "reference_cohorts_verified": 16,
+  "reference_cohorts_verified": 14,
   "five_role_cohorts": 12,
-  "script_sha256_lf": "ad7ee28d57cf5eb5fe6dfb7a2a7578a21ecfd6b8f203cecf689f6b63ee1fb157",
+  "script_sha256_lf": "de96f4f0f093b4a9ee2ad5f020ee8d883e1be1235ef7978773c4a283c35185a8",
   "reference_hashes": {
     "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
     "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3"
@@ -189,13 +189,13 @@
       "sha256_lf": "cb6bf53ba71cc3f5be70331ac85657223b60f4990301a5f91db11b403577115d"
     },
     "REPORT.md": {
-      "bytes": 9550,
-      "sha256_lf": "d5dee31a2c22c622b8be3f960934c87bab8ea6298ac0aafb2a6abd644a146153"
+      "bytes": 9553,
+      "sha256_lf": "279d702f2c3ea8d836b73a8c019a1c71079084347448bb76a52537a885387997"
     },
     "VALIDATION.json": {
       "bytes": 584,
       "sha256_lf": "f4bd49ae16e8a2ea8ae99d1727c14f9280330b5e15c2cfbc875eea4b4895411a"
     }
   },
-  "report_builder_sha256_lf": "9182bf64281d135d9516319e1f47fd4c8db41e1761888f970535b1e59eea590f"
+  "report_builder_sha256_lf": "25449cddaad0eb30f6dd07d5936a06bb55d9e4e4c17c9778b463c2759e12f33e"
 }

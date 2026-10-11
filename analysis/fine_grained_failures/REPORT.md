@@ -1,6 +1,6 @@
 # Fine-grained judgment failure analysis
 
-Source revision: `775d68fba9146ac33e77b59cf72c288af13431f4`. Six primary target models; existing scores and case labels; no model calls or new human annotation.
+Source revision: `775d68fba9146ac33e77b59cf72c288af13431f4`. Five primary target models; existing scores and case labels; no model calls or new human annotation.
 
 ## 1. Extreme initial scores still reverse to the opposite endpoint
 
@@ -91,11 +91,11 @@ The [overlap table](cross_perturbation_overlap.csv) contains 258 within-model co
 ## Analysis contract
 
 - **Scoring:** threshold the valid-score mean for systematic perturbations, matching the manuscript. Scores below 40 indicate no violation, above 60 violation, and 40-60 abstention. Stored full-record/summary category-plurality labels are checked separately against individual ratings.
-- **Case matching:** unique `(item_id, article_full)` targets. Persuasion retains the manuscript's provision-consistent, complete trajectories. Sixteen existing cohort hashes and final correctness counts are reproduced; role comparisons use twelve cohorts complete in all five roles. [pair_coverage.csv](pair_coverage.csv) separates valid comparisons from missing outputs and reconciles them with the manuscript's totals.
+- **Case matching:** unique `(item_id, article_full)` targets. Persuasion retains the manuscript's provision-consistent, complete trajectories. Fourteen existing cohort hashes and final correctness counts are reproduced; role comparisons use twelve cohorts complete in all five roles. [pair_coverage.csv](pair_coverage.csv) separates valid comparisons from missing outputs and reconciles them with the manuscript's totals.
 - **Failure timing:** first-error incidence uses initially correct cases. The hazard denominator contains cases without an earlier wrong verdict, including those currently abstaining. Recovery and lost-correction rates state their event-conditioned denominators.
 - **Uncertainty:** 2,000 percentile bootstrap draws over judgments, seed 731; all targets from a judgment remain together. Conditional denominators are recomputed within each draw. Empty strata have blank estimates. Intervals describe the empirical distribution of the saved outputs.
 - **Overlap:** intersect valid targets and require the relevant reference judgments to be correct for error comparisons. Country Swap uses decisive original predictions and actual respondent/text substitutions. The label-adjusted expectation is the sum of within-label independence expectations.
-- **Scope:** six primary models and their released protocols. The separate old-model nationality experiment is outside these five analyses.
+- **Scope:** five primary models and their released protocols. The separate old-model nationality experiment is outside these five analyses.
 
 ## Placement in the manuscript
 

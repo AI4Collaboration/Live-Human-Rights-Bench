@@ -26,13 +26,13 @@ For a family of m contrasts, each interval uses quantiles 0.05/(2m) and
 seed 731. This is an interval-based sensitivity analysis; do not infer adjusted
 p-values from percentile intervals. Keep pointwise intervals separately.
 
-1. US minus original likelihood, six primary models: m=6.
-2. US minus Russia and US minus Ukraine, six models: m=12.
-3. Adaptive minus static increase under high versus low pressure, six models:
-   m=6, using cases complete in all four branches within each model.
+1. US minus original likelihood, five primary models: m=5.
+2. US minus Russia and US minus Ukraine, five models: m=10.
+3. Adaptive minus static increase under high versus low pressure, five models:
+   m=5, using cases complete in all four branches within each model.
 4. Increase in the GPT-minus-Claude reversal gap with the researcher cue,
    static and adaptive on the shared 349 judgments: m=2.
-5. Final-minus-initial Brier loss, six models and two modes: m=12.
+5. Final-minus-initial Brier loss, five models and two modes: m=10.
 
 Use the original comparison-specific cohorts. Resample whole judgments with
 all of their provisions and conditions together. Report every contrast in
