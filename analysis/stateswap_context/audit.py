@@ -30,7 +30,7 @@ RUNS = {
 MODELS = {
     "us": ["anthropic/claude-opus-4.6", "openai/gpt-5.6-sol",
            "deepseek/deepseek-v4-pro", "deepseek/deepseek-v4-flash",
-           "qwen/qwen3-235b-a22b", "qwen/qwen3-32b"],
+           "qwen/qwen3-32b"],
     "followups": ["openai/gpt-4o-mini", "openai/gpt-4.1-mini", "openai/gpt-5.6-sol"],
 }
 # Fixed from the review concern and input inspection before looking at subset scores.
@@ -276,9 +276,9 @@ def main():
     uk_remaining = [r for r,x in followup_pairs if r["arm"]=="UK"]
     us_remaining = [r for r in effects if r["scope"]=="screen_remaining" and r["arm"]=="US"]
     assert same_direction==18 and all(r["family18_hi"]<0 for r in uk_remaining)
-    assert len(us_remaining)==6 and all(r["likelihood_shift"]<0 for r in us_remaining)
+    assert len(us_remaining)==5 and all(r["likelihood_shift"]<0 for r in us_remaining)
     report += ["",
-        "All 18 follow-up point estimates retain their original directions on the 574 remaining targets. UK substitution still lowers scores for all three models with intervals below zero after correction across 18 comparisons. Russia and Ukraine still raise both mini models' scores. GPT-5.6-sol retains negative Ukraine estimates, although their adjusted intervals include zero. The original US experiment also retains negative estimates in all six models on 606 remaining targets. This screen therefore preserves the main directional pattern while leaving the interpretation as contextual sensitivity.", "",
+        "All 18 follow-up point estimates retain their original directions on the 574 remaining targets. UK substitution still lowers scores for all three models with intervals below zero after correction across 18 comparisons. Russia and Ukraine still raise both mini models' scores. GPT-5.6-sol retains negative Ukraine estimates, although their adjusted intervals include zero. The original US experiment also retains negative estimates in all five models on 606 remaining targets. This screen therefore preserves the main directional pattern while leaving the interpretation as contextual sensitivity.", "",
         "| Run | Model | Destination | Full shift | Remaining shift [95% CI] |",
                "| --- | --- | --- | ---: | ---: |"]
     for r in effects:

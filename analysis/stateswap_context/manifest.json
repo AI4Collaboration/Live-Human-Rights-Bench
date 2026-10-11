@@ -130,11 +130,6 @@
       "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
       "sha256_lf": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331"
     },
-    "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
-      "bytes": 928318,
-      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
-      "sha256_lf": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26"
-    },
     "4b231e17e6dd65880e665c5fe298db3862ff5ade:data/experiments/stateswap_summary/qwen_qwen3-32b/stateswap_summary_results.jsonl": {
       "bytes": 928914,
       "sha256_git_bytes": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec",

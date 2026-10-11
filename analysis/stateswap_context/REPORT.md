@@ -43,7 +43,7 @@ These are review flags, not confirmed-invalid labels. A lake or an asylum claim 
 | us | 800 | 194 | 606 | 577 |
 | followups | 768 | 194 | 574 | 545 |
 
-All 18 follow-up point estimates retain their original directions on the 574 remaining targets. UK substitution still lowers scores for all three models with intervals below zero after correction across 18 comparisons. Russia and Ukraine still raise both mini models' scores. GPT-5.6-sol retains negative Ukraine estimates, although their adjusted intervals include zero. The original US experiment also retains negative estimates in all six models on 606 remaining targets. This screen therefore preserves the main directional pattern while leaving the interpretation as contextual sensitivity.
+All 18 follow-up point estimates retain their original directions on the 574 remaining targets. UK substitution still lowers scores for all three models with intervals below zero after correction across 18 comparisons. Russia and Ukraine still raise both mini models' scores. GPT-5.6-sol retains negative Ukraine estimates, although their adjusted intervals include zero. The original US experiment also retains negative estimates in all five models on 606 remaining targets. This screen therefore preserves the main directional pattern while leaving the interpretation as contextual sensitivity.
 
 | Run | Model | Destination | Full shift | Remaining shift [95% CI] |
 | --- | --- | --- | ---: | ---: |
@@ -59,9 +59,6 @@ All 18 follow-up point estimates retain their original directions on the 574 rem
 | us | deepseek-v4-flash | US | -8.83 | -9.33 [-10.91, -7.90] |
 | us | deepseek-v4-flash | Russia | +0.10 | -0.44 [-1.28, +0.53] |
 | us | deepseek-v4-flash | Ukraine | -0.22 | -0.50 [-1.34, +0.36] |
-| us | qwen3-235b-a22b | US | -2.90 | -2.69 [-3.36, -2.03] |
-| us | qwen3-235b-a22b | Russia | +1.20 | +1.51 [+1.04, +2.00] |
-| us | qwen3-235b-a22b | Ukraine | +0.79 | +1.06 [+0.58, +1.52] |
 | us | qwen3-32b | US | -5.77 | -6.42 [-7.45, -5.39] |
 | us | qwen3-32b | Russia | +1.27 | +1.16 [+0.58, +1.77] |
 | us | qwen3-32b | Ukraine | +0.84 | +0.74 [+0.24, +1.29] |
