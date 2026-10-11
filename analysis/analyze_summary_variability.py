@@ -45,10 +45,10 @@ def main():
         for new_name, prior_name in [('full_mean_sd', 'reference_rating_sd'), ('summary_mean_sd', 'summary_rating_sd')]:
             assert abs(row[new_name] - float(prior_index[model, prior_name]['estimate'])) < 1e-9
         rows.append(row)
-    assert sum(r['targets'] for r in rows) == 5995 and len(exclusions) == 5
+    assert sum(r['targets'] for r in rows) == 4996 and len(exclusions) == 4
     write_csv(OUT / 'source_data.csv', rows)
     lines = ['# Within-target score variability', '',
-        '**Summary score variance rises in two models and falls in four.** Only DeepSeek V4 Flash has an increase whose paired 95% interval excludes zero; DeepSeek V4 Pro and both Qwen models have decreases whose intervals exclude zero.', '',
+        '**Summary score variance rises in two models and falls in three.** Only DeepSeek V4 Flash has an increase whose paired 95% interval excludes zero; DeepSeek V4 Pro and Qwen3-32B have decreases whose intervals exclude zero.', '',
         'We calculate the sample standard deviation and variance of the ten saved scores separately for each target and input. We then average over the same complete target pairs in both arms. This measures variation across repeated responses to one input, rather than variation across different cases.', '',
         '| Model | Targets | Full-record mean variance | Summary mean variance | Paired variance difference [95% CI] |',
         '| --- | ---: | ---: | ---: | ---: |']
@@ -59,7 +59,7 @@ def main():
         '| --- | ---: | ---: | ---: | ---: |']
     for r in rows:
         lines.append(f"| {r['label']} | {r['targets']} | {r['full_mean_sd']:.2f} | {r['summary_mean_sd']:.2f} | {r['sd_difference']:+.2f} [{r['sd_difference_lower_95']:+.2f}, {r['sd_difference_upper_95']:+.2f}] |")
-    lines += ['', 'Scores use the 0-100 scale. Differences are summary minus full record. Intervals use 2,000 paired judgment-cluster bootstrap resamples, seed 731; targets from the same judgment stay together. Five pairs with one missing summary score are excluded, leaving 5,995 model-target pairs. Existing published mean-SD estimates are reproduced to numerical precision.', '',
+    lines += ['', 'Scores use the 0-100 scale. Differences are summary minus full record. Intervals use 2,000 paired judgment-cluster bootstrap resamples, seed 731; targets from the same judgment stay together. Four pairs with one missing summary score are excluded, leaving 4,996 model-target pairs. Existing published mean-SD estimates are reproduced to numerical precision.', '',
         'The [source table](source_data.csv) includes variance estimates and paired intervals as well as standard deviations. The [input manifest](manifest.json) records immutable Git input hashes. No model API calls are made.', '',
         'The separate [five-score analysis](../reliability_controls/REPORT.md) compares categorical judgments at a common sample size and shows input changes beyond same-input sampling variation.', '',
         'Reproduce from the repository root: `python analysis/analyze_summary_variability.py`.']

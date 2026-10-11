@@ -111,7 +111,7 @@ def validate(tables):
         transitions[row["experiment"], row["condition"], row["initial_state"], after] += int(row["numerator"])
     summary = {f"{a}_to_{b}":transitions["summarization", "abstractive", a, b]
         for a,b in [("correct","wrong"),("wrong","correct"),("correct","abstention"),("abstention","correct")]}
-    assert summary == {"correct_to_wrong":106,"wrong_to_correct":92,"correct_to_abstention":230,"abstention_to_correct":142}
+    assert summary == {"correct_to_wrong":99,"wrong_to_correct":86,"correct_to_abstention":179,"abstention_to_correct":103}
     summary_changed = sum(n for (exp, arm, before, after), n in transitions.items()
                           if exp == "summarization" and before != after)
     para_changed = {arm:sum(n for (exp, a, before, after), n in transitions.items()
@@ -121,8 +121,8 @@ def validate(tables):
     para_all = {arm:sum(int(r['categorical_changes_including_failed']) for r in coverage
                        if r['experiment']=='paraphrasing' and r['condition']==arm)
                 for arm in ('light','medium','heavy')}
-    assert summary_changed == 859 and para_changed == {"light":607,"medium":637,"heavy":587}
-    assert para_all == {"light":622,"medium":656,"heavy":606}
+    assert summary_changed == 699 and para_changed == {"light":503,"medium":531,"heavy":484}
+    assert para_all == {"light":518,"medium":550,"heavy":503}
     assert all(para_changed[a]==sum(int(r['categorical_changes_valid']) for r in coverage
                 if r['experiment']=='paraphrasing' and r['condition']==a) for a in para_changed)
     role_index = {(r['model'],r['mode'],r['cue'],r['initial_group'],r['metric']):r for r in tables['role_rates']}
@@ -143,7 +143,7 @@ def validate(tables):
         assert (int(a['numerator']),int(a['denominator']))==(onset,314)
         assert (int(b['numerator']),int(b['denominator']))==(recovered,ever)
     overlap=[r for r in tables['cross_perturbation_overlap'] if r['event_a']=='summary' and r['event_b']=='paraphrase_heavy']
-    assert len(overlap)==6 and sum(int(r['n_both'])==0 for r in overlap)==5
+    assert len(overlap)==5 and sum(int(r['n_both'])==0 for r in overlap)==4
     assert choose(overlap,model='anthropic/claude-opus-4.6')['n_both']=='2'
     return dict(timing_rows_verified=len(tables['failure_timing']),
         extremity_rows_recounted_from_published_paths=checked_extreme,

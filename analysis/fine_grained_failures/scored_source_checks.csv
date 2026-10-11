@@ -15,10 +15,6 @@ data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/baseline.jso
 data/experiments/unified_fullcase_latest/deepseek_deepseek-v4-flash/rq1.jsonl,1000,1000,0,44
 data/experiments/paraphrase/deepseek_deepseek-v4-flash/paraphrase_results.jsonl,4000,3998,2,0
 data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl,4000,4000,0,0
-data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl,1000,1000,0,74
-data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl,1000,1000,0,61
-data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl,4000,4000,0,0
-data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl,4000,4000,0,0
 data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl,1000,1000,0,70
 data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl,1000,1000,0,66
 data/experiments/paraphrase/qwen_qwen3-32b/paraphrase_results.jsonl,4000,4000,0,0

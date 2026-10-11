@@ -35,15 +35,6 @@ deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Russia,initial_decisive,retained_ve
 deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,decisive_reversal,9,753,713,1.1952191235059761,0.40214477211796246,2.1165424613700465,percent
 deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,became_abstention,34,753,713,4.51527224435591,3.0910874681521787,6.0881135759708895,percent
 deepseek/deepseek-v4-flash,DeepSeek V4 Flash,Ukraine,initial_decisive,retained_verdict,710,753,713,94.28950863213812,92.50638211761776,95.953099378576,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,decisive_reversal,4,696,663,0.5747126436781609,0.1414377212539656,1.1560693641618496,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,became_abstention,62,696,663,8.908045977011495,6.827720509448415,11.157631044947655,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,US,initial_decisive,retained_verdict,630,696,663,90.51724137931035,88.31351570964247,92.69688529240273,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,decisive_reversal,2,696,663,0.28735632183908044,0.0,0.723589001447178,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,became_abstention,34,696,663,4.885057471264368,3.2810271041369474,6.656810085717467,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Russia,initial_decisive,retained_verdict,660,696,663,94.82758620689656,92.9997496423462,96.46892655367232,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,decisive_reversal,2,696,663,0.28735632183908044,0.0,0.7246376811594203,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,became_abstention,40,696,663,5.747126436781609,4.06913901592553,7.669647375371817,percent
-qwen/qwen3-235b-a22b,Qwen3-235B,Ukraine,initial_decisive,retained_verdict,654,696,663,93.96551724137932,92.02279202279202,95.6776985764433,percent
 qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,decisive_reversal,17,736,699,2.309782608695652,1.3368537729450318,3.462705447830101,percent
 qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,became_abstention,60,736,699,8.152173913043478,6.172467648371263,10.28431953613419,percent
 qwen/qwen3-32b,Qwen3-32B,US,initial_decisive,retained_verdict,659,736,699,89.53804347826086,87.2450823430301,91.73578881445778,percent

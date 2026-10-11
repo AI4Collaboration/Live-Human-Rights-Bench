@@ -5,11 +5,11 @@
   "brier_draws": 2000,
   "multiplicity_draws": 20000,
   "families": {
-    "us_likelihood": 6,
-    "us_destination_order": 12,
-    "pressure_mode_interaction": 6,
+    "us_likelihood": 5,
+    "us_destination_order": 10,
+    "pressure_mode_interaction": 5,
     "shared_role_gap": 2,
-    "dialogue_brier": 12
+    "dialogue_brier": 10
   },
   "inputs": {
     "data/processed/echr_unified.json": {
@@ -63,18 +63,6 @@
     "data/experiments/paraphrase/deepseek_deepseek-v4-flash/paraphrase_results.jsonl": {
       "sha256_git_bytes": "8ff207e98633fa1d2ead1ef7f09c02f01718cb96f65c8b788dc9110eb6c48c9c",
       "bytes": 825353
-    },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
-      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
-      "bytes": 905529
-    },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
-      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
-      "bytes": 967771
-    },
-    "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl": {
-      "sha256_git_bytes": "ee4e57b2a123b03d996ae4e2e04b3fd8e6a3138e08136374330664eab78d79e7",
-      "bytes": 827064
     },
     "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
       "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
@@ -136,10 +124,6 @@
       "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
       "bytes": 928836
     },
-    "data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
-      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
-      "bytes": 928318
-    },
     "data/experiments/stateswap_summary/qwen_qwen3-32b/stateswap_summary_results.jsonl": {
       "sha256_git_bytes": "ac2da48ee983dd0a2022da649ba94ac2aa0ced382710831d87447105d28862ec",
       "bytes": 928914
@@ -154,20 +138,20 @@
     }
   },
   "conversation_counts": {
-    "recorded": 118206,
-    "incomplete": 12426,
-    "complete": 105780,
-    "provision_consistent_complete": 100132,
-    "provision_mismatch": 5648
+    "recorded": 98824,
+    "incomplete": 10747,
+    "complete": 88077,
+    "provision_consistent_complete": 83369,
+    "provision_mismatch": 4708
   },
-  "analysis_sha256": "89a90ee8249935fe9e7489e9354450c9b54ac21d9739437d3205a5c7a476dd63",
+  "analysis_sha256": "7d99359306d3efed11967be614be2d8cf851094169f877874ca6ca4d985e8d06",
   "outputs": {
-    "cue_brier.csv": "771ece92a6262bede55c3238a2e24ed9c2c806832d7d73ae9810b204c6213901",
-    "cue_brier_contrasts.csv": "65ca4442cca8280b7794245df75125b9a96cb63fe36ac9b5572ce26990a97072",
-    "dialogue_brier.csv": "0be94d00ccb66764702b148d752b5fc21f36f17bc4b05b891a78cfc170e6b7d2",
-    "input_checks.csv": "2ab37151d7329b5b8737b67e4bd7d43da0d9be68d549a1a98a89cadf4b1b1186",
-    "multiplicity.csv": "8aa8e46a0ff5c2a29acaa0014efbbbcfef34a31f66b5dee692eb6ce46c26c244",
-    "systematic_brier.csv": "1378b7bd8782da0cc9a9ecd83fbf25f4764c7b6d5f2ae0203758a851d3e6a210",
-    "turn_descriptors.csv": "44d7cc041197cf0984848863ad220ba50637adf1e33846901860a62a53eab0d7"
+    "cue_brier.csv": "13a7b501aab225d60300fc6aa735b72291621940b501735a3d51c2e967642f68",
+    "cue_brier_contrasts.csv": "93a50353b2009e006fe9c9273d0097bf12fe418bb41d7a18c554cc9c3c27dfc8",
+    "dialogue_brier.csv": "724477b9f35b108e7fcb609e0551a88712d7eff5a9223e532bcfaa030e516f1d",
+    "input_checks.csv": "113cacb36de2c7f56946fa4033390a8e7744bc65dbf5f2be86e7eb1cf3d9221a",
+    "multiplicity.csv": "2a94ebd4574620e07e55dbdd361a08a2fa94a48c0f099d833d9390a587907f66",
+    "systematic_brier.csv": "e462706858ac0b79199435d20b9f25bf15860bd95ac80610667661585d386fbd",
+    "turn_descriptors.csv": "946679402851ecf1cb70a427714bbc9c926553854aac6386c0cba37cdac78cbe"
   }
 }

@@ -40,7 +40,6 @@ Among initially correct judgments, heavy paraphrasing introduces false violation
 | GPT-5.6-sol | 5/166 (3.0%) | 20/669 (3.0%) | 8/166 (4.8%) | 0/668 (0.0%) |
 | DeepSeek V4 Pro | 8/95 (8.4%) | 6/632 (0.9%) | 8/111 (7.2%) | 6/623 (1.0%) |
 | DeepSeek V4 Flash | 5/18 (27.8%) | 14/683 (2.0%) | 15/45 (33.3%) | 12/636 (1.9%) |
-| Qwen3-235B | 5/66 (7.6%) | 2/597 (0.3%) | 1/62 (1.6%) | 2/607 (0.3%) |
 | Qwen3-32B | 11/52 (21.2%) | 6/639 (0.9%) | 4/49 (8.2%) | 2/645 (0.3%) |
 
 The complete [error-direction table](error_direction.csv) includes all paraphrase levels, initially wrong and abstaining references, and matched adversarial-opinion conditions. Summary transitions reproduce 106 new decisive errors, 92 corrected errors, 230 correct-to-abstention changes and 142 abstention-to-correct changes.
@@ -59,7 +58,6 @@ Static mode; all five roles use the same cases within each model.
 | GPT-5.6-sol | 776 | 8.5% | 53.5% | 21.5% | 24.7% | 25.0% |
 | DeepSeek V4 Pro | 387 | 0.5% | 4.9% | 1.0% | 0.8% | 1.6% |
 | DeepSeek V4 Flash | 615 | 1.1% | 5.9% | 1.5% | 2.6% | 2.8% |
-| Qwen3-235B | 618 | 0.8% | 0.8% | 1.3% | 1.8% | 0.5% |
 | Qwen3-32B | 603 | 0.2% | 0.2% | 0.0% | 0.2% | 0.2% |
 
 ### Initial errors corrected by turn 3
@@ -72,7 +70,6 @@ Static mode; all five roles use the same cases within each model.
 | GPT-5.6-sol | 142 | 98.6% | 76.8% | 97.9% | 92.3% | 93.0% |
 | DeepSeek V4 Pro | 120 | 100.0% | 93.3% | 99.2% | 99.2% | 97.5% |
 | DeepSeek V4 Flash | 202 | 97.5% | 91.6% | 97.5% | 95.0% | 98.0% |
-| Qwen3-235B | 205 | 98.0% | 98.0% | 97.6% | 98.0% | 99.0% |
 | Qwen3-32B | 221 | 99.1% | 99.1% | 99.5% | 100.0% | 99.5% |
 
 [role_rates.csv](role_rates.csv) includes static and adaptive outcomes. [role_contrasts.csv](role_contrasts.csv) gives paired percentage-point changes versus no cue, AI safety researcher versus lawyer, and senior versus junior lawyer. Each contrast resamples the same judgments on both sides.
@@ -87,7 +84,6 @@ On targets where both experiment-specific reference judgments are correct, five 
 | GPT-5.6-sol | 824 | 21 | 5 | 0 | 0.12 |
 | DeepSeek V4 Pro | 678 | 8 | 4 | 0 | 0.09 |
 | DeepSeek V4 Flash | 634 | 8 | 12 | 0 | 0.14 |
-| Qwen3-235B | 633 | 4 | 1 | 0 | 0.04 |
 | Qwen3-32B | 666 | 10 | 1 | 0 | 0.21 |
 
 The [overlap table](cross_perturbation_overlap.csv) contains 258 within-model comparisons across intervention families. It records joint errors, marginal error rates, independence expectations within true-label strata, and excess overlap with judgment-cluster intervals. Country Swap entries measure reversal sensitivity on the manuscript's common 800-target substitution cohort; they do not assign the original case's correctness label to a substituted jurisdiction.

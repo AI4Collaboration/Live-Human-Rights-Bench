@@ -104,22 +104,6 @@
       "sha256_git_bytes": "4162b5b1030de2b825d7e46ddf7bbc4207c8e70a7351f0207b633dd306fc1331",
       "bytes": 928836
     },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
-      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
-      "bytes": 905529
-    },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
-      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
-      "bytes": 967771
-    },
-    "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl": {
-      "sha256_git_bytes": "ee4e57b2a123b03d996ae4e2e04b3fd8e6a3138e08136374330664eab78d79e7",
-      "bytes": 827064
-    },
-    "data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl": {
-      "sha256_git_bytes": "d7920ab0a1f2abaae3fbac3b3f5dc2b634367b3571e1e118adecd8177c2c8b26",
-      "bytes": 928318
-    },
     "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
       "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
       "bytes": 907392
@@ -143,75 +127,75 @@
   "released_trajectories": 118206,
   "reference_cohorts_verified": 16,
   "five_role_cohorts": 12,
-  "script_sha256_lf": "90e54afc31fe90650d36f22b87c890b5da311e1a84dbf28f9d6e4f1ca4e60b3c",
+  "script_sha256_lf": "ad7ee28d57cf5eb5fe6dfb7a2a7578a21ecfd6b8f203cecf689f6b63ee1fb157",
   "reference_hashes": {
-    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
-    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc"
+    "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
+    "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3"
   },
   "outputs": {
     "score_extremity.csv": {
-      "rows": 1600,
-      "bytes": 251439,
-      "sha256_lf": "a3543277dd9f946e77412f966e3d421c80f48817ab7bfc6e2f0ce66f1632f0bb"
+      "rows": 1400,
+      "bytes": 219519,
+      "sha256_lf": "c47fd62b60b0469ca95a4806af08ebee8b1e1080642db8861c8b69f550cf63ce"
     },
     "failure_timing.csv": {
-      "rows": 704,
-      "bytes": 125403,
-      "sha256_lf": "5b2a141c8ca6cba07cbfe4380331428a237ad94ce4be2cc55d81f1cc10f054d1"
+      "rows": 616,
+      "bytes": 109961,
+      "sha256_lf": "64ac78b0cf444877a2d24ede126dede3f95d4b4804c6f12fb9bcd14177fd707e"
     },
     "error_direction.csv": {
-      "rows": 1344,
-      "bytes": 231345,
-      "sha256_lf": "e54b9435fba150ec91a2298916d2c8c10dff57c1d8dd8eecd44990de38cc3720"
+      "rows": 1152,
+      "bytes": 198532,
+      "sha256_lf": "37b0bf06cd129e5a4464029eb1ac9fa38607e20ca24cc5c23d247cf86ffcefd0"
     },
     "role_rates.csv": {
-      "rows": 360,
-      "bytes": 56157,
-      "sha256_lf": "9dcdb590cf36b842184db079392f33348aa5a78406ecea019e79cb6a197b1d6d"
+      "rows": 300,
+      "bytes": 46752,
+      "sha256_lf": "64c5433bef48353823ff2c4965e2a46275bb131cb97e530b90811638781d119c"
     },
     "role_contrasts.csv": {
-      "rows": 432,
-      "bytes": 77783,
-      "sha256_lf": "ccccf093a5c1443cf0afb59720f8bec6e992b9def9d9b901de884176b08bae4f"
+      "rows": 360,
+      "bytes": 64980,
+      "sha256_lf": "03c2ecc94861b3db0bc5c9ac64c590b09272b3bd0ad826fca61b3ed904b1aa20"
     },
     "pair_coverage.csv": {
-      "rows": 42,
-      "bytes": 2741,
-      "sha256_lf": "dc641452473ec1d739ac3147d69d5f659daade5efb5d5b4ceb549b3e6f899c00"
+      "rows": 35,
+      "bytes": 2315,
+      "sha256_lf": "2c0406ade4e3ecbd9820293d844ce24165dce2378f8b6e0347dc1d90d81dfd17"
     },
     "state_swap_sensitivity.csv": {
-      "rows": 54,
-      "bytes": 8163,
-      "sha256_lf": "867b3824938a9ef89bdb5a439387ab633e62cd7cf23cdf98c6f8fce8e0379b84"
+      "rows": 45,
+      "bytes": 6873,
+      "sha256_lf": "217617a07ce3814dd7e3fead19d18bc29cea0b2996fe58081c1c031681d840e4"
     },
     "cross_perturbation_overlap.csv": {
-      "rows": 258,
-      "bytes": 103661,
-      "sha256_lf": "1d8f9d0d8f513d15cd90351f92ecdea090989391b9ed6960d05fa7000ee4924d"
+      "rows": 215,
+      "bytes": 89297,
+      "sha256_lf": "782ed17561ba10b46e9a4e9a2c472ade513ea116b19b87a73d9d17449de29a47"
     },
     "cohorts.csv": {
-      "rows": 286,
-      "bytes": 48400,
-      "sha256_lf": "31271a9864061a844a3a812f7266d26784397a69688ae2841c2eea7b28336f50"
+      "rows": 239,
+      "bytes": 40494,
+      "sha256_lf": "6e88349322ba822ef2f1a76d20065fef0eaaa7c666d57d0ea02e26a51c0a022b"
     },
     "persuasion_record_counts.csv": {
-      "rows": 233,
-      "bytes": 15368,
-      "sha256_lf": "7c5954d5d832e734b2909728cb628705acfd44387db091f298afd209058cf140"
+      "rows": 193,
+      "bytes": 12788,
+      "sha256_lf": "53e190c8edc85ec4238d58dd55931cfc8e64aae8af2444dda4c91ab63a98a22a"
     },
     "scored_source_checks.csv": {
-      "rows": 24,
-      "bytes": 2309,
-      "sha256_lf": "b223af34197795da031d935ac582059d410bc4fa75be26a6e087ee21b523be29"
+      "rows": 20,
+      "bytes": 1940,
+      "sha256_lf": "cb6bf53ba71cc3f5be70331ac85657223b60f4990301a5f91db11b403577115d"
     },
     "REPORT.md": {
-      "bytes": 9882,
-      "sha256_lf": "ba768eb77c6650acbab87802d7044684b2f37f539a77229992fa7e244b9a8c4b"
+      "bytes": 9550,
+      "sha256_lf": "d5dee31a2c22c622b8be3f960934c87bab8ea6298ac0aafb2a6abd644a146153"
     },
     "VALIDATION.json": {
-      "bytes": 609,
-      "sha256_lf": "256d7a34d232f7d14a4445e9566e2dfaa8b7aea9e1a4ba65e5853772d3a01a43"
+      "bytes": 584,
+      "sha256_lf": "f4bd49ae16e8a2ea8ae99d1727c14f9280330b5e15c2cfbc875eea4b4895411a"
     }
   },
-  "report_builder_sha256_lf": "e63279d66dd6232c0414eb9e4b22b0120f49b5ef4ebafe655f9db0802b5690b2"
+  "report_builder_sha256_lf": "9182bf64281d135d9516319e1f47fd4c8db41e1761888f970535b1e59eea590f"
 }

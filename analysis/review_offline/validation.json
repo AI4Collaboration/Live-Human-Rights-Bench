@@ -1,9 +1,9 @@
 {
   "status": "passed",
-  "raw_systematic_point_estimates_verified": 32,
-  "dialogue_point_estimates_verified": 36,
+  "raw_systematic_point_estimates_verified": 28,
+  "dialogue_point_estimates_verified": 30,
   "output_checksums_verified": 7,
-  "input_hashes_rechecked": 27,
+  "input_hashes_rechecked": 24,
   "multiplicity_family_sizes_verified": true,
   "cohort_linkage_verified": true,
   "turn_category_counts_verified": true,

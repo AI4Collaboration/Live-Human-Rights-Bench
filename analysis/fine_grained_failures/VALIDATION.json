@@ -1,23 +1,23 @@
 {
-  "timing_rows_verified": 704,
+  "timing_rows_verified": 616,
   "extremity_rows_recounted_from_published_paths": 400,
-  "paired_role_contrasts_verified": 432,
+  "paired_role_contrasts_verified": 360,
   "summary_transitions": {
-    "correct_to_wrong": 106,
-    "wrong_to_correct": 92,
-    "correct_to_abstention": 230,
-    "abstention_to_correct": 142
+    "correct_to_wrong": 99,
+    "wrong_to_correct": 86,
+    "correct_to_abstention": 179,
+    "abstention_to_correct": 103
   },
-  "summary_categorical_changes": 859,
+  "summary_categorical_changes": 699,
   "paraphrase_valid_pair_changes": {
-    "light": 607,
-    "medium": 637,
-    "heavy": 587
+    "light": 503,
+    "medium": 531,
+    "heavy": 484
   },
   "paraphrase_changes_including_failed_outputs": {
-    "light": 622,
-    "medium": 656,
-    "heavy": 606
+    "light": 518,
+    "medium": 550,
+    "heavy": 503
   },
   "model_api_calls": 0,
   "new_human_annotations": 0

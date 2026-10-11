@@ -74,20 +74,6 @@
     },
     {
       "scope": "within_model_mode",
-      "model": "qwen/qwen3-235b-a22b",
-      "mode": "static",
-      "n": 830,
-      "cohort_sha256": "b74b10e3f8455d92346c852f33ccbbec570a45970fdd0700cb7f240d88b8d42a"
-    },
-    {
-      "scope": "within_model_mode",
-      "model": "qwen/qwen3-235b-a22b",
-      "mode": "adaptive",
-      "n": 552,
-      "cohort_sha256": "098fc8430f1b0a84ece37c043470ece72b5d1039f05f8b70660f98e0213297a7"
-    },
-    {
-      "scope": "within_model_mode",
       "model": "qwen/qwen3-32b",
       "mode": "static",
       "n": 863,
@@ -156,27 +142,27 @@
   "classification_method": "deterministic_score_paths",
   "bootstrap_draws": 2000,
   "seed": 731,
-  "script_sha256_lf": "a60cf88495c0cda5d3ed72e0521c84020524c64bcdd34d3f51dbdde0b02c3dec",
+  "script_sha256_lf": "7e4a8e250e9d46a1083ff0b1a33851c88880466b1211a186507c67e1c5a16e57",
   "reference_table_hashes": {
-    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
-    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc"
+    "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
+    "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3"
   },
   "outputs": {
+    "REPORT.md": {
+      "sha256_lf": "f7501d71fcc4391335e4a35bc8c16bac80a44da4ba0e37a95161c37b1999b3c8",
+      "bytes": 4432
+    },
     "case_examples.csv": {
       "sha256_lf": "f9cab4e92b99c2792250d82a20a2851e81d4b0577861ba2a73e6e0bd2979e816",
       "bytes": 24435
     },
     "failure_mode_rates.csv": {
-      "sha256_lf": "3d05a003e40d6bab3622aabcbf9ac4dfd9fed8cac801cdb01dbee911521e98e4",
-      "bytes": 57182
+      "sha256_lf": "76757f5c6acf5d30c0c010807720f31fd4fef46d27d69de10b521953d86f0dd7",
+      "bytes": 49884
     },
     "path_counts.csv": {
-      "sha256_lf": "191782479d3bb11c5b26fca1f3566d89e5cfd9356b4c180372c3f3e15187500c",
-      "bytes": 32327
-    },
-    "REPORT.md": {
-      "sha256_lf": "a5c1f21acebdc7335a348fa0e1232a72474c346299725faf5f75a75de595a8a8",
-      "bytes": 4488
+      "sha256_lf": "a92ca023b7ff200867742b5fb7ae8e4a85820e6ae30b5492f58263a2015fd301",
+      "bytes": 27376
     },
     "shared_349_paths.csv": {
       "sha256_lf": "e42ae423e4020941cfc7794967ca232f9e5b014849019e48971bd267434958bb",

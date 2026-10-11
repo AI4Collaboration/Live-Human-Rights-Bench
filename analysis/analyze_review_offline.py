@@ -16,9 +16,9 @@ from analyze_model_time_windows import OLD
 
 REVISION = "c9ad289158fe3a244312a341c5863a075fbe19db"
 FAMILIES = {
-    "us_likelihood": 6, "us_destination_order": 12,
-    "pressure_mode_interaction": 6, "shared_role_gap": 2,
-    "dialogue_brier": 12,
+    "us_likelihood": 5, "us_destination_order": 10,
+    "pressure_mode_interaction": 5, "shared_role_gap": 2,
+    "dialogue_brier": 10,
 }
 
 
@@ -139,7 +139,7 @@ def main():
                 cohort_sha256=cohort(matched)))
         pressure_keys = sorted((item, article) for m, item, article in initial if m == model and
             all((m, item, article, cond, mode) in paths for cond in ('baseline_low', 'baseline_high') for mode in ARMS))
-        assert len(pressure_keys) == [556, 779, 178, 601, 624, 516][index]
+        assert len(pressure_keys) == [556, 779, 178, 601, 516][index]
         pressure = {}
         for cond in ('baseline_low', 'baseline_high'):
             for mode in ARMS:
@@ -175,7 +175,7 @@ def main():
                      -cue_reversals[two[1], mode, 'baseline_high']+cue_reversals[two[0], mode, 'baseline_high'])
         tables['multiplicity'].append(adjusted(shared, values,
             dict(family='shared_role_gap', model='GPT_minus_Claude', contrast=mode+'_cue_gap_increase', unit='percentage_points')))
-    assert sum(PRIMARY_N) == 44476
+    assert sum(PRIMARY_N) == 36894
     for family, n in FAMILIES.items():
         assert sum(r['family'] == family for r in tables['multiplicity']) == n
     for name, rows in tables.items(): write_csv(args.out / (name + '.csv'), rows)

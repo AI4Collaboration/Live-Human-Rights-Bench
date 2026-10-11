@@ -481,7 +481,7 @@ def main():
         print(json.dumps({"stage": "cross_perturbation", "model": model}), flush=True)
     tables["cohorts"] = cohorts
     tables["persuasion_record_counts"] = [dict(model=m, mode=a, condition=c, status=s, records=n)
-        for (m, a, c, s), n in sorted(exclusions.items())]
+        for (m, a, c, s), n in sorted(exclusions.items()) if m in {x[0] for x in MODELS}]
     tables["scored_source_checks"] = [dict(path=r["path"], rows=r["rows"],
         valid_scores=r.get("valid_scores", 0), invalid_scores=r.get("invalid_scores", 0),
         stored_vote_differs_from_mean=r.get("stored_vote_differs_from_mean", 0)) for r in source_checks]

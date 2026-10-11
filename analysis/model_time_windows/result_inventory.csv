@@ -59,16 +59,6 @@ deepseek/deepseek-v4-flash,stateswap,US,data/experiments/stateswap_summary/deeps
 deepseek/deepseek-v4-flash,stateswap,original,data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl,1000,1000,0,52,48,961,0
 deepseek/deepseek-v4-flash,stateswap,Ukraine,data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl,1000,1000,0,67,62,948,0
 deepseek/deepseek-v4-flash,stateswap,Russia,data/experiments/stateswap_summary/deepseek_deepseek-v4-flash/stateswap_summary_results.jsonl,1000,1000,0,60,71,943,0
-qwen/qwen3-235b-a22b,full_record,default,data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl,1000,1000,0,146,0,1000,74
-qwen/qwen3-235b-a22b,summary,default,data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl,1000,1000,0,137,1,999,61
-qwen/qwen3-235b-a22b,paraphrase,heavy,data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl,1000,1000,0,131,129,900,0
-qwen/qwen3-235b-a22b,paraphrase,original,data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl,1000,1000,0,127,139,900,0
-qwen/qwen3-235b-a22b,paraphrase,light,data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl,1000,1000,0,141,138,901,0
-qwen/qwen3-235b-a22b,paraphrase,medium,data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl,1000,1000,0,148,144,896,0
-qwen/qwen3-235b-a22b,stateswap,original,data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl,1000,1000,0,123,236,919,0
-qwen/qwen3-235b-a22b,stateswap,Ukraine,data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl,1000,1000,0,121,98,965,0
-qwen/qwen3-235b-a22b,stateswap,Russia,data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl,1000,1000,0,106,100,965,0
-qwen/qwen3-235b-a22b,stateswap,US,data/experiments/stateswap_summary/qwen_qwen3-235b-a22b/stateswap_summary_results.jsonl,1000,1000,0,149,92,965,0
 qwen/qwen3-32b,full_record,default,data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl,1000,1000,0,85,0,1000,70
 qwen/qwen3-32b,summary,default,data/experiments/unified_fullcase_latest/qwen_qwen3-32b/rq1.jsonl,1000,1000,0,86,3,997,66
 qwen/qwen3-32b,paraphrase,medium,data/experiments/paraphrase/qwen_qwen3-32b/paraphrase_results.jsonl,1000,1000,0,68,67,950,0

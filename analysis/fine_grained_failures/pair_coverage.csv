@@ -27,13 +27,6 @@ deepseek/deepseek-v4-flash,paraphrasing,heavy,1000,999,0,1,155,156
 deepseek/deepseek-v4-flash,state_swap,US,800,800,0,0,155,155
 deepseek/deepseek-v4-flash,state_swap,Russia,800,800,0,0,70,70
 deepseek/deepseek-v4-flash,state_swap,Ukraine,800,800,0,0,65,65
-qwen/qwen3-235b-a22b,summarization,abstractive,1000,1000,0,0,160,160
-qwen/qwen3-235b-a22b,paraphrasing,light,1000,1000,0,0,104,104
-qwen/qwen3-235b-a22b,paraphrasing,medium,1000,1000,0,0,106,106
-qwen/qwen3-235b-a22b,paraphrasing,heavy,1000,1000,0,0,103,103
-qwen/qwen3-235b-a22b,state_swap,US,800,800,0,0,104,104
-qwen/qwen3-235b-a22b,state_swap,Russia,800,800,0,0,84,84
-qwen/qwen3-235b-a22b,state_swap,Ukraine,800,800,0,0,82,82
 qwen/qwen3-32b,summarization,abstractive,1000,1000,0,0,147,147
 qwen/qwen3-32b,paraphrasing,light,1000,1000,0,0,85,85
 qwen/qwen3-32b,paraphrasing,medium,1000,1000,0,0,92,92
