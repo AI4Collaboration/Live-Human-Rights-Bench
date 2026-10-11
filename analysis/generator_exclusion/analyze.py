@@ -14,14 +14,14 @@ import math
 from pathlib import Path
 import subprocess
 
-REVISION = "66e9f06451ac3463cb7dd6bc6e995e1fa67f9220"
+REVISION = "d8a3a07e93f983fdf92b0557a5c028deaba43162"
 RULE = "band_40_60"
 OUT = Path(__file__).resolve().parent
 REPO = OUT.parents[1]
 MODELS = (
     "anthropic/claude-opus-4.6", "openai/gpt-5.6-sol",
     "deepseek/deepseek-v4-pro", "deepseek/deepseek-v4-flash",
-    "qwen/qwen3-235b-a22b", "qwen/qwen3-32b",
+    "qwen/qwen3-32b",
 )
 EXCLUSIONS = {
     "summarization": {"deepseek/deepseek-v4-pro", "deepseek/deepseek-v4-flash"},
@@ -96,9 +96,9 @@ def main():
     cohorts = table("analysis/threshold_sensitivity/cohorts.csv")
     readme = source("README.md").decode("utf-8")
     runner = source("experiments/paraphrase_run.py").decode("utf-8")
-    assert "| Shared abstractive summarizer | `deepseek/deepseek-v4.1-flash` |" in readme
+    assert "The shared summarizer is `deepseek/deepseek-v4.1-flash`" in readme
     assert 'PARAPHRASER = "openai/gpt-5.6-sol"' in runner
-    assert len(rows) == 24 and len(published) == 4
+    assert len(rows) == 20 and len(published) == 4
     assert {r["model"] for r in rows} == set(MODELS)
     assert {(integer(r, "n"), integer(r, "judgments")) for r in rows} == {(1000, 947)}
     assert len({r["cohort_sha256"] for r in rows}) == 1
@@ -128,7 +128,7 @@ def main():
     pooled = []
     for condition in ("summary", "light", "medium", "heavy"):
         selected = [r for r in rows if r["condition"] == condition]
-        assert len(selected) == 6 and len({r["model"] for r in selected}) == 6
+        assert len(selected) == 5 and len({r["model"] for r in selected}) == 5
         all_models, totals = aggregate(selected, "all_six")
         ref = next(r for r in published if r["condition"] == condition)
         assert all(totals[key] == integer(ref, key) for key in totals)
@@ -163,16 +163,16 @@ def main():
         "The diagnostic reaggregates the published inclusive 40-60 abstention rule: scores below 40 indicate no violation, scores above 60 indicate violation, and both endpoints belong to abstention. Summary evaluation compares each target's full-record score with its shared-summary score. Paraphrasing compares each rewrite with the saved original arm from that experiment.", "",
         "- Summary: exclude DeepSeek V4 Pro and DeepSeek V4 Flash. The summary generator is DeepSeek V4.1 Flash, so this exclusion follows a model-family link rather than an exact-model overlap.",
         "- Paraphrasing: exclude GPT-5.6-sol, the exact model used as both paraphraser and evaluator.", "",
-        "Every retained model keeps all 1,000 paired targets from the same 947 judgments. Counts pool paired model-target observations: 6,000 for all six evaluators, 4,000 for summary after exclusion, and 5,000 per paraphrase strength after exclusion. These are target-weighted counts, not counts of distinct judgments; the 947 judgments are not multiplied into new independent cases. Missing scores retain the source analysis's failure category. Category changes include transitions among no violation, violation, abstention and failure; corrections and losses respectively enter and leave the correct category.", "",
+        "Every retained model keeps all 1,000 paired targets from the same 947 judgments. Counts pool paired model-target observations: 5,000 for all five evaluators, 3,000 for summary after exclusion, and 4,000 per paraphrase strength after exclusion. These are target-weighted counts, not counts of distinct judgments; the 947 judgments are not multiplied into new independent cases. Missing scores retain the source analysis's failure category. Category changes include transitions among no violation, violation, abstention and failure; corrections and losses respectively enter and leave the correct category.", "",
         "## Paired totals", "",
         "| Comparison | Evaluators | Paired observations | Category changes | Corrections | Losses | Net correct change | Accuracy change (pp) |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for r in pooled:
-        label = r["condition"].capitalize() + (", all six" if r["scope"] == "all_six" else ", exclusion")
+        label = r["condition"].capitalize() + (", all five" if r["scope"] == "all_six" else ", exclusion")
         lines.append(f"| {label} | {r['models']} | {r['paired_model_target_observations']:,} | {r['categorical_change_n']} ({r['categorical_change_pct']:.2f}%) | {r['corrections_n']} | {r['losses_n']} | {r['net_correct_change_n']:+d} | {r['accuracy_change_pp']:+.2f} |")
     lines.extend(["", "## What remains after exclusion", "",
-        f"**Summary losses remain small in aggregate but hide larger opposing changes.** Accuracy changes range from {span(s, 'model_accuracy_change_min_pp', 'model_accuracy_change_max_pp', True)} percentage points across the four retained models; category-change rates range from {span(s, 'model_categorical_change_min_pct', 'model_categorical_change_max_pct')}%. The pooled net change is {s['net_correct_change_n']} correct answers ({s['accuracy_change_pp']:+.2f} points), combining {s['corrections_n']} corrections with {s['losses_n']} losses. Correct-to-abstention transitions ({s['correct_to_abstention_n']}) exceed abstention-to-correct transitions ({s['abstention_to_correct_n']}) by {s['net_abstention_loss_n']}, accounting for {100*s['net_abstention_loss_n']/-s['net_correct_change_n']:.1f}% of the net loss. The all-six pooled change was {baseline['summary']['accuracy_change_pp']:+.2f} points.", "",
+        f"**Summary losses remain small in aggregate but hide larger opposing changes.** Accuracy changes range from {span(s, 'model_accuracy_change_min_pp', 'model_accuracy_change_max_pp', True)} percentage points across the three retained models; category-change rates range from {span(s, 'model_categorical_change_min_pct', 'model_categorical_change_max_pct')}%. The pooled net change is {s['net_correct_change_n']} correct answers ({s['accuracy_change_pp']:+.2f} points), combining {s['corrections_n']} corrections with {s['losses_n']} losses. Correct-to-abstention transitions ({s['correct_to_abstention_n']}) exceed abstention-to-correct transitions ({s['abstention_to_correct_n']}) by {s['net_abstention_loss_n']}, accounting for {100*s['net_abstention_loss_n']/-s['net_correct_change_n']:.1f}% of the net loss. The all-five pooled change was {baseline['summary']['accuracy_change_pp']:+.2f} points.", "",
         "**Paraphrase effects remain model dependent.** The five retained evaluators still have both positive and negative net accuracy changes at each rewrite strength:", "",
         "| Rewrite | Per-model accuracy change (pp) | Per-model category changes (%) |",
         "| --- | ---: | ---: |",
@@ -184,10 +184,10 @@ def main():
         f"As rewrite strength increases from light to medium to heavy, {trend_counts['nondecreasing']} retained models have nondecreasing accuracy changes, {trend_counts['nonmonotonic']} have nonmonotonic changes, and {trend_counts['nonincreasing']} have nonincreasing changes. Pooled accuracy changes are {retained['light']['accuracy_change_pp']:+.2f}, {retained['medium']['accuracy_change_pp']:+.2f} and {retained['heavy']['accuracy_change_pp']:+.2f} points, respectively. Removing GPT-5.6-sol leaves the full -1.4 to +1.9 point range across model/strength combinations intact.", "",
         "## Interpretation and reproduction", "",
         "The diagnostic establishes that these aggregate patterns do not depend on including the specified generator-linked evaluators. It retains the original generated texts and does not test a replacement generator or establish generator independence. Its useful addition is this direct evaluator-dependence check; the underlying model results and headline conclusions are unchanged.", "",
-        "Run `python analysis/generator_exclusion/analyze.py` from the repository root. The standard-library script reads committed tables and generator-role records from revision `" + REVISION + "`, validates source hashes and all four published six-model totals, and writes the three CSVs, this report and the manifest. The tables trace to raw-score revision `" + upstream["source_revision"] + "` through the threshold analysis manifest. No API calls, new labels, bootstrap, confidence intervals or figures are added.", "",
-        "- `pooled.csv`: all-six and excluded-evaluator paired totals, ranges, transition decomposition, model lists and cohort hash.",
+        "Run `python analysis/generator_exclusion/analyze.py` from the repository root. The standard-library script reads committed tables and generator-role records from revision `" + REVISION + "`, validates source hashes and all four published five-model totals, and writes the three CSVs, this report and the manifest. The tables trace to raw-score revision `" + upstream["source_revision"] + "` through the threshold analysis manifest. No API calls, new labels, bootstrap, confidence intervals or figures are added.", "",
+        "- `pooled.csv`: all-five and excluded-evaluator paired totals, ranges, transition decomposition, model lists and cohort hash.",
         "- `per_model.csv`: all 24 published model/contrast estimates with explicit retention flags.",
-        "- `paraphrase_strength.csv`: six three-strength sequences with retention flags and direction classification.",
+        "- `paraphrase_strength.csv`: five three-strength sequences with retention flags and direction classification.",
         "- `manifest.json`: source byte hashes, output hashes, generator/evaluator mapping and passed checks.", "",
     ])
     (OUT / "REPORT.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
