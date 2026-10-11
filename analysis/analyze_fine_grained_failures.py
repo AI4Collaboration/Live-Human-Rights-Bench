@@ -440,7 +440,8 @@ def main():
                 assert digest == ref_cohorts[scope, model, mode]["cohort_sha256"]
                 analyze_paths(scope, model, label, mode, keys, initial, trajectories,
                     tables, args.draws, args.seed, ref_rates)
-    print(json.dumps({"stage": "extremity_timing_direction", "verified_reference_cohorts": 16}), flush=True)
+    verified_cohorts = len(cohorts)
+    print(json.dumps({"stage": "extremity_timing_direction", "verified_reference_cohorts": verified_cohorts}), flush=True)
     for model, label, _ in MODELS:
         for mode in ARMS:
             keys = cohort_roles[model, mode]
@@ -499,7 +500,7 @@ def main():
         state_swap_common_targets=len(state_targets), state_swap_common_judgments=757,
         inputs=source.inputs, canonical_targets=len(canonical), canonical_judgments=947,
         initial_records=len(initial), released_trajectories=total_trajectories,
-        reference_cohorts_verified=16, five_role_cohorts=12,
+        reference_cohorts_verified=verified_cohorts, five_role_cohorts=12,
         script_sha256_lf=hashlib.sha256(Path(__file__).read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
         reference_hashes={p.name: hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
             for p in [root / "analysis/reliability_controls/cue_cohorts.csv", root / "analysis/reliability_controls/cue_correctness_rates.csv"]},

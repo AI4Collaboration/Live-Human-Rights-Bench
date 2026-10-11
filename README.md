@@ -79,7 +79,7 @@ and inputs still awaiting publication.
 
 ## Models and roles
 
-The primary suites evaluate six target models:
+The primary suites evaluate five target models:
 
 | Target model | API identifier |
 | --- | --- |
@@ -87,15 +87,17 @@ The primary suites evaluate six target models:
 | Claude Opus 4.6 | `anthropic/claude-opus-4.6` |
 | DeepSeek V4 Pro | `deepseek/deepseek-v4-pro` |
 | DeepSeek V4 Flash | `deepseek/deepseek-v4-flash` |
-| Qwen3 235B A22B | `qwen/qwen3-235b-a22b` |
 | Qwen3 32B | `qwen/qwen3-32b` |
 
 GPT-4o mini and GPT-4.1 mini add baseline and perturbation controls. This makes
-eight models for those comparisons; the main three-turn adversarial-opinion
-suite has six. The separate reasoning runs cover Opus-4.6 and V4-Flash.
+seven models for those comparisons; the main three-turn adversarial-opinion
+suite has five. Qwen3 235B A22B (`qwen/qwen3-235b-a22b`) was also evaluated but
+is dropped from all analyses: it was withdrawn from serving before the
+regenerated paraphrase inputs could be re-scored under identical conditions. The separate reasoning runs cover Opus-4.6 and V4-Flash.
 
 The shared summarizer is `deepseek/deepseek-v4.1-flash`, the paraphraser is
-`openai/gpt-5.6-sol`, and the adaptive challenger is `openai/gpt-5.4-nano`.
+`openai/gpt-5.6-sol`, the adaptive challenger is `openai/gpt-5.4-nano`, and
+`qwen/qwen3-235b-a22b` extracts and checks claims for the fact-retention audit.
 [Verified model cutoffs](configs/model_knowledge_cutoffs.json) support the
 [earlier-model temporal analysis](analysis/model_time_windows/REPORT.md).
 

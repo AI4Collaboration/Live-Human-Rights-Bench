@@ -25,12 +25,12 @@ different parts of an experiment.
 The [cutoff register](../configs/model_knowledge_cutoffs.json) records verified
 provider dates, source URLs and date granularity. The
 [model and time-window analysis](../analysis/model_time_windows/REPORT.md)
-compares eight models on identical v1.0 targets. A post-cutoff target has a
+compares seven models on identical v1.0 targets. A post-cutoff target has a
 decision date later than the provider date; month-only cutoffs use month-end.
 
 The cutoff analysis focuses on **the two earlier models**. v1.0 contains
 214 targets after GPT-4o mini's documented cutoff and 159 after GPT-4.1 mini's.
-The six primary models, including Claude Opus 4.6 and GPT-5.6 Sol, supply
+The five primary models, including Claude Opus 4.6 and GPT-5.6 Sol, supply
 reference results on those same case splits. Temporal results include class
 counts, class recalls and balanced accuracy alongside ordinary accuracy.
 Knowledge dates locate the evaluation window; they do not establish whether
