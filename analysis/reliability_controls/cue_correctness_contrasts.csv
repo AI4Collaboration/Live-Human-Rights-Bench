@@ -95,30 +95,6 @@ within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_
 within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,wrong,161,4.3478260869565215,-2.824858757062147,11.875327797202795,2000
 within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,abstention,161,0.0,-1.8518518518518519,1.8404907975460123,2000
 within_model_mode,deepseek/deepseek-v4-flash,DeepSeek V4 Flash,adaptive,initial_wrong,reversal,161,-4.3478260869565215,-11.971936408872395,3.2051282051282053,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,correct,830,0.0,-0.8433734939759037,0.8433734939759037,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,wrong,830,0.0,-0.8433734939759037,0.8433734939759037,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,abstention,830,0.0,0.0,0.0,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,all,reversal,830,0.0,-0.8433734939759037,0.8433734939759037,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,correct,622,0.0,-0.8156606851549756,0.8077544426494345,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,wrong,622,0.0,-0.8077544426494345,0.8156606851549756,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,abstention,622,0.0,0.0,0.0,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_correct,reversal,622,0.0,-0.8077544426494345,0.8156606851549756,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,correct,208,0.0,-1.9052197802197801,1.9138755980861244,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,wrong,208,0.0,-1.9138755980861244,1.9052197802197777,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,abstention,208,0.0,0.0,0.0,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,static,initial_wrong,reversal,208,0.0,-1.9052197802197801,1.9138755980861244,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,correct,552,1.2681159420289856,-1.9927536231884058,4.7101449275362315,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,wrong,552,-2.536231884057971,-5.978260869565218,0.9057971014492754,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,abstention,552,1.2681159420289856,-0.18115942028985507,2.898550724637681,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,all,reversal,552,-2.898550724637681,-6.340579710144928,0.7246376811594203,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,correct,405,2.4691358024691357,-1.2225687952442592,6.0606060606060606,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,wrong,405,-3.2098765432098766,-7.075889870199385,0.9732360097323601,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,abstention,405,0.7407407407407407,-0.9779951100244498,2.525252525252525,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_correct,reversal,405,-3.2098765432098766,-7.075889870199385,0.9732360097323601,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,correct,147,-2.0408163265306123,-9.317184265010352,5.645876229695718,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,wrong,147,-0.6802721088435374,-8.0007299270073,6.212150621118007,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,abstention,147,2.7210884353741496,0.0,6.293843951324265,2000
-within_model_mode,qwen/qwen3-235b-a22b,Qwen3-235B,adaptive,initial_wrong,reversal,147,-2.0408163265306123,-9.317184265010352,5.645876229695718,2000
 within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,correct,863,0.0,-0.6952491309385863,0.6952491309385863,2000
 within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,wrong,863,-0.11587485515643106,-0.8111239860950173,0.46349942062572425,2000
 within_model_mode,qwen/qwen3-32b,Qwen3-32B,static,all,abstention,863,0.11587485515643106,0.0,0.34762456546929316,2000

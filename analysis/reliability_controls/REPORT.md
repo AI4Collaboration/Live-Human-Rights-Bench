@@ -5,7 +5,7 @@ Source GitHub revision: `4b231e17e6dd65880e665c5fe298db3862ff5ade`. All results 
 ## Main findings
 
 - **The researcher cue preserves both correct and incorrect starting judgments.** On the shared 349 cases, Claude's static retention of correct answers rises from 27/314 to 313/314, while correction of initial errors falls from 31/35 to 0/35. GPT retains 183/314 correct answers and corrects 27/35 errors with the cue. The adaptive comparison shows the same direction.
-- **Cue sensitivity is concentrated in Claude and GPT.** Gains in correct-answer retention across the model-specific matched cohorts are Claude: 78.9-90.8 percentage points; GPT: 45.3-50.6 percentage points; DeepSeek: 4.7-9.2 percentage points; Qwen: 0.0-2.5 percentage points.
+- **Cue sensitivity is concentrated in Claude and GPT.** Gains in correct-answer retention across the model-specific matched cohorts are Claude: 78.9-90.8 percentage points; GPT: 45.3-50.6 percentage points; DeepSeek: 4.7-9.2 percentage points; Qwen: 0.0-0.7 percentage points.
 - **Summary-induced judgment changes exceed same-input sampling variability in all six models.** With five ratings on each side, the excess over the full-record sampling reference is 3.2-15.5 percentage points. All six paired 95% intervals lie above zero. This supports input sensitivity beyond the observed variability of repeated scoring.
 
 ## 1. Researcher cue: retaining correct answers versus correcting errors
@@ -22,8 +22,6 @@ Every contrast matches complete no-cue and AI safety researcher trajectories wit
 | DeepSeek V4 Pro | adaptive | 292 | 0.0 / 9.2 | 91 | 96.7 / 91.2 | -5.5 [-12.6, +1.2] |
 | DeepSeek V4 Flash | static | 634 | 1.1 / 5.8 | 215 | 97.7 / 92.1 | -5.6 [-9.3, -2.2] |
 | DeepSeek V4 Flash | adaptive | 435 | 11.0 / 17.0 | 161 | 87.0 / 82.6 | -4.3 [-12.0, +3.2] |
-| Qwen3-235B | static | 622 | 0.8 / 0.8 | 208 | 97.6 / 97.6 | +0.0 [-1.9, +1.9] |
-| Qwen3-235B | adaptive | 405 | 10.6 / 13.1 | 147 | 81.0 / 78.9 | -2.0 [-9.3, +5.6] |
 | Qwen3-32B | static | 633 | 0.3 / 0.3 | 230 | 99.1 / 99.1 | +0.0 [-1.8, +1.7] |
 | Qwen3-32B | adaptive | 425 | 3.1 / 3.8 | 164 | 89.6 / 86.6 | -3.0 [-8.8, +2.3] |
 
@@ -54,7 +52,6 @@ The reference-only excess is reference/summary minus reference/reference. A symm
 | GPT-5.6-sol | 1000 | 3.85 | 5.87 | 10.78 | +6.93 [+5.42, +8.48] | +5.92 [+4.70, +7.19] |
 | DeepSeek V4 Pro | 999 | 12.87 | 12.01 | 17.21 | +4.35 [+2.98, +5.78] | +4.78 [+3.73, +5.88] |
 | DeepSeek V4 Flash | 1000 | 7.45 | 8.63 | 14.12 | +6.67 [+5.11, +8.37] | +6.08 [+4.73, +7.50] |
-| Qwen3-235B | 999 | 12.52 | 10.02 | 18.02 | +5.51 [+3.86, +7.11] | +6.75 [+5.35, +8.15] |
 | Qwen3-32B | 997 | 12.14 | 9.15 | 15.33 | +3.19 [+1.88, +4.55] | +4.69 [+3.61, +5.80] |
 
 The cohort requires ten valid ratings in both arms: 5,995 model-target pairs, excluding five rows with one missing summary rating each. The manuscript's ten-score mean analysis retains all 6,000 pairs using available scores. Five-score and ten-score changes are distinct estimands; the sampling comparison does not replace the published ten-score results.

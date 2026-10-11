@@ -22,7 +22,6 @@ MODELS = [
     ("openai/gpt-5.6-sol", "GPT-5.6-sol", "openai_gpt-5_6-sol"),
     ("deepseek/deepseek-v4-pro", "DeepSeek V4 Pro", "deepseek_deepseek-v4-pro"),
     ("deepseek/deepseek-v4-flash", "DeepSeek V4 Flash", "deepseek_deepseek-v4-flash"),
-    ("qwen/qwen3-235b-a22b", "Qwen3-235B", "qwen_qwen3-235b-a22b"),
     ("qwen/qwen3-32b", "Qwen3-32B", "qwen_qwen3-32b"),
 ]
 CONDITIONS = ("baseline_high", "authority_researcher")
@@ -210,7 +209,7 @@ def analyze_cues(source, out, draws, seed):
                                       lower_95=lo, upper_95=hi,
                                       defined_bootstrap_draws=int(np.isfinite(distribution).sum())))
 
-    expected = [(874, 480), (923, 730), (603, 383), (849, 596), (830, 552), (863, 589)]
+    expected = [(874, 480), (923, 730), (603, 383), (849, 596), (863, 589)]
     for index, (model, label, _) in enumerate(MODELS):
         counts = []
         for arm in ARMS:
@@ -332,8 +331,8 @@ def analyze_sampling(source, out, draws, seed):
                            excluded_targets=1000-len(values), balanced_partitions=len(HALVES),
                            independent_cross_pairs_per_target=len(HALVES)**2))
         print(json.dumps({"completed_sampling_model": label, "paired_targets": len(values)}), flush=True)
-    assert sum(x["targets"] for x in checks) == 5995
-    assert len(excluded) == 5
+    assert sum(x["targets"] for x in checks) == 4996
+    assert len(excluded) == 4
     write_csv(out / "sampling_variation.csv", all_rows)
     write_csv(out / "sampling_exclusions.csv", excluded)
     return checks, all_rows
@@ -341,7 +340,7 @@ def analyze_sampling(source, out, draws, seed):
 
 def make_report(out, rates, contrasts, sampling, revision, draws, seed):
     excess = [r for r in sampling if r["metric"] == "cross_minus_reference_change_pp"]
-    assert len(excess) == 6 and all(r["lower_95"] > 0 for r in excess)
+    assert len(excess) == 5 and all(r["lower_95"] > 0 for r in excess)
     retention_ranges = []
     for prefix, label in (("anthropic/", "Claude"), ("openai/", "GPT"),
                           ("deepseek/", "DeepSeek"), ("qwen/", "Qwen")):

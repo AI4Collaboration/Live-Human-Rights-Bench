@@ -1,7 +1,7 @@
 {
   "source_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
   "model_api_calls": 0,
-  "script_sha256_lf": "4d17cd83a4cf759de1c600fe31c48c700888a334199ed863b43d77ae08b9a8ab",
+  "script_sha256_lf": "891187588798853e36a80252572fb8b5c74014ab7914f718f084e911976a451b",
   "hash_convention": "Input hashes cover raw Git blob bytes; script and output hashes use LF line endings.",
   "bootstrap_draws": 2000,
   "seed": 731,
@@ -68,14 +68,6 @@
       "independent_cross_pairs_per_target": 63504
     },
     {
-      "model": "qwen/qwen3-235b-a22b",
-      "targets": 999,
-      "judgments": 946,
-      "excluded_targets": 1,
-      "balanced_partitions": 252,
-      "independent_cross_pairs_per_target": 63504
-    },
-    {
       "model": "qwen/qwen3-32b",
       "targets": 997,
       "judgments": 944,
@@ -129,14 +121,6 @@
       "sha256_git_bytes": "8b044810a556947f330bc7668a9ad597fe254f5c246fc8d63d34f6c4bcaa48b3",
       "bytes": 969047
     },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
-      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
-      "bytes": 905529
-    },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
-      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
-      "bytes": 967771
-    },
     "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
       "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
       "bytes": 907392
@@ -147,11 +131,11 @@
     }
   },
   "output_sha256": {
-    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc",
-    "cue_correctness_contrasts.csv": "1f865726e0e97210709161428c1c57e27e52af673ab67a30703f78ccb38af242",
-    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
-    "sampling_variation.csv": "553e5f698e7f2415f4712fc401041a3bd4eb54ad8bad4d15b4c55b4b8bca2757",
-    "sampling_exclusions.csv": "89dd84f982591ccfc210f9f98492709e138db6f327f5ccb7373ef09a0d1ea4c0",
-    "REPORT.md": "b53b0443ca63516c54393fb54eda53f246e5903cf709c3620a83bb124e9ca242"
+    "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3",
+    "cue_correctness_contrasts.csv": "54321c78335f13044afc1659e800a67c5be01cc0de2f9d95e2ce3cb4d1fc44f3",
+    "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
+    "sampling_variation.csv": "68b0303be06b3d581f5f11e1788bccaefb981692862a4590a9c1fc7ae27a4f1d",
+    "sampling_exclusions.csv": "324e3bbdbaa6d036b5321d4f28a09b6d503247d99988a3daacaae3b70f695689",
+    "REPORT.md": "d7d8e9ac9741f613aa783b0993bc570a0087dd6ffb4443dee36e2756c4f07c22"
   }
 }

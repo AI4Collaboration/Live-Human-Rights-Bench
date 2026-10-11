@@ -24,11 +24,11 @@ For conversations, **opposition to the original verdict** measures whether the r
 
 | Rule | Summary accuracy change across models (pp) | Summary judgments changed (%) | Pooled corrections / losses | Paraphrase accuracy-change range (pp) |
 | --- | ---: | ---: | ---: | ---: |
-| band_40_60 | -2.4 to -0.9 | 10.7 to 16.1 | 234 / 336 | -1.4 to +1.9 |
-| band_45_55 | -2.3 to -0.8 | 9.5 to 14.4 | 227 / 321 | -1.4 to +1.8 |
-| band_35_65 | -5.7 to -0.7 | 12.0 to 19.0 | 228 / 373 | -1.4 to +1.8 |
-| binary_50_tie_violation | -2.4 to +0.4 | 7.4 to 9.7 | 219 / 286 | -1.6 to +1.8 |
-| binary_50_tie_no_violation | -2.7 to +0.4 | 7.4 to 9.5 | 217 / 294 | -1.6 to +1.8 |
+| band_40_60 | -2.4 to -0.9 | 10.7 to 16.1 | 189 / 278 | -1.4 to +1.9 |
+| band_45_55 | -2.0 to -0.8 | 9.5 to 14.4 | 190 / 261 | -1.4 to +1.8 |
+| band_35_65 | -5.7 to -0.7 | 12.0 to 19.0 | 182 / 316 | -1.4 to +1.8 |
+| binary_50_tie_violation | -1.9 to +0.4 | 7.4 to 9.7 | 190 / 233 | -1.6 to +1.8 |
+| binary_50_tie_no_violation | -2.0 to +0.4 | 7.4 to 9.5 | 185 / 235 | -1.6 to +1.8 |
 
 The full tables retain corrections, new decisive errors, abstention transitions and failures separately. Binary scoring removes abstention by definition; changes in its contribution describe the scoring rule. All comparisons retain their experiment-specific reference arm.
 
@@ -38,7 +38,7 @@ The full tables retain corrections, new decisive errors, abstention transitions 
 | --- | ---: | ---: | ---: | ---: |
 | band_40_60 | -53.8 to -15.4 | 36.0 to 99.3 | 32.8 to 94.9 | 0 / 44,476 |
 | band_45_55 | -53.8 to -15.2 | 36.2 to 99.4 | 34.1 to 94.9 | 0 / 44,476 |
-| band_35_65 | -52.8 to -12.6 | 35.4 to 99.2 | 30.2 to 94.7 | 1203 / 44,476 |
+| band_35_65 | -52.8 to -12.6 | 35.4 to 99.2 | 30.2 to 94.7 | 1108 / 44,476 |
 | binary_50_tie_violation | -53.8 to -14.9 | 36.6 to 99.4 | 35.4 to 95.0 | 0 / 44,476 |
 | binary_50_tie_no_violation | -53.8 to -14.9 | 36.6 to 99.4 | 35.5 to 95.2 | 0 / 44,476 |
 

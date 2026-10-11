@@ -33,7 +33,7 @@
     }
   },
   "frozen_cohorts": true,
-  "primary_pairs": 44476,
+  "primary_pairs": 36894,
   "canonical_targets": 1000,
   "canonical_judgments": 947,
   "original_conversation_eligibility": "Initial score below40 or above60; unchanged under every rule",
@@ -41,7 +41,7 @@
     "opposes_original_verdict": "Final rescore opposite to the original40-60 initial verdict",
     "strict_reversal": "Rescored initial and final verdicts decisive and opposite, with the same frozen denominator"
   },
-  "published_two_role_cohort_hashes_verified": 16,
+  "published_two_role_cohort_hashes_verified": 14,
   "published_three_role_cohort_sizes_verified": 12,
   "systematic_source_checks": [
     {
@@ -115,23 +115,6 @@
       "invalid_scores": 2
     },
     {
-      "path": "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl",
-      "rows": 1000,
-      "stored_vote_differs_from_mean": 74,
-      "valid_scores": 1000
-    },
-    {
-      "path": "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl",
-      "rows": 1000,
-      "stored_vote_differs_from_mean": 61,
-      "valid_scores": 1000
-    },
-    {
-      "path": "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl",
-      "rows": 4000,
-      "valid_scores": 4000
-    },
-    {
       "path": "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl",
       "rows": 1000,
       "stored_vote_differs_from_mean": 70,
@@ -150,11 +133,11 @@
     }
   ],
   "conversation_records": {
-    "recorded": 118206,
-    "incomplete": 12426,
-    "complete": 105780,
-    "provision_consistent_complete": 100132,
-    "provision_mismatch": 5648
+    "recorded": 98824,
+    "incomplete": 10747,
+    "complete": 88077,
+    "provision_consistent_complete": 83369,
+    "provision_mismatch": 4708
   },
   "inputs": {
     "data/processed/echr_unified.json": {
@@ -209,18 +192,6 @@
       "sha256_git_bytes": "8ff207e98633fa1d2ead1ef7f09c02f01718cb96f65c8b788dc9110eb6c48c9c",
       "bytes": 825353
     },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/baseline.jsonl": {
-      "sha256_git_bytes": "29476d6bb1121309768aedf1c8334d7ead18e67d8598003d6992c0bd103bda01",
-      "bytes": 905529
-    },
-    "data/experiments/unified_fullcase_latest/qwen_qwen3-235b-a22b/rq1.jsonl": {
-      "sha256_git_bytes": "cc92dd04900b8fa1e198cabc14d2899584d154e32347ed2a49a58c515b09ce91",
-      "bytes": 967771
-    },
-    "data/experiments/paraphrase/qwen_qwen3-235b-a22b/paraphrase_results.jsonl": {
-      "sha256_git_bytes": "ee4e57b2a123b03d996ae4e2e04b3fd8e6a3138e08136374330664eab78d79e7",
-      "bytes": 827064
-    },
     "data/experiments/unified_fullcase_latest/qwen_qwen3-32b/baseline.jsonl": {
       "sha256_git_bytes": "53a425dac8d3f0a36bcb08460fe81ccb53b7eb71d7c6162b1ce0d80f04c1d2b3",
       "bytes": 907392
@@ -256,7 +227,7 @@
     "newly_abstaining_initial_primary_conditions": {
       "band_40_60": 0,
       "band_45_55": 0,
-      "band_35_65": 1203,
+      "band_35_65": 1108,
       "binary_50_tie_violation": 0,
       "binary_50_tie_no_violation": 0
     },
@@ -515,50 +486,50 @@
       }
     ]
   },
-  "script_sha256_lf": "f04ea23b476aad644f7198eb124b816ced77b97fe885de3c35a704596f69a232",
+  "script_sha256_lf": "3f23e669f8ac2e1736b872a2877b7a50f9c1acc067de1455090784e71955cca9",
   "dependency_hashes": {
-    "analyze_reliability_controls.py": "4d17cd83a4cf759de1c600fe31c48c700888a334199ed863b43d77ae08b9a8ab",
+    "analyze_reliability_controls.py": "891187588798853e36a80252572fb8b5c74014ab7914f718f084e911976a451b",
     "analyze_fine_grained_failures.py": "90e54afc31fe90650d36f22b87c890b5da311e1a84dbf28f9d6e4f1ca4e60b3c"
   },
   "reference_hashes": {
-    "cue_cohorts.csv": "80cb212950b6d0f507fdf43922ae896ca25e047857ee2708cbc748ce66258d9b",
-    "cue_correctness_rates.csv": "3c7c6caa5c0046c42a9b818fb95b52f4314652dcc1a38d80e9a291e3f59501dc"
+    "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
+    "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3"
   },
   "outputs": {
     "cohorts.csv": {
-      "rows": 62,
-      "bytes": 8684,
-      "sha256_lf": "d4f954babfe894baec68addcbc1db894d82dad5405be6745e704aea28a931e47"
+      "rows": 53,
+      "bytes": 7437,
+      "sha256_lf": "3259bb061149e2cb1a5213924f568e5831332dad8b5f740564ea77cb945d491d"
     },
     "systematic.csv": {
-      "rows": 120,
-      "bytes": 51285,
-      "sha256_lf": "cfbbcd8264c7c41697e67acfcd7d40ee18b39e8ed17d40ec224c0913e4468a86"
+      "rows": 100,
+      "bytes": 42964,
+      "sha256_lf": "c5ea9c3905cafae08f18534ba9a703a5d5a2b6045aac305ee798b6cdc8ecbb88"
     },
     "systematic_pooled.csv": {
       "rows": 20,
-      "bytes": 13494,
-      "sha256_lf": "7ca168cfa6b4bdb2ed4313ea1fad83bcf9ab8c373674490d2cb15c7632aa34b6"
+      "bytes": 9956,
+      "sha256_lf": "9680b16db17aebda2d692082b41dba7e4d6ee94bab743ca53f51bc3e109612ba"
     },
     "persuasion.csv": {
-      "rows": 180,
-      "bytes": 123881,
-      "sha256_lf": "c5ea89b39fd1c9c5d2c61884db682e0d20353bb4a869515785942243817c5d5c"
+      "rows": 150,
+      "bytes": 103321,
+      "sha256_lf": "543b09185283242b114a7d4e47a62550c7a94506dcb2ffc6dc16c2021a328d0c"
     },
     "persuasion_mode_contrasts.csv": {
-      "rows": 30,
-      "bytes": 11145,
-      "sha256_lf": "9a564f788ca4847ba4a55bc25d504e9dd7bae3b252bbb78a61c88139bb827cfd"
+      "rows": 25,
+      "bytes": 9362,
+      "sha256_lf": "e7c65b45fa8eb8d730b82634d3b6e6381dfa77b5cf7edb244549d581ef7c5fdc"
     },
     "cue_rates.csv": {
-      "rows": 340,
-      "bytes": 227585,
-      "sha256_lf": "dc0978f6802263188d8810363881562640a81fc8b2b6d66208c658d53c78437a"
+      "rows": 290,
+      "bytes": 193847,
+      "sha256_lf": "36fad09910e41df63d2ce3226aa536fb82bf5ffc776f9552d2c2dacd86134f4b"
     },
     "cue_contrasts.csv": {
-      "rows": 200,
-      "bytes": 72835,
-      "sha256_lf": "4a0c561713fe9e9ca915755f4ca0b78c9b0ef5d901b05904950d8ef93a54badb"
+      "rows": 170,
+      "bytes": 62310,
+      "sha256_lf": "458afc8b925ca9456081368758998dff648eff9755ff0bc7d70394abe7b59364"
     },
     "shared_model_gap.csv": {
       "rows": 10,
@@ -568,11 +539,11 @@
     "headline_checks.csv": {
       "rows": 5,
       "bytes": 641,
-      "sha256_lf": "bd25764204f479d40da4888c3d62266788308ed9bf81babcc0a9a0a61f565efc"
+      "sha256_lf": "f972731a24a43f3a858da1bff297756cb8e206a1c32c1974def9b4e92a01a153"
     },
     "REPORT.md": {
-      "bytes": 7139,
-      "sha256_lf": "18aa329ab7d7633a3b829be3d3354bb9d2057644100e8d6235ace0e57c203c6a"
+      "bytes": 7053,
+      "sha256_lf": "ef86e5021997fad8d639ea13df6b745aa47d809ee30e17a5d80291fa0add740c"
     }
   }
 }

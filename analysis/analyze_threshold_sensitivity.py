@@ -29,10 +29,10 @@ RULES = {
 PAIR = ("baseline_high", "authority_researcher")
 TRIPLE = ("baseline_high", "authority_lawyer", "authority_researcher")
 ROLE_NAMES = dict(zip(TRIPLE, ("no_cue", "lawyer", "ai_safety_researcher")))
-PRIMARY_N = (7104, 9204, 5094, 7764, 7582, 7728)
-TRIPLE_N = ((874, 373), (923, 663), (570, 280), (839, 486), (827, 463), (850, 478))
+PRIMARY_N = (7104, 9204, 5094, 7764, 7728)
+TRIPLE_N = ((874, 373), (923, 663), (570, 280), (839, 486), (850, 478))
 PUBLISHED_FINAL_REVERSAL = ((36.0,32.8),(79.8,65.4),(98.5,94.9),
-                            (96.9,85.9),(98.3,84.2),(99.3,91.6))
+                            (96.9,85.9),(99.3,91.6))
 
 
 def read_csv(path):
@@ -153,11 +153,16 @@ def contrast(batch, meta, rule, left, right):
 def load_conversations(source, cases):
     last_case = {c["item_id"]: c for c in cases}
     initial, trajectories, counts = {}, {}, Counter()
+    keep = {m[0] for m in MODELS}
     for row in source.jsonl("data/experiments/syco_full_latest/initial.jsonl"):
+        if row["target"] not in keep:
+            continue
         key = row["target"], row["item_id"], str(row["article_full"])
         assert key not in initial
         initial[key] = (row["initial_score"], ground_truth(row["violation_label"]))
     for row in source.jsonl("data/experiments/syco_full_latest/trajectories.jsonl"):
+        if row["target"] not in keep:
+            continue
         counts["recorded"] += 1
         if not complete(row):
             counts["incomplete"] += 1
@@ -177,7 +182,7 @@ def load_conversations(source, cases):
         assert key not in trajectories
         trajectories[key] = tuple(float(x) for x in row["scores"])
         counts["provision_consistent_complete"] += 1
-    assert len(initial) == 6000 and counts["recorded"] == 118206 and counts["complete"] == 105780
+    assert len(initial) == 5000 and counts["recorded"] == 98824 and counts["complete"] == 88077
     return initial, trajectories, dict(counts)
 
 
@@ -222,9 +227,9 @@ def systematic(source, canonical, tables, draws, seed):
             tables["systematic_pooled"].append(record)
         batch.finish()
     published = {r["condition"]:r for r in tables["systematic_pooled"] if r["rule"] == "band_40_60"}
-    assert [published[a]["categorical_change_n"] for a in ("summary","light","medium","heavy")] == [859,622,656,606]
+    assert [published[a]["categorical_change_n"] for a in ("summary","light","medium","heavy")] == [699,518,550,503]
     s = published["summary"]
-    assert [s[k] for k in ("lost_correct_n","gained_correct_n","correct_to_wrong_n","wrong_to_correct_n","correct_to_abstention_n","abstention_to_correct_n")] == [336,234,106,92,230,142]
+    assert [s[k] for k in ("lost_correct_n","gained_correct_n","correct_to_wrong_n","wrong_to_correct_n","correct_to_abstention_n","abstention_to_correct_n")] == [278,189,99,86,179,103]
     return checks
 
 
@@ -254,7 +259,7 @@ def persuasion(initial, trajectories, tables, draws, seed):
                 contrast="adaptive_minus_static",cohort_sha256=cohort_hash),rule,vectors[rule,"static"],vectors[rule,"adaptive"]))
         batch.finish()
         print(json.dumps({"stage":"primary_persuasion", "model":model,"frozen_pairs":len(keys)}),flush=True)
-    assert sum(PRIMARY_N) == 44476
+    assert sum(PRIMARY_N) == 36894
 
 
 def cues(initial, trajectories, tables, root, draws, seed):
@@ -319,7 +324,7 @@ def cues(initial, trajectories, tables, root, draws, seed):
                 batch.delta(row,metric+"_gpt_minus_claude_cue_effect",role_effect(two[1])-role_effect(two[0]))
             tables["shared_model_gap"].append(row)
     batch.finish()
-    assert checked == 16
+    assert checked == 14
     return checked
 
 
