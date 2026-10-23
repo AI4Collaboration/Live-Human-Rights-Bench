@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "as_of": "2026-09-21",
+  "as_of": "2026-10-23",
   "documentation": "docs/DATA_SOURCE_STATUS.md",
   "current_dataset_id": "echr-unified-atomic-targets-20260916",
   "current_release_version": "v1.0",
@@ -40,6 +40,17 @@
       "sha256_git_blob": "ab0a2a19bb6284653075870b2e7b27b0397d4a32668cb3d26dd41a03d6844d93",
       "records": 947,
       "record_unit": "judgment_summary"
+    },
+    {
+      "path": "data/processed/paraphrase_texts.jsonl.gz",
+      "status": "current",
+      "role": "Paraphrase texts with 26 repaired targets for the five primary evaluators",
+      "git_revision": "0f72881874a92bf98b8502078c93af87861305ab",
+      "sha256_git_blob": "a1cb80079afe8a3af58aaf1740efdb282c7c7ffd5634dc8828b701f135ce3bbd",
+      "records": 4000,
+      "record_unit": "target_condition",
+      "original_input_revision": "325f26b",
+      "documentation": "quality_control/paraphrase/REPORT.md"
     }
   ],
   "deprecated_hf_sources": [
@@ -121,9 +132,9 @@
   ],
   "pending_inputs": [
     {
-      "path": "data/processed/paraphrase_pairs.json",
+      "kind": "claim_level_summary_coverage",
       "status": "pending_publication",
-      "kind": "generated_inputs_for_published_paraphrase_results"
+      "documentation": "docs/SUMMARIZATION_PROTOCOL.md"
     }
   ],
   "current_transformations": [

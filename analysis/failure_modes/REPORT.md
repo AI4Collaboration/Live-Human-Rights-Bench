@@ -35,7 +35,7 @@ C = correct decisive verdict; W = wrong decisive verdict; A = abstention. Paths 
 - **error_never_corrected:** Initially wrong, never correct during follow-up, wrong at turn 3.
 - **final_abstention_after_wrong:** Initially wrong, abstaining at turn 3.
 
-The nine outcome categories are mutually exclusive within each trajectory and exhaustive on the included complete cohorts. Missing or invalid scores are excluded before classification and are not treated as wrong answers. `failure_mode_rates.csv` gives six-model within-mode cohorts and the shared cohort, with 95% judgment-cluster bootstrap intervals from 2,000 draws, seed 731. Cohort hashes and final C/W/A counts exactly reproduce the existing cue-correctness analysis.
+The nine outcome categories are mutually exclusive within each trajectory and exhaustive on the included complete cohorts. Missing or invalid scores are excluded before classification and are not treated as wrong answers. `failure_mode_rates.csv` gives within-model/mode cohorts and the shared cohort, with 95% judgment-cluster bootstrap intervals from 2,000 draws, seed 731. Cohort hashes and final C/W/A counts exactly reproduce the existing cue-correctness analysis.
 
 ## Automatically selected score paths
 

@@ -8,7 +8,7 @@ not launch model experiments.
 
 | Question | Report | Scope |
 | --- | --- | --- |
-| How accurate are the models, and does case date matter? | [Baseline and time windows](model_time_windows/REPORT.md) | Six primary models plus two earlier GPT mini models |
+| How accurate are the models, and does case date matter? | [Baseline and time windows](model_time_windows/REPORT.md) | Five primary models plus two earlier GPT mini models |
 | How do country substitutions affect judgments? | [Context-screened Country Swap](stateswap_context/REPORT.md) | 606 targets for the original comparison; 574 for the combined follow-ups |
 | How do input changes compare with sampling variation? | [Reliability controls](reliability_controls/REPORT.md) | Summary changes and cue effects by initial correctness |
 | How do cues affect reasoning length and evaluation language? | [Full-explanation CoT analysis](reasoning_traces/full_text/README.md) | Complete recorded explanations; paired availability and three-turn cohorts |
@@ -24,6 +24,7 @@ not launch model experiments.
 | Brier scores, multiple comparisons and turn descriptors | [Offline review analyses](review_offline/REPORT.md) |
 | Within-target summary score variance | [Summary variability](summary_variability/REPORT.md) |
 | Excluding generator-linked evaluators | [Evaluator exclusions](generator_exclusion/REPORT.md) |
+| Paraphrase fact preservation and repaired inputs | [Paraphrase QC](../quality_control/paraphrase/REPORT.md) |
 | Individual destination follow-ups | [Türkiye](stateswap_turkey/REPORT.md), [UK](stateswap_uk/REPORT.md) |
 | Combined follow-ups before context screening | [Full-cohort comparison](stateswap_followups/REPORT.md) |
 | Whole-cohort reasoning-run scores and supplementary text evidence | [CoT index](reasoning_traces/README.md) |

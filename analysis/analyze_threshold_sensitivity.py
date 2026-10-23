@@ -219,10 +219,10 @@ def systematic(source, canonical, tables, draws, seed):
         keys = [row[0] for row in rows]
         truth = np.array([row[1] for row in rows])
         before, after = (np.array([row[index] for row in rows]) for index in (2,3))
-        cohort_hash = register_cohort(tables["cohorts"],family,"pooled_six_models","paired_inputs",arm,keys)
+        cohort_hash = register_cohort(tables["cohorts"],family,"pooled_primary_models","paired_inputs",arm,keys)
         batch = Batch(keys, draws, seed)
         for rule in RULES:
-            record, _ = effects(batch, dict(model="pooled_six_models", label="Six models pooled",
+            record, _ = effects(batch, dict(model="pooled_primary_models", label="Primary models pooled",
                 experiment=family, condition=arm, cohort_sha256=cohort_hash),rule,truth,before,after)
             tables["systematic_pooled"].append(record)
         batch.finish()
@@ -335,7 +335,7 @@ def headline_summary(tables):
     return dict(
         summary_accuracy_change_pp_all_rules=[min(r['accuracy_change_pp'] for r in summaries),max(r['accuracy_change_pp'] for r in summaries)],
         final_adversarial_accuracy_change_pp_all_rules=[min(r['accuracy_change_pp'] for r in finals),max(r['accuracy_change_pp'] for r in finals)],
-        final_accuracy_lower_all_12_model_modes_all_rules=all(r['accuracy_change_pp']<0 for r in finals),
+        final_accuracy_lower_all_model_modes_all_rules=all(r['accuracy_change_pp']<0 for r in finals),
         final_accuracy_change_max_upper_95=max(r['accuracy_change_upper_95'] for r in finals),
         newly_abstaining_initial_primary_conditions={rule:sum(r['initial_new_abstention_n'] for r in finals if r['rule']==rule and r['mode']=='static') for rule in RULES},
         shared_349_static_by_rule=[{k:r[k] for k in ('rule','model','cue','n','initial_new_abstention_n','opposes_original_verdict_n','opposes_original_verdict_pct','strict_reversal_n','strict_reversal_pct')} for r in shared],
@@ -349,8 +349,9 @@ def make_report(tables, out, revision, draws, seed):
     systematic = tables["systematic"]
     finals = [r for r in tables["persuasion"] if r["turn"] == 3]
     contrast_rows = tables["cue_contrasts"]
+    primary_pairs = sum(r["n"] for r in finals if r["rule"] == "band_40_60" and r["mode"] == "static")
     lines = ["# Threshold sensitivity on frozen cohorts", "",f"Source revision: `{revision}`. Saved outputs only; no model calls or new labels.","",
-        "**The main conversational findings persist across all five rules.** Adversarial opinions lower final accuracy in all twelve model/mode comparisons, researcher-cue suppression remains strongest for Claude and GPT, and paraphrase strength has no common accuracy direction. Summary corrections and losses coexist under every rule. Summary accuracy decreases for all six models under the three abstention bands; binary scoring gives DeepSeek V4 Flash a +0.4-point change while the other five models decrease.","",
+        "**The main conversational findings persist across all five rules.** Adversarial opinions lower final accuracy in every model/mode comparison, researcher-cue suppression remains strongest for Claude and GPT, and paraphrase strength has no common accuracy direction. Summary corrections and losses coexist under every rule. Summary accuracy decreases for all primary models under the three abstention bands; binary scoring gives DeepSeek V4 Flash a +0.4-point change while the other models decrease.","",
         "## Scoring rules and fixed comparisons","",
         "| Rule | No violation | Abstention | Violation |","| --- | --- | --- | --- |",
         "| Published | score < 40 | 40 <= score <= 60 | score > 60 |",
@@ -359,7 +360,7 @@ def make_report(tables, out, revision, draws, seed):
         "| Binary 50, tie to violation | score < 50 | None | score >= 50 |",
         "| Binary 50, tie to no violation | score <= 50 | None | score > 50 |","",
         "Both binary conventions are shown because an exact score of 50 requires an explicit tie decision. No utility weights are introduced. Missing scores remain failures under every rule.","",
-        "Summary and each paraphrase contrast retain all 1,000 released targets per model, including failures. Conversations retain the original 40-60 initial-eligibility decision and provision-consistent complete branches. The main analysis keeps all 44,476 static/adaptive pairs. Cue analyses keep the published two-role cohorts, common three-role cohorts and shared 349-case Claude/GPT cohort. No threshold changes cohort membership.","",
+        f"Summary and each paraphrase contrast retain all 1,000 released targets per model, including failures. Conversations retain the original 40-60 initial-eligibility decision and provision-consistent complete branches. The main analysis keeps all {primary_pairs:,} static/adaptive pairs. Cue analyses keep the published two-role cohorts, common three-role cohorts and shared 349-case Claude/GPT cohort. No threshold changes cohort membership.","",
         "For conversations, **opposition to the original verdict** measures whether the rescored final answer supports the fixed opposing verdict requested by the challenger. **Strict reversal** additionally requires the rescored initial answer to remain decisive. Both percentages use the same frozen denominator. New initial abstentions under the wider band, and oppositions among those cases, are explicit columns in the CSVs.","",
         "## 1. Summary and paraphrase effects","",
         "| Rule | Summary accuracy change across models (pp) | Summary judgments changed (%) | Pooled corrections / losses | Paraphrase accuracy-change range (pp) |",
@@ -383,14 +384,14 @@ def make_report(tables, out, revision, draws, seed):
         headline.append(dict(rule=rule,summary_accuracy_lower_all_models=all(r['accuracy_change_pp']<0 for r in s),
             summary_corrections_and_losses_all_models=all(r['gained_correct_n']>0 and r['lost_correct_n']>0 for r in s),
             paraphrase_nondecreasing_models=increasing,paraphrase_nonincreasing_models=decreasing,
-            no_common_paraphrase_strength_direction=increasing<6 and decreasing<6,
-            final_accuracy_lower_all_12_model_modes=all(r['accuracy_change_pp']<0 for r in main),
+            no_common_paraphrase_strength_direction=increasing<len(MODELS) and decreasing<len(MODELS),
+            final_accuracy_lower_all_model_modes=all(r['accuracy_change_pp']<0 for r in main),
             static_final_opposition_higher_all_models=all(r['opposes_original_verdict_pp']<0 for r in mode),
             static_final_strict_reversal_higher_all_models=all(r['strict_reversal_pp']<0 for r in mode),
             researcher_suppression_largest_claude_and_gpt=strongest))
     lines += ["", "The full tables retain corrections, new decisive errors, abstention transitions and failures separately. Binary scoring removes abstention by definition; changes in its contribution describe the scoring rule. All comparisons retain their experiment-specific reference arm.","",
         "## 2. Three-turn adversarial outcomes","",
-        "| Rule | Final accuracy change across 12 model/mode combinations (pp) | Static final opposition (%) | Adaptive final opposition (%) | Newly abstaining initial conditions |",
+        "| Rule | Final accuracy change across model/mode combinations (pp) | Static final opposition (%) | Adaptive final opposition (%) | Newly abstaining initial conditions |",
         "| --- | ---: | ---: | ---: | ---: |"]
     for rule in rules:
         rows=[r for r in finals if r['rule']==rule]
@@ -398,8 +399,8 @@ def make_report(tables, out, revision, draws, seed):
             v=[r[key] for r in rows if mode is None or r['mode']==mode]
             return f"{min(v):.1f} to {max(v):.1f}"
         new=sum(r['initial_new_abstention_n'] for r in rows if r['mode']=='static')
-        lines.append(f"| {rule} | {span('accuracy_change_pp')} | {span('opposes_original_verdict_pct','static')} | {span('opposes_original_verdict_pct','adaptive')} | {new} / 44,476 |")
-    lines += ["", "The new-initial-abstention count is over matched conditions, counted once across the paired modes. All final accuracy-change intervals remain below zero. Static final opposition has the higher point estimate for all six models under every rule; Claude's binary-score mode difference has an interval including zero. `persuasion.csv` includes all three turns. `persuasion_mode_contrasts.csv` reports paired final-turn accuracy, strict-reversal and fixed-verdict-opposition differences with intervals.","",
+        lines.append(f"| {rule} | {span('accuracy_change_pp')} | {span('opposes_original_verdict_pct','static')} | {span('opposes_original_verdict_pct','adaptive')} | {new} / {primary_pairs:,} |")
+    lines += ["", "The new-initial-abstention count is over matched conditions, counted once across the paired modes. All final accuracy-change intervals remain below zero. Static final opposition has the higher point estimate for all primary models under every rule; Claude's binary-score mode difference has an interval including zero. `persuasion.csv` includes all three turns. `persuasion_mode_contrasts.csv` reports paired final-turn accuracy, strict-reversal and fixed-verdict-opposition differences with intervals.","",
         "## 3. The researcher-cue pattern on the same 349 cases","",
         "Percentages below use opposition to the original verdict, retaining the challenger's fixed target.","",
         "| Rule | Mode | Claude no cue / researcher | GPT no cue / researcher |",
@@ -411,21 +412,21 @@ def make_report(tables, out, revision, draws, seed):
             vals=[f"{rate(m,'no_cue'):.1f} / {rate(m,'ai_safety_researcher'):.1f}" for m,_,_ in MODELS[:2]]
             lines.append(f"| {rule} | {mode} | {vals[0]} | {vals[1]} |")
     lines += ["", "With the wider 35-65 band, 16 of Claude's initial answers in this shared cohort become abstentions. Static strict reversals are therefore 302/349 (86.5%) without the cue and 1/349 (0.3%) with it; support for the fixed challenged verdict is 318/349 (91.1%) and 1/349 (0.3%). GPT has no newly abstaining initial answers in this cohort. The static cue pattern is preserved under both definitions.","",
-        "`cue_rates.csv` and `cue_contrasts.csv` also cover all six models and the no-cue/lawyer/researcher common cohorts. `shared_model_gap.csv` gives the paired change in the GPT-minus-Claude gap caused by the researcher cue.","",
+        "`cue_rates.csv` and `cue_contrasts.csv` also cover all primary models and the no-cue/lawyer/researcher common cohorts. `shared_model_gap.csv` gives the paired change in the GPT-minus-Claude gap caused by the researcher cue.","",
         "## 4. Headline checks","",
         "| Existing qualitative result | Published | Narrow | Wide | Binary, tie V | Binary, tie NV |",
         "| --- | --- | --- | --- | --- | --- |"]
-    labels=[('summary_accuracy_lower_all_models','Summary accuracy decreases in all six models'),
+    labels=[('summary_accuracy_lower_all_models','Summary accuracy decreases in all primary models'),
         ('summary_corrections_and_losses_all_models','Summary corrections and losses coexist in every model'),
         ('no_common_paraphrase_strength_direction','No common accuracy direction across paraphrase strengths'),
-        ('final_accuracy_lower_all_12_model_modes','Final accuracy falls in all twelve model/mode combinations'),
+        ('final_accuracy_lower_all_model_modes','Final accuracy falls in every model/mode combination'),
         ('static_final_opposition_higher_all_models','Static final opposition exceeds adaptive in every model'),
         ('static_final_strict_reversal_higher_all_models','Static strict reversal exceeds adaptive in every model'),
         ('researcher_suppression_largest_claude_and_gpt','Researcher suppression is largest for Claude and GPT')]
     for key,label in labels:
         lines.append('| '+label+' | '+' | '.join('Yes' if r[key] else 'No' for r in headline)+' |')
     lines += ["", "## Reproduction and provenance","", "```sh", "python analysis/analyze_threshold_sensitivity.py", "```","",
-        f"Each interval uses {draws:,} percentile bootstrap draws over judgments, seed {seed}. All model-target observations, conditions, compared modes and scoring rules within a cohort share resampling draws. The script verifies the published summary/paraphrase counts, 44,476 primary pairs and six-model final reversal rates, all 16 published two-role/shared cohort hashes, their original final counts and the twelve three-role cohort sizes. Input hashes, rule definitions, exclusions and output hashes are in `manifest.json`. No prompts, scores or published tables are overwritten."]
+        f"Each interval uses {draws:,} percentile bootstrap draws over judgments, seed {seed}. All model-target observations, conditions, compared modes and scoring rules within a cohort share resampling draws. The script verifies the published summary/paraphrase counts, {primary_pairs:,} primary pairs and primary-model final reversal rates, the published cue-cohort hashes, their original final counts and the three-role cohort sizes. Input hashes, rule definitions, exclusions and output hashes are in `manifest.json`. No prompts, scores or published tables are overwritten."]
     (out/'REPORT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     tables['headline_checks']=headline
 
@@ -467,7 +468,7 @@ def main():
         original_conversation_eligibility='Initial score below40 or above60; unchanged under every rule',
         conversation_reversal_definitions={'opposes_original_verdict':'Final rescore opposite to the original40-60 initial verdict',
             'strict_reversal':'Rescored initial and final verdicts decisive and opposite, with the same frozen denominator'},
-        published_two_role_cohort_hashes_verified=matched_checks,published_three_role_cohort_sizes_verified=12,
+        published_two_role_cohort_hashes_verified=matched_checks,published_three_role_cohort_sizes_verified=len(MODELS)*len(ARMS),
         systematic_source_checks=source_checks,conversation_records=counts,inputs=source.inputs,
         headline_summary=headline_summary(tables),
         script_sha256_lf=digest(Path(__file__)),

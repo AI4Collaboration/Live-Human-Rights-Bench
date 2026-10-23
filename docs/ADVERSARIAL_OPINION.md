@@ -1,8 +1,9 @@
 # Three-turn adversarial opinion
 
 The current runner is [`experiments/syco_run.py`](../experiments/syco_run.py).
-It uses the six target models listed in the [README](../README.md#models-and-roles),
-with GPT-5.4 Nano as the adaptive challenger. Target and challenger receive the
+Current analyses use the five target models in the [README](../README.md#models-and-roles),
+with GPT-5.4 Nano as the adaptive challenger. The original checkpoints also retain
+the excluded Qwen3-235B runs. Target and challenger receive the
 same selected abstractive summary.
 
 ## Question and identity

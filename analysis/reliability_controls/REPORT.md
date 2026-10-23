@@ -6,7 +6,7 @@ Source GitHub revision: `4b231e17e6dd65880e665c5fe298db3862ff5ade`. All results 
 
 - **The researcher cue preserves both correct and incorrect starting judgments.** On the shared 349 cases, Claude's static retention of correct answers rises from 27/314 to 313/314, while correction of initial errors falls from 31/35 to 0/35. GPT retains 183/314 correct answers and corrects 27/35 errors with the cue. The adaptive comparison shows the same direction.
 - **Cue sensitivity is concentrated in Claude and GPT.** Gains in correct-answer retention across the model-specific matched cohorts are Claude: 78.9-90.8 percentage points; GPT: 45.3-50.6 percentage points; DeepSeek: 4.7-9.2 percentage points; Qwen: 0.0-0.7 percentage points.
-- **Summary-induced judgment changes exceed same-input sampling variability in all six models.** With five ratings on each side, the excess over the full-record sampling reference is 3.2-15.5 percentage points. All six paired 95% intervals lie above zero. This supports input sensitivity beyond the observed variability of repeated scoring.
+- **Summary-induced judgment changes exceed same-input sampling variability in all 5 models.** With five ratings on each side, the excess over the full-record sampling reference is 3.2-15.5 percentage points. All paired 95% intervals lie above zero. This supports input sensitivity beyond the observed variability of repeated scoring.
 
 ## 1. Researcher cue: retaining correct answers versus correcting errors
 
@@ -54,9 +54,9 @@ The reference-only excess is reference/summary minus reference/reference. A symm
 | DeepSeek V4 Flash | 1000 | 7.45 | 8.63 | 14.12 | +6.67 [+5.11, +8.37] | +6.08 [+4.73, +7.50] |
 | Qwen3-32B | 997 | 12.14 | 9.15 | 15.33 | +3.19 [+1.88, +4.55] | +4.69 [+3.61, +5.80] |
 
-The cohort requires ten valid ratings in both arms: 5,995 model-target pairs, excluding five rows with one missing summary rating each. The manuscript's ten-score mean analysis retains all 6,000 pairs using available scores. Five-score and ten-score changes are distinct estimands; the sampling comparison does not replace the published ten-score results.
+The cohort requires ten valid ratings in both arms: 4,996 model-target pairs, excluding 4 rows with a missing summary rating. The manuscript's ten-score mean analysis retains all 5,000 pairs using available scores. Five-score and ten-score changes are distinct estimands; the sampling comparison does not replace the published ten-score results.
 
-**Data:** [all metrics and paired intervals](sampling_variation.csv), [five excluded rows](sampling_exclusions.csv). The CSV also includes strict reversals, absolute score differences and rating standard deviations.
+**Data:** [all metrics and paired intervals](sampling_variation.csv), [excluded rows](sampling_exclusions.csv). The CSV also includes strict reversals, absolute score differences and rating standard deviations.
 
 ## 3. Inference and reproduction
 

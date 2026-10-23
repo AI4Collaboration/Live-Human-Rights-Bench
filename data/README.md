@@ -34,10 +34,16 @@ and text-availability cohorts are separate from the main score-only results.
 Country Swap manuscript comparisons use the
 [context-screened cohorts](../analysis/stateswap_context/REPORT.md).
 
+## Published paraphrase inputs
+
+[`processed/paraphrase_texts.jsonl.gz`](processed/paraphrase_texts.jsonl.gz)
+contains 1,000 targets across four conditions. Commit `325f26b` retains the
+original texts; `0f72881` replaces 26 truncated targets after regeneration.
+The [QC report](../quality_control/paraphrase/REPORT.md) records the checks and
+which evaluations use each input version.
+
 ## Inputs awaiting publication
 
-- Generated `processed/paraphrase_pairs.json` for the published paraphrase runs.
-  Regenerating paraphrases would create different inputs.
 - Claim-level summary-coverage checkpoints described in the
   [summarization protocol](../docs/SUMMARIZATION_PROTOCOL.md). The selected
   summaries, extractive controls and paragraph-link annotations are released.

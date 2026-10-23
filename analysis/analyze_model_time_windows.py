@@ -264,7 +264,7 @@ def main():
     for name, rows in tables.items():
         write_csv(out / (name+".csv"), rows)
     manifest = dict(source_revision=source.revision, release="v1.0", inputs=source.inputs,
-        temporal_scope="Cutoff splits are defined only by GPT-4o mini and GPT-4.1 mini. The six primary models supply same-case reference results; they have no separate own-cutoff partitions in this analysis.",
+        temporal_scope=f"Cutoff splits are defined only by GPT-4o mini and GPT-4.1 mini. The {len(MODELS)} primary models supply same-case reference results; they have no separate own-cutoff partitions in this analysis.",
         analyzer_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         cutoffs_file="configs/model_knowledge_cutoffs.json", cutoffs_sha256=hashlib.sha256(cutoffs_path.read_bytes()).hexdigest(),
         bootstrap=dict(draws=args.draws,seed=args.seed,unit="judgment",interval="percentile_95"),

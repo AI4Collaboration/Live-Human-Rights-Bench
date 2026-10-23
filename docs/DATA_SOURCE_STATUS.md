@@ -1,6 +1,6 @@
 # Current and deprecated data sources
 
-Input provenance was recorded on **21 September 2026**. Exact revisions and input hashes are in
+Publication status was updated on **23 October 2026**. Exact revisions and input hashes are in
 [`configs/data_source_status.json`](../configs/data_source_status.json).
 
 ## Current inputs
@@ -14,10 +14,14 @@ designated summary inputs. See the [version policy](BENCHMARK_RELEASES.md).
 | [`echr_unified.json`](../data/processed/echr_unified.json) | 1,000 targets / 947 judgments | Canonical full-case evaluation input |
 | [`summaries_dsv41flash.json`](../data/processed/summaries_dsv41flash.json) | 947 selected abstractive summaries | Summary evaluation and adversarial opinion |
 | [`summaries_extractive_leakchecked_20260916.json`](../data/processed/summaries_extractive_leakchecked_20260916.json) | 947 extractive controls | Factual-retention comparison |
+| [`paraphrase_texts.jsonl.gz`](../data/processed/paraphrase_texts.jsonl.gz) | 1,000 targets across four conditions | Paraphrase inputs with 26 repaired targets |
 
 The current target contract is
 [`evaluation_dataset.json`](../configs/evaluation_dataset.json).
-No Hugging Face mirror is designated for this release.
+No Hugging Face mirror is designated for this release. Original paraphrase
+texts remain at `325f26b`; the repaired texts are at `0f72881`. The
+[QC report](../quality_control/paraphrase/REPORT.md) distinguishes input versions
+and the model checkpoints that were rescored.
 
 ## Deprecated Hugging Face releases
 
@@ -74,7 +78,6 @@ for exact selection rules. All source results remain available.
 
 | Artifact | Status |
 | --- | --- |
-| `data/processed/paraphrase_pairs.json` | Generated inputs for the published paraphrase results pending publication |
 | Claim-level summary-coverage checkpoints | Completed locally; see the [summarization protocol](SUMMARIZATION_PROTOCOL.md) for publication status |
 
 Publish updated inputs with their exact source revision, text hashes and review

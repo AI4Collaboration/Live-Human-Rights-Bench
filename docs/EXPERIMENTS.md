@@ -40,9 +40,13 @@ Each of the six model directories in `data/experiments/paraphrase/` contains
 4,000 rows in `paraphrase_results.jsonl`. Rows store `avg_rating`, the predicted
 label, and `n_unparsed`.
 
-The generated input file, `data/processed/paraphrase_pairs.json`, and its
-generation checkpoint are not included in the current commit. Generating new
-paraphrases produces a new set of inputs.
+The released texts are in
+[`paraphrase_texts.jsonl.gz`](../data/processed/paraphrase_texts.jsonl.gz).
+Commit `325f26b` preserves the original inputs; `0f72881` replaces the 26
+truncated targets after regeneration and rescoring. Current primary analyses
+use five models. The excluded Qwen3-235B checkpoint and the two earlier-model
+checkpoints retain their original evaluations. Input versions and preservation
+checks are documented in the [QC report](../quality_control/paraphrase/REPORT.md).
 
 ### Three-turn adversarial opinion
 
@@ -76,10 +80,11 @@ Cue comparisons use high pressure. The current outputs are
 Of 6,000 initial records, **5,373** have a decisive score and enter the
 trajectory stage.
 
-**Analysis cohort.** The release contains **47,033** matched pairs with three
-valid scores in each arm. The score-only manuscript analysis uses **44,476** pairs after
-excluding **53 targets from 49 judgments** affected by a follow-up provision
-mismatch in the published checkpoints. The current runner joins follow-ups by
+**Analysis cohort.** The original six-model release contains **47,033** matched
+pairs with three valid scores in each arm. Provision screening leaves **44,476**
+pairs after excluding **53 targets from 49 judgments** affected by a follow-up
+provision mismatch. Excluding Qwen3-235B leaves **36,894** pairs in the current
+five-model analysis. The current runner joins follow-ups by
 `(item_id, article_full)` and binds new checkpoints to the corrected protocol.
 Use a new output directory for a new full-cohort run.
 
@@ -217,5 +222,5 @@ to one invocation. The
 SLURM launchers (`model_par.sh`, `paraphrase_eval.sh`, and
 `run_syco_full.sh`) resolve the repository location and use the prepared Python
 environment. Set the API key before launch and adjust scheduler resources for
-your cluster. `scripts/run_roster.sh` runs the six current models through the
+your cluster. `scripts/run_roster.sh` runs the five current models through the
 full-case and shared-summary arms with ten ratings per target.

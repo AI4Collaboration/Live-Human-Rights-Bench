@@ -1,6 +1,6 @@
 # Potential additions and experiment plan
 
-Reviewed 26 September 2026 against the published results and runners.
+Publication status updated 23 October 2026. Experiment scope remains unchanged.
 **On hold: current work uses existing data only.** This document retains the
 planned scope for a later decision; no new API runs are scheduled.
 
@@ -8,7 +8,7 @@ planned scope for a later decision; no new API runs are scheduled.
 
 | Priority | Addition | Why it matters | New model calls |
 | --- | --- | --- | --- |
-| Release completeness | Publish the original paraphrase inputs and claim-level summary-coverage checkpoints | Makes the reported transformations and factual-retention results reproducible | No |
+| Release completeness | Publish the claim-level summary-coverage checkpoints | Makes the reported factual-retention results reproducible; paraphrase texts and their QC records are now released | No |
 | First experiment if runs resume | Explicit evaluation framing versus neutral framing with the same AI researcher identity | Tests evaluation-related wording while holding the claimed role fixed | 16,932 target replies |
 | Second experiment in the same batch | Neutral reassessment without an opposing opinion | Measures judgment changes from another request to reconsider, without disagreement | 8,466 target replies |
 | Optional existing-data check | Compare instances with and without recorded CoT | Shows whether available explanations disproportionately represent particular score outcomes | No |

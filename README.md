@@ -2,7 +2,7 @@
 
 LiveHumanRightsBench evaluates the reliability of model judgments using European
 Court of Human Rights (ECtHR) cases. Its three components are a **Live Benchmark**,
-**Systematic Perturbations** and **Adversarial Opinion**.
+**Systematic Perturbation** and **Adversarial Opinion**.
 
 ## Next API experiments
 
@@ -79,7 +79,7 @@ and inputs still awaiting publication.
 
 ## Models and roles
 
-The primary suites evaluate six target models:
+Current primary analyses compare five target models:
 
 | Target model | API identifier |
 | --- | --- |
@@ -87,12 +87,13 @@ The primary suites evaluate six target models:
 | Claude Opus 4.6 | `anthropic/claude-opus-4.6` |
 | DeepSeek V4 Pro | `deepseek/deepseek-v4-pro` |
 | DeepSeek V4 Flash | `deepseek/deepseek-v4-flash` |
-| Qwen3 235B A22B | `qwen/qwen3-235b-a22b` |
 | Qwen3 32B | `qwen/qwen3-32b` |
 
 GPT-4o mini and GPT-4.1 mini add baseline and perturbation controls. This makes
-eight models for those comparisons; the main three-turn adversarial-opinion
-suite has six. The separate reasoning runs cover Opus-4.6 and V4-Flash.
+seven models for those comparisons; the main three-turn adversarial-opinion
+analysis has five. Qwen3-235B outputs remain in the historical checkpoints but
+are excluded from current primary analyses. The separate reasoning runs cover
+Opus-4.6 and V4-Flash.
 
 The shared summarizer is `deepseek/deepseek-v4.1-flash`, the paraphraser is
 `openai/gpt-5.6-sol`, and the adaptive challenger is `openai/gpt-5.4-nano`.
@@ -134,6 +135,7 @@ python -m pip install -r requirements.txt
 python scripts/validate_eval_dataset.py --require-complete
 ```
 
+For offline tests, install `requirements-dev.txt` and run `python -m pytest -q`.
 The validator makes no model calls. [Execution commands](docs/EXPERIMENTS.md#setup-and-execution)
 cover new runs, environment settings and offline Country Swap preflight.
 Each new run must use its own output directory and retain input identities.

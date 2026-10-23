@@ -203,8 +203,8 @@
       "bytes": 403590
     }
   },
-  "temporal_scope": "Cutoff splits are defined only by GPT-4o mini and GPT-4.1 mini. The six primary models supply same-case reference results; they have no separate own-cutoff partitions in this analysis.",
-  "analyzer_sha256": "288a501aba03b4df9e930f62457cffc61cd3e3f5055542f36117959c62d8d38b",
+  "temporal_scope": "Cutoff splits are defined only by GPT-4o mini and GPT-4.1 mini. The five primary models supply same-case reference results; they have no separate own-cutoff partitions in this analysis.",
+  "analyzer_sha256": "e32f786c8deeca8510ecb38e5885ece91a5fdaf85e7eb2a0c793f90e3950ba1e",
   "cutoffs_file": "configs/model_knowledge_cutoffs.json",
   "cutoffs_sha256": "c11cd0fb8b31d833acaccdf62298b723e515a54de8ef7e9207c86030fdf9daaa",
   "bootstrap": {
@@ -482,5 +482,6 @@
       "rows": 4,
       "sha256": "76b13251a397d9343be096cd650a53f9f604e3db59100b518d703d5f0b47bd50"
     }
-  }
+  },
+  "documentation_update": "2026-10-23: corrected model-count descriptions; saved numerical tables and bootstrap results unchanged."
 }

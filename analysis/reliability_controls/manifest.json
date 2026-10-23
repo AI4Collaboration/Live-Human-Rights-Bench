@@ -1,7 +1,7 @@
 {
   "source_revision": "4b231e17e6dd65880e665c5fe298db3862ff5ade",
   "model_api_calls": 0,
-  "script_sha256_lf": "891187588798853e36a80252572fb8b5c74014ab7914f718f084e911976a451b",
+  "script_sha256_lf": "2a9fa992d90dc578b9638e7b1342dcdfbec24a1918850ba539f97de956bca817",
   "hash_convention": "Input hashes cover raw Git blob bytes; script and output hashes use LF line endings.",
   "bootstrap_draws": 2000,
   "seed": 731,
@@ -136,6 +136,6 @@
     "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
     "sampling_variation.csv": "68b0303be06b3d581f5f11e1788bccaefb981692862a4590a9c1fc7ae27a4f1d",
     "sampling_exclusions.csv": "324e3bbdbaa6d036b5321d4f28a09b6d503247d99988a3daacaae3b70f695689",
-    "REPORT.md": "d7d8e9ac9741f613aa783b0993bc570a0087dd6ffb4443dee36e2756c4f07c22"
+    "REPORT.md": "0653fe9e5c57d2dc2d1e7c195568e224f5dfe341436599df3b514c8920765920"
   }
 }

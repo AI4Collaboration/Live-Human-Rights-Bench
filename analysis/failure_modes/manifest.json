@@ -142,15 +142,15 @@
   "classification_method": "deterministic_score_paths",
   "bootstrap_draws": 2000,
   "seed": 731,
-  "script_sha256_lf": "7e4a8e250e9d46a1083ff0b1a33851c88880466b1211a186507c67e1c5a16e57",
+  "script_sha256_lf": "962261ce227d7ece6f637078c06ac3e12ba5c9718bac53ec007940b513908638",
   "reference_table_hashes": {
     "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
     "cue_correctness_rates.csv": "d81fca18235657c1f514e4a2f8ff468d4da64043bf5f9381fd0aade516d1f4d3"
   },
   "outputs": {
     "REPORT.md": {
-      "sha256_lf": "f7501d71fcc4391335e4a35bc8c16bac80a44da4ba0e37a95161c37b1999b3c8",
-      "bytes": 4432
+      "sha256_lf": "98c54a37b045c42322c08636f8c35dbe83ec9b50e4c888cc5af0c65a147fe0ca",
+      "bytes": 4486
     },
     "case_examples.csv": {
       "sha256_lf": "f9cab4e92b99c2792250d82a20a2851e81d4b0577861ba2a73e6e0bd2979e816",
@@ -168,5 +168,6 @@
       "sha256_lf": "e42ae423e4020941cfc7794967ca232f9e5b014849019e48971bd267434958bb",
       "bytes": 296945
     }
-  }
+  },
+  "documentation_update": "2026-10-23: corrected model-count descriptions; saved numerical tables and bootstrap results unchanged."
 }

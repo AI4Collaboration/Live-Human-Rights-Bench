@@ -1,7 +1,9 @@
 # Paraphrase fact preservation
 
-Input: [`data/processed/paraphrase_texts.jsonl.gz`](../../data/processed/paraphrase_texts.jsonl.gz)
-(commit `325f26b`): 1,000 targets (947 judgments) x 4 conditions
+The original checks below use `paraphrase_texts.jsonl.gz` at commit `325f26b`.
+The [current file](../../data/processed/paraphrase_texts.jsonl.gz) includes the
+26 repaired targets from `0f72881`; the regeneration section reports those
+checks separately. Both versions contain 1,000 targets (947 judgments) x 4 conditions
 (`original`, `light`, `medium`, `heavy`), produced by
 [`experiments/paraphrase_run.py`](../../experiments/paraphrase_run.py) with
 `openai/gpt-5.6-sol`. The generator rewrites `text[:50000]` in chunks of about
@@ -11,8 +13,10 @@ check here compares a paraphrase with that same 50,000-character prefix.
 The number check is deterministic and makes no model calls:
 
 ```bash
+mkdir -p tmp/paraphrase-qc
+git show 325f26b:data/processed/paraphrase_texts.jsonl.gz > tmp/paraphrase-qc/original.jsonl.gz
 python quality_control/paraphrase/check_preservation.py \
-    data/processed/paraphrase_texts.jsonl.gz quality_control/paraphrase
+    tmp/paraphrase-qc/original.jsonl.gz tmp/paraphrase-qc/original
 ```
 
 It extracts application numbers, dates (normalised across `24/09/2012`,
@@ -182,8 +186,12 @@ strengths with the generator's own `paraphrase_text()`, same model
 (`openai/gpt-5.6-sol`) and instructions; only the chunking differs. The result is
 [`data/processed/paraphrase_texts_regen_cut.jsonl.gz`](../../data/processed/paraphrase_texts_regen_cut.jsonl.gz),
 104 rows in the schema of `paraphrase_texts.jsonl.gz`, original rows included. It
-cost about $6.5. The main file is unchanged: the model evaluation of these 26
-targets has to be rerun before the rows are swapped in.
+cost about $6.5. Commit `0f72881` merged these texts and rescored the affected
+targets. Commit `c26bc7c` completed rescoring for the five retained primary
+models with a larger response allowance where needed. Qwen3-235B could not
+be rescored and retains its prior scores; it is excluded from current primary
+analyses. The earlier-model paraphrase checkpoints also retain their original
+inputs. The original text version remains available at `325f26b`.
 
 Both checks were rerun ([`regen/`](regen/)):
 

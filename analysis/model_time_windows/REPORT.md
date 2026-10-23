@@ -26,7 +26,7 @@ judgment reliability when earlier models are added.
 cases.** On 159 targets after both earlier models' cutoffs, full-record balanced
 accuracy is 50.4% for GPT-4o mini, 62.1% for GPT-4.1 mini, 57.8% for Claude Opus
 4.6 and 69.9% for GPT-5.6 Sol. GPT-5.6 Sol has the highest point estimate across
-all eight models. The reference-model comparisons use the older-model windows.
+all seven models. The reference-model comparisons use the older-model windows.
 
 ## Older-model cutoffs within v1.0
 
@@ -81,13 +81,13 @@ all compared models together.
 year, three five-year bands, shared older-model cutoff intervals and each
 earlier model's own cutoff split. [Paired model differences](paired_model_differences.csv) keep
 the cohort and input form fixed. The two earlier models are additional
-controls; the existing three-turn adversarial-opinion suite still covers six models.
+controls; the current three-turn adversarial-opinion analysis uses five primary models.
 
 ## Other results in the extension
 
 Both earlier models have **1,000 full-record, 1,000 summary, 4,000 paraphrase and
 4,000 Country Swap records** each. All 20,000 records report ten parsed ratings
-and valid means. The [inventory](result_inventory.csv) also covers the six
+and valid means. The [inventory](result_inventory.csv) also covers the five
 primary models and records missing means and partial ratings separately.
 
 | Earlier model | Intervention | Category changes | Direct opposite-verdict reversals | Accuracy change, points |
@@ -115,7 +115,7 @@ non-reversals. [Paired cue differences](nationality_contrasts.csv) and
 ## Protocol and source checks
 
 - Full-record and summary runs have identical saved input identities and
-  numerical settings across all eight models: ten requested ratings,
+  numerical settings across all seven models: ten requested ratings,
   temperature 1.0 and a 50,000-character case cap. The earlier-model run tag
   is `provision-fullcase-prompts-v1`; the six-model tag is
   `atomic-target-prompts-v1`. The [prompt documentation](../../README.md#benchmark-and-inputs)
@@ -128,7 +128,7 @@ non-reversals. [Paired cue differences](nationality_contrasts.csv) and
 - Missing means remain failures in the 1,000-target accuracy denominators.
   Paired perturbation changes use valid pairs and expose missing counts.
 - Earlier-model Country Swap configs declare `stateswap-summary-literal-v1`;
-  the current six-model transformation uses country aliases. Input alignment
+  the primary transformation uses country aliases. Input alignment
   is needed for an eight-model Country Swap comparison. The inventory records
   completed outputs and their run configurations.
 - Earlier-model nationality is a separate one-turn, lawyer-cue protocol with

@@ -42,7 +42,7 @@
     "strict_reversal": "Rescored initial and final verdicts decisive and opposite, with the same frozen denominator"
   },
   "published_two_role_cohort_hashes_verified": 14,
-  "published_three_role_cohort_sizes_verified": 12,
+  "published_three_role_cohort_sizes_verified": 10,
   "systematic_source_checks": [
     {
       "path": "data/experiments/unified_fullcase_latest/anthropic_claude-opus-4_6/baseline.jsonl",
@@ -222,7 +222,7 @@
       -53.80840204161758,
       -12.640765765765765
     ],
-    "final_accuracy_lower_all_12_model_modes_all_rules": true,
+    "final_accuracy_lower_all_model_modes_all_rules": true,
     "final_accuracy_change_max_upper_95": -9.968773579888312,
     "newly_abstaining_initial_primary_conditions": {
       "band_40_60": 0,
@@ -486,10 +486,10 @@
       }
     ]
   },
-  "script_sha256_lf": "3f23e669f8ac2e1736b872a2877b7a50f9c1acc067de1455090784e71955cca9",
+  "script_sha256_lf": "1e33512c7b81bc86c38256158360e7afa9b96cb423e728502970e642c3e5452f",
   "dependency_hashes": {
-    "analyze_reliability_controls.py": "891187588798853e36a80252572fb8b5c74014ab7914f718f084e911976a451b",
-    "analyze_fine_grained_failures.py": "90e54afc31fe90650d36f22b87c890b5da311e1a84dbf28f9d6e4f1ca4e60b3c"
+    "analyze_reliability_controls.py": "2a9fa992d90dc578b9638e7b1342dcdfbec24a1918850ba539f97de956bca817",
+    "analyze_fine_grained_failures.py": "ad7ee28d57cf5eb5fe6dfb7a2a7578a21ecfd6b8f203cecf689f6b63ee1fb157"
   },
   "reference_hashes": {
     "cue_cohorts.csv": "f03a0b7132e6d80468b7054705077a7eefac9b3feeafc8211b44ef48333f78b7",
@@ -498,8 +498,8 @@
   "outputs": {
     "cohorts.csv": {
       "rows": 53,
-      "bytes": 7437,
-      "sha256_lf": "3259bb061149e2cb1a5213924f568e5831332dad8b5f740564ea77cb945d491d"
+      "bytes": 7453,
+      "sha256_lf": "54e298b00cbd7ee17775e84d505f370c2f55b02a2f6083239ed51466868709bf"
     },
     "systematic.csv": {
       "rows": 100,
@@ -508,8 +508,8 @@
     },
     "systematic_pooled.csv": {
       "rows": 20,
-      "bytes": 9956,
-      "sha256_lf": "9680b16db17aebda2d692082b41dba7e4d6ee94bab743ca53f51bc3e109612ba"
+      "bytes": 10116,
+      "sha256_lf": "3cd95ad0ac81cc82890799709437110b7596aa9cc8d9ce935bc671c4e2abb22a"
     },
     "persuasion.csv": {
       "rows": 150,
@@ -538,12 +538,12 @@
     },
     "headline_checks.csv": {
       "rows": 5,
-      "bytes": 641,
-      "sha256_lf": "f972731a24a43f3a858da1bff297756cb8e206a1c32c1974def9b4e92a01a153"
+      "bytes": 638,
+      "sha256_lf": "627bf02b5377668131c492283987b896969e17b22de9f4d69f8394dcf3d11804"
     },
     "REPORT.md": {
-      "bytes": 7053,
-      "sha256_lf": "ef86e5021997fad8d639ea13df6b745aa47d809ee30e17a5d80291fa0add740c"
+      "bytes": 7117,
+      "sha256_lf": "e3db5251b05b66a9e641d3f2f08ad81b4a17a8fdca3c76324f0bf2a2fbe442cf"
     }
   }
 }

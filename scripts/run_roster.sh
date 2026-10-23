@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Full-case and shared-summary evaluation for the current six-model roster.
+# Full-case and shared-summary evaluation for the five primary models.
 set -euo pipefail
 ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 cd "$ROOT"
@@ -12,11 +12,11 @@ OUT=${OUT:-data/experiments/fullcase_new}
 LOGS=${LOGS:-logs/fullcase_new}
 SAMPLES=${SAMPLES:-10}
 WORKERS=${WORKERS:-20}
-CONC=${CONC:-6}
+CONC=${CONC:-5}
 [[ "$CONC" =~ ^[1-9][0-9]*$ ]] || { echo "CONC must be a positive integer"; exit 1; }
 MODELS=(openai/gpt-5.6-sol anthropic/claude-opus-4.6
         deepseek/deepseek-v4-pro deepseek/deepseek-v4-flash
-        qwen/qwen3-235b-a22b qwen/qwen3-32b)
+        qwen/qwen3-32b)
 mkdir -p "$LOGS"
 pids=()
 failed=0

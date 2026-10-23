@@ -13,16 +13,17 @@ selected before model evaluation.
 
 ## Completed results
 
-The full-record and abstractive-summary checkpoints cover six models and 1,000
-targets per model under `data/experiments/unified_fullcase_latest/`. At a median
+The full-record and abstractive-summary checkpoints retain the original six
+models and 1,000 targets per model. Current analyses exclude Qwen3-235B and use
+five models from `data/experiments/unified_fullcase_latest/`. At a median
 24.0% of the original input length, summaries reduce accuracy by 0.9-2.4 percentage
 points under the manuscript's mean-score rule.
 
 The [saved-rating analysis](../analysis/reliability_controls/REPORT.md#2-equal-size-sampling-comparison)
 compares full-record/summary changes with same-input sampling variation, using
-five ratings per compared prediction. All six models show positive excess
-change, with each paired 95% interval above zero. This analysis has 5,995 complete
-model-target pairs; its CSV records the five excluded rows.
+five ratings per compared prediction. All five models show positive excess
+change, with each paired 95% interval above zero. This analysis has 4,996 complete
+model-target pairs; its CSV records the four excluded rows.
 
 The released extractive artifact,
 `data/processed/summaries_extractive_leakchecked_20260916.json`, contains 947

@@ -1,28 +1,14 @@
-torch
-accelerate
-jupyter
-matplotlib
+# Evaluation runners and offline analyses.
 numpy
-pandas
-plotly
-seaborn
-python-dotenv
-sentence-transformers
-transformers
-aiolimiter
-tabulate
-tqdm
-pyarrow
-
 openai
-anthropic
-google-genai
-googletrans
-inspect-ai
-
-evaluate
-datasets
-rouge_score
-requests
-boto3
 mlflow
+requests
+beautifulsoup4
+
+# Source ingestion and optional Bedrock scoring.
+pandas
+datasets
+huggingface-hub
+boto3
+
+# Optional: psycopg2-binary for PostgreSQL export; tiktoken for QC token counts.

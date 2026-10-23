@@ -339,6 +339,9 @@ def analyze_sampling(source, out, draws, seed):
 
 
 def make_report(out, rates, contrasts, sampling, revision, draws, seed):
+    sampling_targets = {r['model']: r['targets'] for r in sampling}
+    paired_targets = sum(sampling_targets.values())
+    full_targets = 1000 * len(sampling_targets)
     excess = [r for r in sampling if r["metric"] == "cross_minus_reference_change_pp"]
     assert len(excess) == 5 and all(r["lower_95"] > 0 for r in excess)
     retention_ranges = []
@@ -353,7 +356,7 @@ def make_report(out, rates, contrasts, sampling, revision, draws, seed):
              "## Main findings", "",
              "- **The researcher cue preserves both correct and incorrect starting judgments.** On the shared 349 cases, Claude's static retention of correct answers rises from 27/314 to 313/314, while correction of initial errors falls from 31/35 to 0/35. GPT retains 183/314 correct answers and corrects 27/35 errors with the cue. The adaptive comparison shows the same direction.",
              "- **Cue sensitivity is concentrated in Claude and GPT.** Gains in correct-answer retention across the model-specific matched cohorts are " + "; ".join(retention_ranges) + ".",
-             f"- **Summary-induced judgment changes exceed same-input sampling variability in all six models.** With five ratings on each side, the excess over the full-record sampling reference is {min(r['estimate'] for r in excess):.1f}-{max(r['estimate'] for r in excess):.1f} percentage points. All six paired 95% intervals lie above zero. This supports input sensitivity beyond the observed variability of repeated scoring.", "",
+             f"- **Summary-induced judgment changes exceed same-input sampling variability in all {len(sampling_targets)} models.** With five ratings on each side, the excess over the full-record sampling reference is {min(r['estimate'] for r in excess):.1f}-{max(r['estimate'] for r in excess):.1f} percentage points. All paired 95% intervals lie above zero. This supports input sensitivity beyond the observed variability of repeated scoring.", "",
              "## 1. Researcher cue: retaining correct answers versus correcting errors", "",
              "Every contrast matches complete no-cue and AI safety researcher trajectories within the same model and mode, starting from the identical initial response. The released follow-up provision filter matches the manuscript. Accuracy counts abstention as incorrect. Rates below are final-turn percentages.", "",
              "| Model | Mode | Initially correct n | Correct retained: no cue / researcher | Initially wrong n | Errors corrected: no cue / researcher | Correction difference, pp [95% CI] |",
@@ -390,8 +393,8 @@ def make_report(out, rates, contrasts, sampling, revision, draws, seed):
         rr, ss, rs = [pick[x]["estimate"] for x in ("reference_split_change_pct", "summary_split_change_pct", "cross_input_change_pct")]
         a, b = [pick[x] for x in ("cross_minus_reference_change_pp", "cross_minus_symmetric_change_pp")]
         lines.append(f"| {label} | {a['targets']} | {rr:.2f} | {ss:.2f} | {rs:.2f} | {a['estimate']:+.2f} [{a['lower_95']:+.2f}, {a['upper_95']:+.2f}] | {b['estimate']:+.2f} [{b['lower_95']:+.2f}, {b['upper_95']:+.2f}] |")
-    lines += ["", "The cohort requires ten valid ratings in both arms: 5,995 model-target pairs, excluding five rows with one missing summary rating each. The manuscript's ten-score mean analysis retains all 6,000 pairs using available scores. Five-score and ten-score changes are distinct estimands; the sampling comparison does not replace the published ten-score results.", "",
-              "**Data:** [all metrics and paired intervals](sampling_variation.csv), [five excluded rows](sampling_exclusions.csv). The CSV also includes strict reversals, absolute score differences and rating standard deviations.", "",
+    lines += ["", f"The cohort requires ten valid ratings in both arms: {paired_targets:,} model-target pairs, excluding {full_targets-paired_targets} rows with a missing summary rating. The manuscript's ten-score mean analysis retains all {full_targets:,} pairs using available scores. Five-score and ten-score changes are distinct estimands; the sampling comparison does not replace the published ten-score results.", "",
+              "**Data:** [all metrics and paired intervals](sampling_variation.csv), [excluded rows](sampling_exclusions.csv). The CSV also includes strict reversals, absolute score differences and rating standard deviations.", "",
               "## 3. Inference and reproduction", "",
               f"Intervals are percentile intervals from {draws:,} judgment-cluster bootstrap resamples, seed {seed}. All target rows from a judgment stay together. Conditional cue-rate denominators are recomputed in each draw. Paired conditions share each bootstrap draw. Exact subset averaging contributes no Monte Carlo error. The intervals describe variation across judgments, conditional on the saved ratings and conversations.", "",
               "```sh", "python analysis/analyze_reliability_controls.py", "python -m unittest discover -s tests -p test_reliability_controls.py", "```", "",
