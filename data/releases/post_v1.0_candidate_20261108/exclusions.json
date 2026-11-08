@@ -5,7 +5,8 @@
     "no_html_body_http_204": 61,
     "overlap_application_number": 1,
     "factual_appendix_unresolved": 19,
-    "source_review_insufficient_or_flagged": 2
+    "source_review_insufficient_or_flagged": 2,
+    "replaced_after_operative_part_check": 4
   },
   "hudoc_results": 356,
   "eligible_judgments": 259,
@@ -738,5 +739,11 @@
   "summary_status": {
     "accepted": 128,
     "failed": 1
+  },
+  "replaced_after_operative_part_check": {
+    "001-251017": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+    "001-252645": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+    "001-250744": "Target wording also covers a violation found in the same judgment under the same fair-hearing heading.",
+    "001-252642": "Outcome differs by applicant under overlapping provisions and the question does not name an applicant."
   }
 }

@@ -2,8 +2,8 @@
   "benchmark": "LiveHumanRightsBench",
   "status": "candidate, frozen before any target-model call",
   "dataset_id": "echr-post-v1.0-candidate-20261108",
-  "frozen_utc": "2026-11-08T20:40:59.608616+00:00",
-  "source_revision": "dc1155d545a4efad373105412e33345b68ba0df1",
+  "frozen_utc": "2026-11-08T21:06:02.225635+00:00",
+  "source_revision": "10d049d27c95f0cf58be67852e3e3eb3c3e20e63",
   "hudoc_retrieved_utc": "2026-11-08T20:17:13.303356+00:00",
   "hudoc_query": "contentsitename:ECHR AND (NOT (doctype=PR OR doctype=HFCOMOLD OR doctype=HECOMOLD)) AND (documentcollectionid=\"JUDGMENTS\") AND (languageisocode=\"ENG\") AND kpdate>=\"2026-05-22T00:00:00.0Z\"",
   "window": {
@@ -16,15 +16,37 @@
   },
   "selection_seed": "20261108",
   "selection_rule": "One target per judgment. no_violation stratum: up to 30 judgments by SHA-256 rank of seed|item_id, taking the lowest-ranked no_violation target. violation stratum: 70 targets allocated across decision months by largest remainder in proportion to eligible judgments, ranked within month by the same hash; lowest-ranked violation target per judgment. Substitutes are the next ranked judgment in the same stratum and month. Core 50 = lowest-ranked 15 no_violation + 35 violation.",
+  "amendments": [
+    {
+      "stage": "operative-part check, before any target-model call",
+      "removed": {
+        "001-251017": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+        "001-252645": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+        "001-250744": "Target wording also covers a violation found in the same judgment under the same fair-hearing heading.",
+        "001-252642": "Outcome differs by applicant under overlapping provisions and the question does not name an applicant."
+      },
+      "added": [
+        "001-250619",
+        "001-251013",
+        "001-252628",
+        "001-252929"
+      ],
+      "rule": "next-ranked judgment with an accepted summary in the same stratum, and in the same month for violation targets"
+    }
+  ],
   "files_sha256": {
-    "cases.json": "88bef96c6dbf50b97c4ae5e5d3d6937633c00cf2d728e83c40bb5da74fa23821",
-    "core_50.json": "7e987721fcf2aae489381c088dbaa92397dae6b0425e196ca17992191b80ad25",
-    "distribution_report.json": "07be6f226fdf0f6c29073dbac469c31954053683789fddf5a3997a78ea75de77",
+    "cases.json": "49617c410fe4c73bf92d0455bd637819b21df46ddd77ab5aeb523e919d9483cb",
+    "core_50.json": "78722c693a3dfffd358d2c8b474b23d0851448fa381628fa062b912edc24ceac",
+    "distribution_report.json": "3ed8509589381abd5668d7c91e41ebd7dc93c67b69e0cc6615ad4a8f399b1228",
     "evaluation_dataset.json": "34c63e418c88c99144110e28fbc53807f07895f207c4f9af1a00c4d7b2df6df2",
-    "exclusions.json": "4daf255df6d6361d22914d3a309d445aa040bc7d57c785d12dfaaef1b3f513f4",
+    "exclusions.json": "b0c4c6b2a5542a385b6bb358216c285b3c48d64673a1d9f8e926633fcbfd168e",
+    "hudoc_meta_retrieved.json": "3f388736a254de5586801baf26e2bcddcc2b7b366a643682c58abfa3b82de9dc",
     "non_overlap_report.json": "30455e225a8912785e1f3ccdacef211db8c134df00c9d1c5da43f9b1ce9f20d2",
-    "summaries.json": "2900a21016d8ac4774282282f851a6ba0b36511d36e9f7e66c035450bd3f8c6d",
-    "target_audit.json": "2d1d4825d426f411cf5880e9c991ef336189a2f103739a907140a256923feac6"
+    "repair_provenance.json": "e3e9f91de4b0318a0563a9a2e65324e0456eeea33ddd9d86022f60bdef354724",
+    "selection_plan.json": "300ef13ae73714f898037e713a9294a4826b8f8a9195b86a60417e00815fecbc",
+    "summaries.json": "6d83b9a642f747c0efa57cef27553784a224ff8106f9526e60a891595e91d89a",
+    "target_audit.json": "de1e2c62229a835246fccceb4bcd6266418036bf4179997ee5fd00dbb43df14f",
+    "operative_check.json": "29c075eba388ced971c50913375f9dd05bf5c052541aa54479a0cf99f417e4f0"
   },
   "targets": [
     {
@@ -133,6 +155,11 @@
       "summary_sha256": "a7694d2f7b14da3c17b9ac8e461afac9d595290f1e3638bb16c92576e04cb376"
     },
     {
+      "item_id": "001-250619",
+      "source_sha256": "de8a6397fe44e5a9693b0b1d523531b44f0444be51b7f16da6f36d464bf6336b",
+      "summary_sha256": "c7ca5e9fa714099ac003e31c913a1c5189519548add7e9031522c2c2e83b3d67"
+    },
+    {
       "item_id": "001-250735",
       "source_sha256": "21e3ef3b4d09b0c10646657a3ca0945af2f97509245756301ea5bcd1eb005ec0",
       "summary_sha256": "b6bcaf11094683dca58a129ed0cc74496af950e236e670f883640f741bc5e126"
@@ -141,11 +168,6 @@
       "item_id": "001-250740",
       "source_sha256": "29116f4c3966fa3baa936e207f365715fdbbad2834a5f4e2997b1efe77925532",
       "summary_sha256": "30700e3c60b678306e01da37e831189836431a31514571c100610100e52990fa"
-    },
-    {
-      "item_id": "001-250744",
-      "source_sha256": "4792efc79379068850d25cfacc1a2116b72dd026cf3af23c59b80f41065c8c2f",
-      "summary_sha256": "cfda7f5f8c078d854034caba5e6bded7819e8344738ad2ae5fa5b86bb7901100"
     },
     {
       "item_id": "001-250754",
@@ -183,9 +205,9 @@
       "summary_sha256": "29db497c1b10fa6cf8bfb425b59401f752bace7bedb64b9beef9b51546511adb"
     },
     {
-      "item_id": "001-251017",
-      "source_sha256": "6f03b853495c74ed6319c9217ddd06474ae02f36952a4f968a58ac2a5f5f849d",
-      "summary_sha256": "ae0cc93758cd631a728a2b6035c5ea21dab8f9c8ade8d9ae91bf572cdc6bfa03"
+      "item_id": "001-251013",
+      "source_sha256": "408caa7af191b3204f33e27d2d1856fe6dda93c55808d849111c3317e42eb49d",
+      "summary_sha256": "9398e41cc2722ba34a5c1b2983b22b38f45b5022bc412d2fdf43c7169455f4ea"
     },
     {
       "item_id": "001-251023",
@@ -378,6 +400,11 @@
       "summary_sha256": "4497f437bf0d6a6a579ad4908cd48f82bc1e03cedbc537f8e2e512d9d29d54c5"
     },
     {
+      "item_id": "001-252628",
+      "source_sha256": "be64f5204c02f7732c0ae460a366bd89bfba20fb874cfe69231dd968771dea4f",
+      "summary_sha256": "ce87e7101491157d1feaef86377885091224ac3ccd7206ae23c79b4d2f8672f7"
+    },
+    {
       "item_id": "001-252629",
       "source_sha256": "5f98a0e8cad97a9b8cf78ec8996557b0fd16d468cc0368f3df8e437a7f7d0f7e",
       "summary_sha256": "f62dc7810dac402cf57074f71e7651a6584d2f30c375e1b33203176266b6f0f1"
@@ -398,19 +425,9 @@
       "summary_sha256": "034a9e495848cc995f00281f1aa2a6acdace352a08111d22a007956e89fdb196"
     },
     {
-      "item_id": "001-252642",
-      "source_sha256": "5f583bc18345f7edab7c202913674ac4ffb580dca36ca47b8ecedcbdcd461e86",
-      "summary_sha256": "708be994fe55b9e26ab56ab53e5ef2cf1516655af938b121824ab1bf4147ee11"
-    },
-    {
       "item_id": "001-252644",
       "source_sha256": "ab43fae4487bd7912e18a80ff33c896787a2bbec7480968d1a239922e5f2c6da",
       "summary_sha256": "4356fb0596318e696234194da8bcb1e0baec4bded22dc3a4ff5a6f4099185f91"
-    },
-    {
-      "item_id": "001-252645",
-      "source_sha256": "a5e47353dcb3110386119823eb69694174cc775bca2feced86dbd44e28339ac9",
-      "summary_sha256": "15d1c18c0f33121795106365f1b934faff43956b22ee718b92a70db0fa592a5b"
     },
     {
       "item_id": "001-252653",
@@ -476,6 +493,11 @@
       "item_id": "001-252901",
       "source_sha256": "2d70b55983fd37ff630c2439b2dd8a5a25364f84518e2b96bf79849b0d941966",
       "summary_sha256": "f01a6eeeb674d4cd9bf43bee9b8550c695c05c13c4c0d71e02c6a56b51565b9e"
+    },
+    {
+      "item_id": "001-252929",
+      "source_sha256": "4e203743d3418c62e21f5415965d4e04f8d02c999bfd7a5e2e78759af2cc0c9b",
+      "summary_sha256": "0fbe2d4b0c2f66916d64230c1022fa3b7d9003543c034a47e6bf31b49314281f"
     },
     {
       "item_id": "001-252930",

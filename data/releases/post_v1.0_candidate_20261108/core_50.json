@@ -1,5 +1,5 @@
 {
-  "rule": "Lowest-ranked 15 no_violation and 35 violation judgments of this frozen cohort",
+  "rule": "Lowest-ranked 15 no_violation and 35 violation judgments of the cohort as first frozen; unchanged by the later target replacements",
   "seed": "20261108",
   "item_ids": [
     "001-250203",

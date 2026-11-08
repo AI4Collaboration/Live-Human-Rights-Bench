@@ -5,13 +5,13 @@
       "no_violation": 30
     },
     "provisions": {
-      "6": 24,
+      "6": 23,
       "3": 15,
       "5": 13,
       "P1-1": 10,
       "8": 9,
       "10": 7,
-      "14": 5,
+      "14": 6,
       "2": 4,
       "11": 4,
       "13": 3,
@@ -41,12 +41,13 @@
       "2026-11": 4
     },
     "respondents": {
-      "UKR": 22,
+      "UKR": 20,
       "TUR": 10,
-      "GRC": 6,
-      "HUN": 5,
+      "GRC": 7,
+      "HUN": 6,
       "ARM": 5,
       "HRV": 4,
+      "NLD": 4,
       "MDA": 4,
       "AZE": 4,
       "SVK": 3,
@@ -54,15 +55,15 @@
       "RUS": 3,
       "SRB": 3,
       "GEO": 3,
-      "NLD": 3,
       "ITA": 3,
       "ROU": 2,
-      "MKD": 2,
       "POL": 2,
-      "SVN": 2,
       "ALB": 2,
       "EST": 1,
       "FIN": 1,
+      "CHE": 1,
+      "MKD": 1,
+      "SVN": 1,
       "DNK": 1,
       "CZE": 1,
       "PRT": 1,
@@ -72,7 +73,7 @@
       "BGR": 1
     },
     "source_chars_median": 10895,
-    "source_chars_mean": 17376.01
+    "source_chars_mean": 16617.98
   },
   "v1.0": {
     "labels": {
