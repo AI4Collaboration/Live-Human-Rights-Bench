@@ -1,0 +1,18 @@
+{
+  "review_points": 12,
+  "unanswered_points": 0,
+  "delegated_empirical_points": [
+    "EmoP-5"
+  ],
+  "verified_local_links": 85,
+  "arithmetic_checks": 143,
+  "raw_artifact_hashes_match": true,
+  "credential_scan_passed": true,
+  "source_sha256_lf": {
+    "docs/rebuttal/RESPONSES.md": "7dc90b6aaa2a7ead8fdc1ae2c55b31bd2b91a468abf0f0ff7a0668689314f970",
+    "docs/rebuttal/review_tracker.csv": "943371ca5b07676a5d27c205a0acf7fbf3e5615f92eff9ee66d4ffaff7c336ad",
+    "analysis/rebuttal_20261107/REPORT.md": "07af7c15acb85808a7566d1d42050e163ab9058932ed3c4134df76809ee7578f",
+    "analysis/rebuttal_20261107/new_controls/paired_contrasts.csv": "063e6b3d9908f1189d228d17bfcab909a6b21beba409aeeb9db2639703f876bb",
+    "analysis/rebuttal_20261107/new_controls/repetition_variation.csv": "556059cdb734fe89eea478348142b2e8c8df558a6c74ea5d2c5e98da9047d5f1"
+  }
+}

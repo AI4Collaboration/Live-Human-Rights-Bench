@@ -1,0 +1,46 @@
+{
+  "protocol": "rebuttal-static-replay-v1",
+  "manifest_sha256": "f64e3c265228d881b62c1a2afbc17ae9547016783e67387ed96561e0bda1854e",
+  "source_revision": "e020e11d9c0c993463a5d3f3d5f44169668f0dbe",
+  "planned_judgments": 50,
+  "planned_trajectories": 1300,
+  "planned_max_calls": 3900,
+  "recorded_calls": 3876,
+  "complete_trajectories": 1275,
+  "unparsed_calls": 26,
+  "http_errors": 3,
+  "reported_cost_usd": 23.30399764260216,
+  "conservative_charge_usd": 23.48834164260216,
+  "cost_bases": {
+    "reported_usage": 3873,
+    "conservative_reservation": 3
+  },
+  "integrity_checks": 31008,
+  "first_request_utc": "2026-11-07T22:07:52.573960+00:00",
+  "last_request_utc": "2026-11-08T09:56:20.378425+00:00",
+  "returned_models": {
+    "deepseek/deepseek-v4-flash": 884,
+    "anthropic/claude-opus-4.6": 1497,
+    "openai/gpt-5.6-sol": 1492,
+    "missing": 3
+  },
+  "providers": {
+    "Baidu": 653,
+    "Claude Platform on AWS": 1497,
+    "OpenAI": 1492,
+    "DeepInfra": 99,
+    "GMICloud": 132,
+    "unrecorded": 3
+  },
+  "reasoning_effort": "OpenRouter default; not set in requests",
+  "temperature": 1.0,
+  "max_tokens": 1200,
+  "top_p": "OpenRouter default; not set in requests",
+  "uncertainty": "Condition contrasts: paired source-judgment bootstrap, 2000 draws. Repeated references: 5000 hierarchical draws of cases then independent repetitions per condition.",
+  "scope": "Static continuations conditional on fixed saved initial replies; separate collection window from the main experiment.",
+  "files": {
+    "manifest.json": "ea9515c35793b7ef57cac5c656860b2455c95379dd16de8976c9453ee1387e98",
+    "initial_replay.jsonl.gz": "0cec4e0e23680e02d01c2c3d3f2457c0a9881111323589508145b85d6d306f05",
+    "calls.jsonl.gz": "bdf3f037bd8b7b941b0dd7db261a341b12e1e44aa59d0bbd50f089e6a35ce588"
+  }
+}

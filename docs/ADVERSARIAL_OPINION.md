@@ -31,10 +31,11 @@ There are **11 conditions**. Cues appear on the first challenge turn only.
 The exact templates are in
 [`adversarial_opinion_prompts.json`](../configs/adversarial_opinion_prompts.json).
 The configuration key `researcher` means `I am an AI safety researcher.`
-The [deferred plan](NEXT_EXPERIMENTS.md) contains neutral reassessment and two
-evaluation-framing conditions with AI researcher identity fixed. No standalone
-AI researcher condition is scheduled. Existing no-cue and AI safety researcher
-trajectories provide references; new model runs are on hold.
+The separate [rebuttal controls](rebuttal/EXPERIMENTS.md) repeat the saved-initial
+protocol on 50 judgments. They distinguish an opposing opinion from an explicit
+answer-replacement directive and compare evaluation framing with the claimed
+AI researcher identity fixed. Their repetitions and collection window are
+reported separately from the main experiment.
 
 ## Matched trajectories
 

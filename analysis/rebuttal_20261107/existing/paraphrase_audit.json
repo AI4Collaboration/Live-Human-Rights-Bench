@@ -1,0 +1,32 @@
+{
+  "targets": 1000,
+  "judgments": 947,
+  "claim_target_pairs": 69106,
+  "original_supported_claims": 68529,
+  "filter": "Every sampled claim supported in the original is also supported in each of the three paraphrases; first-pass verifier decisions only",
+  "filter_uses_model_judgments": false,
+  "filtered_targets": 540,
+  "filtered_judgments": 521,
+  "filtered_median_supported_claims": 76.0,
+  "retention": {
+    "light": {
+      "estimate": 0.9947744663362696,
+      "lo": 0.9937870640207462,
+      "hi": 0.9956634940096146
+    },
+    "medium": {
+      "estimate": 0.9933204968283905,
+      "lo": 0.9922534470205389,
+      "hi": 0.9943354610437601
+    },
+    "heavy": {
+      "estimate": 0.9921322304766901,
+      "lo": 0.9906801380925522,
+      "hi": 0.9934315548586413
+    }
+  },
+  "attribute_swap_control": {
+    "n": 300,
+    "rejected": 256
+  }
+}

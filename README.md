@@ -4,26 +4,33 @@ LiveHumanRightsBench evaluates the reliability of model judgments using European
 Court of Human Rights (ECtHR) cases. Its three components are a **Live Benchmark**,
 **Systematic Perturbation** and **Adversarial Opinion**.
 
-## Next API experiments
+## Rebuttal: completed analyses and the remaining task
 
-**On hold: current work uses existing data only.** The retained plan contains
-three new static conditions for GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash.
+**8 November 2026.** Responses to all three reviews and their evidence are in
+the [rebuttal package](docs/rebuttal/README.md). The focused API collection is
+complete and cost **$23.33** against a $50 ceiling. No additional paid runs are
+scheduled here. The earlier full-cohort experiment queue is superseded.
 
-| Experiment | New conditions | Target replies |
-| --- | --- | ---: |
-| Evaluation framing | Neutral versus explicit evaluation wording, with AI researcher identity fixed | 16,932 |
-| Neutral reassessment | Ask for reconsideration without an opposing opinion | 8,466 |
+| Reviewer concern | Evidence now available |
+| --- | --- |
+| Disagreement versus instruction following | Opinion-only challenges reverse 13/50 Opus-4.6 judgments and 12/46 5.6-Sol judgments, versus 1/50 and 1/46 under neutral reassessment. Challenges containing a replacement demand produce higher reversal rates. |
+| Evaluation awareness versus role identity | With AI researcher identity fixed, evaluation wording lowers 5.6-Sol reversal from 30/49 to 19/49. Opus is already at 1/50 under neutral framing; V4-Flash remains highly reversible. |
+| Variability across conversations | Three independent continuations per reference condition preserve the large researcher-cue effect. Complete comparisons use 48 Opus cases and 49 Sol cases, with case-level variability reported. |
+| Paraphrase fact preservation | An independent verifier and a filter defined without model judgments retain 540 targets with every sampled fact supported in all three rewrites. Judgment changes remain 4.8–15.4% across the five primary models and strengths. |
+| Release consistency | All three v1.0 input hashes match the release manifest. An offline chronological reconstruction preserves the existing release exactly. |
 
-The total is **25,398 target replies** over all eligible saved initial responses.
-Existing no-cue and AI safety researcher runs provide the references. There is
-no additional sample cap or scheduled standalone AI researcher condition.
-Exact prompts, replay requirements and budgets are in
-[Next experiments](docs/NEXT_EXPERIMENTS.md). The
-[rebuttal-only plan](docs/REBUTTAL_EXPERIMENTS.md) stays outside supplementary
-submission material.
+[Reviewer responses](docs/rebuttal/RESPONSES.md) ·
+[Point-by-point tracker](docs/rebuttal/review_tracker.csv) ·
+[Results and denominators](analysis/rebuttal_20261107/REPORT.md) ·
+[Frozen protocol](docs/rebuttal/EXPERIMENTS.md) ·
+[Raw requests and responses](data/experiments/rebuttal_20261107/)
 
-The [priority summary](docs/NEXT_EXPERIMENTS.md#priority-summary) also separates
-publication gaps, optional existing-data checks and future extensions.
+**Task to assign separately:** collect and evaluate genuinely new judgments
+after the v1.0 endpoint of 21 May 2026. The
+[handoff](docs/rebuttal/DELEGATED_TASKS.md) specifies source review, release
+artifacts and a focused evaluation with a contemporaneous v1.0 anchor. The
+current chronological reconstruction is an existing-data check, not evidence
+that the findings generalize to a new release.
 
 ## Current release
 

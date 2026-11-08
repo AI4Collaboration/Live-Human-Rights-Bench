@@ -1,10 +1,9 @@
 # Review follow-up status
 
 The [analysis directory](../analysis/README.md) is the index of completed work.
-New model runs are on hold. The [experiment plan](NEXT_EXPERIMENTS.md) is the
-single source for future conditions, prompts and budgets.
-Its [priority summary](NEXT_EXPERIMENTS.md#priority-summary) distinguishes release
-completeness from the two priority experiments and optional rebuttal work.
+The [November rebuttal package](rebuttal/README.md) maps every official review
+point to a response and evidence. Its focused control study replaces the earlier
+full-cohort plan. [New-release work](rebuttal/DELEGATED_TASKS.md) is assigned separately.
 
 ## Completed using existing data
 
@@ -23,29 +22,12 @@ completeness from the two priority experiments and optional rebuttal work.
 | Do current inputs match the reviewed sources? | [Source-binding evidence](../analysis/review_followup/input_evidence.json) |
 | What do model knowledge dates tell us? | [Earlier-model time-window analysis](../analysis/model_time_windows/REPORT.md) |
 
-## Remaining experiments
+## Current controls and release follow-up
 
-The retained plan has **three conditions and 25,398 target replies** across
-GPT-5.6-sol, Claude Opus 4.6 and DeepSeek V4 Flash:
+The [focused protocol](rebuttal/EXPERIMENTS.md) covers repetition variability,
+opinion-only challenges, neutral reassessment and explicit evaluation framing.
+Its [rebuttal index](rebuttal/README.md) records completion and results.
 
-1. Neutral reassessment without an opposing opinion.
-2. Neutral framing with the AI researcher identity fixed.
-3. Explicit evaluation framing with the same identity and opposing challenge.
-
-No cue and AI safety researcher are saved references. The standalone AI
-researcher comparison is [rebuttal-only](REBUTTAL_EXPERIMENTS.md), not part of
-this budget. Full-cohort repetitions require a separate decision. New generators,
-confirming challenges, judge roles and applicant-identity runs are not scheduled.
-Already published controls remain available in the
-[control analysis](../analysis/september_controls/REPORT.md).
-
-## Release follow-up
-
-Publish the original generated paraphrases and claim-level summary-coverage
-checkpoints when available, with hashes matching the actual experiment inputs.
-The [data inventory](../data/README.md#inputs-awaiting-publication) records their
-status. Publish missing historical dialogue logs only if the originals exist;
-newly generated messages would not reconstruct the old conversations.
-
-Prior literature retrieval evidence is retained in
-[the source record](../analysis/review_followup/review_literature_20260920.json).
+The generated paraphrases and independent verifier records are public. Recover
+the remaining original summary-coverage checkpoints and historical adaptive
+messages if retained elsewhere. New generations cannot reconstruct those records.

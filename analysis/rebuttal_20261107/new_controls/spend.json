@@ -1,0 +1,6 @@
+{
+  "initial_key_usage_usd": 0.0,
+  "final_key_usage_usd": 23.327389917,
+  "observed_usage_delta_usd": 23.327389917,
+  "scope": "Dedicated key used for this task; no initial model calls were made during key checks"
+}

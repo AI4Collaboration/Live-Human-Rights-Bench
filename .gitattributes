@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Frozen rebuttal artifacts are hashed byte-for-byte, including JSON manifests.
+data/experiments/rebuttal_20261107/** -text
+data/experiments/rebuttal_20261107/*.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# The frozen runner's source hash must survive checkout on Windows and Linux.
+experiments/rebuttal_controls.py text eol=lf

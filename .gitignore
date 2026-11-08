@@ -23,6 +23,7 @@ slurm/output
 !analysis/**/*.csv
 # So are the quality-control tables reviewers ask for in rebuttal.
 !quality_control/**/*.csv
+!docs/rebuttal/*.csv
 
 # Keep only the main dataset
 data/real_cases/

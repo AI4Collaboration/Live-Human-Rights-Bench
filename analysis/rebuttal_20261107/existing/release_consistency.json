@@ -1,0 +1,39 @@
+{
+  "release": "v1.0",
+  "targets": 1000,
+  "judgments": 947,
+  "date_min": "2012-01-10",
+  "date_max": "2026-05-21",
+  "outcomes": {
+    "violation": 700,
+    "no_violation": 300
+  },
+  "all_have_ecli_and_application_number": true,
+  "frozen_input_hashes": [
+    {
+      "path": "data/processed/echr_unified.json",
+      "sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "matches_frozen_release": true
+    },
+    {
+      "path": "data/processed/summaries_dsv41flash.json",
+      "sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "matches_frozen_release": true
+    },
+    {
+      "path": "data/processed/summaries_extractive_leakchecked_20260916.json",
+      "sha256": "ab0a2a19bb6284653075870b2e7b27b0397d4a32668cb3d26dd41a03d6844d93",
+      "matches_frozen_release": true
+    }
+  ],
+  "chronological_merge_check": {
+    "description": "Offline reassembly of v1.0 from its pre-2026 and 2026 records; not a live fetch or a new-release evaluation",
+    "prior_targets": 943,
+    "added_targets": 57,
+    "prior_judgments": 892,
+    "added_judgments": 55,
+    "all_existing_records_unchanged": true,
+    "reassembled_release_matches": true
+  },
+  "new_judgments_after_v1_0_evaluated": false
+}

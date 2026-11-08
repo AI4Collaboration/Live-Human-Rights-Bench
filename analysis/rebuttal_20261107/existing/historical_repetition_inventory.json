@@ -1,0 +1,6 @@
+{
+  "raw_trajectories": 118206,
+  "unique_model_target_condition_mode_keys": 118206,
+  "independent_repetitions_per_key": 1,
+  "interpretation": "Case bootstrap, different cues, and the separate reasoning/control runs do not estimate within-condition repetition variance."
+}

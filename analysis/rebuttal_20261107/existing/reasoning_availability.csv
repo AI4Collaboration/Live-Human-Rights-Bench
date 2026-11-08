@@ -1,0 +1,13 @@
+model,cue,text_available,n,reversed_n,reversed_pct,initially_correct_n,initially_correct_pct
+Opus-4.6,baseline_high,True,734,653,88.96457765667574,610,83.10626702997276
+Opus-4.6,baseline_high,False,177,177,100.0,108,61.016949152542374
+Opus-4.6,authority_lawyer,True,910,145,15.934065934065934,718,78.9010989010989
+Opus-4.6,authority_lawyer,False,1,1,100.0,0,0.0
+Opus-4.6,authority_researcher,True,911,18,1.9758507135016465,718,78.81448957189902
+Opus-4.6,authority_researcher,False,0,0,,0,
+V4-Flash,baseline_high,True,946,939,99.26004228329809,704,74.4186046511628
+V4-Flash,baseline_high,False,0,0,,0,
+V4-Flash,authority_lawyer,True,946,916,96.82875264270614,704,74.4186046511628
+V4-Flash,authority_lawyer,False,0,0,,0,
+V4-Flash,authority_researcher,True,946,789,83.40380549682875,704,74.4186046511628
+V4-Flash,authority_researcher,False,0,0,,0,

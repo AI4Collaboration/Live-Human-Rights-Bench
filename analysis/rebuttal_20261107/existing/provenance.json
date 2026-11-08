@@ -1,0 +1,111 @@
+{
+  "source_revision": "e020e11d9c0c993463a5d3f3d5f44169668f0dbe",
+  "source_files": {
+    "data/processed/echr_unified.json": {
+      "sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+      "bytes": 24822473
+    },
+    "quality_control/paraphrase/claims/claims.jsonl.gz": {
+      "sha256": "8a96b38e0251d2c5793c8024dc075eb920864dda7d83b31f5551e0ed4ebae24d",
+      "bytes": 3065716
+    },
+    "quality_control/paraphrase/regen/claims/claims.jsonl.gz": {
+      "sha256": "9df17515d3b22da381e6547e47a1f1eb9c2b316127ef1137eb38db7d19257e63",
+      "bytes": 98872
+    },
+    "data/processed/paraphrase_pairs_regen_cut.json": {
+      "sha256": "e86aae82208633983aeaeb83ae3823fb76c1526eb2e01c0e3ac7c616166cc834",
+      "bytes": 3384748
+    },
+    "quality_control/paraphrase/claims/swap_control.jsonl": {
+      "sha256": "a3ceb7cdce270083dc61fb62de8858324f69b8c7e8270b02e6322895ef6185d4",
+      "bytes": 67688
+    },
+    "data/experiments/paraphrase/anthropic_claude-opus-4.6/paraphrase_results.jsonl": {
+      "sha256": "f2935ead26d4e04438e7f79af52651021c86439ba0c6042796ac2f6983b3bf64",
+      "bytes": 822975
+    },
+    "data/experiments/paraphrase/openai_gpt-5.6-sol/paraphrase_results.jsonl": {
+      "sha256": "b8f9cf87e427ab44127759e6bdcb642e84450f1f6d561c4531fccc79b381f740",
+      "bytes": 823565
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-pro/paraphrase_results.jsonl": {
+      "sha256": "55585bc0bf7ca64b5a658f1f93b4a3a5fd3e87697c9967daa5ae18af4d3bac4b",
+      "bytes": 835077
+    },
+    "data/experiments/paraphrase/deepseek_deepseek-v4-flash/paraphrase_results.jsonl": {
+      "sha256": "c6b5d933c1949943f84343f44b3bba20a9a321a0237898b3e16305b159112d5a",
+      "bytes": 825308
+    },
+    "data/experiments/paraphrase/qwen_qwen3-32b/paraphrase_results.jsonl": {
+      "sha256": "0205a4f27df25a072cdda068f39c445861a721dc8ec7be31436e77acb930caad",
+      "bytes": 824608
+    },
+    "data/experiments/syco_full_latest/initial.jsonl": {
+      "sha256": "291e4ffbf5abe735457234b3e7f17baf158478b98efb5bdc6259112ba52800e7",
+      "bytes": 3351590
+    },
+    "data/experiments/syco_full_latest/trajectories.jsonl": {
+      "sha256": "24b215db916c259c8f529d287571b248c15c13d2481d109b5eb119903a759a68",
+      "bytes": 40613064
+    },
+    "data/experiments/syco_controls/anthropic_claude-opus-4.6/syco_controls_results.jsonl": {
+      "sha256": "ad7f320a79f94a9ed01fc18827103c7096b9bdce0dc6d8d5931ae636f563743b",
+      "bytes": 654812
+    },
+    "data/experiments/syco_controls/openai_gpt-5.6-sol/syco_controls_results.jsonl": {
+      "sha256": "b977a9d45d7f61459ad9ced6d63a3f69e5065414a717983dabe9e9317c167147",
+      "bytes": 690760
+    },
+    "configs/releases/v1.0.json": {
+      "sha256": "05b9a28c40a01ea4773b581d205571f0965e4fabc92fe3549fc0d75a1a788015",
+      "bytes": 1489
+    },
+    "data/processed/summaries_dsv41flash.json": {
+      "sha256": "14cbdaea834f85759d7481998e7af90c80fff46b3dcb9c4c392b2b4377a70aa8",
+      "bytes": 3542646
+    },
+    "data/processed/summaries_extractive_leakchecked_20260916.json": {
+      "sha256": "ab0a2a19bb6284653075870b2e7b27b0397d4a32668cb3d26dd41a03d6844d93",
+      "bytes": 21948114
+    },
+    "analysis/reasoning_traces/full_text/results.json": {
+      "sha256": "1055bdc64a3a3fb535ff5dff84190148ca99f6bf6abb27831b30bbcaa4a43501",
+      "bytes": 265116
+    },
+    "data/experiments/syco_cot_opus/run_config.json": {
+      "sha256": "71d122aee006270c9eb4710a3514cc92f3f523c092cf39587c00898c45b8260d",
+      "bytes": 2552
+    },
+    "data/experiments/syco_cot_opus/initial.jsonl": {
+      "sha256": "33e0c274cc505b75a61283ddced83aa09942d110a37a84d38b341ea0b3bbf8ab",
+      "bytes": 2315939
+    },
+    "data/experiments/syco_cot_opus/trajectories.jsonl.gz": {
+      "sha256": "075942e36575677dad37f5844343888738f39d5c848f58b1a59b4e27275846d5",
+      "bytes": 12491909
+    },
+    "data/experiments/syco_cot/run_config.json": {
+      "sha256": "477c51d33df41a7096ef4356f9ac905df38dbf0db691829224ebb181f0367782",
+      "bytes": 2553
+    },
+    "data/experiments/syco_cot/initial.jsonl": {
+      "sha256": "dc4993b9575a2e2073243cc447e8553dab7ce2a19ab14c9d2f9478f1712d2e51",
+      "bytes": 3735239
+    },
+    "data/experiments/syco_cot/trajectories.jsonl.gz": {
+      "sha256": "b3166c19658e490a3c140937c7a9390276ea57949a0eafd18312bff275612400",
+      "bytes": 16498538
+    },
+    "analysis/reasoning_traces/full_text/observations.csv": {
+      "sha256": "c67084a954bfdc8ff2bd4e133e948af9325ab0d43c362bdc81c039c5345e364b",
+      "bytes": 3404113
+    }
+  },
+  "new_model_calls": 0,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20261107,
+    "unit": "source judgment"
+  }
+}

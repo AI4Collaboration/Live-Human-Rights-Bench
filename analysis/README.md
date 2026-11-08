@@ -47,4 +47,5 @@ not launch model experiments.
   read frozen revisions or record source hashes so their inputs can be recovered.
 
 Experiment plans are maintained separately in
-[Next experiments](../docs/NEXT_EXPERIMENTS.md). New model runs are on hold.
+[Next experiments](../docs/NEXT_EXPERIMENTS.md). The focused November controls
+are documented separately in the [rebuttal package](../docs/rebuttal/README.md).

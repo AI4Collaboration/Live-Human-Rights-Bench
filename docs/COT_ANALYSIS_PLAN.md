@@ -37,17 +37,13 @@ scores or text with the main score-only or placebo experiments. Adaptive
 checkpoints remain partial and do not retain the generated challenge text.
 Later turns replay answer content rather than the saved reasoning fields.
 
-## Deferred work
+## Follow-up evidence
 
-An optional [availability-composition check](NEXT_EXPERIMENTS.md#no-api-additions)
-would compare score outcomes in instances with and without recorded reasoning.
-It uses existing data and is separate from the completed full-text analysis.
+The [availability-composition check](../analysis/rebuttal_20261107/existing/reasoning_availability.csv)
+is complete using existing records. It compares score outcomes with and without
+recorded reasoning; empty explanations are not counted as zero awareness.
 
-Explicit evaluation framing remains the two-condition contrast in
-[Next experiments](NEXT_EXPERIMENTS.md#3-planned-evaluation-framing-control).
-The AI researcher identity is held fixed in both conditions; the standalone
-role comparison is [rebuttal-only](REBUTTAL_EXPERIMENTS.md).
-Any future collection must retain exact messages, returned reasoning, finish
-reasons, model versions, settings and source hashes. Semantic annotation and
-new model calls require a separate decision; neither is part of the completed
-full-text analysis.
+[Explicit evaluation-framing controls](rebuttal/EXPERIMENTS.md) hold AI researcher
+identity fixed across two sentences of equal length. These separate behavioral
+experiments do not transform the explanation analysis into evidence of a latent
+causal mechanism. The standalone unframed AI researcher arm is not scheduled.

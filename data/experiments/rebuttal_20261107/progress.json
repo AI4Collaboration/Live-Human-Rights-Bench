@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-11-08T09:56:26.991808+00:00",
+  "manifest_sha256": "f64e3c265228d881b62c1a2afbc17ae9547016783e67387ed96561e0bda1854e",
+  "planned_trajectories": 1300,
+  "recorded_calls": 3876,
+  "charged_usd": 23.488341642602183,
+  "budget_usd": 50.0,
+  "run_outcomes": {
+    "complete": 1283,
+    "empty_or_failed": 17
+  },
+  "new_call_counts": {
+    "new_calls": 1443,
+    "unparsed": 7,
+    "http_errors": 0
+  },
+  "complete_jobs": 1275
+}
