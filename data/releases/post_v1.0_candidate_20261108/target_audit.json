@@ -1221,22 +1221,6 @@
       "verdict_removal_method": "the_law_header"
     },
     {
-      "target_item_id": "001-252653",
-      "target_case_name": "CASE OF AHMADLI v. AZERBAIJAN",
-      "target_article_full": "6",
-      "target_label": "violation",
-      "target_respondent_code": "AZE",
-      "target_respondent": "Azerbaijan",
-      "target_issue": "Presumption of innocence",
-      "target_aspect": "unspecified",
-      "assignment": "single_respondent",
-      "holding_index": 1,
-      "official_holding": "Violation of Article 6 - Right to a fair trial (Article 6-2 - Presumption of innocence)",
-      "source_sha256": "5e517f8e8d0f42c8185d4aa81695dc56aecd1cad3c4263359393459a17d90c32",
-      "summary_sha256": "e4265b7e784239184fdb12908f23ed274961229171406850c9da98368d5adffc",
-      "verdict_removal_method": "the_law_header"
-    },
-    {
       "target_item_id": "001-252654",
       "target_case_name": "CASE OF BELTEK AND OTHERS v. GREECE",
       "target_article_full": "3",
@@ -1410,6 +1394,22 @@
       "official_holding": "Violation of Article 6 - Right to a fair trial (Article 6 - Criminal proceedings;Article 6-1 - Reasonable time)",
       "source_sha256": "bcaeeabb34bbf0407f5d138d609bfcc55b6e8b488b51a4314ce649f0ceb9e817",
       "summary_sha256": "6d6e388ef68438452174bb795794c84dd31895942f098def0d7e2c147a5267d6",
+      "verdict_removal_method": "the_law_header"
+    },
+    {
+      "target_item_id": "001-252899",
+      "target_case_name": "CASE OF MANIKAS AND OTHERS v. GREECE",
+      "target_article_full": "3",
+      "target_label": "violation",
+      "target_respondent_code": "GRC",
+      "target_respondent": "Greece",
+      "target_issue": "Degrading treatment; substantive aspect",
+      "target_aspect": "substantive",
+      "assignment": "single_respondent",
+      "holding_index": 0,
+      "official_holding": "Violation of Article 3 - Prohibition of torture (Article 3 - Degrading treatment) (Substantive aspect)",
+      "source_sha256": "93dc92120b2ce4a9cff03b795a179a99ce5e0c356a6a2d6b71df38331393fa42",
+      "summary_sha256": "9c530f10f6020b4090c54ac14552a8f5fc3ca155b6d6e60ff0163ea30d0a1fb7",
       "verdict_removal_method": "the_law_header"
     },
     {

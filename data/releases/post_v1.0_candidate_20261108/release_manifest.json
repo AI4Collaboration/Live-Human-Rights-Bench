@@ -2,8 +2,8 @@
   "benchmark": "LiveHumanRightsBench",
   "status": "candidate, frozen before any target-model call",
   "dataset_id": "echr-post-v1.0-candidate-20261108",
-  "frozen_utc": "2026-11-08T21:06:02.225635+00:00",
-  "source_revision": "10d049d27c95f0cf58be67852e3e3eb3c3e20e63",
+  "frozen_utc": "2026-11-08T22:48:09.460432+00:00",
+  "source_revision": "da1b5549d7f82694e4564c0e37d668777b991709",
   "hudoc_retrieved_utc": "2026-11-08T20:17:13.303356+00:00",
   "hudoc_query": "contentsitename:ECHR AND (NOT (doctype=PR OR doctype=HFCOMOLD OR doctype=HECOMOLD)) AND (documentcollectionid=\"JUDGMENTS\") AND (languageisocode=\"ENG\") AND kpdate>=\"2026-05-22T00:00:00.0Z\"",
   "window": {
@@ -22,6 +22,7 @@
       "removed": {
         "001-251017": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
         "001-252645": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+        "001-252653": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the presumption of innocence.",
         "001-250744": "Target wording also covers a violation found in the same judgment under the same fair-hearing heading.",
         "001-252642": "Outcome differs by applicant under overlapping provisions and the question does not name an applicant."
       },
@@ -29,24 +30,25 @@
         "001-250619",
         "001-251013",
         "001-252628",
+        "001-252899",
         "001-252929"
       ],
       "rule": "next-ranked judgment with an accepted summary in the same stratum, and in the same month for violation targets"
     }
   ],
   "files_sha256": {
-    "cases.json": "49617c410fe4c73bf92d0455bd637819b21df46ddd77ab5aeb523e919d9483cb",
+    "cases.json": "1e2ed2e636b9c23f2d9e2652e192524ff1907f53a5383c7cfd34c04ccea8e17a",
     "core_50.json": "78722c693a3dfffd358d2c8b474b23d0851448fa381628fa062b912edc24ceac",
-    "distribution_report.json": "3ed8509589381abd5668d7c91e41ebd7dc93c67b69e0cc6615ad4a8f399b1228",
+    "distribution_report.json": "6900f4dc55500f671427636723a8f26e1bb618f76ec0e05462302a3dd3411f0e",
     "evaluation_dataset.json": "34c63e418c88c99144110e28fbc53807f07895f207c4f9af1a00c4d7b2df6df2",
-    "exclusions.json": "b0c4c6b2a5542a385b6bb358216c285b3c48d64673a1d9f8e926633fcbfd168e",
+    "exclusions.json": "49d4430ecbb4d004e0a031ac7049d1cc1ee61aad8959cc1a8fe564ddfb48c0ac",
     "hudoc_meta_retrieved.json": "3f388736a254de5586801baf26e2bcddcc2b7b366a643682c58abfa3b82de9dc",
     "non_overlap_report.json": "30455e225a8912785e1f3ccdacef211db8c134df00c9d1c5da43f9b1ce9f20d2",
+    "operative_check.json": "0ebd020550f3b3fe733e502779cf784ebeafd7efede2ac0134c4868eb79b6623",
     "repair_provenance.json": "e3e9f91de4b0318a0563a9a2e65324e0456eeea33ddd9d86022f60bdef354724",
     "selection_plan.json": "300ef13ae73714f898037e713a9294a4826b8f8a9195b86a60417e00815fecbc",
-    "summaries.json": "6d83b9a642f747c0efa57cef27553784a224ff8106f9526e60a891595e91d89a",
-    "target_audit.json": "de1e2c62229a835246fccceb4bcd6266418036bf4179997ee5fd00dbb43df14f",
-    "operative_check.json": "29c075eba388ced971c50913375f9dd05bf5c052541aa54479a0cf99f417e4f0"
+    "summaries.json": "99109d9f15d82696dd645bf00433c10735f91b2d075f9b6c29df8f6672f307dd",
+    "target_audit.json": "29cdd9fb895a5cd037bec69d08f021b325df248fdd2044aff351ac40e8bf3d11"
   },
   "targets": [
     {
@@ -430,11 +432,6 @@
       "summary_sha256": "4356fb0596318e696234194da8bcb1e0baec4bded22dc3a4ff5a6f4099185f91"
     },
     {
-      "item_id": "001-252653",
-      "source_sha256": "5e517f8e8d0f42c8185d4aa81695dc56aecd1cad3c4263359393459a17d90c32",
-      "summary_sha256": "e4265b7e784239184fdb12908f23ed274961229171406850c9da98368d5adffc"
-    },
-    {
       "item_id": "001-252654",
       "source_sha256": "d37259f1464907a2209c237f301cffa40970e3b127a49ec5762a7de6a60db0e4",
       "summary_sha256": "05667a693de6061c9a75e6664d036a79e35023b6cdbd707706bb6b9896387b4d"
@@ -488,6 +485,11 @@
       "item_id": "001-252894",
       "source_sha256": "bcaeeabb34bbf0407f5d138d609bfcc55b6e8b488b51a4314ce649f0ceb9e817",
       "summary_sha256": "6d6e388ef68438452174bb795794c84dd31895942f098def0d7e2c147a5267d6"
+    },
+    {
+      "item_id": "001-252899",
+      "source_sha256": "93dc92120b2ce4a9cff03b795a179a99ce5e0c356a6a2d6b71df38331393fa42",
+      "summary_sha256": "9c530f10f6020b4090c54ac14552a8f5fc3ca155b6d6e60ff0163ea30d0a1fb7"
     },
     {
       "item_id": "001-252901",

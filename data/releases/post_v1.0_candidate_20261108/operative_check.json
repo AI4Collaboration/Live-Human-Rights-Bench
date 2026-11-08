@@ -1271,22 +1271,6 @@
   "status": "MATCH_UNIFORM"
  },
  {
-  "item_id": "001-252653",
-  "case": "CASE OF AHMADLI v. AZERBAIJAN",
-  "article": "6",
-  "label": "violation",
-  "issue": "Presumption of innocence",
-  "aspect": "unspecified",
-  "respondent_in_title": true,
-  "points": [
-   [
-    "violation",
-    "Holds that there has been a violation of Article 6 § 2 of the Convention"
-   ]
-  ],
-  "status": "MATCH_UNIFORM"
- },
- {
   "item_id": "001-252654",
   "case": "CASE OF BELTEK AND OTHERS v. GREECE",
   "article": "3",
@@ -1458,6 +1442,22 @@
    [
     "violation",
     "Holds that these applications disclose a breach of Article 6 § 1 of the Convention concerning the excessive length of criminal proceedings"
+   ]
+  ],
+  "status": "MATCH_UNIFORM"
+ },
+ {
+  "item_id": "001-252899",
+  "case": "CASE OF MANIKAS AND OTHERS v. GREECE",
+  "article": "3",
+  "label": "violation",
+  "issue": "Degrading treatment; substantive aspect",
+  "aspect": "substantive",
+  "respondent_in_title": true,
+  "points": [
+   [
+    "violation",
+    "Holds that there has been a violation of Article 3 of the Convention in view of the detention of the applicants indicated under nos. 1 and 2 in the appended table in overcrowded conditions in the Korydallos Prison"
    ]
   ],
   "status": "MATCH_UNIFORM"

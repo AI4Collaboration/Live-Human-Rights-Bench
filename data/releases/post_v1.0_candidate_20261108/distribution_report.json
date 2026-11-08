@@ -5,8 +5,8 @@
       "no_violation": 30
     },
     "provisions": {
-      "6": 23,
-      "3": 15,
+      "6": 22,
+      "3": 16,
       "5": 13,
       "P1-1": 10,
       "8": 9,
@@ -43,19 +43,19 @@
     "respondents": {
       "UKR": 20,
       "TUR": 10,
-      "GRC": 7,
+      "GRC": 8,
       "HUN": 6,
       "ARM": 5,
       "HRV": 4,
       "NLD": 4,
       "MDA": 4,
-      "AZE": 4,
       "SVK": 3,
       "ESP": 3,
       "RUS": 3,
       "SRB": 3,
       "GEO": 3,
       "ITA": 3,
+      "AZE": 3,
       "ROU": 2,
       "POL": 2,
       "ALB": 2,
@@ -73,7 +73,7 @@
       "BGR": 1
     },
     "source_chars_median": 10895,
-    "source_chars_mean": 16617.98
+    "source_chars_mean": 16642.2
   },
   "v1.0": {
     "labels": {

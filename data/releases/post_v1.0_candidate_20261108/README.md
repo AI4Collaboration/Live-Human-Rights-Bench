@@ -60,7 +60,8 @@ judgments (14%) have a no-violation target. Report balanced accuracy and class r
 
 ## Replacements after the first freeze
 
-The operative-part check found four targets unsuitable, before any target-model call.
+Five targets were found unsuitable, before any target-model call: four by the
+operative-part check and one by a check of the model inputs.
 Each was replaced by the next-ranked judgment with an accepted summary in the same
 stratum, and in the same month for violation targets. `core_50.json` did not change.
 Reasons are in `release_manifest.json`.
@@ -68,6 +69,7 @@ Reasons are in `release_manifest.json`.
 | Removed | Reason | Added |
 | --- | --- | --- |
 | 001-251017, 001-252645 | The finding is only in the excluded other-complaints column, so the input has no facts on length | 001-251013, 001-252929 |
+| 001-252653 | The finding on the presumption of innocence is only in the excluded other-complaints column, so the input has no facts on it | 001-252899 |
 | 001-250744, 001-252642 | The same fair-hearing wording also covers a violation in the judgment (first); the outcome differs by applicant and the question names none (second) | 001-250619, 001-252628 |
 
 ## Exclusions
@@ -98,7 +100,9 @@ matches comes from the official HUDOC holding and was not read separately.
 Leakage review was by model plus a deterministic phrase scan; no person read every
 source or summary. Rainbow Mission Foundation (001-251024, in the core) is kept, but
 only the reference to Article 10 distinguishes its target from a violation under the
-same provision. Whether every Committee target has its facts in the model input was
-checked only where the finding appears solely in an appended table.
+same provision. All 100 inputs and summaries were searched for facts on the topic of the
+target, and the complaint wording of the 58 Committee inputs was read. This shows that
+the topic is present, not that the facts suffice for a ruling. Some Committee inputs are
+very short, for example one sentence of complaint and the detention dates.
 The v1.0 anchor cohort is part of the evaluation step and has not been selected.
 Do not claim post-v1.0 results until the evaluation artifacts exist.
