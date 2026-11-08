@@ -1,0 +1,4186 @@
+{
+ "changes": [
+  {
+   "item_id": "001-253232",
+   "old_chars": 4281,
+   "old_sha256": "8b25b50498d8b586b76bfd9e62892d97c25f51c3177942e49c56d6773c514632",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4281,
+   "new_sha256": "8b25b50498d8b586b76bfd9e62892d97c25f51c3177942e49c56d6773c514632",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253228",
+   "old_chars": 57182,
+   "old_sha256": "e25ffb043574326076349be7b1b0ce3929b21daf388132afb61c416f91c02bde",
+   "removed_spans": [
+    {
+     "start": 139,
+     "end": 1573,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 55748,
+   "new_sha256": "2c69eba3e90488158a9892faf2171417d9c6ccf3c1b4227ad746117a8ddf6b94",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253229",
+   "old_chars": 47233,
+   "old_sha256": "fb41ec09acb853fa07e6e8084a1ba4cd7302b157e3d8c42948891fde03da2957",
+   "removed_spans": [
+    {
+     "start": 93,
+     "end": 1982,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 45344,
+   "new_sha256": "ffbc3328e0c52b4440a4982272698913c7836f65c622916ffabaacb3939c87c3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253230",
+   "old_chars": 86310,
+   "old_sha256": "e644dbbd5908797ecb5edafaf268f394b01ce29602f78dffad012f4b9bdeb05f",
+   "removed_spans": [
+    {
+     "start": 79,
+     "end": 845,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 85544,
+   "new_sha256": "8ab2d12c2241cfc21a0d8858158096d6f9e68317ef9f20351091f6dc3910ea30",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253226",
+   "old_chars": 38544,
+   "old_sha256": "c2ad1346a47c29198ec0550830dda9379ea4e11b268eddcaf6f1488555cb07b6",
+   "removed_spans": [
+    {
+     "start": 88,
+     "end": 784,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 37848,
+   "new_sha256": "e39af23e10196d6129e989de36ba103eb997803b239ca91da94a73e74c4cc977",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253222",
+   "old_chars": 28713,
+   "old_sha256": "789be03cf497b6a035c1fc3003007d8e48bdc5315b11b247c3d47cc3f752ce85",
+   "removed_spans": [
+    {
+     "start": 131,
+     "end": 852,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 27992,
+   "new_sha256": "00cb4cba8d4b95fc7c9c7abdcef49332cfdbae6fee736a2be7c5836d57657d52",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253220",
+   "old_chars": 65982,
+   "old_sha256": "441a0f428799b7adb8c2a46e126f6c4c2e122236af4b5a62a45105094d23a9f5",
+   "removed_spans": [
+    {
+     "start": 116,
+     "end": 993,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 65105,
+   "new_sha256": "84175170c658fb72a02f1a83219ed044fb022de928ffa8e830f2f97475fa3cfe",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253223",
+   "old_chars": 4998,
+   "old_sha256": "97ce11f1376a465a9c2d45abec47e6fed3b7b7ea86f02d25d020758e8734cd8f",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4998,
+   "new_sha256": "97ce11f1376a465a9c2d45abec47e6fed3b7b7ea86f02d25d020758e8734cd8f",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253224",
+   "old_chars": 5727,
+   "old_sha256": "075d1abe8bb7554138161005804240652cf477b2a783a84de7f83a4fa8486df1",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5727,
+   "new_sha256": "075d1abe8bb7554138161005804240652cf477b2a783a84de7f83a4fa8486df1",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253225",
+   "old_chars": 8606,
+   "old_sha256": "023f9351aa5238ef7602cf6b29f3df2a4ac9db8b4ad8dc78081fdf66c2b8223f",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8606,
+   "new_sha256": "023f9351aa5238ef7602cf6b29f3df2a4ac9db8b4ad8dc78081fdf66c2b8223f",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253158",
+   "old_chars": 24065,
+   "old_sha256": "758329ff7eaef23660466757c47677bd9a4e911f3e093e349c4cc86442460357",
+   "removed_spans": [
+    {
+     "start": 81,
+     "end": 1054,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 23092,
+   "new_sha256": "7162b778b19566946b923f41935f2ddfd39149ae7ddd1f57ee59310aec2a49c6",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253155",
+   "old_chars": 5231,
+   "old_sha256": "169ee47b4ae8375855a34dcc9f640a636e4200ecbac3617ed8d589bfe3cd6f48",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5231,
+   "new_sha256": "169ee47b4ae8375855a34dcc9f640a636e4200ecbac3617ed8d589bfe3cd6f48",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253154",
+   "old_chars": 3893,
+   "old_sha256": "88bcf1586d60ba70eacac3d5b90385957f1d72ad76193da363b554a4b3010ede",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3893,
+   "new_sha256": "88bcf1586d60ba70eacac3d5b90385957f1d72ad76193da363b554a4b3010ede",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253156",
+   "old_chars": 4676,
+   "old_sha256": "6c3fae724f3c74db1af7da4c17fd526bdb997207d0bc22f9f741efaf13d77fb0",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4676,
+   "new_sha256": "6c3fae724f3c74db1af7da4c17fd526bdb997207d0bc22f9f741efaf13d77fb0",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253150",
+   "old_chars": 9683,
+   "old_sha256": "964517d887a56ead60927c0899b6fb4d453f1bdf7e5a857e20843d870a8b869f",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 9683,
+   "new_sha256": "964517d887a56ead60927c0899b6fb4d453f1bdf7e5a857e20843d870a8b869f",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253152",
+   "old_chars": 5045,
+   "old_sha256": "d0bae227ecc4c424564d604d71b48f0170f594352f62b2c33a1bd4fd9055c1f3",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of Birth Place of Residence",
+     "Application no.",
+     "Lodged on",
+     "No.",
+     "Particular circumstances of the application",
+     "Represented by"
+    ],
+    "omitted_columns": [
+     "Amount claimed by each applicant under Article 41 of the Convention",
+     "Amount to be paid to each applicant by the respondent State under Article 41 of the Convention"
+    ],
+    "facts_sha256": "8844ff602590cab0e2b72857daa0c17a01a38c1db73194c52f236d2136d7725b"
+   },
+   "new_chars": 5996,
+   "new_sha256": "8c11e9fcf3832cac324d42c5d2d613c03b23b12140052fe0bf014277031022df",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252957",
+   "old_chars": 8646,
+   "old_sha256": "ffe561bdd1396e2a35f116c70054346a01a0c3ad8aa1629d1ff8a49384fe17e7",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8646,
+   "new_sha256": "ffe561bdd1396e2a35f116c70054346a01a0c3ad8aa1629d1ff8a49384fe17e7",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252956",
+   "old_chars": 6098,
+   "old_sha256": "b71c9f8473d470e3683e508961255334c341b6df9bc36128a462e4347c65c906",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6098,
+   "new_sha256": "b71c9f8473d470e3683e508961255334c341b6df9bc36128a462e4347c65c906",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252888",
+   "old_chars": 1242,
+   "old_sha256": "a45e9978d5ad2574d4d20a69184235f74daf68217399d1d3445a54f61ef9b140",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage and costs and expenses per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "0f93e3878c0f469fb4dde6228635dc8c176c357df734f6a55e5b005ffc6f600f"
+   },
+   "new_chars": 4217,
+   "new_sha256": "87069c72ad2bf68af310c9f9b90cfbec54ec750e65532a3fe98206ab550b0273",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252890",
+   "old_chars": 1151,
+   "old_sha256": "d1a4b8159f2182eb34469b7f82e7a9179a57abc2e98335ad4ea5329105f19718",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Date of notification of the decision",
+     "Date of the CJP decision that was not amenable to judicial review",
+     "Subject matter of the CJP’s decision"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "9ab97d211eeed782a8e5ede6791c2d27f0fc9b0c9aa07acdfeeaa1844f56a458"
+   },
+   "new_chars": 1536,
+   "new_sha256": "93dc626ea31f1ee9c90d4b622ac153f21837c808c833826fbf3f91c4c558fe21",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252892",
+   "old_chars": 1261,
+   "old_sha256": "af8019fbe3d2ff47bf77c3fc21ca9ab290f54b3b8f5304f5b480a7c117fb0d08",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Date of arrest",
+     "Other relevant information"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Specific defects"
+    ],
+    "facts_sha256": "fe59685110f7812feb82d4e229037ea4e2e71e14fba3ffc5927e29370c149d20"
+   },
+   "new_chars": 3696,
+   "new_sha256": "215d73a1b0f1dc4cdbb8b3511eee6c961dcfd5c06347db2832b00f1ac2d478d7",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252894",
+   "old_chars": 1149,
+   "old_sha256": "421d657fe40115dafd14a58b2f78362bfcc214785d6065db7c728f8cdf080c46",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Domestic court File number Domestic award (in euros)",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "bdd14b41cd28655306fc1c0a875122af0a4abe19b48bbb38e086df34786c1642"
+   },
+   "new_chars": 2080,
+   "new_sha256": "bcaeeabb34bbf0407f5d138d609bfcc55b6e8b488b51a4314ce649f0ceb9e817",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252895",
+   "old_chars": 2511,
+   "old_sha256": "639cc50fdc169a8fe75b504d37c375f1f25c0cf3fe0c8677cd21796439a8f4e3",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Date of lodging complaint or request for release",
+     "Domestic court File number Domestic award (in euros)",
+     "End of judicial review of detention",
+     "No.",
+     "Representative’s name and location",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "153dd71748622a3638ce52f67a36405501729bb10d298e420870232bf0afbc8e"
+   },
+   "new_chars": 3593,
+   "new_sha256": "9284703aee7f5b31539c26a51f76d1c1258f7497a3e25d0be8de1d8aa77e37fb",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252896",
+   "old_chars": 1314,
+   "old_sha256": "a40a4de024cfb28fde41696c060df0bc14b80ae05b88b73333d3b79e41ca7753",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End date of unauthorised detention",
+     "No.",
+     "Representative’s name and location",
+     "Start date of unauthorised detention"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses (in euros)",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well ‑ established case-law",
+     "Specific defects"
+    ],
+    "facts_sha256": "6d2771ed5271a0510d441040d16ad0ee2f4d7a3de5b58dc5013162c4611a1938"
+   },
+   "new_chars": 5370,
+   "new_sha256": "d0af08d63594904fa90f8d220054c8b3139d22c9b72bcc493682d73224855b43",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252899",
+   "old_chars": 1305,
+   "old_sha256": "4466968fc928da558c3f99ffe6f8b3e2fa64897ff12b734e2a48173d3290f05f",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "0ac74c81a34e2bd14d36841aee227231ea6bda1423869444af87a30a0da5d94c"
+   },
+   "new_chars": 3981,
+   "new_sha256": "93dc92120b2ce4a9cff03b795a179a99ce5e0c356a6a2d6b71df38331393fa42",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252959",
+   "old_chars": 14663,
+   "old_sha256": "b6172dcdf3c5a4b94f866d49b03d6f44bf755c0e520a82c22dfdcf1c843cc746",
+   "removed_spans": [
+    {
+     "start": 92,
+     "end": 828,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 13927,
+   "new_sha256": "2e996829cadd5f9a8ef3546d98bfd22b3c8698863e1a18fd3bad9a5ce7c84063",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252960",
+   "old_chars": 3464,
+   "old_sha256": "09494da2b12c3080262ef274081048fd4bb2a70b5585584f40e55031801a832d",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3464,
+   "new_sha256": "09494da2b12c3080262ef274081048fd4bb2a70b5585584f40e55031801a832d",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252961",
+   "old_chars": 6305,
+   "old_sha256": "d51dd4e18347eb82476c6b0a98dc8d77fd9e59ab1d97d026fd77dda2c351d40c",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6305,
+   "new_sha256": "d51dd4e18347eb82476c6b0a98dc8d77fd9e59ab1d97d026fd77dda2c351d40c",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-253160",
+   "old_chars": 1079,
+   "old_sha256": "e7f36aab978066fecdbfbbb1c8cbc03c4e0258eb5a023669bb51074004ef9d75",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Final domestic decision Date Name of the court",
+     "Representative’s name and location",
+     "Subject matter of the domestic proceedings"
+    ],
+    "omitted_columns": [
+     "Key argument the court failed to address"
+    ],
+    "facts_sha256": "15e3ee0793d1e59caa76ed1e62d746219ab8a30c860788e5376cdd6a253d7d25"
+   },
+   "new_chars": 2952,
+   "new_sha256": "e3753ed5cd0512e968ab841e8b3b06f39daa3224011eaebcb81473fc9d5eb90f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253162",
+   "old_chars": 1229,
+   "old_sha256": "da986388e2c4499590143f8666c4ad47df1da391171b858719e63bacf625d0be",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "33bdde9bf83952b8aac09b5160e9601f94263c977817643ccb7d9058898871ef"
+   },
+   "new_chars": 2666,
+   "new_sha256": "f19a74242157544721b8d9a96bb2356ce41d6c4c3a31acc821c0ae9f420c142e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-253163",
+   "old_chars": 1088,
+   "old_sha256": "8cb7d2f6a6e937a59a23fcf0487d289e1e682da8ee2fede30b81dde7d27b77ee",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Background to the case and domestic proceedings",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Key issues"
+    ],
+    "facts_sha256": "31fe1b8d5143974cb9aa1ed81b9ee1e76922446b1873f9f07fb27e19f01e4662"
+   },
+   "new_chars": 2636,
+   "new_sha256": "26ef95dafce86c5a5c3e6541b01d58d13136eed63c1fee2f56f54de09e13388b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252902",
+   "old_chars": 1841,
+   "old_sha256": "ce61dedc52bf2e25c52285a5ecf75ce12f4723599f295635aa6fd25b7c80a68e",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "No.",
+     "Particular circumstances of the case",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per applicant (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "6fe23c3e69f866cec7c899349cffda951d04a16f21935e8a90eefdaf3a2fe556"
+   },
+   "new_chars": 8864,
+   "new_sha256": "b59016271c7834f67ed9c069ac1b42f3feb5fc384d6021979ae300bc98fb300a",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252962",
+   "old_chars": 25838,
+   "old_sha256": "e68b915c038701bc507ca9d0c1f6d4b4821c662cd8b4244c17c799b1ff3c1307",
+   "removed_spans": [
+    {
+     "start": 99,
+     "end": 496,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 25441,
+   "new_sha256": "91d4dd6830ee37a127d5e24fe449bfbcfce86e885aaab2340bfdec672ecf5313",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252963",
+   "old_chars": 57686,
+   "old_sha256": "cbb6160c6f073a3ccfaee94ab71a8f3bfaf82da0fe770ed2adadebcfff2dabcf",
+   "removed_spans": [
+    {
+     "start": 102,
+     "end": 719,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 57069,
+   "new_sha256": "d47720d1e19b1a9320fe67df388e7b1e197c94bacf68ee7785874d05288f72b9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252898",
+   "old_chars": 1288,
+   "old_sha256": "efafde689dff27dd457d8ea2e71f9cd92997c99ca3a5416ad69eca687a370f63",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "c7fb3e386eb8e2f2f7be8b20292a468a48d5c7aee4de459d927b91ee60e15452"
+   },
+   "new_chars": 2597,
+   "new_sha256": "de22957c9e3b8ede455b9c07e34bf67e5b4ce41437679e969228ec58fdbf17c4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252901",
+   "old_chars": 1278,
+   "old_sha256": "be0c0b550b6561fc454d9ea9e24a06372abffd2575d560ee21e294d091fe3af5",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "42cb3417304b95414f4a00ee502b35290cc64318dfa53bd363f828e59f85a5d5"
+   },
+   "new_chars": 1857,
+   "new_sha256": "2d70b55983fd37ff630c2439b2dd8a5a25364f84518e2b96bf79849b0d941966",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252929",
+   "old_chars": 6395,
+   "old_sha256": "4e203743d3418c62e21f5415965d4e04f8d02c999bfd7a5e2e78759af2cc0c9b",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6395,
+   "new_sha256": "4e203743d3418c62e21f5415965d4e04f8d02c999bfd7a5e2e78759af2cc0c9b",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252930",
+   "old_chars": 8024,
+   "old_sha256": "2ab3b70fa7bb80274b02192dc40afe3abe6aa453499953ba042485cf7981e57a",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8024,
+   "new_sha256": "2ab3b70fa7bb80274b02192dc40afe3abe6aa453499953ba042485cf7981e57a",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252935",
+   "old_chars": 8252,
+   "old_sha256": "71d1ddf49fbe4e150762f02a0a8a7fc6c491842b00d9a8abc118d9e9fc556664",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8252,
+   "new_sha256": "71d1ddf49fbe4e150762f02a0a8a7fc6c491842b00d9a8abc118d9e9fc556664",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252936",
+   "old_chars": 18277,
+   "old_sha256": "0bb9600c0e7878a1c398bb5aa4d15ed3ef898c1f09f68467e1f4241efc2ed7e9",
+   "removed_spans": [
+    {
+     "start": 87,
+     "end": 726,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17638,
+   "new_sha256": "f1d0db9a0c0213b5d0e0ea337aa99df38e9cc01a8062c6b913d2a538aa50d308",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252927",
+   "old_chars": 11305,
+   "old_sha256": "1abe3e90a18e95e8a7f98846c16d0bf1ff78edfd9f2feade216957941d6e0aa8",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 443,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 10947,
+   "new_sha256": "eef4aa0a572d7a15f977728c91383a402837b10051a499902f508230e7c8aaec",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252746",
+   "old_chars": 15388,
+   "old_sha256": "556782461abcbcc1be31f1941a8bbd62c90a403ef9cbe80d94a338dd199306ce",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 15388,
+   "new_sha256": "556782461abcbcc1be31f1941a8bbd62c90a403ef9cbe80d94a338dd199306ce",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252744",
+   "old_chars": 5615,
+   "old_sha256": "330cb53b57b37e02bce6140f5762a2adaeefc6e5fb8dfcd805afe50cd6312d2e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5615,
+   "new_sha256": "330cb53b57b37e02bce6140f5762a2adaeefc6e5fb8dfcd805afe50cd6312d2e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252748",
+   "old_chars": 10084,
+   "old_sha256": "1f59d9934c663e276b758a24af3baee121f59f3d6b6ad4d7f1c6adeda81ae667",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 10084,
+   "new_sha256": "1f59d9934c663e276b758a24af3baee121f59f3d6b6ad4d7f1c6adeda81ae667",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252749",
+   "old_chars": 6482,
+   "old_sha256": "0f4e56c05ee5d6bddb49ae1aaf4f18772d4c99fa4c8b4761349094477beded57",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6482,
+   "new_sha256": "0f4e56c05ee5d6bddb49ae1aaf4f18772d4c99fa4c8b4761349094477beded57",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252750",
+   "old_chars": 45270,
+   "old_sha256": "b232204022dee30f9eaf66ea54f32a39f0e6639cc6ce1cb64ae2826d59f09916",
+   "removed_spans": [
+    {
+     "start": 133,
+     "end": 402,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 45001,
+   "new_sha256": "5bf2e3fce6b8093a243baff595f29b84242a15464b49a9af51024e26f3aa9485",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252738",
+   "old_chars": 4964,
+   "old_sha256": "2f92cfbff88000b9fcef2e76985dad37bdb7b88b1237f6df51b3be90841846f9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4964,
+   "new_sha256": "2f92cfbff88000b9fcef2e76985dad37bdb7b88b1237f6df51b3be90841846f9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252739",
+   "old_chars": 6732,
+   "old_sha256": "a026e22c1dec3617e9214c25033211f4c34a88e7cd3a4b2890aca37c85070068",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6732,
+   "new_sha256": "a026e22c1dec3617e9214c25033211f4c34a88e7cd3a4b2890aca37c85070068",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252742",
+   "old_chars": 6907,
+   "old_sha256": "9cbf7f84cdcd049014f1261f2437a4555fa652b75eaeb626d141a0452ea49cf9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6907,
+   "new_sha256": "9cbf7f84cdcd049014f1261f2437a4555fa652b75eaeb626d141a0452ea49cf9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252752",
+   "old_chars": 12725,
+   "old_sha256": "749e59e2477fd08309c938ecbf0165112490d5f8830cab5fd36eeb95e32da33b",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 12725,
+   "new_sha256": "749e59e2477fd08309c938ecbf0165112490d5f8830cab5fd36eeb95e32da33b",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252904",
+   "old_chars": 7289,
+   "old_sha256": "c31c64af579d9e2d7189863cf21c2ff6f518b6c74f7bf70ee224da7e3424cc6c",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7289,
+   "new_sha256": "c31c64af579d9e2d7189863cf21c2ff6f518b6c74f7bf70ee224da7e3424cc6c",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252740",
+   "old_chars": 19329,
+   "old_sha256": "3de4f756579ea21b34fcafefb436dc1a05589e25f6e67f48dfc8cd846d1d82a1",
+   "removed_spans": [
+    {
+     "start": 90,
+     "end": 563,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 18856,
+   "new_sha256": "e90e25f774c935b55ae8b14ca03c4247edd323b07e5ea9c759175363bf34eccf",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252645",
+   "old_chars": 1340,
+   "old_sha256": "b68fd6d212fd0e38855bdaa659fff90fce0652293fb7061d2f74de0ce7328288",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "No.",
+     "Representative’s name and location",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "1cfdb925dfd25256c44b7ee4b0bb124ed7d0ee1deceb342ac3ed4b7464120e7c"
+   },
+   "new_chars": 4950,
+   "new_sha256": "a5e47353dcb3110386119823eb69694174cc775bca2feced86dbd44e28339ac9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252646",
+   "old_chars": 1340,
+   "old_sha256": "5169902a26e62fb6386ccf9a26a8fde1e5e34848aa1f3da303994c531c85fff6",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "78248568edd28c114acc9f3484fa6d370624a353dd6dd0095268c9440a0c4139"
+   },
+   "new_chars": 2088,
+   "new_sha256": "84afcdc698db650ce7c1c92d6a4f9560b4d557c8ccd0290d3c0b9f6cc48242ee",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252648",
+   "old_chars": 1261,
+   "old_sha256": "46aa5d32b2832d52d1ed41610cdadaffabf37c00d6a5e218da5cc3f387370297",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Principal medical condition"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law",
+     "Shortcomings in medical treatment"
+    ],
+    "facts_sha256": "4602899ab872f44159327bb4d763b4d6e3fb907ed660e24925a421428a8f6700"
+   },
+   "new_chars": 1469,
+   "new_sha256": "6647af6337ed2491e4dad782149c1a5b02f5a23eeab1128fd0e335bbe22dab0f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252653",
+   "old_chars": 1312,
+   "old_sha256": "7c937758fee4adc5e0cc5a0bc02abf61f11327c7234e77e7b5b92ff65ac84f3a",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Length of detention",
+     "Period of detention"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well ‑ established case-law",
+     "Specific defects"
+    ],
+    "facts_sha256": "c96336bbaeaacb6725f76f225d37733f6e954417f736127b90afc5c2daaf810d"
+   },
+   "new_chars": 1559,
+   "new_sha256": "5e517f8e8d0f42c8185d4aa81695dc56aecd1cad3c4263359393459a17d90c32",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252654",
+   "old_chars": 1293,
+   "old_sha256": "0a0236ad6359003b37f0f32fac9fd291b098c9abc7dc14091432fcb6ce1ff701",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration Sq. m per inmate",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "963fc4c9a6fcb2f9674ceb6806e2a236e13d90ed2b7046850aa073fcfaa3a6a2"
+   },
+   "new_chars": 4589,
+   "new_sha256": "d37259f1464907a2209c237f301cffa40970e3b127a49ec5762a7de6a60db0e4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252655",
+   "old_chars": 1308,
+   "old_sha256": "f3b9829fa2cfcb83ad1007319c2a110e8aa0d6d1b5eaa03ce73804f910827b7b",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Length of detention",
+     "Period of detention"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]",
+     "Specific defects"
+    ],
+    "facts_sha256": "a659d4f65f8a6b31c4a45b95a587414e9da8fa07e20a7a9a23c1b3873ad05133"
+   },
+   "new_chars": 1546,
+   "new_sha256": "cada8ed90700019dd17b9b56d65e462ed8ef620f1c27fadd6d6e18e660c729e2",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252657",
+   "old_chars": 9403,
+   "old_sha256": "cbe4fb54a409e49afe798ed9ff159dafe0ff5632e555e6a7b89b0a1d512c73c9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 9403,
+   "new_sha256": "cbe4fb54a409e49afe798ed9ff159dafe0ff5632e555e6a7b89b0a1d512c73c9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252658",
+   "old_chars": 1323,
+   "old_sha256": "9b207d0fe8cd9360cf7c783b99d8b168b6fe0c605b3eb3bf10a9e1001f5d3e46",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "4f8343ee6c641c3adb4f46c3bd958be65b6e55947e7fbd3dcb563e476917d74f"
+   },
+   "new_chars": 3254,
+   "new_sha256": "aa1e98894a3d1d041b1452289ea62327f18e8e7cfde5653519f8ba39d42236a3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252660",
+   "old_chars": 1256,
+   "old_sha256": "afe2ff11c029f5683536115c09de1415216512d15b72e2dec3c3ee437a36c174",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Principal medical condition",
+     "Prison facility Period of detention",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Shortcomings in medical treatment Dates"
+    ],
+    "facts_sha256": "e0dc3bc679ea9a7c2d27fd5fbf5e8cd1ac022f692af8eec6a8147de1f98dd8b3"
+   },
+   "new_chars": 1652,
+   "new_sha256": "66c0b26e84e882daa3215caea3de2a4d4c4d2b0e7c11b4b1083d2ec5c1876e49",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252661",
+   "old_chars": 1299,
+   "old_sha256": "7a9df63f970ec81a1c9910086ef892acdce4db4878e02f94e9764d603ab6473f",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "66e15dd1575e9f27a030ca29409c3339459adafa7bf618e0aeae3c479d33be71"
+   },
+   "new_chars": 4883,
+   "new_sha256": "5c0a714c2051bc5b5751cf8228ae147e9973235230bc16637a0a9feced9f9d42",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252662",
+   "old_chars": 1299,
+   "old_sha256": "a1c86c231e3e8589eddb2a8cc21e088fba0a557d7d9dc03c5cadebb30d758f64",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "dfc66b32e3b376f20b82558292c25817946eee0769d216d16d4df207a60f7d38"
+   },
+   "new_chars": 4411,
+   "new_sha256": "baecf3eb88af740512dbf59448e7278e3ecac125f8d7cc99354ddd123a2a830e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252664",
+   "old_chars": 1636,
+   "old_sha256": "c5f2701dca8f33664d4b38d6ab449f218485e155da7b53fbc48f52796b69a0d3",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Domestic court File number Domestic award (in euros)",
+     "End of proceedings",
+     "No.",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "18f61688842ee6f2f6d6bf79ae9c3cab2e8731a10c78828082af12970d82c83e"
+   },
+   "new_chars": 4762,
+   "new_sha256": "d5b315903a7ae532c01c586b0c9bd7bce2ea5ec8294b5d36133f680691eaef57",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252659",
+   "old_chars": 12862,
+   "old_sha256": "179ac8a466417f3c86728c31f48ed684071028f56a90597ee53338e404b80763",
+   "removed_spans": [
+    {
+     "start": 109,
+     "end": 695,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 12276,
+   "new_sha256": "0d1cace97446020f16489ee494f352034d922f97e23b15f448605010e90379a1",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252647",
+   "old_chars": 1229,
+   "old_sha256": "fd326dacd4ea16be97d31ef3dd533df70fe3ffb27ad0111d4b79ac6d5bcdf8b1",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant /household (in euros) [1]"
+    ],
+    "facts_sha256": "555de830eeb4449752706fc866fc8f7cc6dc7051dc9898dac93e6fdae7516ab0"
+   },
+   "new_chars": 3317,
+   "new_sha256": "07e2cc48f2307942680bbf4459b0a5e5d2d6d91afece8522add1d6c02a5b0581",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252656",
+   "old_chars": 18234,
+   "old_sha256": "4f0d012347f565368968efd79fb7c8943642605d9440c53de82320fb9e8734f0",
+   "removed_spans": [
+    {
+     "start": 108,
+     "end": 1241,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17101,
+   "new_sha256": "907f5c7b4580c55dd4b44a9bf32298c7b6de8e759a1d81dffd974523642818f4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252665",
+   "old_chars": 45622,
+   "old_sha256": "4b796a5d1b8b0df54a2df141ca21ff8e85d646560e95043994024a9094f0b14a",
+   "removed_spans": [
+    {
+     "start": 125,
+     "end": 1376,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 44371,
+   "new_sha256": "f3fb140aa1c16bbf89682806d6669a22c4ae9927bb16d9bf422fda34973fd2eb",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252594",
+   "old_chars": 16586,
+   "old_sha256": "4db078b9c04c8ccb35525d0c76fa0f048ae20e390e1d37504ed32546c790340c",
+   "removed_spans": [
+    {
+     "start": 91,
+     "end": 1246,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 15431,
+   "new_sha256": "c995960113178740f335d3908f16f49f539c5ad76184790f4c4c6e7269587f74",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252623",
+   "old_chars": 12796,
+   "old_sha256": "84a02e2f19405d41b940482abf11a500ac18dd709a7a6fbfb6640e16b72455da",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 12796,
+   "new_sha256": "84a02e2f19405d41b940482abf11a500ac18dd709a7a6fbfb6640e16b72455da",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252625",
+   "old_chars": 9663,
+   "old_sha256": "e591485453a4ddf003237945ab690850acab1ad66cf4e19cf78355e219aebb31",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 9663,
+   "new_sha256": "e591485453a4ddf003237945ab690850acab1ad66cf4e19cf78355e219aebb31",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252626",
+   "old_chars": 4454,
+   "old_sha256": "a2ef5e2671798f655efd83de3dba807dc7b39039e2e186d51a43d01e60409f58",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4454,
+   "new_sha256": "a2ef5e2671798f655efd83de3dba807dc7b39039e2e186d51a43d01e60409f58",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252632",
+   "old_chars": 26746,
+   "old_sha256": "9ea0c192b8fcb596fdf1f4cbb98747bd655263629c48aff0c98a6bb6ce5cfbf1",
+   "removed_spans": [
+    {
+     "start": 82,
+     "end": 382,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 26446,
+   "new_sha256": "5bbdae0e229b2ef06989e9daa2970bcc31cdec8b7aded23f75043ce2aea2ba2b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252643",
+   "old_chars": 38406,
+   "old_sha256": "b0f7db4d1a6e0aa1da410339f60bbdc0d5b55769bc3b2bcd7844c20de5a1a5a8",
+   "removed_spans": [
+    {
+     "start": 86,
+     "end": 662,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 37830,
+   "new_sha256": "5832b5b792406eefb63ac3031375a89a782252d2349ce3d57d218f56f740a807",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252627",
+   "old_chars": 20472,
+   "old_sha256": "94413d62c9ae1f8bef6b130326ea0d7f7a6c4335f175571b27a9b51cffd699e4",
+   "removed_spans": [
+    {
+     "start": 83,
+     "end": 1073,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 19482,
+   "new_sha256": "e6a713d644b7adb8fc681f671256df8c753f6aeeb1c78a2e5c729eed4ae7d4de",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252628",
+   "old_chars": 12795,
+   "old_sha256": "1279ad2421126e638289806227d8c4857725780fd656dcf423e3c6ba393c6ebd",
+   "removed_spans": [
+    {
+     "start": 120,
+     "end": 662,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 12253,
+   "new_sha256": "be64f5204c02f7732c0ae460a366bd89bfba20fb874cfe69231dd968771dea4f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252644",
+   "old_chars": 42138,
+   "old_sha256": "2326be2d8a68e1a69b8ea1494fa22b977f9b2d1f6419bcea513d0d7a75a5361b",
+   "removed_spans": [
+    {
+     "start": 81,
+     "end": 775,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 41444,
+   "new_sha256": "ab43fae4487bd7912e18a80ff33c896787a2bbec7480968d1a239922e5f2c6da",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252624",
+   "old_chars": 42707,
+   "old_sha256": "5e80bc7d4175e1f44077a72ba92f1da3db207089818b68529d77aa93f052c5b1",
+   "removed_spans": [
+    {
+     "start": 107,
+     "end": 1341,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 41473,
+   "new_sha256": "c123a086d10a70f4c62ee36f4cd6b4c7a1b92b0c2706edb252a7f98e601f4fb8",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252630",
+   "old_chars": 39368,
+   "old_sha256": "4b896ec311c6189d345b21927456adc834120407a1cf5f646afc2e764d8a0f02",
+   "removed_spans": [
+    {
+     "start": 88,
+     "end": 1253,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 38203,
+   "new_sha256": "91259579a2b7d5974dd93640971f167790b71536ee792ae6f74687e54119279a",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252629",
+   "old_chars": 17096,
+   "old_sha256": "a36cb19141e49fe18b515a853189906d38fb4b9dec32c9dcdcc6309d7e4c02ef",
+   "removed_spans": [
+    {
+     "start": 103,
+     "end": 1047,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 16152,
+   "new_sha256": "5f98a0e8cad97a9b8cf78ec8996557b0fd16d468cc0368f3df8e437a7f7d0f7e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252642",
+   "old_chars": 71836,
+   "old_sha256": "12ab9ad3da9af21f0fadb2eb6b84c8c1bb6f9ea03e2b9066a94eb2df45e84327",
+   "removed_spans": [
+    {
+     "start": 109,
+     "end": 862,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 71083,
+   "new_sha256": "11fcd5ebebb6553353d225f35b4aac756e4ed82cbb8290e3587f79f5be5fa38b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252631",
+   "old_chars": 27650,
+   "old_sha256": "f142317ed90b4da6e3861d70831b4812c2f5427fc421147a1842692a29cac770",
+   "removed_spans": [
+    {
+     "start": 109,
+     "end": 1184,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 26575,
+   "new_sha256": "6a00a211fdd0bebdb33840b21227e7bbb1f778e5863ed0b0a9e30eb6172b4180",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252514",
+   "old_chars": 6872,
+   "old_sha256": "168e0fdc707661b1faec411eda853c178f4bdb3f3fd087e725a4de7f0d1ded61",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6872,
+   "new_sha256": "168e0fdc707661b1faec411eda853c178f4bdb3f3fd087e725a4de7f0d1ded61",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252518",
+   "old_chars": 6982,
+   "old_sha256": "dd7365c7e51ef0e776ffd1edff9d4b50a637ec6cf59fa42cd3d75eecc7c4ff6c",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6982,
+   "new_sha256": "dd7365c7e51ef0e776ffd1edff9d4b50a637ec6cf59fa42cd3d75eecc7c4ff6c",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252520",
+   "old_chars": 6104,
+   "old_sha256": "2423162dd276c5aece7ab51bbcdd21908464c3ff10baf52675cd3c109a739da3",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6104,
+   "new_sha256": "2423162dd276c5aece7ab51bbcdd21908464c3ff10baf52675cd3c109a739da3",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252522",
+   "old_chars": 4943,
+   "old_sha256": "ac023e73f0a5d6bb7fe122f2757d384416d85c498b04c80cd316d615b113649c",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4943,
+   "new_sha256": "ac023e73f0a5d6bb7fe122f2757d384416d85c498b04c80cd316d615b113649c",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252524",
+   "old_chars": 5439,
+   "old_sha256": "f395dae676191d628f7b126c69623244672a87cbc07f0f1ec958ea312943778b",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5439,
+   "new_sha256": "f395dae676191d628f7b126c69623244672a87cbc07f0f1ec958ea312943778b",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252527",
+   "old_chars": 10364,
+   "old_sha256": "e6b0b808345e4fa4163bd340385bcb9a4477f5614987124e8b3adc8fedb1334a",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 10364,
+   "new_sha256": "e6b0b808345e4fa4163bd340385bcb9a4477f5614987124e8b3adc8fedb1334a",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252531",
+   "old_chars": 5560,
+   "old_sha256": "d33c0c09bc4be93bf64486fe5e84b65c9e7f000e2ab8e82e80e16da71024a927",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5560,
+   "new_sha256": "d33c0c09bc4be93bf64486fe5e84b65c9e7f000e2ab8e82e80e16da71024a927",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252516",
+   "old_chars": 2738,
+   "old_sha256": "7e826b9d8419972ccab349a3d271b1fe7eea0daa7d655f64b67e7047a808bab7",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [],
+    "omitted_columns": [],
+    "facts_sha256": "42758cfc11d96e0a3395b1a5e3923d64ab60e62b3b4b9e8595d6a6584d7bd60a"
+   },
+   "new_chars": 3508,
+   "new_sha256": "c7fc9db92a18b1e73f0c9099f4ab477af435bcf4ac3a7816a2415d8154ee3fad",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252525",
+   "old_chars": 7448,
+   "old_sha256": "04753fc853d083cfa6a00b7d5ccdb2a8e79ee0703cbcbc7809d46b85e198d860",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7448,
+   "new_sha256": "04753fc853d083cfa6a00b7d5ccdb2a8e79ee0703cbcbc7809d46b85e198d860",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252504",
+   "old_chars": 4663,
+   "old_sha256": "da24373d3501b897533ab0830c1c1d326e70959a4dd4ee8fd582bf46a3c90d60",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "729743e268b4f9387f94c55616d67ed3ef68b1bca037a7c45ffc6e7981770087"
+   },
+   "new_chars": 119372,
+   "new_sha256": "61753d221a16f2e8551f7d68b956b48d04d548b74e7865260ea612ecbce167b0",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252505",
+   "old_chars": 4668,
+   "old_sha256": "cdcf7aed0710eed4ea7c0a2ed9307a672a784ff231a276f8fd8c23ec4eebd668",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "94bd9b1451ef8de5a1bb580022bff4355a01d655ce087d221f25b4f6eb19a496"
+   },
+   "new_chars": 71729,
+   "new_sha256": "328bbf3bf3e4e20110e4c31d3efdf7e4300798a22172eceb8ffd3cd16e3a04b4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252389",
+   "old_chars": 7267,
+   "old_sha256": "5f6fc79224d5afb808347bdf0e1de751d5ef91c75b3058b2e58201ced363c3f9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7267,
+   "new_sha256": "5f6fc79224d5afb808347bdf0e1de751d5ef91c75b3058b2e58201ced363c3f9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252390",
+   "old_chars": 7325,
+   "old_sha256": "dee3b4feb47a18ec2e5146d9eb3f8e52842ca3949142a3982400e5802ca81119",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7325,
+   "new_sha256": "dee3b4feb47a18ec2e5146d9eb3f8e52842ca3949142a3982400e5802ca81119",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252394",
+   "old_chars": 1293,
+   "old_sha256": "3f9c233c07a71ff16fb0f62187cb3c9ee02f2f6e301ac9717dad9bc2a05194d3",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "No.",
+     "Relevant domestic decision Date",
+     "Representative’s name Location",
+     "Summary of facts",
+     "Type of proceedings"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros)"
+    ],
+    "facts_sha256": "555d37dfcbd48dc2fea438cca6aeb9f0cac59622e9fba0cfcd4e785b9df9e8f5"
+   },
+   "new_chars": 13167,
+   "new_sha256": "38b2bfd3a549829279dc83c91f087a0be7152c8307ee2c4f2d68cd7152c5a580",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252395",
+   "old_chars": 4264,
+   "old_sha256": "8c5ce2ad7d1b8c638589d9801eb5158aaa4b5a04ff2ee60bab5143dad7d76c4d",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth/Registration Place of Residence Nationality",
+     "Application no. Lodged on",
+     "Case name",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [
+     "Amounts awarded for costs and expenses (in euros) [3]",
+     "Amounts awarded for pecuniary and non-pecuniary damage (in euros) [2]",
+     "Amounts claimed in respect of just satisfaction (in euros)"
+    ],
+    "facts_sha256": "1431d3f06845ba646f6de2fd8f51ce3b40d2847c4e84e1239d4c37eb507a2454"
+   },
+   "new_chars": 5053,
+   "new_sha256": "6b1bbcc04ad695001412f55830af3a2035aaac5c9b79f109d4c77140f9a2bc2a",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252400",
+   "old_chars": 1288,
+   "old_sha256": "b4b1398c40f9aaff85cebd9be73f09e4921cc59c60c7faa0b586a9eb73e47f19",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "10d0f0cbf73785c96320a9efe200eef23ef7a128a1c6cc26743643d63d3db398"
+   },
+   "new_chars": 2376,
+   "new_sha256": "115fcd5fc45a364aa916cff726fc041a421dc3111b18a8a7d8b9d6ce2db6b247",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252401",
+   "old_chars": 1273,
+   "old_sha256": "ee5244f2933458f74c17c3b36ded41d90bfd660c8ce9ed34ae87f83985b2646e",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "50e556f59dddb7ae2c51c105fa681fce2d1e478b8cec2f02b574365d351b494a"
+   },
+   "new_chars": 1814,
+   "new_sha256": "19419066d7e966b7bbfd77b81a5508ab8d7a9b776aa7300ac5d469ecfb82dec4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252403",
+   "old_chars": 1184,
+   "old_sha256": "c3712f013d8db32ab6861b8b31259d20680134666486efd35b76707efdf37a7d",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage and costs and expenses per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "b98bd7d2fcedbe7f48fea9c9230fe3a8f6c0383c58defe3745c87f8ee0b4bb69"
+   },
+   "new_chars": 3088,
+   "new_sha256": "4d21bf4062da7b698e18be9f8427b76bac96aa2ab2ac8ebfc690388979c666c3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252399",
+   "old_chars": 1703,
+   "old_sha256": "f525b27fbe319be8426ec07e6c2807e91ca72e532695742eb012ed3a80d26825",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 1703,
+   "new_sha256": "f525b27fbe319be8426ec07e6c2807e91ca72e532695742eb012ed3a80d26825",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252731",
+   "old_chars": 1221,
+   "old_sha256": "133474d3b42e79f8bcc0392abd9261d3ac3b663525f21f245bc188d5a176b44d",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Length of detention",
+     "No.",
+     "Period of detention",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Specific defects"
+    ],
+    "facts_sha256": "94b2ee2ef6fb1bea8687d2529504d7331598a6bb5638b04ee23e3d62d0a18a53"
+   },
+   "new_chars": 1854,
+   "new_sha256": "8302f44d91596d6f0e1a8c8d15f0f2633b5749d05f83c1c20fdcf5627aa6b285",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252729",
+   "old_chars": 1308,
+   "old_sha256": "923f16e836ba9a33e01ee9f4ca3928519ceb3c31cedffd4eca7538ab2eba1760",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "No",
+     "Representative’s name and location",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "24b71501587e4f524e7722ebde01a6f602a2be2244e9b12a1c24fcebcdf639d6"
+   },
+   "new_chars": 6203,
+   "new_sha256": "e5fe10f3565db4bfb89afaa58c9b20aa6c4723e72d75fa6ebbf0aca01dff6a73",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252388",
+   "old_chars": 2414,
+   "old_sha256": "029ae2517c384cd6efcc61b926914c6ad781d2ba63a7c440155ebafbf486090e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 2414,
+   "new_sha256": "029ae2517c384cd6efcc61b926914c6ad781d2ba63a7c440155ebafbf486090e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252383",
+   "old_chars": 8326,
+   "old_sha256": "ecb39c70d01598e729068e2ea837ff91408bcf37a847c0600221cdabd9deb86b",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8326,
+   "new_sha256": "ecb39c70d01598e729068e2ea837ff91408bcf37a847c0600221cdabd9deb86b",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252384",
+   "old_chars": 4279,
+   "old_sha256": "9c81f6a2540406b8c5086737eeb0fc649530c6a0b54ecf21e86132dd1c52f71f",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "9526c4c14bc8293ad0191ca65093d283b3945e7bff7834fcf571c9f1a1c11bd2"
+   },
+   "new_chars": 4753,
+   "new_sha256": "ef7b214c630dd3792da14223c8db8aad12b367acc54e3a75161284758c04985d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252385",
+   "old_chars": 7423,
+   "old_sha256": "67ee11a18e8ccdf3c2678e8d02e9ebd9960e302ec358f3ff5dc4b900a999a367",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7423,
+   "new_sha256": "67ee11a18e8ccdf3c2678e8d02e9ebd9960e302ec358f3ff5dc4b900a999a367",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252387",
+   "old_chars": 2663,
+   "old_sha256": "2edadc2cb3a5a25fc8ac4488ae275bb94a2b77369968cc705d0a2305d51b8166",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 2663,
+   "new_sha256": "2edadc2cb3a5a25fc8ac4488ae275bb94a2b77369968cc705d0a2305d51b8166",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252386",
+   "old_chars": 33334,
+   "old_sha256": "f324c5bcb6458622e0f673a9f717e23365758ddd2072befcdd00d031ba310e8d",
+   "removed_spans": [
+    {
+     "start": 107,
+     "end": 900,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 32541,
+   "new_sha256": "f000d69f274d7e54a7b6be7d7f57af92b14459f23dc79cfd263ba1522e838033",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252382",
+   "old_chars": 39845,
+   "old_sha256": "d1a3d6487017c6f98db52a82dee0fa5c92e1a0085539fd9c9a30b089190a486f",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 686,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 39244,
+   "new_sha256": "b29e91c3d7fa3a73c0ed47db509447572968634a627b9854e671b31e9a1a8cd2",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252381",
+   "old_chars": 17696,
+   "old_sha256": "d20eea399554fe79e8ad5d68a9f3dc825682114c43ffff851f6ed848544f0d98",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 3194,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 14587,
+   "new_sha256": "8f34f6af685df4be22855ac4557ac314a124e5c84be328e10be691575add9782",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252297",
+   "old_chars": 7916,
+   "old_sha256": "a2d79d93f125d4bbd10c5ef8c1838ab09a52341b5f05a8be06035b8cc9a9dd88",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7916,
+   "new_sha256": "a2d79d93f125d4bbd10c5ef8c1838ab09a52341b5f05a8be06035b8cc9a9dd88",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252298",
+   "old_chars": 6517,
+   "old_sha256": "c48d213f831030297b7c9baa1e6aca24e35044c87edd7881f4d0cbc4c6393907",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6517,
+   "new_sha256": "c48d213f831030297b7c9baa1e6aca24e35044c87edd7881f4d0cbc4c6393907",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252193",
+   "old_chars": 3862,
+   "old_sha256": "448cef1814a273f6856623c4454c1e8534366206476fc428a63bda161dd66c88",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3862,
+   "new_sha256": "448cef1814a273f6856623c4454c1e8534366206476fc428a63bda161dd66c88",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252191",
+   "old_chars": 26759,
+   "old_sha256": "cb4e076f4f928e5d783fa15ea438895562d8a26f2f5e6868e8f343d201385462",
+   "removed_spans": [
+    {
+     "start": 90,
+     "end": 1091,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 25758,
+   "new_sha256": "27f5918cd44c8a859d62d45ed1e36c04cf139d609233920f7af4d64e35c9364d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252190",
+   "old_chars": 32512,
+   "old_sha256": "322c75bcb8b9439fb36fa8b0442bd762074b2d24122236daa774b3cdf375ec41",
+   "removed_spans": [
+    {
+     "start": 119,
+     "end": 974,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 31657,
+   "new_sha256": "baf7453eefb349a3548466005eef1e2612b9d89f220f00cad43b0224f8375d6a",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252192",
+   "old_chars": 32635,
+   "old_sha256": "92e83726e252bea8d89202be745ba1fafaea6736569f339323e8747af9a3bc9a",
+   "removed_spans": [
+    {
+     "start": 86,
+     "end": 1035,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 31686,
+   "new_sha256": "2bca80522578cc2c4568c7eef5f55ef1e6382cb7d294cbb3babf3acf75ed4cc6",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252036",
+   "old_chars": 5732,
+   "old_sha256": "57576e8d3c392cc49d1eb46bbfcf669ea5e61a9efc7df065611d2c30c9bdfba3",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5732,
+   "new_sha256": "57576e8d3c392cc49d1eb46bbfcf669ea5e61a9efc7df065611d2c30c9bdfba3",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252031",
+   "old_chars": 4768,
+   "old_sha256": "5d6fc8a3a2c8b29e8777d456dc951b34943b3fa5d94dfc69806a1b008f746428",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4768,
+   "new_sha256": "5d6fc8a3a2c8b29e8777d456dc951b34943b3fa5d94dfc69806a1b008f746428",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252032",
+   "old_chars": 3722,
+   "old_sha256": "4cedb7b0f18413d56abd3a97029320a3a13e2485a625a4d21bf502d09bf03dde",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3722,
+   "new_sha256": "4cedb7b0f18413d56abd3a97029320a3a13e2485a625a4d21bf502d09bf03dde",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252035",
+   "old_chars": 5332,
+   "old_sha256": "2e049a0bb5b854922811edd37f208b6be01eac74de956890161825db3f17f311",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5332,
+   "new_sha256": "2e049a0bb5b854922811edd37f208b6be01eac74de956890161825db3f17f311",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252040",
+   "old_chars": 3495,
+   "old_sha256": "4c37f25afc07469025d01d52537528a68d0e7637201cb57319d410a87b96b369",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3495,
+   "new_sha256": "4c37f25afc07469025d01d52537528a68d0e7637201cb57319d410a87b96b369",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252301",
+   "old_chars": 34787,
+   "old_sha256": "a1666bb33f95fd0228571ff704b309992de5c01ed6f9a3e5051d59653837133e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 34787,
+   "new_sha256": "a1666bb33f95fd0228571ff704b309992de5c01ed6f9a3e5051d59653837133e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252027",
+   "old_chars": 100325,
+   "old_sha256": "493a66c713c817c158be0c356b8d20aed167acfe3fbf2813d0af5d1259107f58",
+   "removed_spans": [
+    {
+     "start": 127,
+     "end": 2457,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 97995,
+   "new_sha256": "8cf4df00fbec33e8ea491b7d5bfa406fc94bf4e8ad00e0dc151fd7e2761ea24c",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252039",
+   "old_chars": 43499,
+   "old_sha256": "393b91c5eac44382114286c5f8b77052ec1638ac32a46343c726b0f774af2001",
+   "removed_spans": [
+    {
+     "start": 76,
+     "end": 812,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 42763,
+   "new_sha256": "4412342f32ec8a179348ecd55b20fb9bff664c05ef3078f4bc7aed35c34d1415",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252038",
+   "old_chars": 6430,
+   "old_sha256": "0c2512c96119be0e890d09e80a4065e7cd651205c5671c69b1346d3a514f9713",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6430,
+   "new_sha256": "0c2512c96119be0e890d09e80a4065e7cd651205c5671c69b1346d3a514f9713",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252030",
+   "old_chars": 7557,
+   "old_sha256": "c69920a2599750c637652a92e61fd979104785f2c5d1f2a992f14856c3de3946",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7557,
+   "new_sha256": "c69920a2599750c637652a92e61fd979104785f2c5d1f2a992f14856c3de3946",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252029",
+   "old_chars": 8880,
+   "old_sha256": "cda05071c8f661d8d4f3a76a1c85bc68eb41e5f3e5ff1265cbfed904ed425b1d",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8880,
+   "new_sha256": "cda05071c8f661d8d4f3a76a1c85bc68eb41e5f3e5ff1265cbfed904ed425b1d",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252026",
+   "old_chars": 12488,
+   "old_sha256": "b92e20b24ad7c1ee84372ae48dd3cd0ab48911160483c70565c0a4925ad8a7e2",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 12488,
+   "new_sha256": "b92e20b24ad7c1ee84372ae48dd3cd0ab48911160483c70565c0a4925ad8a7e2",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252041",
+   "old_chars": 5693,
+   "old_sha256": "fbadfc2b45f6e30731621bcb28752c8aa0a45ba48a68e25a548d45ade06c24f9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5693,
+   "new_sha256": "fbadfc2b45f6e30731621bcb28752c8aa0a45ba48a68e25a548d45ade06c24f9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-252024",
+   "old_chars": 45990,
+   "old_sha256": "6b1dc8082d8d84404af5a57de12c7ec06c89c581c27ec548ed280f348b78bbe2",
+   "removed_spans": [
+    {
+     "start": 83,
+     "end": 1032,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 45041,
+   "new_sha256": "b7b1f5e8ea58b7911f2794fd53da9cf4b892afc6108765a7bfd5968cde8ae84b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252025",
+   "old_chars": 28622,
+   "old_sha256": "83a90d50a03c1b6fdb2cb11320f66564ca98786d8c06a0bf67f67e73341dad2a",
+   "removed_spans": [
+    {
+     "start": 79,
+     "end": 721,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 27980,
+   "new_sha256": "ca618c0d652ea8de1715cf4fccdaa3b84b291f8ae41ab02f4b93f619510ae247",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252023",
+   "old_chars": 31741,
+   "old_sha256": "02f55ab7e906736c423206ca372679e382214fb010428cf6054789016703a404",
+   "removed_spans": [
+    {
+     "start": 117,
+     "end": 762,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 31096,
+   "new_sha256": "d049c161f449ca219cebc7e8d5cc0cd3423d8591889c3aa0276590b415d8611d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251822",
+   "old_chars": 1273,
+   "old_sha256": "9628c9d8a11b1d403aae1ed5cf9f9614138994eb5d0bb4a7cb560ad52dab2821",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Representative’s name and location",
+     "Specific grievances"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "09b71142e878e4d8701a8678ff5921ae22b149b616b85c792b43783e37f23ac3"
+   },
+   "new_chars": 4821,
+   "new_sha256": "14ee6e344c07da574046aaf15ca42371418d393f107525c443db6b4cbd98686d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251824",
+   "old_chars": 1185,
+   "old_sha256": "e358f4c94d791a4e306f42a898923f94a60f6504d385146f22b9883cb50a8c53",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Representative’s name and location",
+     "Specific grievances",
+     "Sq. m per inmate",
+     "Turkish Constitutional Court Decision"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "be5bb0ccdad2f9010f5f3fad0444351c5a64dc81e24f79f1eb38a2c31af6c78a"
+   },
+   "new_chars": 1976,
+   "new_sha256": "5515c1bb97415493441f8ab5d208bacb9ff466357def0fb08d1d031ce256683e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251825",
+   "old_chars": 4525,
+   "old_sha256": "16300c0133fc02877cb688860a2997533294aaa7e1660776700c5c1bf115e4cf",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Domestic court File number Domestic award (in euros)",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant/ household (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "adc7fd61f6023dd79453b8a758053bbc2d655421f1606754b74445bfba810062"
+   },
+   "new_chars": 9274,
+   "new_sha256": "b67ed7b22b1c2bf4866255f35fb66ec5eda61957888c816a2e849c8a0f5203e0",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251831",
+   "old_chars": 1088,
+   "old_sha256": "f182fe8c642308e4f76a55822b04e05df728e96024aed796101005490152b80a",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Name of the first-instance court Date of detention order",
+     "Other relevant dates",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Procedural deficiencies"
+    ],
+    "facts_sha256": "793c2bbb8dfaa7622bb4f925f3589e8b2e6eebfb0b96deeea2f3b78eded5c153"
+   },
+   "new_chars": 1698,
+   "new_sha256": "1298672b7aea559c60b5dc9306d55f126344b7672b26b3a8e8b52152b3f2d303",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251834",
+   "old_chars": 1342,
+   "old_sha256": "f85fa0aac84d385f57e3c98f497a6d8df385ba12b3134ba8ab762bed4c73ece5",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "737624211718ed2ba27b631179774aac497fb4745638387c12fe094455720201"
+   },
+   "new_chars": 2500,
+   "new_sha256": "e4b579d6bb32e10e080ed379974fb2e0dbf0ad93633286e156b03957ee26b9bd",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251835",
+   "old_chars": 1225,
+   "old_sha256": "37d61dd574f6938aaf77848902712d13e56c01e78460b74228b2a5fa47265ce8",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceeding",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "f45b3bac0033a441fb3b2874696a68cd70273b7c66b124caf5cda5ec38d9765e"
+   },
+   "new_chars": 2229,
+   "new_sha256": "1b462ddbc61ca36fdfb592ae4a07281d889c21d69cd51b7f66eb94175d85958b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251821",
+   "old_chars": 1246,
+   "old_sha256": "1e734401925aed6bd8b3eae23480cee6a533af0526484b576239979ea3a93a9b",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Grounds for detention",
+     "Length of detention",
+     "Name of the competent court",
+     "No.",
+     "Period of detention",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law",
+     "Specific defects"
+    ],
+    "facts_sha256": "16bfb166d6ae41e006bb844ea3a74f4b7d02d2dbc835ce6a1c47729eebe011bf"
+   },
+   "new_chars": 6346,
+   "new_sha256": "3a8231605e8ccfc0da5652273aac13b859019bbc9afd6cc058519494d8880725",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251819",
+   "old_chars": 1249,
+   "old_sha256": "24ac188e9ca31c682b426dad3400ee099b20c3a5d192cc6785ebc0baa304c458",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Court which issued detention order / examined appeal",
+     "Length of detention",
+     "Period of detention",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Specific defects"
+    ],
+    "facts_sha256": "c374f52ba5aae635df784559dd4b255745cb2ae57eb1a65939ff35c3e9abfb92"
+   },
+   "new_chars": 1728,
+   "new_sha256": "c11aac94a109dfcfcf1c12af9bfd94e4c0b7fbd3754622e8fe2b4d1601a51e33",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251820",
+   "old_chars": 1283,
+   "old_sha256": "9f214ded925092220a714eb2091006b36a94b1598bef117df855a60fd447bad3",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Court which issued detention order/examined appeal",
+     "Period of unlawful detention",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law",
+     "Specific defects"
+    ],
+    "facts_sha256": "e37871ad85d0b1c1d880bb5add907ff96a9bae3e19fa706345321b7b29dc90ae"
+   },
+   "new_chars": 1702,
+   "new_sha256": "5f5c4b458cd88796e8509ad1e6d9b3fa66d170e8ef3b0cfac05921737c0bf643",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-252214",
+   "old_chars": 111898,
+   "old_sha256": "a1e17179b130d82589c7cff078cad515c2f2d935a0d54621dcfa0d833274d241",
+   "removed_spans": [
+    {
+     "start": 87,
+     "end": 6146,
+     "reason": "judgment_headnote"
+    },
+    {
+     "start": 6247,
+     "end": 9947,
+     "reason": "table_of_contents"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 102139,
+   "new_sha256": "14ac83273e55755070d6c28e08651ac668e670c349ba980873ab18a927d2b992",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251807",
+   "old_chars": 3363,
+   "old_sha256": "e439e2d3973ef51aab290243ee3f626913c8f3768dede4513162113480d2cc5d",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "096b929a5f7a20e16ac5f9ebf15f95944c3b8f8a30382791c9d11b87b3bb9b97"
+   },
+   "new_chars": 4078,
+   "new_sha256": "9feab848dfff4cd08a0f4285e5c4ce3fb644693879023735d40c607e76f3c7e9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251809",
+   "old_chars": 7778,
+   "old_sha256": "7f2e2bbf2922b2a90c7b36824c4f5ba379c378ce663799a02a69a984e5e3828a",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7778,
+   "new_sha256": "7f2e2bbf2922b2a90c7b36824c4f5ba379c378ce663799a02a69a984e5e3828a",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251808",
+   "old_chars": 112813,
+   "old_sha256": "ea8ac61e729b9fcec0b5b02eeea32813063d3df5852b88596ebced7d4b34ee7e",
+   "removed_spans": [
+    {
+     "start": 95,
+     "end": 1473,
+     "reason": "judgment_headnote"
+    },
+    {
+     "start": 1642,
+     "end": 9812,
+     "reason": "table_of_contents"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 103265,
+   "new_sha256": "6f2802eeb902852f733977275cee27ee6a88c08b136612c4d3c45cc72a2bda28",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251805",
+   "old_chars": 5584,
+   "old_sha256": "7aa6eff6b84920bdfc08cbe94793606c26abc19fd81e2956ef21363826b61587",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5584,
+   "new_sha256": "7aa6eff6b84920bdfc08cbe94793606c26abc19fd81e2956ef21363826b61587",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251252",
+   "old_chars": 27385,
+   "old_sha256": "097549050a6dd8901bae3130b3047f768ebb89d6ea844cde71d975d3dc548db8",
+   "removed_spans": [
+    {
+     "start": 112,
+     "end": 1642,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 25855,
+   "new_sha256": "ddc716576b64495ee01d905f043a379f8f9704b5896a505c8959afa467e67245",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251251",
+   "old_chars": 24189,
+   "old_sha256": "bb141d52adfb2b26bb1105fe85405f9080ecbe19c78b04c2a684d228c9c8998a",
+   "removed_spans": [
+    {
+     "start": 119,
+     "end": 580,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 23728,
+   "new_sha256": "4deae25083e01e8e37ca31382602f0ea2750133aff26f5fbf05111ac59d445b9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251194",
+   "old_chars": 40664,
+   "old_sha256": "f1bacf8dddc30b5b345fb7f0f443a47f0859fe4ba1c5af45deb5359643f0b97a",
+   "removed_spans": [
+    {
+     "start": 76,
+     "end": 1664,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 39076,
+   "new_sha256": "ac0c025532897feb9085d49fba79c079a28111424f2aae80a975ba446d0f9361",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251190",
+   "old_chars": 28018,
+   "old_sha256": "8c3bb30fe5f31dcb6a37781f0932a274e7b622ff8302aece45d1bda1f8471a52",
+   "removed_spans": [
+    {
+     "start": 142,
+     "end": 1957,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 26203,
+   "new_sha256": "b9642b4a914a3f05176884b0feac0f9b4c187c246cd96d2f2f53b0de0989b34b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251197",
+   "old_chars": 3624,
+   "old_sha256": "53ba7e74051875999e29d4efc8033570744b88e776963a93f629ed82fb7d272c",
+   "removed_spans": [
+    {
+     "start": 94,
+     "end": 497,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of registration Registered office",
+     "Application no. Date of introduction",
+     "Length of enforcement proceedings",
+     "Relevant domestic decision",
+     "Start date of non-enforcement period"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "7db50df5eaef276dfd558dd15d1135d5aa5f7637bacaccc00e42547df93efdfb"
+   },
+   "new_chars": 4329,
+   "new_sha256": "afa3262a954567c1ac4b05b1e22b04708384006fd838bc8b522950492b58b820",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251193",
+   "old_chars": 40815,
+   "old_sha256": "c9082ca7227466ee01d9858c4fcbfbf89a36ae29b04af904616471c793e5f9e6",
+   "removed_spans": [
+    {
+     "start": 106,
+     "end": 1579,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 39342,
+   "new_sha256": "c9af2d8d29555e950bd1c580891743543a9a3cd8ffffa99f756b8a7b7b32db35",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251195",
+   "old_chars": 72671,
+   "old_sha256": "c4d71cb742fa226363029fbbc4c419ce3dc3cb91c058bcfaf4ed906ba09e58a0",
+   "removed_spans": [
+    {
+     "start": 89,
+     "end": 2578,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 70182,
+   "new_sha256": "249df51f5ce6487ce91f24dd559a4f2a21ab32e3ed028c67d533b440d0e48f48",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251188",
+   "old_chars": 24342,
+   "old_sha256": "7b8add74391976148bf899cb35f6e81c7d802cbb21db3f432efab0583cf671af",
+   "removed_spans": [
+    {
+     "start": 86,
+     "end": 935,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 23493,
+   "new_sha256": "f4410f70ce7cb561f489e92b128b69659ee7aa92cdd24e655403ecbaa47054e0",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251192",
+   "old_chars": 32197,
+   "old_sha256": "3006fc318ddf673220c13008860317e51c9b678b094e5679f139326b172dfb68",
+   "removed_spans": [
+    {
+     "start": 120,
+     "end": 970,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 31347,
+   "new_sha256": "542faffb78020834a6aa62a6a83afa092328ffe0bf87e4ebe4f131fa2dd997e9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251196",
+   "old_chars": 31651,
+   "old_sha256": "a4b0fbf065a3b7478d7dedf5ac5d29c5270718e7098cff498b133957d774abab",
+   "removed_spans": [
+    {
+     "start": 93,
+     "end": 855,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 30889,
+   "new_sha256": "051d72a83e55a34bf156b137bdbbd351fe3c5205a70520933cb032764ecc036e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251186",
+   "old_chars": 2977,
+   "old_sha256": "60718f442a5c7e2a364acdeff7783af97e77b6834fcd081d2f805cb332db24ce",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s Name",
+     "Nationality",
+     "No.",
+     "Place of residence",
+     "Year of birth"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "03e95b9f96ce34783d82f20a0483b20e8325352b0a925fd273007b9714343a99"
+   },
+   "new_chars": 3358,
+   "new_sha256": "b83928abdaebd555de0d2df8b14078380f157f3c8e9d3e695921795576ce6ab8",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251187",
+   "old_chars": 5390,
+   "old_sha256": "8e5fc29309fd91251d3061f1e65398545131ab732a94710b220ba07cc80f7e94",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5390,
+   "new_sha256": "8e5fc29309fd91251d3061f1e65398545131ab732a94710b220ba07cc80f7e94",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251189",
+   "old_chars": 9348,
+   "old_sha256": "265b24bb332799f3b66333b26a0fc88b07e398c592e735fd5fc36c58cc64ceb5",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 9348,
+   "new_sha256": "265b24bb332799f3b66333b26a0fc88b07e398c592e735fd5fc36c58cc64ceb5",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251191",
+   "old_chars": 4114,
+   "old_sha256": "b4d273a6f9451e5b409a160122e0940316e9a0d8aad2ec688ccd50297b15c37e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4114,
+   "new_sha256": "b4d273a6f9451e5b409a160122e0940316e9a0d8aad2ec688ccd50297b15c37e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251204",
+   "old_chars": 5555,
+   "old_sha256": "63283f1a8181395703fd7320f299cf0059b5ecee7846df5c953a7633bff5f4ec",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5555,
+   "new_sha256": "63283f1a8181395703fd7320f299cf0059b5ecee7846df5c953a7633bff5f4ec",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251185",
+   "old_chars": 10934,
+   "old_sha256": "6a3f2aa9f0b93e871eb4a2da8aff42e990d477c684a24f746f0af137576f8fa0",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 10934,
+   "new_sha256": "6a3f2aa9f0b93e871eb4a2da8aff42e990d477c684a24f746f0af137576f8fa0",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251322",
+   "old_chars": 159525,
+   "old_sha256": "da60a414ff24de3e5e1f5b10e48c3f5c76704756db0e094a20281b767ac3d4c4",
+   "removed_spans": [
+    {
+     "start": 101,
+     "end": 1341,
+     "reason": "judgment_headnote"
+    },
+    {
+     "start": 1437,
+     "end": 8633,
+     "reason": "table_of_contents"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 151089,
+   "new_sha256": "d1bdf5b641f588b5406a405ca74eb3e022edd316e1f707f2aa54bd51bd41c078",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251034",
+   "old_chars": 21993,
+   "old_sha256": "6086fb4d4a4b6da0a830e954da5eda7ee8234f164aabcfcada2aaae8ac230d6e",
+   "removed_spans": [
+    {
+     "start": 88,
+     "end": 987,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 21094,
+   "new_sha256": "ded21cadbd94289b6c1954db663e29502d6f3d8cf7a6faf5cc52c2b90fe15008",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250999",
+   "old_chars": 7238,
+   "old_sha256": "e386046a3b371ea959d0418f026a8c56f25f71a9f87fbffdc58fde2a2ebe4a53",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7238,
+   "new_sha256": "e386046a3b371ea959d0418f026a8c56f25f71a9f87fbffdc58fde2a2ebe4a53",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251017",
+   "old_chars": 1307,
+   "old_sha256": "6a7279e03d396b59c7119ebcdd702bc5f7b73478b4ab27fbff5e39bd35ee0c6f",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "No.",
+     "Representative’s name and location",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non ‑ pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well ‑ established case-law"
+    ],
+    "facts_sha256": "c0b543fd392c87db5a8ddb4438dd9db7d970a52c807dd2c566df63c72cfee077"
+   },
+   "new_chars": 9903,
+   "new_sha256": "6f03b853495c74ed6319c9217ddd06474ae02f36952a4f968a58ac2a5f5f849d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251001",
+   "old_chars": 1283,
+   "old_sha256": "6c16d6890aac455a0a019dce5dda30218f963ee3cb30cf21b36d62f34959c47c",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "No.",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage and costs and expenses per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "36979c5032a33b832d1a510c9e9c77626819529076880cb0ee0d407e05f15ea8"
+   },
+   "new_chars": 8939,
+   "new_sha256": "5ac3df12b0fc15b32c6665c00609074565625ff16a5f5b1a97dc193867ab373d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251007",
+   "old_chars": 5162,
+   "old_sha256": "db6615729245b05283bda5b4853177a460dafef78d983f1d8a0b33cdaf121033",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5162,
+   "new_sha256": "db6615729245b05283bda5b4853177a460dafef78d983f1d8a0b33cdaf121033",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251008",
+   "old_chars": 7450,
+   "old_sha256": "d3b3cfd761595a49abcc3ae594d2d12303b6b7cd48e41c9f78513e1ff8bd2ff5",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7450,
+   "new_sha256": "d3b3cfd761595a49abcc3ae594d2d12303b6b7cd48e41c9f78513e1ff8bd2ff5",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251013",
+   "old_chars": 1235,
+   "old_sha256": "c93395c388f0acf03bd75b8a6401e3ea9b977fe675c4c42d375a6c19a3df06e6",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage and costs and expenses per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "e37d4160f8d5ffeb9d52d196588cb6ecd8d7dc82304048e4ce549d31579bd9d8"
+   },
+   "new_chars": 2613,
+   "new_sha256": "408caa7af191b3204f33e27d2d1856fe6dda93c55808d849111c3317e42eb49d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251018",
+   "old_chars": 1269,
+   "old_sha256": "6ecc7be138af37bf8ecf7caf6ec566655f63fc3934c2f524693bc9a8bc39f62f",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End date of non-enforcement period Total length of non-enforcement",
+     "Name of the court Date of the final judgment",
+     "Representative’s name and location",
+     "Start date of non-enforcement period"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per household (in euros) [1]"
+    ],
+    "facts_sha256": "e7e2216231f8743cf7c49c2191c70b4beb21a7c2a153e222f1fe5988083a496d"
+   },
+   "new_chars": 1928,
+   "new_sha256": "0acf10408e1e4f11726abf5665c0ed94b903081dc9e0fbc48ad5fb72dc39b518",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251292",
+   "old_chars": 72254,
+   "old_sha256": "56dad095974cf7122c0bfeb5cbce26b6a90631a6f1237141d823386c1824663a",
+   "removed_spans": [
+    {
+     "start": 95,
+     "end": 1879,
+     "reason": "judgment_headnote"
+    },
+    {
+     "start": 1974,
+     "end": 4204,
+     "reason": "table_of_contents"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 68240,
+   "new_sha256": "ed1bb83a0804a67b01ab90e373201c42c02b1205bbdd2bda29bfcfecc12e6003",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251029",
+   "old_chars": 25380,
+   "old_sha256": "edfc262323b004d855924d040c0ad051f2c1fb0ae383597e0140f6a578cda949",
+   "removed_spans": [
+    {
+     "start": 82,
+     "end": 891,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 24571,
+   "new_sha256": "1f2fa16d5a965d4d5f91ee553b7fcc976999bda2ca971bc1c50502d5d7cfb4b3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251024",
+   "old_chars": 48903,
+   "old_sha256": "f657d1df69c478f79e38bdd5e2e5f11188faaee066ea3fb9fc778790066a6b84",
+   "removed_spans": [
+    {
+     "start": 147,
+     "end": 1860,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 47190,
+   "new_sha256": "ff63877ad06fd481bec18d15e4dfbc56543d642710ef51145613d598c76bd591",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251025",
+   "old_chars": 14840,
+   "old_sha256": "5d37c0ce8f88a34f3a7419eeb1444158b8774ccf790a74b69e2d3a6f363f49bc",
+   "removed_spans": [
+    {
+     "start": 82,
+     "end": 956,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 13966,
+   "new_sha256": "3a95f2bcd85a3672e59f432f8d3ccddae007a55a9ee9713967b684c4f989bb36",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251027",
+   "old_chars": 121924,
+   "old_sha256": "9930d0ef79ff84c17aaed512ce0994dd90fc971cad06bd20c9aa3f58c46e5f7c",
+   "removed_spans": [
+    {
+     "start": 87,
+     "end": 1379,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 120632,
+   "new_sha256": "24365f2db2fb6c489834a3d88838385440261fb63be45d2de52207a502bf0a46",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251277",
+   "old_chars": 19749,
+   "old_sha256": "1d8c85ace3a0217fe7c41dd0734c5c451b14202f5dd030b117e6166e842cff43",
+   "removed_spans": [
+    {
+     "start": 81,
+     "end": 461,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 19369,
+   "new_sha256": "d7ecb06c2994e2ff7547e1d330b9f1e4f86231bd302f8607e8c502ebf16593d1",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251020",
+   "old_chars": 6120,
+   "old_sha256": "dc3c2387bc65544dc1aff5faeba7787bfd369482a6c2a89620276c9833b7e380",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6120,
+   "new_sha256": "dc3c2387bc65544dc1aff5faeba7787bfd369482a6c2a89620276c9833b7e380",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251023",
+   "old_chars": 5194,
+   "old_sha256": "7562047eaf4a63b20b1f9d3ded27058a39b9999b962797f415ae5893c361c63e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5194,
+   "new_sha256": "7562047eaf4a63b20b1f9d3ded27058a39b9999b962797f415ae5893c361c63e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-251026",
+   "old_chars": 5194,
+   "old_sha256": "3792238819407692bbb705ec415168ac8c96ab51522af7582ea4d52dbdc12ba2",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5194,
+   "new_sha256": "3792238819407692bbb705ec415168ac8c96ab51522af7582ea4d52dbdc12ba2",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250888",
+   "old_chars": 44781,
+   "old_sha256": "7d424adfa6d98aa6507fbac0f33aa8c58ab73a3f8d1f3e5c702967de60e71086",
+   "removed_spans": [
+    {
+     "start": 99,
+     "end": 846,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 44034,
+   "new_sha256": "4560dee51327ac4425309b524445403886becde4cb4d8e24dc170e40d6a2d577",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250890",
+   "old_chars": 37885,
+   "old_sha256": "58788cf01cbd0c931704ff888328336d52d270ad4b7d2dc86315ad1dec75a204",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 1884,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 36086,
+   "new_sha256": "102e88f1b8b67f0acf75dcec8e37f8558984032c7c376aa19cb4eb855644cb23",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250892",
+   "old_chars": 39042,
+   "old_sha256": "c281b4e56f4edb08b402292b719cc8db7395b25834ed0e3a207b05f6d4bdd46d",
+   "removed_spans": [
+    {
+     "start": 90,
+     "end": 1773,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 37359,
+   "new_sha256": "dabb5d2c63c1763085a476f8e26feeb5cf961b8cb5b81706ce812f44e4807cbc",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251247",
+   "old_chars": 32170,
+   "old_sha256": "10da33146ddf75930e607b2b016c5bdbb7d9e84f9b4f11d067c6bfc92b416011",
+   "removed_spans": [
+    {
+     "start": 87,
+     "end": 2266,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 29991,
+   "new_sha256": "164eab21ba4a20f2460b28dd2e2185d87be6e27ac0db1cecbd49b56fe00fc527",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250889",
+   "old_chars": 12299,
+   "old_sha256": "93dcd3f372dedb7f36843a01b82e6d0513372eeebef4ccac5c5ec24e705358b1",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 12299,
+   "new_sha256": "93dcd3f372dedb7f36843a01b82e6d0513372eeebef4ccac5c5ec24e705358b1",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250887",
+   "old_chars": 7049,
+   "old_sha256": "b0a100bef8624a1016a2bb9375d64cfb151f8d4559dacbba3c1995c3d9509375",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 7049,
+   "new_sha256": "b0a100bef8624a1016a2bb9375d64cfb151f8d4559dacbba3c1995c3d9509375",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250885",
+   "old_chars": 4541,
+   "old_sha256": "e056e5acd93241d5dfe949bf65a13117716c87de593f7b1dda23b75325058a81",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4541,
+   "new_sha256": "e056e5acd93241d5dfe949bf65a13117716c87de593f7b1dda23b75325058a81",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250886",
+   "old_chars": 5028,
+   "old_sha256": "0e6f51db52f2f41d803d7c1329e4a8bc3b88c843ce8f22104fa19045f05e2ec0",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5028,
+   "new_sha256": "0e6f51db52f2f41d803d7c1329e4a8bc3b88c843ce8f22104fa19045f05e2ec0",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250883",
+   "old_chars": 21141,
+   "old_sha256": "f9603fe2b97483b644b18bbde0f185ae74b1f707002538cae940b81dee6f37b9",
+   "removed_spans": [
+    {
+     "start": 93,
+     "end": 355,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 20879,
+   "new_sha256": "b8d0fcfabde544f6156790ccf9a90af56be6f6c86592cc6a592781babb5d45f5",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250747",
+   "old_chars": 35629,
+   "old_sha256": "3ca61f8a176d0c108209906d66daded2010eaa14024345776413bf39b6b865a8",
+   "removed_spans": [
+    {
+     "start": 80,
+     "end": 1370,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 34339,
+   "new_sha256": "bff3e066605b844f7358f7288d78d9abb9f8625ed5d7b53f3315dcad676f8fc0",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250750",
+   "old_chars": 1217,
+   "old_sha256": "b364884f59d4a31675e22113e7e21af0e0d1e48e8f47e952bdba21dc80159030",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "02f37cb4f4a5005ea2311a428c37cce8192c71824dce94e2949db0824bf14d7f"
+   },
+   "new_chars": 6465,
+   "new_sha256": "8c55a9b805d01c2995410b8177122d1ea400542682e2d06ca36896a23df20f20",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250755",
+   "old_chars": 1358,
+   "old_sha256": "559cbd41f75c80c018d805469afce09a43706cf8ccea6948fd418aa01dea7c8d",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "No.",
+     "Representative’s name and location",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "0c89d64cdbd893110ec2e26d04574191627e84097f640a0bc8d6c4fe524dbc95"
+   },
+   "new_chars": 11791,
+   "new_sha256": "1c6318998e46596dab5b2f4e6727125597a96fd8baa43d8a4aea11d4da396a28",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250756",
+   "old_chars": 995,
+   "old_sha256": "c334e5820181dffe05185008d3660848a3d960dbe24be755875ebeb2e4d89a1b",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Background to the case and domestic proceedings"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage (in euros) [1]",
+     "Key issues"
+    ],
+    "facts_sha256": "4c148ba1937bdf16e3a3f8390c65ab4158b645439c4202cd311268dd678369c5"
+   },
+   "new_chars": 3117,
+   "new_sha256": "0d623b0140dc8e6bebd25404a8c5ab6a8e29e98719e99ef4c564013158b74906",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250751",
+   "old_chars": 1086,
+   "old_sha256": "0fa96c468c04c395ef761cbe3bea9c2275b9d12a34101339410cb5ad10e14586",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Domestic compensation awarded (in days) based on total period calculated by national authorities",
+     "Facility Start and end date Duration",
+     "No.",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non ‑ pecuniary damage and costs and expenses per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "73bd4a6bbaa8f8c9f06c28ec2ef3c7d0d74dca645350a26d94797b2e30b2e02c"
+   },
+   "new_chars": 3558,
+   "new_sha256": "8deacdad5570afeab33512b277b031cf5aaae8b78ba3ea3b34ce81231f3aafdc",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250757",
+   "old_chars": 1196,
+   "old_sha256": "aface15991a9c6cf8d616ee19bc79e88824fbfa9b070b6acd41c611162fe33a9",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "a3c0a6233f255151d12f08a7c171f09d186ee0cc2e1cd2f21a4aa49c1779e288"
+   },
+   "new_chars": 1502,
+   "new_sha256": "9ca390d16877eb64d8ab6f6735e3231dc283ffe8b7e102399425c70a04871778",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250754",
+   "old_chars": 2575,
+   "old_sha256": "b8b75598d350059d3e8dad9aa25a34a39886f1fd49b8c83cf96e5f93b3c6cbcd",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Domestic court File number Domestic award (in euros)",
+     "End of proceedings",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant /household (in euros) [1]",
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "0f3404e8293b4ff4177399e6d53b35225085f8abb5e2fb0184ce91b3febae428"
+   },
+   "new_chars": 3425,
+   "new_sha256": "93b2bd59a450a77ae45ca275773f3de75a07b3198fb9e339bb4fe0654818b0e3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250744",
+   "old_chars": 51582,
+   "old_sha256": "0567a4c8cc1f8793afe43ac8d3a46f048488969b0fd705e79df49eaaaae78299",
+   "removed_spans": [
+    {
+     "start": 115,
+     "end": 1937,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 49760,
+   "new_sha256": "4792efc79379068850d25cfacc1a2116b72dd026cf3af23c59b80f41065c8c2f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-251090",
+   "old_chars": 51519,
+   "old_sha256": "f4256335591500a4c0e0eb618297a3b83c78867b2a245b4347affb9dd93ac70c",
+   "removed_spans": [
+    {
+     "start": 79,
+     "end": 847,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 50751,
+   "new_sha256": "f104dcf3c603b8d6717ce281e12f2a4bf04e8bb9813c3556b65f669254b29892",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250730",
+   "old_chars": 65615,
+   "old_sha256": "121906be97216b4782212b2515721bac527bf5a8a1d6e71059fc544ccba491eb",
+   "removed_spans": [
+    {
+     "start": 108,
+     "end": 1660,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 64063,
+   "new_sha256": "bd44b3828a83f9525afffae30d0de37b7ff5111343b05bcfcdbfafe963ce8465",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250745",
+   "old_chars": 18729,
+   "old_sha256": "d9f8764820a09e191f75fc855807bd9d1be7681a0a8353807076daacfb85e3e8",
+   "removed_spans": [
+    {
+     "start": 83,
+     "end": 864,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17948,
+   "new_sha256": "621898217499f5aafdc5bf6e6e7a258907a65560d2de53d1d763fc962835461b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250760",
+   "old_chars": 13806,
+   "old_sha256": "fdb6fb3907d4668badb8d5a4c9a902624e14b5077db214a7fc85e5985c52d4be",
+   "removed_spans": [
+    {
+     "start": 84,
+     "end": 1059,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 12831,
+   "new_sha256": "6785c0418eb4c07ab6eb0ad18eb7a107e8a32cf9bd0f33671d090a082139b978",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250740",
+   "old_chars": 4655,
+   "old_sha256": "6cd3199e3c0a40578145461bf9e30959381e6d4afdef6dcd6104f90654f9af84",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "32ee24ab1b4694c4bfbf50e88e49496256249167015982107a2b863f85cdf7bd"
+   },
+   "new_chars": 11725,
+   "new_sha256": "29116f4c3966fa3baa936e207f365715fdbbad2834a5f4e2997b1efe77925532",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250735",
+   "old_chars": 3766,
+   "old_sha256": "21e3ef3b4d09b0c10646657a3ca0945af2f97509245756301ea5bcd1eb005ec0",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 3766,
+   "new_sha256": "21e3ef3b4d09b0c10646657a3ca0945af2f97509245756301ea5bcd1eb005ec0",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250731",
+   "old_chars": 9043,
+   "old_sha256": "b288073058fde1b0f2f47a0b3ddbbaaf67f4d9f1030b4949589ddbb1c27258aa",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 9043,
+   "new_sha256": "b288073058fde1b0f2f47a0b3ddbbaaf67f4d9f1030b4949589ddbb1c27258aa",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250732",
+   "old_chars": 6966,
+   "old_sha256": "e95acd2c6658eec56535fce500df92ade6096703849aca17928b744eedb2dee2",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6966,
+   "new_sha256": "e95acd2c6658eec56535fce500df92ade6096703849aca17928b744eedb2dee2",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250733",
+   "old_chars": 8716,
+   "old_sha256": "3566863b3be2856f6f48b12ecc333ae2c875babae25b7c13ae6436d924f58dd8",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8716,
+   "new_sha256": "3566863b3be2856f6f48b12ecc333ae2c875babae25b7c13ae6436d924f58dd8",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250736",
+   "old_chars": 8536,
+   "old_sha256": "660e75750ebe93fe009d323dd2bd898454a8043b41cd8b495546381130cb0134",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8536,
+   "new_sha256": "660e75750ebe93fe009d323dd2bd898454a8043b41cd8b495546381130cb0134",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250738",
+   "old_chars": 4847,
+   "old_sha256": "3c446c8755bd1514064a85dd396016efcb2c52d3d1e2acabf2b808596cb70621",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4847,
+   "new_sha256": "3c446c8755bd1514064a85dd396016efcb2c52d3d1e2acabf2b808596cb70621",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250739",
+   "old_chars": 6583,
+   "old_sha256": "d1f8231d0a52cf7e95704f065cb180e4359f3a407ca9127302bf2ff1bd3f81ba",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6583,
+   "new_sha256": "d1f8231d0a52cf7e95704f065cb180e4359f3a407ca9127302bf2ff1bd3f81ba",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250741",
+   "old_chars": 6904,
+   "old_sha256": "e74dbf3eecb5d60929f51522168b97d320ca473b6e92512a5ce3a3dda43eb963",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6904,
+   "new_sha256": "e74dbf3eecb5d60929f51522168b97d320ca473b6e92512a5ce3a3dda43eb963",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250737",
+   "old_chars": 4652,
+   "old_sha256": "6278b7c8ee0515b3142f9171c290302d3a82d1880154ae5629bfb2c825610555",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "ca6565408032bd8ddea503da7060edec9446d582b64238fb4135928204a5eb8d"
+   },
+   "new_chars": 59406,
+   "new_sha256": "3a1694889db569b1ab8f497bab49e208915539f5408fdcbeb2a138c8a28b89f9",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250734",
+   "old_chars": 4666,
+   "old_sha256": "b327a750ea8d7fade080aff39d96748b8beee491bb26c55ae2d9e326871fa8a5",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "038f62f5501c1684988775c2e0420b90dd4420a343b2eef4bb966e0e04961106"
+   },
+   "new_chars": 127203,
+   "new_sha256": "db1ef72e4a475232a6b863cde73b2716b1514d5bf9a41cab9bb9f691b0efce88",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250566",
+   "old_chars": 13492,
+   "old_sha256": "fa8aa5c0ab5ce4e53256776600286916b91281535bbe83de1b54680c99b1ab21",
+   "removed_spans": [
+    {
+     "start": 92,
+     "end": 1224,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 12360,
+   "new_sha256": "278896f27a38f9b43d3a83db60110380ce760bcfe06cf6e2e76c4f2dc23edb37",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250570",
+   "old_chars": 19801,
+   "old_sha256": "1be251d9f873d753632dd9579c259d21f03fa073d71b356d45307fb21d575c47",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 19801,
+   "new_sha256": "1be251d9f873d753632dd9579c259d21f03fa073d71b356d45307fb21d575c47",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250571",
+   "old_chars": 5868,
+   "old_sha256": "eb4f8ba20b4fe794c7b2bde81a4dd88516750a9bcb128adce15680e1322220de",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5868,
+   "new_sha256": "eb4f8ba20b4fe794c7b2bde81a4dd88516750a9bcb128adce15680e1322220de",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250572",
+   "old_chars": 8075,
+   "old_sha256": "8c128a1f6fa0817c57c15330581b7c95c3cd96328d6016d8d24422def10982cc",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 8075,
+   "new_sha256": "8c128a1f6fa0817c57c15330581b7c95c3cd96328d6016d8d24422def10982cc",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250574",
+   "old_chars": 15662,
+   "old_sha256": "009f33a8e747785e5bb114ef35c0f7fd718c31ed401aa5e0e968d767defbb00a",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 15662,
+   "new_sha256": "009f33a8e747785e5bb114ef35c0f7fd718c31ed401aa5e0e968d767defbb00a",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250573",
+   "old_chars": 6647,
+   "old_sha256": "fe7c602bd4c850a6e18d733d62b720811e278e28844b8bec226c570ae15d28f7",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6647,
+   "new_sha256": "fe7c602bd4c850a6e18d733d62b720811e278e28844b8bec226c570ae15d28f7",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250565",
+   "old_chars": 18011,
+   "old_sha256": "4d68a09cf1566e34bd35b4b93ab5c417933a0919f1d349c9b01a242e413f6b91",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 662,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17434,
+   "new_sha256": "d13bed20aeb00caf269a5efc74c0666dbf3d9bee6731a69ef983023f4ec10bdc",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250564",
+   "old_chars": 14157,
+   "old_sha256": "15554966ad213cda91ef34ec6e54c18ca299e9a85f7b5414aaf84ad3c5adb251",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 399,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 13843,
+   "new_sha256": "9771f36259ea3c21f66d2e7950a5e0f030f7ceb9f6af5f3a6bb6d2d2e1b22b60",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250547",
+   "old_chars": 5962,
+   "old_sha256": "6b71c1ccd4cc7d04598bb5a358f65ef498510ade8387f05981bce388cff25ba0",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "5a0ab7bba69948738acb35ca01ccbda1679a251f6be6204d1de11761028a1737"
+   },
+   "new_chars": 6373,
+   "new_sha256": "a51c272b490e60c95c5101df9a4379d17c75b4d79654df9e0fb093d53596fb9f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250563",
+   "old_chars": 12408,
+   "old_sha256": "a9572e7fa3673e25baddb709b3a64c6777889c24aef70d0d35fba48d4a936163",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 12408,
+   "new_sha256": "a9572e7fa3673e25baddb709b3a64c6777889c24aef70d0d35fba48d4a936163",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250223",
+   "old_chars": 1294,
+   "old_sha256": "7b15cc69abf5ec176b75b3381dd4a3af00de17f14358e6925c4bd495feaabc98",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Other complaints under well-established case-law"
+    ],
+    "facts_sha256": "1f7320137bdca97776dd216d6a846a590af1b3232e65e93181a7610a472a7b40"
+   },
+   "new_chars": 1708,
+   "new_sha256": "f1d5291454d2a7d1cdf5000c50374d01e78ee9546f701611a179f47c2ff3f8f8",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250224",
+   "old_chars": 1220,
+   "old_sha256": "bfa833692edd5ec7405e57fdac484c7859b6e16623af0682c3fbe12bd22051b4",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "No.",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "1ca04dee8bf7a3c5a46211c8af68f328b76c3a93beef75641acb8d29f8eb9e17"
+   },
+   "new_chars": 3330,
+   "new_sha256": "01ba292f1147bba33506644b67fc4717242ba3eb67a0aa46305a725b05c9824e",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250227",
+   "old_chars": 1088,
+   "old_sha256": "20473d60daf52418b045d52b9e5823172d007cbce8e85f79a77aa02e73e72b34",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Judicial decision upholding the conviction",
+     "Name of the trial court Date of the life sentence",
+     "No.",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "37a2190af1608f1c0f0b08e0a7c3764668a639dae97ca6f6db8dbba5475b2663"
+   },
+   "new_chars": 2820,
+   "new_sha256": "3383d635d29b5179679513731790992df518e5b81800d4b0732654ca3cb1cfca",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250440",
+   "old_chars": 25923,
+   "old_sha256": "26155dfb8535333b472149c6d17d2dd11914d97542236d6e708624d99d8ed1c1",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 25923,
+   "new_sha256": "26155dfb8535333b472149c6d17d2dd11914d97542236d6e708624d99d8ed1c1",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250225",
+   "old_chars": 1250,
+   "old_sha256": "d66d26bccd634cdd0fb051b3e8aa8c3dd66274b5e1fdf5b95db8a7b022edefee",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Principal medical condition"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for pecuniary and non-pecuniary damage per applicant (in euros) [1]",
+     "Other complaints under well-established case-law",
+     "Shortcomings in medical treatment"
+    ],
+    "facts_sha256": "2c071b31493e9def8d1a63541406b47c0cbdbd8fc1626f7c10cce9df272aae77"
+   },
+   "new_chars": 1463,
+   "new_sha256": "72cb70035fb8f89198b2e47a41932644e5b50059fdd9633e8b3c98ada23dc3e3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250226",
+   "old_chars": 1080,
+   "old_sha256": "4ef20ab35d9a027f7f891757e199abed7b952dac9eed128a2f7a9ad6ac0c532e",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Background to the case Domestic proceedings",
+     "No.",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Key issues"
+    ],
+    "facts_sha256": "78fc652808a077b3fcbb35043d9b7c5241589faa0f6d68bdf97d5b25e3ff1098"
+   },
+   "new_chars": 14046,
+   "new_sha256": "3ab9e9404f7b5c0a10fe0c1fd842e91de34bdde6b6b0a323e2612426d7924ad3",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250436",
+   "old_chars": 54127,
+   "old_sha256": "d27e0b65e5dceb4facb754754ec85b41ccbcd266ac7c0f998b9086452f9cc79f",
+   "removed_spans": [
+    {
+     "start": 76,
+     "end": 940,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 53263,
+   "new_sha256": "f7f846400141cbf6ce7c5a29d4a2013c0c5163bf8c0edc0db08c5ba618dcb0de",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250441",
+   "old_chars": 5629,
+   "old_sha256": "251fd44b20d321e9402da54d0f660ffeaa051adf60b7b7a76f8f520ba878886c",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 5629,
+   "new_sha256": "251fd44b20d321e9402da54d0f660ffeaa051adf60b7b7a76f8f520ba878886c",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250442",
+   "old_chars": 11293,
+   "old_sha256": "8b4938c27a3865ac1d5e66172c46eab16bbd309ebd86c2b8ebd56fdd20afbf3e",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 11293,
+   "new_sha256": "8b4938c27a3865ac1d5e66172c46eab16bbd309ebd86c2b8ebd56fdd20afbf3e",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250444",
+   "old_chars": 1656,
+   "old_sha256": "623e71a358ef82b1e2455278df52924f1f6c1fed73decd87efcbc3f3167671c9",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 1656,
+   "new_sha256": "623e71a358ef82b1e2455278df52924f1f6c1fed73decd87efcbc3f3167671c9",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250445",
+   "old_chars": 2069,
+   "old_sha256": "25a99342e6a62d8a7ee4dec4e56d2fb81b1dac05f0b0a0056a9153f535fa2a65",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facility Start and end date Duration",
+     "Specific grievances",
+     "Sq. m per inmate"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "f0644e4c589841f388cbcd85dc3454fb88d1c52b400588e0dac526e14ae62898"
+   },
+   "new_chars": 2824,
+   "new_sha256": "6cf5ba0d49febb7669a0d23eec4141f8c71999383371ea95be589af17afc6896",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250446",
+   "old_chars": 1159,
+   "old_sha256": "a718b989690dd071846d01f75447476417c746c1d208669a882bac043e1f1243",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "End of proceedings",
+     "Representative’s name and location",
+     "Start of proceedings",
+     "Total length Levels of jurisdiction"
+    ],
+    "omitted_columns": [
+     "Amount awarded for pecuniary and non-pecuniary damage and costs and expenses per applicant (in euros) [1]"
+    ],
+    "facts_sha256": "2288fcd2de22e32426375a46eacbdda0673cd1543778e48ea9bbf84931c26324"
+   },
+   "new_chars": 2024,
+   "new_sha256": "9952000d19712855d78d2204ad79bffc37c06c3727a59318e2c1cad59585296f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250222",
+   "old_chars": 1170,
+   "old_sha256": "873327a0c4ea198eb5d94f306fe11380446e8b25a319c692eaf6d7dac0098d88",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Date of arrest",
+     "No.",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non-pecuniary damage per applicant (in euros) [1]",
+     "Specific defects"
+    ],
+    "facts_sha256": "eb22191b8cf5cdbb14a2686707f12e754ba8595d4fe09f29823800b0dfc798a4"
+   },
+   "new_chars": 1410,
+   "new_sha256": "2e48041f64026649759cce00ff8fae9bbc86fd6b97d313e28674f73ef2047249",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250443",
+   "old_chars": 6097,
+   "old_sha256": "b626afe036101468fc80601d3939a26b01fa74237419f788ddfc8e13e69bab60",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6097,
+   "new_sha256": "b626afe036101468fc80601d3939a26b01fa74237419f788ddfc8e13e69bab60",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250429",
+   "old_chars": 11136,
+   "old_sha256": "d94f2c0373fb6d05c07c5a96f4b710d165df25fcc66f7cc41367d8b8f10b899b",
+   "removed_spans": [
+    {
+     "start": 81,
+     "end": 534,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 10683,
+   "new_sha256": "f4d6469313da2b86d3a059bc29d4d1088e0c0395fd3b229afb5c88bfbb07ae6d",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250424",
+   "old_chars": 32203,
+   "old_sha256": "ae6e362104d42d25833ca25e737f17bc53cfc80c2766400527f0e6cef8c1ec04",
+   "removed_spans": [
+    {
+     "start": 80,
+     "end": 1092,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 31191,
+   "new_sha256": "2a80fdc75375dc7a00d4b6a492aef8039878718a5ceebebd4e2342b0cc071556",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250430",
+   "old_chars": 17858,
+   "old_sha256": "c4801a87f7c4f695e18b02ec7b76c7e89144fca3197d10fa22ffdf8ccc171f14",
+   "removed_spans": [
+    {
+     "start": 90,
+     "end": 511,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17437,
+   "new_sha256": "8f5835e40208309136b4a739df729a560fd01a12e486bac8521b52311ffc3d94",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250422",
+   "old_chars": 13961,
+   "old_sha256": "b88576d21e5a868fe4c13d987b19279692b2222fbc265f943fc14634f6ce64a2",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 13961,
+   "new_sha256": "b88576d21e5a868fe4c13d987b19279692b2222fbc265f943fc14634f6ce64a2",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250415",
+   "old_chars": 15333,
+   "old_sha256": "45b9bf2de7b193006740c46ae3d1d6b3885d2784060f98bd533c62ffaad172cd",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 15333,
+   "new_sha256": "45b9bf2de7b193006740c46ae3d1d6b3885d2784060f98bd533c62ffaad172cd",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250423",
+   "old_chars": 6733,
+   "old_sha256": "e1aac32bf95c9040b2e1ce6552ad9de75572b8512260fe25f5fce012b5e8534b",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6733,
+   "new_sha256": "e1aac32bf95c9040b2e1ce6552ad9de75572b8512260fe25f5fce012b5e8534b",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250426",
+   "old_chars": 11801,
+   "old_sha256": "906596110910e6086c6e3f006d83c53a0c1f4ba50b803c0b407e1e3e08437aed",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 11801,
+   "new_sha256": "906596110910e6086c6e3f006d83c53a0c1f4ba50b803c0b407e1e3e08437aed",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250427",
+   "old_chars": 14517,
+   "old_sha256": "cd067ca4bc52b4e4eb56f6f5d73affeb5788a7855941006fbfa73e9603a27440",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 14517,
+   "new_sha256": "cd067ca4bc52b4e4eb56f6f5d73affeb5788a7855941006fbfa73e9603a27440",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250619",
+   "old_chars": 18410,
+   "old_sha256": "ee83948c6212788a24673924008594363797f451ead090a5926513bfd744f3fc",
+   "removed_spans": [
+    {
+     "start": 82,
+     "end": 943,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 17549,
+   "new_sha256": "de8a6397fe44e5a9693b0b1d523531b44f0444be51b7f16da6f36d464bf6336b",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250311",
+   "old_chars": 11141,
+   "old_sha256": "c646041e5e7c3c54bbe6318de22c9eaf3a8472a5467420447a021d5678a4ca66",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 11141,
+   "new_sha256": "c646041e5e7c3c54bbe6318de22c9eaf3a8472a5467420447a021d5678a4ca66",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250316",
+   "old_chars": 6987,
+   "old_sha256": "275dbcb867f24dee62b9c7eab857e13224197f3d2f306bfbf82f18d1309840b4",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 6987,
+   "new_sha256": "275dbcb867f24dee62b9c7eab857e13224197f3d2f306bfbf82f18d1309840b4",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250308",
+   "old_chars": 28338,
+   "old_sha256": "4dc987b29758fe24d4542ceefb3932ded696691f7c0a1f6bc55eb4acd4b86f59",
+   "removed_spans": [
+    {
+     "start": 111,
+     "end": 954,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 27495,
+   "new_sha256": "a9d82151f056b670be139052af9f2d501b2a8f165117f20cc2d1969041fde046",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250309",
+   "old_chars": 38963,
+   "old_sha256": "c9bed7e6101f2cf25f82818f433295a3ad0fc04fa2d9e8d116d5083eecee10ba",
+   "removed_spans": [
+    {
+     "start": 91,
+     "end": 803,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 38251,
+   "new_sha256": "2f674ac075ddccfde962dbf9aeedc9e427a3dd606d3db2797e6a546f47889b6f",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250310",
+   "old_chars": 3058,
+   "old_sha256": "bc5af720612a088aae401069e144c0df5973d09dc092e407f5a057dee4e5ea0c",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant Year of Birth Place of Residence Nationality",
+     "Application no.",
+     "Case name",
+     "Lodged on",
+     "No.",
+     "Represented by"
+    ],
+    "omitted_columns": [],
+    "facts_sha256": "dcf55e4be859a0f8cfc720fa3da1c92950c5e889f2260123a6b31b917fdcad1f"
+   },
+   "new_chars": 3567,
+   "new_sha256": "7a509a3110338cbc9dca2afc60c8ae9133cbb6075d4de4597e34f9d419808670",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250210",
+   "old_chars": 26873,
+   "old_sha256": "124d45079b664496a6bc544fc353d354e55124531df993e9b875fdc96bee85ac",
+   "removed_spans": [
+    {
+     "start": 129,
+     "end": 1974,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 25028,
+   "new_sha256": "a8ba7f9ecd23636891355bee0306c2c6550e1ab3c25d34395e553008f6971335",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250211",
+   "old_chars": 39419,
+   "old_sha256": "b6fecab14d90adc90d34ca94a6adeae08d520e7917f2ddf1ad5ceca9085099b3",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 671,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 38833,
+   "new_sha256": "0d1d0c769b1d9351f5c62e0cdcbd202bb619f121e5f09f87ab5dee21b7b992d4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250216",
+   "old_chars": 4393,
+   "old_sha256": "835caefee3afd5df05e4cfd8e5f8060ac00d728f30213cc2b0c88691e1e9cc48",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 4393,
+   "new_sha256": "835caefee3afd5df05e4cfd8e5f8060ac00d728f30213cc2b0c88691e1e9cc48",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250228",
+   "old_chars": 1161,
+   "old_sha256": "92ece71ac08276d5233674c4d1bcaea0d72c6ad7dfe76a3c300de3b78e330236",
+   "removed_spans": [],
+   "appendix": {
+    "included_columns": [
+     "Applicant’s name Year of birth",
+     "Application no. Date of introduction",
+     "Facts and relevant information",
+     "No.",
+     "Representative’s name and location"
+    ],
+    "omitted_columns": [
+     "Amount awarded for costs and expenses per application (in euros) [2]",
+     "Amount awarded for non ‑ pecuniary damage per applicant (in euros) [1]",
+     "Case-law",
+     "Key issue impairing access to a court"
+    ],
+    "facts_sha256": "c14a2c31036b7b4581a8c1f6ce4f686d49a28e79ad7152e5342961ffdf29dc54"
+   },
+   "new_chars": 3981,
+   "new_sha256": "5bcfa1a8b1556bb7cfadf653ca8458e36e4be8bf17908ffca45d1536107decb4",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250213",
+   "old_chars": 2455,
+   "old_sha256": "dedad880cc59c24984de43fc0b73a00950a2fb0779bc926c9a9f364e4e55c3e7",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 2455,
+   "new_sha256": "dedad880cc59c24984de43fc0b73a00950a2fb0779bc926c9a9f364e4e55c3e7",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250214",
+   "old_chars": 10895,
+   "old_sha256": "a1ec99452ecf899ac580abd5bba57567548a5c137db7e83277a8daf1461a7d27",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 10895,
+   "new_sha256": "a1ec99452ecf899ac580abd5bba57567548a5c137db7e83277a8daf1461a7d27",
+   "input_changed": false
+  },
+  {
+   "item_id": "001-250201",
+   "old_chars": 12948,
+   "old_sha256": "b06f0322d773f85c349b6f81d0d773bb7485bf3c9024bfac376f546fdd02963d",
+   "removed_spans": [
+    {
+     "start": 93,
+     "end": 492,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 12549,
+   "new_sha256": "474b85ca9aac5316896090ebea9887f9257f001d394b0d3be1f50c05767b1e61",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250202",
+   "old_chars": 94334,
+   "old_sha256": "6494230ca846686600fea55b3810d41ac543ef8d05699edddfdb2419f63a0aa1",
+   "removed_spans": [
+    {
+     "start": 77,
+     "end": 2199,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 92212,
+   "new_sha256": "348040d87355e36f80b881eb571ce4fb44eb27580227c707894e8320eb5c9056",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250203",
+   "old_chars": 28845,
+   "old_sha256": "7524c33896de81420022dd88c9e5e1037fea5a0738199412b6be88a9032262e2",
+   "removed_spans": [
+    {
+     "start": 85,
+     "end": 1037,
+     "reason": "judgment_headnote"
+    }
+   ],
+   "appendix": null,
+   "new_chars": 27893,
+   "new_sha256": "ee273141156403737bdf75b2bcadcb1d011af7ff252e5fa9b9e4656df580cc09",
+   "input_changed": true
+  },
+  {
+   "item_id": "001-250207",
+   "old_chars": 10827,
+   "old_sha256": "c5519fc1993a0c0ec662a21e655b6ce3855e7864bb661a63848a2e96476c2c61",
+   "removed_spans": [],
+   "appendix": null,
+   "new_chars": 10827,
+   "new_sha256": "c5519fc1993a0c0ec662a21e655b6ce3855e7864bb661a63848a2e96476c2c61",
+   "input_changed": false
+  }
+ ],
+ "exclusions": [
+  {
+   "item_id": "001-253157",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Subject of the main proceedings and value of the related claim', '“Pinto” proceedings']"
+  },
+  {
+   "item_id": "001-252891",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Relevant facts and the reasoning of the domestic courts']"
+  },
+  {
+   "item_id": "001-252897",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Acquisition details', 'Area (sq. m)', 'Final decision', 'Plot number and address']"
+  },
+  {
+   "item_id": "001-253161",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Sanction imposed Fine, if any, in UAH (converted to EUR)']"
+  },
+  {
+   "item_id": "001-252900",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-252737",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Amounts awarded by the Court', 'Compensation awarded/paid at the domestic level', 'Expropriated property']"
+  },
+  {
+   "item_id": "001-252649",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Ground(s) for the State’s decision to reclaim the property']"
+  },
+  {
+   "item_id": "001-252397",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-252398",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Interim measure indicated by the Court', 'Reception conditions and vulnerability factors']"
+  },
+  {
+   "item_id": "001-252396",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-251823",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-251015",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-251016",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-251033",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+  },
+  {
+   "item_id": "001-251019",
+   "reason": "factual_appendix_unresolved",
+   "detail": "No matching factual appendix rows"
+  },
+  {
+   "item_id": "001-250753",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+  },
+  {
+   "item_id": "001-250749",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+  },
+  {
+   "item_id": "001-250229",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Specific irregularity complained of']"
+  },
+  {
+   "item_id": "001-250205",
+   "reason": "factual_appendix_unresolved",
+   "detail": "Unreviewed appendix headers: ['Amount paid under the contract of sale (AZN)', 'Amounts awarded by the Court (EUR)', 'Compensation awarded by the domestic courts (AZN)']"
+  }
+ ]
+}
