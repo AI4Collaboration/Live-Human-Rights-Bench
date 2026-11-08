@@ -99,8 +99,8 @@ are fixed in `experiments/input_gate.py`, so `--cases` alone is rejected with
 installed as the active one, and do not commit the three replaced files:
 
 ```bash
-git fetch origin
-git worktree add ../lhrb-post-v1.0-eval origin/data/post-v1.0-candidate-20261108
+git fetch origin data/post-v1.0-candidate-20261108
+git worktree add ../lhrb-post-v1.0-eval FETCH_HEAD
 cd ../lhrb-post-v1.0-eval
 D=data/releases/post_v1.0_candidate_20261108
 cp $D/core_50_cases.json data/processed/echr_unified.json
