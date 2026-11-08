@@ -48,7 +48,11 @@
     "repair_provenance.json": "e3e9f91de4b0318a0563a9a2e65324e0456eeea33ddd9d86022f60bdef354724",
     "selection_plan.json": "300ef13ae73714f898037e713a9294a4826b8f8a9195b86a60417e00815fecbc",
     "summaries.json": "99109d9f15d82696dd645bf00433c10735f91b2d075f9b6c29df8f6672f307dd",
-    "target_audit.json": "29cdd9fb895a5cd037bec69d08f021b325df248fdd2044aff351ac40e8bf3d11"
+    "target_audit.json": "29cdd9fb895a5cd037bec69d08f021b325df248fdd2044aff351ac40e8bf3d11",
+    "core_50_cases.json": "f7fe48a5bb44fdb79d81eb575006c7e013522f54928d25bc19d2a13dc33810e2",
+    "core_50_summaries.json": "1f35d850f172d2521c34de3fe03764295001ccd5dd79e629eb94497361fe1358",
+    "core_50_target_audit.json": "2bb19a0b9bed7b3576b8ca3704c83b0177bdc9d174296a03f8e6b2659da68444",
+    "core_50_evaluation_dataset.json": "bce3c9fd39de2c4e1d08652c1e14e34209c3e30bec1eefe5ec7dc8f12447b003"
   },
   "targets": [
     {

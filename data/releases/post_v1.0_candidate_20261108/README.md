@@ -12,6 +12,7 @@ No result on these judgments exists yet. `configs/` and the v1.0 inputs are unch
 | `summaries.json` | One DeepSeek v4.1 Flash summary per judgment |
 | `evaluation_dataset.json` | Cohort specification for the validator |
 | `core_50.json` | Starting cohort: 15 no-violation and 35 violation judgments |
+| `core_50_cases.json`, `core_50_summaries.json`, `core_50_target_audit.json`, `core_50_evaluation_dataset.json` | The starting cohort as a self-contained cohort, id `echr-post-v1.0-candidate-20261108-core50` |
 | `release_manifest.json` | Retrieval date, HUDOC query, seed, selection rule, hashes |
 | `target_audit.json` | Official HUDOC holding behind each target |
 | `operative_check.json` | Each target compared with the judgment's operative part |
@@ -88,6 +89,57 @@ Of 356 judgments, 259 were eligible. Exclusions:
 The 204 responses are not random by construction and their cause is unknown, so
 the cohort does not represent every judgment published in the window. One summary
 failed all attempts and was replaced under the substitution rule.
+
+## Running the evaluation
+
+`validate_eval_dataset.py` compares this cohort with its own manifest only. The
+experiment runners also require the run cases to match the active cohort, whose paths
+are fixed in `experiments/input_gate.py`, so `--cases` alone is rejected with
+`Target is not in the active cohort`. Run from a separate worktree with this cohort
+installed as the active one, and do not commit the three replaced files:
+
+```bash
+git fetch origin
+git worktree add ../lhrb-post-v1.0-eval origin/data/post-v1.0-candidate-20261108
+cd ../lhrb-post-v1.0-eval
+D=data/releases/post_v1.0_candidate_20261108
+cp $D/core_50_cases.json data/processed/echr_unified.json
+cp $D/core_50_summaries.json data/processed/summaries_dsv41flash.json
+cp $D/core_50_evaluation_dataset.json configs/evaluation_dataset.json
+python scripts/validate_eval_dataset.py --require-complete
+python scripts/verify_model_input_payloads.py
+```
+
+For all 100 targets, copy `cases.json`, `summaries.json` and `evaluation_dataset.json`
+instead. The v1.0 anchor needs the same treatment with its own frozen subset, in its
+own worktree, because the gate also rejects a partial v1.0 cohort.
+
+Full record and summary, for the two models named in EmoP-5:
+
+```bash
+for m in openai/gpt-5.6-sol anthropic/claude-opus-4.6; do
+  python experiments/run_perturbation_fullcase.py \
+    --cases data/processed/echr_unified.json \
+    --summaries data/processed/summaries_dsv41flash.json \
+    --model "$m" --base-url https://openrouter.ai/api/v1 \
+    --api-key-env OPENROUTER_API_KEY --samples 10 --workers 20 --rq all \
+    --output-dir data/experiments/post_v1_core50/fullcase
+done
+```
+
+Three-turn comparison:
+
+```bash
+python experiments/syco_run.py \
+  --cases data/processed/echr_unified.json \
+  --summaries data/processed/summaries_dsv41flash.json \
+  --out data/experiments/post_v1_core50/syco \
+  --targets openai/gpt-5.6-sol anthropic/claude-opus-4.6 --turns 3
+```
+
+`syco_run.py` runs all eleven conditions and has no option to restrict them. EmoP-5
+needs only the no-cue and researcher comparison (`baseline_high`, `authority_researcher`).
+Restrict `condition_grid()` in the worktree or budget for the full grid.
 
 ## Limits and remaining work
 
