@@ -1,0 +1,750 @@
+{
+  "funnel": {
+    "no_specific_unambiguous_issue": 4,
+    "no_single_respondent_holding_resolved": 10,
+    "no_html_body_http_204": 61,
+    "overlap_application_number": 1,
+    "factual_appendix_unresolved": 19,
+    "source_review_insufficient_or_flagged": 2,
+    "replaced_after_operative_part_check": 5
+  },
+  "hudoc_results": 356,
+  "eligible_judgments": 259,
+  "stage1": [
+    {
+      "item_id": "001-253221",
+      "case_name": "CASE OF GÖKÇE AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-11-03",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_specific_unambiguous_issue"
+    },
+    {
+      "item_id": "001-253219",
+      "case_name": "CASE OF SALAMOVA AND OTHERS v. AZERBAIJAN",
+      "decision_date": "2026-11-03",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary damage - award (Article 41 - Pecuniary damage;Just satisfaction);Non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-253543",
+      "case_name": "CASE OF LO SICCO v. ITALY",
+      "decision_date": "2026-10-29",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253519",
+      "case_name": "CASE OF MENDICINO AND OTHERS  v. ITALY",
+      "decision_date": "2026-10-29",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253464",
+      "case_name": "CASE OF DOGAR v. ROMANIA",
+      "decision_date": "2026-10-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253321",
+      "case_name": "CASE OF DE PASQUALE AND OTHERS  v. ITALY",
+      "decision_date": "2026-10-22",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253315",
+      "case_name": "CASE OF BERLUSCONI v. ITALY",
+      "decision_date": "2026-10-22",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252934",
+      "case_name": "CASE OF IANCU AND RISTEA v. ROMANIA",
+      "decision_date": "2026-10-20",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Struck out of the list (Article 37-1 - Striking out applications)"
+    },
+    {
+      "item_id": "001-252903",
+      "case_name": "CASE OF GÜRAY GÜR v. TÜRKİYE",
+      "decision_date": "2026-10-20",
+      "importance": "4",
+      "branch": "CHAMBER",
+      "reason": "no_specific_unambiguous_issue"
+    },
+    {
+      "item_id": "001-252745",
+      "case_name": "CASE OF ODESKA BUTERBRODNA KOMPANIYA, TOV v. UKRAINE",
+      "decision_date": "2026-10-15",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary damage - claim dismissed (Article 41 - Pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-253159",
+      "case_name": "CASE OF CENGIZ v. TÜRKİYE",
+      "decision_date": "2026-10-13",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252650",
+      "case_name": "CASE OF ANDRZEJ RUCIŃSKI v. POLAND",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "CHAMBER",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary damage - award (Article 41 - Pecuniary damage;Just satisfaction);Non-pecuniary damage - claim dismissed (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-252999",
+      "case_name": "CASE OF IFM S.R.L. AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253003",
+      "case_name": "CASE OF AVERSANO AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253006",
+      "case_name": "CASE OF FAMIGLIETTI AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253090",
+      "case_name": "CASE OF SELEVESTRU v. THE REPUBLIC OF MOLDOVA",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253113",
+      "case_name": "CASE OF SIRVA NV v. BELGIUM",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253147",
+      "case_name": "CASE OF L.Z. AND D.Z. v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253000",
+      "case_name": "CASE OF M.A.X.O. AUDIOPROTESI S.R.L. AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253002",
+      "case_name": "CASE OF BRENNA AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253005",
+      "case_name": "CASE OF CUOCO AND SAURO v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253091",
+      "case_name": "CASE OF GRASSUCCI AND OTHERS v. ITALY",
+      "decision_date": "2026-10-08",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253112",
+      "case_name": "CASE OF VIDBERG v. FRANCE",
+      "decision_date": "2026-10-08",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-253037",
+      "case_name": "CASE OF SANLAV v. TÜRKİYE",
+      "decision_date": "2026-10-06",
+      "importance": "4",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252506",
+      "case_name": "CASE OF KORKMAZ AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-09-29",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_specific_unambiguous_issue"
+    },
+    {
+      "item_id": "001-252823",
+      "case_name": "CASE OF LYAPCHEV v. BULGARIA",
+      "decision_date": "2026-09-29",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252683",
+      "case_name": "CASE OF PALAZZI AND OTHERS v. ITALY",
+      "decision_date": "2026-09-24",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252501",
+      "case_name": "CASE OF FRATELLI ROMANO S.P.A. AND OTHERS v. ITALY",
+      "decision_date": "2026-09-10",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252442",
+      "case_name": "CASE OF LACOTE v. BELGIUM",
+      "decision_date": "2026-09-10",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252366",
+      "case_name": "CASE OF BĄCLER v. POLAND",
+      "decision_date": "2026-09-03",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252364",
+      "case_name": "CASE OF SYLVIE VALLÉE v. FRANCE",
+      "decision_date": "2026-09-03",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252339",
+      "case_name": "CASE OF S.J. AND ISENI v. SWITZERLAND",
+      "decision_date": "2026-09-03",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252361",
+      "case_name": "CASE OF LE SYNDICAT GJ v. FRANCE",
+      "decision_date": "2026-09-03",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252149",
+      "case_name": "CASE OF MANGIACAPRE AND OTHERS v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252150",
+      "case_name": "CASE OF SANTONASTASO AND MELORIO v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252152",
+      "case_name": "CASE OF VERRENGIA v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252250",
+      "case_name": "CASE OF PRONTO INTERVENTI SIDA DI BUTERA FRANCESCO v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252251",
+      "case_name": "CASE OF SARRACINO AND TRESCA v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252274",
+      "case_name": "CASE OF FARINA AND OTHERS v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252275",
+      "case_name": "CASE OF NOLE' AND OTHERS v. ITALY",
+      "decision_date": "2026-08-27",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-252076",
+      "case_name": "CASE OF KHUDAYAROV AND OTHERS v. AZERBAIJAN",
+      "decision_date": "2026-08-25",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary and non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-251506",
+      "case_name": "CASE OF A.G. v. SWITZERLAND",
+      "decision_date": "2026-07-23",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251291",
+      "case_name": "CASE OF GRECO AND OTHERS v. ITALY",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251308",
+      "case_name": "CASE OF PEREZ AND OTHERS v. SWITZERLAND",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251312",
+      "case_name": "CASE OF CICCONE v. ITALY",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251313",
+      "case_name": "CASE OF CICCONE v. ITALY",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251315",
+      "case_name": "CASE OF DI NOCERA AND OTHERS v. ITALY",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251316",
+      "case_name": "CASE OF PALMIERO AND OTHERS v. ITALY",
+      "decision_date": "2026-07-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251022",
+      "case_name": "CASE OF DE CARVALHO MARQUES AND OTHERS v. PORTUGAL",
+      "decision_date": "2026-07-07",
+      "importance": "1",
+      "branch": "CHAMBER",
+      "reason": "no_specific_unambiguous_issue"
+    },
+    {
+      "item_id": "001-251273",
+      "case_name": "CASE OF PRATSINIS v. GREECE",
+      "decision_date": "2026-07-07",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251228",
+      "case_name": "CASE OF BABII v. THE REPUBLIC OF MOLDOVA",
+      "decision_date": "2026-07-02",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251249",
+      "case_name": "CASE OF IVANYUSHCHENKO v. SWITZERLAND",
+      "decision_date": "2026-07-02",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251241",
+      "case_name": "CASE OF FANESI v. ITALY",
+      "decision_date": "2026-07-02",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251226",
+      "case_name": "CASE OF VAINIK AND OTHERS v. ESTONIA",
+      "decision_date": "2026-06-30",
+      "importance": "1",
+      "branch": "GRANDCHAMBER",
+      "reason": "overlap_application_number",
+      "shared": [
+        "17982/21",
+        "43852/21",
+        "44600/21"
+      ]
+    },
+    {
+      "item_id": "001-251014",
+      "case_name": "CASE OF MARINAKIS v. GREECE",
+      "decision_date": "2026-06-23",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251088",
+      "case_name": "CASE OF T.N. v. GREECE",
+      "decision_date": "2026-06-23",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-251102",
+      "case_name": "CASE OF DOTANI v. GREECE",
+      "decision_date": "2026-06-23",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250997",
+      "case_name": "CASE OF SOCIÉTÉ D'EXPLOITATION D'UN SERVICE D'INFORMATION - CNEWS v. FRANCE",
+      "decision_date": "2026-06-18",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250946",
+      "case_name": "CASE OF ALEXFORCAM S.R.L. v. ROMANIA",
+      "decision_date": "2026-06-16",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250934",
+      "case_name": "CASE OF TUNCER ÇETİNKAYA v. TÜRKİYE",
+      "decision_date": "2026-06-16",
+      "importance": "4",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250821",
+      "case_name": "CASE OF INDUSTRIALI COSTRUZIONI MECCANICHE TOR CERVARA S.R.L. v. ITALY",
+      "decision_date": "2026-06-11",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250869",
+      "case_name": "CASE OF CHRISTIAN CONGREGATION OF JEHOVAH'S WITNESSES v. ITALY",
+      "decision_date": "2026-06-11",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250903",
+      "case_name": "CASE OF MAZZA AND OTHERS v. ITALY",
+      "decision_date": "2026-06-11",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250413",
+      "case_name": "CASE OF TAŞ AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-06-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-250416",
+      "case_name": "CASE OF KESLER AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-06-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-250819",
+      "case_name": "CASE OF VELEV AND OTHERS v. BULGARIA",
+      "decision_date": "2026-06-09",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250411",
+      "case_name": "CASE OF AYVAZ AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-06-09",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-250312",
+      "case_name": "CASE OF SEKSIMP GROUP SRL v. THE REPUBLIC OF MOLDOVA",
+      "decision_date": "2026-06-04",
+      "importance": "4",
+      "branch": "CHAMBER",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary damage - award (Article 41 - Pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-250597",
+      "case_name": "CASE OF ALBERTANI v. ITALY",
+      "decision_date": "2026-06-04",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250691",
+      "case_name": "CASE OF ANDREA CIOTTA v. ITALY",
+      "decision_date": "2026-06-04",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250307",
+      "case_name": "CASE OF AZIMOV AND OTHERS v. AZERBAIJAN",
+      "decision_date": "2026-06-02",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_single_respondent_holding_resolved",
+      "conclusion": "Pecuniary damage - award (Article 41 - Pecuniary damage;Just satisfaction);Non-pecuniary damage - award (Article 41 - Non-pecuniary damage;Just satisfaction)"
+    },
+    {
+      "item_id": "001-250449",
+      "case_name": "CASE OF GOLDONI AND OTHERS v. ITALY",
+      "decision_date": "2026-05-28",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250525",
+      "case_name": "CASE OF TOŽIČKOVÁ v. THE CZECH REPUBLIC",
+      "decision_date": "2026-05-28",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250379",
+      "case_name": "CASE OF ABILOV v. AZERBAIJAN",
+      "decision_date": "2026-05-26",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250482",
+      "case_name": "CASE OF TOPUZ v. TÜRKİYE",
+      "decision_date": "2026-05-26",
+      "importance": "4",
+      "branch": "COMMITTEE",
+      "reason": "no_source_text_or_no_scraped_target"
+    },
+    {
+      "item_id": "001-250463",
+      "case_name": "CASE OF MAVRAKIS AND OTHERS v. TÜRKİYE",
+      "decision_date": "2026-05-26",
+      "importance": "3",
+      "branch": "CHAMBER",
+      "reason": "no_source_text_or_no_scraped_target"
+    }
+  ],
+  "repair": [
+    {
+      "item_id": "001-253157",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Subject of the main proceedings and value of the related claim', '“Pinto” proceedings']"
+    },
+    {
+      "item_id": "001-252891",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Relevant facts and the reasoning of the domestic courts']"
+    },
+    {
+      "item_id": "001-252897",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Acquisition details', 'Area (sq. m)', 'Final decision', 'Plot number and address']"
+    },
+    {
+      "item_id": "001-253161",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Sanction imposed Fine, if any, in UAH (converted to EUR)']"
+    },
+    {
+      "item_id": "001-252900",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-252737",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Amounts awarded by the Court', 'Compensation awarded/paid at the domestic level', 'Expropriated property']"
+    },
+    {
+      "item_id": "001-252649",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Ground(s) for the State’s decision to reclaim the property']"
+    },
+    {
+      "item_id": "001-252397",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-252398",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Interim measure indicated by the Court', 'Reception conditions and vulnerability factors']"
+    },
+    {
+      "item_id": "001-252396",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-251823",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-251015",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-251016",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-251033",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+    },
+    {
+      "item_id": "001-251019",
+      "reason": "factual_appendix_unresolved",
+      "detail": "No matching factual appendix rows"
+    },
+    {
+      "item_id": "001-250753",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+    },
+    {
+      "item_id": "001-250749",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Alleged interference with property rights', 'Identification of claimed property']"
+    },
+    {
+      "item_id": "001-250229",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Specific irregularity complained of']"
+    },
+    {
+      "item_id": "001-250205",
+      "reason": "factual_appendix_unresolved",
+      "detail": "Unreviewed appendix headers: ['Amount paid under the contract of sale (AZN)', 'Amounts awarded by the Court (EUR)', 'Compensation awarded by the domestic courts (AZN)']"
+    }
+  ],
+  "source_review_failed": [
+    "001-252516",
+    "001-252399"
+  ],
+  "summary_status": {
+    "accepted": 128,
+    "failed": 1
+  },
+  "replaced_after_operative_part_check": {
+    "001-251017": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+    "001-252645": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the length of proceedings.",
+    "001-252653": "Target rests only on the excluded other-complaints appendix column; the model input has no facts on the presumption of innocence.",
+    "001-250744": "Target wording also covers a violation found in the same judgment under the same fair-hearing heading.",
+    "001-252642": "Outcome differs by applicant under overlapping provisions and the question does not name an applicant."
+  }
+}
