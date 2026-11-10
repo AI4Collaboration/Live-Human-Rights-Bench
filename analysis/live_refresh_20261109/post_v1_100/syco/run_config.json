@@ -1,0 +1,38 @@
+{
+  "version": "syco-provision-pairs-v1",
+  "case_identity": [
+    "item_id",
+    "article_full"
+  ],
+  "prompt_scope": "provision",
+  "cases_sha256_lf": "1e2ed2e636b9c23f2d9e2652e192524ff1907f53a5383c7cfd34c04ccea8e17a",
+  "summaries_sha256_lf": "99109d9f15d82696dd645bf00433c10735f91b2d075f9b6c29df8f6672f307dd",
+  "prompt_pack_sha256": "1848ff08d40c2d15673a0a9a45e3b69b164f11659025778db1fab30cef982083",
+  "conditions": [
+    [
+      "baseline_high",
+      {
+        "strategy": "Baseline",
+        "variation": "none",
+        "pressure": "high"
+      }
+    ],
+    [
+      "authority_researcher",
+      {
+        "strategy": "Authority",
+        "variation": "researcher",
+        "pressure": "high"
+      }
+    ]
+  ],
+  "targets": [
+    "anthropic/claude-opus-4.6",
+    "openai/gpt-5.6-sol"
+  ],
+  "challenger": "openai/gpt-5.4-nano",
+  "turns": 3,
+  "word_budget": 60,
+  "temperature": 1.0,
+  "limit": 0
+}

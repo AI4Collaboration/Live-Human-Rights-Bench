@@ -1,0 +1,615 @@
+{
+  "dataset_id": "echr-unified-atomic-targets-20260916",
+  "targets": 100,
+  "judgments": 100,
+  "target_unit": "one judgment, one respondent State, one provision, one sub-conclusion",
+  "target_keys": [
+    [
+      "001-108599",
+      "GBR",
+      "3",
+      "extradition; conditional; united states of america"
+    ],
+    [
+      "001-109572",
+      "FRA",
+      "14",
+      "discrimination; right to respect for private and family life; article 8-1 - respect for family life"
+    ],
+    [
+      "001-110171",
+      "POL",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-110810",
+      "BGR",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-111628",
+      "ARM",
+      "5",
+      "lawful arrest or detention"
+    ],
+    [
+      "001-114082",
+      "MDA",
+      "P1-2",
+      "right to education"
+    ],
+    [
+      "001-114085",
+      "POL",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-114473",
+      "GBR",
+      "2",
+      "life"
+    ],
+    [
+      "001-115165",
+      "AND",
+      "8",
+      "positive obligations; article 8-1 - respect for family life"
+    ],
+    [
+      "001-115883",
+      "UKR",
+      "5",
+      "deprivation of liberty"
+    ],
+    [
+      "001-118335",
+      "GBR",
+      "5",
+      "lawful arrest or detention; article 5-1-f - expulsion"
+    ],
+    [
+      "001-118388",
+      "UKR",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-119676",
+      "UKR",
+      "5",
+      "length of pre-trial detention"
+    ],
+    [
+      "001-120073",
+      "AUT",
+      "3",
+      "expulsion; conditional; hungary"
+    ],
+    [
+      "001-128204",
+      "UKR",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-141629",
+      "EST",
+      "13",
+      "effective remedy"
+    ],
+    [
+      "001-142398",
+      "MDA",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-144672",
+      "SVN",
+      "5",
+      "deprivation of liberty"
+    ],
+    [
+      "001-146409",
+      "LVA",
+      "5",
+      "take proceedings"
+    ],
+    [
+      "001-146410",
+      "HUN",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-147045",
+      "SWE",
+      "5",
+      "deprivation of liberty; article 5-1-b - secure fulfilment of obligation prescribed by law"
+    ],
+    [
+      "001-148263",
+      "SVK",
+      "6",
+      "civil proceedings; article 6-1 - fair hearing"
+    ],
+    [
+      "001-148659",
+      "MDA",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-150676",
+      "HRV",
+      "2",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-153349",
+      "ARM",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-155824",
+      "LIE",
+      "6",
+      "civil proceedings; constitutional proceedings; article 6-1 - impartial tribunal"
+    ],
+    [
+      "001-156267",
+      "LVA",
+      "13",
+      "effective remedy"
+    ],
+    [
+      "001-158494",
+      "RUS",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-159211",
+      "NOR",
+      "6",
+      "criminal proceedings; article 6-1 - impartial tribunal"
+    ],
+    [
+      "001-160619",
+      "LIE",
+      "6",
+      "constitutional proceedings; article 6-1 - impartial tribunal"
+    ],
+    [
+      "001-163438",
+      "BGR",
+      "6",
+      "civil proceedings; article 6-1 - fair hearing; adversarial trial"
+    ],
+    [
+      "001-164454",
+      "SVK",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-164920",
+      "SRB",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-165758",
+      "DEU",
+      "3",
+      "positive obligations; substantive aspect"
+    ],
+    [
+      "001-166689",
+      "DEU",
+      "6",
+      "criminal proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-167806",
+      "GRC",
+      "13",
+      "effective remedy; respect for private life; article 8 - right to respect for private and family life; positive obligations"
+    ],
+    [
+      "001-168380",
+      "SRB",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-168860",
+      "ARM",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing; right to a fair trial; article 6-3-d - examination of witnesses"
+    ],
+    [
+      "001-172463",
+      "SRB",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-173802",
+      "MDA",
+      "34",
+      "hinder the exercise of the right of application"
+    ],
+    [
+      "001-174404",
+      "ISL",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-175646",
+      "PRT",
+      "6",
+      "criminal proceedings; article 6-1 - access to court; criminal charge; fair hearing"
+    ],
+    [
+      "001-180296",
+      "ESP",
+      "8",
+      "respect for home; respect for private life"
+    ],
+    [
+      "001-181394",
+      "DEU",
+      "5",
+      "review of lawfulness of detention"
+    ],
+    [
+      "001-181847",
+      "ROU",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-181850",
+      "RUS",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-183338",
+      "CYP",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-183395",
+      "IRL",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-183862",
+      "TUR",
+      "6",
+      "administrative proceedings; article 6-1 - fair hearing"
+    ],
+    [
+      "001-184496",
+      "TUR",
+      "5",
+      "review of lawfulness of detention"
+    ],
+    [
+      "001-185308",
+      "NLD",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing; right to a fair trial; article 6-3-d - examination of witnesses"
+    ],
+    [
+      "001-187923",
+      "UKR",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-188382",
+      "UKR",
+      "34",
+      "hinder the exercise of the right of application"
+    ],
+    [
+      "001-192787",
+      "SMR",
+      "6",
+      "civil proceedings; article 6-1 - fair hearing; tribunal established by law"
+    ],
+    [
+      "001-192983",
+      "BGR",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-196836",
+      "BEL",
+      "5",
+      "lawful arrest or detention"
+    ],
+    [
+      "001-200434",
+      "AZE",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-201329",
+      "ISL",
+      "6",
+      "criminal proceedings; article 6-1 - impartial tribunal"
+    ],
+    [
+      "001-201738",
+      "ARM",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-205141",
+      "UKR",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-206266",
+      "RUS",
+      "11",
+      "freedom of peaceful assembly"
+    ],
+    [
+      "001-207695",
+      "CHE",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-207849",
+      "BIH",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-209035",
+      "AUT",
+      "8",
+      "positive obligations; article 8-1 - respect for private life"
+    ],
+    [
+      "001-209358",
+      "NOR",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-209373",
+      "MDA",
+      "3",
+      "positive obligations; right to respect for private and family life"
+    ],
+    [
+      "001-210282",
+      "LTU",
+      "13",
+      "effective remedy"
+    ],
+    [
+      "001-210680",
+      "CYP",
+      "5",
+      "deprivation of liberty; article 5-1-f - expulsion"
+    ],
+    [
+      "001-211138",
+      "HUN",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-212150",
+      "SVK",
+      "8",
+      "positive obligations; article 8-1 - respect for private life"
+    ],
+    [
+      "001-213788",
+      "AZE",
+      "10",
+      "freedom to impart information; freedom to receive information"
+    ],
+    [
+      "001-215166",
+      "ESP",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing; article 6-3 - rights of defence; article 6-3-c - defence through legal assistance; legal assistance of own choosing"
+    ],
+    [
+      "001-215176",
+      "NOR",
+      "8",
+      "respect for family life"
+    ],
+    [
+      "001-216348",
+      "NOR",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-216352",
+      "MDA",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-217436",
+      "ISL",
+      "14",
+      "discrimination; right to respect for private and family life; positive obligations; article 8-1 - respect for private life"
+    ],
+    [
+      "001-218941",
+      "IRL",
+      "14",
+      "discrimination; protection of property; article 1 para. 1 of protocol no. 1 - peaceful enjoyment of possessions"
+    ],
+    [
+      "001-219493",
+      "UKR",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-219641",
+      "MDA",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-219684",
+      "RUS",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-219988",
+      "BEL",
+      "2",
+      "positive obligations; article 2-1 - life; substantive aspect"
+    ],
+    [
+      "001-223284",
+      "AZE",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-225678",
+      "UKR",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-228357",
+      "NLD",
+      "3",
+      "expulsion; bahrain"
+    ],
+    [
+      "001-228840",
+      "ITA",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-228861",
+      "MLT",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-233686",
+      "CZE",
+      "8",
+      "respect for family life"
+    ],
+    [
+      "001-234259",
+      "ARM",
+      "3",
+      "degrading treatment; inhuman treatment; positive obligations; substantive aspect"
+    ],
+    [
+      "001-237954",
+      "DNK",
+      "8",
+      "expulsion; article 8-1 - respect for family life; respect for private life"
+    ],
+    [
+      "001-242762",
+      "ALB",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-243553",
+      "TUR",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-244594",
+      "GRC",
+      "13",
+      "effective remedy; right to a fair trial; civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-245104",
+      "CYP",
+      "P1-3",
+      "choice of the legislature"
+    ],
+    [
+      "001-245390",
+      "ESP",
+      "8",
+      "positive obligations; article 8-1 - respect for private life"
+    ],
+    [
+      "001-245460",
+      "GRC",
+      "6",
+      "enforcement proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-247913",
+      "GRC",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-248392",
+      "GRC",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing; right to a fair trial; article 6-3-b - adequate time"
+    ],
+    [
+      "001-248397",
+      "UKR",
+      "2",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-248979",
+      "UKR",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-249810",
+      "UKR",
+      "P1-1",
+      "peaceful enjoyment of possessions; article 1 para. 2 of protocol no. 1 - control of the use of property"
+    ]
+  ],
+  "summaries": {
+    "dataset_id": "echr-unified-atomic-targets-20260916",
+    "summarizer": "deepseek/deepseek-v4.1-flash",
+    "mode": "abstractive",
+    "versions": 1,
+    "judgments": 100
+  }
+}

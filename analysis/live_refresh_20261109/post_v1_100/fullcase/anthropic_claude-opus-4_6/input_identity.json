@@ -1,0 +1,615 @@
+{
+  "dataset_id": "echr-post-v1.0-candidate-20261108",
+  "targets": 100,
+  "judgments": 100,
+  "target_unit": "one judgment, one respondent State, one provision, one sub-conclusion",
+  "target_keys": [
+    [
+      "001-250202",
+      "GRC",
+      "13",
+      "effective remedy; prohibition of torture; expulsion"
+    ],
+    [
+      "001-250203",
+      "TUR",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-250211",
+      "UKR",
+      "3",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-250214",
+      "UKR",
+      "2",
+      "life; substantive aspect"
+    ],
+    [
+      "001-250216",
+      "SVK",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-250223",
+      "UKR",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-250226",
+      "UKR",
+      "2",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-250227",
+      "UKR",
+      "3",
+      "degrading punishment; inhuman punishment; substantive aspect"
+    ],
+    [
+      "001-250309",
+      "EST",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-250316",
+      "HRV",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-250415",
+      "TUR",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-250424",
+      "TUR",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-250430",
+      "FIN",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-250436",
+      "ESP",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-250444",
+      "RUS",
+      "11",
+      "freedom of association; art. 9; freedom of religion"
+    ],
+    [
+      "001-250445",
+      "HRV",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-250547",
+      "ROU",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-250565",
+      "SRB",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing; article 6-3-d - obtain attendance of witnesses"
+    ],
+    [
+      "001-250570",
+      "UKR",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-250572",
+      "UKR",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-250574",
+      "UKR",
+      "3",
+      "torture; substantive aspect"
+    ],
+    [
+      "001-250619",
+      "CHE",
+      "14",
+      "discrimination; compulsory labour; article 4 - prohibition of slavery and forced labour; article 4-3-b - service of military character"
+    ],
+    [
+      "001-250735",
+      "TUR",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-250740",
+      "TUR",
+      "7",
+      "nulla poena sine lege; nullum crimen sine lege"
+    ],
+    [
+      "001-250754",
+      "SVK",
+      "6",
+      "administrative proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-250756",
+      "UKR",
+      "3",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-250760",
+      "GEO",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-250883",
+      "NLD",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-250890",
+      "POL",
+      "14",
+      "discrimination; respect for family life; article 8 - right to respect for private and family life"
+    ],
+    [
+      "001-250892",
+      "ITA",
+      "8",
+      "respect for family life"
+    ],
+    [
+      "001-251007",
+      "HRV",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-251013",
+      "HUN",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-251023",
+      "MKD",
+      "5",
+      "speediness of review"
+    ],
+    [
+      "001-251024",
+      "HUN",
+      "11",
+      "freedom of peaceful assembly; art. 10; freedom of expression"
+    ],
+    [
+      "001-251025",
+      "SVN",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-251029",
+      "DNK",
+      "8",
+      "expulsion; article 8-1 - respect for family life; respect for private life"
+    ],
+    [
+      "001-251034",
+      "UKR",
+      "14",
+      "discrimination; prohibition of torture; effective investigation"
+    ],
+    [
+      "001-251186",
+      "MDA",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing"
+    ],
+    [
+      "001-251188",
+      "ROU",
+      "P1-1",
+      "peaceful enjoyment of possessions; article 1 para. 2 of protocol no. 1 - control of the use of property"
+    ],
+    [
+      "001-251190",
+      "RUS",
+      "P1-1",
+      "deprivation of property"
+    ],
+    [
+      "001-251191",
+      "MDA",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-251196",
+      "CZE",
+      "3",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-251247",
+      "ITA",
+      "8",
+      "positive obligations; article 8-1 - respect for family life"
+    ],
+    [
+      "001-251251",
+      "UKR",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-251252",
+      "UKR",
+      "5",
+      "deprivation of liberty; article 5-1-c - reasonable suspicion"
+    ],
+    [
+      "001-251322",
+      "PRT",
+      "P7-4",
+      "right not to be tried or punished twice"
+    ],
+    [
+      "001-251807",
+      "AZE",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-251824",
+      "TUR",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-251831",
+      "UKR",
+      "5",
+      "procedural guarantees of review"
+    ],
+    [
+      "001-251835",
+      "UKR",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-252025",
+      "GRC",
+      "13",
+      "effective remedy; prohibition of torture; degrading treatment; inhuman treatment"
+    ],
+    [
+      "001-252026",
+      "ARM",
+      "2",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-252035",
+      "POL",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-252039",
+      "LVA",
+      "4",
+      "positive obligations; effective investigation; article 4-1 - servitude; article 4-2 - forced labour"
+    ],
+    [
+      "001-252041",
+      "ARM",
+      "8",
+      "positive obligations; article 8-1 - respect for family life"
+    ],
+    [
+      "001-252192",
+      "NLD",
+      "8",
+      "respect for family life"
+    ],
+    [
+      "001-252193",
+      "GEO",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-252382",
+      "ARM",
+      "2",
+      "effective investigation; procedural aspect"
+    ],
+    [
+      "001-252384",
+      "SRB",
+      "6",
+      "civil proceedings; article 6-1 - fair hearing"
+    ],
+    [
+      "001-252385",
+      "GRC",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-252386",
+      "GBR",
+      "5",
+      "lawful arrest or detention"
+    ],
+    [
+      "001-252389",
+      "MDA",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-252395",
+      "ITA",
+      "6",
+      "administrative proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-252505",
+      "TUR",
+      "6",
+      "criminal proceedings; article 6-1 - fair hearing"
+    ],
+    [
+      "001-252514",
+      "ARM",
+      "9",
+      "freedom of religion"
+    ],
+    [
+      "001-252518",
+      "UKR",
+      "6",
+      "presumption of innocence"
+    ],
+    [
+      "001-252525",
+      "HUN",
+      "8",
+      "expulsion; article 8-1 - respect for private life"
+    ],
+    [
+      "001-252527",
+      "CYP",
+      "5",
+      "review of lawfulness of detention"
+    ],
+    [
+      "001-252624",
+      "AZE",
+      "18",
+      "restrictions for unauthorised purposes; freedom of expression; article 10-1 - freedom of expression"
+    ],
+    [
+      "001-252626",
+      "RUS",
+      "8",
+      "respect for family life"
+    ],
+    [
+      "001-252628",
+      "NLD",
+      "6",
+      "administrative proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-252629",
+      "NLD",
+      "8",
+      "respect for private life"
+    ],
+    [
+      "001-252630",
+      "TUR",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-252631",
+      "HUN",
+      "11",
+      "freedom of association"
+    ],
+    [
+      "001-252632",
+      "HUN",
+      "5",
+      "length of pre-trial detention; reasonableness of pre-trial detention"
+    ],
+    [
+      "001-252644",
+      "ALB",
+      "7",
+      "nullum crimen sine lege"
+    ],
+    [
+      "001-252654",
+      "GRC",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-252655",
+      "AZE",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-252656",
+      "UKR",
+      "14",
+      "discrimination; protection of property; article 1 para. 1 of protocol no. 1 - peaceful enjoyment of possessions"
+    ],
+    [
+      "001-252665",
+      "ESP",
+      "10",
+      "freedom to impart information; p1-3; choice of the legislature"
+    ],
+    [
+      "001-252729",
+      "UKR",
+      "13",
+      "effective remedy; prohibition of torture; degrading treatment"
+    ],
+    [
+      "001-252731",
+      "UKR",
+      "5",
+      "length of pre-trial detention"
+    ],
+    [
+      "001-252739",
+      "TUR",
+      "5",
+      "reasonableness of pre-trial detention"
+    ],
+    [
+      "001-252740",
+      "SRB",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-252742",
+      "ALB",
+      "6",
+      "civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-252892",
+      "ARM",
+      "5",
+      "lawful arrest or detention"
+    ],
+    [
+      "001-252894",
+      "SVK",
+      "6",
+      "criminal proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-252899",
+      "GRC",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-252901",
+      "GRC",
+      "3",
+      "degrading treatment; substantive aspect"
+    ],
+    [
+      "001-252929",
+      "GRC",
+      "6",
+      "civil proceedings; article 6-1 - reasonable time"
+    ],
+    [
+      "001-252930",
+      "GRC",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-252935",
+      "GEO",
+      "3",
+      "degrading treatment; inhuman treatment; substantive aspect"
+    ],
+    [
+      "001-252957",
+      "UKR",
+      "11",
+      "freedom of peaceful assembly"
+    ],
+    [
+      "001-252961",
+      "UKR",
+      "P1-1",
+      "peaceful enjoyment of possessions"
+    ],
+    [
+      "001-253155",
+      "MDA",
+      "14",
+      "discrimination; freedom of assembly and association; positive obligations; article 11-1 - freedom of peaceful assembly"
+    ],
+    [
+      "001-253158",
+      "HRV",
+      "6",
+      "administrative proceedings; civil proceedings; article 6-1 - access to court"
+    ],
+    [
+      "001-253222",
+      "HUN",
+      "10",
+      "freedom of expression; freedom to impart information; freedom to receive ideas"
+    ],
+    [
+      "001-253224",
+      "TUR",
+      "10",
+      "freedom of expression"
+    ],
+    [
+      "001-253230",
+      "ESP",
+      "14",
+      "discrimination; right to respect for private and family life; article 8-1 - respect for family life"
+    ],
+    [
+      "001-253232",
+      "BGR",
+      "3",
+      "expulsion; conditional; uzbekistan"
+    ]
+  ],
+  "summaries": {
+    "dataset_id": "echr-post-v1.0-candidate-20261108",
+    "summarizer": "deepseek/deepseek-v4.1-flash",
+    "mode": "abstractive",
+    "versions": 1,
+    "judgments": 100
+  }
+}
