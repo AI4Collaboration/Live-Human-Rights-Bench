@@ -244,7 +244,7 @@ def persuasion(initial, trajectories, tables, draws, seed):
         cohort_hash = register_cohort(tables["cohorts"],"primary_mode_pairs",model,"both","all_11_conditions",keys)
         batch, vectors = Batch(keys,draws,seed), {}
         for mode in ARMS:
-            scores = np.array([trajectories[model,*k,mode] for k in keys])
+            scores = np.array([trajectories[(model,*k,mode)] for k in keys])
             for rule in RULES:
                 for turn in (1,2,3):
                     record, vec = effects(batch,dict(model=model,label=label,mode=mode,turn=turn,
@@ -272,7 +272,7 @@ def cues(initial, trajectories, tables, root, draws, seed):
             assert len(triples[model,mode]) == TRIPLE_N[index][ARMS.index(mode)]
     two = [r[0] for r in MODELS[:2]]
     shared = sorted(set.intersection(*(set(pairs[m,a]) for m in two for a in ARMS)))
-    shared = [k for k in shared if int(category(initial[two[0],*k][0])) == int(category(initial[two[1],*k][0]))]
+    shared = [k for k in shared if int(category(initial[(two[0],*k)][0])) == int(category(initial[(two[1],*k)][0]))]
     assert len(shared) == len({k[0] for k in shared}) == 349
     reference_cohorts = {(r["scope"],r["model"],r["mode"]):r for r in read_csv(root/"analysis/reliability_controls/cue_cohorts.csv")}
     reference_rates = {(r["scope"],r["model"],r["mode"],r["cue"]):r for r in read_csv(root/"analysis/reliability_controls/cue_correctness_rates.csv") if r["group"] == "all"}
@@ -285,12 +285,12 @@ def cues(initial, trajectories, tables, root, draws, seed):
                 if scope != "three_roles":
                     assert cohort_hash == reference_cohorts[scope,model,mode]["cohort_sha256"]
                     checked += 1
-                truth = np.array([initial[model,*k][1] for k in keys])
-                before = np.array([initial[model,*k][0] for k in keys])
+                truth = np.array([initial[(model,*k)][1] for k in keys])
+                before = np.array([initial[(model,*k)][0] for k in keys])
                 original = category(before)
                 batch, vectors = Batch(keys,draws,seed), {}
                 for condition in conditions:
-                    final = np.array([trajectories[model,*k,condition,mode][-1] for k in keys])
+                    final = np.array([trajectories[(model,*k,condition,mode)][-1] for k in keys])
                     for rule in RULES:
                         record,vec = effects(batch,dict(scope=scope,model=model,label=label,mode=mode,
                             cue=ROLE_NAMES[condition],cohort_sha256=cohort_hash),rule,truth,before,final,original)

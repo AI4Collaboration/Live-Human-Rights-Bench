@@ -69,9 +69,9 @@ for i, (model, _, _) in enumerate(MODELS):
                   if m == model and mode == 'static' and (m, item, article, cond, 'adaptive') in paths)
     assert len(keys) == PRIMARY_N[i]
     for row in [r for r in dialogue if r['model'] == model]:
-        check(row, [initial[model, *k[:2]][0] for k in keys],
-              [paths[model, *k, row['mode']][int(row['turn']) - 1] for k in keys],
-              [initial[model, *k[:2]][1] == 1 for k in keys])
+        check(row, [initial[(model, *k[:2])][0] for k in keys],
+              [paths[(model, *k, row['mode'])][int(row['turn']) - 1] for k in keys],
+              [initial[(model, *k[:2])][1] == 1 for k in keys])
 for path, record in source.inputs.items():
     assert record == manifest['inputs'][path], path
 

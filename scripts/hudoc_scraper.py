@@ -33,11 +33,9 @@ import os
 import re
 import sys
 import time
-from dataclasses import dataclass, asdict, field
-from datetime import datetime, date
+from datetime import datetime
 from html.parser import HTMLParser
 from typing import Optional
-from urllib.parse import quote
 
 try:
     import requests
@@ -419,7 +417,7 @@ def scrape_hudoc(
                 existing_records = []
 
     # Phase 1: Search for matching judgments
-    print(f"\nSearching HUDOC...")
+    print("\nSearching HUDOC...")
     print(f"  Query: {query}")
     print(f"  Date range: {since or 'any'} to {until or 'any'}")
     print(f"  Country: {country or 'all'}")
@@ -535,7 +533,7 @@ def scrape_hudoc(
 
     # Final stats
     new_pairs = len(all_case_pairs) - len(existing_records)
-    print(f"\n  Download complete:")
+    print("\n  Download complete:")
     print(f"    Total documents attempted: {len(all_metadata)}")
     print(f"    Failed downloads: {failed}")
     print(f"    Skipped (too short): {skipped_short}")
@@ -646,7 +644,7 @@ Examples:
         labels = Counter(r.get("violation_label", "?") for r in records)
         dates = sorted(set(r.get("decision_date", "") for r in records if r.get("decision_date")))
 
-        print(f"\nSummary:")
+        print("\nSummary:")
         print(f"  Unique cases: {len(set(r['item_id'] for r in records))}")
         print(f"  Case-article pairs: {len(records)}")
         if dates:

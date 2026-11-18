@@ -224,3 +224,10 @@ SLURM launchers (`model_par.sh`, `paraphrase_eval.sh`, and
 environment. Set the API key before launch and adjust scheduler resources for
 your cluster. `scripts/run_roster.sh` runs the five current models through the
 full-case and shared-summary arms with ten ratings per target.
+`run_summary_models.sh` is its SLURM entry point.
+
+`oldmodels.sh MODEL_ID` runs the baseline and three perturbations for one earlier
+model. It stops on the first failed stage. Set `OUT` to a new experiment directory;
+its `fullcase`, `paraphrase` and `country_swap` subdirectories hold the results.
+The nationality, reasoning and control launchers also default to new output
+directories. Credentials come from environment variables.

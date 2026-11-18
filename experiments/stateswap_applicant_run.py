@@ -15,7 +15,7 @@ Arms per eligible case:
 0-100 full-case prompt, checkpointed per (model, case, arm).
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, re, sys, threading, time, urllib.request
+import argparse, hashlib, json, os, sys, threading, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 

@@ -139,7 +139,7 @@ def print_stats(records: list, label: str = "Dataset") -> None:
         print(f"  {country:<25} {n_pairs:>6} {n_cases:>6} {viol_rate:>5.1f}%")
 
     # Article distribution
-    print(f"\n  Article distribution:")
+    print("\n  Article distribution:")
     for art, count in articles.most_common(15):
         print(f"    Art. {art:<6} : {count:>5} ({100 * count / total_pairs:.1f}%)")
     if len(articles) > 15:

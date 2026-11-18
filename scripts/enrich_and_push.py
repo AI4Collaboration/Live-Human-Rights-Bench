@@ -4,7 +4,7 @@ Backfill HUDOC metadata for an explicitly selected candidate Hub dataset.
 Supply the date lookup produced by backfill_decision_dates.py with --dates.
 Publication to that selected Hub dataset requires --push.
 """
-import argparse, json, os, sys, time
+import argparse, json, sys, time
 from pathlib import Path
 import requests
 sys.path.insert(0, str(Path(__file__).resolve().parent))

@@ -10,6 +10,6 @@ cd "$ROOT"
 export PYTHONUNBUFFERED=1
 : "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
 MODEL=${1:?Usage: syco_controls.sh MODEL_ID}
-exec python experiments/syco_controls_run.py --model "$MODEL" \
+exec "${PYTHON:-python}" experiments/syco_controls_run.py --model "$MODEL" \
   --turns "${TURNS:-3}" --trajectories "${TRAJ:-1}" --workers "${WORKERS:-40}" \
-  --out "${OUT:-data/experiments/syco_controls}"
+  --out "${OUT:-data/experiments/syco_controls_new}"

@@ -97,8 +97,8 @@ def main():
                 and all((m, item, article, condition, arm) in trajectories for condition in CONDITIONS))
     two = [m for m, _, _ in MODELS[:2]]
     shared = sorted(set.intersection(*(set(cohorts[m, a]) for m in two for a in ARMS)))
-    shared = [key for key in shared if int(category(initials[two[0], *key]["initial_score"])) ==
-              int(category(initials[two[1], *key]["initial_score"]))]
+    shared = [key for key in shared if int(category(initials[(two[0], *key)]["initial_score"])) ==
+              int(category(initials[(two[1], *key)]["initial_score"]))]
     assert len(shared) == len({i for i, _ in shared}) == 349
     expected_cohorts = {(r["scope"], r["model"], r["mode"]): r for r in
                         read_csv(root / "analysis/reliability_controls/cue_cohorts.csv")}
@@ -115,11 +115,11 @@ def main():
         assert digest == expected_cohorts[scope, model, arm]["cohort_sha256"]
         groups = []
         for key in keys:
-            initial = initials[model, *key]
+            initial = initials[(model, *key)]
             groups.append("correct" if int(category(initial["initial_score"])) == ground_truth(initial["violation_label"]) else "wrong")
         checks.append({"scope": scope, "model": model, "mode": arm, "n": len(keys), "cohort_sha256": digest})
         for condition, cue in zip(CONDITIONS, ("no_cue", "researcher")):
-            observed = [path_and_outcome(initials[model, *key], trajectories[model, *key, condition, arm]) for key in keys]
+            observed = [path_and_outcome(initials[(model, *key)], trajectories[(model, *key, condition, arm)]) for key in keys]
             values = np.column_stack([
                 np.array([g == group for g in groups], dtype=int) for group in ("correct", "wrong")
             ] + [np.array([o == outcome for _, o in observed], dtype=int) for outcome in DEFINITIONS])
@@ -144,7 +144,7 @@ def main():
                                   count=count, cohort_n=len(keys)))
             if scope == "shared_349":
                 for key, (path, outcome) in zip(keys, observed):
-                    initial, trajectory = initials[model, *key], trajectories[model, *key, condition, arm]
+                    initial, trajectory = initials[(model, *key)], trajectories[(model, *key, condition, arm)]
                     branch_rows.append(dict(item_id=key[0], article_full=key[1], model=model, mode=arm,
                         cue=cue, violation_label=initial["violation_label"], initial_score=initial["initial_score"],
                         turn1=trajectory["scores"][0], turn2=trajectory["scores"][1], turn3=trajectory["scores"][2],

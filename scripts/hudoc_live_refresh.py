@@ -150,7 +150,7 @@ def run_scraper(
         cmd.append("--resume")
 
     print(f"\n{'='*60}")
-    print(f"Step 1: Downloading new judgments from HUDOC")
+    print("Step 1: Downloading new judgments from HUDOC")
     print(f"{'='*60}")
     print(f"  Since: {since}")
     print(f"  Until: {until or 'now'}")
@@ -197,7 +197,7 @@ def run_verdict_removal(
         cmd.extend(["--end-date", end_date])
 
     print(f"\n{'='*60}")
-    print(f"Step 2: Running verdict-leakage removal")
+    print("Step 2: Running verdict-leakage removal")
     print(f"{'='*60}")
     print(f"  Mode: {'stage1 only (pattern-based)' if stage1_only else 'full pipeline (pattern + LLM)'}")
     print(f"  Input: {input_path}")
@@ -223,14 +223,13 @@ def push_to_huggingface(records: list[dict], repo_id: str, commit_message: str =
     """
     try:
         from datasets import Dataset
-        from huggingface_hub import HfApi
     except ImportError:
         print("ERROR: 'datasets' and 'huggingface_hub' packages required for HuggingFace push.", file=sys.stderr)
         print("Install with: pip install datasets huggingface_hub", file=sys.stderr)
         return False
 
     print(f"\n{'='*60}")
-    print(f"Step 4: Pushing to HuggingFace")
+    print("Step 4: Pushing to HuggingFace")
     print(f"{'='*60}")
     print(f"  Repository: {repo_id}")
     print(f"  Records: {len(records)}")
@@ -360,7 +359,7 @@ For cron usage:
 
     if not args.quiet:
         print(f"{'='*60}")
-        print(f"  LiveHumanRightsBench - HUDOC Live Refresh")
+        print("  LiveHumanRightsBench - HUDOC Live Refresh")
         print(f"  Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"{'='*60}")
 
@@ -401,7 +400,7 @@ For cron usage:
     today = datetime.now().strftime("%Y-%m-%d")
     if since_date >= today:
         print(f"\n  Dataset is already up to date (latest: {since_date}, today: {today})")
-        print(f"  Nothing to do.")
+        print("  Nothing to do.")
         return
 
     # ── Step 1: Download new judgments ──────────────────────────────────────
@@ -431,7 +430,7 @@ For cron usage:
 
     if not truly_new:
         print(f"\n  All {len(scraped_records)} scraped records already exist in dataset.")
-        print(f"  Dataset is up to date.")
+        print("  Dataset is up to date.")
         if not args.keep_temp:
             _cleanup_temp(temp_dir)
         return
@@ -461,7 +460,7 @@ For cron usage:
     # ── Step 3: Merge with existing dataset ────────────────────────────────
 
     print(f"\n{'='*60}")
-    print(f"Step 3: Merging datasets")
+    print("Step 3: Merging datasets")
     print(f"{'='*60}")
     print(f"  Existing records: {len(existing_records)}")
     print(f"  New clean records: {len(clean_records)}")
@@ -496,7 +495,7 @@ For cron usage:
     elapsed = time.time() - start_time
 
     print(f"\n{'='*60}")
-    print(f"  Live Refresh Complete")
+    print("  Live Refresh Complete")
     print(f"{'='*60}")
     print(f"  Elapsed: {elapsed:.0f}s ({elapsed/60:.1f}m)")
     print(f"  Existing records: {len(existing_records)}")

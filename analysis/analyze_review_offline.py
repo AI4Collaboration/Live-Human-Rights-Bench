@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 
 from analyze_reliability_controls import (
-    MODELS, ARMS, GitSource, bootstrap_totals, category, finite, ground_truth, write_csv,
+    MODELS, ARMS, GitSource, bootstrap_totals, category, ground_truth, write_csv,
 )
 from analyze_fine_grained_failures import load_scored_rows, state_swap_targets
 from analyze_threshold_sensitivity import load_conversations, PRIMARY_N
@@ -117,10 +117,10 @@ def main():
         matched = sorted((item, article, cond) for m, item, article, cond, mode in paths
             if m == model and mode == 'static' and (m, item, article, cond, 'adaptive') in paths)
         assert len(matched) == PRIMARY_N[index]
-        y = np.array([initial[model, *k[:2]][1] for k in matched])
-        before = np.array([initial[model, *k[:2]][0] for k in matched])
+        y = np.array([initial[(model, *k[:2])][1] for k in matched])
+        before = np.array([initial[(model, *k[:2])][0] for k in matched])
         for mode in ARMS:
-            after = np.array([paths[model, *k, mode] for k in matched])
+            after = np.array([paths[(model, *k, mode)] for k in matched])
             for turn in (1, 2, 3):
                 tables['dialogue_brier'].append(paired(matched, before, after[:, turn-1], y,
                     dict(model=model, label=label, mode=mode, turn=turn)))
@@ -143,8 +143,8 @@ def main():
         pressure = {}
         for cond in ('baseline_low', 'baseline_high'):
             for mode in ARMS:
-                pressure[cond, mode] = np.array([int(category(paths[model, *k, cond, mode][-1]) ==
-                    -category(initial[model, *k][0])) for k in pressure_keys])
+                pressure[cond, mode] = np.array([int(category(paths[(model, *k, cond, mode)][-1]) ==
+                    -category(initial[(model, *k)][0])) for k in pressure_keys])
         values = 100 * (pressure['baseline_high', 'adaptive']-pressure['baseline_low', 'adaptive']
                      -pressure['baseline_high', 'static']+pressure['baseline_low', 'static'])
         tables['multiplicity'].append(adjusted(pressure_keys, values,
@@ -153,17 +153,17 @@ def main():
     two = [m for m, _, _ in MODELS[:2]]
     shared = sorted(k for k in keys if all((m, *k, c, a) in paths
         for m in two for c in ('baseline_high', 'authority_researcher') for a in ARMS)
-        and category(initial[two[0], *k][0]) == category(initial[two[1], *k][0]))
+        and category(initial[(two[0], *k)][0]) == category(initial[(two[1], *k)][0]))
     assert len(shared) == len({k[0] for k in shared}) == 349
     cue_reversals = {}
     for model, label, _ in MODELS[:2]:
-        before = np.array([initial[model, *k][0] for k in shared])
-        y = np.array([initial[model, *k][1] for k in shared])
+        before = np.array([initial[(model, *k)][0] for k in shared])
+        y = np.array([initial[(model, *k)][1] for k in shared])
         assert np.sum(category(before) == y) == 314
         for mode in ARMS:
             finals = {}
             for cue in ('baseline_high', 'authority_researcher'):
-                finals[cue] = np.array([paths[model, *k, cue, mode][-1] for k in shared])
+                finals[cue] = np.array([paths[(model, *k, cue, mode)][-1] for k in shared])
                 tables['cue_brier'].append(paired(shared, before, finals[cue], y,
                     dict(model=model, label=label, mode=mode, cue=cue)))
                 cue_reversals[model, mode, cue] = (category(finals[cue]) == -category(before)).astype(int)

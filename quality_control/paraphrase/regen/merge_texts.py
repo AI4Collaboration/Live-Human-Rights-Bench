@@ -8,29 +8,80 @@ The merged file is the full set with the cut targets replaced, for the number ch
 The subset holds every target of the affected judgments, for the claim check, which
 runs per judgment. Originals must match exactly; the script stops otherwise.
 """
-import gzip, json, os, sys
+import argparse
+import gzip
+import json
+from pathlib import Path
 
-base, regen, merged, subset = sys.argv[1:5]
-new = {}
-for line in gzip.open(regen, "rt", encoding="utf-8"):
-    r = json.loads(line)
-    new[(r["item_id"], r["article"], r["condition"])] = r
-items = {k[0] for k in new}
-replaced = 0
-with gzip.open(merged, "wt", encoding="utf-8", newline="\n") as m, \
-        gzip.open(subset, "wt", encoding="utf-8", newline="\n") as s:
-    for line in gzip.open(base, "rt", encoding="utf-8"):
-        r = json.loads(line)
-        k = (r["item_id"], r["article"], r["condition"])
-        if k in new:
-            if r["condition"] == "original":
-                assert r["text"] == new[k]["text"], k
-            elif r["text"] != new[k]["text"]:
-                replaced += 1
-            r = new[k]
-        out = json.dumps(r, ensure_ascii=False) + "\n"
-        m.write(out)
-        # the subset keeps every target of an affected judgment, as the claim check runs per judgment
-        if r["item_id"] in items:
-            s.write(out)
-print("replaced paraphrase rows:", replaced, "judgments in subset:", len(items))
+
+def rows(path):
+    with gzip.open(path, "rt", encoding="utf-8") as source:
+        for line in source:
+            yield json.loads(line)
+
+
+def key(row):
+    return row["item_id"], row["article"], row["condition"]
+
+
+def merge_texts(base, regen, merged, subset):
+    """Validate the repair before writing two new files; preserve original text."""
+    base, regen, merged, subset = map(Path, (base, regen, merged, subset))
+    paths = (base, regen, merged, subset)
+    if len({path.resolve() for path in paths}) != len(paths):
+        raise ValueError("Input and output paths must all be distinct")
+    for path in (merged, subset):
+        if path.exists():
+            raise FileExistsError(f"Output already exists: {path}")
+
+    replacements = {}
+    for row in rows(regen):
+        identity = key(row)
+        if identity in replacements:
+            raise ValueError(f"Duplicate regenerated row: {identity}")
+        replacements[identity] = row
+
+    seen = set()
+    replaced = 0
+    for row in rows(base):
+        identity = key(row)
+        if identity in seen:
+            raise ValueError(f"Duplicate base row: {identity}")
+        seen.add(identity)
+        if identity in replacements:
+            changed = row["text"] != replacements[identity]["text"]
+            if row["condition"] == "original" and changed:
+                raise ValueError(f"Original text changed: {identity}")
+            replaced += int(changed)
+    unknown = replacements.keys() - seen
+    if unknown:
+        raise ValueError(f"Regenerated rows absent from base: {len(unknown)}")
+
+    items = {identity[0] for identity in replacements}
+    # Exclusive creation prevents accidentally overwriting any existing artifact.
+    with merged.open("xb") as merged_file, subset.open("xb") as subset_file, \
+            gzip.open(merged_file, "wt", encoding="utf-8", newline="\n") as full, \
+            gzip.open(subset_file, "wt", encoding="utf-8", newline="\n") as affected:
+        for row in rows(base):
+            row = replacements.get(key(row), row)
+            output = json.dumps(row, ensure_ascii=False) + "\n"
+            full.write(output)
+            # Claim checks cover all targets of each affected judgment.
+            if row["item_id"] in items:
+                affected.write(output)
+    return replaced, len(items)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("base", type=Path)
+    parser.add_argument("regen", type=Path)
+    parser.add_argument("merged", type=Path, help="New file for the full repaired set")
+    parser.add_argument("subset", type=Path, help="New file for affected judgments")
+    args = parser.parse_args()
+    replaced, judgments = merge_texts(args.base, args.regen, args.merged, args.subset)
+    print("replaced paraphrase rows:", replaced, "judgments in subset:", judgments)
+
+
+if __name__ == "__main__":
+    main()

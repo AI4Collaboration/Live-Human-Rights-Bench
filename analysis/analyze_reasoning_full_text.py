@@ -142,7 +142,8 @@ def main():
     released = {identity(r): r for r in json.loads(read("data/processed/echr_unified.json"))}
     for directory, model in [("syco_cot_opus", "Opus-4.6"), ("syco_cot", "V4-Flash")]:
         prefix = f"data/experiments/{directory}/"
-        config = json.loads(read(prefix + "run_config.json"))
+        # Parse and hash the configuration as part of the source provenance.
+        json.loads(read(prefix + "run_config.json"))
         initial = {identity(r): r for r in map(json.loads, read(prefix + "initial.jsonl").splitlines())}
         rows = list(map(json.loads, gzip.decompress(read(prefix + "trajectories.jsonl.gz")).splitlines()))
         assert len({(r["arm"], r["condition"], identity(r)) for r in rows}) == len(rows)

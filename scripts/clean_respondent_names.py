@@ -121,7 +121,6 @@ def clean_dataset(records: list[dict], preview: bool = True) -> list[dict]:
     changes = []
     reextracted = 0
     normalized = 0
-    multi_respondent_split = 0
     unchanged = 0
 
     for rec in records:
@@ -201,7 +200,7 @@ def clean_dataset(records: list[dict], preview: bool = True) -> list[dict]:
             for (old, new), count in unique_mappings.most_common():
                 print(f"  {old:50s} -> {new:30s} ({count} records)")
 
-        print(f"\n--- Resulting respondent distribution (top 30) ---")
+        print("\n--- Resulting respondent distribution (top 30) ---")
         result_counts = Counter()
         for rec in records:
             old = rec["respondent"]

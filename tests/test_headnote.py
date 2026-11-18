@@ -7,11 +7,8 @@ where a cover page does not look the way the common case looks.
 
 import json
 import os
-import re
-import subprocess
 import sys
 
-import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "experiments"))
 

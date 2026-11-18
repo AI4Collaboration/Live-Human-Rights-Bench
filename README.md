@@ -142,7 +142,13 @@ python -m pip install -r requirements.txt
 python scripts/validate_eval_dataset.py --require-complete
 ```
 
-For offline tests, install `requirements-dev.txt` and run `python -m pytest -q`.
+For offline checks, install `requirements-dev.txt` and run:
+
+```bash
+python -m pytest -q
+python -m ruff check .
+```
+
 The validator makes no model calls. [Execution commands](docs/EXPERIMENTS.md#setup-and-execution)
 cover new runs, environment settings and offline Country Swap preflight.
 Each new run must use its own output directory and retain input identities.

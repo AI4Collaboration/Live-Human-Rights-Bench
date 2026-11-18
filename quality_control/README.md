@@ -28,3 +28,9 @@ the protocol document.
 | Claim-level retention (relations, facts without numbers) | [paraphrase/REPORT.md](paraphrase/REPORT.md#claim-level-check), [paraphrase/claims/](paraphrase/claims/) |
 | Regenerated cut targets (26) and both checks rerun | [paraphrase/REPORT.md](paraphrase/REPORT.md#regenerated-cut-targets), [paraphrase/regen/](paraphrase/regen/) |
 | Generator-exclusion check | [analysis/generator_exclusion/paraphrase_strength.csv](../analysis/generator_exclusion/paraphrase_strength.csv) |
+
+The one-off repair launchers have been retired; their saved results remain available.
+For further repairs, [merge_texts.py](paraphrase/regen/merge_texts.py) validates
+replacement identities and preserves original text before writing new merged and
+affected-judgment files. Both output paths must be unused. Review the checks and
+score the repaired texts in a new output directory before updating published artifacts.

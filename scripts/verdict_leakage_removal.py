@@ -40,7 +40,6 @@ import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict
-from typing import Optional
 
 try:
     import openai
@@ -165,7 +164,7 @@ def stage1_truncate(text: str) -> tuple[str, str]:
         match = pattern.search(text)
         if match and match.start() < earliest_pos:
             earliest_pos = match.start()
-            method = f"court_assessment_start"
+            method = "court_assessment_start"
 
     if earliest_pos < len(text):
         truncated = text[:earliest_pos].rstrip()
@@ -303,7 +302,7 @@ def stage3_repair(case: CaseRecord, leaking_sentences: list[str]) -> CaseRecord:
         new_text = re.sub(escaped, "", text, count=1)
         if new_text != text:
             text = new_text
-            case.verdict_removal_method += f"; surgical_fix: removed leaking sentence"
+            case.verdict_removal_method += "; surgical_fix: removed leaking sentence"
             continue
 
         # Fuzzy: find and truncate before the sentence
@@ -312,7 +311,7 @@ def stage3_repair(case: CaseRecord, leaking_sentences: list[str]) -> CaseRecord:
             sentence_start = text.rfind('.', 0, idx)
             if sentence_start > 0:
                 text = text[:sentence_start + 1].rstrip()
-                case.verdict_removal_method += f"; surgical_fix: truncated before leaking sentence"
+                case.verdict_removal_method += "; surgical_fix: truncated before leaking sentence"
 
     # Also scan for any remaining conclusory patterns
     for pattern in COMPILED_CONCLUSORY:
@@ -624,7 +623,7 @@ def main():
     if dates:
         print(f"  Date range in dataset: {dates[0]} to {dates[-1]} ({len(set(dates))} distinct dates)")
     elif args.cutoff_date or args.end_date:
-        print(f"  Warning: no date information available on loaded cases")
+        print("  Warning: no date information available on loaded cases")
 
     if not cases:
         print("No cases to process.")

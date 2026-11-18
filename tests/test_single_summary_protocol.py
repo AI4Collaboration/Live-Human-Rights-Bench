@@ -1,6 +1,5 @@
 """One summary is a protocol constraint, not just a generator default."""
 import ast
-import json
 from pathlib import Path
 import subprocess
 import sys

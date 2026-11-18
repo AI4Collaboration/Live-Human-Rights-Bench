@@ -5,38 +5,35 @@
 #SBATCH --mem=8G
 #SBATCH --output=oldmodels_%j.log
 
-# Old-model run (gpt-4o-mini / gpt-4.1-mini): full-case baseline + summary arm +
-# paraphrase + state-swap. NO sycophancy. Dedicated output dirs so nothing collides
-# with the 6-model roster results.
-set -uo pipefail
+# Earlier-model evaluation: full-case baseline, summary, paraphrase and Country Swap.
+# Set OUT to a fresh directory for each experiment.
+set -euo pipefail
 export PYTHONUNBUFFERED=1
-export MLFLOW_TRACKING_URI=file:./mlruns
-M="$1"
-echo "=== oldmodels $M START $(date) on $(hostname) ==="
-cd -- "$(dirname -- "${BASH_SOURCE[0]}")" || exit 1
+export MLFLOW_TRACKING_URI=${MLFLOW_TRACKING_URI:-file:./mlruns}
+MODEL=${1:?Usage: oldmodels.sh MODEL_ID}
+ROOT=${SLURM_SUBMIT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}
+cd "$ROOT"
 if [[ -n "${BENCHMARK_VENV:-}" ]]; then source "$BENCHMARK_VENV/bin/activate"; fi
-# API credentials are read from environment variables or the local .env file.
-if [[ -z "${OPENROUTER_API_KEY:-}" && -f .env ]]; then
-  export OPENROUTER_API_KEY
-  OPENROUTER_API_KEY="$(python -c "from dotenv import dotenv_values; print(dotenv_values('.env').get('OPENROUTER_API_KEY') or '')")"
-fi
-BASE="https://openrouter.ai/api/v1"
+: "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
+PYTHON=${PYTHON:-python}
+OUT=${OUT:-data/experiments/earlier_models_new}
+SAMPLES=${SAMPLES:-10}
+WORKERS=${WORKERS:-60}
 
-echo "--- full-case baseline $M $(date) ---"
-python experiments/run_perturbation_fullcase.py --cases data/processed/echr_unified.json --model "$M" \
-  --base-url "$BASE" --api-key-env OPENROUTER_API_KEY --summaries data/processed/summaries_dsv41flash.json \
-  --rq baseline --samples 10 --workers 60 --output-dir data/experiments/unified_fullcase_oldmodels || echo "WARN baseline"
-echo "--- summary arm (rq1) $M $(date) ---"
-python experiments/run_perturbation_fullcase.py --cases data/processed/echr_unified.json --model "$M" \
-  --base-url "$BASE" --api-key-env OPENROUTER_API_KEY --summaries data/processed/summaries_dsv41flash.json \
-  --rq rq1 --samples 10 --workers 60 --output-dir data/experiments/unified_fullcase_oldmodels || echo "WARN rq1"
+echo "Full-case baseline and summary: $MODEL"
+"$PYTHON" experiments/run_perturbation_fullcase.py \
+  --cases data/processed/echr_unified.json --model "$MODEL" \
+  --base-url https://openrouter.ai/api/v1 --api-key-env OPENROUTER_API_KEY \
+  --summaries data/processed/summaries_dsv41flash.json \
+  --rq all --samples "$SAMPLES" --workers "$WORKERS" --output-dir "$OUT/fullcase"
 
-echo "--- paraphrase $M $(date) ---"
-python experiments/paraphrase_run.py eval --model "$M" --samples 10 --workers 60 \
-  --pairs data/processed/paraphrase_pairs.json --out data/experiments/paraphrase_oldmodels || echo "WARN paraphrase"
+echo "Paraphrase: $MODEL"
+"$PYTHON" experiments/paraphrase_run.py eval --model "$MODEL" \
+  --samples "$SAMPLES" --workers "$WORKERS" \
+  --pairs data/processed/paraphrase_pairs.json --out "$OUT/paraphrase"
 
-echo "--- state-swap $M $(date) ---"
-python experiments/stateswap_summary_run.py --model "$M" --samples 10 --workers 60 \
-  --out data/experiments/stateswap_oldmodels || echo "WARN stateswap"
+echo "Country Swap: $MODEL"
+"$PYTHON" experiments/stateswap_summary_run.py --model "$MODEL" \
+  --samples "$SAMPLES" --workers "$WORKERS" --out "$OUT/country_swap"
 
-echo "=== oldmodels $M DONE $(date) ==="
+echo "Completed: $MODEL"

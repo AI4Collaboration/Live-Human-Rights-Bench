@@ -135,7 +135,7 @@ def main():
                 cohorts[scope,m,mode]=sorted((i,a) for model,i,a in initial if model==m and all((m,i,a,c,mode) in branches for c in conditions))
     two=('anthropic/claude-opus-4.6','openai/gpt-5.6-sol')
     shared=sorted(set.intersection(*(set(cohorts['within_model_mode',m,a]) for m in two for a in ('static','adaptive'))))
-    shared=[k for k in shared if decision(initial[two[0],*k][0],'band_40_60')==decision(initial[two[1],*k][0],'band_40_60')]
+    shared=[k for k in shared if decision(initial[(two[0],*k)][0],'band_40_60')==decision(initial[(two[1],*k)][0],'band_40_60')]
     assert len(shared)==349
     names={'no_cue':'baseline_high','lawyer':'authority_lawyer','ai_safety_researcher':'authority_researcher'}
     rates=csv_rows('cue_rates.csv')
@@ -143,7 +143,7 @@ def main():
         m,mode=row['model'],row['mode']
         keys=shared if row['scope']=='shared_349' else cohorts[row['scope'],m,mode]
         assert hashlib.sha256(json.dumps(keys,separators=(',',':')).encode()).hexdigest()==row['cohort_sha256']
-        recount(row,[(initial[m,*k][0],branches[m,*k,names[row['cue']],mode][-1],initial[m,*k][1]) for k in keys])
+        recount(row,[(initial[(m,*k)][0],branches[(m,*k,names[row['cue']],mode)][-1],initial[(m,*k)][1]) for k in keys])
     for name,meta in manifest['outputs'].items():
         data=(OUT/name).read_bytes().replace(b'\r\n',b'\n')
         assert hashlib.sha256(data).hexdigest()==meta['sha256_lf']

@@ -5,17 +5,14 @@
 #SBATCH --mem=8G
 #SBATCH --output=syco_nat_%j.log
 
-# Nationality-role persuasion (summary-based) for one old model.
-set -uo pipefail
+# Nationality cues in adversarial opinions, using shared summaries.
+set -euo pipefail
 export PYTHONUNBUFFERED=1
-M="$1"
-echo "=== syco_nat $M START $(date) ==="
-cd -- "$(dirname -- "${BASH_SOURCE[0]}")" || exit 1
+MODEL=${1:?Usage: syco_nationality.sh MODEL_ID}
+ROOT=${SLURM_SUBMIT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}
+cd "$ROOT"
 if [[ -n "${BENCHMARK_VENV:-}" ]]; then source "$BENCHMARK_VENV/bin/activate"; fi
-# API credentials are read from environment variables or the local .env file.
-if [[ -z "${OPENROUTER_API_KEY:-}" && -f .env ]]; then
-  export OPENROUTER_API_KEY
-  OPENROUTER_API_KEY="$(python -c "from dotenv import dotenv_values; print(dotenv_values('.env').get('OPENROUTER_API_KEY') or '')")"
-fi
-python experiments/syco_nationality_run.py --model "$M" --samples 3 --workers 40
-echo "=== syco_nat $M DONE $(date) ==="
+: "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
+exec "${PYTHON:-python}" experiments/syco_nationality_run.py --model "$MODEL" \
+  --samples "${SAMPLES:-3}" --workers "${WORKERS:-40}" \
+  --out "${OUT:-data/experiments/syco_nationality_new}"

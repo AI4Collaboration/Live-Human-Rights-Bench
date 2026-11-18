@@ -1,5 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.sh text eol=lf
 
 # Frozen rebuttal artifacts are hashed byte-for-byte, including JSON manifests.
 data/experiments/rebuttal_20261107/** -text

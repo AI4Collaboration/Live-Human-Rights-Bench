@@ -1,7 +1,6 @@
 """Extract the manuscript's existing Bouyid example from saved evaluations."""
 import csv
 import hashlib
-import io
 import json
 from pathlib import Path
 import subprocess
@@ -30,7 +29,8 @@ def selected(path,rev=REV):
 def main():
     cases=json.loads(read("data/processed/echr_unified.json"))
     case=next(c for c in cases if c["item_id"]==ITEM and c["article_full"]=="3")
-    summaries=json.loads(read("data/processed/summaries_dsv41flash.json"))["summaries"]
+    # Retain the shared-summary schema check and source hash.
+    json.loads(read("data/processed/summaries_dsv41flash.json"))["summaries"]
     flag=next(r for r in csv.DictReader((OUT.parent/"stateswap_context/input_flags.csv").open(encoding="utf-8"))
               if r["item_id"]==ITEM and r["article"]=="3")
     assert flag["followup_screen_flagged"]=="False"

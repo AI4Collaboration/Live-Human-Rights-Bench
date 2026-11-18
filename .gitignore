@@ -1,6 +1,8 @@
 .DS_Store
 .vscode
 .env
+.env.*
+!.env.example
 .venv
 __pycache__
 
@@ -15,6 +17,8 @@ figures_new
 data/experiments
 logs
 slurm/output
+/*.log
+/slurm-*.out
 
 # Large data files
 *.csv

@@ -153,9 +153,9 @@ def load_persuasion(source, canonical, exclusions):
 
 
 def arrays(model, keys, initial, trajectories, condition, mode):
-    truth = np.array([ground_truth(initial[model, *k]["violation_label"]) for k in keys])
-    scores = np.array([[initial[model, *k]["initial_score"],
-                        *trajectories[model, *k, condition, mode]["scores"]] for k in keys], dtype=float)
+    truth = np.array([ground_truth(initial[(model, *k)]["violation_label"]) for k in keys])
+    scores = np.array([[initial[(model, *k)]["initial_score"],
+                        *trajectories[(model, *k, condition, mode)]["scores"]] for k in keys], dtype=float)
     predictions = category(scores)
     return truth, scores, predictions == truth[:, None], predictions == -truth[:, None]
 
@@ -424,8 +424,8 @@ def main():
                     and all((m, i, a, c, mode) in trajectories for c in conditions))
     two = [m for m, _, _ in MODELS[:2]]
     shared = sorted(set.intersection(*(set(cohort_pairs[m, a]) for m in two for a in ARMS)))
-    shared = [k for k in shared if int(category(initial[two[0], *k]["initial_score"])) ==
-              int(category(initial[two[1], *k]["initial_score"]))]
+    shared = [k for k in shared if int(category(initial[(two[0], *k)]["initial_score"])) ==
+              int(category(initial[(two[1], *k)]["initial_score"]))]
     assert len(shared) == len({k[0] for k in shared}) == 349
     ref_cohorts = {(r["scope"], r["model"], r["mode"]): r for r in
         read_csv(root / "analysis/reliability_controls/cue_cohorts.csv")}

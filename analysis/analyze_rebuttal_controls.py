@@ -2,7 +2,6 @@
 from __future__ import annotations
 import argparse
 from collections import Counter
-import csv
 import gzip
 import hashlib
 import json

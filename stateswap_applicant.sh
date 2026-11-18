@@ -10,6 +10,6 @@ cd "$ROOT"
 export PYTHONUNBUFFERED=1
 : "${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in the environment}"
 MODEL=${1:?Usage: stateswap_applicant.sh MODEL_ID}
-exec python experiments/stateswap_applicant_run.py --model "$MODEL" \
+exec "${PYTHON:-python}" experiments/stateswap_applicant_run.py --model "$MODEL" \
   --samples "${SAMPLES:-10}" --workers "${WORKERS:-60}" \
-  --out "${OUT:-data/experiments/stateswap_applicant}"
+  --out "${OUT:-data/experiments/stateswap_applicant_new}"
