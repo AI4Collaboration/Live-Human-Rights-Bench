@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "dataset_id": "echr-post-v1.0-candidate-20261108-core50",
+  "release_version": "candidate",
+  "selection": "The 50 judgments listed in core_50.json, a subset of echr-post-v1.0-candidate-20261108. One target per judgment. no_violation stratum: up to 30 judgments by SHA-256 rank of seed|item_id, taking the lowest-ranked no_violation target. violation stratum: 70 targets allocated across decision months by largest remainder in proportion to eligible judgments, ranked within month by the same hash; lowest-ranked violation target per judgment. Substitutes are the next ranked judgment in the same stratum and month. Core 50 = lowest-ranked 15 no_violation + 35 violation.",
+  "dataset": {
+    "path": "data/releases/post_v1.0_candidate_20261108/core_50_cases.json",
+    "instances": 50,
+    "judgments": 50,
+    "instance_key": [
+      "item_id",
+      "target_respondent_code",
+      "article_full",
+      "target_issue"
+    ],
+    "labels": {
+      "violation": 35,
+      "no_violation": 15
+    },
+    "annual_counts": {
+      "2026": 50
+    },
+    "date_min": "2026-05-26",
+    "date_max": "2026-11-05",
+    "target_contract": {
+      "unit": "one judgment, one respondent State, one provision, one sub-conclusion",
+      "audit": "data/releases/post_v1.0_candidate_20261108/core_50_target_audit.json"
+    }
+  },
+  "summaries": {
+    "path": "data/releases/post_v1.0_candidate_20261108/core_50_summaries.json",
+    "summarizer": "deepseek/deepseek-v4.1-flash",
+    "versions": 1,
+    "represented_judgments": 50,
+    "complete_judgments": 50,
+    "usable_summaries": 50,
+    "missing_slots_zero_based": []
+  }
+}

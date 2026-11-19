@@ -1,0 +1,10 @@
+{
+  "v1_0_sha256": "b51526021b9b48634823f2433ee3ea8efdd8fa9776aaa235a5c4fe68d8780b0f",
+  "checked_targets": 100,
+  "overlaps": {
+    "item_id": [],
+    "ecli": [],
+    "application_number": []
+  },
+  "status": "PASSED"
+}
